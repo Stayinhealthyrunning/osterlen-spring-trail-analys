@@ -49,7 +49,7 @@ def main():
    for rec in snap.get('results',[]):
     rid=str(rec.get('sportstiming_result_id') or '')
     source_records[(int(imp['year']),imp['race_family'],rid)]=rec
-  groups=defaultdict(Counter);surfaces=defaultdict(Counter);ambiguous=Counter()
+  groups=defaultdict(Counter);surfaces=Counter();ambiguous=Counter()
   for r in con.execute("SELECT year,race_family,entity_type,source_result_id,status,normalized_json FROM results WHERE status='UNKNOWN'"):
    key=f"{r['year']}:{r['race_family']}:{r['entity_type']}";groups[key]['total']+=1
    norm=json.loads(r['normalized_json']);src=source_records.get((int(r['year']),r['race_family'],str(r['source_result_id'])),{})
