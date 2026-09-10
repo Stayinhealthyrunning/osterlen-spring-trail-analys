@@ -1,0 +1,5360 @@
+{
+  "schema_version": 1,
+  "year": 2026,
+  "race_family": "ultra60",
+  "event_id": 16880,
+  "sportstiming_distance_id": "97077",
+  "source_label": "CRAFT Ultra 60 k",
+  "discovered_result_ids": 10,
+  "list_pages": [
+    {
+      "page": 1,
+      "url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=1",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=1",
+      "sha256": "1b1f6c5e5d25d35d8d41f2b6aefeda63293f8cec567054df14ffe0ebc67e05e6",
+      "result_links": 50,
+      "new_result_ids": 50
+    },
+    {
+      "page": 2,
+      "url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=2",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=2",
+      "sha256": "6540da71abdafa1141d119fa246c4bd1b220458c5303a46823dc4f821dc13cc3",
+      "result_links": 50,
+      "new_result_ids": 50
+    },
+    {
+      "page": 3,
+      "url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=3",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=3",
+      "sha256": "8c1834187cde7c00d39eb8e448d60f83acbe07d28d782a54ee31452da499a07e",
+      "result_links": 50,
+      "new_result_ids": 50
+    },
+    {
+      "page": 4,
+      "url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=4",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=4",
+      "sha256": "0afb7cc7a9be60064511985164245d1c39ec41d88d5d4f2704d92e3eeb0d7bae",
+      "result_links": 50,
+      "new_result_ids": 50
+    },
+    {
+      "page": 5,
+      "url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=5",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=5",
+      "sha256": "027db0bde45e4a66c25214aee2a9842dbf3892e52c9a9f4b18ca0e711b834ea9",
+      "result_links": 50,
+      "new_result_ids": 50
+    },
+    {
+      "page": 6,
+      "url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=6",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=6",
+      "sha256": "25c381bae9f26f057a24dafceb5fd7fb4580950dc904feca49c7126171d1d4e5",
+      "result_links": 50,
+      "new_result_ids": 50
+    },
+    {
+      "page": 7,
+      "url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=7",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=7",
+      "sha256": "72a938ab63a90e470bcb3679fc52cd7edd1231c089de75e3de4117a04dd021a3",
+      "result_links": 50,
+      "new_result_ids": 50
+    },
+    {
+      "page": 8,
+      "url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=8",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=8",
+      "sha256": "6743cc761de6edf10fb378cf85090124819880b6a03bee591b5faf6697efacd0",
+      "result_links": 50,
+      "new_result_ids": 50
+    },
+    {
+      "page": 9,
+      "url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=9",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=9",
+      "sha256": "369cb44bc7279630c75e0149e4be025234147d47f8f618d5faa96fd9e0fb7144",
+      "result_links": 9,
+      "new_result_ids": 9
+    }
+  ],
+  "results": [
+    {
+      "sportstiming_result_id": "7793098",
+      "source_url": "https://www.sportstiming.dk/event/16880/app/results/7793098",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results/7793098",
+      "source_sha256": "c0924ba7370987b41d29e5941074ceb6fdcd99a31f6efc4e2c8219ac2293eb2a",
+      "tables": [
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Christian Malmström Team Blekinge / Irunteam"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4:35:01 Nettotid"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "1 av 264 Män"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Klass"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "CRAFT Ultra 60 k"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Total"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "1 av 367"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Män"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "1 av 264"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "45-49 män"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "1 av 42"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Nettotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4:35:01"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Bruttotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4:35:04"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Starttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "10:00:06"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sluttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "14:35:08"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Datum"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "den 18 april 2026"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Hastighet"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "13,09 km/t"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4:35 min/km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 max (Beräknad)"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "49,8 (ml / kg / min)"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 rating"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Christian Malmström"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Team Blekinge / Irunteam"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sverige"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Man, 46 år"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "45-49 män Åldersgrupp beräknas utifrån ålderens ålder. Åldern på den 18 april 2026."
+              }
+            ]
+          ]
+        },
+        {
+          "class": "splits-table table table-striped table-hover",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "th",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Mellantid"
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Total tid"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": "Deltagare"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Klockan"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:29:57"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "2 2 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "4:24 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "2:29:57"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "2 2 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "12:30:03"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "26 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:05:04"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "1 1 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "4:48 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "4:35:01"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "1 1 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "14:35:07"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Totalt"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "4:35:01"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "1 1 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "4:35 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "4:35:01"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "1 1 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "14:35:07"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "sportstiming_result_id": "7796216",
+      "source_url": "https://www.sportstiming.dk/event/16880/app/results/7796216",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results/7796216",
+      "source_sha256": "de1188af6f5a7d9ab8f638eea20e29f252631c1e494f0add83eee2024055d463",
+      "tables": [
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Daniel Bränholm Hälle IF / Craft Run Team"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4:36:48 Nettotid"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "2 av 264 Män"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Klass"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "CRAFT Ultra 60 k"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Total"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "2 av 367"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Män"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "2 av 264"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "35-39 män"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "1 av 41"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Nettotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4:36:48"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Bruttotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4:36:51"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Starttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "10:00:06"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sluttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "14:36:55"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Datum"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "den 18 april 2026"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Hastighet"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "13,01 km/t"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4:36 min/km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 max (Beräknad)"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "49,4 (ml / kg / min)"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 rating"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Daniel Bränholm"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Hälle IF / Craft Run Team"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sverige"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Man, 39 år"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "35-39 män Åldersgrupp beräknas utifrån ålderens ålder. Åldern på den 18 april 2026."
+              }
+            ]
+          ]
+        },
+        {
+          "class": "splits-table table table-striped table-hover",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "th",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Mellantid"
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Total tid"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": "Deltagare"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Klockan"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:24:33"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "1 1 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "4:15 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "2:24:33"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "1 1 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "12:24:39"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "26 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:12:15"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "3 2 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:05 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "4:36:48"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "2 2 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "14:36:54"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Totalt"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "4:36:48"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "2 2 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "4:36 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "4:36:48"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "2 2 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "14:36:54"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "sportstiming_result_id": "7792471",
+      "source_url": "https://www.sportstiming.dk/event/16880/app/results/7792471",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results/7792471",
+      "source_sha256": "f5544a805e3c816efb6dad667ff90463817df610adea9c20364eb1355b4ce035",
+      "tables": [
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Jakob Helander"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4:48:01 Nettotid"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "3 av 264 Män"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Klass"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "CRAFT Ultra 60 k"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Total"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "3 av 367"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Män"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "3 av 264"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "35-39 män"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "2 av 41"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Nettotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4:48:01"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Bruttotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4:48:04"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Starttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "10:00:07"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sluttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "14:48:08"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Datum"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "den 18 april 2026"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Hastighet"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "12,50 km/t"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4:48 min/km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 max (Beräknad)"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "47,1 (ml / kg / min)"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 rating"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Jakob Helander"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sverige"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Man, 36 år"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "35-39 män Åldersgrupp beräknas utifrån ålderens ålder. Åldern på den 18 april 2026."
+              }
+            ]
+          ]
+        },
+        {
+          "class": "splits-table table table-striped table-hover",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "th",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Mellantid"
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Total tid"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": "Deltagare"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Klockan"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:30:03"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "3 3 2"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "4:24 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "2:30:03"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "3 3 2"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "12:30:10"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "26 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:17:58"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "4 3 2"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:18 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "4:48:01"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "3 3 2"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "14:48:08"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Totalt"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "4:48:01"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "3 3 2"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "4:48 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "4:48:01"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "3 3 2"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "14:48:08"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "sportstiming_result_id": "7794046",
+      "source_url": "https://www.sportstiming.dk/event/16880/app/results/7794046",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results/7794046",
+      "source_sha256": "72b21e06e33bb3687d01ea1108e8a51311406f85b1f49461581a684b0e5ee2dd",
+      "tables": [
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Matilda Gend Advokat Sylvia Strid"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4:48:21 Nettotid"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "1 av 102 Kvinnor"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Klass"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "CRAFT Ultra 60 k"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Total"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4 av 367"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Kvinnor"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "1 av 102"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "35-39 kvinnor"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "1 av 15"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Nettotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4:48:21"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Bruttotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4:48:24"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Starttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "10:00:06"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sluttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "14:48:28"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Datum"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "den 18 april 2026"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Hastighet"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "12,48 km/t"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4:48 min/km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 max (Beräknad)"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "47 (ml / kg / min)"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 rating"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Matilda Gend"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Advokat Sylvia Strid"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sverige"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Kvinna, 37 år"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "35-39 kvinnor Åldersgrupp beräknas utifrån ålderens ålder. Åldern på den 18 april 2026."
+              }
+            ]
+          ]
+        },
+        {
+          "class": "splits-table table table-striped table-hover",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "th",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Mellantid"
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Total tid"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": "Deltagare"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Klockan"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:37:39"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "4 1 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "4:38 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "2:37:39"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "4 1 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "12:37:45"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "26 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:10:42"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "2 1 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:01 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "4:48:21"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "4 1 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "14:48:27"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Totalt"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "4:48:21"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "4 1 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "4:48 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "4:48:21"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "4 1 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "14:48:27"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "sportstiming_result_id": "7791093",
+      "source_url": "https://www.sportstiming.dk/event/16880/app/results/7791093",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results/7791093",
+      "source_sha256": "e2c564fc707691c855ebf483ea8f527e763a4d11ffd177f12f21fd667cce1028",
+      "tables": [
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Hanna Aho Navåsens FK"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:01:20 Nettotid"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "2 av 102 Kvinnor"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Klass"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "CRAFT Ultra 60 k"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Total"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5 av 367"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Kvinnor"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "2 av 102"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "30-34 kvinnor"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "1 av 11"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Nettotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:01:20"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Bruttotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:01:23"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Starttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "10:00:07"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sluttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "15:01:27"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Datum"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "den 18 april 2026"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Hastighet"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "11,95 km/t"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:01 min/km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 max (Beräknad)"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "44,5 (ml / kg / min)"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 rating"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Hanna Aho"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Navåsens FK"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sverige"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Kvinna, 34 år"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "30-34 kvinnor Åldersgrupp beräknas utifrån ålderens ålder. Åldern på den 18 april 2026."
+              }
+            ]
+          ]
+        },
+        {
+          "class": "splits-table table table-striped table-hover",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "th",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Mellantid"
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Total tid"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": "Deltagare"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Klockan"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:42:49"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "6 2 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "4:47 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "2:42:49"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "6 2 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "12:42:56"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "26 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:18:31"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "5 2 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:19 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "5:01:20"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "5 2 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "15:01:27"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Totalt"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:01:20"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "5 2 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:01 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "5:01:20"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "5 2 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "15:01:27"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "sportstiming_result_id": "7792111",
+      "source_url": "https://www.sportstiming.dk/event/16880/app/results/7792111",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results/7792111",
+      "source_sha256": "a07d33d98265deaaf27bc54417372bcec7a4e2db0430344e01b984edd42537d0",
+      "tables": [
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Johan Vallon-Christersson IF Malmö Löp"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:15:45 Nettotid"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4 av 264 Män"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Klass"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "CRAFT Ultra 60 k"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Total"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "6 av 367"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Män"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "4 av 264"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "50-54 män"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "1 av 46"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Nettotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:15:45"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Bruttotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:15:48"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Starttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "10:00:07"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sluttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "15:15:52"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Datum"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "den 18 april 2026"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Hastighet"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "11,40 km/t"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:15 min/km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 max (Beräknad)"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "42,1 (ml / kg / min)"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 rating"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Johan Vallon-Christersson"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "IF Malmö Löp"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sverige"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Man, 53 år"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "50-54 män Åldersgrupp beräknas utifrån ålderens ålder. Åldern på den 18 april 2026."
+              }
+            ]
+          ]
+        },
+        {
+          "class": "splits-table table table-striped table-hover",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "th",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Mellantid"
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Total tid"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": "Deltagare"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Klockan"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:42:24"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "5 4 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "4:46 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "2:42:24"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "5 4 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "12:42:31"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "26 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:33:21"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "13 10 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:53 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "5:15:45"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "6 4 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "15:15:52"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Totalt"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:15:45"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "6 4 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:15 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "5:15:45"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "6 4 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "15:15:52"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "sportstiming_result_id": "7794298",
+      "source_url": "https://www.sportstiming.dk/event/16880/app/results/7794298",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results/7794298",
+      "source_sha256": "fe12a182bd612f3c5fa1873c2ee22a341f2a957c18f56f420a512606abcaa826",
+      "tables": [
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Vilhelm Berg Malmborg"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:16:02 Nettotid"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5 av 264 Män"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Klass"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "CRAFT Ultra 60 k"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Total"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "7 av 367"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Män"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5 av 264"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "40-44 män"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "1 av 47"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Nettotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:16:02"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Bruttotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:16:05"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Starttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "10:00:07"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sluttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "15:16:10"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Datum"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "den 18 april 2026"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Hastighet"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "11,39 km/t"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:16 min/km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 max (Beräknad)"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "42 (ml / kg / min)"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 rating"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Vilhelm Berg Malmborg"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sverige"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Man, 41 år"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "40-44 män Åldersgrupp beräknas utifrån ålderens ålder. Åldern på den 18 april 2026."
+              }
+            ]
+          ]
+        },
+        {
+          "class": "splits-table table table-striped table-hover",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "th",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Mellantid"
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Total tid"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": "Deltagare"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Klockan"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:45:53"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "7 5 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "4:52 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "2:45:53"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "7 5 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "12:46:00"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "26 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:30:09"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "9 6 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:46 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "5:16:02"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "7 5 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "15:16:09"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Totalt"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:16:02"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "7 5 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:16 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "5:16:02"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "7 5 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "15:16:09"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "sportstiming_result_id": "8125824",
+      "source_url": "https://www.sportstiming.dk/event/16880/app/results/8125824",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results/8125824",
+      "source_sha256": "2b3ef38b2b311e1dc21771acee8be975d076bc21dd18e1d037527d4b37c68d67",
+      "tables": [
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Klara Kjellgren"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:16:14 Nettotid"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "3 av 102 Kvinnor"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Klass"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "CRAFT Ultra 60 k"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Total"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "8 av 367"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Kvinnor"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "3 av 102"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "45-49 kvinnor"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "1 av 24"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Nettotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:16:14"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Bruttotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:16:17"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Starttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "10:00:07"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sluttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "15:16:21"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Datum"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "den 18 april 2026"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Hastighet"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "11,38 km/t"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:16 min/km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 max (Beräknad)"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "42 (ml / kg / min)"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 rating"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Klara Kjellgren"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sverige"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Kvinna, 46 år"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "45-49 kvinnor Åldersgrupp beräknas utifrån ålderens ålder. Åldern på den 18 april 2026."
+              }
+            ]
+          ]
+        },
+        {
+          "class": "splits-table table table-striped table-hover",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "th",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Mellantid"
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Total tid"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": "Deltagare"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Klockan"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:51:57"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "11 3 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:03 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "2:51:57"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "11 3 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "12:52:04"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "26 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:24:17"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "6 3 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:32 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "5:16:14"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "8 3 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "15:16:21"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Totalt"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:16:14"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "8 3 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:16 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "5:16:14"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "8 3 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "15:16:21"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "sportstiming_result_id": "7792756",
+      "source_url": "https://www.sportstiming.dk/event/16880/app/results/7792756",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results/7792756",
+      "source_sha256": "c445542f8cb8266560110d32b4c81626e76992cdd23e72dfd00e745dc8c557ab",
+      "tables": [
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Håkan Sandberg LPSIK"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:19:54 Nettotid"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "6 av 264 Män"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Klass"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "CRAFT Ultra 60 k"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Total"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "9 av 367"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Män"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "6 av 264"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "45-49 män"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "2 av 42"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Nettotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:19:54"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Bruttotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:19:57"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Starttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "10:00:08"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sluttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "15:20:02"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Datum"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "den 18 april 2026"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Hastighet"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "11,25 km/t"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:19 min/km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 max (Beräknad)"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "41,4 (ml / kg / min)"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 rating"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Håkan Sandberg"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "LPSIK"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sverige"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Man, 49 år"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "45-49 män Åldersgrupp beräknas utifrån ålderens ålder. Åldern på den 18 april 2026."
+              }
+            ]
+          ]
+        },
+        {
+          "class": "splits-table table table-striped table-hover",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "th",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Mellantid"
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Total tid"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": "Deltagare"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Klockan"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:48:17"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "8 6 2"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "4:56 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "2:48:17"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "8 6 2"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "12:48:25"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "26 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:31:37"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "10 7 2"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:49 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "5:19:54"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "9 6 2"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "15:20:02"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Totalt"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:19:54"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "9 6 2"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:19 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "5:19:54"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "9 6 2"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "15:20:02"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "sportstiming_result_id": "7798220",
+      "source_url": "https://www.sportstiming.dk/event/16880/app/results/7798220",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results/7798220",
+      "source_sha256": "4d069aff81a5c8b163b8ec0aa8c70b5d1dbc4a538f09ca5e360998b68167feb2",
+      "tables": [
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Styrling Tangusso Slottsstaden RC"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:20:36 Nettotid"
+              }
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "7 av 264 Män"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Klass"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "CRAFT Ultra 60 k"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Total"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "10 av 367"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Män"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "7 av 264"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "25-29 män"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "1 av 18"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Nettotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:20:36"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Bruttotid"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:20:40"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Starttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "10:00:08"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Sluttidspunkt"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "15:20:44"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Datum"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "den 18 april 2026"
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Hastighet"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "11,23 km/t"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "5:20 min/km"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 max (Beräknad)"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "41,3 (ml / kg / min)"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "VO2 rating"
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              }
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Styrling Tangusso"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Slottsstaden RC"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "USA"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Man, 28 år"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text": "25-29 män Åldersgrupp beräknas utifrån ålderens ålder. Åldern på den 18 april 2026."
+              }
+            ]
+          ]
+        },
+        {
+          "class": "splits-table table table-striped table-hover",
+          "id": null,
+          "rows": [
+            [
+              {
+                "tag": "th",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Mellantid"
+              },
+              {
+                "tag": "th",
+                "class": "splits-vertdivide",
+                "text": "Total tid"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Distans"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": "Deltagare"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "Tempo"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "Tid"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Placering"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "Klockan"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "34 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:52:13"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "12 9 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:03 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "2:52:13"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "12 9 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "12:52:21"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "26 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "2:28:23"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "7 4 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:42 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "5:20:36"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "10 7 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "15:20:44"
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text": "Totalt"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "60 km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol hidden",
+                "text": ""
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:20:36"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "10 7 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol",
+                "text": "5:20 min/km"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol splits-vertdivide",
+                "text": "5:20:36"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "10 7 1"
+              },
+              {
+                "tag": "td",
+                "class": "splits-valuecol ",
+                "text": "15:20:44"
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "provenance_note": "Public Sportstiming /app views; structured source tables preserved without inventing missing fields."
+}
