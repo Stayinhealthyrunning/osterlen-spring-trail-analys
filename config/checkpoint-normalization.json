@@ -1,11 +1,26 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "principles": [
     "Always retain the original Sportstiming checkpoint_source_label and raw checkpoint_key.",
     "Semantic checkpoint mapping is year-specific because course and timing layouts changed.",
     "Named timing observations outrank distance-only aliases when both exist.",
     "For 2022/2023, 32 km and Bengtemölla are not collapsed: Sportstiming reports only 0.1 km between them, but aggregate elapsed gaps are too large and variable to treat them as duplicate readings.",
-    "A distance-only checkpoint may map to a landmark with high confidence when organizer/route geometry independently places the named landmark at the same rounded distance; the confidence and evidence must remain explicit."
+    "A distance-only checkpoint may map to a landmark with high confidence when organizer/route geometry independently places the named landmark at the same rounded distance; the confidence and evidence must remain explicit.",
+    "Operational interpretations such as prewarning, aid-station entry or aid-station exit remain hypotheses until physical mat placement or organizer documentation verifies them."
+  ],
+  "working_hypotheses": [
+    {
+      "years": [2022, 2023],
+      "landmark": "bengtemolla",
+      "hypothesis": "The 32 km observation is an approach/prewarning reading and the named Bengtemölla observation is recorded on departure after the runner has passed through the aid station.",
+      "status": "plausible_not_verified",
+      "basis": [
+        "Sportstiming orders 32 km immediately before Bengtemölla and reports only 0.1 km/100 m between the observations.",
+        "Across 60-runner samples the elapsed gap is much longer and more variable than ordinary running time for 100 m: median 255 s in 2022 and 142.5 s in 2023.",
+        "A runner familiar with the event considers a speaker prewarning followed by a departure mat after food/drink service plausible."
+      ],
+      "analysis_rule": "Use Bengtemölla as the canonical checkpoint. Preserve 32 km separately. The difference may be exposed as an aid-station/service-window candidate but must not be labelled confirmed stationary dwell time."
+    }
   ],
   "mappings": [
     {"years":[2018,2019],"source_labels":["Stenshuvud km 14"],"semantic_key":"stenshuvud","role":"timing_checkpoint","analysis_primary":true,"confidence":"source_named"},
@@ -15,7 +30,7 @@
     {"years":[2019],"source_labels":["Finish Km 60+"],"semantic_key":"finish","role":"finish","analysis_primary":true,"confidence":"source_named"},
 
     {"years":[2022,2023],"source_labels":["32 km"],"semantic_key":"bengtemolla_approach","canonical_landmark_key":"bengtemolla","role":"approach_or_prewarning_candidate","analysis_primary":false,"confidence":"inferred_from_order_and_0.1km_source_segment","evidence":"Immediately precedes named Bengtemölla in Sportstiming; source segment distance is 100 meter/0.1 km. Aggregate 60-runner samples show median gaps 255 s (2022) and 142.5 s (2023), so it is retained separately."},
-    {"years":[2022,2023],"source_labels":["Bengtemölla"],"semantic_key":"bengtemolla","role":"named_aid_station_timing","analysis_primary":true,"confidence":"source_named","evidence":"Use as the named Bengtemölla checkpoint while retaining the preceding 32 km timing observation separately."},
+    {"years":[2022,2023],"source_labels":["Bengtemölla"],"semantic_key":"bengtemolla","role":"named_aid_station_timing_exit_candidate","analysis_primary":true,"confidence":"source_named_operational_phase_unverified","evidence":"Use as the canonical named Bengtemölla checkpoint while retaining the preceding 32 km observation. Working hypothesis: this reading may be at aid-station departure after service, but mat placement is not independently verified."},
     {"years":[2022,2023],"source_labels":["62 km"],"semantic_key":"finish","role":"finish","analysis_primary":true,"confidence":"source_distance_finish_context"},
 
     {"years":[2024,2025,2026],"source_labels":["34 km"],"semantic_key":"bengtemolla","role":"aid_station_timing","analysis_primary":true,"confidence":"high_distance_geometry_match","evidence":"Distance-only timing label. Bengtemölla is independently placed at about 33.5-33.6 km by route/waypoint evidence, so 34 km is treated as its rounded timing checkpoint while the source label remains visible."},
@@ -26,8 +41,9 @@
       "years":[2022,2023],
       "from_semantic_key":"bengtemolla_approach",
       "to_semantic_key":"bengtemolla",
-      "metric_key":"bengtemolla_between_mats_seconds",
-      "interpretation":"Elapsed time between the two timing observations. It may contain approach, aid-station stop/service, and/or departure time; do not label it pure aid-station dwell until physical mat placement is independently verified."
+      "metric_key":"bengtemolla_service_window_seconds",
+      "legacy_metric_key":"bengtemolla_between_mats_seconds",
+      "interpretation":"Elapsed time between the two observations. Under the working hypothesis it approximates approach plus aid-station service until departure, but it must remain labelled a service-window candidate until physical mat placement is verified."
     }
   ]
 }
