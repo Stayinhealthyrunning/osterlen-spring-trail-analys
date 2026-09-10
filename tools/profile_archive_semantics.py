@@ -36,6 +36,7 @@ def safe_cell(text, has_member_link=False):
  if has_member_link:return '<LINKED_TEXT>'
  if not text:return '<EMPTY>'
  if SAFE_LABEL_RE.fullmatch(text):return text
+ if re.fullmatch(r'[0-9]',text):return text
  if re.fullmatch(r'\d+(?:[.,]\d+)?',text):return '<NUMBER>'
  if re.fullmatch(r'\d{1,2}:\d{2}(?::\d{2})?',text):return '<TIME>'
  if re.fullmatch(r'\d+(?:[.,]\d+)?\s*km',text,re.I):return '<DISTANCE>'
@@ -44,12 +45,11 @@ def safe_cell(text, has_member_link=False):
 def main():
  with tempfile.TemporaryDirectory(prefix='ost-sem-') as td:
   db=Path(td)/'a.sqlite'
-  with gzip.open(GZ,'rb') as f, db.open('wb') as o: shutil.copyfileobj(f,o)
-  con=sqlite3.connect(db); con.row_factory=sqlite3.Row
-  unknown=defaultdict(Counter); unknown_features=defaultdict(Counter)
+  with gzip.open(GZ,'rb') as f, db.open('wb') as o:shutil.copyfileobj(f,o)
+  con=sqlite3.connect(db);con.row_factory=sqlite3.Row
+  unknown=defaultdict(Counter);unknown_features=defaultdict(Counter)
   for r in con.execute("SELECT year,race_family,entity_type,normalized_json FROM results WHERE status='UNKNOWN'"):
-   obj=json.loads(r['normalized_json']); key=f"{r['year']}:{r['race_family']}:{r['entity_type']}"
-   sts=statuses(obj); unknown[key]['total']+=1
+   obj=json.loads(r['normalized_json']);key=f"{r['year']}:{r['race_family']}:{r['entity_type']}";sts=statuses(obj);unknown[key]['total']+=1
    if sts:
     for s in sts:unknown[key][s]+=1
    else:unknown[key]['no_explicit_status_word']+=1
@@ -57,50 +57,36 @@ def main():
    if obj.get('start_clock'):unknown_features[key]['has_start_clock']+=1
    if obj.get('overall_place') is not None:unknown_features[key]['has_overall_place']+=1
 
-  relay_tables=Counter(); relay_row_shapes=Counter(); relay_safe_labels=Counter(); relay_links=Counter()
-  relay_years=defaultdict(Counter); member_link_counts=defaultdict(Counter); linked_row_contexts=Counter(); relay_split_labels=defaultdict(Counter)
+  relay_tables=Counter();relay_row_shapes=Counter();relay_safe_labels=Counter();relay_links=Counter()
+  relay_years=defaultdict(Counter);member_link_counts=defaultdict(Counter);linked_row_contexts=Counter();relay_split_labels=defaultdict(Counter)
   for r in con.execute("SELECT year,normalized_json FROM results WHERE race_family='duo60'"):
-   obj=json.loads(r['normalized_json']); raw=obj.get('raw_record',{}); year=str(r['year'])
-   relay_years[year]['teams']+=1; team_member_links=0
+   obj=json.loads(r['normalized_json']);raw=obj.get('raw_record',{});year=str(r['year']);relay_years[year]['teams']+=1;team_member_links=0
    for t in raw.get('tables',[]):
-    relay_tables[(t.get('class') or '',t.get('id') or '')]+=1
-    header=None
-    is_splits='splits-table' in (t.get('class') or '')
+    relay_tables[(t.get('class') or '',t.get('id') or '')]+=1;header=None;is_splits='splits-table' in (t.get('class') or '')
     for row in t.get('rows',[]):
-     if row and all((c.get('tag') or '').lower()=='th' for c in row):header=tuple(safe_cell(c.get('text')) for c in row)
+     if row and all((c.get('tag') or '').lower()=='th' for c in row):header=tuple((c.get('text') or '').strip() or '<EMPTY>' for c in row)
      texts=[(c.get('text') or '').strip() for c in row]
      if is_splits and texts:
       label=texts[0]
-      if label and label.lower() not in ('distans','totalt') and not label.lower().startswith('mellantid'):
-       relay_split_labels[year][label]+=1
-     shape=tuple(('EMPTY' if not x else ('TIME' if re.fullmatch(r'\d{1,2}:\d{2}(?::\d{2})?',x) else 'TEXT')) for x in texts)
-     relay_row_shapes[(len(texts),shape)]+=1
+      if label and label.lower() not in ('distans','totalt') and not label.lower().startswith('mellantid'):relay_split_labels[year][label]+=1
+     shape=tuple(('EMPTY' if not x else ('TIME' if re.fullmatch(r'\d{1,2}:\d{2}(?::\d{2})?',x) else 'TEXT')) for x in texts);relay_row_shapes[(len(texts),shape)]+=1
      if texts and SAFE_LABEL_RE.fullmatch(texts[0]):relay_safe_labels[texts[0]]+=1
      member_positions=[]
      for idx,c in enumerate(row):
       for href in c.get('links',[]):
-       h=re.sub(r'\d+','{id}',href); relay_links[h]+=1
-       if MEMBER_LINK_RE.search(href):team_member_links+=1; member_positions.append(idx)
+       h=re.sub(r'\d+','{id}',href);relay_links[h]+=1
+       if MEMBER_LINK_RE.search(href):team_member_links+=1;member_positions.append(idx)
      if member_positions:
-      masked=tuple(safe_cell(c.get('text'),any(MEMBER_LINK_RE.search(h) for h in c.get('links',[]))) for c in row)
-      linked_row_contexts[(header or (),tuple(member_positions),masked)]+=1
+      masked=tuple(safe_cell(c.get('text'),any(MEMBER_LINK_RE.search(h) for h in c.get('links',[]))) for c in row);linked_row_contexts[(header or (),tuple(member_positions),masked)]+=1
    member_link_counts[year][team_member_links]+=1
   con.close()
- report={
-  'schema_version':3,
-  'unknown_status':{k:dict(v) for k,v in sorted(unknown.items())},
-  'unknown_features':{k:dict(v) for k,v in sorted(unknown_features.items())},
-  'relay':{
-   'by_year':{k:dict(v) for k,v in sorted(relay_years.items())},
-   'split_source_labels_by_year':{y:dict(c.most_common()) for y,c in sorted(relay_split_labels.items())},
+ report={'schema_version':4,'unknown_status':{k:dict(v) for k,v in sorted(unknown.items())},'unknown_features':{k:dict(v) for k,v in sorted(unknown_features.items())},'relay':{
+   'by_year':{k:dict(v) for k,v in sorted(relay_years.items())},'split_source_labels_by_year':{y:dict(c.most_common()) for y,c in sorted(relay_split_labels.items())},
    'member_links_per_team_by_year':{y:{str(k):v for k,v in sorted(c.items())} for y,c in sorted(member_link_counts.items())},
    'table_signatures':[{'class':k[0],'id':k[1],'count':v} for k,v in relay_tables.most_common()],
-   'safe_first_cell_labels':dict(relay_safe_labels.most_common()),
-   'link_patterns':dict(relay_links.most_common()),
+   'safe_first_cell_labels':dict(relay_safe_labels.most_common()),'link_patterns':dict(relay_links.most_common()),
    'linked_row_contexts':[{'header':list(k[0]),'member_link_columns':list(k[1]),'row':list(k[2]),'count':v} for k,v in linked_row_contexts.most_common(30)],
-   'row_shapes':[{'columns':k[0],'shape':list(k[1]),'count':v} for k,v in relay_row_shapes.most_common(30)],
-  }
- }
+   'row_shapes':[{'columns':k[0],'shape':list(k[1]),'count':v} for k,v in relay_row_shapes.most_common(30)]}}
  OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
  lines=['# Semantikprofil för fryst resultatarkiv','', '## Olösta statusar','', '| Grupp | Totalt | DNF-ord | DNS-ord | DSQ-ord | Utan explicit statusord | Har splits |','|---|---:|---:|---:|---:|---:|---:|']
  for k,v in sorted(unknown.items()):
@@ -115,6 +101,5 @@ def main():
  for k,v in relay_links.most_common():lines.append(f'- `{k}`: {v}')
  lines += ['','## Duo – anonymiserade rader med medlemslänk','']
  for (hdr,pos,row),v in linked_row_contexts.most_common(20):lines.append(f'- header={list(hdr)}; linkkolumn={list(pos)}; rad={list(row)}; n={v}')
- OUTMD.write_text('\n'.join(lines)+'\n',encoding='utf-8')
- print(json.dumps(report,ensure_ascii=False,indent=2))
+ OUTMD.write_text('\n'.join(lines)+'\n',encoding='utf-8');print(json.dumps(report,ensure_ascii=False,indent=2))
 if __name__=='__main__':main()
