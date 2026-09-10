@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-10T11:56:34.646101+00:00",
+  "generated_at": "2026-09-10T13:29:36.933602+00:00",
   "privacy": "Runner/team names are not stored; visible text is reduced to token shapes and lengths.",
   "editions": [
     {
@@ -10,7 +10,7 @@
       "source_label": "Duo Trail (relay 2 x 30 km)",
       "url": "https://www.sportstiming.dk/event/5719/app/results?round=20390&page=1",
       "final_url": "https://www.sportstiming.dk/event/5719/app/results?round=20390&page=1",
-      "source_sha256": "28b5eb1e190802a39d02b1fdd9fa773194c3fd58526d2c7195c504939b677b6f",
+      "source_sha256": "25d0ee6f60cd94a1b454c900b720539b2b68f268e95fd51e5e19a04293b88ecf",
       "html_bytes": 27797,
       "tables": [
         {
@@ -428,7 +428,7 @@
       "source_label": "Duo Trail (relay 2 x 30 km)",
       "url": "https://www.sportstiming.dk/event/9587/app/results?round=46209&page=1",
       "final_url": "https://www.sportstiming.dk/event/9587/app/results?round=46209&page=1",
-      "source_sha256": "f834cb03373c8f303ac9540f3cd6a372597d393a7abe88ec3349d7ab171c9817",
+      "source_sha256": "6462b8c917257905e904efa22a4071ff1b523ca51e91015ea57df8ce989a9807",
       "html_bytes": 40052,
       "tables": [
         {
@@ -1014,7 +1014,7 @@
       "source_label": "Duo Trail (relay 2 x 30 km)",
       "url": "https://www.sportstiming.dk/event/11274/app/results?round=58348&page=1",
       "final_url": "https://www.sportstiming.dk/event/11274/app/results?round=58348&page=1",
-      "source_sha256": "4736837435dee42ff681fe00687666ce320d92618877a0870ca18d47ec3a8b43",
+      "source_sha256": "894a1c58770d82a875108c306fcda828cb1aec2c7343da8adb0be63fa89a2490",
       "html_bytes": 42679,
       "tables": [
         {
@@ -1600,7 +1600,7 @@
       "source_label": "Duo Trail (relay 2 x 30 km)",
       "url": "https://www.sportstiming.dk/event/12349/app/results?round=65784&page=1",
       "final_url": "https://www.sportstiming.dk/event/12349/app/results?round=65784&page=1",
-      "source_sha256": "70f9995d0a94f8e56ad1eedda20a97cf5aea41a0c2232c17fbdd52b6200fd4ca",
+      "source_sha256": "631100458e49363e3823a644c58fb4d6f214c9ddd2559fc67fc82bc735e66ef3",
       "html_bytes": 34713,
       "tables": [
         {
@@ -2130,7 +2130,7 @@
       "source_label": "Duo Trail (relay 2 x 30 km)",
       "url": "https://www.sportstiming.dk/event/15015/app/results?round=84443&page=1",
       "final_url": "https://www.sportstiming.dk/event/15015/app/results?round=84443&page=1",
-      "source_sha256": "74812ee40d3b9708ae18cdf3cbf1235a179e40427651268a4a23df8f91957fff",
+      "source_sha256": "b9011bfab292d44a6a09ddea48cf405e2aa141b96608b4fa88890fe4598c6975",
       "html_bytes": 35009,
       "tables": [
         {
@@ -2660,7 +2660,7 @@
       "source_label": "Duo Trail (relay 2 x 30 km)",
       "url": "https://www.sportstiming.dk/event/16880/app/results?round=97080&page=1",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97080&page=1",
-      "source_sha256": "8c228581b9707ce3145d21f8c14433e4e5823639aa0d6a51593209987421a941",
+      "source_sha256": "665261b30fed21ec3c3c29bc0c25bdca3051b4a6eeb4ce85aa89913a1d627eff",
       "html_bytes": 36032,
       "tables": [
         {
