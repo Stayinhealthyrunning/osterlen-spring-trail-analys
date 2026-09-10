@@ -47,7 +47,8 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add reports/source-coverage.json reports/source-coverage.md reports/analysis-capabilities.md reports/race-catalog-enriched.md data/derived/analysis-capabilities.json data/derived/race-catalog-enriched.json
+          git add reports/source-coverage.json reports/source-coverage.md reports/analysis-capabilities.md reports/race-catalog-enriched.md
+          git add -f data/derived/analysis-capabilities.json data/derived/race-catalog-enriched.json
           if git diff --cached --quiet; then
             echo 'No changes.'
           else
