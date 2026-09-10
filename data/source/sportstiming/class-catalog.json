@@ -1,0 +1,252 @@
+{
+  "schema_version": 1,
+  "generated_from": "reports/sportstiming-structure.json",
+  "editions": [
+    {
+      "year": 2018,
+      "event_id": 4950,
+      "classes": [
+        {
+          "sportstiming_distance_id": "15266",
+          "source_label": "Simris Alg Ultra 60km+ (ca. 1150m höjdmeter)",
+          "race_family": "ultra60",
+          "canonical_nominal_km": 60
+        },
+        {
+          "sportstiming_distance_id": "15268",
+          "source_label": "Verkeån trail 21km+ (ca. 500m höjdmeter)",
+          "race_family": "trail22",
+          "canonical_nominal_km": 22
+        },
+        {
+          "sportstiming_distance_id": "15265",
+          "source_label": "Naturloppet 5km+",
+          "race_family": "trail5",
+          "canonical_nominal_km": 5
+        },
+        {
+          "sportstiming_distance_id": "15269",
+          "source_label": "Ekopark trail 13 km",
+          "race_family": "trail14",
+          "canonical_nominal_km": 14
+        }
+      ]
+    },
+    {
+      "year": 2019,
+      "event_id": 5719,
+      "classes": [
+        {
+          "sportstiming_distance_id": "20385",
+          "source_label": "Simris Alg Ultra 60km+ (ca. 1450m höjdmeter)",
+          "race_family": "ultra60",
+          "canonical_nominal_km": 60
+        },
+        {
+          "sportstiming_distance_id": "20387",
+          "source_label": "Verkeån trail 21km+",
+          "race_family": "trail22",
+          "canonical_nominal_km": 22
+        },
+        {
+          "sportstiming_distance_id": "20390",
+          "source_label": "Duo Trail (relay 2 x 30 km)",
+          "race_family": "duo60",
+          "canonical_nominal_km": 60
+        },
+        {
+          "sportstiming_distance_id": "20384",
+          "source_label": "Naturloppet 5km+",
+          "race_family": "trail5",
+          "canonical_nominal_km": 5
+        },
+        {
+          "sportstiming_distance_id": "20388",
+          "source_label": "Ekopark trail 13 km",
+          "race_family": "trail14",
+          "canonical_nominal_km": 14
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "event_id": 9587,
+      "classes": [
+        {
+          "sportstiming_distance_id": "46204",
+          "source_label": "Ultra 60km+",
+          "race_family": "ultra60",
+          "canonical_nominal_km": 60
+        },
+        {
+          "sportstiming_distance_id": "46206",
+          "source_label": "Teleservice trail 21km+",
+          "race_family": "trail22",
+          "canonical_nominal_km": 22
+        },
+        {
+          "sportstiming_distance_id": "46209",
+          "source_label": "Duo Trail (relay 2 x 30 km)",
+          "race_family": "duo60",
+          "canonical_nominal_km": 60
+        },
+        {
+          "sportstiming_distance_id": "46207",
+          "source_label": "Ekopark trail 13 km",
+          "race_family": "trail14",
+          "canonical_nominal_km": 14
+        },
+        {
+          "sportstiming_distance_id": "46203",
+          "source_label": "Naturloppet 5km+",
+          "race_family": "trail5",
+          "canonical_nominal_km": 5
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "event_id": 11274,
+      "classes": [
+        {
+          "sportstiming_distance_id": "58343",
+          "source_label": "Ultra 60km+",
+          "race_family": "ultra60",
+          "canonical_nominal_km": 60
+        },
+        {
+          "sportstiming_distance_id": "58345",
+          "source_label": "Fogarolli trail 21km+",
+          "race_family": "trail22",
+          "canonical_nominal_km": 22
+        },
+        {
+          "sportstiming_distance_id": "58348",
+          "source_label": "Duo Trail (relay 2 x 30 km)",
+          "race_family": "duo60",
+          "canonical_nominal_km": 60
+        },
+        {
+          "sportstiming_distance_id": "58346",
+          "source_label": "Ekopark trail 13 km",
+          "race_family": "trail14",
+          "canonical_nominal_km": 14
+        },
+        {
+          "sportstiming_distance_id": "58342",
+          "source_label": "Naturloppet 5km+",
+          "race_family": "trail5",
+          "canonical_nominal_km": 5
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "event_id": 12349,
+      "classes": [
+        {
+          "sportstiming_distance_id": "65781",
+          "source_label": "60 k ÖST ultra med COROS",
+          "race_family": "ultra60",
+          "canonical_nominal_km": 60
+        },
+        {
+          "sportstiming_distance_id": "65782",
+          "source_label": "Fogarolli trail 21km+",
+          "race_family": "trail22",
+          "canonical_nominal_km": 22
+        },
+        {
+          "sportstiming_distance_id": "65784",
+          "source_label": "Duo Trail (relay 2 x 30 km)",
+          "race_family": "duo60",
+          "canonical_nominal_km": 60
+        },
+        {
+          "sportstiming_distance_id": "65783",
+          "source_label": "Ekopark trail 14 km",
+          "race_family": "trail14",
+          "canonical_nominal_km": 14
+        },
+        {
+          "sportstiming_distance_id": "65780",
+          "source_label": "Naturloppet 5km+",
+          "race_family": "trail5",
+          "canonical_nominal_km": 5
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "event_id": 15015,
+      "classes": [
+        {
+          "sportstiming_distance_id": "84440",
+          "source_label": "CRAFT Ultra 60 k",
+          "race_family": "ultra60",
+          "canonical_nominal_km": 60
+        },
+        {
+          "sportstiming_distance_id": "84441",
+          "source_label": "Fogarolli trail 22 K",
+          "race_family": "trail22",
+          "canonical_nominal_km": 22
+        },
+        {
+          "sportstiming_distance_id": "84443",
+          "source_label": "Duo Trail (relay 2 x 30 km)",
+          "race_family": "duo60",
+          "canonical_nominal_km": 60
+        },
+        {
+          "sportstiming_distance_id": "84442",
+          "source_label": "Ekopark trail 14 km",
+          "race_family": "trail14",
+          "canonical_nominal_km": 14
+        },
+        {
+          "sportstiming_distance_id": "84439",
+          "source_label": "Naturloppet 5km+",
+          "race_family": "trail5",
+          "canonical_nominal_km": 5
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "event_id": 16880,
+      "classes": [
+        {
+          "sportstiming_distance_id": "97077",
+          "source_label": "CRAFT Ultra 60 k",
+          "race_family": "ultra60",
+          "canonical_nominal_km": 60
+        },
+        {
+          "sportstiming_distance_id": "97078",
+          "source_label": "Fogarolli trail 22 K",
+          "race_family": "trail22",
+          "canonical_nominal_km": 22
+        },
+        {
+          "sportstiming_distance_id": "97080",
+          "source_label": "Duo Trail (relay 2 x 30 km)",
+          "race_family": "duo60",
+          "canonical_nominal_km": 60
+        },
+        {
+          "sportstiming_distance_id": "97079",
+          "source_label": "Söderberg & Sara 14K",
+          "race_family": null,
+          "canonical_nominal_km": null
+        },
+        {
+          "sportstiming_distance_id": "97076",
+          "source_label": "Naturloppet 5km+",
+          "race_family": "trail5",
+          "canonical_nominal_km": 5
+        }
+      ]
+    }
+  ]
+}
