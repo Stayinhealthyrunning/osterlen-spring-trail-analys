@@ -1,0 +1,590 @@
+{
+  "event_id": 16880,
+  "round_id": 97077,
+  "samples": [
+    {
+      "result_id": "7793098",
+      "tables": [
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              "",
+              "Christian Malmström Team Blekinge / Irunteam"
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              "",
+              "4:35:01 Nettotid"
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              "",
+              "1 av 264 Män"
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              "Klass",
+              "CRAFT Ultra 60 k"
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              "Total",
+              "1 av 367"
+            ],
+            [
+              "Män",
+              "1 av 264"
+            ],
+            [
+              "45-49 män",
+              "1 av 42"
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              "Distans",
+              "60 km"
+            ],
+            [
+              "Nettotid",
+              "4:35:01"
+            ],
+            [
+              "Bruttotid",
+              "4:35:04"
+            ],
+            [
+              "Starttidspunkt",
+              "10:00:06"
+            ],
+            [
+              "Sluttidspunkt",
+              "14:35:08"
+            ],
+            [
+              "Datum",
+              "den 18 april 2026"
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              "Hastighet",
+              "13,09 km/t"
+            ],
+            [
+              "Tempo",
+              "4:35 min/km"
+            ],
+            [
+              "VO2 max (Beräknad)",
+              "49,8 (ml / kg / min)"
+            ],
+            [
+              "VO2 rating",
+              ""
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              "",
+              "Christian Malmström"
+            ],
+            [
+              "",
+              "Team Blekinge / Irunteam"
+            ],
+            [
+              "",
+              "Sverige"
+            ],
+            [
+              "",
+              "Man, 46 år"
+            ],
+            [
+              "",
+              "45-49 män Åldersgrupp beräknas utifrån ålderens ålder. Åldern på den 18 april 2026."
+            ]
+          ]
+        },
+        {
+          "class": "splits-table table table-striped table-hover",
+          "id": null,
+          "rows": [
+            [
+              "",
+              "Mellantid",
+              "Total tid"
+            ],
+            [
+              "",
+              "Distans",
+              "Deltagare",
+              "Tid",
+              "Placering",
+              "Tempo",
+              "Tid",
+              "Placering",
+              "Klockan"
+            ],
+            [
+              "34 km",
+              "34 km",
+              "",
+              "2:29:57",
+              "2 2 1",
+              "4:24 min/km",
+              "2:29:57",
+              "2 2 1",
+              "12:30:03"
+            ],
+            [
+              "60 km",
+              "26 km",
+              "",
+              "2:05:04",
+              "1 1 1",
+              "4:48 min/km",
+              "4:35:01",
+              "1 1 1",
+              "14:35:07"
+            ],
+            [
+              "Totalt",
+              "60 km",
+              "",
+              "4:35:01",
+              "1 1 1",
+              "4:35 min/km",
+              "4:35:01",
+              "1 1 1",
+              "14:35:07"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "result_id": "7796216",
+      "tables": [
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              "",
+              "Daniel Bränholm Hälle IF / Craft Run Team"
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              "",
+              "4:36:48 Nettotid"
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              "",
+              "2 av 264 Män"
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              "Klass",
+              "CRAFT Ultra 60 k"
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              "Total",
+              "2 av 367"
+            ],
+            [
+              "Män",
+              "2 av 264"
+            ],
+            [
+              "35-39 män",
+              "1 av 41"
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              "Distans",
+              "60 km"
+            ],
+            [
+              "Nettotid",
+              "4:36:48"
+            ],
+            [
+              "Bruttotid",
+              "4:36:51"
+            ],
+            [
+              "Starttidspunkt",
+              "10:00:06"
+            ],
+            [
+              "Sluttidspunkt",
+              "14:36:55"
+            ],
+            [
+              "Datum",
+              "den 18 april 2026"
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              "Hastighet",
+              "13,01 km/t"
+            ],
+            [
+              "Tempo",
+              "4:36 min/km"
+            ],
+            [
+              "VO2 max (Beräknad)",
+              "49,4 (ml / kg / min)"
+            ],
+            [
+              "VO2 rating",
+              ""
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              "",
+              "Daniel Bränholm"
+            ],
+            [
+              "",
+              "Hälle IF / Craft Run Team"
+            ],
+            [
+              "",
+              "Sverige"
+            ],
+            [
+              "",
+              "Man, 39 år"
+            ],
+            [
+              "",
+              "35-39 män Åldersgrupp beräknas utifrån ålderens ålder. Åldern på den 18 april 2026."
+            ]
+          ]
+        },
+        {
+          "class": "splits-table table table-striped table-hover",
+          "id": null,
+          "rows": [
+            [
+              "",
+              "Mellantid",
+              "Total tid"
+            ],
+            [
+              "",
+              "Distans",
+              "Deltagare",
+              "Tid",
+              "Placering",
+              "Tempo",
+              "Tid",
+              "Placering",
+              "Klockan"
+            ],
+            [
+              "34 km",
+              "34 km",
+              "",
+              "2:24:33",
+              "1 1 1",
+              "4:15 min/km",
+              "2:24:33",
+              "1 1 1",
+              "12:24:39"
+            ],
+            [
+              "60 km",
+              "26 km",
+              "",
+              "2:12:15",
+              "3 2 1",
+              "5:05 min/km",
+              "4:36:48",
+              "2 2 1",
+              "14:36:54"
+            ],
+            [
+              "Totalt",
+              "60 km",
+              "",
+              "4:36:48",
+              "2 2 1",
+              "4:36 min/km",
+              "4:36:48",
+              "2 2 1",
+              "14:36:54"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "result_id": "7792471",
+      "tables": [
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              "",
+              "Jakob Helander"
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              "",
+              "4:48:01 Nettotid"
+            ]
+          ]
+        },
+        {
+          "class": null,
+          "id": null,
+          "rows": [
+            [
+              "",
+              "3 av 264 Män"
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              "Klass",
+              "CRAFT Ultra 60 k"
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              "Total",
+              "3 av 367"
+            ],
+            [
+              "Män",
+              "3 av 264"
+            ],
+            [
+              "35-39 män",
+              "2 av 41"
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              "Distans",
+              "60 km"
+            ],
+            [
+              "Nettotid",
+              "4:48:01"
+            ],
+            [
+              "Bruttotid",
+              "4:48:04"
+            ],
+            [
+              "Starttidspunkt",
+              "10:00:07"
+            ],
+            [
+              "Sluttidspunkt",
+              "14:48:08"
+            ],
+            [
+              "Datum",
+              "den 18 april 2026"
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              "Hastighet",
+              "12,50 km/t"
+            ],
+            [
+              "Tempo",
+              "4:48 min/km"
+            ],
+            [
+              "VO2 max (Beräknad)",
+              "47,1 (ml / kg / min)"
+            ],
+            [
+              "VO2 rating",
+              ""
+            ]
+          ]
+        },
+        {
+          "class": "table",
+          "id": null,
+          "rows": [
+            [
+              "",
+              "Jakob Helander"
+            ],
+            [
+              "",
+              "Sverige"
+            ],
+            [
+              "",
+              "Man, 36 år"
+            ],
+            [
+              "",
+              "35-39 män Åldersgrupp beräknas utifrån ålderens ålder. Åldern på den 18 april 2026."
+            ]
+          ]
+        },
+        {
+          "class": "splits-table table table-striped table-hover",
+          "id": null,
+          "rows": [
+            [
+              "",
+              "Mellantid",
+              "Total tid"
+            ],
+            [
+              "",
+              "Distans",
+              "Deltagare",
+              "Tid",
+              "Placering",
+              "Tempo",
+              "Tid",
+              "Placering",
+              "Klockan"
+            ],
+            [
+              "34 km",
+              "34 km",
+              "",
+              "2:30:03",
+              "3 3 2",
+              "4:24 min/km",
+              "2:30:03",
+              "3 3 2",
+              "12:30:10"
+            ],
+            [
+              "60 km",
+              "26 km",
+              "",
+              "2:17:58",
+              "4 3 2",
+              "5:18 min/km",
+              "4:48:01",
+              "3 3 2",
+              "14:48:08"
+            ],
+            [
+              "Totalt",
+              "60 km",
+              "",
+              "4:48:01",
+              "3 3 2",
+              "4:48 min/km",
+              "4:48:01",
+              "3 3 2",
+              "14:48:08"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
