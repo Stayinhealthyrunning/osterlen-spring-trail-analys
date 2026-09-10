@@ -1,0 +1,35 @@
+name: Discover Trace de Trail metadata
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/discover_tracedetrail_public.py'
+      - 'config/course-source-manifest.json'
+      - '.github/workflows/discover-tracedetrail.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Collect public trace metadata and waypoints
+        run: python tools/discover_tracedetrail_public.py
+      - name: Commit discovery data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/tracedetrail-public-discovery.json data/source/tracedetrail/waypoints.json
+          if git diff --cached --quiet; then
+            echo 'No changes.'
+          else
+            git commit -m 'Record Trace de Trail public route metadata'
+            git push
+          fi
