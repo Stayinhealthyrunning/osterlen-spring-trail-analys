@@ -63,4 +63,8 @@ Läs även:
 - **Historiska kön/ålder:** 2018, 2019 och 2023 saknar tillräckligt explicit publicerad information i den frysta källan.
 - **Fysisk Bengtemölla-tolkning:** approach/utpassage-hypotesen är plausibel men inte officiellt verifierad.
 
+## Slutlig handoff-regel
+
+Förberedelsefasen betraktas som avslutad när foundation-validatorn är grön på denna version av `main`. Därefter ska nästa utvecklingssteg vara adapter/integration mot den färdigrefaktorerade Gotaleden-kärnan — inte ny Sportstiming-import, ny banförstudie eller parallell frontend-fork.
+
 När Gotaleden-kärnan är färdig ska arbetet alltså börja med **adapter/integration mot den redan färdiga kuraterade ÖST-datan**, inte med en ny förstudie eller ny resultatimport.
