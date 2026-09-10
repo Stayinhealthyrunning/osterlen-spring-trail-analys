@@ -42,8 +42,6 @@ def platform_candidates(page_text: str):
         for value in re.findall(pat, page_text, re.I):
             if value not in found:
                 found.append(value)
-    # Safe fallbacks observed/expected for locale/platform naming. Failed attempts
-    # are normal POSTs to the same public download family, never auth bypasses.
     for value in ('fr', 'en', 'web', 'trace'):
         if value not in found:
             found.append(value)
@@ -68,6 +66,10 @@ def valid_gpx(raw: bytes):
     return (counts['trkpt'] + counts['rtept'] > 1), counts
 
 
+def preview(raw: bytes):
+    return ' '.join(raw[:500].decode('utf-8','replace').split())[:350]
+
+
 def post_download(op, platform: str, trace_id: int):
     endpoint = urllib.parse.urljoin(BASE, f'download/getFile/{platform}')
     fields = {
@@ -88,6 +90,8 @@ def post_download(op, platform: str, trace_id: int):
         'Accept': 'application/gpx+xml,application/xml,text/xml,*/*;q=0.8',
         'Content-Type': 'application/x-www-form-urlencoded',
         'Referer': f'https://tracedetrail.fr/fr/trace/{trace_id}',
+        'Origin': 'https://tracedetrail.fr',
+        'X-Requested-With': 'XMLHttpRequest',
     })
     with op.open(req, timeout=60) as r:
         return r.read(12_000_000), r.geturl(), dict(r.headers.items()), endpoint
@@ -99,8 +103,9 @@ def fetch_one(item, output_dir: Path):
     page_url = f'https://tracedetrail.fr/fr/trace/{tid}'
     page_raw, page_final, _ = get(op, page_url)
     page = page_raw.decode('utf-8', 'replace')
+    candidates=platform_candidates(page)
     attempts = []
-    for platform in platform_candidates(page):
+    for platform in candidates:
         try:
             raw, final, headers, endpoint = post_download(op, platform, tid)
             ok, counts = valid_gpx(raw)
@@ -112,6 +117,7 @@ def fetch_one(item, output_dir: Path):
                 'content_type': headers.get('Content-Type'),
                 'content_disposition': headers.get('Content-Disposition'),
                 'valid_gpx': ok,
+                'response_preview': None if ok else preview(raw),
             })
             if not ok:
                 continue
@@ -122,6 +128,7 @@ def fetch_one(item, output_dir: Path):
             return {
                 'family': item['family'], 'year': item['year'], 'trace_id': tid,
                 'source_page': page_final, 'download_endpoint': endpoint,
+                'platform_candidates': candidates,
                 'platform': platform, 'file': str(path.relative_to(ROOT)),
                 'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest(),
                 'point_counts': counts, 'attempts': attempts,
@@ -130,7 +137,8 @@ def fetch_one(item, output_dir: Path):
             attempts.append({'platform': platform, 'error': f'{type(exc).__name__}: {exc}'})
     return {
         'family': item['family'], 'year': item['year'], 'trace_id': tid,
-        'source_page': page_final, 'error': 'No candidate public download POST returned a valid GPX',
+        'source_page': page_final, 'platform_candidates':candidates,
+        'error': 'No candidate public download POST returned a valid GPX',
         'attempts': attempts,
     }
 
@@ -160,13 +168,14 @@ def main():
         results.append(result)
         if result.get('error'):
             print('  ERROR:', result['error'])
+            print('  platform candidates:', result.get('platform_candidates'))
             for a in result.get('attempts', []): print('   ', a)
         else:
             print(f"  OK: {result['file']} {result['bytes']} bytes {result['point_counts']}")
         time.sleep(0.15)
 
     payload = {
-        'schema_version': 1,
+        'schema_version': 2,
         'method': 'Normal public Trace de Trail route-only GPX download control; pi=0; no subscriber-only feature requested.',
         'results': results,
     }
