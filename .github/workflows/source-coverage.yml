@@ -6,10 +6,18 @@ on:
     branches: [main]
     paths:
       - 'config/course-source-manifest.json'
+      - 'config/years.json'
+      - 'config/race-families.json'
+      - 'config/course-versions.json'
+      - 'config/analysis-feature-policy.json'
       - 'data/source/gpx/**'
       - 'data/source/maps/**'
       - 'data/source/sportstiming/events.json'
+      - 'data/source/sportstiming/class-catalog.json'
+      - 'data/source/sportstiming/split-inventory.json'
+      - 'data/source/sportstiming/points-tracking-inventory.json'
       - 'tools/source_coverage.py'
+      - 'tools/build_analysis_capabilities.py'
       - '.github/workflows/source-coverage.yml'
 
 permissions:
@@ -20,18 +28,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python tools/source_coverage.py
+      - name: Build factual source coverage
+        run: python tools/source_coverage.py
+      - name: Build source-driven analysis capability matrix
+        run: python tools/build_analysis_capabilities.py
       - name: Commit reports
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add reports/source-coverage.json reports/source-coverage.md
+          git add reports/source-coverage.json reports/source-coverage.md reports/analysis-capabilities.md data/derived/analysis-capabilities.json
           if git diff --cached --quiet; then
             echo 'No changes.'
           else
-            git commit -m 'Update ÖST source coverage report'
-            git push
+            git commit -m 'Update ÖST source coverage and capabilities'
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
