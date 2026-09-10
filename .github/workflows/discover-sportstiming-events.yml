@@ -1,0 +1,35 @@
+name: Discover Sportstiming event metadata
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/discover_sportstiming_event_pages.py'
+      - 'data/source/sportstiming/events.json'
+      - '.github/workflows/discover-sportstiming-events.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Discover public event metadata
+        run: python tools/discover_sportstiming_event_pages.py
+      - name: Commit discovery report
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/sportstiming-event-discovery.json
+          if git diff --cached --quiet; then
+            echo 'No report changes.'
+          else
+            git commit -m 'Record Sportstiming event metadata discovery'
+            git push
+          fi
