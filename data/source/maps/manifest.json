@@ -1,0 +1,20 @@
+{
+  "sources": [
+    {
+      "family": "ultra60",
+      "year": [2025, 2026],
+      "source_type": "organizer_pdf",
+      "url": "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/craft-ultra-60-k-2.pdf",
+      "status": "verified_link_on_2026_organizer_roadbook",
+      "target_path": "data/source/maps/ost-ultra60-2025-2026-organizer-map.pdf"
+    },
+    {
+      "family": "trail22",
+      "year": 2019,
+      "source_type": "organizer_pdf",
+      "url": "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/verke%C3%A5n_trail_21km__2019_km.pdf",
+      "status": "verified",
+      "target_path": "data/source/maps/ost-trail21-2019-organizer-map.pdf"
+    }
+  ]
+}
