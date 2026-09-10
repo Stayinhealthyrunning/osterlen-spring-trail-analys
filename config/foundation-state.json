@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-09-10",
+  "status": "handoff_ready_for_generic_engine_integration",
+  "scope": {
+    "analysis_start_year": 2018,
+    "held_years": [2018, 2019, 2022, 2023, 2024, 2025, 2026],
+    "cancelled_years": [2020, 2021],
+    "race_families": ["ultra60", "duo60", "trail22", "trail14", "trail5"]
+  },
+  "prepared": {
+    "event_and_year_model": true,
+    "race_family_model": true,
+    "sportstiming_event_catalog": true,
+    "sportstiming_distance_class_catalog": true,
+    "sportstiming_split_schema_inventory": true,
+    "sportstiming_tracking_inventory": true,
+    "checkpoint_normalization_rules": true,
+    "bengtemolla_service_window_hypothesis_documented": true,
+    "ultra60_course_version_model": true,
+    "trail22_course_version_model_except_2018_provenance": true,
+    "public_route_geometry_comparison": true,
+    "official_route_asset_archiver": true,
+    "source_coverage_report": true,
+    "analysis_capability_policy": true,
+    "generic_engine_data_contract": true,
+    "generic_engine_adapter_contract": true,
+    "gotaleden_engine_handoff": true,
+    "foundation_consistency_validator": true,
+    "github_pages_placeholder": true
+  },
+  "verified_timing_schema": {
+    "ultra60": {
+      "2018": ["Stenshuvud km 14", "Bengtemölla km 32", "Vantalängan km 52", "Finish"],
+      "2019": ["Stenshuvud km 14", "Bengtemölla km 32", "Vantalängan km 52", "Finish Km 60+"],
+      "2022": ["32 km", "Bengtemölla", "62 km"],
+      "2023": ["32 km", "Bengtemölla", "62 km"],
+      "2024": ["34 km", "60 km"],
+      "2025": ["34 km", "60 km"],
+      "2026": ["34 km", "60 km"]
+    },
+    "shorter_families": "No split table observed in the current representative participant samples.",
+    "duo60": "Public result class exists, but a dedicated team/relay adapter is still required."
+  },
+  "course_model": {
+    "ultra60": {
+      "2018": "ultra60-2018",
+      "2019": "ultra60-2019",
+      "2022": "ultra60-2022-2023",
+      "2023": "ultra60-2022-2023",
+      "2024": "ultra60-2024",
+      "2025": "ultra60-2025-2026",
+      "2026": "ultra60-2025-2026"
+    },
+    "trail22": {
+      "2018": null,
+      "2019": "trail22-2019",
+      "2022": "trail22-2022-2024",
+      "2023": "trail22-2022-2024",
+      "2024": "trail22-2022-2024",
+      "2025": "trail22-2025-2026",
+      "2026": "trail22-2025-2026"
+    },
+    "trail14": "pending_route_archive",
+    "trail5": "pending_route_archive"
+  },
+  "deferred_until_next_phase": [
+    {
+      "key": "generic_engine_integration",
+      "reason": "Wait for the Gotaleden generic refactor to be complete so ÖST does not fork an obsolete core."
+    },
+    {
+      "key": "full_sportstiming_result_import",
+      "reason": "Schema and IDs are catalogued; production-grade all-page/raw-snapshot importer belongs in the implementation phase."
+    },
+    {
+      "key": "duo_team_adapter",
+      "reason": "Requires dedicated interpretation of Sportstiming relay/team result structure."
+    },
+    {
+      "key": "historical_local_route_assets",
+      "reason": "Older Ultra and Trail 21/22 public geometry can establish comparability but cannot automatically be redistributed as GPX."
+    },
+    {
+      "key": "trail14_trail5_course_versions",
+      "reason": "No complete verified year-by-year route geometry archive has been secured yet."
+    },
+    {
+      "key": "trail22_2018_assignment",
+      "reason": "Candidate public geometry is strongly compatible with 2019 but its Trace metadata is dated 2016, so year-specific provenance remains unresolved."
+    }
+  ],
+  "do_not_redo": [
+    "Do not rediscover Sportstiming event IDs already catalogued for 2018-2026.",
+    "Do not infer course identity from marketing distance labels.",
+    "Do not collapse the 2022/2023 32 km and Bengtemölla observations into a single raw timing row.",
+    "Do not label the 32 km to Bengtemölla gap as confirmed aid-station dwell time unless physical timing-mat placement is independently verified.",
+    "Do not copy the pre-refactor Gotaleden frontend wholesale into this repository."
+  ]
+}
