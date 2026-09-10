@@ -32,20 +32,24 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Apply builder placeholder correction
+      - name: Apply builder placeholder corrections
         run: |
           python - <<'PY'
           from pathlib import Path
           import re
           p=Path('tools/build_curated_analysis_db.py')
           s=p.read_text(encoding='utf-8')
-          pattern=r"INSERT INTO results VALUES\([^']*\)"
-          replacement='INSERT INTO results VALUES('+','.join(['?']*33)+')'
-          s2,n=re.subn(pattern,replacement,s,count=1)
-          if n!=1:
-            raise SystemExit(f'Expected one results INSERT pattern, found {n}')
-          p.write_text(s2,encoding='utf-8')
-          print('results INSERT normalized to 33 placeholders')
+          fixes=[
+            (r"INSERT INTO results VALUES\([^']*\)",33,'results'),
+            (r"INSERT INTO relay_members VALUES\([^']*\)",12,'relay_members'),
+          ]
+          for pattern,count,label in fixes:
+            replacement=f'INSERT INTO {label} VALUES('+','.join(['?']*count)+')'
+            s,n=re.subn(pattern,replacement,s,count=1)
+            if n!=1:
+              raise SystemExit(f'Expected one {label} INSERT pattern, found {n}')
+            print(f'{label} INSERT normalized to {count} placeholders')
+          p.write_text(s,encoding='utf-8')
           PY
       - name: Build curated database offline from frozen archive
         run: python tools/build_curated_analysis_db.py
