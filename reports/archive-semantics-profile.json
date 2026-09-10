@@ -1,0 +1,429 @@
+{
+  "schema_version": 1,
+  "unknown_status": {
+    "2018:trail14:athlete": {
+      "total": 2,
+      "DNF": 2
+    },
+    "2018:trail22:athlete": {
+      "total": 18,
+      "no_explicit_status_word": 8,
+      "DNF": 10
+    },
+    "2018:ultra60:athlete": {
+      "total": 25,
+      "no_explicit_status_word": 10,
+      "DNF": 15
+    },
+    "2019:duo60:team": {
+      "total": 2,
+      "no_explicit_status_word": 2
+    },
+    "2019:trail14:athlete": {
+      "total": 3,
+      "DNF": 3
+    },
+    "2019:trail22:athlete": {
+      "total": 3,
+      "DNF": 3
+    },
+    "2019:ultra60:athlete": {
+      "total": 35,
+      "DNF": 35
+    },
+    "2022:trail14:athlete": {
+      "total": 3,
+      "no_explicit_status_word": 1,
+      "DNF": 2
+    },
+    "2022:trail22:athlete": {
+      "total": 3,
+      "DNF": 3
+    },
+    "2022:ultra60:athlete": {
+      "total": 36,
+      "DNF": 36
+    },
+    "2023:duo60:team": {
+      "total": 2,
+      "no_explicit_status_word": 2
+    },
+    "2023:trail22:athlete": {
+      "total": 1,
+      "DNF": 1
+    },
+    "2023:ultra60:athlete": {
+      "total": 24,
+      "DNF": 24
+    },
+    "2024:duo60:team": {
+      "total": 2,
+      "no_explicit_status_word": 2
+    },
+    "2024:trail14:athlete": {
+      "total": 1,
+      "DNF": 1
+    },
+    "2024:trail22:athlete": {
+      "total": 5,
+      "DNF": 5
+    },
+    "2024:ultra60:athlete": {
+      "total": 90,
+      "DNF": 90
+    },
+    "2025:duo60:team": {
+      "total": 5,
+      "no_explicit_status_word": 5
+    },
+    "2025:trail14:athlete": {
+      "total": 3,
+      "DNF": 3
+    },
+    "2025:trail22:athlete": {
+      "total": 2,
+      "DNF": 2
+    },
+    "2025:ultra60:athlete": {
+      "total": 29,
+      "DNF": 29
+    },
+    "2026:duo60:team": {
+      "total": 5,
+      "no_explicit_status_word": 5
+    },
+    "2026:trail14:athlete": {
+      "total": 3,
+      "DNF": 3
+    },
+    "2026:trail22:athlete": {
+      "total": 9,
+      "DNF": 9
+    },
+    "2026:ultra60:athlete": {
+      "total": 42,
+      "DNF": 42
+    }
+  },
+  "unknown_features": {
+    "2018:trail14:athlete": {
+      "has_start_clock": 2
+    },
+    "2018:trail22:athlete": {
+      "has_start_clock": 18
+    },
+    "2018:ultra60:athlete": {
+      "has_splits": 25,
+      "has_start_clock": 25
+    },
+    "2019:trail14:athlete": {
+      "has_start_clock": 3
+    },
+    "2019:trail22:athlete": {
+      "has_start_clock": 3
+    },
+    "2019:ultra60:athlete": {
+      "has_splits": 34,
+      "has_start_clock": 35
+    },
+    "2022:trail14:athlete": {
+      "has_start_clock": 3
+    },
+    "2022:trail22:athlete": {
+      "has_start_clock": 3
+    },
+    "2022:ultra60:athlete": {
+      "has_splits": 28,
+      "has_start_clock": 36
+    },
+    "2023:trail22:athlete": {
+      "has_start_clock": 1
+    },
+    "2023:ultra60:athlete": {
+      "has_splits": 15,
+      "has_start_clock": 24
+    },
+    "2024:trail14:athlete": {
+      "has_start_clock": 1
+    },
+    "2024:trail22:athlete": {
+      "has_start_clock": 5
+    },
+    "2024:ultra60:athlete": {
+      "has_splits": 32,
+      "has_start_clock": 90
+    },
+    "2025:trail14:athlete": {
+      "has_start_clock": 3
+    },
+    "2025:trail22:athlete": {
+      "has_start_clock": 2
+    },
+    "2025:ultra60:athlete": {
+      "has_splits": 16,
+      "has_start_clock": 29
+    },
+    "2026:trail14:athlete": {
+      "has_start_clock": 3
+    },
+    "2026:trail22:athlete": {
+      "has_start_clock": 9
+    },
+    "2026:ultra60:athlete": {
+      "has_splits": 14,
+      "has_start_clock": 42
+    }
+  },
+  "relay": {
+    "by_year": {
+      "2019": {
+        "teams": 64
+      },
+      "2022": {
+        "teams": 43
+      },
+      "2023": {
+        "teams": 48
+      },
+      "2024": {
+        "teams": 46
+      },
+      "2025": {
+        "teams": 47
+      },
+      "2026": {
+        "teams": 52
+      }
+    },
+    "table_signatures": [
+      {
+        "class": "table",
+        "id": "",
+        "count": 1544
+      },
+      {
+        "class": "",
+        "id": "",
+        "count": 883
+      },
+      {
+        "class": "table table-striped",
+        "id": "",
+        "count": 299
+      },
+      {
+        "class": "splits-table table table-striped table-hover",
+        "id": "",
+        "count": 294
+      }
+    ],
+    "safe_first_cell_labels": {
+      "Klass": 300,
+      "Distans": 300,
+      "Starttidspunkt": 300,
+      "Nettotid": 284,
+      "Bruttotid": 284,
+      "Sluttidspunkt": 284,
+      "Mellantid 4": 124,
+      "Mellantid 3": 122,
+      "Bengtemölla": 89,
+      "Mellantid 1": 78,
+      "Mellantid 2": 72,
+      "Bengtemölla km 32": 36,
+      "Upplevelselöparna Scania Road Runners": 1,
+      "Unknown Duo Lonesome Runners": 1,
+      "Superchicas Malmö Gerillalöpare": 1,
+      "APRC-Australian Polish Runners Club": 1,
+      "RebelRunners": 1,
+      "DuoTrippeln Lonesome Runners": 1,
+      "Great idea running Malmö Gerillalöpare": 1,
+      "Thirsty Antelopes FöC Runners": 1,
+      "Team 2Fast4U Runners Club Hbg": 1,
+      "Ultra Turtles Malmö Gerillalöpare": 1,
+      "Scania Road Runners": 1,
+      "Coronatrail Cup Runners Coronatrail Cup Runners": 1,
+      "Scrambled Legs": 1,
+      "Stångby Runners": 1,
+      "JoJe Skydive Skåne Trail Runners": 1,
+      "Hohaa runners": 1,
+      "Sjömons Runners": 1,
+      "Team Fiskmås Malmö Gerillalöpare": 1,
+      "Rosenqvist Runners": 1,
+      "Malmö Gerillalöpare": 1,
+      "Forsbergman Runners": 1,
+      "MacRunners": 1,
+      "John Bull Runners": 1,
+      "Kiwirunners": 1,
+      "Pusselbitarna Gråmanstorp Runners": 1,
+      "Kul ska de va Skydive Skåne trailrunners": 1,
+      "Kasewood runners": 1,
+      "Karlskrona Fartrunners Team Blekinge LF": 1,
+      "Pannben & Glitter Malmö Gerillalöpare": 1
+    },
+    "link_patterns": {
+      "/event/{id}/app/results/{id}": 52
+    },
+    "row_shapes": [
+      {
+        "columns": 2,
+        "shape": [
+          "TEXT",
+          "TEXT"
+        ],
+        "count": 2064
+      },
+      {
+        "columns": 2,
+        "shape": [
+          "EMPTY",
+          "TEXT"
+        ],
+        "count": 1600
+      },
+      {
+        "columns": 2,
+        "shape": [
+          "TEXT",
+          "TIME"
+        ],
+        "count": 1152
+      },
+      {
+        "columns": 9,
+        "shape": [
+          "TEXT",
+          "TEXT",
+          "EMPTY",
+          "TIME",
+          "TEXT",
+          "TEXT",
+          "TIME",
+          "TEXT",
+          "TIME"
+        ],
+        "count": 947
+      },
+      {
+        "columns": 3,
+        "shape": [
+          "TEXT",
+          "EMPTY",
+          "TEXT"
+        ],
+        "count": 869
+      },
+      {
+        "columns": 9,
+        "shape": [
+          "EMPTY",
+          "TEXT",
+          "TEXT",
+          "TEXT",
+          "TEXT",
+          "TEXT",
+          "TEXT",
+          "TEXT",
+          "TEXT"
+        ],
+        "count": 429
+      },
+      {
+        "columns": 1,
+        "shape": [
+          "TEXT"
+        ],
+        "count": 300
+      },
+      {
+        "columns": 3,
+        "shape": [
+          "EMPTY",
+          "TEXT",
+          "TEXT"
+        ],
+        "count": 230
+      },
+      {
+        "columns": 3,
+        "shape": [
+          "TEXT",
+          "TEXT",
+          "TEXT"
+        ],
+        "count": 199
+      },
+      {
+        "columns": 3,
+        "shape": [
+          "TEXT",
+          "TIME",
+          "TEXT"
+        ],
+        "count": 197
+      },
+      {
+        "columns": 6,
+        "shape": [
+          "TEXT",
+          "EMPTY",
+          "TEXT",
+          "TIME",
+          "TIME",
+          "TEXT"
+        ],
+        "count": 18
+      },
+      {
+        "columns": 9,
+        "shape": [
+          "TEXT",
+          "TEXT",
+          "EMPTY",
+          "TIME",
+          "EMPTY",
+          "TEXT",
+          "TIME",
+          "EMPTY",
+          "TIME"
+        ],
+        "count": 13
+      },
+      {
+        "columns": 6,
+        "shape": [
+          "TEXT",
+          "EMPTY",
+          "TEXT",
+          "TEXT",
+          "TEXT",
+          "TEXT"
+        ],
+        "count": 9
+      },
+      {
+        "columns": 3,
+        "shape": [
+          "EMPTY",
+          "EMPTY",
+          "TEXT"
+        ],
+        "count": 2
+      },
+      {
+        "columns": 9,
+        "shape": [
+          "TEXT",
+          "TEXT",
+          "EMPTY",
+          "TIME",
+          "TEXT",
+          "EMPTY",
+          "TIME",
+          "TEXT",
+          "TIME"
+        ],
+        "count": 2
+      }
+    ]
+  }
+}
