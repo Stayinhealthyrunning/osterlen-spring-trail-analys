@@ -1,0 +1,40 @@
+name: Test Sportstiming snapshot importer
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/fetch_sportstiming_snapshot.py'
+      - '.github/workflows/test-sportstiming-snapshot.yml'
+
+concurrency:
+  group: ost-sportstiming-snapshot-smoke
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch 10 public 2026 Ultra results
+        run: python tools/fetch_sportstiming_snapshot.py --year 2026 --family ultra60 --limit 10 --workers 4 --output data/source/sportstiming/samples/2026-ultra60-10.json
+      - name: Commit smoke-test snapshot
+        shell: bash
+        run: |
+          file=data/source/sportstiming/samples/2026-ultra60-10.json
+          if [[ -n "$(git status --porcelain -- "$file")" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add "$file"
+            git commit -m "Update Sportstiming importer smoke snapshot"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
