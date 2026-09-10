@@ -6,8 +6,11 @@ on:
     branches: [main]
     paths:
       - 'data/source/gpx/**/*.gpx'
+      - 'data/source/tracedetrail/waypoints.json'
+      - 'config/course-source-manifest.json'
       - 'tools/gpx_inventory.py'
       - 'tools/compare_gpx.py'
+      - 'tools/project_route_landmarks.py'
       - '.github/workflows/analyze-gpx.yml'
 
 permissions:
@@ -18,6 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -25,14 +30,17 @@ jobs:
         run: python tools/gpx_inventory.py
       - name: Compare route geometry
         run: python tools/compare_gpx.py
+      - name: Project public course landmarks onto archived routes
+        run: python tools/project_route_landmarks.py
       - name: Commit reports
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add reports/gpx-inventory.json reports/gpx-inventory.md reports/gpx-comparison.json reports/gpx-comparison.md
+          git add reports/gpx-inventory.json reports/gpx-inventory.md reports/gpx-comparison.json reports/gpx-comparison.md reports/route-landmark-projections.md data/derived/route-landmark-projections.json
           if git diff --cached --quiet; then
             echo 'No report changes.'
           else
-            git commit -m 'Update GPX validation and comparison reports'
-            git push
+            git commit -m 'Update GPX validation, comparison and landmark projections'
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
