@@ -1,0 +1,45 @@
+name: Audit frozen ÖST results
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/archive/ost-results-2018-2026.sqlite.gz'
+      - 'reports/result-archive-summary.json'
+      - 'tools/audit_frozen_results_db.py'
+      - '.github/workflows/audit-frozen-results.yml'
+
+concurrency:
+  group: ost-frozen-results-audit
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit frozen SQLite archive
+        run: python tools/audit_frozen_results_db.py --strict
+      - name: Commit aggregate audit report
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/result-archive-audit.json reports/result-archive-audit.md
+          if git diff --cached --quiet; then
+            echo 'Audit report already current.'
+          else
+            git commit -m 'Audit frozen ÖST result archive'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
