@@ -13,7 +13,8 @@
   "principles": [
     "2018 is the first year in analysis scope.",
     "Duo uses the same course geometry as Ultra 60 and is a relay format.",
-    "No course versions are considered equivalent until GPX geometry comparison has verified it.",
+    "Course-version equivalence must be supported by organizer route evidence or verified geometry comparison; marketing distance labels alone are insufficient.",
+    "A verified historical course version does not automatically imply that a redistributable local route asset exists.",
     "No missing split, checkpoint or participant relation may be fabricated."
   ]
 }

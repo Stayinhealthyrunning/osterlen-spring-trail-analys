@@ -1,30 +1,103 @@
 {
+  "schema_version": 2,
   "generated_on": "2026-09-10",
-  "purpose": "Inventory of the initial ÖST preparation structure before integration of the generic Gotaleden analysis core.",
-  "files": [
-    ".gitignore",
-    "AGENTS.md",
+  "status": "handoff_ready_for_generic_engine_integration",
+  "purpose": "Entry-point inventory for the prepared Österlen Spring Trail analysis foundation before integration of the generic Gotaleden analysis core.",
+  "read_first": [
+    "config/foundation-state.json",
     "PREP_STATUS.md",
-    "README.md",
-    "config/course-source-manifest.json",
+    "research/gotaleden-engine-handoff.md",
+    "config/analysis-data-contract.json",
+    "config/engine-adapter.json",
+    "reports/source-coverage.md"
+  ],
+  "core_configuration": [
     "config/event.json",
-    "config/race-families.json",
     "config/years.json",
+    "config/race-families.json",
+    "config/race-editions.json",
+    "config/race-catalog.json",
+    "config/course-source-manifest.json",
+    "config/course-versions.json",
+    "config/course-landmarks-2026.json",
+    "config/checkpoint-candidates.json",
+    "config/checkpoint-normalization.json",
+    "config/source-registry.json",
+    "config/analysis-data-contract.json",
+    "config/analysis-feature-policy.json",
+    "config/engine-adapter.json",
+    "config/foundation-state.json"
+  ],
+  "sportstiming_source_inventory": [
+    "data/source/sportstiming/events.json",
+    "data/source/sportstiming/class-catalog.json",
+    "data/source/sportstiming/split-inventory.json",
+    "data/source/sportstiming/points-tracking-inventory.json"
+  ],
+  "route_and_map_sources": [
     "data/source/gpx/README.md",
     "data/source/gpx/ultra60/README.md",
     "data/source/gpx/trail22/README.md",
     "data/source/gpx/trail14/README.md",
     "data/source/gpx/trail5/README.md",
     "data/source/maps/manifest.json",
-    "data/source/sportstiming/events.json",
-    "docs/index.html",
-    "reports/README.md",
+    "data/source/tracedetrail/waypoints.json",
+    "data/source/tracedetrail/trace-payload-summary.json"
+  ],
+  "research": [
     "research/course-history.md",
+    "research/current-data-coverage.md",
+    "research/data-contract.md",
     "research/data-provenance.md",
+    "research/integration-plan.md",
+    "research/gotaleden-engine-handoff.md",
     "research/sources.md",
     "research/sportstiming-data.md",
-    "research/ultra60-2026-landmarks.json",
+    "research/ultra60-2026-landmarks.json"
+  ],
+  "key_reports": [
+    "reports/source-coverage.md",
+    "reports/analysis-capabilities.md",
+    "reports/bengtemolla-double-timing.md",
+    "reports/gpx-inventory.md",
+    "reports/gpx-comparison.md",
+    "reports/gpx-source-analysis.md",
+    "reports/tracedetrail-public-discovery.json",
+    "reports/tracedetrail-datatrace-structure.md",
+    "reports/tracedetrail-public-geometry-analysis.md",
+    "reports/sportstiming-client-structure.json"
+  ],
+  "automation_entry_points": [
     "tools/fetch_official_assets.py",
-    "tools/source_coverage.py"
+    "tools/discover_sportstiming_event_pages.py",
+    "tools/discover_sportstiming_structure.py",
+    "tools/build_sportstiming_catalog.py",
+    "tools/analyze_bengtemolla_double_timing.py",
+    "tools/discover_tracedetrail_public.py",
+    "tools/inspect_tracedetrail_datatrace.py",
+    "tools/analyze_tracedetrail_public_geometry.py",
+    "tools/analyze_gpx_sources.py",
+    "tools/compare_gpx.py",
+    "tools/source_coverage.py",
+    "tools/build_analysis_capabilities.py",
+    "tools/build_race_catalog.py",
+    "tools/build_enriched_race_catalog.py",
+    "tools/validate_foundation.py"
+  ],
+  "validation": {
+    "command": "python tools/validate_foundation.py",
+    "workflow": ".github/workflows/validate-foundation.yml"
+  },
+  "frontend": {
+    "status": "placeholder_only_until_generic_gotaleden_core_is_ready",
+    "entry": "docs/index.html"
+  },
+  "deferred": [
+    "Production-grade complete Sportstiming result/detail raw snapshot importer",
+    "Duo team/member adapter",
+    "Redistributable/local historical route assets required for map/replay",
+    "Trail 13/14 and Trail 5 course-version archaeology",
+    "2018 Trail 21/22 year-specific provenance",
+    "Generic Gotaleden core integration"
   ]
 }

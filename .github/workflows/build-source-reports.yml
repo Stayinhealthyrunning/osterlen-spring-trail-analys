@@ -3,6 +3,7 @@ name: Build ÖST source reports
 on:
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - 'data/source/**'
       - 'config/**'
