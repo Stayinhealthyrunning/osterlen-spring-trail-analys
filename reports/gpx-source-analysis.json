@@ -1,5 +1,5 @@
 {
-  "method": "Haversine track length from source GPX; raw elevation differences are unsmoothed and are not authoritative D+.",
+  "method": "Haversine track length from source GPX. Route equivalence diagnostics use 50 m resampling and symmetric nearest-route corridor coverage. Raw elevation differences are unsmoothed and are not authoritative D+.",
   "files": [
     {
       "path": "data/source/gpx/ultra60/ost-ultra60-2024-organizer.gpx",
@@ -42,12 +42,55 @@
       "b": "data/source/gpx/ultra60/ost-ultra60-2025-2026-organizer.gpx",
       "start_separation_m": 280.45,
       "finish_separation_m": 12.49,
-      "mean_progress_separation_m": 317.81,
-      "median_progress_separation_m": 372.23,
-      "p95_progress_separation_m": 537.11,
-      "max_progress_separation_m": 616.38,
       "distance_difference_km": -0.98,
-      "warning": "Progress-aligned separation is diagnostic only; it is not a final shared-corridor percentage."
+      "nearest_separation_a_to_b_m": {
+        "median": 15.85,
+        "p95": 47.53,
+        "max": 280.29
+      },
+      "nearest_separation_b_to_a_m": {
+        "median": 15.66,
+        "p95": 38.84,
+        "max": 121.05
+      },
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8813,
+          "b_fraction": 0.8953,
+          "symmetric_min_fraction": 0.8813,
+          "symmetric_mean_fraction": 0.8883
+        },
+        "50": {
+          "a_fraction": 0.9522,
+          "b_fraction": 0.9673,
+          "symmetric_min_fraction": 0.9522,
+          "symmetric_mean_fraction": 0.9598
+        },
+        "100": {
+          "a_fraction": 0.9819,
+          "b_fraction": 0.9983,
+          "symmetric_min_fraction": 0.9819,
+          "symmetric_mean_fraction": 0.9901
+        },
+        "250": {
+          "a_fraction": 0.9975,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 0.9975,
+          "symmetric_mean_fraction": 0.9988
+        }
+      },
+      "a_divergence_intervals_over_100m": [
+        {
+          "start_km": 23.0,
+          "end_km": 23.4,
+          "length_km": 0.4,
+          "median_separation_m": 184.1,
+          "max_separation_m": 266.9
+        }
+      ],
+      "b_divergence_intervals_over_100m": [],
+      "geometry_classification": "largely_same_corridor_with_changes",
+      "method_note": "Each route is resampled every 50 m. Shared-corridor fractions use nearest sampled route distance in both directions; they are robust diagnostics, not a legal/official statement of course identity."
     }
   ]
 }
