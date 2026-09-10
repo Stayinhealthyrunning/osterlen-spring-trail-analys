@@ -30,6 +30,17 @@
 | 2026:trail22:athlete | 9 | 9 | 0 | 0 | 0 | 0 |
 | 2026:ultra60:athlete | 42 | 42 | 0 | 0 | 0 | 14 |
 
+## Duo – medlemslänkar per team och år
+
+| År | Antal medlemslänkar i teamdetaljen → antal team |
+|---:|---|
+| 2019 | 0→64 |
+| 2022 | 0→42, 2→1 |
+| 2023 | 0→48 |
+| 2024 | 0→46 |
+| 2025 | 0→5, 1→34, 2→8 |
+| 2026 | 0→52 |
+
 ## Duo – säkra etiketter i detaljtabeller
 
 - `Klass`: 300
@@ -43,37 +54,13 @@
 - `Bengtemölla`: 89
 - `Mellantid 1`: 78
 - `Mellantid 2`: 72
-- `Bengtemölla km 32`: 36
-- `Upplevelselöparna Scania Road Runners`: 1
-- `Unknown Duo Lonesome Runners`: 1
-- `Superchicas Malmö Gerillalöpare`: 1
-- `APRC-Australian Polish Runners Club`: 1
-- `RebelRunners`: 1
-- `DuoTrippeln Lonesome Runners`: 1
-- `Great idea running Malmö Gerillalöpare`: 1
-- `Thirsty Antelopes FöC Runners`: 1
-- `Team 2Fast4U Runners Club Hbg`: 1
-- `Ultra Turtles Malmö Gerillalöpare`: 1
-- `Scania Road Runners`: 1
-- `Coronatrail Cup Runners Coronatrail Cup Runners`: 1
-- `Scrambled Legs`: 1
-- `Stångby Runners`: 1
-- `JoJe Skydive Skåne Trail Runners`: 1
-- `Hohaa runners`: 1
-- `Sjömons Runners`: 1
-- `Team Fiskmås Malmö Gerillalöpare`: 1
-- `Rosenqvist Runners`: 1
-- `Malmö Gerillalöpare`: 1
-- `Forsbergman Runners`: 1
-- `MacRunners`: 1
-- `John Bull Runners`: 1
-- `Kiwirunners`: 1
-- `Pusselbitarna Gråmanstorp Runners`: 1
-- `Kul ska de va Skydive Skåne trailrunners`: 1
-- `Kasewood runners`: 1
-- `Karlskrona Fartrunners Team Blekinge LF`: 1
-- `Pannben & Glitter Malmö Gerillalöpare`: 1
 
 ## Duo – länkmönster i detaljtabeller
 
 - `/event/{id}/app/results/{id}`: 52
+
+## Duo – anonymiserade rader med medlemslänk
+
+- header=['<TEXT>', '<EMPTY>', '<TEXT>']; linkkolumn=[2]; rad=['<TEXT>', '<EMPTY>', '<LINKED_TEXT>']; n=34
+- header=['<TEXT>', '<EMPTY>', '<TEXT>', 'Tid', 'Sluttidspunkt', '<TEXT>']; linkkolumn=[2]; rad=['<TEXT>', '<EMPTY>', '<LINKED_TEXT>', '<TIME>', '<TIME>', '<TEXT>']; n=16
+- header=['<TEXT>', '<EMPTY>', '<TEXT>', 'Tid', 'Sluttidspunkt', '<TEXT>']; linkkolumn=[2]; rad=['<NUMBER>', '<EMPTY>', '<LINKED_TEXT>', '<TIME>', '<TIME>', '<TEXT>']; n=2
