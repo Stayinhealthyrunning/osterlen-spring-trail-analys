@@ -2,13 +2,16 @@
 """Normalize a structured Sportstiming source snapshot into analysis-ready records.
 
 The normalizer is deliberately conservative. Unknown or absent source fields remain
-null. It never synthesizes checkpoint passages or finish status.
+null. It never synthesizes checkpoint passages or finish status. Year-specific
+checkpoint semantics are added from config/checkpoint-normalization.json while the
+raw source label/key are always preserved.
 """
 from __future__ import annotations
 from pathlib import Path
 import argparse, json, re, unicodedata
 
 ROOT=Path(__file__).resolve().parents[1]
+CHECKPOINT_CFG=ROOT/'config/checkpoint-normalization.json'
 
 def txt(cell): return (cell or {}).get('text','').strip()
 def rows(table): return [[txt(c) for c in row] for row in table.get('rows',[])]
@@ -36,6 +39,39 @@ def parse_split_ranks(value):
 def slug(value):
     s=unicodedata.normalize('NFKD',value or '').encode('ascii','ignore').decode().lower()
     return re.sub(r'[^a-z0-9]+','-',s).strip('-')
+
+def checkpoint_index():
+    if not CHECKPOINT_CFG.exists(): return {}
+    cfg=json.loads(CHECKPOINT_CFG.read_text(encoding='utf-8'))
+    idx={}
+    for m in cfg.get('mappings',[]):
+        for year in m.get('years',[]):
+            for label in m.get('source_labels',[]):
+                idx[(int(year),label)]={k:v for k,v in m.items() if k not in ('years','source_labels')}
+    return idx
+
+CHECKPOINT_INDEX=checkpoint_index()
+
+def checkpoint_semantics(year,label):
+    m=CHECKPOINT_INDEX.get((int(year),label))
+    if not m:
+        return {
+            'checkpoint_semantic_key':None,
+            'canonical_landmark_key':None,
+            'checkpoint_role':'unmapped_source_checkpoint',
+            'analysis_primary':None,
+            'checkpoint_mapping_confidence':None,
+            'checkpoint_mapping_evidence':None,
+        }
+    semantic=m.get('semantic_key')
+    return {
+        'checkpoint_semantic_key':semantic,
+        'canonical_landmark_key':m.get('canonical_landmark_key') or (semantic if semantic not in ('finish',None) else None),
+        'checkpoint_role':m.get('role'),
+        'analysis_primary':m.get('analysis_primary'),
+        'checkpoint_mapping_confidence':m.get('confidence'),
+        'checkpoint_mapping_evidence':m.get('evidence'),
+    }
 
 def pair_maps(tables):
     out=[]
@@ -90,9 +126,11 @@ def normalize_result(source,record):
             elapsed=r[6] if len(r)>6 else None
             cumulative_rank=parse_split_ranks(r[7] if len(r)>7 else '')
             clock=r[8] if len(r)>8 else None
-            splits.append({
+            semantic=checkpoint_semantics(source['year'],label)
+            split={
                 'checkpoint_source_label':label,
                 'checkpoint_key':slug(label),
+                **semantic,
                 'reported_checkpoint_distance_km':parse_distance(label),
                 'segment_distance_km':parse_distance(r[1] if len(r)>1 else None),
                 'segment_seconds':parse_seconds(segment_time),
@@ -106,7 +144,8 @@ def normalize_result(source,record):
                 'place_class':cumulative_rank['class'],
                 'clock_time':clock or None,
                 'raw_cells':r
-            })
+            }
+            splits.append(split)
     finish_seconds=parse_seconds(flat.get('Nettotid'))
     # A positive published net time is treated as finished; otherwise leave status UNKNOWN until explicit status evidence is parsed.
     status='FINISHED' if finish_seconds and finish_seconds>0 else 'UNKNOWN'
@@ -133,7 +172,8 @@ def main():
         try:normalized.append(normalize_result(src,r))
         except Exception as exc:errors.append({'sportstiming_result_id':r.get('sportstiming_result_id'),'error':repr(exc)})
     payload={'schema_version':1,'source_snapshot':args.input,'year':src['year'],'race_family':src['race_family'],
-             'event_id':src['event_id'],'records':normalized,'source_errors':errors}
+             'event_id':src['event_id'],'checkpoint_mapping_config':'config/checkpoint-normalization.json',
+             'records':normalized,'source_errors':errors}
     out=ROOT/(args.output or f"data/normalized/samples/{src['year']}-{src['race_family']}.json")
     out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(f'Normalized {len(normalized)} records; source errors={len(errors)}; output={out.relative_to(ROOT)}')
