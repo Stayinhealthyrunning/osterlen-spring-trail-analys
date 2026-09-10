@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Collect reproducible public metadata/POIs from Trace de Trail references.
+"""Collect reproducible public metadata/POIs and inspect route geometry from Trace de Trail.
 
-This intentionally does not download or commit third-party GPX bodies. It extracts the
-public `dataPi` waypoint payload already in the route page and discovers GPX-related links,
-forms and endpoint-looking literals for later provenance/reuse review.
+The public route page embeds the information needed to render its map. This tool
+extracts factual waypoint data and inspects the public `dataTrace` payload without
+archiving the complete third-party page or attempting authenticated GPX download.
+Only normalized factual geometry may be emitted when it can be identified safely.
 """
 from __future__ import annotations
 
@@ -17,6 +18,7 @@ ROOT=Path(__file__).resolve().parents[1]
 MANIFEST=ROOT/'config/course-source-manifest.json'
 OUT=ROOT/'reports/tracedetrail-public-discovery.json'
 POI_OUT=ROOT/'data/source/tracedetrail/waypoints.json'
+TRACE_SUMMARY_OUT=ROOT/'data/source/tracedetrail/trace-payload-summary.json'
 UA='OST-analysis-research/1.0 (+https://github.com/Stayinhealthyrunning/osterlen-spring-trail-analys)'
 
 class Collector(HTMLParser):
@@ -84,21 +86,73 @@ def normalize_pi(entry):
                 out.setdefault('source_distance_fields',{})[str(key)]=val
     return {k:v for k,v in out.items() if v not in (None,[],{})}
 
+def structural_summary(value,depth=0,max_depth=4):
+    """Return a compact non-content summary of a decoded JSON value."""
+    if depth>=max_depth:
+        if isinstance(value,dict): return {'type':'object','count':len(value),'keys':sorted(map(str,value.keys()))[:80]}
+        if isinstance(value,list): return {'type':'array','count':len(value)}
+        return {'type':type(value).__name__}
+    if isinstance(value,dict):
+        out={'type':'object','count':len(value),'keys':sorted(map(str,value.keys()))[:120]}
+        children={}
+        for k,v in list(value.items())[:80]:
+            if isinstance(v,(dict,list)):
+                children[str(k)]=structural_summary(v,depth+1,max_depth)
+        if children: out['children']=children
+        return out
+    if isinstance(value,list):
+        out={'type':'array','count':len(value)}
+        if value:
+            types=sorted({type(x).__name__ for x in value})
+            out['item_types']=types
+            out['first_item']=structural_summary(value[0],depth+1,max_depth)
+        return out
+    return {'type':type(value).__name__}
+
+def collect_string_hints(value,path='$',out=None,limit=120):
+    """Collect metadata about geometry-looking strings, not their full contents."""
+    if out is None: out=[]
+    if len(out)>=limit: return out
+    if isinstance(value,dict):
+        for k,v in value.items():
+            collect_string_hints(v,f'{path}.{k}',out,limit)
+            if len(out)>=limit: break
+    elif isinstance(value,list):
+        for i,v in enumerate(value[:50]):
+            collect_string_hints(v,f'{path}[{i}]',out,limit)
+            if len(out)>=limit: break
+    elif isinstance(value,str):
+        s=value.strip()
+        lower=s.lower()
+        if any(t in lower for t in ('linestring','coordinates','polyline','geom','trace')) or (len(s)>200 and re.search(r'-?\d+[.,]\d+[,; ]+-?\d+[.,]\d+',s)):
+            out.append({'path':path,'length':len(s),'sha256':hashlib.sha256(s.encode('utf-8')).hexdigest(),'prefix':s[:120]})
+    return out
+
+def decode_embedded(html,key):
+    raw=extract_escaped_json_string(html,key)
+    if raw is None: return None,None,None
+    try:
+        return raw,json.loads(raw),None
+    except Exception as exc:
+        return raw,None,f'{type(exc).__name__}: {exc}'
+
 def fetch_trace(trace_id):
     url=f'https://tracedetrail.fr/fr/trace/{trace_id}'
     req=urllib.request.Request(url,headers={'User-Agent':UA,'Accept':'text/html,*/*;q=0.8'})
     with urllib.request.urlopen(req,timeout=40) as r:
         body=r.read(8_000_000); final=r.geturl(); ctype=r.headers.get('Content-Type','')
     html=body.decode('utf-8',errors='replace')
-    raw=extract_escaped_json_string(html,'dataPi')
-    pi=[]; raw_keys=[]; pi_error=None
-    if raw is not None:
-        try:
-            decoded=json.loads(raw)
-            if isinstance(decoded,list):
-                raw_keys=sorted({str(k) for e in decoded if isinstance(e,dict) for k in e.keys()})
-                pi=[normalize_pi(e) for e in decoded if isinstance(e,dict)]
-        except Exception as exc: pi_error=f'{type(exc).__name__}: {exc}'
+
+    pi_raw,pi_decoded,pi_error=decode_embedded(html,'dataPi')
+    pi=[]; raw_keys=[]
+    if isinstance(pi_decoded,list):
+        raw_keys=sorted({str(k) for e in pi_decoded if isinstance(e,dict) for k in e.keys()})
+        pi=[normalize_pi(e) for e in pi_decoded if isinstance(e,dict)]
+
+    trace_raw,trace_decoded,trace_error=decode_embedded(html,'dataTrace')
+    trace_summary=structural_summary(trace_decoded) if trace_decoded is not None else None
+    trace_hints=collect_string_hints(trace_decoded) if trace_decoded is not None else []
+
     p=Collector(); p.feed(html)
     links=[]
     for item in p.links:
@@ -116,8 +170,11 @@ def fetch_trace(trace_id):
     return {
       'trace_id':trace_id,'url':url,'final_url':final,'status':200,'content_type':ctype,
       'bytes':len(body),'sha256':hashlib.sha256(body).hexdigest(),
-      'data_pi_found':raw is not None,'data_pi_error':pi_error,'data_pi_count':len(pi),
+      'data_pi_found':pi_raw is not None,'data_pi_error':pi_error,'data_pi_count':len(pi),
       'data_pi_raw_keys':raw_keys,'waypoints':pi,
+      'data_trace_found':trace_raw is not None,'data_trace_bytes':len(trace_raw.encode('utf-8')) if trace_raw is not None else 0,
+      'data_trace_sha256':hashlib.sha256(trace_raw.encode('utf-8')).hexdigest() if trace_raw is not None else None,
+      'data_trace_error':trace_error,'data_trace_structure':trace_summary,'data_trace_string_hints':trace_hints,
       'gpx_related_links':links[:100],'gpx_related_forms':forms[:100],
       'gpx_endpoint_literals':endpoint_literals,'js_data_keys':js_data_keys,
     }
@@ -133,15 +190,21 @@ def main():
     for tid in sorted(refs):
         try:
             item=fetch_trace(tid); item['manifest_refs']=refs[tid]; traces.append(item)
-            print(tid,'poi',item['data_pi_count'],'gpx-links',len(item['gpx_related_links']),'literals',len(item['gpx_endpoint_literals']))
+            print(tid,'poi',item['data_pi_count'],'dataTrace',item['data_trace_found'],item['data_trace_bytes'],'bytes')
         except Exception as exc:
             errors.append({'trace_id':tid,'error':f'{type(exc).__name__}: {exc}','manifest_refs':refs[tid]}); print('ERR',tid,exc)
-    report={'generated_at':datetime.now(timezone.utc).isoformat(),'policy':'Public page metadata/waypoints only; no third-party GPX body archived.','traces':traces,'errors':errors}
+    report={'generated_at':datetime.now(timezone.utc).isoformat(),'policy':'Public page metadata/waypoints and structural inspection of embedded dataTrace; no authenticated GPX download and no complete third-party page archived.','traces':traces,'errors':errors}
     OUT.parent.mkdir(parents=True,exist_ok=True); OUT.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     poi={'generated_at':report['generated_at'],'source':'Trace de Trail public dataPi payloads','routes':[
       {'trace_id':t['trace_id'],'manifest_refs':t['manifest_refs'],'waypoints':t['waypoints']} for t in traces
     ]}
     POI_OUT.parent.mkdir(parents=True,exist_ok=True); POI_OUT.write_text(json.dumps(poi,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    summary={'generated_at':report['generated_at'],'source':'Trace de Trail public embedded dataTrace payloads','routes':[
+      {'trace_id':t['trace_id'],'manifest_refs':t['manifest_refs'],'found':t['data_trace_found'],'bytes':t['data_trace_bytes'],
+       'sha256':t['data_trace_sha256'],'parse_error':t['data_trace_error'],'structure':t['data_trace_structure'],
+       'geometry_string_hints':t['data_trace_string_hints']} for t in traces
+    ]}
+    TRACE_SUMMARY_OUT.parent.mkdir(parents=True,exist_ok=True); TRACE_SUMMARY_OUT.write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     if errors: print(f'Completed with {len(errors)} fetch errors')
 
 if __name__=='__main__': main()
