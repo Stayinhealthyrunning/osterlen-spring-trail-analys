@@ -24,6 +24,12 @@ on:
       - 'tools/build_enriched_race_catalog.py'
       - '.github/workflows/source-coverage.yml'
 
+# This workflow and build-source-reports both generate/commit files on main.
+# Sharing a concurrency group prevents simultaneous rebases/pushes.
+concurrency:
+  group: ost-generated-main
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
