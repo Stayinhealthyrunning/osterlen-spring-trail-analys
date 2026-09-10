@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-10T14:17:28+00:00",
+  "database_path": "data/archive/ost-results-2018-2026.sqlite",
+  "compressed_path": "data/archive/ost-results-2018-2026.sqlite.gz",
+  "database_bytes": 178241536,
+  "compressed_bytes": 7231526,
+  "database_sha256": "cee294158182c1b32d97d9bdd7be21731ab4e9741d5afcc33ce441498004e5e0",
+  "compressed_sha256": "32f7cc412fa1d11fbef7af6c78912c10dcad38c1fae853a6d8659d90816543f9",
+  "integrity_check": "ok",
+  "expected_family_year_imports": 34,
+  "total_results": 9871,
+  "total_splits": 5382,
+  "unknown_status_records": 353,
+  "source_errors": 0,
+  "coverage": [
+    {
+      "year": 2018,
+      "race_family": "ultra60",
+      "event_id": 4950,
+      "distance_id": "15266",
+      "entity_type": "athlete",
+      "discovered": 150,
+      "normalized": 150,
+      "errors": 0
+    },
+    {
+      "year": 2018,
+      "race_family": "trail22",
+      "event_id": 4950,
+      "distance_id": "15268",
+      "entity_type": "athlete",
+      "discovered": 465,
+      "normalized": 465,
+      "errors": 0
+    },
+    {
+      "year": 2018,
+      "race_family": "trail5",
+      "event_id": 4950,
+      "distance_id": "15265",
+      "entity_type": "athlete",
+      "discovered": 126,
+      "normalized": 126,
+      "errors": 0
+    },
+    {
+      "year": 2018,
+      "race_family": "trail14",
+      "event_id": 4950,
+      "distance_id": "15269",
+      "entity_type": "athlete",
+      "discovered": 372,
+      "normalized": 372,
+      "errors": 0
+    },
+    {
+      "year": 2019,
+      "race_family": "ultra60",
+      "event_id": 5719,
+      "distance_id": "20385",
+      "entity_type": "athlete",
+      "discovered": 278,
+      "normalized": 278,
+      "errors": 0
+    },
+    {
+      "year": 2019,
+      "race_family": "trail22",
+      "event_id": 5719,
+      "distance_id": "20387",
+      "entity_type": "athlete",
+      "discovered": 469,
+      "normalized": 469,
+      "errors": 0
+    },
+    {
+      "year": 2019,
+      "race_family": "duo60",
+      "event_id": 5719,
+      "distance_id": "20390",
+      "entity_type": "team",
+      "discovered": 64,
+      "normalized": 64,
+      "errors": 0
+    },
+    {
+      "year": 2019,
+      "race_family": "trail5",
+      "event_id": 5719,
+      "distance_id": "20384",
+      "entity_type": "athlete",
+      "discovered": 100,
+      "normalized": 100,
+      "errors": 0
+    },
+    {
+      "year": 2019,
+      "race_family": "trail14",
+      "event_id": 5719,
+      "distance_id": "20388",
+      "entity_type": "athlete",
+      "discovered": 434,
+      "normalized": 434,
+      "errors": 0
+    },
+    {
+      "year": 2022,
+      "race_family": "ultra60",
+      "event_id": 9587,
+      "distance_id": "46204",
+      "entity_type": "athlete",
+      "discovered": 318,
+      "normalized": 318,
+      "errors": 0
+    },
+    {
+      "year": 2022,
+      "race_family": "trail22",
+      "event_id": 9587,
+      "distance_id": "46206",
+      "entity_type": "athlete",
+      "discovered": 432,
+      "normalized": 432,
+      "errors": 0
+    },
+    {
+      "year": 2022,
+      "race_family": "duo60",
+      "event_id": 9587,
+      "distance_id": "46209",
+      "entity_type": "team",
+      "discovered": 43,
+      "normalized": 43,
+      "errors": 0
+    },
+    {
+      "year": 2022,
+      "race_family": "trail14",
+      "event_id": 9587,
+      "distance_id": "46207",
+      "entity_type": "athlete",
+      "discovered": 249,
+      "normalized": 249,
+      "errors": 0
+    },
+    {
+      "year": 2022,
+      "race_family": "trail5",
+      "event_id": 9587,
+      "distance_id": "46203",
+      "entity_type": "athlete",
+      "discovered": 85,
+      "normalized": 85,
+      "errors": 0
+    },
+    {
+      "year": 2023,
+      "race_family": "ultra60",
+      "event_id": 11274,
+      "distance_id": "58343",
+      "entity_type": "athlete",
+      "discovered": 330,
+      "normalized": 330,
+      "errors": 0
+    },
+    {
+      "year": 2023,
+      "race_family": "trail22",
+      "event_id": 11274,
+      "distance_id": "58345",
+      "entity_type": "athlete",
+      "discovered": 484,
+      "normalized": 484,
+      "errors": 0
+    },
+    {
+      "year": 2023,
+      "race_family": "duo60",
+      "event_id": 11274,
+      "distance_id": "58348",
+      "entity_type": "team",
+      "discovered": 48,
+      "normalized": 48,
+      "errors": 0
+    },
+    {
+      "year": 2023,
+      "race_family": "trail14",
+      "event_id": 11274,
+      "distance_id": "58346",
+      "entity_type": "athlete",
+      "discovered": 306,
+      "normalized": 306,
+      "errors": 0
+    },
+    {
+      "year": 2023,
+      "race_family": "trail5",
+      "event_id": 11274,
+      "distance_id": "58342",
+      "entity_type": "athlete",
+      "discovered": 185,
+      "normalized": 185,
+      "errors": 0
+    },
+    {
+      "year": 2024,
+      "race_family": "ultra60",
+      "event_id": 12349,
+      "distance_id": "65781",
+      "entity_type": "athlete",
+      "discovered": 420,
+      "normalized": 420,
+      "errors": 0
+    },
+    {
+      "year": 2024,
+      "race_family": "trail22",
+      "event_id": 12349,
+      "distance_id": "65782",
+      "entity_type": "athlete",
+      "discovered": 506,
+      "normalized": 506,
+      "errors": 0
+    },
+    {
+      "year": 2024,
+      "race_family": "duo60",
+      "event_id": 12349,
+      "distance_id": "65784",
+      "entity_type": "team",
+      "discovered": 46,
+      "normalized": 46,
+      "errors": 0
+    },
+    {
+      "year": 2024,
+      "race_family": "trail14",
+      "event_id": 12349,
+      "distance_id": "65783",
+      "entity_type": "athlete",
+      "discovered": 417,
+      "normalized": 417,
+      "errors": 0
+    },
+    {
+      "year": 2024,
+      "race_family": "trail5",
+      "event_id": 12349,
+      "distance_id": "65780",
+      "entity_type": "athlete",
+      "discovered": 223,
+      "normalized": 223,
+      "errors": 0
+    },
+    {
+      "year": 2025,
+      "race_family": "ultra60",
+      "event_id": 15015,
+      "distance_id": "84440",
+      "entity_type": "athlete",
+      "discovered": 400,
+      "normalized": 400,
+      "errors": 0
+    },
+    {
+      "year": 2025,
+      "race_family": "trail22",
+      "event_id": 15015,
+      "distance_id": "84441",
+      "entity_type": "athlete",
+      "discovered": 520,
+      "normalized": 520,
+      "errors": 0
+    },
+    {
+      "year": 2025,
+      "race_family": "duo60",
+      "event_id": 15015,
+      "distance_id": "84443",
+      "entity_type": "team",
+      "discovered": 47,
+      "normalized": 47,
+      "errors": 0
+    },
+    {
+      "year": 2025,
+      "race_family": "trail14",
+      "event_id": 15015,
+      "distance_id": "84442",
+      "entity_type": "athlete",
+      "discovered": 403,
+      "normalized": 403,
+      "errors": 0
+    },
+    {
+      "year": 2025,
+      "race_family": "trail5",
+      "event_id": 15015,
+      "distance_id": "84439",
+      "entity_type": "athlete",
+      "discovered": 235,
+      "normalized": 235,
+      "errors": 0
+    },
+    {
+      "year": 2026,
+      "race_family": "ultra60",
+      "event_id": 16880,
+      "distance_id": "97077",
+      "entity_type": "athlete",
+      "discovered": 409,
+      "normalized": 409,
+      "errors": 0
+    },
+    {
+      "year": 2026,
+      "race_family": "trail22",
+      "event_id": 16880,
+      "distance_id": "97078",
+      "entity_type": "athlete",
+      "discovered": 504,
+      "normalized": 504,
+      "errors": 0
+    },
+    {
+      "year": 2026,
+      "race_family": "duo60",
+      "event_id": 16880,
+      "distance_id": "97080",
+      "entity_type": "team",
+      "discovered": 52,
+      "normalized": 52,
+      "errors": 0
+    },
+    {
+      "year": 2026,
+      "race_family": "trail14",
+      "event_id": 16880,
+      "distance_id": "97079",
+      "entity_type": "athlete",
+      "discovered": 456,
+      "normalized": 456,
+      "errors": 0
+    },
+    {
+      "year": 2026,
+      "race_family": "trail5",
+      "event_id": 16880,
+      "distance_id": "97076",
+      "entity_type": "athlete",
+      "discovered": 295,
+      "normalized": 295,
+      "errors": 0
+    }
+  ]
+}
