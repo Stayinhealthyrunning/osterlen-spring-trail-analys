@@ -1,0 +1,34 @@
+name: Validate ÖST foundation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, finalize-foundation]
+    paths:
+      - 'config/**'
+      - 'data/source/sportstiming/**'
+      - 'data/source/gpx/**'
+      - 'research/**'
+      - 'reports/**'
+      - 'PREP_STATUS.md'
+      - 'PREP_MANIFEST.json'
+      - 'AGENTS.md'
+      - 'README.md'
+      - 'tools/validate_foundation.py'
+      - '.github/workflows/validate-foundation.yml'
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate foundation contracts and cross-file consistency
+        run: python tools/validate_foundation.py
