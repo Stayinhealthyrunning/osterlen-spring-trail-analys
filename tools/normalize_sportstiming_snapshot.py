@@ -40,11 +40,15 @@ def slug(value):
     s=unicodedata.normalize('NFKD',value or '').encode('ascii','ignore').decode().lower()
     return re.sub(r'[^a-z0-9]+','-',s).strip('-')
 
+def checkpoint_config():
+    if not CHECKPOINT_CFG.exists(): return {'mappings':[],'derived_relations':[]}
+    return json.loads(CHECKPOINT_CFG.read_text(encoding='utf-8'))
+
+CHECKPOINT_CONFIG=checkpoint_config()
+
 def checkpoint_index():
-    if not CHECKPOINT_CFG.exists(): return {}
-    cfg=json.loads(CHECKPOINT_CFG.read_text(encoding='utf-8'))
     idx={}
-    for m in cfg.get('mappings',[]):
+    for m in CHECKPOINT_CONFIG.get('mappings',[]):
         for year in m.get('years',[]):
             for label in m.get('source_labels',[]):
                 idx[(int(year),label)]={k:v for k,v in m.items() if k not in ('years','source_labels')}
@@ -72,6 +76,25 @@ def checkpoint_semantics(year,label):
         'checkpoint_mapping_confidence':m.get('confidence'),
         'checkpoint_mapping_evidence':m.get('evidence'),
     }
+
+def derived_checkpoint_metrics(year,splits):
+    by={s.get('checkpoint_semantic_key'):s for s in splits if s.get('checkpoint_semantic_key')}
+    out=[]
+    for rel in CHECKPOINT_CONFIG.get('derived_relations',[]):
+        if int(year) not in [int(x) for x in rel.get('years',[])]: continue
+        a=by.get(rel.get('from_semantic_key')); b=by.get(rel.get('to_semantic_key'))
+        if not a or not b: continue
+        ea=a.get('elapsed_seconds'); eb=b.get('elapsed_seconds')
+        value=(eb-ea) if isinstance(ea,int) and isinstance(eb,int) and eb>=ea else None
+        out.append({
+            'metric_key':rel.get('metric_key'),
+            'seconds':value,
+            'from_checkpoint_semantic_key':rel.get('from_semantic_key'),
+            'to_checkpoint_semantic_key':rel.get('to_semantic_key'),
+            'interpretation':rel.get('interpretation'),
+            'classification':'between_timing_observations_not_pure_dwell'
+        })
+    return out
 
 def pair_maps(tables):
     out=[]
@@ -118,8 +141,6 @@ def normalize_result(source,record):
             if len(r)<8:continue
             label=r[0].strip()
             if not label or label in ('Distans','Totalt') or label.startswith('Mellantid'):continue
-            # Current Sportstiming layout: checkpoint, segment distance, participant, segment time,
-            # rank triplet, pace, elapsed time, rank triplet, clock time.
             segment_time=r[3] if len(r)>3 else None
             split_rank=parse_split_ranks(r[4] if len(r)>4 else '')
             pace=r[5] if len(r)>5 else None
@@ -127,7 +148,7 @@ def normalize_result(source,record):
             cumulative_rank=parse_split_ranks(r[7] if len(r)>7 else '')
             clock=r[8] if len(r)>8 else None
             semantic=checkpoint_semantics(source['year'],label)
-            split={
+            splits.append({
                 'checkpoint_source_label':label,
                 'checkpoint_key':slug(label),
                 **semantic,
@@ -144,10 +165,9 @@ def normalize_result(source,record):
                 'place_class':cumulative_rank['class'],
                 'clock_time':clock or None,
                 'raw_cells':r
-            }
-            splits.append(split)
+            })
+    derived_metrics=derived_checkpoint_metrics(source['year'],splits)
     finish_seconds=parse_seconds(flat.get('Nettotid'))
-    # A positive published net time is treated as finished; otherwise leave status UNKNOWN until explicit status evidence is parsed.
     status='FINISHED' if finish_seconds and finish_seconds>0 else 'UNKNOWN'
     return {
         'result_uid':f"st:{source['event_id']}:{record['sportstiming_result_id']}",
@@ -159,7 +179,8 @@ def normalize_result(source,record):
         'start_clock':flat.get('Starttidspunkt'),'finish_clock':flat.get('Sluttidspunkt'),'date_source':flat.get('Datum'),
         'overall_place':overall_place,'overall_count':overall_count,'gender_place':gender_place,'gender_count':gender_count,
         'class_place':class_place,'class_count':class_count,'speed_source':flat.get('Hastighet'),'pace_source':flat.get('Tempo'),
-        'splits':splits,'source_url':record.get('source_url'),'source_sha256':record.get('source_sha256'),
+        'splits':splits,'derived_checkpoint_metrics':derived_metrics,
+        'source_url':record.get('source_url'),'source_sha256':record.get('source_sha256'),
         'raw_tables':record.get('tables',[])
     }
 
