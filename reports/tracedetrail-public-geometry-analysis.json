@@ -1,0 +1,3224 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-10T11:51:58.080103+00:00",
+  "method_notes": [
+    "Public dataTrace.geometry is decoded transiently in memory; full coordinate arrays are not stored in this repository.",
+    "Trace geometry lon/lat fields are treated as Web Mercator metres and converted to WGS84 before Haversine route-length calculations.",
+    "Cross-year comparison resamples routes every 50 m and computes symmetric nearest-route corridor fractions.",
+    "Geometry hashes are SHA-256 of the decoded public geometry string and allow exact-equality checks without redistributing geometry.",
+    "Landmark distances are derived by projecting public Trace de Trail waypoint coordinates onto the same transient route geometry.",
+    "source_date_compet is checked against the manifest year; a mismatch is a provenance warning, not automatically proof that the geometry is wrong for the intended year."
+  ],
+  "routes": [
+    {
+      "trace_id": 7897,
+      "family": "trail22",
+      "year": 2018,
+      "source_url": "https://tracedetrail.fr/fr/trace/7897",
+      "source_date_compet": "16/04/2016",
+      "source_date_year": 2016,
+      "source_year_matches_manifest": false,
+      "source_reported_distance_km": 21.7,
+      "geometry_sha256": "98400a8a0f05f92d0fba2dd9071d5d7491c40f20f8d5070348106b3d09c1a31c",
+      "geometry_point_count": 1516,
+      "path_distance_km": 21.688,
+      "start": [
+        55.71714,
+        13.96054
+      ],
+      "finish": [
+        55.71714,
+        13.96054
+      ],
+      "source_x_count": 1515,
+      "source_x_monotonic_non_decreasing": true,
+      "source_x_first": 0,
+      "source_x_last": 21.78,
+      "source_y_min": 19,
+      "source_y_max": 126,
+      "source_dp_last": 482,
+      "source_dn_last": 482,
+      "source_alti_min": 0,
+      "source_alti_max": 150,
+      "landmarks": []
+    },
+    {
+      "trace_id": 69864,
+      "family": "trail22",
+      "year": 2019,
+      "source_url": "https://tracedetrail.fr/fr/trace/69864",
+      "source_date_compet": "13/04/2019",
+      "source_date_year": 2019,
+      "source_year_matches_manifest": true,
+      "source_reported_distance_km": 21.8,
+      "geometry_sha256": "ee8ab4532a44b3abfdeb6b695185494c35a07ac47596f982feec1ecb3e9bef3e",
+      "geometry_point_count": 1345,
+      "path_distance_km": 21.726,
+      "start": [
+        55.71714,
+        13.96054
+      ],
+      "finish": [
+        55.71714,
+        13.96054
+      ],
+      "source_x_count": 1344,
+      "source_x_monotonic_non_decreasing": true,
+      "source_x_first": 0,
+      "source_x_last": 21.82,
+      "source_y_min": 19,
+      "source_y_max": 126,
+      "source_dp_last": 475,
+      "source_dn_last": 475,
+      "source_alti_min": 0,
+      "source_alti_max": 500,
+      "landmarks": []
+    },
+    {
+      "trace_id": 165617,
+      "family": "trail22",
+      "year": 2022,
+      "source_url": "https://tracedetrail.fr/fr/trace/165617",
+      "source_date_compet": "09/04/2022",
+      "source_date_year": 2022,
+      "source_year_matches_manifest": true,
+      "source_reported_distance_km": 21.8,
+      "geometry_sha256": "4e6dd245a2aab78c96b79720208d0b1deae23a3e206ee3ce80eda3a2957596bf",
+      "geometry_point_count": 1395,
+      "path_distance_km": 21.741,
+      "start": [
+        55.717237,
+        13.960603
+      ],
+      "finish": [
+        55.717184,
+        13.960597
+      ],
+      "source_x_count": 837,
+      "source_x_monotonic_non_decreasing": true,
+      "source_x_first": 0,
+      "source_x_last": 21.82,
+      "source_y_min": 34,
+      "source_y_max": 139,
+      "source_dp_last": 329,
+      "source_dn_last": 328,
+      "source_alti_min": 0,
+      "source_alti_max": 500,
+      "landmarks": []
+    },
+    {
+      "trace_id": 203146,
+      "family": "trail22",
+      "year": 2023,
+      "source_url": "https://tracedetrail.fr/fr/trace/203146",
+      "source_date_compet": "15/04/2023",
+      "source_date_year": 2023,
+      "source_year_matches_manifest": true,
+      "source_reported_distance_km": 21.8,
+      "geometry_sha256": "4e6dd245a2aab78c96b79720208d0b1deae23a3e206ee3ce80eda3a2957596bf",
+      "geometry_point_count": 1395,
+      "path_distance_km": 21.741,
+      "start": [
+        55.717237,
+        13.960603
+      ],
+      "finish": [
+        55.717184,
+        13.960597
+      ],
+      "source_x_count": 837,
+      "source_x_monotonic_non_decreasing": true,
+      "source_x_first": 0,
+      "source_x_last": 21.82,
+      "source_y_min": 34,
+      "source_y_max": 139,
+      "source_dp_last": 329,
+      "source_dn_last": 328,
+      "source_alti_min": 0,
+      "source_alti_max": 500,
+      "landmarks": []
+    },
+    {
+      "trace_id": 237224,
+      "family": "trail22",
+      "year": 2024,
+      "source_url": "https://tracedetrail.fr/fr/trace/237224",
+      "source_date_compet": "13/04/2024",
+      "source_date_year": 2024,
+      "source_year_matches_manifest": true,
+      "source_reported_distance_km": 21.8,
+      "geometry_sha256": "4e6dd245a2aab78c96b79720208d0b1deae23a3e206ee3ce80eda3a2957596bf",
+      "geometry_point_count": 1395,
+      "path_distance_km": 21.741,
+      "start": [
+        55.717237,
+        13.960603
+      ],
+      "finish": [
+        55.717184,
+        13.960597
+      ],
+      "source_x_count": 837,
+      "source_x_monotonic_non_decreasing": true,
+      "source_x_first": 0,
+      "source_x_last": 21.82,
+      "source_y_min": 34,
+      "source_y_max": 139,
+      "source_dp_last": 329,
+      "source_dn_last": 328,
+      "source_alti_min": 0,
+      "source_alti_max": 500,
+      "landmarks": []
+    },
+    {
+      "trace_id": 280053,
+      "family": "trail22",
+      "year": 2025,
+      "source_url": "https://tracedetrail.fr/fr/trace/280053",
+      "source_date_compet": "12/04/2025",
+      "source_date_year": 2025,
+      "source_year_matches_manifest": true,
+      "source_reported_distance_km": 21.77,
+      "geometry_sha256": "f10e7f48905566e2a8defc166b3a4c41bce4c921069513c22de8086921604bcb",
+      "geometry_point_count": 1395,
+      "path_distance_km": 21.71,
+      "start": [
+        55.71714,
+        13.96054
+      ],
+      "finish": [
+        55.71728,
+        13.96049
+      ],
+      "source_x_count": 1395,
+      "source_x_monotonic_non_decreasing": false,
+      "source_x_first": 0,
+      "source_x_last": 21.77,
+      "source_y_min": 34,
+      "source_y_max": 139,
+      "source_dp_last": 254,
+      "source_dn_last": 255,
+      "source_alti_min": 0,
+      "source_alti_max": 500,
+      "landmarks": []
+    },
+    {
+      "trace_id": 322314,
+      "family": "trail22",
+      "year": 2026,
+      "source_url": "https://tracedetrail.fr/fr/trace/322314",
+      "source_date_compet": "18/04/2026",
+      "source_date_year": 2026,
+      "source_year_matches_manifest": true,
+      "source_reported_distance_km": 21.77,
+      "geometry_sha256": "f10e7f48905566e2a8defc166b3a4c41bce4c921069513c22de8086921604bcb",
+      "geometry_point_count": 1395,
+      "path_distance_km": 21.71,
+      "start": [
+        55.71714,
+        13.96054
+      ],
+      "finish": [
+        55.71728,
+        13.96049
+      ],
+      "source_x_count": 1395,
+      "source_x_monotonic_non_decreasing": false,
+      "source_x_first": 0,
+      "source_x_last": 21.77,
+      "source_y_min": 34,
+      "source_y_max": 139,
+      "source_dp_last": 254,
+      "source_dn_last": 255,
+      "source_alti_min": 0,
+      "source_alti_max": 500,
+      "landmarks": []
+    },
+    {
+      "trace_id": 43970,
+      "family": "ultra60",
+      "year": 2018,
+      "source_url": "https://tracedetrail.fr/fr/trace/43970",
+      "source_date_compet": "14/04/2018",
+      "source_date_year": 2018,
+      "source_year_matches_manifest": true,
+      "source_reported_distance_km": 62.6,
+      "geometry_sha256": "bb0a90f2178ef7e946e18d32fa7ae9ea145ea248c71da36efa77f76e35b65112",
+      "geometry_point_count": 2872,
+      "path_distance_km": 62.055,
+      "start": [
+        55.556149,
+        14.35635
+      ],
+      "finish": [
+        55.718208,
+        13.960638
+      ],
+      "source_x_count": 2218,
+      "source_x_monotonic_non_decreasing": true,
+      "source_x_first": 0,
+      "source_x_last": 60.78,
+      "source_y_min": 0,
+      "source_y_max": 116,
+      "source_dp_last": 1227,
+      "source_dn_last": 1152,
+      "source_alti_min": 0,
+      "source_alti_max": 300,
+      "landmarks": [
+        {
+          "source_pi_id": "141260",
+          "title": "Tidsgräns 12:30 (2,5h efter start).",
+          "semantic_key": null,
+          "types": [
+            "bh"
+          ],
+          "projected_distance_km": 14.584,
+          "off_route_m": 0.0
+        },
+        {
+          "source_pi_id": "141214",
+          "title": "Buhres Fisk vätskestation",
+          "semantic_key": null,
+          "types": [
+            "ravitoc"
+          ],
+          "projected_distance_km": 21.161,
+          "off_route_m": 0.0
+        },
+        {
+          "source_pi_id": "141217",
+          "title": "Bengtemölla Vätskestation 1 (officiell)",
+          "semantic_key": "bengtemolla",
+          "types": [
+            "ravitoc"
+          ],
+          "projected_distance_km": 33.479,
+          "off_route_m": 0.0
+        },
+        {
+          "source_pi_id": "141263",
+          "title": "Tidsgräns 14:30 (4,5h efter start).",
+          "semantic_key": null,
+          "types": [
+            "bh"
+          ],
+          "projected_distance_km": 33.675,
+          "off_route_m": 0.0
+        },
+        {
+          "source_pi_id": "141264",
+          "title": "Tidsgräns 16:00 (6h efter start).",
+          "semantic_key": null,
+          "types": [
+            "bh"
+          ],
+          "projected_distance_km": 44.516,
+          "off_route_m": 0.0
+        },
+        {
+          "source_pi_id": "141265",
+          "title": "Tidsgräns 17:30 (7,5h efter start).",
+          "semantic_key": null,
+          "types": [
+            "bh"
+          ],
+          "projected_distance_km": 53.559,
+          "off_route_m": 0.0
+        },
+        {
+          "source_pi_id": "141221",
+          "title": "Vantalängan aid station 2",
+          "semantic_key": "vantalangan",
+          "types": [
+            "ravitoc"
+          ],
+          "projected_distance_km": 53.611,
+          "off_route_m": 0.0
+        },
+        {
+          "source_pi_id": "141279",
+          "title": "Tidsgäns målgång kl 19:00",
+          "semantic_key": null,
+          "types": [
+            "bh"
+          ],
+          "projected_distance_km": 62.055,
+          "off_route_m": 0.0
+        }
+      ]
+    },
+    {
+      "trace_id": 69381,
+      "family": "ultra60",
+      "year": 2019,
+      "source_url": "https://tracedetrail.fr/fr/trace/69381",
+      "source_date_compet": "13/04/2019",
+      "source_date_year": 2019,
+      "source_year_matches_manifest": true,
+      "source_reported_distance_km": 58.7,
+      "geometry_sha256": "ba16b78ba88395ac0bdaf3f0556eba922d55fd3663ce17fa40e588cf45cf22c6",
+      "geometry_point_count": 4033,
+      "path_distance_km": 58.612,
+      "start": [
+        55.556668,
+        14.354636
+      ],
+      "finish": [
+        55.717329,
+        13.960556
+      ],
+      "source_x_count": 2271,
+      "source_x_monotonic_non_decreasing": true,
+      "source_x_first": 0,
+      "source_x_last": 58.8,
+      "source_y_min": 0,
+      "source_y_max": 124,
+      "source_dp_last": 851,
+      "source_dn_last": 736,
+      "source_alti_min": 0,
+      "source_alti_max": 500,
+      "landmarks": []
+    },
+    {
+      "trace_id": 172147,
+      "family": "ultra60",
+      "year": 2022,
+      "source_url": "https://tracedetrail.fr/fr/trace/172147",
+      "source_date_compet": "09/04/2022",
+      "source_date_year": 2022,
+      "source_year_matches_manifest": true,
+      "source_reported_distance_km": 58.5,
+      "geometry_sha256": "d65a4c4f615601056da54eda115d937f1a496bd61253950c49209b30dc06b33a",
+      "geometry_point_count": 3552,
+      "path_distance_km": 58.347,
+      "start": [
+        55.55673,
+        14.354714
+      ],
+      "finish": [
+        55.717194,
+        13.96052
+      ],
+      "source_x_count": 2224,
+      "source_x_monotonic_non_decreasing": true,
+      "source_x_first": 0,
+      "source_x_last": 58.53,
+      "source_y_min": 0,
+      "source_y_max": 124,
+      "source_dp_last": 838,
+      "source_dn_last": 721,
+      "source_alti_min": 0,
+      "source_alti_max": 500,
+      "landmarks": [
+        {
+          "source_pi_id": "521005",
+          "title": "Aid station nr 1 / Bengtemölla",
+          "semantic_key": "bengtemolla",
+          "types": [
+            "Ravitaillement",
+            "Regroupement"
+          ],
+          "projected_distance_km": 32.212,
+          "off_route_m": 0.0
+        },
+        {
+          "source_pi_id": "521018",
+          "title": null,
+          "semantic_key": null,
+          "types": [
+            "bh"
+          ],
+          "projected_distance_km": 58.347,
+          "off_route_m": 0.0
+        }
+      ]
+    },
+    {
+      "trace_id": 203147,
+      "family": "ultra60",
+      "year": 2023,
+      "source_url": "https://tracedetrail.fr/fr/trace/203147",
+      "source_date_compet": "15/04/2023",
+      "source_date_year": 2023,
+      "source_year_matches_manifest": true,
+      "source_reported_distance_km": 58.5,
+      "geometry_sha256": "d65a4c4f615601056da54eda115d937f1a496bd61253950c49209b30dc06b33a",
+      "geometry_point_count": 3552,
+      "path_distance_km": 58.347,
+      "start": [
+        55.55673,
+        14.354714
+      ],
+      "finish": [
+        55.717194,
+        13.96052
+      ],
+      "source_x_count": 2224,
+      "source_x_monotonic_non_decreasing": true,
+      "source_x_first": 0,
+      "source_x_last": 58.53,
+      "source_y_min": 0,
+      "source_y_max": 124,
+      "source_dp_last": 838,
+      "source_dn_last": 721,
+      "source_alti_min": 0,
+      "source_alti_max": 500,
+      "landmarks": [
+        {
+          "source_pi_id": "626900",
+          "title": "Aid station nr 1 / Bengtemölla",
+          "semantic_key": "bengtemolla",
+          "types": [
+            "Ravitaillement",
+            "Regroupement"
+          ],
+          "projected_distance_km": 32.212,
+          "off_route_m": 0.0
+        },
+        {
+          "source_pi_id": "626908",
+          "title": null,
+          "semantic_key": null,
+          "types": [
+            "bh"
+          ],
+          "projected_distance_km": 58.347,
+          "off_route_m": 0.0
+        }
+      ]
+    },
+    {
+      "trace_id": 251126,
+      "family": "ultra60",
+      "year": 2024,
+      "source_url": "https://tracedetrail.fr/fr/trace/251126",
+      "source_date_compet": "13/04/2024",
+      "source_date_year": 2024,
+      "source_year_matches_manifest": true,
+      "source_reported_distance_km": 60.7,
+      "geometry_sha256": "2c8774fa3e2095e308d6ee4eb150f4cb588be31d65f7da813021b7e8f2e71c08",
+      "geometry_point_count": 3258,
+      "path_distance_km": 60.598,
+      "start": [
+        55.55673,
+        14.35471
+      ],
+      "finish": [
+        55.71719,
+        13.960519
+      ],
+      "source_x_count": 2240,
+      "source_x_monotonic_non_decreasing": true,
+      "source_x_first": 0,
+      "source_x_last": 60.75,
+      "source_y_min": 0,
+      "source_y_max": 124,
+      "source_dp_last": 693,
+      "source_dn_last": 578,
+      "source_alti_min": 0,
+      "source_alti_max": 500,
+      "landmarks": []
+    },
+    {
+      "trace_id": 272846,
+      "family": "ultra60",
+      "year": 2025,
+      "source_url": "https://tracedetrail.fr/fr/trace/272846",
+      "source_date_compet": "13/04/2025",
+      "source_date_year": 2025,
+      "source_year_matches_manifest": true,
+      "source_reported_distance_km": 59.76,
+      "geometry_sha256": "57e39f38d4f8db6dc43f1a7d816ae8ff859373a10bc77591d0bcd7cca7c128b9",
+      "geometry_point_count": 4246,
+      "path_distance_km": 59.592,
+      "start": [
+        55.559035,
+        14.352885
+      ],
+      "finish": [
+        55.717078,
+        13.960562
+      ],
+      "source_x_count": 4246,
+      "source_x_monotonic_non_decreasing": false,
+      "source_x_first": 0,
+      "source_x_last": 59.76,
+      "source_y_min": 0,
+      "source_y_max": 121,
+      "source_dp_last": 680,
+      "source_dn_last": 564,
+      "source_alti_min": 0,
+      "source_alti_max": 500,
+      "landmarks": [
+        {
+          "source_pi_id": "822847",
+          "title": "Cut of time 12:45 + Minibus",
+          "semantic_key": null,
+          "types": [
+            "bh",
+            "bus"
+          ],
+          "projected_distance_km": 15.29,
+          "off_route_m": 0.0
+        },
+        {
+          "source_pi_id": "822826",
+          "title": "Solevi Idrottsplats / Aid station nr1",
+          "semantic_key": null,
+          "types": [
+            "basevie",
+            "ravitoliquide",
+            "ravitoc"
+          ],
+          "projected_distance_km": 21.043,
+          "off_route_m": 73.6
+        },
+        {
+          "source_pi_id": "822859",
+          "title": "Bengtemölla Aid-station",
+          "semantic_key": "bengtemolla",
+          "types": [
+            "secours",
+            "basevie",
+            "bh"
+          ],
+          "projected_distance_km": 33.479,
+          "off_route_m": 0.0
+        },
+        {
+          "source_pi_id": "822871",
+          "title": "Cut of time 16:15",
+          "semantic_key": null,
+          "types": [
+            "bh",
+            "bus"
+          ],
+          "projected_distance_km": 42.49,
+          "off_route_m": 0.0
+        },
+        {
+          "source_pi_id": "822877",
+          "title": "Vantalägan / Aid station nr 3",
+          "semantic_key": "vantalangan",
+          "types": [
+            "basevie",
+            "bh"
+          ],
+          "projected_distance_km": 51.221,
+          "off_route_m": 0.0
+        }
+      ]
+    },
+    {
+      "trace_id": 322315,
+      "family": "ultra60",
+      "year": 2026,
+      "source_url": "https://tracedetrail.fr/fr/trace/322315",
+      "source_date_compet": "18/04/2026",
+      "source_date_year": 2026,
+      "source_year_matches_manifest": true,
+      "source_reported_distance_km": 59.76,
+      "geometry_sha256": "29af78c7e734144e5a0387e8480e3d662a0edc88c8778695f0f9bfaee0fc66e7",
+      "geometry_point_count": 4269,
+      "path_distance_km": 59.592,
+      "start": [
+        55.559035,
+        14.352885
+      ],
+      "finish": [
+        55.717078,
+        13.960562
+      ],
+      "source_x_count": 4269,
+      "source_x_monotonic_non_decreasing": false,
+      "source_x_first": 0,
+      "source_x_last": 59.76,
+      "source_y_min": 0,
+      "source_y_max": 121,
+      "source_dp_last": 683,
+      "source_dn_last": 567,
+      "source_alti_min": 0,
+      "source_alti_max": 500,
+      "landmarks": [
+        {
+          "source_pi_id": "971297",
+          "title": "Cut of time 12:45 + Minibus",
+          "semantic_key": null,
+          "types": [
+            "bh",
+            "bus"
+          ],
+          "projected_distance_km": 15.29,
+          "off_route_m": 0.0
+        },
+        {
+          "source_pi_id": "971294",
+          "title": "Solevi Idrottsplats / Aid station nr1",
+          "semantic_key": null,
+          "types": [
+            "basevie",
+            "ravitoliquide",
+            "ravitoc"
+          ],
+          "projected_distance_km": 21.043,
+          "off_route_m": 73.6
+        },
+        {
+          "source_pi_id": "971298",
+          "title": "Bengtemölla Aid-station",
+          "semantic_key": "bengtemolla",
+          "types": [
+            "secours",
+            "basevie",
+            "bh"
+          ],
+          "projected_distance_km": 33.479,
+          "off_route_m": 0.0
+        },
+        {
+          "source_pi_id": "971301",
+          "title": "Cut of time 16:15",
+          "semantic_key": null,
+          "types": [
+            "bh",
+            "bus"
+          ],
+          "projected_distance_km": 42.49,
+          "off_route_m": 0.0
+        },
+        {
+          "source_pi_id": "971303",
+          "title": "Vantalägan / Aid station nr 3",
+          "semantic_key": "vantalangan",
+          "types": [
+            "basevie",
+            "bh"
+          ],
+          "projected_distance_km": 51.221,
+          "off_route_m": 0.0
+        }
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "a_trace_id": 7897,
+      "b_trace_id": 69864,
+      "family": "trail22",
+      "a_year": 2018,
+      "b_year": 2019,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 0.038,
+      "start_separation_m": 0.0,
+      "finish_separation_m": 0.0,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.954,
+          "b_fraction": 0.9564,
+          "symmetric_min_fraction": 0.954,
+          "symmetric_mean_fraction": 0.9552
+        },
+        "50": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 15.4,
+        "p95": 22.9,
+        "max": 38.8
+      },
+      "b_to_a_nearest_m": {
+        "median": 15.6,
+        "p95": 22.9,
+        "max": 39.5
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 7897,
+      "b_trace_id": 165617,
+      "family": "trail22",
+      "a_year": 2018,
+      "b_year": 2022,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 0.053,
+      "start_separation_m": 11.5,
+      "finish_separation_m": 6.1,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8759,
+          "b_fraction": 0.8624,
+          "symmetric_min_fraction": 0.8624,
+          "symmetric_mean_fraction": 0.8691
+        },
+        "50": {
+          "a_fraction": 1.0,
+          "b_fraction": 0.9977,
+          "symmetric_min_fraction": 0.9977,
+          "symmetric_mean_fraction": 0.9989
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 17.7,
+        "p95": 30.8,
+        "max": 44.8
+      },
+      "b_to_a_nearest_m": {
+        "median": 18.3,
+        "p95": 30.7,
+        "max": 80.8
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 7897,
+      "b_trace_id": 203146,
+      "family": "trail22",
+      "a_year": 2018,
+      "b_year": 2023,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 0.053,
+      "start_separation_m": 11.5,
+      "finish_separation_m": 6.1,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8759,
+          "b_fraction": 0.8624,
+          "symmetric_min_fraction": 0.8624,
+          "symmetric_mean_fraction": 0.8691
+        },
+        "50": {
+          "a_fraction": 1.0,
+          "b_fraction": 0.9977,
+          "symmetric_min_fraction": 0.9977,
+          "symmetric_mean_fraction": 0.9989
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 17.7,
+        "p95": 30.8,
+        "max": 44.8
+      },
+      "b_to_a_nearest_m": {
+        "median": 18.3,
+        "p95": 30.7,
+        "max": 80.8
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 7897,
+      "b_trace_id": 237224,
+      "family": "trail22",
+      "a_year": 2018,
+      "b_year": 2024,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 0.053,
+      "start_separation_m": 11.5,
+      "finish_separation_m": 6.1,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8759,
+          "b_fraction": 0.8624,
+          "symmetric_min_fraction": 0.8624,
+          "symmetric_mean_fraction": 0.8691
+        },
+        "50": {
+          "a_fraction": 1.0,
+          "b_fraction": 0.9977,
+          "symmetric_min_fraction": 0.9977,
+          "symmetric_mean_fraction": 0.9989
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 17.7,
+        "p95": 30.8,
+        "max": 44.8
+      },
+      "b_to_a_nearest_m": {
+        "median": 18.3,
+        "p95": 30.7,
+        "max": 80.8
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 7897,
+      "b_trace_id": 280053,
+      "family": "trail22",
+      "a_year": 2018,
+      "b_year": 2025,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 0.022,
+      "start_separation_m": 0.0,
+      "finish_separation_m": 15.9,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.954,
+          "b_fraction": 0.9564,
+          "symmetric_min_fraction": 0.954,
+          "symmetric_mean_fraction": 0.9552
+        },
+        "50": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 15.4,
+        "p95": 22.9,
+        "max": 38.8
+      },
+      "b_to_a_nearest_m": {
+        "median": 15.6,
+        "p95": 22.9,
+        "max": 39.5
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 7897,
+      "b_trace_id": 322314,
+      "family": "trail22",
+      "a_year": 2018,
+      "b_year": 2026,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 0.022,
+      "start_separation_m": 0.0,
+      "finish_separation_m": 15.9,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.954,
+          "b_fraction": 0.9564,
+          "symmetric_min_fraction": 0.954,
+          "symmetric_mean_fraction": 0.9552
+        },
+        "50": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 15.4,
+        "p95": 22.9,
+        "max": 38.8
+      },
+      "b_to_a_nearest_m": {
+        "median": 15.6,
+        "p95": 22.9,
+        "max": 39.5
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 69864,
+      "b_trace_id": 165617,
+      "family": "trail22",
+      "a_year": 2019,
+      "b_year": 2022,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 0.015,
+      "start_separation_m": 11.5,
+      "finish_separation_m": 6.1,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.9037,
+          "b_fraction": 0.8991,
+          "symmetric_min_fraction": 0.8991,
+          "symmetric_mean_fraction": 0.9014
+        },
+        "50": {
+          "a_fraction": 0.9954,
+          "b_fraction": 0.9931,
+          "symmetric_min_fraction": 0.9931,
+          "symmetric_mean_fraction": 0.9943
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 15.5,
+        "p95": 29.3,
+        "max": 58.5
+      },
+      "b_to_a_nearest_m": {
+        "median": 16.2,
+        "p95": 29.2,
+        "max": 60.0
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 69864,
+      "b_trace_id": 203146,
+      "family": "trail22",
+      "a_year": 2019,
+      "b_year": 2023,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 0.015,
+      "start_separation_m": 11.5,
+      "finish_separation_m": 6.1,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.9037,
+          "b_fraction": 0.8991,
+          "symmetric_min_fraction": 0.8991,
+          "symmetric_mean_fraction": 0.9014
+        },
+        "50": {
+          "a_fraction": 0.9954,
+          "b_fraction": 0.9931,
+          "symmetric_min_fraction": 0.9931,
+          "symmetric_mean_fraction": 0.9943
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 15.5,
+        "p95": 29.3,
+        "max": 58.5
+      },
+      "b_to_a_nearest_m": {
+        "median": 16.2,
+        "p95": 29.2,
+        "max": 60.0
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 69864,
+      "b_trace_id": 237224,
+      "family": "trail22",
+      "a_year": 2019,
+      "b_year": 2024,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 0.015,
+      "start_separation_m": 11.5,
+      "finish_separation_m": 6.1,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.9037,
+          "b_fraction": 0.8991,
+          "symmetric_min_fraction": 0.8991,
+          "symmetric_mean_fraction": 0.9014
+        },
+        "50": {
+          "a_fraction": 0.9954,
+          "b_fraction": 0.9931,
+          "symmetric_min_fraction": 0.9931,
+          "symmetric_mean_fraction": 0.9943
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 15.5,
+        "p95": 29.3,
+        "max": 58.5
+      },
+      "b_to_a_nearest_m": {
+        "median": 16.2,
+        "p95": 29.2,
+        "max": 60.0
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 69864,
+      "b_trace_id": 280053,
+      "family": "trail22",
+      "a_year": 2019,
+      "b_year": 2025,
+      "geometry_hash_equal": false,
+      "distance_difference_km": -0.016,
+      "start_separation_m": 0.0,
+      "finish_separation_m": 15.9,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "50": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "b_to_a_nearest_m": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 8.2
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 69864,
+      "b_trace_id": 322314,
+      "family": "trail22",
+      "a_year": 2019,
+      "b_year": 2026,
+      "geometry_hash_equal": false,
+      "distance_difference_km": -0.016,
+      "start_separation_m": 0.0,
+      "finish_separation_m": 15.9,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "50": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "b_to_a_nearest_m": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 8.2
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 165617,
+      "b_trace_id": 203146,
+      "family": "trail22",
+      "a_year": 2022,
+      "b_year": 2023,
+      "geometry_hash_equal": true,
+      "distance_difference_km": 0.0,
+      "start_separation_m": 0.0,
+      "finish_separation_m": 0.0,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "50": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "b_to_a_nearest_m": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "exact_same_public_geometry"
+    },
+    {
+      "a_trace_id": 165617,
+      "b_trace_id": 237224,
+      "family": "trail22",
+      "a_year": 2022,
+      "b_year": 2024,
+      "geometry_hash_equal": true,
+      "distance_difference_km": 0.0,
+      "start_separation_m": 0.0,
+      "finish_separation_m": 0.0,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "50": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "b_to_a_nearest_m": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "exact_same_public_geometry"
+    },
+    {
+      "a_trace_id": 165617,
+      "b_trace_id": 280053,
+      "family": "trail22",
+      "a_year": 2022,
+      "b_year": 2025,
+      "geometry_hash_equal": false,
+      "distance_difference_km": -0.031,
+      "start_separation_m": 11.5,
+      "finish_separation_m": 12.6,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8991,
+          "b_fraction": 0.9037,
+          "symmetric_min_fraction": 0.8991,
+          "symmetric_mean_fraction": 0.9014
+        },
+        "50": {
+          "a_fraction": 0.9931,
+          "b_fraction": 0.9954,
+          "symmetric_min_fraction": 0.9931,
+          "symmetric_mean_fraction": 0.9943
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 16.2,
+        "p95": 29.2,
+        "max": 60.0
+      },
+      "b_to_a_nearest_m": {
+        "median": 15.5,
+        "p95": 29.3,
+        "max": 58.5
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 165617,
+      "b_trace_id": 322314,
+      "family": "trail22",
+      "a_year": 2022,
+      "b_year": 2026,
+      "geometry_hash_equal": false,
+      "distance_difference_km": -0.031,
+      "start_separation_m": 11.5,
+      "finish_separation_m": 12.6,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8991,
+          "b_fraction": 0.9037,
+          "symmetric_min_fraction": 0.8991,
+          "symmetric_mean_fraction": 0.9014
+        },
+        "50": {
+          "a_fraction": 0.9931,
+          "b_fraction": 0.9954,
+          "symmetric_min_fraction": 0.9931,
+          "symmetric_mean_fraction": 0.9943
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 16.2,
+        "p95": 29.2,
+        "max": 60.0
+      },
+      "b_to_a_nearest_m": {
+        "median": 15.5,
+        "p95": 29.3,
+        "max": 58.5
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 203146,
+      "b_trace_id": 237224,
+      "family": "trail22",
+      "a_year": 2023,
+      "b_year": 2024,
+      "geometry_hash_equal": true,
+      "distance_difference_km": 0.0,
+      "start_separation_m": 0.0,
+      "finish_separation_m": 0.0,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "50": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "b_to_a_nearest_m": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "exact_same_public_geometry"
+    },
+    {
+      "a_trace_id": 203146,
+      "b_trace_id": 280053,
+      "family": "trail22",
+      "a_year": 2023,
+      "b_year": 2025,
+      "geometry_hash_equal": false,
+      "distance_difference_km": -0.031,
+      "start_separation_m": 11.5,
+      "finish_separation_m": 12.6,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8991,
+          "b_fraction": 0.9037,
+          "symmetric_min_fraction": 0.8991,
+          "symmetric_mean_fraction": 0.9014
+        },
+        "50": {
+          "a_fraction": 0.9931,
+          "b_fraction": 0.9954,
+          "symmetric_min_fraction": 0.9931,
+          "symmetric_mean_fraction": 0.9943
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 16.2,
+        "p95": 29.2,
+        "max": 60.0
+      },
+      "b_to_a_nearest_m": {
+        "median": 15.5,
+        "p95": 29.3,
+        "max": 58.5
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 203146,
+      "b_trace_id": 322314,
+      "family": "trail22",
+      "a_year": 2023,
+      "b_year": 2026,
+      "geometry_hash_equal": false,
+      "distance_difference_km": -0.031,
+      "start_separation_m": 11.5,
+      "finish_separation_m": 12.6,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8991,
+          "b_fraction": 0.9037,
+          "symmetric_min_fraction": 0.8991,
+          "symmetric_mean_fraction": 0.9014
+        },
+        "50": {
+          "a_fraction": 0.9931,
+          "b_fraction": 0.9954,
+          "symmetric_min_fraction": 0.9931,
+          "symmetric_mean_fraction": 0.9943
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 16.2,
+        "p95": 29.2,
+        "max": 60.0
+      },
+      "b_to_a_nearest_m": {
+        "median": 15.5,
+        "p95": 29.3,
+        "max": 58.5
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 237224,
+      "b_trace_id": 280053,
+      "family": "trail22",
+      "a_year": 2024,
+      "b_year": 2025,
+      "geometry_hash_equal": false,
+      "distance_difference_km": -0.031,
+      "start_separation_m": 11.5,
+      "finish_separation_m": 12.6,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8991,
+          "b_fraction": 0.9037,
+          "symmetric_min_fraction": 0.8991,
+          "symmetric_mean_fraction": 0.9014
+        },
+        "50": {
+          "a_fraction": 0.9931,
+          "b_fraction": 0.9954,
+          "symmetric_min_fraction": 0.9931,
+          "symmetric_mean_fraction": 0.9943
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 16.2,
+        "p95": 29.2,
+        "max": 60.0
+      },
+      "b_to_a_nearest_m": {
+        "median": 15.5,
+        "p95": 29.3,
+        "max": 58.5
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 237224,
+      "b_trace_id": 322314,
+      "family": "trail22",
+      "a_year": 2024,
+      "b_year": 2026,
+      "geometry_hash_equal": false,
+      "distance_difference_km": -0.031,
+      "start_separation_m": 11.5,
+      "finish_separation_m": 12.6,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8991,
+          "b_fraction": 0.9037,
+          "symmetric_min_fraction": 0.8991,
+          "symmetric_mean_fraction": 0.9014
+        },
+        "50": {
+          "a_fraction": 0.9931,
+          "b_fraction": 0.9954,
+          "symmetric_min_fraction": 0.9931,
+          "symmetric_mean_fraction": 0.9943
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 16.2,
+        "p95": 29.2,
+        "max": 60.0
+      },
+      "b_to_a_nearest_m": {
+        "median": 15.5,
+        "p95": 29.3,
+        "max": 58.5
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 280053,
+      "b_trace_id": 322314,
+      "family": "trail22",
+      "a_year": 2025,
+      "b_year": 2026,
+      "geometry_hash_equal": true,
+      "distance_difference_km": 0.0,
+      "start_separation_m": 0.0,
+      "finish_separation_m": 0.0,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "50": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "b_to_a_nearest_m": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "exact_same_public_geometry"
+    },
+    {
+      "a_trace_id": 43970,
+      "b_trace_id": 69381,
+      "family": "ultra60",
+      "a_year": 2018,
+      "b_year": 2019,
+      "geometry_hash_equal": false,
+      "distance_difference_km": -3.443,
+      "start_separation_m": 122.3,
+      "finish_separation_m": 97.9,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8142,
+          "b_fraction": 0.8356,
+          "symmetric_min_fraction": 0.8142,
+          "symmetric_mean_fraction": 0.8249
+        },
+        "50": {
+          "a_fraction": 0.9469,
+          "b_fraction": 0.9591,
+          "symmetric_min_fraction": 0.9469,
+          "symmetric_mean_fraction": 0.953
+        },
+        "100": {
+          "a_fraction": 0.9743,
+          "b_fraction": 0.9838,
+          "symmetric_min_fraction": 0.9743,
+          "symmetric_mean_fraction": 0.979
+        },
+        "250": {
+          "a_fraction": 0.9968,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 0.9968,
+          "symmetric_mean_fraction": 0.9984
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 16.0,
+        "p95": 51.5,
+        "max": 293.7
+      },
+      "b_to_a_nearest_m": {
+        "median": 15.7,
+        "p95": 42.2,
+        "max": 217.6
+      },
+      "a_divergence_intervals_over_100m": [
+        {
+          "start_km": 1.8,
+          "end_km": 2.6,
+          "length_km": 0.8,
+          "median_separation_m": 187.8,
+          "max_separation_m": 222.9
+        },
+        {
+          "start_km": 19.5,
+          "end_km": 19.95,
+          "length_km": 0.45,
+          "median_separation_m": 213.8,
+          "max_separation_m": 293.7
+        }
+      ],
+      "b_divergence_intervals_over_100m": [
+        {
+          "start_km": 1.65,
+          "end_km": 2.25,
+          "length_km": 0.6,
+          "median_separation_m": 167.9,
+          "max_separation_m": 217.6
+        }
+      ],
+      "classification": "largely_same_corridor_with_changes"
+    },
+    {
+      "a_trace_id": 43970,
+      "b_trace_id": 172147,
+      "family": "ultra60",
+      "a_year": 2018,
+      "b_year": 2022,
+      "geometry_hash_equal": false,
+      "distance_difference_km": -3.708,
+      "start_separation_m": 121.5,
+      "finish_separation_m": 113.0,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8142,
+          "b_fraction": 0.8313,
+          "symmetric_min_fraction": 0.8142,
+          "symmetric_mean_fraction": 0.8227
+        },
+        "50": {
+          "a_fraction": 0.9485,
+          "b_fraction": 0.9606,
+          "symmetric_min_fraction": 0.9485,
+          "symmetric_mean_fraction": 0.9546
+        },
+        "100": {
+          "a_fraction": 0.9767,
+          "b_fraction": 0.9854,
+          "symmetric_min_fraction": 0.9767,
+          "symmetric_mean_fraction": 0.9811
+        },
+        "250": {
+          "a_fraction": 0.9968,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 0.9968,
+          "symmetric_mean_fraction": 0.9984
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 18.1,
+        "p95": 50.7,
+        "max": 296.3
+      },
+      "b_to_a_nearest_m": {
+        "median": 17.7,
+        "p95": 42.2,
+        "max": 193.5
+      },
+      "a_divergence_intervals_over_100m": [
+        {
+          "start_km": 1.7,
+          "end_km": 2.5,
+          "length_km": 0.8,
+          "median_separation_m": 161.3,
+          "max_separation_m": 205.0
+        },
+        {
+          "start_km": 19.5,
+          "end_km": 19.95,
+          "length_km": 0.45,
+          "median_separation_m": 220.6,
+          "max_separation_m": 296.3
+        }
+      ],
+      "b_divergence_intervals_over_100m": [
+        {
+          "start_km": 1.65,
+          "end_km": 2.2,
+          "length_km": 0.55,
+          "median_separation_m": 162.4,
+          "max_separation_m": 193.5
+        }
+      ],
+      "classification": "largely_same_corridor_with_changes"
+    },
+    {
+      "a_trace_id": 43970,
+      "b_trace_id": 203147,
+      "family": "ultra60",
+      "a_year": 2018,
+      "b_year": 2023,
+      "geometry_hash_equal": false,
+      "distance_difference_km": -3.708,
+      "start_separation_m": 121.5,
+      "finish_separation_m": 113.0,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8142,
+          "b_fraction": 0.8313,
+          "symmetric_min_fraction": 0.8142,
+          "symmetric_mean_fraction": 0.8227
+        },
+        "50": {
+          "a_fraction": 0.9485,
+          "b_fraction": 0.9606,
+          "symmetric_min_fraction": 0.9485,
+          "symmetric_mean_fraction": 0.9546
+        },
+        "100": {
+          "a_fraction": 0.9767,
+          "b_fraction": 0.9854,
+          "symmetric_min_fraction": 0.9767,
+          "symmetric_mean_fraction": 0.9811
+        },
+        "250": {
+          "a_fraction": 0.9968,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 0.9968,
+          "symmetric_mean_fraction": 0.9984
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 18.1,
+        "p95": 50.7,
+        "max": 296.3
+      },
+      "b_to_a_nearest_m": {
+        "median": 17.7,
+        "p95": 42.2,
+        "max": 193.5
+      },
+      "a_divergence_intervals_over_100m": [
+        {
+          "start_km": 1.7,
+          "end_km": 2.5,
+          "length_km": 0.8,
+          "median_separation_m": 161.3,
+          "max_separation_m": 205.0
+        },
+        {
+          "start_km": 19.5,
+          "end_km": 19.95,
+          "length_km": 0.45,
+          "median_separation_m": 220.6,
+          "max_separation_m": 296.3
+        }
+      ],
+      "b_divergence_intervals_over_100m": [
+        {
+          "start_km": 1.65,
+          "end_km": 2.2,
+          "length_km": 0.55,
+          "median_separation_m": 162.4,
+          "max_separation_m": 193.5
+        }
+      ],
+      "classification": "largely_same_corridor_with_changes"
+    },
+    {
+      "a_trace_id": 43970,
+      "b_trace_id": 251126,
+      "family": "ultra60",
+      "a_year": 2018,
+      "b_year": 2024,
+      "geometry_hash_equal": false,
+      "distance_difference_km": -1.457,
+      "start_separation_m": 121.7,
+      "finish_separation_m": 113.4,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.778,
+          "b_fraction": 0.7741,
+          "symmetric_min_fraction": 0.7741,
+          "symmetric_mean_fraction": 0.776
+        },
+        "50": {
+          "a_fraction": 0.9123,
+          "b_fraction": 0.8879,
+          "symmetric_min_fraction": 0.8879,
+          "symmetric_mean_fraction": 0.9001
+        },
+        "100": {
+          "a_fraction": 0.9493,
+          "b_fraction": 0.92,
+          "symmetric_min_fraction": 0.92,
+          "symmetric_mean_fraction": 0.9347
+        },
+        "250": {
+          "a_fraction": 0.9855,
+          "b_fraction": 0.958,
+          "symmetric_min_fraction": 0.958,
+          "symmetric_mean_fraction": 0.9717
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 15.7,
+        "p95": 101.1,
+        "max": 464.7
+      },
+      "b_to_a_nearest_m": {
+        "median": 15.6,
+        "p95": 211.0,
+        "max": 1182.0
+      },
+      "a_divergence_intervals_over_100m": [
+        {
+          "start_km": 1.8,
+          "end_km": 2.5,
+          "length_km": 0.7,
+          "median_separation_m": 157.3,
+          "max_separation_m": 204.9
+        },
+        {
+          "start_km": 11.3,
+          "end_km": 12.9,
+          "length_km": 1.6,
+          "median_separation_m": 211.6,
+          "max_separation_m": 464.7
+        },
+        {
+          "start_km": 19.5,
+          "end_km": 19.95,
+          "length_km": 0.45,
+          "median_separation_m": 224.0,
+          "max_separation_m": 300.9
+        }
+      ],
+      "b_divergence_intervals_over_100m": [
+        {
+          "start_km": 1.65,
+          "end_km": 2.25,
+          "length_km": 0.6,
+          "median_separation_m": 172.6,
+          "max_separation_m": 210.6
+        },
+        {
+          "start_km": 11.0,
+          "end_km": 14.55,
+          "length_km": 3.55,
+          "median_separation_m": 423.7,
+          "max_separation_m": 1182.0
+        }
+      ],
+      "classification": "substantial_shared_corridor_but_material_changes"
+    },
+    {
+      "a_trace_id": 43970,
+      "b_trace_id": 272846,
+      "family": "ultra60",
+      "a_year": 2018,
+      "b_year": 2025,
+      "geometry_hash_equal": false,
+      "distance_difference_km": -2.463,
+      "start_separation_m": 387.9,
+      "finish_separation_m": 125.7,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.7538,
+          "b_fraction": 0.7527,
+          "symmetric_min_fraction": 0.7527,
+          "symmetric_mean_fraction": 0.7533
+        },
+        "50": {
+          "a_fraction": 0.8842,
+          "b_fraction": 0.8751,
+          "symmetric_min_fraction": 0.8751,
+          "symmetric_mean_fraction": 0.8796
+        },
+        "100": {
+          "a_fraction": 0.9324,
+          "b_fraction": 0.9254,
+          "symmetric_min_fraction": 0.9254,
+          "symmetric_mean_fraction": 0.9289
+        },
+        "250": {
+          "a_fraction": 0.9815,
+          "b_fraction": 0.9589,
+          "symmetric_min_fraction": 0.9589,
+          "symmetric_mean_fraction": 0.9702
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 18.5,
+        "p95": 148.0,
+        "max": 467.7
+      },
+      "b_to_a_nearest_m": {
+        "median": 18.3,
+        "p95": 186.6,
+        "max": 929.5
+      },
+      "a_divergence_intervals_over_100m": [
+        {
+          "start_km": 0.0,
+          "end_km": 0.3,
+          "length_km": 0.3,
+          "median_separation_m": 264.7,
+          "max_separation_m": 387.5
+        },
+        {
+          "start_km": 1.65,
+          "end_km": 2.6,
+          "length_km": 0.95,
+          "median_separation_m": 192.8,
+          "max_separation_m": 233.6
+        },
+        {
+          "start_km": 11.4,
+          "end_km": 12.9,
+          "length_km": 1.5,
+          "median_separation_m": 213.7,
+          "max_separation_m": 467.7
+        },
+        {
+          "start_km": 19.5,
+          "end_km": 19.95,
+          "length_km": 0.45,
+          "median_separation_m": 183.7,
+          "max_separation_m": 284.7
+        },
+        {
+          "start_km": 21.9,
+          "end_km": 22.4,
+          "length_km": 0.5,
+          "median_separation_m": 195.5,
+          "max_separation_m": 252.0
+        }
+      ],
+      "b_divergence_intervals_over_100m": [
+        {
+          "start_km": 0.95,
+          "end_km": 1.7,
+          "length_km": 0.75,
+          "median_separation_m": 185.1,
+          "max_separation_m": 214.6
+        },
+        {
+          "start_km": 10.4,
+          "end_km": 13.7,
+          "length_km": 3.3,
+          "median_separation_m": 435.7,
+          "max_separation_m": 929.5
+        }
+      ],
+      "classification": "substantial_shared_corridor_but_material_changes"
+    },
+    {
+      "a_trace_id": 43970,
+      "b_trace_id": 322315,
+      "family": "ultra60",
+      "a_year": 2018,
+      "b_year": 2026,
+      "geometry_hash_equal": false,
+      "distance_difference_km": -2.463,
+      "start_separation_m": 387.9,
+      "finish_separation_m": 125.7,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.7538,
+          "b_fraction": 0.7527,
+          "symmetric_min_fraction": 0.7527,
+          "symmetric_mean_fraction": 0.7533
+        },
+        "50": {
+          "a_fraction": 0.8842,
+          "b_fraction": 0.8751,
+          "symmetric_min_fraction": 0.8751,
+          "symmetric_mean_fraction": 0.8796
+        },
+        "100": {
+          "a_fraction": 0.9324,
+          "b_fraction": 0.9254,
+          "symmetric_min_fraction": 0.9254,
+          "symmetric_mean_fraction": 0.9289
+        },
+        "250": {
+          "a_fraction": 0.9815,
+          "b_fraction": 0.9589,
+          "symmetric_min_fraction": 0.9589,
+          "symmetric_mean_fraction": 0.9702
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 18.5,
+        "p95": 148.0,
+        "max": 467.7
+      },
+      "b_to_a_nearest_m": {
+        "median": 18.3,
+        "p95": 186.6,
+        "max": 929.5
+      },
+      "a_divergence_intervals_over_100m": [
+        {
+          "start_km": 0.0,
+          "end_km": 0.3,
+          "length_km": 0.3,
+          "median_separation_m": 264.7,
+          "max_separation_m": 387.5
+        },
+        {
+          "start_km": 1.65,
+          "end_km": 2.6,
+          "length_km": 0.95,
+          "median_separation_m": 192.8,
+          "max_separation_m": 233.6
+        },
+        {
+          "start_km": 11.4,
+          "end_km": 12.9,
+          "length_km": 1.5,
+          "median_separation_m": 213.7,
+          "max_separation_m": 467.7
+        },
+        {
+          "start_km": 19.5,
+          "end_km": 19.95,
+          "length_km": 0.45,
+          "median_separation_m": 183.7,
+          "max_separation_m": 284.7
+        },
+        {
+          "start_km": 21.9,
+          "end_km": 22.4,
+          "length_km": 0.5,
+          "median_separation_m": 195.5,
+          "max_separation_m": 252.0
+        }
+      ],
+      "b_divergence_intervals_over_100m": [
+        {
+          "start_km": 0.95,
+          "end_km": 1.7,
+          "length_km": 0.75,
+          "median_separation_m": 185.1,
+          "max_separation_m": 214.6
+        },
+        {
+          "start_km": 10.4,
+          "end_km": 13.7,
+          "length_km": 3.3,
+          "median_separation_m": 435.7,
+          "max_separation_m": 929.5
+        }
+      ],
+      "classification": "substantial_shared_corridor_but_material_changes"
+    },
+    {
+      "a_trace_id": 69381,
+      "b_trace_id": 172147,
+      "family": "ultra60",
+      "a_year": 2019,
+      "b_year": 2022,
+      "geometry_hash_equal": false,
+      "distance_difference_km": -0.265,
+      "start_separation_m": 8.5,
+      "finish_separation_m": 15.2,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8782,
+          "b_fraction": 0.8793,
+          "symmetric_min_fraction": 0.8782,
+          "symmetric_mean_fraction": 0.8787
+        },
+        "50": {
+          "a_fraction": 0.9915,
+          "b_fraction": 0.9949,
+          "symmetric_min_fraction": 0.9915,
+          "symmetric_mean_fraction": 0.9932
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 16.0,
+        "p95": 32.5,
+        "max": 77.4
+      },
+      "b_to_a_nearest_m": {
+        "median": 16.0,
+        "p95": 32.7,
+        "max": 93.7
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 69381,
+      "b_trace_id": 203147,
+      "family": "ultra60",
+      "a_year": 2019,
+      "b_year": 2023,
+      "geometry_hash_equal": false,
+      "distance_difference_km": -0.265,
+      "start_separation_m": 8.5,
+      "finish_separation_m": 15.2,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8782,
+          "b_fraction": 0.8793,
+          "symmetric_min_fraction": 0.8782,
+          "symmetric_mean_fraction": 0.8787
+        },
+        "50": {
+          "a_fraction": 0.9915,
+          "b_fraction": 0.9949,
+          "symmetric_min_fraction": 0.9915,
+          "symmetric_mean_fraction": 0.9932
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 16.0,
+        "p95": 32.5,
+        "max": 77.4
+      },
+      "b_to_a_nearest_m": {
+        "median": 16.0,
+        "p95": 32.7,
+        "max": 93.7
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    },
+    {
+      "a_trace_id": 69381,
+      "b_trace_id": 251126,
+      "family": "ultra60",
+      "a_year": 2019,
+      "b_year": 2024,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 1.986,
+      "start_separation_m": 8.3,
+      "finish_separation_m": 15.6,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8663,
+          "b_fraction": 0.8384,
+          "symmetric_min_fraction": 0.8384,
+          "symmetric_mean_fraction": 0.8523
+        },
+        "50": {
+          "a_fraction": 0.9506,
+          "b_fraction": 0.9176,
+          "symmetric_min_fraction": 0.9176,
+          "symmetric_mean_fraction": 0.9341
+        },
+        "100": {
+          "a_fraction": 0.9702,
+          "b_fraction": 0.9332,
+          "symmetric_min_fraction": 0.9332,
+          "symmetric_mean_fraction": 0.9517
+        },
+        "250": {
+          "a_fraction": 0.9881,
+          "b_fraction": 0.9555,
+          "symmetric_min_fraction": 0.9555,
+          "symmetric_mean_fraction": 0.9718
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 12.1,
+        "p95": 48.1,
+        "max": 478.6
+      },
+      "b_to_a_nearest_m": {
+        "median": 12.3,
+        "p95": 203.7,
+        "max": 881.7
+      },
+      "a_divergence_intervals_over_100m": [
+        {
+          "start_km": 10.75,
+          "end_km": 12.35,
+          "length_km": 1.6,
+          "median_separation_m": 224.2,
+          "max_separation_m": 478.6
+        }
+      ],
+      "b_divergence_intervals_over_100m": [
+        {
+          "start_km": 10.95,
+          "end_km": 14.55,
+          "length_km": 3.6,
+          "median_separation_m": 429.9,
+          "max_separation_m": 881.7
+        }
+      ],
+      "classification": "substantial_shared_corridor_but_material_changes"
+    },
+    {
+      "a_trace_id": 69381,
+      "b_trace_id": 272846,
+      "family": "ultra60",
+      "a_year": 2019,
+      "b_year": 2025,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 0.98,
+      "start_separation_m": 285.3,
+      "finish_separation_m": 27.9,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.7734,
+          "b_fraction": 0.7586,
+          "symmetric_min_fraction": 0.7586,
+          "symmetric_mean_fraction": 0.766
+        },
+        "50": {
+          "a_fraction": 0.9233,
+          "b_fraction": 0.9011,
+          "symmetric_min_fraction": 0.9011,
+          "symmetric_mean_fraction": 0.9122
+        },
+        "100": {
+          "a_fraction": 0.9574,
+          "b_fraction": 0.9363,
+          "symmetric_min_fraction": 0.9363,
+          "symmetric_mean_fraction": 0.9469
+        },
+        "250": {
+          "a_fraction": 0.9864,
+          "b_fraction": 0.9589,
+          "symmetric_min_fraction": 0.9589,
+          "symmetric_mean_fraction": 0.9726
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 17.6,
+        "p95": 81.1,
+        "max": 474.0
+      },
+      "b_to_a_nearest_m": {
+        "median": 17.9,
+        "p95": 163.5,
+        "max": 1076.1
+      },
+      "a_divergence_intervals_over_100m": [
+        {
+          "start_km": 10.8,
+          "end_km": 12.35,
+          "length_km": 1.55,
+          "median_separation_m": 215.0,
+          "max_separation_m": 474.0
+        },
+        {
+          "start_km": 20.85,
+          "end_km": 21.2,
+          "length_km": 0.35,
+          "median_separation_m": 190.4,
+          "max_separation_m": 263.4
+        }
+      ],
+      "b_divergence_intervals_over_100m": [
+        {
+          "start_km": 10.35,
+          "end_km": 13.7,
+          "length_km": 3.35,
+          "median_separation_m": 439.8,
+          "max_separation_m": 1076.1
+        }
+      ],
+      "classification": "substantial_shared_corridor_but_material_changes"
+    },
+    {
+      "a_trace_id": 69381,
+      "b_trace_id": 322315,
+      "family": "ultra60",
+      "a_year": 2019,
+      "b_year": 2026,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 0.98,
+      "start_separation_m": 285.3,
+      "finish_separation_m": 27.9,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.7734,
+          "b_fraction": 0.7586,
+          "symmetric_min_fraction": 0.7586,
+          "symmetric_mean_fraction": 0.766
+        },
+        "50": {
+          "a_fraction": 0.9233,
+          "b_fraction": 0.9011,
+          "symmetric_min_fraction": 0.9011,
+          "symmetric_mean_fraction": 0.9122
+        },
+        "100": {
+          "a_fraction": 0.9574,
+          "b_fraction": 0.9363,
+          "symmetric_min_fraction": 0.9363,
+          "symmetric_mean_fraction": 0.9469
+        },
+        "250": {
+          "a_fraction": 0.9864,
+          "b_fraction": 0.9589,
+          "symmetric_min_fraction": 0.9589,
+          "symmetric_mean_fraction": 0.9726
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 17.6,
+        "p95": 81.1,
+        "max": 474.0
+      },
+      "b_to_a_nearest_m": {
+        "median": 17.9,
+        "p95": 163.5,
+        "max": 1076.1
+      },
+      "a_divergence_intervals_over_100m": [
+        {
+          "start_km": 10.8,
+          "end_km": 12.35,
+          "length_km": 1.55,
+          "median_separation_m": 215.0,
+          "max_separation_m": 474.0
+        },
+        {
+          "start_km": 20.85,
+          "end_km": 21.2,
+          "length_km": 0.35,
+          "median_separation_m": 190.4,
+          "max_separation_m": 263.4
+        }
+      ],
+      "b_divergence_intervals_over_100m": [
+        {
+          "start_km": 10.35,
+          "end_km": 13.7,
+          "length_km": 3.35,
+          "median_separation_m": 439.8,
+          "max_separation_m": 1076.1
+        }
+      ],
+      "classification": "substantial_shared_corridor_but_material_changes"
+    },
+    {
+      "a_trace_id": 172147,
+      "b_trace_id": 203147,
+      "family": "ultra60",
+      "a_year": 2022,
+      "b_year": 2023,
+      "geometry_hash_equal": true,
+      "distance_difference_km": 0.0,
+      "start_separation_m": 0.0,
+      "finish_separation_m": 0.0,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "50": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "b_to_a_nearest_m": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "exact_same_public_geometry"
+    },
+    {
+      "a_trace_id": 172147,
+      "b_trace_id": 251126,
+      "family": "ultra60",
+      "a_year": 2022,
+      "b_year": 2024,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 2.251,
+      "start_separation_m": 0.3,
+      "finish_separation_m": 0.4,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.9084,
+          "b_fraction": 0.8739,
+          "symmetric_min_fraction": 0.8739,
+          "symmetric_mean_fraction": 0.8911
+        },
+        "50": {
+          "a_fraction": 0.9606,
+          "b_fraction": 0.9258,
+          "symmetric_min_fraction": 0.9258,
+          "symmetric_mean_fraction": 0.9432
+        },
+        "100": {
+          "a_fraction": 0.9717,
+          "b_fraction": 0.934,
+          "symmetric_min_fraction": 0.934,
+          "symmetric_mean_fraction": 0.9529
+        },
+        "250": {
+          "a_fraction": 0.988,
+          "b_fraction": 0.9563,
+          "symmetric_min_fraction": 0.9563,
+          "symmetric_mean_fraction": 0.9722
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 10.0,
+        "p95": 39.2,
+        "max": 478.3
+      },
+      "b_to_a_nearest_m": {
+        "median": 10.8,
+        "p95": 208.0,
+        "max": 884.0
+      },
+      "a_divergence_intervals_over_100m": [
+        {
+          "start_km": 10.7,
+          "end_km": 12.3,
+          "length_km": 1.6,
+          "median_separation_m": 225.2,
+          "max_separation_m": 478.3
+        }
+      ],
+      "b_divergence_intervals_over_100m": [
+        {
+          "start_km": 10.95,
+          "end_km": 14.55,
+          "length_km": 3.6,
+          "median_separation_m": 436.1,
+          "max_separation_m": 884.0
+        }
+      ],
+      "classification": "substantial_shared_corridor_but_material_changes"
+    },
+    {
+      "a_trace_id": 172147,
+      "b_trace_id": 272846,
+      "family": "ultra60",
+      "a_year": 2022,
+      "b_year": 2025,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 1.245,
+      "start_separation_m": 280.9,
+      "finish_separation_m": 13.2,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8159,
+          "b_fraction": 0.8022,
+          "symmetric_min_fraction": 0.8022,
+          "symmetric_mean_fraction": 0.8091
+        },
+        "50": {
+          "a_fraction": 0.917,
+          "b_fraction": 0.8961,
+          "symmetric_min_fraction": 0.8961,
+          "symmetric_mean_fraction": 0.9065
+        },
+        "100": {
+          "a_fraction": 0.9563,
+          "b_fraction": 0.9355,
+          "symmetric_min_fraction": 0.9355,
+          "symmetric_mean_fraction": 0.9459
+        },
+        "250": {
+          "a_fraction": 0.9863,
+          "b_fraction": 0.9581,
+          "symmetric_min_fraction": 0.9581,
+          "symmetric_mean_fraction": 0.9722
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 14.1,
+        "p95": 82.6,
+        "max": 481.5
+      },
+      "b_to_a_nearest_m": {
+        "median": 14.4,
+        "p95": 171.8,
+        "max": 1091.5
+      },
+      "a_divergence_intervals_over_100m": [
+        {
+          "start_km": 10.75,
+          "end_km": 12.3,
+          "length_km": 1.55,
+          "median_separation_m": 222.4,
+          "max_separation_m": 481.5
+        },
+        {
+          "start_km": 20.75,
+          "end_km": 21.2,
+          "length_km": 0.45,
+          "median_separation_m": 176.1,
+          "max_separation_m": 268.2
+        }
+      ],
+      "b_divergence_intervals_over_100m": [
+        {
+          "start_km": 10.35,
+          "end_km": 13.7,
+          "length_km": 3.35,
+          "median_separation_m": 441.5,
+          "max_separation_m": 1091.5
+        }
+      ],
+      "classification": "substantial_shared_corridor_but_material_changes"
+    },
+    {
+      "a_trace_id": 172147,
+      "b_trace_id": 322315,
+      "family": "ultra60",
+      "a_year": 2022,
+      "b_year": 2026,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 1.245,
+      "start_separation_m": 280.9,
+      "finish_separation_m": 13.2,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8159,
+          "b_fraction": 0.8022,
+          "symmetric_min_fraction": 0.8022,
+          "symmetric_mean_fraction": 0.8091
+        },
+        "50": {
+          "a_fraction": 0.917,
+          "b_fraction": 0.8961,
+          "symmetric_min_fraction": 0.8961,
+          "symmetric_mean_fraction": 0.9065
+        },
+        "100": {
+          "a_fraction": 0.9563,
+          "b_fraction": 0.9355,
+          "symmetric_min_fraction": 0.9355,
+          "symmetric_mean_fraction": 0.9459
+        },
+        "250": {
+          "a_fraction": 0.9863,
+          "b_fraction": 0.9581,
+          "symmetric_min_fraction": 0.9581,
+          "symmetric_mean_fraction": 0.9722
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 14.1,
+        "p95": 82.6,
+        "max": 481.5
+      },
+      "b_to_a_nearest_m": {
+        "median": 14.4,
+        "p95": 171.8,
+        "max": 1091.5
+      },
+      "a_divergence_intervals_over_100m": [
+        {
+          "start_km": 10.75,
+          "end_km": 12.3,
+          "length_km": 1.55,
+          "median_separation_m": 222.4,
+          "max_separation_m": 481.5
+        },
+        {
+          "start_km": 20.75,
+          "end_km": 21.2,
+          "length_km": 0.45,
+          "median_separation_m": 176.1,
+          "max_separation_m": 268.2
+        }
+      ],
+      "b_divergence_intervals_over_100m": [
+        {
+          "start_km": 10.35,
+          "end_km": 13.7,
+          "length_km": 3.35,
+          "median_separation_m": 441.5,
+          "max_separation_m": 1091.5
+        }
+      ],
+      "classification": "substantial_shared_corridor_but_material_changes"
+    },
+    {
+      "a_trace_id": 203147,
+      "b_trace_id": 251126,
+      "family": "ultra60",
+      "a_year": 2023,
+      "b_year": 2024,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 2.251,
+      "start_separation_m": 0.3,
+      "finish_separation_m": 0.4,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.9084,
+          "b_fraction": 0.8739,
+          "symmetric_min_fraction": 0.8739,
+          "symmetric_mean_fraction": 0.8911
+        },
+        "50": {
+          "a_fraction": 0.9606,
+          "b_fraction": 0.9258,
+          "symmetric_min_fraction": 0.9258,
+          "symmetric_mean_fraction": 0.9432
+        },
+        "100": {
+          "a_fraction": 0.9717,
+          "b_fraction": 0.934,
+          "symmetric_min_fraction": 0.934,
+          "symmetric_mean_fraction": 0.9529
+        },
+        "250": {
+          "a_fraction": 0.988,
+          "b_fraction": 0.9563,
+          "symmetric_min_fraction": 0.9563,
+          "symmetric_mean_fraction": 0.9722
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 10.0,
+        "p95": 39.2,
+        "max": 478.3
+      },
+      "b_to_a_nearest_m": {
+        "median": 10.8,
+        "p95": 208.0,
+        "max": 884.0
+      },
+      "a_divergence_intervals_over_100m": [
+        {
+          "start_km": 10.7,
+          "end_km": 12.3,
+          "length_km": 1.6,
+          "median_separation_m": 225.2,
+          "max_separation_m": 478.3
+        }
+      ],
+      "b_divergence_intervals_over_100m": [
+        {
+          "start_km": 10.95,
+          "end_km": 14.55,
+          "length_km": 3.6,
+          "median_separation_m": 436.1,
+          "max_separation_m": 884.0
+        }
+      ],
+      "classification": "substantial_shared_corridor_but_material_changes"
+    },
+    {
+      "a_trace_id": 203147,
+      "b_trace_id": 272846,
+      "family": "ultra60",
+      "a_year": 2023,
+      "b_year": 2025,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 1.245,
+      "start_separation_m": 280.9,
+      "finish_separation_m": 13.2,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8159,
+          "b_fraction": 0.8022,
+          "symmetric_min_fraction": 0.8022,
+          "symmetric_mean_fraction": 0.8091
+        },
+        "50": {
+          "a_fraction": 0.917,
+          "b_fraction": 0.8961,
+          "symmetric_min_fraction": 0.8961,
+          "symmetric_mean_fraction": 0.9065
+        },
+        "100": {
+          "a_fraction": 0.9563,
+          "b_fraction": 0.9355,
+          "symmetric_min_fraction": 0.9355,
+          "symmetric_mean_fraction": 0.9459
+        },
+        "250": {
+          "a_fraction": 0.9863,
+          "b_fraction": 0.9581,
+          "symmetric_min_fraction": 0.9581,
+          "symmetric_mean_fraction": 0.9722
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 14.1,
+        "p95": 82.6,
+        "max": 481.5
+      },
+      "b_to_a_nearest_m": {
+        "median": 14.4,
+        "p95": 171.8,
+        "max": 1091.5
+      },
+      "a_divergence_intervals_over_100m": [
+        {
+          "start_km": 10.75,
+          "end_km": 12.3,
+          "length_km": 1.55,
+          "median_separation_m": 222.4,
+          "max_separation_m": 481.5
+        },
+        {
+          "start_km": 20.75,
+          "end_km": 21.2,
+          "length_km": 0.45,
+          "median_separation_m": 176.1,
+          "max_separation_m": 268.2
+        }
+      ],
+      "b_divergence_intervals_over_100m": [
+        {
+          "start_km": 10.35,
+          "end_km": 13.7,
+          "length_km": 3.35,
+          "median_separation_m": 441.5,
+          "max_separation_m": 1091.5
+        }
+      ],
+      "classification": "substantial_shared_corridor_but_material_changes"
+    },
+    {
+      "a_trace_id": 203147,
+      "b_trace_id": 322315,
+      "family": "ultra60",
+      "a_year": 2023,
+      "b_year": 2026,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 1.245,
+      "start_separation_m": 280.9,
+      "finish_separation_m": 13.2,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.8159,
+          "b_fraction": 0.8022,
+          "symmetric_min_fraction": 0.8022,
+          "symmetric_mean_fraction": 0.8091
+        },
+        "50": {
+          "a_fraction": 0.917,
+          "b_fraction": 0.8961,
+          "symmetric_min_fraction": 0.8961,
+          "symmetric_mean_fraction": 0.9065
+        },
+        "100": {
+          "a_fraction": 0.9563,
+          "b_fraction": 0.9355,
+          "symmetric_min_fraction": 0.9355,
+          "symmetric_mean_fraction": 0.9459
+        },
+        "250": {
+          "a_fraction": 0.9863,
+          "b_fraction": 0.9581,
+          "symmetric_min_fraction": 0.9581,
+          "symmetric_mean_fraction": 0.9722
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 14.1,
+        "p95": 82.6,
+        "max": 481.5
+      },
+      "b_to_a_nearest_m": {
+        "median": 14.4,
+        "p95": 171.8,
+        "max": 1091.5
+      },
+      "a_divergence_intervals_over_100m": [
+        {
+          "start_km": 10.75,
+          "end_km": 12.3,
+          "length_km": 1.55,
+          "median_separation_m": 222.4,
+          "max_separation_m": 481.5
+        },
+        {
+          "start_km": 20.75,
+          "end_km": 21.2,
+          "length_km": 0.45,
+          "median_separation_m": 176.1,
+          "max_separation_m": 268.2
+        }
+      ],
+      "b_divergence_intervals_over_100m": [
+        {
+          "start_km": 10.35,
+          "end_km": 13.7,
+          "length_km": 3.35,
+          "median_separation_m": 441.5,
+          "max_separation_m": 1091.5
+        }
+      ],
+      "classification": "substantial_shared_corridor_but_material_changes"
+    },
+    {
+      "a_trace_id": 251126,
+      "b_trace_id": 272846,
+      "family": "ultra60",
+      "a_year": 2024,
+      "b_year": 2025,
+      "geometry_hash_equal": false,
+      "distance_difference_km": -1.006,
+      "start_separation_m": 280.8,
+      "finish_separation_m": 12.7,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.812,
+          "b_fraction": 0.8265,
+          "symmetric_min_fraction": 0.812,
+          "symmetric_mean_fraction": 0.8193
+        },
+        "50": {
+          "a_fraction": 0.9406,
+          "b_fraction": 0.9556,
+          "symmetric_min_fraction": 0.9406,
+          "symmetric_mean_fraction": 0.9481
+        },
+        "100": {
+          "a_fraction": 0.9786,
+          "b_fraction": 0.9933,
+          "symmetric_min_fraction": 0.9786,
+          "symmetric_mean_fraction": 0.9859
+        },
+        "250": {
+          "a_fraction": 0.9975,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 0.9975,
+          "symmetric_mean_fraction": 0.9988
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 18.4,
+        "p95": 57.0,
+        "max": 280.7
+      },
+      "b_to_a_nearest_m": {
+        "median": 18.0,
+        "p95": 43.7,
+        "max": 221.5
+      },
+      "a_divergence_intervals_over_100m": [
+        {
+          "start_km": 23.0,
+          "end_km": 23.4,
+          "length_km": 0.4,
+          "median_separation_m": 184.5,
+          "max_separation_m": 266.6
+        }
+      ],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "largely_same_corridor_with_changes"
+    },
+    {
+      "a_trace_id": 251126,
+      "b_trace_id": 322315,
+      "family": "ultra60",
+      "a_year": 2024,
+      "b_year": 2026,
+      "geometry_hash_equal": false,
+      "distance_difference_km": -1.006,
+      "start_separation_m": 280.8,
+      "finish_separation_m": 12.7,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 0.812,
+          "b_fraction": 0.8265,
+          "symmetric_min_fraction": 0.812,
+          "symmetric_mean_fraction": 0.8193
+        },
+        "50": {
+          "a_fraction": 0.9406,
+          "b_fraction": 0.9556,
+          "symmetric_min_fraction": 0.9406,
+          "symmetric_mean_fraction": 0.9481
+        },
+        "100": {
+          "a_fraction": 0.9786,
+          "b_fraction": 0.9933,
+          "symmetric_min_fraction": 0.9786,
+          "symmetric_mean_fraction": 0.9859
+        },
+        "250": {
+          "a_fraction": 0.9975,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 0.9975,
+          "symmetric_mean_fraction": 0.9988
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 18.4,
+        "p95": 57.0,
+        "max": 280.7
+      },
+      "b_to_a_nearest_m": {
+        "median": 18.0,
+        "p95": 43.7,
+        "max": 221.5
+      },
+      "a_divergence_intervals_over_100m": [
+        {
+          "start_km": 23.0,
+          "end_km": 23.4,
+          "length_km": 0.4,
+          "median_separation_m": 184.5,
+          "max_separation_m": 266.6
+        }
+      ],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "largely_same_corridor_with_changes"
+    },
+    {
+      "a_trace_id": 272846,
+      "b_trace_id": 322315,
+      "family": "ultra60",
+      "a_year": 2025,
+      "b_year": 2026,
+      "geometry_hash_equal": false,
+      "distance_difference_km": 0.0,
+      "start_separation_m": 0.0,
+      "finish_separation_m": 0.0,
+      "shared_corridor_fraction_by_threshold_m": {
+        "25": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "50": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "100": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        },
+        "250": {
+          "a_fraction": 1.0,
+          "b_fraction": 1.0,
+          "symmetric_min_fraction": 1.0,
+          "symmetric_mean_fraction": 1.0
+        }
+      },
+      "a_to_b_nearest_m": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "b_to_a_nearest_m": {
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "a_divergence_intervals_over_100m": [],
+      "b_divergence_intervals_over_100m": [],
+      "classification": "same_course_geometry_strong"
+    }
+  ],
+  "manifest_date_mismatches": [
+    {
+      "trace_id": 7897,
+      "family": "trail22",
+      "manifest_year": 2018,
+      "source_date_compet": "16/04/2016"
+    }
+  ],
+  "errors": []
+}
