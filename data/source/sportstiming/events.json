@@ -1,0 +1,15 @@
+{
+  "provider": "Sportstiming",
+  "source_of_record": true,
+  "official_archive": "https://www.osterlentrail.se/resultat.html",
+  "events": [
+    {"year":2018,"event_id":4950,"url":"https://www.sportstiming.dk/event/4950/results","status":"verified_official_archive"},
+    {"year":2019,"event_id":5719,"url":"https://www.sportstiming.dk/event/5719/results","status":"verified_official_archive"},
+    {"year":2022,"event_id":9587,"url":"https://www.sportstiming.dk/event/9587/results","status":"verified_official_archive"},
+    {"year":2023,"event_id":11274,"url":"https://www.sportstiming.dk/event/11274/results","status":"verified_official_archive"},
+    {"year":2024,"event_id":12349,"url":"https://www.sportstiming.dk/event/12349/results","status":"verified_official_archive"},
+    {"year":2025,"event_id":15015,"url":"https://www.sportstiming.se/event/15015/results","status":"verified_official_archive"},
+    {"year":2026,"event_id":16880,"url":"https://www.sportstiming.dk/event/16880/results","status":"verified_official_archive"}
+  ],
+  "access_note": "Automated HTML access currently encounters Sportstiming human-verification/JavaScript protection. Do not implement a brittle scraper before network requests/endpoints have been inspected and documented."
+}
