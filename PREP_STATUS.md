@@ -1,63 +1,66 @@
 # Förberedelsestatus
 
 Datum: 2026-09-10  
-Status: **GRUND FÄRDIG / HANDOFF-READY**
+Status: **DATA FÄRDIG / ENGINE-HANDOFF-READY**
 
-ÖST-repot är nu förberett så långt det är meningsfullt innan den generiska Gotaleden-kärnan är färdig. Kvarvarande punkter är inte blockerande för att pausa ÖST-arbetet; de hör till nästa implementationsfas eller kräver källor som ännu inte är verifierade/redistributerbara.
+ÖST-repot är nu förberett så långt det är meningsfullt innan den generiska Gotaleden-kärnan är färdig. Full resultatinhämtning, råarkivering, datakvalitetskontroll, kuratering, Duo-normalisering och engine-readiness är genomförda. Kvarvarande punkter kräver antingen den färdigrefaktorerade analysmotorn eller nytt/verifierat källunderlag.
 
 ## Klart
 
-- Projektomfattning och moderna analysår definierade: 2018–2026, med 2020 och 2021 explicit `cancelled`.
-- Fem tävlingsfamiljer definierade: `ultra60`, `duo60`, `trail22`, `trail14`, `trail5`.
-- Officiella Sportstiming-event-ID:n katalogiserade för samtliga genomförda år.
-- Sportstiming distance/class-ID:n och publika resultatklasser kartlagda.
-- Representativa deltagardetaljer inventerade år/familj.
-- Ultra 60-splitstruktur verifierad för alla genomförda år; kortare distanser saknar split-tabell i de nuvarande proverna.
-- Sportstiming tracking-/points-struktur inventerad.
-- Duo identifierad som separat team/relay-adapterbehov.
+- Projektomfattning 2018–2026 definierad, med 2020 och 2021 explicit `cancelled`.
+- Fem tävlingsfamiljer: `ultra60`, `duo60`, `trail22`, `trail14`, `trail5`.
+- Samtliga 34 genomförda år×familj-instansers Sportstiming-event-/distance-ID:n katalogiserade.
+- **Full Sportstiming-import 2018–2026 genomförd och fryst** i `data/archive/ost-results-2018-2026.sqlite.gz`.
+- Fryst arkiv granskat med separat audit: 9 871 resultat, 5 382 ursprungliga splits, 0 källfel och SQLite integrity `ok`.
+- Audit har inga dubblettnycklar, orphan-splits, negativa/omkastade splits eller finishers utan sluttid.
+- 2 024 individuella Ultra-resultat har slut-split/sluttid verifierad utan avvikelse över två sekunder.
+- **Kuraterad engine-databas byggd** i `data/derived/ost-analysis-2018-2026.sqlite.gz`.
+- Kuraterad databas: 9 871 resultat, 9 571 individuella deltagarposter, 300 Duo-lag, 599 publicerade Duo-medlemsrader, 6 123 riktiga splitpassager och 699 härledda mått.
+- Statuslagret förbättrat endast med explicit källbevis: 9 518 `FINISHED`, 332 `DNF`, 21 `UNKNOWN`; inga statuskonflikter.
+- Startnummer återvunnet från Sportstimings exakta listkolumn `Startnr.` där detaljnormaliseringen saknade det: **100 % bib-täckning, 9 871/9 871**.
+- Klubb och land kan säkert falla tillbaka på den frysta resultatraden; land finns för 9 571/9 571 individuella resultatrader.
+- 2022 års individuella `Kategori`-fält (`F40-44`, `M45-49` osv.) används som explicit källa för kön och åldersklass, men aldrig för syntetisk exakt ålder.
+- 2024–2026 har nästan komplett exakt kön/ålder i de publika detaljsidorna. 2018/2019/2023 lämnas utan kön/ålder där källan inte visar det.
+- Ultra 60-splitstruktur verifierad och importerad för samtliga genomförda år.
+- Duo team-splits parserade från de frysta teamdetaljerna: **741 splitpassager** utöver de individuella Ultra-splitsen.
+- Duo-medlemsstruktur parserad: 599 medlemsrader. `source_sequence` bevaras; `leg_no` lämnas NULL eftersom källbevis inte räcker för generell etapptilldelning.
 - Årsspecifik checkpoint-normalisering skapad.
-- Bengtemölla 2022/2023 dubbel timing analyserad på aggregat: 60 giltiga par/år, median 255 s respektive 142,5 s mellan `32 km` och `Bengtemölla`.
-- Arbetshypotes dokumenterad: `32 km` är möjlig approach/förvarning och `Bengtemölla` möjlig utpassage efter service. Hypotesen är inte fysiskt verifierad och gapet får därför endast kallas service-window candidate.
-- Historiska Trace de Trail-referenser katalogiserade för Ultra 60 och Trail 21/22.
-- Publik Trace de Trail-kartgeometri analyserad transient utan att koordinatserier återpubliceras.
-- Geometriska fingerprints, längder, start/mål och cross-year corridor overlap framtagna.
+- Bengtemölla 2022/2023 dubbel timing analyserad. `32 km` och `Bengtemölla` hålls separata; gapet är en **service-window candidate**, inte bevisad stationstid.
+- Historiska Trace de Trail-referenser och geometrier analyserade utan automatisk återpublicering av tredjepartskoordinater.
 - Ultra-course versions tilldelade för 2018, 2019, 2022–2023, 2024 och 2025–2026.
-- Trail 21/22-course versions tilldelade för 2019, 2022–2024 och 2025–2026; 2018 är explicit blockerad av provenance-mismatch i kandidatspåret.
-- 2019 ↔ 2022/23 Ultra klassad som starkt kompatibel men inte identisk.
-- 2022 = 2023 Ultra verifierad som exakt samma publika geometri.
-- 2023 → 2024 Ultra verifierad som materiell banförändring.
-- 2025 ↔ 2026 Ultra verifierad som samma praktiska korridor/längd och samma arrangörsruttkälla.
-- Trail 21/22 verifierad som mycket stabil: 2022–2024 exakt samma publika geometri och 2025–2026 exakt samma publika geometri.
-- Arrangörens Ultra 60-GPX för 2024 arkiverad med checksumma.
-- Arrangörens gemensamma Ultra 60-GPX för 2025/2026 arkiverad med checksumma.
-- Arrangörens Ultra 60-karta för 2025/2026 samt Trail 21-karta från 2019 arkiverade.
-- Source registry, source coverage och analysis capability policy byggda.
-- Maskinläsbart analysis-data-contract mot den generiska Gotaleden-motorn skapat.
-- Engine-adapter-kontrakt och detaljerad Gotaleden-handoff dokumenterade.
-- Automatisk foundation-validator skapad för att kontrollera år, familjer, Sportstiming-ID:n, course-versioner och grundläggande split-inventory-täckning.
-- GitHub Actions finns för source discovery, Sportstiming-diagnostik, bangeometri, asset-hämtning, source coverage och foundation validation.
+- Trail 21/22-course versions tilldelade för 2019, 2022–2024 och 2025–2026; 2018 hålls oassignad på grund av provenance-mismatch.
+- Arrangörs-GPX lokalt arkiverad för Ultra 2024 och 2025/2026.
+- Source registry, source coverage, capability policy, analysis-data-contract och engine-adapter finns.
+- `reports/engine-readiness.json` byggs från den kuraterade databasen. Nuvarande läge: 13 race-instansers splitanalys är dataklar, 6 har även den lokala ruttgeometri som krävs för replay/kartduell, och 19 har verifierad course version.
+- GitHub Actions finns för import/audit, kuraterad databas, semantik/status/identitetsprofilering, geometri, source coverage, readiness och foundation validation.
 - GitHub Pages-placeholder finns i `docs/`.
 
-## Medvetet uppskjutet till nästa fas
+## Primär handoff till analysmotorn
 
-- **Full Sportstiming-resultatimport:** event-/klass-ID:n och struktur är kända; produktionshämtning av alla resultatsidor och råsnapshots byggs när analysmotorn ska matas på riktigt.
-- **Duo team/member-adapter:** publika Duo-klasser är identifierade men lag-/medlemsstrukturen behöver en särskild normalisering.
-- **Historiska lokala GPX-filer:** äldre Ultra och Trail 21/22 kan jämföras geometriskt via publika referenser, men karta/replay kräver lokala och återanvändningsmässigt lämpliga banfiler.
-- **Trail 13/14 och Trail 5 course versions:** komplett verifierad historisk bangeometri saknas fortfarande.
-- **Trail 21/22 2018:** kandidatspåret är geometriskt starkt kompatibelt med 2019 men metadata anger 2016; tilldelning väntar på årsspecifik proveniens.
-- **Fysisk tolkning av Bengtemölla-mattorna:** hypotesen är starkt plausibel men ska inte göras till officiellt faktum utan arrangörs-/mattevidens.
-- **Frontend/integration:** väntar avsiktligt tills Gotaleden-kärnans generiska refaktorering är färdig.
+Den framtida Gotaleden-baserade motorn ska i första hand läsa:
 
-## När ÖST tas upp igen
+`data/derived/ost-analysis-2018-2026.sqlite.gz`
 
-Börja inte om med researchen. Läs i denna ordning:
+Den frysta databasen i `data/archive/` är källbevis och rebuild-underlag, inte den normala frontend-inputen. Det finns **ingen anledning att hämta om Sportstiming 2018–2026** för att börja motorintegrationen.
+
+Läs även:
 
 1. `config/foundation-state.json`
-2. `research/gotaleden-engine-handoff.md`
-3. `config/analysis-data-contract.json`
-4. `config/engine-adapter.json`
+2. `config/engine-adapter.json`
+3. `reports/engine-readiness.md`
+4. `research/gotaleden-engine-handoff.md`
 5. `config/course-versions.json`
 6. `config/checkpoint-normalization.json`
-7. `reports/source-coverage.md`
 
-Kör därefter `python tools/validate_foundation.py` och gå direkt vidare med Gotaleden-core-integration och produktionsimport.
+## Verkligt kvarvarande / medvetet uppskjutet
+
+- **Generisk Gotaleden-core-integration:** väntar avsiktligt tills den pågående generiska refaktoreringen är färdig.
+- **Historiska lokala route assets:** äldre Ultra och Trail 21/22 har jämförbarhetsbevis men saknar i flera fall lokalt återanvändningsmässigt lämplig GPX för karta/replay.
+- **Trail 13/14 och Trail 5 course versions:** komplett verifierad historisk geometri saknas.
+- **Trail 21/22 2018:** kandidatspåret är geometriskt starkt kompatibelt med 2019 men metadata anger 2016; formell tilldelning kräver årsspecifik proveniens.
+- **Duo etappnummer:** medlemmarna är importerade men tillgänglig evidens bevisar inte att medlemsrad 1/2 alltid betyder etapp 1/2.
+- **Cross-year personidentitet:** repeat-runner-funktion ska byggas som ett separat linkage-lager med confidence/evidence; namnlikhet får inte skriva över source-local identity.
+- **Historiska kön/ålder:** 2018, 2019 och 2023 saknar tillräckligt explicit publicerad information i den frysta källan.
+- **Fysisk Bengtemölla-tolkning:** approach/utpassage-hypotesen är plausibel men inte officiellt verifierad.
+
+När Gotaleden-kärnan är färdig ska arbetet alltså börja med **adapter/integration mot den redan färdiga kuraterade ÖST-datan**, inte med en ny förstudie eller ny resultatimport.
