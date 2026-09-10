@@ -1,49 +1,67 @@
 {
-  "schema_version": 1,
-  "principle": "Features are enabled from observed source capabilities, not from race-name assumptions. Missing splits or geometry never get synthesized.",
+  "schema_version": 2,
+  "principle": "Features are enabled from observed data capabilities in the curated archive, not from race-name assumptions. Missing splits, geometry or demographic fields are never synthesized.",
+  "runtime_readiness_source": "reports/engine-readiness.json",
+  "primary_data_source": "data/derived/ost-analysis-2018-2026.sqlite.gz",
   "features": {
     "results_database": {
-      "requires": ["sportstiming_class_observed"],
-      "description": "Searchable finish-result database for the selected race/year."
+      "requires": ["stored_result_rows"],
+      "description": "Searchable result database for the selected race/year."
     },
     "finish_statistics": {
-      "requires": ["sportstiming_class_observed"],
+      "requires": ["finished_rows_with_positive_time"],
       "description": "Finish distributions, placement statistics and participation summaries."
     },
-    "runner_profile": {
-      "requires_any_result_detail_status": ["participant_detail_observed", "relay_adapter_ready"],
-      "description": "Individual/team result profile with source-backed detail fields."
+    "runner_or_team_profile": {
+      "requires": ["stored_result_rows"],
+      "description": "Individual/team result profile using only source-backed fields; missing demographic fields remain null."
     },
     "split_analysis": {
-      "requires_timing_split_status": "split_table_observed",
+      "requires": ["observed_elapsed_split_passages"],
       "description": "Checkpoint and segment analysis using actual published split observations."
     },
     "runner_replay": {
-      "requires_timing_split_status": "split_table_observed",
-      "requires_route_geometry": true,
-      "minimum_observed_split_count": 2,
-      "description": "Interpolated replay between real timing observations on a verified route."
+      "requires": ["observed_elapsed_split_passages", "local_route_asset", "at_least_two_semantic_checkpoints"],
+      "description": "Interpolated replay between real timing observations on a verified locally usable route."
     },
     "map_duel": {
-      "requires_timing_split_status": "split_table_observed",
-      "requires_route_geometry": true,
-      "minimum_observed_split_count": 2,
+      "requires": ["observed_elapsed_split_passages", "local_route_asset", "at_least_two_semantic_checkpoints"],
       "description": "Head-to-head map comparison driven by real timing observations and route interpolation."
     },
     "course_difficulty_vs_pacing": {
-      "requires_timing_split_status": "split_table_observed",
-      "requires_route_geometry": true,
-      "minimum_observed_split_count": 2,
+      "requires": ["observed_elapsed_split_passages", "local_route_asset", "at_least_two_semantic_checkpoints"],
       "description": "Relates route characteristics to observed segment pacing."
     },
     "course_version_records": {
-      "requires": ["sportstiming_class_observed"],
-      "requires_course_version_assignment": true,
+      "requires": ["finished_rows_with_positive_time", "verified_course_version_assignment"],
       "description": "Records and cross-year performance comparisons restricted to verified comparable course versions."
     },
     "cross_year_participation": {
-      "requires": ["sportstiming_class_observed"],
-      "description": "Participation, gender, age and repeat-runner trends where source fields support them."
+      "requires": ["stored_result_rows"],
+      "description": "Participation trends across years. Demographic subviews must independently check field coverage."
+    },
+    "gender_analysis": {
+      "requires": ["published_or_source_backed_gender"],
+      "coverage_rule": "Use only rows with source-backed sex; do not infer missing historical sex from names."
+    },
+    "age_analysis": {
+      "requires_any": ["published_exact_age", "published_age_category"],
+      "coverage_rule": "Exact-age and age-category analyses are distinct. Never convert an age band into an exact age."
+    },
+    "relay_member_display": {
+      "requires": ["published_relay_member_rows"],
+      "description": "Display Duo member rows in source sequence."
+    },
+    "relay_leg_analysis": {
+      "requires": ["validated_relay_leg_assignment"],
+      "current_state": "disabled",
+      "description": "Leg-specific analysis remains disabled while leg_no is unverified."
+    },
+    "repeat_runner_analysis": {
+      "requires": ["documented_cross_year_identity_linkage"],
+      "current_state": "not_implemented",
+      "description": "Requires a separate confidence-bearing linkage layer; source-local identities must not be overwritten."
     }
-  }
+  },
+  "ui_rule": "Hide unsupported features or show a concise factual limitation. Never render an empty or fictional analysis by interpolating missing source data outside the explicitly defined replay model."
 }
