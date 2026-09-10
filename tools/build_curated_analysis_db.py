@@ -258,7 +258,7 @@ def main():
    else:
     team_uid='team:'+uid
     dst.execute('INSERT INTO relay_teams VALUES(?,?,?,?,?,?)',(team_uid,race_key,rid,bib,rr['name'],rr['source_class']))
-   dst.execute('''INSERT INTO results VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',(
+   dst.execute('''INSERT INTO results VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',(
     uid,race_key,y,fam,rid,entity,participant_uid,team_uid,bib,rr['name'],rr['gender'],rr['age'],rr['age_category'],rr['club'],rr['country'],rr['source_class'],status,status_source,status_evidence,
     rr['finish_seconds'],rr['gross_seconds'],rr['net_seconds'],rr['overall_place'],rr['gender_place'],rr['class_place'],rr['start_clock'],rr['finish_clock'],rr['date_source'],rr['pace_source'],rr['speed_source'],rr['source_url'],rr['source_sha256'],rr['normalized_json']))
 
@@ -270,7 +270,7 @@ def main():
      leg_no=seq if allow_leg_assignment and len(members)==2 else None
      assign='validated_leg_order' if leg_no else 'source_sequence_only'
      muid=f'{team_uid}:member:{seq}'
-     dst.execute('INSERT INTO relay_members VALUES(?,?,?,?,?,?,?,?,?,?,?)',(muid,team_uid,seq,m.get('source_member_result_id'),m.get('bib'),m['name'],m.get('member_time_seconds'),m.get('finish_clock'),m.get('speed_source'),leg_no,assign,json.dumps(m,ensure_ascii=False,separators=(',',':'))))
+     dst.execute('INSERT INTO relay_members VALUES(?,?,?,?,?,?,?,?,?,?,?,?)',(muid,team_uid,seq,m.get('source_member_result_id'),m.get('bib'),m['name'],m.get('member_time_seconds'),m.get('finish_clock'),m.get('speed_source'),leg_no,assign,json.dumps(m,ensure_ascii=False,separators=(',',':'))))
      member_count+=1
     duo_split_count+=len(splits)
    else:

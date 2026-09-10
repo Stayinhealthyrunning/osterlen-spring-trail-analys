@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-10T14:44:31+00:00",
+  "source_frozen_archive": "data/archive/ost-results-2018-2026.sqlite.gz",
+  "source_frozen_archive_sha256": "32f7cc412fa1d11fbef7af6c78912c10dcad38c1fae853a6d8659d90816543f9",
+  "curated_archive": "data/derived/ost-analysis-2018-2026.sqlite.gz",
+  "curated_database_sha256": "56d92e800395927ba3400993c313147bd66543a72fe4c974b86de8f6ca9898d7",
+  "curated_archive_sha256": "fce49306b67b8845785bdfc19e4eaaa8c2aec10ad79ecc8331f863866862198f",
+  "database_bytes": 68202496,
+  "compressed_bytes": 5047371,
+  "totals": {
+    "races": 34,
+    "results": 9871,
+    "participants": 9571,
+    "relay_teams": 300,
+    "relay_members": 599,
+    "splits": 6123,
+    "derived_metrics": 699
+  },
+  "status_counts": {
+    "FINISHED": 9518,
+    "DNF": 332,
+    "UNKNOWN": 21
+  },
+  "status_promotions_from_explicit_source": {
+    "DNF": 332
+  },
+  "individual_splits_carried": 5382,
+  "duo_splits_parsed": 741,
+  "relay_member_rows": 599,
+  "duo_leg_numbers_assigned": 0,
+  "checks": {
+    "integrity": "ok",
+    "result_count_matches_frozen": true,
+    "race_count_expected_34": true,
+    "orphan_results": 0,
+    "orphan_splits": 0,
+    "finished_without_time": 0,
+    "dnf_with_positive_finish_time": 0,
+    "split_chronology_errors": 0,
+    "duo_members_with_assigned_leg": 0
+  },
+  "policies": {
+    "source_archive_immutable": true,
+    "remaining_unknown_not_inferred": true,
+    "duo_member_source_sequence_preserved": true,
+    "duo_leg_number_requires_validated_evidence": true
+  }
+}
