@@ -3,7 +3,7 @@ name: Validate ÖST foundation
 on:
   workflow_dispatch:
   push:
-    branches: [main, finalize-foundation]
+    branches: [main]
     paths:
       - 'config/**'
       - 'data/source/sportstiming/**'
@@ -16,18 +16,25 @@ on:
       - 'README.md'
       - 'tools/validate_foundation.py'
       - '.github/workflows/build-source-reports.yml'
+      - '.github/workflows/source-coverage.yml'
       - '.github/workflows/validate-foundation.yml'
   pull_request:
     branches: [main]
+  workflow_run:
+    workflows: ['Build ÖST source reports', 'Build source coverage']
+    types: [completed]
 
 permissions:
   contents: read
 
 jobs:
   validate:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
