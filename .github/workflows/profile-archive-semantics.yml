@@ -1,0 +1,44 @@
+name: Profile ÖST archive semantics
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/archive/ost-results-2018-2026.sqlite.gz'
+      - 'tools/profile_archive_semantics.py'
+      - '.github/workflows/profile-archive-semantics.yml'
+
+concurrency:
+  group: ost-archive-semantics
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  profile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Profile frozen archive semantics
+        run: python tools/profile_archive_semantics.py
+      - name: Commit aggregate semantic profile
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/archive-semantics-profile.json reports/archive-semantics-profile.md
+          if git diff --cached --quiet; then
+            echo 'Semantic profile already current.'
+          else
+            git commit -m 'Profile frozen ÖST archive semantics'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
