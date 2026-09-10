@@ -1,20 +1,40 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "snapshot_date": "2026-09-10",
-  "status": "handoff_ready_for_generic_engine_integration",
+  "status": "data_frozen_curated_and_engine_handoff_ready",
   "scope": {
     "analysis_start_year": 2018,
     "held_years": [2018, 2019, 2022, 2023, 2024, 2025, 2026],
     "cancelled_years": [2020, 2021],
-    "race_families": ["ultra60", "duo60", "trail22", "trail14", "trail5"]
+    "race_families": ["ultra60", "duo60", "trail22", "trail14", "trail5"],
+    "race_year_instances": 34
+  },
+  "primary_engine_input": "data/derived/ost-analysis-2018-2026.sqlite.gz",
+  "source_artifacts": {
+    "immutable_frozen_archive": "data/archive/ost-results-2018-2026.sqlite.gz",
+    "frozen_archive_summary": "reports/result-archive-summary.json",
+    "frozen_archive_audit": "reports/result-archive-audit.json",
+    "curated_analysis_database": "data/derived/ost-analysis-2018-2026.sqlite.gz",
+    "curated_analysis_summary": "reports/curated-analysis-db-summary.json",
+    "engine_readiness": "reports/engine-readiness.json",
+    "status_evidence": "reports/status-evidence-profile.json",
+    "identity_field_profile": "reports/identity-field-profile.json"
   },
   "prepared": {
     "event_and_year_model": true,
     "race_family_model": true,
     "sportstiming_event_catalog": true,
     "sportstiming_distance_class_catalog": true,
+    "full_sportstiming_result_archive": true,
+    "frozen_archive_audit_pass": true,
+    "curated_analysis_database": true,
+    "explicit_status_resolution": true,
+    "safe_list_field_recovery": true,
     "sportstiming_split_schema_inventory": true,
     "sportstiming_tracking_inventory": true,
+    "duo_team_split_adapter": true,
+    "duo_member_rows_preserved": true,
+    "duo_leg_assignment_intentionally_unresolved": true,
     "checkpoint_normalization_rules": true,
     "bengtemolla_service_window_hypothesis_documented": true,
     "ultra60_course_version_model": true,
@@ -25,9 +45,38 @@
     "analysis_capability_policy": true,
     "generic_engine_data_contract": true,
     "generic_engine_adapter_contract": true,
+    "engine_readiness_report": true,
     "gotaleden_engine_handoff": true,
     "foundation_consistency_validator": true,
     "github_pages_placeholder": true
+  },
+  "curated_archive": {
+    "results": 9871,
+    "individual_participant_rows": 9571,
+    "relay_teams": 300,
+    "relay_member_rows": 599,
+    "split_passages": 6123,
+    "individual_split_passages": 5382,
+    "duo_split_passages": 741,
+    "derived_metrics": 699,
+    "status": {
+      "FINISHED": 9518,
+      "DNF": 332,
+      "UNKNOWN": 21
+    },
+    "integrity_check": "ok",
+    "field_coverage": {
+      "results_with_bib": 9871,
+      "results_with_gender": 5858,
+      "results_with_exact_age": 4775,
+      "results_with_age_category": 5862,
+      "individual_results_with_country": 9571,
+      "notes": [
+        "Startnummer recovered from the exact Sportstiming list header Startnr. where needed.",
+        "For individual 2022 results, explicit Kategori values such as F40-44/M45-49 may provide sex and age_category; exact age is never inferred from an interval.",
+        "2018, 2019 and 2023 remain without sex/age where the frozen public source does not expose those fields."
+      ]
+    }
   },
   "verified_timing_schema": {
     "ultra60": {
@@ -39,8 +88,16 @@
       "2025": ["34 km", "60 km"],
       "2026": ["34 km", "60 km"]
     },
-    "shorter_families": "No split table observed in the current representative participant samples.",
-    "duo60": "Public result class exists, but a dedicated team/relay adapter is still required."
+    "duo60": {
+      "2019": ["Stenshuvud km 14", "Bengtemölla km 32", "Vantalängan km 52", "Finish Km 60+"],
+      "2022": ["32 km", "Bengtemölla", "62 km"],
+      "2023": ["32 km", "Bengtemölla", "62 km/Finish"],
+      "2024": ["34 km", "60 km"],
+      "2025": ["34 km", "60 km"],
+      "2026": ["34 km", "60 km"],
+      "member_policy": "Published member rows are retained with source_sequence. leg_no remains null until source evidence validates leg ordering."
+    },
+    "shorter_families": "No intermediate split table was found in the complete imported public result details; finish/result analysis remains available without synthetic splits."
   },
   "course_model": {
     "ultra60": {
@@ -64,22 +121,20 @@
     "trail14": "pending_route_archive",
     "trail5": "pending_route_archive"
   },
-  "deferred_until_next_phase": [
+  "engine_readiness": {
+    "races_with_split_analysis": 13,
+    "races_with_replay_and_map_data": 6,
+    "races_with_course_version": 19,
+    "rule": "Feature availability is derived from the curated database; route-dependent features require a local usable route asset."
+  },
+  "deferred_until_next_phase_or_new_evidence": [
     {
       "key": "generic_engine_integration",
       "reason": "Wait for the Gotaleden generic refactor to be complete so ÖST does not fork an obsolete core."
     },
     {
-      "key": "full_sportstiming_result_import",
-      "reason": "Schema and IDs are catalogued; production-grade all-page/raw-snapshot importer belongs in the implementation phase."
-    },
-    {
-      "key": "duo_team_adapter",
-      "reason": "Requires dedicated interpretation of Sportstiming relay/team result structure."
-    },
-    {
       "key": "historical_local_route_assets",
-      "reason": "Older Ultra and Trail 21/22 public geometry can establish comparability but cannot automatically be redistributed as GPX."
+      "reason": "Older Ultra and Trail 21/22 public geometry can establish comparability, but frontend map/replay needs a locally usable and redistribution-appropriate route asset."
     },
     {
       "key": "trail14_trail5_course_versions",
@@ -88,13 +143,32 @@
     {
       "key": "trail22_2018_assignment",
       "reason": "Candidate public geometry is strongly compatible with 2019 but its Trace metadata is dated 2016, so year-specific provenance remains unresolved."
+    },
+    {
+      "key": "duo_leg_numbers",
+      "reason": "Member rows are imported, but available timing evidence does not validate that source row order always equals leg 1/2. Preserve source_sequence instead."
+    },
+    {
+      "key": "cross_year_person_identity",
+      "reason": "Repeat-runner analysis requires a separately documented linkage/confidence layer and must never overwrite source-local identity."
+    },
+    {
+      "key": "historical_gender_age_gaps",
+      "reason": "The frozen public source does not expose reliable sex/age fields for individual results in 2018, 2019 and 2023. Do not infer them from names."
+    },
+    {
+      "key": "bengtemolla_physical_mat_interpretation",
+      "reason": "The 2022/2023 service-window hypothesis remains operationally plausible but not physically verified."
     }
   ],
   "do_not_redo": [
-    "Do not rediscover Sportstiming event IDs already catalogued for 2018-2026.",
+    "Do not refetch or rediscover Sportstiming 2018-2026 merely to start engine integration; the complete frozen archive and curated database already exist.",
+    "Use data/derived/ost-analysis-2018-2026.sqlite.gz as the primary source-side engine handoff and keep the frozen archive as provenance/source truth.",
     "Do not infer course identity from marketing distance labels.",
     "Do not collapse the 2022/2023 32 km and Bengtemölla observations into a single raw timing row.",
     "Do not label the 32 km to Bengtemölla gap as confirmed aid-station dwell time unless physical timing-mat placement is independently verified.",
+    "Do not assign Duo leg numbers from member row order without stronger source evidence.",
+    "Do not infer cross-year person identity from names alone.",
     "Do not copy the pre-refactor Gotaleden frontend wholesale into this repository."
   ]
 }
