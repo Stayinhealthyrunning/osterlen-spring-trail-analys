@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "question": "Is the 32 km timing point immediately before Bengtemölla, so Bengtemölla should be the canonical checkpoint?",
+  "method": "Aggregate public Sportstiming split-table comparison; no runner identities stored.",
+  "years": [
+    {
+      "year": 2022,
+      "event_id": 9587,
+      "round_id": 46204,
+      "sampled_result_ids": 60,
+      "valid_pairs": 60,
+      "fetch_or_parse_errors": 0,
+      "segment_distance_source_values": [
+        "100 meter"
+      ],
+      "delta_seconds": {
+        "min": 47,
+        "median": 255.0,
+        "p90": 531.3,
+        "max": 642
+      },
+      "segment_seconds_median": 255.0,
+      "rank_unchanged_fraction": 0.15,
+      "interpretation": "needs_review"
+    },
+    {
+      "year": 2023,
+      "event_id": 11274,
+      "round_id": 58343,
+      "sampled_result_ids": 60,
+      "valid_pairs": 60,
+      "fetch_or_parse_errors": 0,
+      "segment_distance_source_values": [
+        "0,1 km"
+      ],
+      "delta_seconds": {
+        "min": 24,
+        "median": 142.5,
+        "p90": 343.3,
+        "max": 623
+      },
+      "segment_seconds_median": 142.5,
+      "rank_unchanged_fraction": 0.183,
+      "interpretation": "needs_review"
+    }
+  ],
+  "canonicalization_recommendation": "For 2022 and 2023, retain both raw source rows for provenance, but use the Bengtemölla elapsed time as the canonical Bengtemölla checkpoint if both years are classified prewarning_then_bengtemolla_supported."
+}
