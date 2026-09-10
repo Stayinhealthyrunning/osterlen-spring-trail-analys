@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-10T16:46:37+00:00",
+  "generated_at": "2026-09-10T16:47:59+00:00",
   "source_frozen_archive": "data/archive/ost-results-2018-2026.sqlite.gz",
   "source_frozen_archive_sha256": "32f7cc412fa1d11fbef7af6c78912c10dcad38c1fae853a6d8659d90816543f9",
   "curated_archive": "data/derived/ost-analysis-2018-2026.sqlite.gz",
-  "curated_database_sha256": "b18911ae004160e39a8739c4fdb878d40486435c86aafe9380a6c8b5259ec957",
-  "curated_archive_sha256": "25072838c7a9837c5808d5013391868ecbd999659ee17fb174975aa690e9b248",
+  "curated_database_sha256": "bd5c8a885c09040008efd8313de39d1236bb433b1ae86c4454f8b1f4ca8cce61",
+  "curated_archive_sha256": "a87962957681077fbc98f02433801106d637af21e95d9d4f6b108adae1250e53",
   "database_bytes": 68222976,
   "compressed_bytes": 5120434,
   "totals": {
