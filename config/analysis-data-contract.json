@@ -1,24 +1,61 @@
 {
-  "schema_version": 1,
-  "purpose": "Stable contract between ÖST source normalization and the generic Gotaleden-derived analysis engine.",
-  "required_entities": {
-    "events": ["event_id", "year", "status"],
-    "races": ["race_key", "year", "family", "type", "nominal_distance_km", "course_version"],
-    "participants": ["participant_uid", "bib", "name", "sex", "age", "birth_year", "club", "country"],
-    "results": ["result_uid", "race_key", "participant_uid", "status", "finish_seconds", "gross_seconds", "overall_place", "class_place", "gender_place", "raw_json"],
-    "splits": ["result_uid", "checkpoint_key", "elapsed_seconds", "clock_time", "overall_place", "class_place", "gender_place", "raw_json"],
-    "checkpoints": ["race_key", "checkpoint_key", "name", "route_distance_km", "race_distance_km", "timing_role", "analysis_boundary", "replay_anchor"],
-    "routes": ["course_version", "source_gpx", "distance_km", "geometry_provenance"],
-    "relay_teams": ["team_uid", "race_key", "bib", "team_name", "members"]
+  "schema_version": 2,
+  "purpose": "Stable source-null-safe contract between the curated ÖST data layer and the generic Gotaleden-derived analysis engine.",
+  "primary_source": "data/derived/ost-analysis-2018-2026.sqlite.gz",
+  "entities": {
+    "events": {
+      "required": ["event_id", "year", "status"]
+    },
+    "races": {
+      "required": ["race_key", "year", "family", "type", "nominal_distance_km"],
+      "nullable": ["course_version", "route_asset"]
+    },
+    "participants": {
+      "required": ["participant_uid", "race_key", "source_result_id", "name"],
+      "nullable": ["bib", "sex", "age", "birth_year", "age_category", "club", "country"],
+      "identity_rule": "participant_uid is source-local to one race result and does not assert cross-year person identity."
+    },
+    "results": {
+      "required": ["result_uid", "race_key", "source_result_id", "entity_type", "status", "source_normalized_json"],
+      "nullable": ["participant_uid", "team_uid", "bib", "finish_seconds", "gross_seconds", "net_seconds", "overall_place", "class_place", "gender_place", "sex", "age", "age_category", "club", "country"],
+      "rule": "FINISHED requires a positive finish_seconds. DNF/DNS/DSQ/UNKNOWN may legitimately lack a finish time or placement."
+    },
+    "splits": {
+      "required": ["result_uid", "sequence_no", "source_kind", "raw_json"],
+      "nullable": ["checkpoint_key", "checkpoint_semantic_key", "elapsed_seconds", "clock_time", "overall_place", "class_place", "gender_place", "segment_seconds"],
+      "rule": "Only source-observed timing rows belong in the split table; missing passages are never manufactured."
+    },
+    "checkpoints": {
+      "required": ["race_key", "checkpoint_key", "name", "timing_role", "analysis_boundary", "replay_anchor"],
+      "nullable": ["route_distance_km", "race_distance_km"],
+      "rule": "Geometry-dependent distance may be absent when no locally usable route asset exists."
+    },
+    "routes": {
+      "required": ["course_version", "geometry_provenance"],
+      "nullable": ["source_gpx", "distance_km"],
+      "rule": "A verified course version does not imply a redistributable/local route asset."
+    },
+    "relay_teams": {
+      "required": ["team_uid", "race_key", "source_result_id", "team_name"],
+      "nullable": ["bib", "class_name"]
+    },
+    "relay_members": {
+      "required": ["member_uid", "team_uid", "source_sequence", "name_as_published", "assignment_status"],
+      "nullable": ["source_member_result_id", "bib", "member_time_seconds", "finish_clock", "speed_source", "leg_no"],
+      "rule": "source_sequence is preserved from Sportstiming. leg_no stays null unless later independent evidence validates the mapping."
+    }
   },
   "status_values": ["FINISHED", "DNF", "DNS", "DSQ", "UNKNOWN"],
-  "timing_role_values": ["start", "intermediate", "exchange", "finish", "non_timing_landmark"],
+  "timing_role_values": ["start", "intermediate", "exchange", "finish", "non_timing_landmark", "timing_checkpoint", "aid_station_timing", "approach_or_prewarning_candidate", "named_aid_station_timing_exit_candidate", "unmapped_source_checkpoint"],
   "rules": [
     "No missing split may be interpolated and presented as official timing data.",
     "Raw source payloads must be preserved before normalization.",
     "Course version is independent from marketing distance label.",
     "Duo uses the matching Ultra 60 route geometry and adds relay structure only.",
     "Cancelled years are represented explicitly and never treated as missing data.",
-    "Cross-year segment analysis requires geometrically comparable course sections."
+    "Cross-year whole-course or segment analysis requires documented geometric comparability.",
+    "Missing demographic fields stay null; they are never inferred from participant names.",
+    "Exact age is never inferred from an age-category range.",
+    "Cross-year person linkage is a separate confidence-bearing derived layer and must not overwrite source-local identity."
   ]
 }
