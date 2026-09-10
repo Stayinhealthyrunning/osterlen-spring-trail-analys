@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T11:32:38.221664+00:00",
+  "generated_at": "2026-09-10T11:41:28.486455+00:00",
   "source": "Trace de Trail public embedded dataTrace payloads",
   "routes": [
     {
@@ -11,12 +11,13 @@
           "status": "candidate_needs_direct_reverification"
         }
       ],
-      "found": false,
-      "bytes": 0,
-      "sha256": null,
-      "parse_error": null,
+      "found": true,
+      "bytes": 136696,
+      "sha256": "69235e7c251cd1a2b514e64332e83823f783f31f6a4966c64104001ddd6c6e7d",
+      "parse_error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 2 column 21 (char 22)",
       "structure": null,
-      "geometry_string_hints": []
+      "geometry_string_hints": [],
+      "context": "eLabel\\\":null,\\\"passageDescription\\\":\\\"\\\",\\\"passageDescription2\\\":null,\\\"labelsDiv\\\":[]}]\", dataBenevoles:\"[]\", dataTrace:{ traceID:7897, sections:\"[]\", variantes:\"[]\", dateCompet:\"16/04/2016\", distance:21.7, bulles:2, alti_min:0, alti_max:150, pt_culminant:126, pt_bas:19, pentesColor:\"9bdef7_16baf7_0e609c\", pentesPos:\"10_20_30\","
     },
     {
       "trace_id": 43970,
@@ -27,12 +28,13 @@
           "status": "candidate_needs_direct_reverification"
         }
       ],
-      "found": false,
-      "bytes": 0,
-      "sha256": null,
-      "parse_error": null,
+      "found": true,
+      "bytes": 242357,
+      "sha256": "b9e449143b8e46d19c53dc34a93153b05e392c6e21ca7edd08202d6eb61acafb",
+      "parse_error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 2 column 21 (char 22)",
       "structure": null,
-      "geometry_string_hints": []
+      "geometry_string_hints": [],
+      "context": "eLabel\\\":null,\\\"passageDescription\\\":null,\\\"passageDescription2\\\":null,\\\"labelsDiv\\\":[]}]\", dataBenevoles:\"[]\", dataTrace:{ traceID:43970, sections:\"[]\", variantes:\"[]\", dateCompet:\"14/04/2018\", distance:62.6, bulles:6, alti_min:0, alti_max:300, pt_culminant:123, pt_bas:0, pentesColor:\"9bdef7_16baf7_0e609c\", pentesPos:\"10_20_30\","
     },
     {
       "trace_id": 69381,
@@ -43,12 +45,13 @@
           "status": "verified"
         }
       ],
-      "found": false,
-      "bytes": 0,
-      "sha256": null,
-      "parse_error": null,
+      "found": true,
+      "bytes": 344328,
+      "sha256": "be506ef2784078048e6148837363f749479597c4b97c7b239b567b62160167fd",
+      "parse_error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 2 column 21 (char 22)",
       "structure": null,
-      "geometry_string_hints": []
+      "geometry_string_hints": [],
+      "context": "eLabel\\\":null,\\\"passageDescription\\\":\\\"\\\",\\\"passageDescription2\\\":null,\\\"labelsDiv\\\":[]}]\", dataBenevoles:\"[]\", dataTrace:{ traceID:69381, sections:\"[]\", variantes:\"[]\", dateCompet:\"13/04/2019\", distance:58.7, bulles:5, alti_min:0, alti_max:500, pt_culminant:124, pt_bas:0, pentesColor:\"9bdef7_16baf7_0e609c\", pentesPos:\"10_20_30\","
     },
     {
       "trace_id": 69864,
@@ -59,12 +62,13 @@
           "status": "verified"
         }
       ],
-      "found": false,
-      "bytes": 0,
-      "sha256": null,
-      "parse_error": null,
+      "found": true,
+      "bytes": 140186,
+      "sha256": "0369d64446dbb2e09ef1a8b0fe18339d3abf8a75b150d994893c6161ce3ba7e4",
+      "parse_error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 2 column 21 (char 22)",
       "structure": null,
-      "geometry_string_hints": []
+      "geometry_string_hints": [],
+      "context": "eLabel\\\":null,\\\"passageDescription\\\":\\\"\\\",\\\"passageDescription2\\\":\\\"\\\",\\\"labelsDiv\\\":[]}]\", dataBenevoles:\"[]\", dataTrace:{ traceID:69864, sections:\"[]\", variantes:\"[]\", dateCompet:\"13/04/2019\", distance:21.8, bulles:2, alti_min:0, alti_max:500, pt_culminant:126, pt_bas:19, pentesColor:\"9bdef7_16baf7_0e609c\", pentesPos:\"10_20_30\","
     },
     {
       "trace_id": 165617,
@@ -75,12 +79,13 @@
           "status": "verified"
         }
       ],
-      "found": false,
-      "bytes": 0,
-      "sha256": null,
-      "parse_error": null,
+      "found": true,
+      "bytes": 122287,
+      "sha256": "da611533f34df11f1b26061d56b5a5ea903a7b08d0c62f18a3db3241a3a93e45",
+      "parse_error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 2 column 21 (char 22)",
       "structure": null,
-      "geometry_string_hints": []
+      "geometry_string_hints": [],
+      "context": "eLabel\\\":null,\\\"passageDescription\\\":\\\"\\\",\\\"passageDescription2\\\":null,\\\"labelsDiv\\\":[]}]\", dataBenevoles:\"[]\", dataTrace:{ traceID:165617, sections:\"[]\", variantes:\"[]\", dateCompet:\"09/04/2022\", distance:21.8, bulles:2, alti_min:0, alti_max:500, pt_culminant:139, pt_bas:34, pentesColor:\"9bdef7_16baf7_0e609c\", pentesPos:\"10_20_30\","
     },
     {
       "trace_id": 172147,
@@ -91,12 +96,13 @@
           "status": "candidate_needs_direct_reverification"
         }
       ],
-      "found": false,
-      "bytes": 0,
-      "sha256": null,
-      "parse_error": null,
+      "found": true,
+      "bytes": 312000,
+      "sha256": "9a307bc080bf225d59905e140245226c2dd74dd5fc7164fe9d00b6dd9a3e4932",
+      "parse_error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 2 column 21 (char 22)",
       "structure": null,
-      "geometry_string_hints": []
+      "geometry_string_hints": [],
+      "context": "eLabel\\\":null,\\\"passageDescription\\\":null,\\\"passageDescription2\\\":null,\\\"labelsDiv\\\":[]}]\", dataBenevoles:\"[]\", dataTrace:{ traceID:172147, sections:\"[]\", variantes:\"[]\", dateCompet:\"09/04/2022\", distance:58.5, bulles:5, alti_min:0, alti_max:500, pt_culminant:124, pt_bas:0, pentesColor:\"9bdef7_16baf7_0e609c\", pentesPos:\"10_20_30\","
     },
     {
       "trace_id": 203146,
@@ -107,12 +113,13 @@
           "status": "verified_via_organizer_trace_listing"
         }
       ],
-      "found": false,
-      "bytes": 0,
-      "sha256": null,
-      "parse_error": null,
+      "found": true,
+      "bytes": 122287,
+      "sha256": "f4fdffb32cea9562ab596e3f1d70b1406a2bd948df9e590e99033d321cbcccda",
+      "parse_error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 2 column 21 (char 22)",
       "structure": null,
-      "geometry_string_hints": []
+      "geometry_string_hints": [],
+      "context": "eLabel\\\":null,\\\"passageDescription\\\":null,\\\"passageDescription2\\\":null,\\\"labelsDiv\\\":[]}]\", dataBenevoles:\"[]\", dataTrace:{ traceID:203146, sections:\"[]\", variantes:\"[]\", dateCompet:\"15/04/2023\", distance:21.8, bulles:2, alti_min:0, alti_max:500, pt_culminant:139, pt_bas:34, pentesColor:\"9bdef7_16baf7_0e609c\", pentesPos:\"10_20_30\","
     },
     {
       "trace_id": 203147,
@@ -123,12 +130,13 @@
           "status": "verified"
         }
       ],
-      "found": false,
-      "bytes": 0,
-      "sha256": null,
-      "parse_error": null,
+      "found": true,
+      "bytes": 312000,
+      "sha256": "ba711e8d93842960bc06d75f5852a86b90bcd40fee7a2dc76656770606720f88",
+      "parse_error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 2 column 21 (char 22)",
       "structure": null,
-      "geometry_string_hints": []
+      "geometry_string_hints": [],
+      "context": "eLabel\\\":null,\\\"passageDescription\\\":null,\\\"passageDescription2\\\":null,\\\"labelsDiv\\\":[]}]\", dataBenevoles:\"[]\", dataTrace:{ traceID:203147, sections:\"[]\", variantes:\"[]\", dateCompet:\"15/04/2023\", distance:58.5, bulles:5, alti_min:0, alti_max:500, pt_culminant:124, pt_bas:0, pentesColor:\"9bdef7_16baf7_0e609c\", pentesPos:\"10_20_30\","
     },
     {
       "trace_id": 237224,
@@ -139,12 +147,13 @@
           "status": "verified"
         }
       ],
-      "found": false,
-      "bytes": 0,
-      "sha256": null,
-      "parse_error": null,
+      "found": true,
+      "bytes": 122287,
+      "sha256": "84279938479946d75b63f5135cec7181c12971b08caa40bb7cefcb753c63a999",
+      "parse_error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 2 column 21 (char 22)",
       "structure": null,
-      "geometry_string_hints": []
+      "geometry_string_hints": [],
+      "context": "eLabel\\\":null,\\\"passageDescription\\\":\\\"\\\",\\\"passageDescription2\\\":null,\\\"labelsDiv\\\":[]}]\", dataBenevoles:\"[]\", dataTrace:{ traceID:237224, sections:\"[]\", variantes:\"[]\", dateCompet:\"13/04/2024\", distance:21.8, bulles:2, alti_min:0, alti_max:500, pt_culminant:139, pt_bas:34, pentesColor:\"9bdef7_16baf7_0e609c\", pentesPos:\"10_20_30\","
     },
     {
       "trace_id": 251126,
@@ -155,12 +164,13 @@
           "status": "verified"
         }
       ],
-      "found": false,
-      "bytes": 0,
-      "sha256": null,
-      "parse_error": null,
+      "found": true,
+      "bytes": 284198,
+      "sha256": "fe4b6d6f342772f8b27b25e45305cf543de3496b03456d78ee53311361a4ed5c",
+      "parse_error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 2 column 21 (char 22)",
       "structure": null,
-      "geometry_string_hints": []
+      "geometry_string_hints": [],
+      "context": "eLabel\\\":null,\\\"passageDescription\\\":\\\"\\\",\\\"passageDescription2\\\":null,\\\"labelsDiv\\\":[]}]\", dataBenevoles:\"[]\", dataTrace:{ traceID:251126, sections:\"[]\", variantes:\"[]\", dateCompet:\"13/04/2024\", distance:60.7, bulles:6, alti_min:0, alti_max:500, pt_culminant:124, pt_bas:0, pentesColor:\"9bdef7_16baf7_0e609c\", pentesPos:\"10_20_30\","
     },
     {
       "trace_id": 272846,
@@ -171,12 +181,13 @@
           "status": "verified"
         }
       ],
-      "found": false,
-      "bytes": 0,
-      "sha256": null,
-      "parse_error": null,
+      "found": true,
+      "bytes": 469825,
+      "sha256": "18fccd865d03fd2214388f6bc0a3ad20744b91b80769d19a3e9290d1dfe0a464",
+      "parse_error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 2 column 21 (char 22)",
       "structure": null,
-      "geometry_string_hints": []
+      "geometry_string_hints": [],
+      "context": "eLabel\\\":null,\\\"passageDescription\\\":null,\\\"passageDescription2\\\":null,\\\"labelsDiv\\\":[]}]\", dataBenevoles:\"[]\", dataTrace:{ traceID:272846, sections:\"[]\", variantes:\"[]\", dateCompet:\"13/04/2025\", distance:59.76, bulles:5, alti_min:0, alti_max:500, pt_culminant:121, pt_bas:0, pentesColor:\"9bdef7_16baf7_0e609c\", pentesPos:\"10_20_30\","
     },
     {
       "trace_id": 280053,
@@ -187,12 +198,13 @@
           "status": "verified"
         }
       ],
-      "found": false,
-      "bytes": 0,
-      "sha256": null,
-      "parse_error": null,
+      "found": true,
+      "bytes": 156795,
+      "sha256": "17b2a17325ff4af9d489be6cdeb8e80cb3bccd6291ee5fd6924775cb37811d64",
+      "parse_error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 2 column 21 (char 22)",
       "structure": null,
-      "geometry_string_hints": []
+      "geometry_string_hints": [],
+      "context": "eLabel\\\":null,\\\"passageDescription\\\":null,\\\"passageDescription2\\\":null,\\\"labelsDiv\\\":[]}]\", dataBenevoles:\"[]\", dataTrace:{ traceID:280053, sections:\"[]\", variantes:\"[]\", dateCompet:\"12/04/2025\", distance:21.77, bulles:2, alti_min:0, alti_max:500, pt_culminant:139, pt_bas:34, pentesColor:\"9bdef7_16baf7_0e609c\", pentesPos:\"10_20_30\","
     },
     {
       "trace_id": 322314,
@@ -203,12 +215,13 @@
           "status": "verified"
         }
       ],
-      "found": false,
-      "bytes": 0,
-      "sha256": null,
-      "parse_error": null,
+      "found": true,
+      "bytes": 156795,
+      "sha256": "d163939a1a1d9e847316d45483b240de0a4fb50e24987d3dc1959330830c913b",
+      "parse_error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 2 column 21 (char 22)",
       "structure": null,
-      "geometry_string_hints": []
+      "geometry_string_hints": [],
+      "context": "eLabel\\\":null,\\\"passageDescription\\\":null,\\\"passageDescription2\\\":null,\\\"labelsDiv\\\":[]}]\", dataBenevoles:\"[]\", dataTrace:{ traceID:322314, sections:\"[]\", variantes:\"[]\", dateCompet:\"18/04/2026\", distance:21.77, bulles:2, alti_min:0, alti_max:500, pt_culminant:139, pt_bas:34, pentesColor:\"9bdef7_16baf7_0e609c\", pentesPos:\"10_20_30\","
     },
     {
       "trace_id": 322315,
@@ -219,12 +232,13 @@
           "status": "verified"
         }
       ],
-      "found": false,
-      "bytes": 0,
-      "sha256": null,
-      "parse_error": null,
+      "found": true,
+      "bytes": 472185,
+      "sha256": "affa09a8b916e1dbcf0d1886c94a8acc7e2312cede29729ca7b6ae0c9c3110fc",
+      "parse_error": "JSONDecodeError: Expecting property name enclosed in double quotes: line 2 column 21 (char 22)",
       "structure": null,
-      "geometry_string_hints": []
+      "geometry_string_hints": [],
+      "context": "eLabel\\\":null,\\\"passageDescription\\\":null,\\\"passageDescription2\\\":null,\\\"labelsDiv\\\":[]}]\", dataBenevoles:\"[]\", dataTrace:{ traceID:322315, sections:\"[]\", variantes:\"[]\", dateCompet:\"18/04/2026\", distance:59.76, bulles:5, alti_min:0, alti_max:500, pt_culminant:121, pt_bas:0, pentesColor:\"9bdef7_16baf7_0e609c\", pentesPos:\"10_20_30\","
     }
   ]
 }
