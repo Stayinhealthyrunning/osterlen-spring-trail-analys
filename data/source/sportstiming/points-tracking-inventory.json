@@ -1,0 +1,597 @@
+{
+  "schema_version": 1,
+  "editions": [
+    {
+      "year": 2018,
+      "event_id": 4950,
+      "views": [
+        {
+          "kind": "points",
+          "http_status": null,
+          "final_url": "https://www.sportstiming.dk/event/4950/app/points",
+          "html_bytes": 0,
+          "selects": [],
+          "candidate_phrases": [],
+          "relevant_links": [],
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "kind": "tracking",
+          "http_status": 200,
+          "final_url": "https://www.sportstiming.dk/event/4950/app/tracking",
+          "html_bytes": 42516,
+          "selects": [
+            {
+              "attrs": {
+                "name": "ctl00$ctl00$ContentPlaceHolderNoPadding$ContentPlaceHolderNoPadding$ddlDistance",
+                "id": "ctl00_ctl00_ContentPlaceHolderNoPadding_ContentPlaceHolderNoPadding_ddlDistance",
+                "class": "form-control selectDistance"
+              },
+              "options": [
+                {
+                  "value": "15266",
+                  "text": "Simris Alg Ultra 60km+ (ca. 1150m höjdmeter)"
+                }
+              ]
+            }
+          ],
+          "candidate_phrases": [
+            "$('.timepausespan').hide(); //$('#timeplaypause').css(\"background-image\", \"url('/Results/Tracking/timeplay.png')\"); } else { $('.timeplayspan').hide(); $('.timepausespan').show(); //$('#timeplaypause').css(\"background-image\", \"url('/Resu",
+            "lts/Tracking/timepause.png')\"); } }); // GRAPH if (viewSportsGraph) { graph = new sportsgraph.circular(document.getElementById('chart_div'), options, gr",
+            "e) { if (request.term.length >= 3 || $.isNumeric(request.term)) { $.ajax({ url: \"/Results/Tracking.aspx/SearchParticipant\", dataType: \"json\", data: \"{ 'rallyID': \" + eventID + \", 'roundID': \" + raceID + \", 'query': '\" + request.term + \"'",
+            "lor: #212121; text-align: left; font-size: 11px; } .acInputMini { width: 250px; } Rute og tracking Event Deltagere Resultater Rute og tracking Event Deltagere Resultater Rute og tracking Tracking Österlen Spring Trail 2018 Österlen Spring"
+          ],
+          "relevant_links": [
+            "/event/4950/app/tracking",
+            "/event/4950/app/results",
+            "/event/16880/app/tracking",
+            "/event/15015/app/tracking",
+            "/event/12349/app/tracking",
+            "/event/11274/app/tracking",
+            "/event/9587/app/tracking",
+            "/event/5719/app/tracking",
+            "/event/4414/app/tracking",
+            "/event/4184/app/tracking"
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "year": 2019,
+      "event_id": 5719,
+      "views": [
+        {
+          "kind": "points",
+          "http_status": 200,
+          "final_url": "https://www.sportstiming.dk/event/5719/app/points",
+          "html_bytes": 183541,
+          "selects": [
+            {
+              "attrs": {
+                "class": "form-control autoPostControl",
+                "id": "pointsScoring",
+                "onchange": "togglePointsFilters()"
+              },
+              "options": [
+                {
+                  "value": "252",
+                  "text": "Kort"
+                },
+                {
+                  "value": "253",
+                  "text": "Lang"
+                }
+              ]
+            },
+            {
+              "attrs": {
+                "class": "form-control autoPostControl",
+                "id": "selectGender"
+              },
+              "options": [
+                {
+                  "value": "",
+                  "text": "Män/Kvinnor"
+                },
+                {
+                  "value": "IndividualMale",
+                  "text": "Män"
+                },
+                {
+                  "value": "IndividualFemale",
+                  "text": "Kvinnor"
+                }
+              ]
+            }
+          ],
+          "candidate_phrases": [
+            "e = \\'st\\'; <\\/script>'; Gripenserien Poäng Event Deltagarna Resultat Tävlingskarta (Live tracking) Gripenserien Poäng Event Deltagarna Resultat Tävlingskarta (Live tracking) Tracking Gripenserien Poäng Byt tävling Österlen Spring Trail Ö"
+          ],
+          "relevant_links": [
+            "/event/5719/app/points",
+            "/event/5719/app/results",
+            "/event/5719/app/tracking",
+            "/event/16880/app/points",
+            "/event/15015/app/points",
+            "/event/12349/app/points",
+            "/event/11274/app/points",
+            "/event/9587/app/points",
+            "/event/4950/app/points",
+            "/event/4414/app/points",
+            "/event/4184/app/points"
+          ],
+          "error": null
+        },
+        {
+          "kind": "tracking",
+          "http_status": 200,
+          "final_url": "https://www.sportstiming.dk/event/5719/app/tracking",
+          "html_bytes": 41282,
+          "selects": [
+            {
+              "attrs": {
+                "name": "ctl00$ctl00$ContentPlaceHolderNoPadding$ContentPlaceHolderNoPadding$ddlDistance",
+                "id": "ctl00_ctl00_ContentPlaceHolderNoPadding_ContentPlaceHolderNoPadding_ddlDistance",
+                "class": "form-control selectDistance"
+              },
+              "options": [
+                {
+                  "value": "20385",
+                  "text": "Simris Alg Ultra 60km+ (ca. 1450m höjdmeter)"
+                }
+              ]
+            }
+          ],
+          "candidate_phrases": [
+            "width: 250px; } Rute og tracking Event Deltagere Resultater Rute og tracking Gripenserien Point Event Deltagere Resultater Rute og tracking Tracking Gripenserien Point Österlen Spring Trail 2019 Österlen Spring Trail Österlen Spring Tr",
+            "$('.timepausespan').hide(); //$('#timeplaypause').css(\"background-image\", \"url('/Results/Tracking/timeplay.png')\"); } else { $('.timeplayspan').hide(); $('.timepausespan').show(); //$('#timeplaypause').css(\"background-image\", \"url('/Resu",
+            "lts/Tracking/timepause.png')\"); } }); // GRAPH if (viewSportsGraph) { graph = new sportsgraph.circular(document.getElementById('chart_div'), options, gr",
+            "e) { if (request.term.length >= 3 || $.isNumeric(request.term)) { $.ajax({ url: \"/Results/Tracking.aspx/SearchParticipant\", dataType: \"json\", data: \"{ 'rallyID': \" + eventID + \", 'roundID': \" + raceID + \", 'query': '\" + request.term + \"'",
+            "lor: #212121; text-align: left; font-size: 11px; } .acInputMini { width: 250px; } Rute og tracking Event Deltagere Resultater Rute og tracking Gripenserien Point Event Deltagere Resultater Rute og tracking Tracking Gripenserien Point Öste"
+          ],
+          "relevant_links": [
+            "/event/5719/app/tracking",
+            "/event/5719/app/results",
+            "/event/5719/app/points",
+            "/event/16880/app/tracking",
+            "/event/15015/app/tracking",
+            "/event/12349/app/tracking",
+            "/event/11274/app/tracking",
+            "/event/9587/app/tracking",
+            "/event/4950/app/tracking",
+            "/event/4414/app/tracking",
+            "/event/4184/app/tracking"
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "event_id": 9587,
+      "views": [
+        {
+          "kind": "points",
+          "http_status": null,
+          "final_url": "https://www.sportstiming.dk/event/9587/app/points",
+          "html_bytes": 0,
+          "selects": [],
+          "candidate_phrases": [],
+          "relevant_links": [],
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "kind": "tracking",
+          "http_status": 200,
+          "final_url": "https://www.sportstiming.dk/event/9587/app/tracking",
+          "html_bytes": 244368,
+          "selects": [
+            {
+              "attrs": {
+                "name": "ctl00$ctl00$ContentPlaceHolderNoPadding$ContentPlaceHolderNoPadding$ddlDistance",
+                "id": "ctl00_ctl00_ContentPlaceHolderNoPadding_ContentPlaceHolderNoPadding_ddlDistance",
+                "class": "form-control selectDistance"
+              },
+              "options": [
+                {
+                  "value": "46204",
+                  "text": "Ultra 60km+"
+                }
+              ]
+            }
+          ],
+          "candidate_phrases": [
+            "{ position: new google.maps.LatLng(55.55669, 14.3547), map: map, icon: '/Results/Tracking/start.png', zIndex: 5}); var icon2 = new google.maps.Marker({ position: new google.maps.LatLng(55.71733, 13.96054), map: map, icon: '/Results/Tra",
+            "position: new google.maps.LatLng(55.71733, 13.96054), map: map, icon: '/Results/Tracking/finish.png', zIndex: 6}); } var isDraggable = true; var OPACITY_MAX_PIXELS = 57; // Width of opacity control image var runnerInfo = { \"runners\": [",
+            "ltitudeMeters\": [\"18\"] }]; var options = { \"markings\": [ { location: 5000, url: \"/Results/Tracking/km5signbig.png\", yPixelOffset: 7 }, { location: 10000, url: \"/Results/Tracking/km10signbig.png\", yPixelOffset: 7 }, { location: 15000, url:",
+            "\"/Results/Tracking/km15signbig.png\", yPixelOffset: 7 }, { location: 20000, url: \"/Results/Tracking/km20signbig.png\", yPixelOffset: 7 }, { location: 25000, url",
+            ": \"/Results/Tracking/km25signbig.png\", yPixelOffset: 7 }, { location: 30000, url: \"/Results/Tracking/km30signbig.png\", yPixelOffset: 7 }, { location: 35000, url",
+            ": \"/Results/Tracking/km35signbig.png\", yPixelOffset: 7 }, { location: 40000, url: \"/Results/Tracking/km40signbig.png\", yPixelOffset: 7 }, { location: 45000, url",
+            ": \"/Results/Tracking/km45signbig.png\", yPixelOffset: 7 }, { location: 50000, url: \"/Results/Tracking/km50signbig.png\", yPixelOffset: 7 }, { location: 55000, url",
+            ": \"/Results/Tracking/km55signbig.png\", yPixelOffset: 7 }, { location: 60000, url: \"/Results/Tracking/km60signbig.png\", yPixelOffset: 7 }, {location: 1000, size:",
+            "s.Marker({ position: new google.maps.LatLng(55.55669, 14.3547), map: map, icon: '/Results/Tracking/start.png', zIndex: 5}); var icon2 = new google.maps.Marker({ position: new google.maps.LatLng(55.71733, 13.96054), map: map, icon: '/Resul",
+            "ts/Tracking/finish.png', zIndex: 6}); } var isDraggable = true; var OPACITY_MAX_PIXELS = 57; // Width of opacity control image var runnerInfo = { \"runn",
+            "$('.timepausespan').hide(); //$('#timeplaypause').css(\"background-image\", \"url('/Results/Tracking/timeplay.png')\"); } else { $('.timeplayspan').hide(); $('.timepausespan').show(); //$('#timeplaypause').css(\"background-image\", \"url('/Resu",
+            "lts/Tracking/timepause.png')\"); } }); // GRAPH if (viewSportsGraph) { graph = new sportsgraph.circular(document.getElementById('chart_div'), options, gr",
+            "e) { if (request.term.length >= 3 || $.isNumeric(request.term)) { $.ajax({ url: \"/Results/Tracking.aspx/SearchParticipant\", dataType: \"json\", data: \"{ 'rallyID': \" + eventID + \", 'roundID': \" + raceID + \", 'query': '\" + request.term + \"'",
+            "lor: #212121; text-align: left; font-size: 11px; } .acInputMini { width: 250px; } Rute og tracking Event Deltagere Resultater Rute og tracking Event Deltagere Resultater Rute og tracking Tracking Österlen Spring Trail 2022 Österlen Spring"
+          ],
+          "relevant_links": [
+            "/event/9587/app/tracking",
+            "/event/9587/app/results",
+            "/event/16880/app/tracking",
+            "/event/15015/app/tracking",
+            "/event/12349/app/tracking",
+            "/event/11274/app/tracking",
+            "/event/5719/app/tracking",
+            "/event/4950/app/tracking",
+            "/event/4414/app/tracking",
+            "/event/4184/app/tracking"
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "event_id": 11274,
+      "views": [
+        {
+          "kind": "points",
+          "http_status": null,
+          "final_url": "https://www.sportstiming.dk/event/11274/app/points",
+          "html_bytes": 0,
+          "selects": [],
+          "candidate_phrases": [],
+          "relevant_links": [],
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "kind": "tracking",
+          "http_status": 200,
+          "final_url": "https://www.sportstiming.dk/event/11274/app/tracking",
+          "html_bytes": 37999,
+          "selects": [
+            {
+              "attrs": {
+                "name": "ctl00$ctl00$ContentPlaceHolderNoPadding$ContentPlaceHolderNoPadding$ddlDistance",
+                "id": "ctl00_ctl00_ContentPlaceHolderNoPadding_ContentPlaceHolderNoPadding_ddlDistance",
+                "class": "form-control selectDistance"
+              },
+              "options": []
+            }
+          ],
+          "candidate_phrases": [
+            "$('.timepausespan').hide(); //$('#timeplaypause').css(\"background-image\", \"url('/Results/Tracking/timeplay.png')\"); } else { $('.timeplayspan').hide(); $('.timepausespan').show(); //$('#timeplaypause').css(\"background-image\", \"url('/Resu",
+            "lts/Tracking/timepause.png')\"); } }); // GRAPH if (viewSportsGraph) { graph = new sportsgraph.circular(document.getElementById('chart_div'), options, gr",
+            "e) { if (request.term.length >= 3 || $.isNumeric(request.term)) { $.ajax({ url: \"/Results/Tracking.aspx/SearchParticipant\", dataType: \"json\", data: \"{ 'rallyID': \" + eventID + \", 'roundID': \" + raceID + \", 'query': '\" + request.term + \"'",
+            "tialize('ctl00$ctl00$ScriptManager1', 'aspnetForm', [], [], [], 90, 'ctl00$ctl00'); //]]> Tracking Österlen Spring Trail 2023 Afspil rute Pause //<![CDATA[ Sys.Application.add_init(function() { $create(Sys.UI._UpdateProgress, {\"associated"
+          ],
+          "relevant_links": [
+            "/event/11274/app/results",
+            "/event/16880/app/tracking",
+            "/event/15015/app/tracking",
+            "/event/12349/app/tracking",
+            "/event/11274/app/tracking",
+            "/event/9587/app/tracking",
+            "/event/5719/app/tracking",
+            "/event/4950/app/tracking",
+            "/event/4414/app/tracking",
+            "/event/4184/app/tracking"
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "event_id": 12349,
+      "views": [
+        {
+          "kind": "points",
+          "http_status": null,
+          "final_url": "https://www.sportstiming.dk/event/12349/app/points",
+          "html_bytes": 0,
+          "selects": [],
+          "candidate_phrases": [],
+          "relevant_links": [],
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "kind": "tracking",
+          "http_status": 200,
+          "final_url": "https://www.sportstiming.dk/event/12349/app/tracking",
+          "html_bytes": 147375,
+          "selects": [
+            {
+              "attrs": {
+                "id": "filterDistance",
+                "onchange": "applyTrackingFilters()"
+              },
+              "options": [
+                {
+                  "value": "",
+                  "text": "Alla klass"
+                }
+              ]
+            },
+            {
+              "attrs": {
+                "id": "filterGender",
+                "onchange": "applyTrackingFilters()"
+              },
+              "options": [
+                {
+                  "value": "",
+                  "text": "Alla"
+                }
+              ]
+            }
+          ],
+          "candidate_phrases": [
+            "2019 Österlen Spring Trail 2018 Österlen Spring Trail 2017 Österlen Spring Trail 2016 /* Point of interest pop up styles todo */ .leaflet-popup-content-wrapper { border-radius: 8px !important; background: #fff !important; padding: 0px",
+            "OverlayLayer instance /* Misc */ var isAarhusMotion = false; var isDeveloper = false; // Point of interest, such as start, finish, hotspot etc. class PointOfInterest { constructor(id, lng, lat, icon, name, image, text, link) { this.id",
+            "this.layergroup.removeLayer(entry.marker); } } } } getPositionByDistance(distance) { var point = null; var pointTotalDistance = 0; var prevPoint = null; var prevPointTotalDistance = 0; var pointsOnRoute = this.polyLineArray; // Comput",
+            "oking for for (var i = 0; i < pointsOnRoute.length; i++) { // Store reference to previous point, if any prevPoint = point; prevPointTotalDistance = pointTotalDistance; // Compute how far we got on this point point = pointsOnRoute[i]; v",
+            "ar distanceSinceLastPoint = 0; if (prevPoint !== null && point !== null) { distanceSinceLastPoint = prevPoint.distanceTo(point); pointTotalDistance += distanceSinceLastPoint; } if (pointTotalDistance >=",
+            "ak; } } // If we have an exact match (theoretical due to decimal points, unless the start point), return the exact match point if (pointTotalDistance === distance) return point; // If only one (or none), return the last point reached i",
+            "f (prevPoint === null || point === null) return point; // When we have two points A and B, interpolate a position between them, in respect to how long far we travelled var distanceAfterFirstPoi",
+            "nt = distance - prevPointTotalDistance; // Distance after point A we have left to go towards B var distanceBetweenPoints = pointTotalDistance - prevPointTotalDistance; // Distance from point A to B // Ra",
+            ") var ratio = distanceAfterFirstPoint / distanceBetweenPoints; var lat = prevPoint.lat + (point.lat - prevPoint.lat) * ratio; var lng = prevPoint.lng + (point.lng - prevPoint.lng) * ratio; return new L.LatLng(lat, lng); } //Returns the",
+            "tPosition, this.route_id); } } } else if (this.status_isfinished) { // Jump to the finish point (last point on the route) // We do this instead of computing the distance to always match exactly the finish point, even if the route dista",
+            "rong var currentPosition = route.polyLineArray[route.polyLineArray.length - 1]; // Finish point this.marker.setLatLng(currentPosition); this.elevationHighlightIndex = chartXCount - 1; } else { // DNS, DNF etc? distance = this.last_mete",
+            "opup-value\">' + paceText + '</span></div>'; // } var atClockPrefix = 'at '; // Last split point (name + time of day) — skip \"Start\" since it's not a real split var realSplitName = this.last_real_split_name || (this.last_timingpoint &&",
+            "sset.status_isfinished; // Withdrawn-during-race riders stay on the map at their drop-out point but rendered // faded so they read as \"no longer racing\". Re-skin the marker only when the flag // actually flips (an athlete can withdraw",
+            "ationIndex(); var favouriteAnnotation = { id: idArray, datasetIndex: datasetIndex, type: 'point', pointStyle: image, rotated: false, display: visibility, enabled: true, scaleID: 'y', yAdjust: -20, xValue: index, yValue: yValue, click:",
+            "otation = { id: [-100, null],//-100 is reserved for MyPosition datasetIndex: null, type: 'point', pointStyle: image, rotated: false, display: false, enabled: true, scaleID: 'y', yAdjust: -20, xValue: 0, yValue: 0, click: (context, even",
+            "the course and when they were // last seen there. last_meters is the server-computed last split / GPS distance. if (this.is_withdrawn && this.last_meters > 0) { var withdrawnVal = (this.last_meters / 1000.0).toFixed(2) + ' km'; if (thi",
+            "=\"popup-value\">-</span></div>'; } // Pace — disabled for consistency (only available with split-based speed) // if (paceText) { // html += '<div class=\"popup-row\"><span class=\"popup-label\">Pace</span><span class=\"popup-value\">' + paceT",
+            "ext + '</span></div>'; // } var atClockPrefix = 'at '; // Last split point (name + time of day) — skip \"Start\" since it's not a real split var realSplitName = this.last_real_split_name || (this.last_timingpoi",
+            ".last_split_time_of_day; } html += '<div class=\"popup-row\"><span class=\"popup-label\">Last split</span><span class=\"popup-value\">' + lastSplitVal + '</span></div>'; } // Next split — show even if estimated distance is up to 500m past th",
+            "e split (estimation can be ahead of reality) if (this.next_split_name && doEstimation && (!distance || !this.next_split_distance || this.next_split",
+            "(arrivalMs, false); } } } html += '<div class=\"popup-row\"><span class=\"popup-label\">Nästa split</span><span class=\"popup-value\">' + nextSplitVal + '</span></div>'; } // Expected finish time + time of day (project from current position",
+            "VI\"). function officialInitials(name) { if (!name) { return ''; } var parts = name.trim().split(/\\s+/); if (parts.length >= 2) { return (parts[0].charAt(0) + parts[1].charAt(0)).toUpperCase(); } return name.trim().substring(0, 2).toUpp",
+            "var source = isEmbeddedMode ? (appFavorites || '') : ''; if (source) { var parts = source.split(','); for (var i = 0; i < parts.length; i++) { var part = parts[i].trim(); if (!part) { continue; } localFavorites.add(part); } } } loadLoc",
+            "// Parse combinedId (\"type_id\") to call server-side ToggleFavorite var parts = combinedId.split('_'); if (parts.length !== 2) { return; } var type = parseInt(parts[0]); var id = parseInt(parts[1]); var isFav = localFavorites.has(combin",
+            "ent. Same key as toggleTrackedAsset. if (isEmbeddedMode) { var key = type + '_' + id; var split = appFavorites ? appFavorites.split(',').filter(function (x) { return x.length > 0 && x !== key; }) : []; if (!isFav) { split.push(key); lo",
+            "alFavorites.add(combinedId); } else { localFavorites.delete(combinedId); } appFavorites = split.join(','); saveEmbeddedFavoritesCsv(appFavorites); updateFavoriteStars(); applyTrackingFilters(); return; } $.ajax({ url: '/event/12349/fav",
+            "bottom of their group, no matter how far they got. Their distance comes from the raw last split, which is not clamped to the course length the way active (computeSimulatedDistance) and finished (max_distance) entries are, so a team tha",
+            "if (isEmbeddedMode) { var key = type + '_' + id; var parts = appFavorites ? appFavorites.split(',').filter(function (x) { return x.length > 0 && x !== key; }) : []; if (doTrack) { parts.push(key); } appFavorites = parts.join(','); sav",
+            "Patch locally instead. var key = type + '_' + id; var parts = appFavorites ? appFavorites.split(',').filter(function (x) { return x.length > 0 && x !== key; }) : []; if (doTrack) { parts.push(key); } appFavorites = parts.join(','); } e",
+            "ay' && typeof replayEngine !== 'undefined' && replayEngine) { var parts = assetCombinedId.split('_'); if (parts.length === 2) { var assetId = parseInt(parts[1]); var replayMarker = replayEngine.markers.get(assetId); if (replayMarker) {",
+            "/ empty = all deselected } else if (coursesParam) { courseOverride = new Set(coursesParam.split(',').map(function(s) { return parseInt(s.trim()); })); } var hasSetCenter = false; routeMap.forEach((route, id) => { var show = route.defau",
+            "ble var chartDisableElevation = new Map(document.getElementById(\"DisableElevation\").value.split(\",\").map(x => x.split(\"=\"))) //Get all data from JS file and put in format chart js can use to create elevation graph and set elevationGrap",
+            "isc */ var isAarhusMotion = false; var isDeveloper = false; // Point of interest, such as start, finish, hotspot etc. class PointOfInterest { constructor(id, lng, lat, icon, name, image, text, link) { this.id = id; this.lng = lng; this",
+            "e, for zoom-dependent visibility this.otherIcons = [];//Non-km icons (FontAwesome, image, START/FINISH) for zoom-dependent visibility } drawRoute() { var polyLine = null; this.polyLineArray = null; if (routeCoordinates[this.id + ''] !=",
+            "s.color, fillOpacity: 1, weight: 0 } }) } ] }); this.layergroup.addLayer(decorator); } // Start and finish icons if (this.polyLineArray != null && this.polyLineArray.length > 0) { var tmpStart = L.marker(this.polyLineArray[0], { icon:",
+            "L.icon({ iconUrl: '/images/svgicon?text=START&strokewidth=0&textcolor=ffffff&bgcolor=' + encodeURIComponent(this.color), iconSize: [53, 22], iconAnchor: [26, 22] }) }); var tmpFinish =",
+            "e || pointsOnRoute.length === 0) { return null; } // Go through the route points from the start until we reach the distance we are looking for for (var i = 0; i < pointsOnRoute.length; i++) { // Store reference to previous point, if an",
+            "ce break; } } // If we have an exact match (theoretical due to decimal points, unless the start point), return the exact match point if (pointTotalDistance === distance) return point; // If only one (or none), return the last point rea",
+            "a distance whose route isn't drawn (e.g. lead // vehicles / officials that never formally start). Finished athletes are excluded - they've // stopped. The server only sends gps coordinates for non-finished athletes in this mode, so //",
+            "</div>'; // } var atClockPrefix = 'at '; // Last split point (name + time of day) — skip \"Start\" since it's not a real split var realSplitName = this.last_real_split_name || (this.last_timingpoint && this.last_timingpoint !== 'GPS' ? t"
+          ],
+          "relevant_links": [
+            "/event/12349/app/results",
+            "/event/16880/app/tracking",
+            "/event/15015/app/tracking",
+            "/event/12349/app/tracking",
+            "/event/11274/app/tracking",
+            "/event/9587/app/tracking",
+            "/event/5719/app/tracking",
+            "/event/4950/app/tracking",
+            "/event/4414/app/tracking",
+            "/event/4184/app/tracking"
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "event_id": 15015,
+      "views": [
+        {
+          "kind": "points",
+          "http_status": null,
+          "final_url": "https://www.sportstiming.se/event/15015/app/points",
+          "html_bytes": 0,
+          "selects": [],
+          "candidate_phrases": [],
+          "relevant_links": [],
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "kind": "tracking",
+          "http_status": 200,
+          "final_url": "https://www.sportstiming.se/event/15015/app/tracking",
+          "html_bytes": 147375,
+          "selects": [
+            {
+              "attrs": {
+                "id": "filterDistance",
+                "onchange": "applyTrackingFilters()"
+              },
+              "options": [
+                {
+                  "value": "",
+                  "text": "Alla klass"
+                }
+              ]
+            },
+            {
+              "attrs": {
+                "id": "filterGender",
+                "onchange": "applyTrackingFilters()"
+              },
+              "options": [
+                {
+                  "value": "",
+                  "text": "Alla"
+                }
+              ]
+            }
+          ],
+          "candidate_phrases": [
+            "2019 Österlen Spring Trail 2018 Österlen Spring Trail 2017 Österlen Spring Trail 2016 /* Point of interest pop up styles todo */ .leaflet-popup-content-wrapper { border-radius: 8px !important; background: #fff !important; padding: 0px",
+            "OverlayLayer instance /* Misc */ var isAarhusMotion = false; var isDeveloper = false; // Point of interest, such as start, finish, hotspot etc. class PointOfInterest { constructor(id, lng, lat, icon, name, image, text, link) { this.id",
+            "this.layergroup.removeLayer(entry.marker); } } } } getPositionByDistance(distance) { var point = null; var pointTotalDistance = 0; var prevPoint = null; var prevPointTotalDistance = 0; var pointsOnRoute = this.polyLineArray; // Comput",
+            "oking for for (var i = 0; i < pointsOnRoute.length; i++) { // Store reference to previous point, if any prevPoint = point; prevPointTotalDistance = pointTotalDistance; // Compute how far we got on this point point = pointsOnRoute[i]; v",
+            "ar distanceSinceLastPoint = 0; if (prevPoint !== null && point !== null) { distanceSinceLastPoint = prevPoint.distanceTo(point); pointTotalDistance += distanceSinceLastPoint; } if (pointTotalDistance >=",
+            "ak; } } // If we have an exact match (theoretical due to decimal points, unless the start point), return the exact match point if (pointTotalDistance === distance) return point; // If only one (or none), return the last point reached i",
+            "f (prevPoint === null || point === null) return point; // When we have two points A and B, interpolate a position between them, in respect to how long far we travelled var distanceAfterFirstPoi",
+            "nt = distance - prevPointTotalDistance; // Distance after point A we have left to go towards B var distanceBetweenPoints = pointTotalDistance - prevPointTotalDistance; // Distance from point A to B // Ra",
+            ") var ratio = distanceAfterFirstPoint / distanceBetweenPoints; var lat = prevPoint.lat + (point.lat - prevPoint.lat) * ratio; var lng = prevPoint.lng + (point.lng - prevPoint.lng) * ratio; return new L.LatLng(lat, lng); } //Returns the",
+            "tPosition, this.route_id); } } } else if (this.status_isfinished) { // Jump to the finish point (last point on the route) // We do this instead of computing the distance to always match exactly the finish point, even if the route dista",
+            "rong var currentPosition = route.polyLineArray[route.polyLineArray.length - 1]; // Finish point this.marker.setLatLng(currentPosition); this.elevationHighlightIndex = chartXCount - 1; } else { // DNS, DNF etc? distance = this.last_mete",
+            "opup-value\">' + paceText + '</span></div>'; // } var atClockPrefix = 'at '; // Last split point (name + time of day) — skip \"Start\" since it's not a real split var realSplitName = this.last_real_split_name || (this.last_timingpoint &&",
+            "sset.status_isfinished; // Withdrawn-during-race riders stay on the map at their drop-out point but rendered // faded so they read as \"no longer racing\". Re-skin the marker only when the flag // actually flips (an athlete can withdraw",
+            "ationIndex(); var favouriteAnnotation = { id: idArray, datasetIndex: datasetIndex, type: 'point', pointStyle: image, rotated: false, display: visibility, enabled: true, scaleID: 'y', yAdjust: -20, xValue: index, yValue: yValue, click:",
+            "otation = { id: [-100, null],//-100 is reserved for MyPosition datasetIndex: null, type: 'point', pointStyle: image, rotated: false, display: false, enabled: true, scaleID: 'y', yAdjust: -20, xValue: 0, yValue: 0, click: (context, even",
+            "the course and when they were // last seen there. last_meters is the server-computed last split / GPS distance. if (this.is_withdrawn && this.last_meters > 0) { var withdrawnVal = (this.last_meters / 1000.0).toFixed(2) + ' km'; if (thi",
+            "=\"popup-value\">-</span></div>'; } // Pace — disabled for consistency (only available with split-based speed) // if (paceText) { // html += '<div class=\"popup-row\"><span class=\"popup-label\">Pace</span><span class=\"popup-value\">' + paceT",
+            "ext + '</span></div>'; // } var atClockPrefix = 'at '; // Last split point (name + time of day) — skip \"Start\" since it's not a real split var realSplitName = this.last_real_split_name || (this.last_timingpoi",
+            ".last_split_time_of_day; } html += '<div class=\"popup-row\"><span class=\"popup-label\">Last split</span><span class=\"popup-value\">' + lastSplitVal + '</span></div>'; } // Next split — show even if estimated distance is up to 500m past th",
+            "e split (estimation can be ahead of reality) if (this.next_split_name && doEstimation && (!distance || !this.next_split_distance || this.next_split",
+            "(arrivalMs, false); } } } html += '<div class=\"popup-row\"><span class=\"popup-label\">Nästa split</span><span class=\"popup-value\">' + nextSplitVal + '</span></div>'; } // Expected finish time + time of day (project from current position",
+            "VI\"). function officialInitials(name) { if (!name) { return ''; } var parts = name.trim().split(/\\s+/); if (parts.length >= 2) { return (parts[0].charAt(0) + parts[1].charAt(0)).toUpperCase(); } return name.trim().substring(0, 2).toUpp",
+            "var source = isEmbeddedMode ? (appFavorites || '') : ''; if (source) { var parts = source.split(','); for (var i = 0; i < parts.length; i++) { var part = parts[i].trim(); if (!part) { continue; } localFavorites.add(part); } } } loadLoc",
+            "// Parse combinedId (\"type_id\") to call server-side ToggleFavorite var parts = combinedId.split('_'); if (parts.length !== 2) { return; } var type = parseInt(parts[0]); var id = parseInt(parts[1]); var isFav = localFavorites.has(combin",
+            "ent. Same key as toggleTrackedAsset. if (isEmbeddedMode) { var key = type + '_' + id; var split = appFavorites ? appFavorites.split(',').filter(function (x) { return x.length > 0 && x !== key; }) : []; if (!isFav) { split.push(key); lo",
+            "alFavorites.add(combinedId); } else { localFavorites.delete(combinedId); } appFavorites = split.join(','); saveEmbeddedFavoritesCsv(appFavorites); updateFavoriteStars(); applyTrackingFilters(); return; } $.ajax({ url: '/event/15015/fav",
+            "bottom of their group, no matter how far they got. Their distance comes from the raw last split, which is not clamped to the course length the way active (computeSimulatedDistance) and finished (max_distance) entries are, so a team tha",
+            "if (isEmbeddedMode) { var key = type + '_' + id; var parts = appFavorites ? appFavorites.split(',').filter(function (x) { return x.length > 0 && x !== key; }) : []; if (doTrack) { parts.push(key); } appFavorites = parts.join(','); sav",
+            "Patch locally instead. var key = type + '_' + id; var parts = appFavorites ? appFavorites.split(',').filter(function (x) { return x.length > 0 && x !== key; }) : []; if (doTrack) { parts.push(key); } appFavorites = parts.join(','); } e",
+            "ay' && typeof replayEngine !== 'undefined' && replayEngine) { var parts = assetCombinedId.split('_'); if (parts.length === 2) { var assetId = parseInt(parts[1]); var replayMarker = replayEngine.markers.get(assetId); if (replayMarker) {",
+            "/ empty = all deselected } else if (coursesParam) { courseOverride = new Set(coursesParam.split(',').map(function(s) { return parseInt(s.trim()); })); } var hasSetCenter = false; routeMap.forEach((route, id) => { var show = route.defau",
+            "ble var chartDisableElevation = new Map(document.getElementById(\"DisableElevation\").value.split(\",\").map(x => x.split(\"=\"))) //Get all data from JS file and put in format chart js can use to create elevation graph and set elevationGrap",
+            "isc */ var isAarhusMotion = false; var isDeveloper = false; // Point of interest, such as start, finish, hotspot etc. class PointOfInterest { constructor(id, lng, lat, icon, name, image, text, link) { this.id = id; this.lng = lng; this",
+            "e, for zoom-dependent visibility this.otherIcons = [];//Non-km icons (FontAwesome, image, START/FINISH) for zoom-dependent visibility } drawRoute() { var polyLine = null; this.polyLineArray = null; if (routeCoordinates[this.id + ''] !=",
+            "s.color, fillOpacity: 1, weight: 0 } }) } ] }); this.layergroup.addLayer(decorator); } // Start and finish icons if (this.polyLineArray != null && this.polyLineArray.length > 0) { var tmpStart = L.marker(this.polyLineArray[0], { icon:",
+            "L.icon({ iconUrl: '/images/svgicon?text=START&strokewidth=0&textcolor=ffffff&bgcolor=' + encodeURIComponent(this.color), iconSize: [53, 22], iconAnchor: [26, 22] }) }); var tmpFinish =",
+            "e || pointsOnRoute.length === 0) { return null; } // Go through the route points from the start until we reach the distance we are looking for for (var i = 0; i < pointsOnRoute.length; i++) { // Store reference to previous point, if an",
+            "ce break; } } // If we have an exact match (theoretical due to decimal points, unless the start point), return the exact match point if (pointTotalDistance === distance) return point; // If only one (or none), return the last point rea",
+            "a distance whose route isn't drawn (e.g. lead // vehicles / officials that never formally start). Finished athletes are excluded - they've // stopped. The server only sends gps coordinates for non-finished athletes in this mode, so //",
+            "</div>'; // } var atClockPrefix = 'at '; // Last split point (name + time of day) — skip \"Start\" since it's not a real split var realSplitName = this.last_real_split_name || (this.last_timingpoint && this.last_timingpoint !== 'GPS' ? t"
+          ],
+          "relevant_links": [
+            "/event/15015/app/results",
+            "/event/16880/app/tracking",
+            "/event/15015/app/tracking",
+            "/event/12349/app/tracking",
+            "/event/11274/app/tracking",
+            "/event/9587/app/tracking",
+            "/event/5719/app/tracking",
+            "/event/4950/app/tracking",
+            "/event/4414/app/tracking",
+            "/event/4184/app/tracking"
+          ],
+          "error": null
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "event_id": 16880,
+      "views": [
+        {
+          "kind": "points",
+          "http_status": null,
+          "final_url": "https://www.sportstiming.dk/event/16880/app/points",
+          "html_bytes": 0,
+          "selects": [],
+          "candidate_phrases": [],
+          "relevant_links": [],
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "kind": "tracking",
+          "http_status": 200,
+          "final_url": "https://www.sportstiming.dk/event/16880/app/tracking",
+          "html_bytes": 147371,
+          "selects": [
+            {
+              "attrs": {
+                "id": "filterDistance",
+                "onchange": "applyTrackingFilters()"
+              },
+              "options": [
+                {
+                  "value": "",
+                  "text": "Alla klass"
+                }
+              ]
+            },
+            {
+              "attrs": {
+                "id": "filterGender",
+                "onchange": "applyTrackingFilters()"
+              },
+              "options": [
+                {
+                  "value": "",
+                  "text": "Alla"
+                }
+              ]
+            }
+          ],
+          "candidate_phrases": [
+            "2019 Österlen Spring Trail 2018 Österlen Spring Trail 2017 Österlen Spring Trail 2016 /* Point of interest pop up styles todo */ .leaflet-popup-content-wrapper { border-radius: 8px !important; background: #fff !important; padding: 0px",
+            "OverlayLayer instance /* Misc */ var isAarhusMotion = false; var isDeveloper = false; // Point of interest, such as start, finish, hotspot etc. class PointOfInterest { constructor(id, lng, lat, icon, name, image, text, link) { this.id",
+            "this.layergroup.removeLayer(entry.marker); } } } } getPositionByDistance(distance) { var point = null; var pointTotalDistance = 0; var prevPoint = null; var prevPointTotalDistance = 0; var pointsOnRoute = this.polyLineArray; // Comput",
+            "oking for for (var i = 0; i < pointsOnRoute.length; i++) { // Store reference to previous point, if any prevPoint = point; prevPointTotalDistance = pointTotalDistance; // Compute how far we got on this point point = pointsOnRoute[i]; v",
+            "ar distanceSinceLastPoint = 0; if (prevPoint !== null && point !== null) { distanceSinceLastPoint = prevPoint.distanceTo(point); pointTotalDistance += distanceSinceLastPoint; } if (pointTotalDistance >=",
+            "ak; } } // If we have an exact match (theoretical due to decimal points, unless the start point), return the exact match point if (pointTotalDistance === distance) return point; // If only one (or none), return the last point reached i",
+            "f (prevPoint === null || point === null) return point; // When we have two points A and B, interpolate a position between them, in respect to how long far we travelled var distanceAfterFirstPoi",
+            "nt = distance - prevPointTotalDistance; // Distance after point A we have left to go towards B var distanceBetweenPoints = pointTotalDistance - prevPointTotalDistance; // Distance from point A to B // Ra",
+            ") var ratio = distanceAfterFirstPoint / distanceBetweenPoints; var lat = prevPoint.lat + (point.lat - prevPoint.lat) * ratio; var lng = prevPoint.lng + (point.lng - prevPoint.lng) * ratio; return new L.LatLng(lat, lng); } //Returns the",
+            "tPosition, this.route_id); } } } else if (this.status_isfinished) { // Jump to the finish point (last point on the route) // We do this instead of computing the distance to always match exactly the finish point, even if the route dista",
+            "rong var currentPosition = route.polyLineArray[route.polyLineArray.length - 1]; // Finish point this.marker.setLatLng(currentPosition); this.elevationHighlightIndex = chartXCount - 1; } else { // DNS, DNF etc? distance = this.last_mete",
+            "opup-value\">' + paceText + '</span></div>'; // } var atClockPrefix = 'at '; // Last split point (name + time of day) — skip \"Start\" since it's not a real split var realSplitName = this.last_real_split_name || (this.last_timingpoint &&",
+            "sset.status_isfinished; // Withdrawn-during-race riders stay on the map at their drop-out point but rendered // faded so they read as \"no longer racing\". Re-skin the marker only when the flag // actually flips (an athlete can withdraw",
+            "ationIndex(); var favouriteAnnotation = { id: idArray, datasetIndex: datasetIndex, type: 'point', pointStyle: image, rotated: false, display: visibility, enabled: true, scaleID: 'y', yAdjust: -20, xValue: index, yValue: yValue, click:",
+            "otation = { id: [-100, null],//-100 is reserved for MyPosition datasetIndex: null, type: 'point', pointStyle: image, rotated: false, display: false, enabled: true, scaleID: 'y', yAdjust: -20, xValue: 0, yValue: 0, click: (context, even",
+            "the course and when they were // last seen there. last_meters is the server-computed last split / GPS distance. if (this.is_withdrawn && this.last_meters > 0) { var withdrawnVal = (this.last_meters / 1000.0).toFixed(2) + ' km'; if (thi",
+            "=\"popup-value\">-</span></div>'; } // Pace — disabled for consistency (only available with split-based speed) // if (paceText) { // html += '<div class=\"popup-row\"><span class=\"popup-label\">Pace</span><span class=\"popup-value\">' + paceT",
+            "ext + '</span></div>'; // } var atClockPrefix = 'at '; // Last split point (name + time of day) — skip \"Start\" since it's not a real split var realSplitName = this.last_real_split_name || (this.last_timingpoi",
+            ".last_split_time_of_day; } html += '<div class=\"popup-row\"><span class=\"popup-label\">Last split</span><span class=\"popup-value\">' + lastSplitVal + '</span></div>'; } // Next split — show even if estimated distance is up to 500m past th",
+            "e split (estimation can be ahead of reality) if (this.next_split_name && doEstimation && (!distance || !this.next_split_distance || this.next_split",
+            "(arrivalMs, false); } } } html += '<div class=\"popup-row\"><span class=\"popup-label\">Nästa split</span><span class=\"popup-value\">' + nextSplitVal + '</span></div>'; } // Expected finish time + time of day (project from current position",
+            "VI\"). function officialInitials(name) { if (!name) { return ''; } var parts = name.trim().split(/\\s+/); if (parts.length >= 2) { return (parts[0].charAt(0) + parts[1].charAt(0)).toUpperCase(); } return name.trim().substring(0, 2).toUpp",
+            "var source = isEmbeddedMode ? (appFavorites || '') : ''; if (source) { var parts = source.split(','); for (var i = 0; i < parts.length; i++) { var part = parts[i].trim(); if (!part) { continue; } localFavorites.add(part); } } } loadLoc",
+            "// Parse combinedId (\"type_id\") to call server-side ToggleFavorite var parts = combinedId.split('_'); if (parts.length !== 2) { return; } var type = parseInt(parts[0]); var id = parseInt(parts[1]); var isFav = localFavorites.has(combin",
+            "ent. Same key as toggleTrackedAsset. if (isEmbeddedMode) { var key = type + '_' + id; var split = appFavorites ? appFavorites.split(',').filter(function (x) { return x.length > 0 && x !== key; }) : []; if (!isFav) { split.push(key); lo",
+            "alFavorites.add(combinedId); } else { localFavorites.delete(combinedId); } appFavorites = split.join(','); saveEmbeddedFavoritesCsv(appFavorites); updateFavoriteStars(); applyTrackingFilters(); return; } $.ajax({ url: '/event/16880/fav",
+            "bottom of their group, no matter how far they got. Their distance comes from the raw last split, which is not clamped to the course length the way active (computeSimulatedDistance) and finished (max_distance) entries are, so a team tha",
+            "if (isEmbeddedMode) { var key = type + '_' + id; var parts = appFavorites ? appFavorites.split(',').filter(function (x) { return x.length > 0 && x !== key; }) : []; if (doTrack) { parts.push(key); } appFavorites = parts.join(','); sav",
+            "Patch locally instead. var key = type + '_' + id; var parts = appFavorites ? appFavorites.split(',').filter(function (x) { return x.length > 0 && x !== key; }) : []; if (doTrack) { parts.push(key); } appFavorites = parts.join(','); } e",
+            "ay' && typeof replayEngine !== 'undefined' && replayEngine) { var parts = assetCombinedId.split('_'); if (parts.length === 2) { var assetId = parseInt(parts[1]); var replayMarker = replayEngine.markers.get(assetId); if (replayMarker) {",
+            "/ empty = all deselected } else if (coursesParam) { courseOverride = new Set(coursesParam.split(',').map(function(s) { return parseInt(s.trim()); })); } var hasSetCenter = false; routeMap.forEach((route, id) => { var show = route.defau",
+            "ble var chartDisableElevation = new Map(document.getElementById(\"DisableElevation\").value.split(\",\").map(x => x.split(\"=\"))) //Get all data from JS file and put in format chart js can use to create elevation graph and set elevationGrap",
+            "isc */ var isAarhusMotion = false; var isDeveloper = false; // Point of interest, such as start, finish, hotspot etc. class PointOfInterest { constructor(id, lng, lat, icon, name, image, text, link) { this.id = id; this.lng = lng; this",
+            "e, for zoom-dependent visibility this.otherIcons = [];//Non-km icons (FontAwesome, image, START/FINISH) for zoom-dependent visibility } drawRoute() { var polyLine = null; this.polyLineArray = null; if (routeCoordinates[this.id + ''] !=",
+            "s.color, fillOpacity: 1, weight: 0 } }) } ] }); this.layergroup.addLayer(decorator); } // Start and finish icons if (this.polyLineArray != null && this.polyLineArray.length > 0) { var tmpStart = L.marker(this.polyLineArray[0], { icon:",
+            "L.icon({ iconUrl: '/images/svgicon?text=START&strokewidth=0&textcolor=ffffff&bgcolor=' + encodeURIComponent(this.color), iconSize: [53, 22], iconAnchor: [26, 22] }) }); var tmpFinish =",
+            "e || pointsOnRoute.length === 0) { return null; } // Go through the route points from the start until we reach the distance we are looking for for (var i = 0; i < pointsOnRoute.length; i++) { // Store reference to previous point, if an",
+            "ce break; } } // If we have an exact match (theoretical due to decimal points, unless the start point), return the exact match point if (pointTotalDistance === distance) return point; // If only one (or none), return the last point rea",
+            "a distance whose route isn't drawn (e.g. lead // vehicles / officials that never formally start). Finished athletes are excluded - they've // stopped. The server only sends gps coordinates for non-finished athletes in this mode, so //",
+            "</div>'; // } var atClockPrefix = 'at '; // Last split point (name + time of day) — skip \"Start\" since it's not a real split var realSplitName = this.last_real_split_name || (this.last_timingpoint && this.last_timingpoint !== 'GPS' ? t"
+          ],
+          "relevant_links": [
+            "/event/16880/app/results",
+            "/event/16880/app/tracking",
+            "/event/15015/app/tracking",
+            "/event/12349/app/tracking",
+            "/event/11274/app/tracking",
+            "/event/9587/app/tracking",
+            "/event/5719/app/tracking",
+            "/event/4950/app/tracking",
+            "/event/4414/app/tracking",
+            "/event/4184/app/tracking"
+          ],
+          "error": null
+        }
+      ]
+    }
+  ]
+}

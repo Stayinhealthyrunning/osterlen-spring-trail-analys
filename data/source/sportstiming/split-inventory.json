@@ -1,0 +1,806 @@
+{
+  "schema_version": 1,
+  "method": "First filtered result sampled for each Sportstiming distance ID. Presence/labels establish source split schema; they do not prove 100% split coverage for all runners.",
+  "inventory": [
+    {
+      "year": 2018,
+      "event_id": 4950,
+      "race_family": "ultra60",
+      "sportstiming_distance_id": "15266",
+      "source_label": "Simris Alg Ultra 60km+ (ca. 1150m höjdmeter)",
+      "first_page_result_links": 50,
+      "max_pagination_link": 3,
+      "sample_result_id": "1995181",
+      "has_split_table": true,
+      "rows": [
+        {
+          "label": "Stenshuvud km 14",
+          "cells": [
+            "Stenshuvud km 14",
+            "14 km",
+            "",
+            "1:08:20",
+            "3 3",
+            "4:52 min/km",
+            "1:08:20",
+            "3 3",
+            "11:08:25"
+          ]
+        },
+        {
+          "label": "Bengtemölla km 32",
+          "cells": [
+            "Bengtemölla km 32",
+            "18 km",
+            "",
+            "1:25:28",
+            "7 7",
+            "4:44 min/km",
+            "2:33:48",
+            "1 1",
+            "12:33:53"
+          ]
+        },
+        {
+          "label": "Vantalängan km 52",
+          "cells": [
+            "Vantalängan km 52",
+            "20 km",
+            "",
+            "1:23:23",
+            "2 2",
+            "4:10 min/km",
+            "3:57:11",
+            "1 1",
+            "13:57:16"
+          ]
+        },
+        {
+          "label": "Finish",
+          "cells": [
+            "Finish",
+            "8 km",
+            "",
+            "49:02",
+            "7 7",
+            "6:07 min/km",
+            "4:46:13",
+            "1 1",
+            "14:46:18"
+          ]
+        },
+        {
+          "label": "Totalt",
+          "cells": [
+            "Totalt",
+            "60 km",
+            "",
+            "4:46:13",
+            "1 1",
+            "4:46 min/km",
+            "4:46:13",
+            "1 1",
+            "14:46:18"
+          ]
+        }
+      ],
+      "raw_row_count": 7
+    },
+    {
+      "year": 2018,
+      "event_id": 4950,
+      "race_family": "trail22",
+      "sportstiming_distance_id": "15268",
+      "source_label": "Verkeån trail 21km+ (ca. 500m höjdmeter)",
+      "first_page_result_links": 50,
+      "max_pagination_link": 10,
+      "sample_result_id": "1972596",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2018,
+      "event_id": 4950,
+      "race_family": "trail5",
+      "sportstiming_distance_id": "15265",
+      "source_label": "Naturloppet 5km+",
+      "first_page_result_links": 50,
+      "max_pagination_link": 3,
+      "sample_result_id": "2095394",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2018,
+      "event_id": 4950,
+      "race_family": "trail14",
+      "sportstiming_distance_id": "15269",
+      "source_label": "Ekopark trail 13 km",
+      "first_page_result_links": 50,
+      "max_pagination_link": 8,
+      "sample_result_id": "2089449",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2019,
+      "event_id": 5719,
+      "race_family": "ultra60",
+      "sportstiming_distance_id": "20385",
+      "source_label": "Simris Alg Ultra 60km+ (ca. 1450m höjdmeter)",
+      "first_page_result_links": 50,
+      "max_pagination_link": 6,
+      "sample_result_id": "2519914",
+      "has_split_table": true,
+      "rows": [
+        {
+          "label": "Stenshuvud km 14",
+          "cells": [
+            "Stenshuvud km 14",
+            "14000 meter",
+            "",
+            "1:04:36",
+            "2 2",
+            "4:36 min/km",
+            "1:04:36",
+            "2 2",
+            "11:04:36"
+          ]
+        },
+        {
+          "label": "Bengtemölla km 32",
+          "cells": [
+            "Bengtemölla km 32",
+            "18000 meter",
+            "",
+            "1:24:00",
+            "3 3",
+            "4:40 min/km",
+            "2:28:36",
+            "2 2",
+            "12:28:36"
+          ]
+        },
+        {
+          "label": "Vantalängan km 52",
+          "cells": [
+            "Vantalängan km 52",
+            "20000 meter",
+            "",
+            "1:33:45",
+            "3 3",
+            "4:41 min/km",
+            "4:02:21",
+            "2 2",
+            "14:02:21"
+          ]
+        },
+        {
+          "label": "Finish Km 60+",
+          "cells": [
+            "Finish Km 60+",
+            "6678 meter",
+            "",
+            "41:56",
+            "1 1",
+            "6:16 min/km",
+            "4:44:17",
+            "1 1",
+            "14:44:17"
+          ]
+        },
+        {
+          "label": "Totalt",
+          "cells": [
+            "Totalt",
+            "58678 meter",
+            "",
+            "4:44:17",
+            "1 1",
+            "4:50 min/km",
+            "4:44:17",
+            "1 1",
+            "14:44:17"
+          ]
+        }
+      ],
+      "raw_row_count": 7
+    },
+    {
+      "year": 2019,
+      "event_id": 5719,
+      "race_family": "trail22",
+      "sportstiming_distance_id": "20387",
+      "source_label": "Verkeån trail 21km+",
+      "first_page_result_links": 50,
+      "max_pagination_link": 10,
+      "sample_result_id": "2530863",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2019,
+      "event_id": 5719,
+      "race_family": "duo60",
+      "sportstiming_distance_id": "20390",
+      "source_label": "Duo Trail (relay 2 x 30 km)",
+      "first_page_result_links": 0,
+      "max_pagination_link": 2,
+      "sample_result_id": null,
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2019,
+      "event_id": 5719,
+      "race_family": "trail5",
+      "sportstiming_distance_id": "20384",
+      "source_label": "Naturloppet 5km+",
+      "first_page_result_links": 50,
+      "max_pagination_link": 2,
+      "sample_result_id": "2613014",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2019,
+      "event_id": 5719,
+      "race_family": "trail14",
+      "sportstiming_distance_id": "20388",
+      "source_label": "Ekopark trail 13 km",
+      "first_page_result_links": 50,
+      "max_pagination_link": 9,
+      "sample_result_id": "2501366",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2022,
+      "event_id": 9587,
+      "race_family": "ultra60",
+      "sportstiming_distance_id": "46204",
+      "source_label": "Ultra 60km+",
+      "first_page_result_links": 50,
+      "max_pagination_link": 7,
+      "sample_result_id": "4085817",
+      "has_split_table": true,
+      "rows": [
+        {
+          "label": "32 km",
+          "cells": [
+            "32 km",
+            "32000 meter",
+            "",
+            "2:34:27",
+            "3 3 1",
+            "4:49 min/km",
+            "2:34:27",
+            "3 3 1",
+            "12:34:27"
+          ]
+        },
+        {
+          "label": "Bengtemölla",
+          "cells": [
+            "Bengtemölla",
+            "100 meter",
+            "",
+            "1:00",
+            "3 3 1",
+            "10:00 min/km",
+            "2:35:27",
+            "3 3 1",
+            "12:35:27"
+          ]
+        },
+        {
+          "label": "62 km",
+          "cells": [
+            "62 km",
+            "29900 meter",
+            "",
+            "2:08:25",
+            "1 1 1",
+            "4:17 min/km",
+            "4:43:52",
+            "1 1 1",
+            "14:43:52"
+          ]
+        },
+        {
+          "label": "Totalt",
+          "cells": [
+            "Totalt",
+            "62000 meter",
+            "",
+            "4:43:52",
+            "1 1 1",
+            "4:34 min/km",
+            "4:43:52",
+            "1 1 1",
+            "14:43:52"
+          ]
+        }
+      ],
+      "raw_row_count": 6
+    },
+    {
+      "year": 2022,
+      "event_id": 9587,
+      "race_family": "trail22",
+      "sportstiming_distance_id": "46206",
+      "source_label": "Teleservice trail 21km+",
+      "first_page_result_links": 50,
+      "max_pagination_link": 9,
+      "sample_result_id": "4237779",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2022,
+      "event_id": 9587,
+      "race_family": "duo60",
+      "sportstiming_distance_id": "46209",
+      "source_label": "Duo Trail (relay 2 x 30 km)",
+      "first_page_result_links": 0,
+      "max_pagination_link": 1,
+      "sample_result_id": null,
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2022,
+      "event_id": 9587,
+      "race_family": "trail14",
+      "sportstiming_distance_id": "46207",
+      "source_label": "Ekopark trail 13 km",
+      "first_page_result_links": 50,
+      "max_pagination_link": 3,
+      "sample_result_id": "4086428",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2022,
+      "event_id": 9587,
+      "race_family": "trail5",
+      "sportstiming_distance_id": "46203",
+      "source_label": "Naturloppet 5km+",
+      "first_page_result_links": 50,
+      "max_pagination_link": 2,
+      "sample_result_id": "4359183",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2023,
+      "event_id": 11274,
+      "race_family": "ultra60",
+      "sportstiming_distance_id": "58343",
+      "source_label": "Ultra 60km+",
+      "first_page_result_links": 50,
+      "max_pagination_link": 7,
+      "sample_result_id": "4786423",
+      "has_split_table": true,
+      "rows": [
+        {
+          "label": "32 km",
+          "cells": [
+            "32 km",
+            "32 km",
+            "",
+            "2:20:26",
+            "1 1 1",
+            "4:23 min/km",
+            "2:20:26",
+            "1 1 1",
+            "12:20:28"
+          ]
+        },
+        {
+          "label": "Bengtemölla",
+          "cells": [
+            "Bengtemölla",
+            "0,1 km",
+            "",
+            "0:45",
+            "7 5 1",
+            "7:30 min/km",
+            "2:21:11",
+            "1 1 1",
+            "12:21:13"
+          ]
+        },
+        {
+          "label": "62 km",
+          "cells": [
+            "62 km",
+            "29,9 km",
+            "",
+            "1:58:10",
+            "1 1 1",
+            "3:57 min/km",
+            "4:19:21",
+            "1 1 1",
+            "14:19:23"
+          ]
+        },
+        {
+          "label": "Totalt",
+          "cells": [
+            "Totalt",
+            "62 km",
+            "",
+            "4:19:21",
+            "1 1 1",
+            "4:10 min/km",
+            "4:19:21",
+            "1 1 1",
+            "14:19:23"
+          ]
+        }
+      ],
+      "raw_row_count": 6
+    },
+    {
+      "year": 2023,
+      "event_id": 11274,
+      "race_family": "trail22",
+      "sportstiming_distance_id": "58345",
+      "source_label": "Fogarolli trail 21km+",
+      "first_page_result_links": 50,
+      "max_pagination_link": 10,
+      "sample_result_id": "5082574",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2023,
+      "event_id": 11274,
+      "race_family": "duo60",
+      "sportstiming_distance_id": "58348",
+      "source_label": "Duo Trail (relay 2 x 30 km)",
+      "first_page_result_links": 0,
+      "max_pagination_link": 1,
+      "sample_result_id": null,
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2023,
+      "event_id": 11274,
+      "race_family": "trail14",
+      "sportstiming_distance_id": "58346",
+      "source_label": "Ekopark trail 13 km",
+      "first_page_result_links": 50,
+      "max_pagination_link": 7,
+      "sample_result_id": "5123093",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2023,
+      "event_id": 11274,
+      "race_family": "trail5",
+      "sportstiming_distance_id": "58342",
+      "source_label": "Naturloppet 5km+",
+      "first_page_result_links": 50,
+      "max_pagination_link": 3,
+      "sample_result_id": "4849914",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2024,
+      "event_id": 12349,
+      "race_family": "ultra60",
+      "sportstiming_distance_id": "65781",
+      "source_label": "60 k ÖST ultra med COROS",
+      "first_page_result_links": 50,
+      "max_pagination_link": 9,
+      "sample_result_id": "5997187",
+      "has_split_table": true,
+      "rows": [
+        {
+          "label": "34 km",
+          "cells": [
+            "34 km",
+            "34 km",
+            "",
+            "2:24:06",
+            "1 1 1",
+            "4:14 min/km",
+            "2:24:06",
+            "1 1 1",
+            "12:24:08"
+          ]
+        },
+        {
+          "label": "60 km",
+          "cells": [
+            "60 km",
+            "26 km",
+            "",
+            "1:49:38",
+            "1 1 1",
+            "4:13 min/km",
+            "4:13:44",
+            "1 1 1",
+            "14:13:46"
+          ]
+        },
+        {
+          "label": "Totalt",
+          "cells": [
+            "Totalt",
+            "60 km",
+            "",
+            "4:13:44",
+            "1 1 1",
+            "4:13 min/km",
+            "4:13:44",
+            "1 1 1",
+            "14:13:46"
+          ]
+        }
+      ],
+      "raw_row_count": 5
+    },
+    {
+      "year": 2024,
+      "event_id": 12349,
+      "race_family": "trail22",
+      "sportstiming_distance_id": "65782",
+      "source_label": "Fogarolli trail 21km+",
+      "first_page_result_links": 50,
+      "max_pagination_link": 11,
+      "sample_result_id": "5796571",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2024,
+      "event_id": 12349,
+      "race_family": "duo60",
+      "sportstiming_distance_id": "65784",
+      "source_label": "Duo Trail (relay 2 x 30 km)",
+      "first_page_result_links": 0,
+      "max_pagination_link": 1,
+      "sample_result_id": null,
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2024,
+      "event_id": 12349,
+      "race_family": "trail14",
+      "sportstiming_distance_id": "65783",
+      "source_label": "Ekopark trail 14 km",
+      "first_page_result_links": 50,
+      "max_pagination_link": 9,
+      "sample_result_id": "5990158",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2024,
+      "event_id": 12349,
+      "race_family": "trail5",
+      "sportstiming_distance_id": "65780",
+      "source_label": "Naturloppet 5km+",
+      "first_page_result_links": 50,
+      "max_pagination_link": 3,
+      "sample_result_id": "5913158",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2025,
+      "event_id": 15015,
+      "race_family": "ultra60",
+      "sportstiming_distance_id": "84440",
+      "source_label": "CRAFT Ultra 60 k",
+      "first_page_result_links": 50,
+      "max_pagination_link": 8,
+      "sample_result_id": "6943035",
+      "has_split_table": true,
+      "rows": [
+        {
+          "label": "34 km",
+          "cells": [
+            "34 km",
+            "34 km",
+            "",
+            "2:29:35",
+            "2 2 1",
+            "4:23 min/km",
+            "2:29:35",
+            "2 2 1",
+            "12:29:05"
+          ]
+        },
+        {
+          "label": "60 km",
+          "cells": [
+            "60 km",
+            "26 km",
+            "",
+            "1:57:14",
+            "2 1 1",
+            "4:30 min/km",
+            "4:26:49",
+            "1 1 1",
+            "14:26:19"
+          ]
+        },
+        {
+          "label": "Totalt",
+          "cells": [
+            "Totalt",
+            "60 km",
+            "",
+            "4:26:49",
+            "1 1 1",
+            "4:26 min/km",
+            "4:26:49",
+            "1 1 1",
+            "14:26:19"
+          ]
+        }
+      ],
+      "raw_row_count": 5
+    },
+    {
+      "year": 2025,
+      "event_id": 15015,
+      "race_family": "trail22",
+      "sportstiming_distance_id": "84441",
+      "source_label": "Fogarolli trail 22 K",
+      "first_page_result_links": 50,
+      "max_pagination_link": 11,
+      "sample_result_id": "6944267",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2025,
+      "event_id": 15015,
+      "race_family": "duo60",
+      "sportstiming_distance_id": "84443",
+      "source_label": "Duo Trail (relay 2 x 30 km)",
+      "first_page_result_links": 0,
+      "max_pagination_link": 1,
+      "sample_result_id": null,
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2025,
+      "event_id": 15015,
+      "race_family": "trail14",
+      "sportstiming_distance_id": "84442",
+      "source_label": "Ekopark trail 14 km",
+      "first_page_result_links": 50,
+      "max_pagination_link": 9,
+      "sample_result_id": "6939646",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2025,
+      "event_id": 15015,
+      "race_family": "trail5",
+      "sportstiming_distance_id": "84439",
+      "source_label": "Naturloppet 5km+",
+      "first_page_result_links": 50,
+      "max_pagination_link": 3,
+      "sample_result_id": "6837520",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2026,
+      "event_id": 16880,
+      "race_family": "ultra60",
+      "sportstiming_distance_id": "97077",
+      "source_label": "CRAFT Ultra 60 k",
+      "first_page_result_links": 50,
+      "max_pagination_link": 9,
+      "sample_result_id": "7793098",
+      "has_split_table": true,
+      "rows": [
+        {
+          "label": "34 km",
+          "cells": [
+            "34 km",
+            "34 km",
+            "",
+            "2:29:57",
+            "2 2 1",
+            "4:24 min/km",
+            "2:29:57",
+            "2 2 1",
+            "12:30:03"
+          ]
+        },
+        {
+          "label": "60 km",
+          "cells": [
+            "60 km",
+            "26 km",
+            "",
+            "2:05:04",
+            "1 1 1",
+            "4:48 min/km",
+            "4:35:01",
+            "1 1 1",
+            "14:35:07"
+          ]
+        },
+        {
+          "label": "Totalt",
+          "cells": [
+            "Totalt",
+            "60 km",
+            "",
+            "4:35:01",
+            "1 1 1",
+            "4:35 min/km",
+            "4:35:01",
+            "1 1 1",
+            "14:35:07"
+          ]
+        }
+      ],
+      "raw_row_count": 5
+    },
+    {
+      "year": 2026,
+      "event_id": 16880,
+      "race_family": "trail22",
+      "sportstiming_distance_id": "97078",
+      "source_label": "Fogarolli trail 22 K",
+      "first_page_result_links": 50,
+      "max_pagination_link": 11,
+      "sample_result_id": "8116370",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2026,
+      "event_id": 16880,
+      "race_family": "duo60",
+      "sportstiming_distance_id": "97080",
+      "source_label": "Duo Trail (relay 2 x 30 km)",
+      "first_page_result_links": 0,
+      "max_pagination_link": 2,
+      "sample_result_id": null,
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2026,
+      "event_id": 16880,
+      "race_family": "trail14",
+      "sportstiming_distance_id": "97079",
+      "source_label": "Söderberg & Sara 14K",
+      "first_page_result_links": 50,
+      "max_pagination_link": 10,
+      "sample_result_id": "7865622",
+      "has_split_table": false,
+      "rows": []
+    },
+    {
+      "year": 2026,
+      "event_id": 16880,
+      "race_family": "trail5",
+      "sportstiming_distance_id": "97076",
+      "source_label": "Naturloppet 5km+",
+      "first_page_result_links": 50,
+      "max_pagination_link": 6,
+      "sample_result_id": "7896065",
+      "has_split_table": false,
+      "rows": []
+    }
+  ]
+}
