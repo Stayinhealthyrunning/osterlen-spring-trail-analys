@@ -1,0 +1,30 @@
+{
+  "generated_on": "2026-09-10",
+  "purpose": "Inventory of the initial ÖST preparation structure before integration of the generic Gotaleden analysis core.",
+  "files": [
+    ".gitignore",
+    "AGENTS.md",
+    "PREP_STATUS.md",
+    "README.md",
+    "config/course-source-manifest.json",
+    "config/event.json",
+    "config/race-families.json",
+    "config/years.json",
+    "data/source/gpx/README.md",
+    "data/source/gpx/ultra60/README.md",
+    "data/source/gpx/trail22/README.md",
+    "data/source/gpx/trail14/README.md",
+    "data/source/gpx/trail5/README.md",
+    "data/source/maps/manifest.json",
+    "data/source/sportstiming/events.json",
+    "docs/index.html",
+    "reports/README.md",
+    "research/course-history.md",
+    "research/data-provenance.md",
+    "research/sources.md",
+    "research/sportstiming-data.md",
+    "research/ultra60-2026-landmarks.json",
+    "tools/fetch_official_assets.py",
+    "tools/source_coverage.py"
+  ]
+}
