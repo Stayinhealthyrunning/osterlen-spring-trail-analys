@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "groups": {
+    "2018:trail14:athlete": {
+      "total": 2,
+      "DNF": 2
+    },
+    "2018:trail22:athlete": {
+      "total": 18,
+      "no_explicit_status": 8,
+      "DNF": 10
+    },
+    "2018:ultra60:athlete": {
+      "total": 25,
+      "no_explicit_status": 10,
+      "DNF": 15
+    },
+    "2019:duo60:team": {
+      "total": 2,
+      "no_explicit_status": 2
+    },
+    "2019:trail14:athlete": {
+      "total": 3,
+      "DNF": 3
+    },
+    "2019:trail22:athlete": {
+      "total": 3,
+      "DNF": 3
+    },
+    "2019:ultra60:athlete": {
+      "total": 35,
+      "DNF": 35
+    },
+    "2022:trail14:athlete": {
+      "total": 3,
+      "no_explicit_status": 1,
+      "DNF": 2
+    },
+    "2022:trail22:athlete": {
+      "total": 3,
+      "DNF": 3
+    },
+    "2022:ultra60:athlete": {
+      "total": 36,
+      "DNF": 36
+    },
+    "2023:duo60:team": {
+      "total": 2,
+      "DNF": 2
+    },
+    "2023:trail22:athlete": {
+      "total": 1,
+      "DNF": 1
+    },
+    "2023:ultra60:athlete": {
+      "total": 24,
+      "DNF": 24
+    },
+    "2024:duo60:team": {
+      "total": 2,
+      "DNF": 2
+    },
+    "2024:trail14:athlete": {
+      "total": 1,
+      "DNF": 1
+    },
+    "2024:trail22:athlete": {
+      "total": 5,
+      "DNF": 5
+    },
+    "2024:ultra60:athlete": {
+      "total": 90,
+      "DNF": 90
+    },
+    "2025:duo60:team": {
+      "total": 5,
+      "DNF": 5
+    },
+    "2025:trail14:athlete": {
+      "total": 3,
+      "DNF": 3
+    },
+    "2025:trail22:athlete": {
+      "total": 2,
+      "DNF": 2
+    },
+    "2025:ultra60:athlete": {
+      "total": 29,
+      "DNF": 29
+    },
+    "2026:duo60:team": {
+      "total": 5,
+      "DNF": 5
+    },
+    "2026:trail14:athlete": {
+      "total": 3,
+      "DNF": 3
+    },
+    "2026:trail22:athlete": {
+      "total": 9,
+      "DNF": 9
+    },
+    "2026:ultra60:athlete": {
+      "total": 42,
+      "DNF": 42
+    }
+  },
+  "totals": {
+    "total": 353,
+    "no_explicit_status": 21,
+    "DNF": 332
+  },
+  "surface_evidence": {
+    "detail:DNF": 332,
+    "list:DNF": 332,
+    "same_status_on_both_surfaces": 332
+  },
+  "ambiguous_status_combinations": {},
+  "rule": "Promote UNKNOWN only when exactly one canonical status is explicitly evidenced across the frozen detail/list source surfaces; conflicting or absent evidence stays UNKNOWN."
+}

@@ -1,0 +1,39 @@
+# Status-evidens från hela frysta Sportstiming-källan
+
+| Grupp | UNKNOWN | DNF | DNS | DSQ | Utan explicit | Konflikt |
+|---|---:|---:|---:|---:|---:|---:|
+| 2018:trail14:athlete | 2 | 2 | 0 | 0 | 0 | 0 |
+| 2018:trail22:athlete | 18 | 10 | 0 | 0 | 8 | 0 |
+| 2018:ultra60:athlete | 25 | 15 | 0 | 0 | 10 | 0 |
+| 2019:duo60:team | 2 | 0 | 0 | 0 | 2 | 0 |
+| 2019:trail14:athlete | 3 | 3 | 0 | 0 | 0 | 0 |
+| 2019:trail22:athlete | 3 | 3 | 0 | 0 | 0 | 0 |
+| 2019:ultra60:athlete | 35 | 35 | 0 | 0 | 0 | 0 |
+| 2022:trail14:athlete | 3 | 2 | 0 | 0 | 1 | 0 |
+| 2022:trail22:athlete | 3 | 3 | 0 | 0 | 0 | 0 |
+| 2022:ultra60:athlete | 36 | 36 | 0 | 0 | 0 | 0 |
+| 2023:duo60:team | 2 | 2 | 0 | 0 | 0 | 0 |
+| 2023:trail22:athlete | 1 | 1 | 0 | 0 | 0 | 0 |
+| 2023:ultra60:athlete | 24 | 24 | 0 | 0 | 0 | 0 |
+| 2024:duo60:team | 2 | 2 | 0 | 0 | 0 | 0 |
+| 2024:trail14:athlete | 1 | 1 | 0 | 0 | 0 | 0 |
+| 2024:trail22:athlete | 5 | 5 | 0 | 0 | 0 | 0 |
+| 2024:ultra60:athlete | 90 | 90 | 0 | 0 | 0 | 0 |
+| 2025:duo60:team | 5 | 5 | 0 | 0 | 0 | 0 |
+| 2025:trail14:athlete | 3 | 3 | 0 | 0 | 0 | 0 |
+| 2025:trail22:athlete | 2 | 2 | 0 | 0 | 0 | 0 |
+| 2025:ultra60:athlete | 29 | 29 | 0 | 0 | 0 | 0 |
+| 2026:duo60:team | 5 | 5 | 0 | 0 | 0 | 0 |
+| 2026:trail14:athlete | 3 | 3 | 0 | 0 | 0 | 0 |
+| 2026:trail22:athlete | 9 | 9 | 0 | 0 | 0 | 0 |
+| 2026:ultra60:athlete | 42 | 42 | 0 | 0 | 0 | 0 |
+
+## Totalt
+
+- `total`: 353
+- `no_explicit_status`: 21
+- `DNF`: 332
+
+## Regel
+
+Promote UNKNOWN only when exactly one canonical status is explicitly evidenced across the frozen detail/list source surfaces; conflicting or absent evidence stays UNKNOWN.
