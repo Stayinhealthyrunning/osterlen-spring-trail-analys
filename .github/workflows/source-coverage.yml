@@ -1,0 +1,37 @@
+name: Build source coverage
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'config/course-source-manifest.json'
+      - 'data/source/gpx/**'
+      - 'data/source/maps/**'
+      - 'data/source/sportstiming/events.json'
+      - 'tools/source_coverage.py'
+      - '.github/workflows/source-coverage.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python tools/source_coverage.py
+      - name: Commit reports
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/source-coverage.json reports/source-coverage.md
+          if git diff --cached --quiet; then
+            echo 'No changes.'
+          else
+            git commit -m 'Update ÖST source coverage report'
+            git push
+          fi
