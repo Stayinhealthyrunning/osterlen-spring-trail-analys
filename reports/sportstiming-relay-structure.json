@@ -1,0 +1,3188 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-10T11:45:02.480451+00:00",
+  "privacy": "Runner/team names are not stored; visible text is reduced to token shapes and lengths.",
+  "editions": [
+    {
+      "year": 2019,
+      "event_id": 5719,
+      "distance_id": "20390",
+      "source_label": "Duo Trail (relay 2 x 30 km)",
+      "url": "https://www.sportstiming.dk/event/5719/app/results?round=20390&page=1",
+      "final_url": "https://www.sportstiming.dk/event/5719/app/results?round=20390&page=1",
+      "source_sha256": "12d4ac8f76eac2184e1569d06d03a04dafaeb2ad7c2b874d3e46794485f94130",
+      "html_bytes": 27797,
+      "tables": [
+        {
+          "class": "table table-striped smaller-on-mobile",
+          "id": null,
+          "row_count_seen": 51,
+          "sample_row_shapes": [
+            [
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaaa.",
+                "text_length": 5,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "Aaaaaaa.",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaaaaaaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "Aaaaaaaaa",
+                "text_length": 9,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaa",
+                "text_length": 3,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaaaaaaa",
+                "text_length": 8,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "999",
+                "text_length": 3,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaa'a aaaa",
+                "text_length": 10,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "999",
+                "text_length": 3,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aa & Aaa",
+                "text_length": 8,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaa aaa",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "999",
+                "text_length": 3,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaa Aaaaaaa Aaaaaaaaa",
+                "text_length": 21,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaa aaa",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "999",
+                "text_length": 3,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaa aaa aaaaaa",
+                "text_length": 16,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaa aaa",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "999",
+                "text_length": 3,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "AA",
+                "text_length": 2,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "999",
+                "text_length": 3,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaaaaa Aaaa",
+                "text_length": 15,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaa aaa",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "999",
+                "text_length": 3,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "AaaaaAaaAaaaaa",
+                "text_length": 14,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              }
+            ]
+          ]
+        }
+      ],
+      "candidate_link_patterns": [
+        "/event/{id}/app/participants?round={id}",
+        "/event/{id}/app/results",
+        "/event/{id}/app/results/team/{id}",
+        "/event/{id}/app/results?round={id}",
+        "/event/{id}/app/results?round={id}&page={id}"
+      ],
+      "code_contexts": [
+        {
+          "token": "relay",
+          "snippet": "Ultra 60km+ (ca. 1450m h&#246;jdmeter)</option> <option value=\"20387\"></option> <option selected=\"selected\" value=\"20390\"></option> <option value=\"20384\"></option> <option value=\"20388\"></option> </select> </div> </div> <div class=\"col-xs-6 col-sm-6 col-md-3 col_smallmargin\"> <div class=\"input-g"
+        },
+        {
+          "token": "team",
+          "snippet": "ri</th> </tr><tr> <td>1</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/5719/app/results/team/122222\"><span></span></a></td><td></td> </tr><tr> <td>2</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/5719/app/results/team/1240"
+        },
+        {
+          "token": "team",
+          "snippet": "ag</td> </tr><tr> <td>2</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/5719/app/results/team/124089\"><span></span></a></td><td></td> </tr><tr> <td>3</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/5719/app/results/team/122254\""
+        },
+        {
+          "token": "team",
+          "snippet": "ag</td> </tr><tr> <td>3</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/5719/app/results/team/122254\"><span></span></a></td><td></td> </tr><tr> <td>4</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/5719/app/results"
+        },
+        {
+          "token": "team",
+          "snippet": "ag</td> </tr><tr> <td>4</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/5719/app/results/team/122731\"><span></span></a></td><td></td> </tr><tr> <td>5</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/5719/app/results/team"
+        },
+        {
+          "token": "team",
+          "snippet": "ag</td> </tr><tr> <td>5</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/5719/app/results/team/125663\"><span></span></a></td><td></td> </tr><tr> <td>6</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/5719/app/results/team/122245\"><spa"
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "event_id": 9587,
+      "distance_id": "46209",
+      "source_label": "Duo Trail (relay 2 x 30 km)",
+      "url": "https://www.sportstiming.dk/event/9587/app/results?round=46209&page=1",
+      "final_url": "https://www.sportstiming.dk/event/9587/app/results?round=46209&page=1",
+      "source_sha256": "03a7bd7128acd3c5222ae61894c41b875b4fdaeb03431c61bc2e9134df87ab52",
+      "html_bytes": 40052,
+      "tables": [
+        {
+          "class": "table table-striped smaller-on-mobile",
+          "id": null,
+          "row_count_seen": 44,
+          "sample_row_shapes": [
+            [
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaaa.",
+                "text_length": 5,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "Aaaaaaa.",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaaaaaaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "Aaaaaaaaa",
+                "text_length": 9,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaa",
+                "text_length": 3,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaaaaaaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "99 aa",
+                "text_length": 5,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "Aaaaaaaaaaa",
+                "text_length": 11,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "99 aa",
+                "text_length": 5,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa AaaAaa",
+                "text_length": 11,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaa a aaaaa",
+                "text_length": 13,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaa",
+                "text_length": 5,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaa aaa",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaaa AaaaaAaa",
+                "text_length": 17,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaa aaaa aaaaaaa",
+                "text_length": 18,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaa aaa",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaa Aaaaaaaaa",
+                "text_length": 17,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaa aaa",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "AAAA",
+                "text_length": 4,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ]
+          ]
+        }
+      ],
+      "candidate_link_patterns": [
+        "/event/{id}/app/participants?round={id}",
+        "/event/{id}/app/results",
+        "/event/{id}/app/results/team/{id}",
+        "/event/{id}/app/results?round={id}",
+        "/event/{id}/app/results?round={id}&page={id}"
+      ],
+      "code_contexts": [
+        {
+          "token": "relay",
+          "snippet": "ance\"> <option value=\"46204\"></option> <option value=\"46206\"></option> <option selected=\"selected\" value=\"46209\"></option> <option value=\"46207\"></option> <option value=\"46203\"></option> </select> </div> </div> <div class=\"col-xs-6 col-sm-6 col-md-3 col_smallmargin\"> <div class=\"inp"
+        },
+        {
+          "token": "team",
+          "snippet": "></th> </tr><tr> <td>1</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/9587/app/results/team/172246\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>2</td><td class=\"hidden-xs\"></td><td>4:55:0"
+        },
+        {
+          "token": "team",
+          "snippet": "d>1</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/9587/app/results/team/172246\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>2</td><td class=\"hidden-xs\"></td><td></td><td class=\"hi"
+        },
+        {
+          "token": "team",
+          "snippet": "9</td> </tr><tr> <td>2</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/9587/app/results/team/172267\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>3</td><td class=\"hidden-xs\"></td><td>5:00"
+        },
+        {
+          "token": "team",
+          "snippet": "8</td> </tr><tr> <td>3</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/9587/app/results/team/178012\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>4</td><td class=\"hidden-xs\"></td><td></td><"
+        },
+        {
+          "token": "team",
+          "snippet": "4</td> </tr><tr> <td>4</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/9587/app/results/team/177168\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>5</td><td class=\"hidden-xs\"></td><td>"
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "event_id": 11274,
+      "distance_id": "58348",
+      "source_label": "Duo Trail (relay 2 x 30 km)",
+      "url": "https://www.sportstiming.dk/event/11274/app/results?round=58348&page=1",
+      "final_url": "https://www.sportstiming.dk/event/11274/app/results?round=58348&page=1",
+      "source_sha256": "5298ad792ac201bbfff8ac33a1d33d4de2a19781571817272781b81f30b29c89",
+      "html_bytes": 42679,
+      "tables": [
+        {
+          "class": "table table-striped smaller-on-mobile",
+          "id": null,
+          "row_count_seen": 49,
+          "sample_row_shapes": [
+            [
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaaa.",
+                "text_length": 5,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "Aaaaaaa.",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaaaaaaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "Aaaaaaaaa",
+                "text_length": 9,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaa",
+                "text_length": 3,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaaaaaaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "99 aa",
+                "text_length": 5,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "Aaaaaaaaaaa",
+                "text_length": 11,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "99 aa",
+                "text_length": 5,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaaaa Aaaa",
+                "text_length": 14,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "AaaAaa",
+                "text_length": 6,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaaaaa a(aaa)a aaaaa",
+                "text_length": 24,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa Aaaaa",
+                "text_length": 10,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaaaaaa Aaaaaaaaaa",
+                "text_length": 22,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaaaaaaaaaaaaa",
+                "text_length": 18,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaa aaa",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaa Aaa",
+                "text_length": 9,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaa aaa",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ]
+          ]
+        }
+      ],
+      "candidate_link_patterns": [
+        "/event/{id}/app/participants?round={id}",
+        "/event/{id}/app/results",
+        "/event/{id}/app/results/team/{id}",
+        "/event/{id}/app/results?round={id}",
+        "/event/{id}/app/results?round={id}&page={id}"
+      ],
+      "code_contexts": [
+        {
+          "token": "relay",
+          "snippet": "stance\"> <option value=\"58343\"></option> <option value=\"58345\"></option> <option selected=\"selected\" value=\"58348\"></option> <option value=\"58346\"></option> <option value=\"58342\"></option> </select> </div> </div> <div class=\"col-xs-6 col-sm-6 col-md-3 col_smallmargin\"> <div class=\"inpu"
+        },
+        {
+          "token": "team",
+          "snippet": "</th> </tr><tr> <td>1</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/11274/app/results/team/216887\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>2</td><td class=\"hidden-xs\"></td><td>4:3"
+        },
+        {
+          "token": "team",
+          "snippet": "</td> </tr><tr> <td>2</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/11274/app/results/team/219213\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>3</td><td class=\"hidden-xs\"></td><td></td"
+        },
+        {
+          "token": "team",
+          "snippet": "</td> </tr><tr> <td>3</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/11274/app/results/team/222068\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>4</td><td class=\"hidden-xs\"></"
+        },
+        {
+          "token": "team",
+          "snippet": "</td> </tr><tr> <td>4</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/11274/app/results/team/221583\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>5</td><td class=\"hidden-xs\"></td><td>4:42:27"
+        },
+        {
+          "token": "team",
+          "snippet": ">4</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/11274/app/results/team/221583\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>5</td><td class=\"hidden-xs\"></td><td></td><td class=\"hid"
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "event_id": 12349,
+      "distance_id": "65784",
+      "source_label": "Duo Trail (relay 2 x 30 km)",
+      "url": "https://www.sportstiming.dk/event/12349/app/results?round=65784&page=1",
+      "final_url": "https://www.sportstiming.dk/event/12349/app/results?round=65784&page=1",
+      "source_sha256": "4e6c744ed953f8aeef0d46ab223d7b26facacbdf22b02a5ef6988da54cf6b9ea",
+      "html_bytes": 34713,
+      "tables": [
+        {
+          "class": "table table-striped smaller-on-mobile",
+          "id": null,
+          "row_count_seen": 47,
+          "sample_row_shapes": [
+            [
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaaa.",
+                "text_length": 5,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "Aaaaaaa.",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaaaaaaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "Aaaaaaaaa",
+                "text_length": 9,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaa",
+                "text_length": 3,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaaaaaaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "99 aa",
+                "text_length": 5,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "99 aa",
+                "text_length": 5,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaa & Aaaa",
+                "text_length": 14,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaa aaa",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "AaaAaa",
+                "text_length": 6,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa AaaAaa",
+                "text_length": 11,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa Aaaaaaaaaa",
+                "text_length": 15,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaaa",
+                "text_length": 8,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaaaa aaa Aaaaaaaaaa",
+                "text_length": 24,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "A.A. Aaaaaaa",
+                "text_length": 12,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ]
+          ]
+        }
+      ],
+      "candidate_link_patterns": [
+        "/event/{id}/app/participants?round={id}",
+        "/event/{id}/app/results",
+        "/event/{id}/app/results/team/{id}",
+        "/event/{id}/app/results?round={id}",
+        "/event/{id}/app/results?round={id}&page={id}"
+      ],
+      "code_contexts": [
+        {
+          "token": "relay",
+          "snippet": "alue=\"65781\"></option> <option value=\"65782\"></option> <option selected=\"selected\" value=\"65784\"></option> <option value=\"65783\"></option> <option value=\"65780\"></option> </select> </div> </div> <div class=\"col-xs-6 col-sm-6 col-md-3 col_smallmargin\"> <div class=\"inpu"
+        },
+        {
+          "token": "team",
+          "snippet": "</th> </tr><tr> <td>1</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/12349/app/results/team/254994\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>2</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\">4"
+        },
+        {
+          "token": "team",
+          "snippet": "</td> </tr><tr> <td>2</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/12349/app/results/team/250026\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>3</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"><"
+        },
+        {
+          "token": "team",
+          "snippet": "</td> </tr><tr> <td>3</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/12349/app/results/team/247717\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>4</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\">5:2"
+        },
+        {
+          "token": "team",
+          "snippet": ">3</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/12349/app/results/team/247717\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>4</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel"
+        },
+        {
+          "token": "team",
+          "snippet": "</td> </tr><tr> <td>4</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/12349/app/results/team/247730\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>5</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\""
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "event_id": 15015,
+      "distance_id": "84443",
+      "source_label": "Duo Trail (relay 2 x 30 km)",
+      "url": "https://www.sportstiming.dk/event/15015/app/results?round=84443&page=1",
+      "final_url": "https://www.sportstiming.dk/event/15015/app/results?round=84443&page=1",
+      "source_sha256": "4536b11b5dffc88733788fc8a13076104a781fc707830700dbee0130c778e107",
+      "html_bytes": 35009,
+      "tables": [
+        {
+          "class": "table table-striped smaller-on-mobile",
+          "id": null,
+          "row_count_seen": 48,
+          "sample_row_shapes": [
+            [
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaaa.",
+                "text_length": 5,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "Aaaaaaa.",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaaaaaaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "Aaaaaaaaa",
+                "text_length": 9,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaa",
+                "text_length": 3,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaaaaaaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "99 aa",
+                "text_length": 5,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "99 aa",
+                "text_length": 5,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "AaaaaaaAaaaa",
+                "text_length": 12,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaa aaa",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaaa",
+                "text_length": 8,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaa aaa aaaaaa",
+                "text_length": 14,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaa",
+                "text_length": 7,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaaaa aaa Aaaaaaaaaa",
+                "text_length": 24,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaaa",
+                "text_length": 8,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa Aaaaaaaaaa",
+                "text_length": 15,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ]
+          ]
+        }
+      ],
+      "candidate_link_patterns": [
+        "/event/{id}/app/participants?round={id}",
+        "/event/{id}/app/results",
+        "/event/{id}/app/results/team/{id}",
+        "/event/{id}/app/results?round={id}",
+        "/event/{id}/app/results?round={id}&page={id}"
+      ],
+      "code_contexts": [
+        {
+          "token": "relay",
+          "snippet": "ance\"> <option value=\"84440\"></option> <option value=\"84441\"></option> <option selected=\"selected\" value=\"84443\"></option> <option value=\"84442\"></option> <option value=\"84439\"></option> </select> </div> </div> <div class=\"col-xs-6 col-sm-6 col-md-3 col_smallmargin\"> <div class=\"inpu"
+        },
+        {
+          "token": "team",
+          "snippet": "</th> </tr><tr> <td>1</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/15015/app/results/team/281279\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>2</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\">5:1"
+        },
+        {
+          "token": "team",
+          "snippet": "</td> </tr><tr> <td>2</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/15015/app/results/team/281056\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>3</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\">5:13:3"
+        },
+        {
+          "token": "team",
+          "snippet": "</td> </tr><tr> <td>3</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/15015/app/results/team/281441\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>4</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\">"
+        },
+        {
+          "token": "team",
+          "snippet": "</td> </tr><tr> <td>4</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/15015/app/results/team/281052\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>5</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\">5:27:30"
+        },
+        {
+          "token": "team",
+          "snippet": "</td> </tr><tr> <td>5</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/15015/app/results/team/281029\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>6</td><td class=\"hidden-xs\"></td><td></td><td class=\"h"
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "event_id": 16880,
+      "distance_id": "97080",
+      "source_label": "Duo Trail (relay 2 x 30 km)",
+      "url": "https://www.sportstiming.dk/event/16880/app/results?round=97080&page=1",
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97080&page=1",
+      "source_sha256": "b6c635a567e14c90ed43fac83e4486cfdc6f41aa8c852dafa508c3345452fd8b",
+      "html_bytes": 36032,
+      "tables": [
+        {
+          "class": "table table-striped smaller-on-mobile",
+          "id": null,
+          "row_count_seen": 51,
+          "sample_row_shapes": [
+            [
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaaa.",
+                "text_length": 5,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "Aaaaaaa.",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaaaaaaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "Aaaaaaaaa",
+                "text_length": 9,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaa",
+                "text_length": 3,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": null,
+                "text_shape": "Aaaaaaaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "99 aa",
+                "text_length": 5,
+                "link_patterns": []
+              },
+              {
+                "tag": "th",
+                "class": "hidden-xs",
+                "text_shape": "99 aa",
+                "text_length": 5,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "AA Aaaaa",
+                "text_length": 8,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaa aaa",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaaaa aaa Aaaaaaaaaa",
+                "text_length": 24,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa AA Aaaaa Aaa Aaaaaaaa Aaaaaaaa",
+                "text_length": 35,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaa aaa",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaaa Aaaaaaaa",
+                "text_length": 17,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaa aaa",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaaa",
+                "text_length": 8,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaaa aaaaaaaaa",
+                "text_length": 18,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaa aaa",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ],
+            [
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9",
+                "text_length": 1,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9999",
+                "text_length": 4,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaaaaaaaaa",
+                "text_length": 11,
+                "link_patterns": [
+                  "/event/{id}/app/results/team/{id}"
+                ]
+              },
+              {
+                "tag": "td",
+                "class": null,
+                "text_shape": "Aaaa aaa",
+                "text_length": 8,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              },
+              {
+                "tag": "td",
+                "class": "hidden-xs",
+                "text_shape": "9:99:99",
+                "text_length": 7,
+                "link_patterns": []
+              }
+            ]
+          ]
+        }
+      ],
+      "candidate_link_patterns": [
+        "/event/{id}/app/participants?round={id}",
+        "/event/{id}/app/results",
+        "/event/{id}/app/results/team/{id}",
+        "/event/{id}/app/results?round={id}",
+        "/event/{id}/app/results?round={id}&page={id}"
+      ],
+      "code_contexts": [
+        {
+          "token": "relay",
+          "snippet": "ance\"> <option value=\"97077\"></option> <option value=\"97078\"></option> <option selected=\"selected\" value=\"97080\"></option> <option value=\"97079\"></option> <option value=\"97076\"></option> </select> </div> </div> <div class=\"col-xs-6 col-sm-6 col-md-3 col_smallmargin\"> <div clas"
+        },
+        {
+          "token": "team",
+          "snippet": "</th> </tr><tr> <td>1</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/16880/app/results/team/322664\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>2</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\">4:35:35"
+        },
+        {
+          "token": "team",
+          "snippet": "</td> </tr><tr> <td>2</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/16880/app/results/team/317528\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>3</td><td class=\"hidden-xs\"></td><td></td><td class=\"h"
+        },
+        {
+          "token": "team",
+          "snippet": "</td> </tr><tr> <td>3</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/16880/app/results/team/319626\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>4</td><td class=\"hidden-xs\"></td><td></td><t"
+        },
+        {
+          "token": "team",
+          "snippet": ">3</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/16880/app/results/team/319626\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>4</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\""
+        },
+        {
+          "token": "team",
+          "snippet": "</td> </tr><tr> <td>4</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs\"></td><td><a rel=\"nofollow\" href=\"/event/16880/app/results/team/323659\"><span></span></a></td><td></td><td class=\"hidden-xs\"></td><td class=\"hidden-xs\"></td> </tr><tr> <td>5</td><td class=\"hidden-xs\"></td><td></td><td class=\"hidden-xs"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
