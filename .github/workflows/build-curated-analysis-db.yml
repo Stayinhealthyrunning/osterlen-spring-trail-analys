@@ -32,45 +32,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Apply final safe field-recovery patch
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          p=Path('tools/build_curated_analysis_db.py')
-          s=p.read_text(encoding='utf-8')
-
-          def replace_once(old,new,label):
-            global s
-            if old in s:
-              s=s.replace(old,new,1)
-              print(f'applied {label}')
-            elif new in s:
-              print(f'{label} already applied')
-            else:
-              raise SystemExit(f'Could not locate builder fragment for {label}')
-
-          replace_once(
-            "bib=rr['bib'] or list_value(srec,'Startnummer') or list_value(srec,'Startnr') or list_value(srec,'Startnummer.')",
-            "bib=rr['bib'] or list_value(srec,'Startnummer') or list_value(srec,'Startnr') or list_value(srec,'Startnr.') or list_value(srec,'Startnummer.')\n   category=list_value(srec,'Kategori')\n   sex=rr['gender'];age_category=rr['age_category']\n   if rr['entity_type']=='athlete' and category:\n    cm=re.fullmatch(r'([FM])(\\d{1,2}-\\d{1,2})',category)\n    if cm:\n     if not sex:sex=cm.group(1)\n     if not age_category:age_category=category\n   club=rr['club'] or list_value(srec,'Klubb/Firma/Sponsor')\n   country=rr['country'] or list_value(srec,'Land')",
-            'list-field recovery')
-
-          replace_once(
-            "(participant_uid,race_key,rid,bib,rr['name'],rr['gender'],rr['age'],None,rr['age_category'],rr['club'],rr['country'],'race_result','source_local')",
-            "(participant_uid,race_key,rid,bib,rr['name'],sex,rr['age'],None,age_category,club,country,'race_result','source_local')",
-            'participant recovered fields')
-
-          replace_once(
-            "(team_uid,race_key,rid,bib,rr['name'],rr['source_class'])",
-            "(team_uid,race_key,rid,bib,rr['name'],category or rr['source_class'])",
-            'relay team category')
-
-          replace_once(
-            "uid,race_key,y,fam,rid,entity,participant_uid,team_uid,bib,rr['name'],rr['gender'],rr['age'],rr['age_category'],rr['club'],rr['country'],rr['source_class'],status,status_source,status_evidence,",
-            "uid,race_key,y,fam,rid,entity,participant_uid,team_uid,bib,rr['name'],sex,rr['age'],age_category,club,country,category or rr['source_class'],status,status_source,status_evidence,",
-            'result recovered fields')
-
-          p.write_text(s,encoding='utf-8')
-          PY
       - name: Build curated database offline from frozen archive
         run: python tools/build_curated_analysis_db.py
       - name: Verify curated output
@@ -98,18 +59,17 @@ jobs:
             assert con.execute("select count(*) from results where bib is not null and trim(bib)<>''").fetchone()[0] > 9500
           print('curated analysis database verified')
           PY
-      - name: Commit corrected builder, curated archive and summary
+      - name: Commit curated archive and summary
         shell: bash
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add tools/build_curated_analysis_db.py
           git add -f data/derived/ost-analysis-2018-2026.sqlite.gz
           git add reports/curated-analysis-db-summary.json reports/curated-analysis-db-summary.md
           if git diff --cached --quiet; then
             echo 'Curated database already current.'
           else
-            git commit -m 'Recover safe ÖST result fields in curated database'
+            git commit -m 'Build curated ÖST analysis database'
             git pull --rebase origin main
             git push origin HEAD:main
           fi
