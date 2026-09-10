@@ -1,0 +1,74 @@
+name: Build curated ÖST analysis database
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/archive/ost-results-2018-2026.sqlite.gz'
+      - 'reports/result-archive-summary.json'
+      - 'reports/duo-member-evidence.json'
+      - 'config/race-catalog.json'
+      - 'config/course-versions.json'
+      - 'config/checkpoint-normalization.json'
+      - 'tools/build_curated_analysis_db.py'
+      - '.github/workflows/build-curated-analysis-db.yml'
+
+concurrency:
+  group: ost-curated-analysis-db
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build curated database offline from frozen archive
+        run: python tools/build_curated_analysis_db.py
+      - name: Verify curated output
+        run: |
+          test -s data/derived/ost-analysis-2018-2026.sqlite.gz
+          test -s reports/curated-analysis-db-summary.json
+          python - <<'PY'
+          import gzip, json, shutil, sqlite3, tempfile
+          from pathlib import Path
+          s=json.loads(Path('reports/curated-analysis-db-summary.json').read_text())
+          assert s['totals']['races']==34
+          assert s['totals']['results']==9871
+          assert s['checks']['integrity']=='ok'
+          assert s['checks']['result_count_matches_frozen'] is True
+          assert s['checks']['orphan_results']==0
+          assert s['checks']['orphan_splits']==0
+          assert s['checks']['split_chronology_errors']==0
+          with tempfile.TemporaryDirectory() as td:
+            db=Path(td)/'a.sqlite'
+            with gzip.open('data/derived/ost-analysis-2018-2026.sqlite.gz','rb') as f,db.open('wb') as o:shutil.copyfileobj(f,o)
+            con=sqlite3.connect(db)
+            assert con.execute('pragma integrity_check').fetchone()[0]=='ok'
+            assert con.execute('select count(*) from results').fetchone()[0]==9871
+            assert con.execute('select count(*) from races').fetchone()[0]==34
+          print('curated analysis database verified')
+          PY
+      - name: Commit curated archive and summary
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f data/derived/ost-analysis-2018-2026.sqlite.gz
+          git add reports/curated-analysis-db-summary.json reports/curated-analysis-db-summary.md
+          if git diff --cached --quiet; then
+            echo 'Curated database already current.'
+          else
+            git commit -m 'Build curated ÖST analysis database'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
