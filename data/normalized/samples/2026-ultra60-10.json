@@ -101,8 +101,9 @@
           ]
         }
       ],
+      "derived_checkpoint_metrics": [],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7793098",
-      "source_sha256": "d934db9e0a1ef09f3fca4e183a0b522610cebb3e5291f4c4157b2225b9df7af4",
+      "source_sha256": "bc76987ba609298a419d7451bd745a45c16a27845f86b962a59b720ae7acba08",
       "raw_tables": [
         {
           "class": null,
@@ -724,8 +725,9 @@
           ]
         }
       ],
+      "derived_checkpoint_metrics": [],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7796216",
-      "source_sha256": "f0bff9a0d63d564398867e39b001beb17de6e199c120b32fd7433987426de409",
+      "source_sha256": "1413bd1ac0ab9d97f62eade0315c07c6e9a68f5247c0820a913e46abe3d9ace2",
       "raw_tables": [
         {
           "class": null,
@@ -1347,8 +1349,9 @@
           ]
         }
       ],
+      "derived_checkpoint_metrics": [],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7792471",
-      "source_sha256": "7d338f328d3b5f704ee5dac75f8f507ff010384e4071eeb28d78fd3557a59ceb",
+      "source_sha256": "5baf706461ba51072010d16c031027cdde8f11ecbdace6471dd29f93d10c3c19",
       "raw_tables": [
         {
           "class": null,
@@ -1958,8 +1961,9 @@
           ]
         }
       ],
+      "derived_checkpoint_metrics": [],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7794046",
-      "source_sha256": "cf9275cf88e2bd3928b529977a3395d99a3c252c528927cc4eea037cfb11aa27",
+      "source_sha256": "d76db9f676a2c9865e7b554de35071b3c3b39aeb02e837f2daecf6b952aa0e59",
       "raw_tables": [
         {
           "class": null,
@@ -2581,8 +2585,9 @@
           ]
         }
       ],
+      "derived_checkpoint_metrics": [],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7791093",
-      "source_sha256": "913b7a7a45b46e0514fd78dfb533de98e6fa6f9bafea5e70cb88436f185a7a9f",
+      "source_sha256": "c366debc03972d6fdb25f976ac86905c490a22231ff8ff1e5a2407272d52c6c2",
       "raw_tables": [
         {
           "class": null,
@@ -3204,8 +3209,9 @@
           ]
         }
       ],
+      "derived_checkpoint_metrics": [],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7792111",
-      "source_sha256": "e83e23d118605aff0303319c035f7e314fe6e22c10733d5b23fc232182483617",
+      "source_sha256": "4abc96241a38d4ea9f42d6db37a86e6fd47ed721fc7a0198586be8d1d04c2a3b",
       "raw_tables": [
         {
           "class": null,
@@ -3827,8 +3833,9 @@
           ]
         }
       ],
+      "derived_checkpoint_metrics": [],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7794298",
-      "source_sha256": "f5a398f75dc6acb25e0e66e334b45b98c301438801ede806e101f208f5d6dd53",
+      "source_sha256": "75e59869f2673f490e4d6343e1da50c2282bfc3cda997d46ad5be56f9890af39",
       "raw_tables": [
         {
           "class": null,
@@ -4438,8 +4445,9 @@
           ]
         }
       ],
+      "derived_checkpoint_metrics": [],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/8125824",
-      "source_sha256": "6bdb46abdef83922272d10d0e138df4c645364bfb0a7b4ea12f838981b8fb9c3",
+      "source_sha256": "9536f93ab86781d0911899a2ddc74f392fdb1896d98c1b44bd01c1aabdb379f0",
       "raw_tables": [
         {
           "class": null,
@@ -5049,8 +5057,9 @@
           ]
         }
       ],
+      "derived_checkpoint_metrics": [],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7792756",
-      "source_sha256": "b6c2a491147a9682f0cad0feb3f7f41903998c5fad1eb6ce2784bd912d8abca3",
+      "source_sha256": "9a836a6587d2421560b5144dc1348eb390b46a00eae73a08e43823fbeaf4efae",
       "raw_tables": [
         {
           "class": null,
@@ -5672,8 +5681,9 @@
           ]
         }
       ],
+      "derived_checkpoint_metrics": [],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7798220",
-      "source_sha256": "60f3df8b6e881f6166f33b5e2b56188a99c1196addd995bd81b0b7d612b67748",
+      "source_sha256": "d8749f86956f861dcf6b2d1f8ed871f32e897bb6d57b143e5ca5197ed2050da2",
       "raw_tables": [
         {
           "class": null,
