@@ -10,7 +10,12 @@ on:
       - 'tools/probe_sportstiming.py'
       - 'tools/discover_sportstiming_structure.py'
       - 'tools/inspect_sportstiming_client.py'
+      - 'tools/build_sportstiming_catalog.py'
       - '.github/workflows/build-source-reports.yml'
+
+concurrency:
+  group: ost-source-reports-main
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -33,15 +38,18 @@ jobs:
         run: python tools/discover_sportstiming_structure.py
       - name: Inspect Sportstiming client request logic
         run: python tools/inspect_sportstiming_client.py
-      - name: Commit generated reports
+      - name: Build Sportstiming class catalog
+        run: python tools/build_sportstiming_catalog.py
+      - name: Commit generated metadata and reports
         shell: bash
         run: |
-          if [[ -n "$(git status --porcelain reports/)" ]]; then
+          if [[ -n "$(git status --porcelain reports/ data/source/sportstiming/class-catalog.json)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add reports/
+            git add reports/ data/source/sportstiming/class-catalog.json
             git commit -m "Update ÖST source diagnostics"
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           else
-            echo "No report changes"
+            echo "No generated changes"
           fi
