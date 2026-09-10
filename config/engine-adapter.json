@@ -1,33 +1,83 @@
 {
-  "schema_version": 1,
-  "status": "pre_engine_handoff_contract",
+  "schema_version": 2,
+  "status": "source_side_ready_for_engine_integration",
   "target": {
     "reference_repository": "Stayinhealthyrunning/gotaleden-splits",
     "reference_frontend_adapter": "docs/assets/data-adapter.js",
-    "strategy": "Reuse the generalized analysis engine after the Gotaleden refactor is finished; keep ÖST event-specific acquisition and normalization in this repository."
+    "strategy": "Reuse the generalized analysis engine after the Gotaleden refactor is finished; keep ÖST acquisition, provenance and event-specific normalization in this repository."
+  },
+  "primary_input": {
+    "curated_analysis_database": "data/derived/ost-analysis-2018-2026.sqlite.gz",
+    "summary": "reports/curated-analysis-db-summary.json",
+    "readiness_matrix": "reports/engine-readiness.json",
+    "rule": "The generic engine should consume the curated analysis layer, not recrawl Sportstiming. The frozen archive remains source truth/provenance and is used to rebuild the curated layer when normalization changes."
+  },
+  "source_truth": {
+    "immutable_frozen_archive": "data/archive/ost-results-2018-2026.sqlite.gz",
+    "archive_summary": "reports/result-archive-summary.json",
+    "archive_audit": "reports/result-archive-audit.json",
+    "status_evidence": "reports/status-evidence-profile.json",
+    "identity_field_profile": "reports/identity-field-profile.json"
   },
   "invariants": [
-    "Never fabricate checkpoint passages, status, rank, route geometry or relay structure.",
+    "Never fabricate checkpoint passages, status, rank, route geometry, age, gender, relay structure or cross-year identity.",
     "Keep raw source identifiers and labels alongside semantic normalization.",
     "A race family is not a course version. Cross-year course comparison is gated by verified geometry evidence.",
     "Trace de Trail public geometry diagnostics may establish comparability but are not automatically redistributed as route assets.",
-    "Duo inherits the same-year Ultra route/course version, but team/member result parsing is handled by a dedicated relay adapter.",
+    "Duo inherits the same-year Ultra route/course version.",
+    "Duo member source_sequence is source-backed; leg_no remains nullable until ordering is independently validated.",
     "Bengtemölla is the canonical named checkpoint for 2022/2023. The preceding 32 km observation remains a separate approach/prewarning candidate.",
-    "Feature availability is data-driven through data/derived/analysis-capabilities.json."
+    "Feature availability is data-driven through reports/engine-readiness.json and the curated database.",
+    "Exact age is never derived from an age-category interval.",
+    "Cross-year person identity must be a separate confidence-bearing linkage layer and must not overwrite source-local identity."
   ],
-  "source_inputs": {
+  "supporting_inputs": {
     "curated_race_catalog": "config/race-catalog.json",
     "derived_race_catalog": "data/derived/race-catalog-enriched.json",
     "course_versions": "config/course-versions.json",
     "checkpoint_semantics": "config/checkpoint-normalization.json",
     "feature_policy": "config/analysis-feature-policy.json",
-    "feature_matrix": "data/derived/analysis-capabilities.json",
+    "legacy_feature_matrix": "data/derived/analysis-capabilities.json",
     "sportstiming_events": "data/source/sportstiming/events.json",
     "sportstiming_classes": "data/source/sportstiming/class-catalog.json",
     "sportstiming_split_inventory": "data/source/sportstiming/split-inventory.json",
     "route_source_manifest": "config/course-source-manifest.json",
     "public_geometry_diagnostics": "reports/tracedetrail-public-geometry-analysis.json",
     "local_route_assets_root": "data/source/gpx"
+  },
+  "curated_database_contract": {
+    "tables": {
+      "races": "34 held race-year instances with event/race/course metadata.",
+      "participants": "Source-local individual result identities. No cross-year identity is implied.",
+      "relay_teams": "Duo team identities and source-backed team category where published.",
+      "results": "One normalized result row per imported Sportstiming athlete/team result.",
+      "splits": "Only observed/published split passages; includes individual Ultra and parsed Duo team splits.",
+      "relay_members": "Published Duo member rows with source_sequence; leg_no may be NULL.",
+      "derived_metrics": "Source-derived metrics such as Bengtemölla between-observation/service-window candidates.",
+      "meta": "Archive provenance and normalization policy."
+    },
+    "current_totals": {
+      "races": 34,
+      "results": 9871,
+      "participants": 9571,
+      "relay_teams": 300,
+      "relay_members": 599,
+      "splits": 6123,
+      "derived_metrics": 699
+    },
+    "status_values": ["FINISHED", "DNF", "DNS", "DSQ", "UNKNOWN"],
+    "current_status_counts": {
+      "FINISHED": 9518,
+      "DNF": 332,
+      "UNKNOWN": 21
+    },
+    "field_recovery_policy": [
+      "Start number may be recovered from exact Sportstiming list headers including Startnr. when missing in the normalized detail row.",
+      "Club and country may fall back to the corresponding frozen result-list columns.",
+      "For individual 2022 results, explicit Kategori forms such as F40-44 or M45-49 may populate sex and age_category.",
+      "Do not infer exact age from category ranges.",
+      "Do not infer sex/age from names in years where the public source does not expose them."
+    ]
   },
   "target_results_payload": {
     "required_top_level_keys": ["race_catalog", "courses", "races", "checkpoints", "teams", "splits"],
@@ -54,18 +104,20 @@
       "rule": "Keep non-primary timing observations in provenance/source data even when analysis_boundary=false."
     },
     "records": {
-      "required_fields": ["bib", "status", "finish_seconds"],
-      "recommended_fields": ["name", "club", "gender", "age", "age_category", "class_name", "overall_place", "class_place", "gender_place", "person_key", "identity_status", "identity_scope"],
-      "status_values": ["FINISHED", "DNF", "DNS", "DSQ", "UNKNOWN"]
+      "required_fields": ["source_result_id", "status"],
+      "recommended_fields": ["bib", "finish_seconds", "name", "club", "country", "gender", "age", "age_category", "class_name", "overall_place", "class_place", "gender_place", "person_key", "identity_status", "identity_scope"],
+      "status_values": ["FINISHED", "DNF", "DNS", "DSQ", "UNKNOWN"],
+      "rule": "FINISHED rows require a positive finish time; non-finish rows may legitimately have no finish_seconds."
     },
     "splits": {
-      "required_fields": ["race_key", "bib", "checkpoint", "elapsed_seconds"],
-      "recommended_fields": ["place_overall", "place_class", "place_gender", "split_place_overall", "split_seconds", "split_speed_kmh", "split_pace_min_per_km", "cumulative_speed_kmh", "cumulative_pace_min_per_km", "source_point_name"],
+      "required_fields": ["race_key", "source_result_id", "checkpoint", "elapsed_seconds"],
+      "recommended_fields": ["bib", "place_overall", "place_class", "place_gender", "split_place_overall", "split_seconds", "split_speed_kmh", "split_pace_min_per_km", "cumulative_speed_kmh", "cumulative_pace_min_per_km", "source_point_name"],
       "rule": "Only published/observed passages are emitted. No interpolation belongs in the source split table; interpolation happens in the frontend replay model."
     },
     "teams": {
       "required_for": ["duo60"],
-      "rule": "Do not emit synthetic team-member structures before Sportstiming Duo parsing is verified."
+      "member_fields": ["source_sequence", "source_member_result_id", "bib", "name_as_published", "member_time_seconds", "finish_clock", "speed_source", "leg_no"],
+      "rule": "Team/member structures are now parsed from the frozen public source. source_sequence is preserved; leg_no must remain null unless later evidence validates leg ordering."
     }
   },
   "route_bundle_contract": {
@@ -89,20 +141,22 @@
     },
     "duo60": {
       "exchange_semantic_key": "bengtemolla",
-      "route_source_family": "ultra60"
+      "route_source_family": "ultra60",
+      "split_source": "parsed frozen Sportstiming team detail tables"
     }
   },
   "feature_gating": {
-    "source": "data/derived/analysis-capabilities.json",
-    "frontend_rule": "Hide or explain unavailable features instead of rendering empty/fictional analyses.",
+    "source": "reports/engine-readiness.json",
+    "frontend_rule": "Hide or explain unavailable features instead of rendering empty or fictional analyses.",
     "known_current_pattern": {
-      "ultra60": "Finish/result analysis source-ready for all held years; advanced split analysis exists for all held years; replay/map features additionally require a usable local route asset.",
-      "duo60": "Finish class exists, route inherited from Ultra; dedicated team/relay parsing is still required.",
-      "trail22_trail14_trail5": "Finish/result analysis is source-ready; sampled Sportstiming result details do not currently expose intermediate split tables, so replay/split features stay off unless stronger source evidence is later found."
+      "ultra60": "Finish/result and split analysis are ready for every held year. Replay/map additionally require local route assets; currently 2024-2026 qualify.",
+      "duo60": "Team finish results and real team splits are parsed for every held Duo year. Published member rows are retained. Replay/map currently qualify for 2024-2026; leg assignment stays disabled.",
+      "trail22_trail14_trail5": "Finish/result analysis is ready. No intermediate split tables were found in the complete imported public result details, so replay/split features stay off unless stronger source evidence appears."
     }
   },
   "identity_policy": {
-    "default": "Do not infer stable cross-year identity from names alone without an explicit matching methodology and confidence field.",
-    "repeat_runner_analysis": "May use a separately documented probabilistic/normalized-name linkage layer, never overwrite source identity."
+    "source_identity": "participant_uid is race-result-local and does not assert that matching names across years are one person.",
+    "repeat_runner_analysis": "Build a separate documented linkage layer with a person_key, confidence/evidence and ambiguity handling; never overwrite source identity.",
+    "historical_field_gaps": "Sex/age are intentionally absent where not explicitly published in the frozen source."
   }
 }
