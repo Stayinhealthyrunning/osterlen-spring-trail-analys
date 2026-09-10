@@ -9,6 +9,7 @@ on:
       - 'tools/analyze_gpx_sources.py'
       - 'tools/probe_sportstiming.py'
       - 'tools/discover_sportstiming_structure.py'
+      - 'tools/inspect_sportstiming_client.py'
       - '.github/workflows/build-source-reports.yml'
 
 permissions:
@@ -30,6 +31,8 @@ jobs:
         run: python tools/probe_sportstiming.py
       - name: Discover Sportstiming page structure
         run: python tools/discover_sportstiming_structure.py
+      - name: Inspect Sportstiming client request logic
+        run: python tools/inspect_sportstiming_client.py
       - name: Commit generated reports
         shell: bash
         run: |
