@@ -30,6 +30,15 @@
 | 2026:trail22:athlete | 9 | 9 | 0 | 0 | 0 | 0 |
 | 2026:ultra60:athlete | 42 | 42 | 0 | 0 | 0 | 14 |
 
+## Duo – splitetiketter per år
+
+- **2019:** `Finish Km 60+` (62), `Vantalängan km 52` (61), `Stenshuvud km 14` (40), `Bengtemölla km 32` (36)
+- **2022:** `32 km` (43), `Bengtemölla` (43), `62 km` (43)
+- **2023:** `32 km` (48), `Bengtemölla` (46), `62 km` (46), `Finish` (2)
+- **2024:** `34 km` (44), `60 km` (44)
+- **2025:** `34 km` (45), `60 km` (42)
+- **2026:** `34 km` (49), `60 km` (47)
+
 ## Duo – medlemslänkar per team och år
 
 | År | Antal medlemslänkar i teamdetaljen → antal team |
