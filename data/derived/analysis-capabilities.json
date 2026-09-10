@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-10T13:39:27.943445+00:00",
+  "generated_at": "2026-09-10T13:45:44.571164+00:00",
   "meaning": {
     "source_ready": "Required source evidence exists; production import/UI may still be pending.",
     "adapter_needed": "Source exists but a format-specific adapter is still needed.",

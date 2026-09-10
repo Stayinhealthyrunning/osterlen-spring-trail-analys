@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-10T13:39:27.995757+00:00",
+  "generated_at": "2026-09-10T13:45:44.619493+00:00",
   "source_catalog": "config/race-catalog.json",
   "derived_from": [
     "data/source/sportstiming/class-catalog.json",
