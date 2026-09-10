@@ -1,0 +1,41 @@
+name: Build ÖST source reports
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'data/source/**'
+      - 'config/**'
+      - 'tools/analyze_gpx_sources.py'
+      - 'tools/probe_sportstiming.py'
+      - '.github/workflows/build-source-reports.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Analyze archived GPX
+        run: python tools/analyze_gpx_sources.py
+      - name: Probe public Sportstiming views
+        run: python tools/probe_sportstiming.py
+      - name: Commit generated reports
+        shell: bash
+        run: |
+          if [[ -n "$(git status --porcelain reports/)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add reports/
+            git commit -m "Update ÖST source diagnostics"
+            git push
+          else
+            echo "No report changes"
+          fi
