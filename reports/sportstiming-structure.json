@@ -1,0 +1,4626 @@
+{
+  "rows": [
+    {
+      "year": 2018,
+      "event_id": 4950,
+      "url": "https://www.sportstiming.dk/event/4950/app/results",
+      "html_bytes": 87404,
+      "forms": [],
+      "selects": [
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "15266",
+              "text": "Simris Alg Ultra 60km+ (ca. 1150m höjdmeter)"
+            },
+            {
+              "value": "15268",
+              "text": "Verkeån trail 21km+ (ca. 500m höjdmeter)"
+            },
+            {
+              "value": "15265",
+              "text": "Naturloppet 5km+"
+            },
+            {
+              "value": "15269",
+              "text": "Ekopark trail 13 km"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "A",
+              "text": "Män/Kvinnor"
+            },
+            {
+              "value": "M",
+              "text": "Män"
+            },
+            {
+              "value": "F",
+              "text": "Kvinnor"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla länder"
+            },
+            {
+              "value": "14",
+              "text": "Belgien"
+            },
+            {
+              "value": "37",
+              "text": "Danmark"
+            },
+            {
+              "value": "52",
+              "text": "Finland"
+            },
+            {
+              "value": "53",
+              "text": "Frankrig"
+            },
+            {
+              "value": "77",
+              "text": "Italien"
+            },
+            {
+              "value": "128",
+              "text": "Norge"
+            },
+            {
+              "value": "198",
+              "text": "Storbritannien"
+            },
+            {
+              "value": "161",
+              "text": "Sverige"
+            },
+            {
+              "value": "999",
+              "text": "Ukendt land"
+            },
+            {
+              "value": "185",
+              "text": "USA"
+            }
+          ]
+        }
+      ],
+      "relevant_links": [
+        "/event/4950/app/results",
+        "/event/4950/app",
+        "/event/4950/app/participants",
+        "/event/4950/app/tracking",
+        "/event/4950/app/results/2089449",
+        "/event/4950/app/results/1994495",
+        "/event/4950/app/results/2058107",
+        "/event/4950/app/results/2056852",
+        "/event/4950/app/results/2047022",
+        "/event/4950/app/results/2068398",
+        "/event/4950/app/results/2095443",
+        "/event/4950/app/results/2066972",
+        "/event/4950/app/results/2020397",
+        "/event/4950/app/results/2089740",
+        "/event/4950/app/results/2001334",
+        "/event/4950/app/results/2001103",
+        "/event/4950/app/results/1992859",
+        "/event/4950/app/results/2093426",
+        "/event/4950/app/results/2066894",
+        "/event/4950/app/results/2014199",
+        "/event/4950/app/results/1985317",
+        "/event/4950/app/results/1997579",
+        "/event/4950/app/results/2074790",
+        "/event/4950/app/results/2057902",
+        "/event/4950/app/results/2020096",
+        "/event/4950/app/results/2023296",
+        "/event/4950/app/results/1981093",
+        "/event/4950/app/results/2047722",
+        "/event/4950/app/results/2093113",
+        "/event/4950/app/results/2095442",
+        "/event/4950/app/results/2057783",
+        "/event/4950/app/results/2061519",
+        "/event/4950/app/results/2089357",
+        "/event/4950/app/results/2003785",
+        "/event/4950/app/results/2095433",
+        "/event/4950/app/results/1981158",
+        "/event/4950/app/results/2060423",
+        "/event/4950/app/results/2056750",
+        "/event/4950/app/results/2047142",
+        "/event/4950/app/results/1993137",
+        "/event/4950/app/results/2058108",
+        "/event/4950/app/results/2020576",
+        "/event/4950/app/results/2057037",
+        "/event/4950/app/results/2077610",
+        "/event/4950/app/results/2033526",
+        "/event/4950/app/results/2068286",
+        "/event/4950/app/results/2058033",
+        "/event/4950/app/results/1985895",
+        "/event/4950/app/results/1986200",
+        "/event/4950/app/results/1979248",
+        "/event/4950/app/results/1994477",
+        "/event/4950/app/results/2093793",
+        "/event/4950/app/results/2007997",
+        "/event/4950/app/results/2053841",
+        "/event/4950/app/results?page=1",
+        "/event/4950/app/results?page=2",
+        "/event/4950/app/results?page=3",
+        "/event/4950/app/results?page=8"
+      ],
+      "structural_attributes": [
+        "data-bs-target=",
+        "data-bs-toggle=",
+        "data-placement=",
+        "data-toggle="
+      ],
+      "candidate_endpoint_strings": [
+        "#athletesearchpanel",
+        ");\r$.ajax({\rurl: ",
+        ");\rif (searchFields.length > 0)\rsearchFields[0].focus();\r}, 0);\r});\r});\rfunction setSelect2(nodeSet) {\rnodeSet.select2({ dropdownAutoWidth: true, width: ",
+        ", function (e) {\rwindow.setTimeout(function () {\rvar searchFields = $(",
+        "/js/resultlist.js?2.0",
+        "ResultListDoSearch(",
+        "athletesearchpanel",
+        "btn btn-primary float-end btnSearch",
+        "btnSearch",
+        "expandsearch_label",
+        "fa fa-search",
+        "form-control txtSearch",
+        "hidden-sm hidden-md hidden-lg resultlist-secondline",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic",
+        "page-filter-bar page-filter-bar-with-advancedsearch",
+        "panel-athletesearch-control collapsed text-center"
+      ]
+    },
+    {
+      "year": 2019,
+      "event_id": 5719,
+      "url": "https://www.sportstiming.dk/event/5719/app/results",
+      "html_bytes": 89465,
+      "forms": [],
+      "selects": [
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "20385",
+              "text": "Simris Alg Ultra 60km+ (ca. 1450m höjdmeter)"
+            },
+            {
+              "value": "20387",
+              "text": "Verkeån trail 21km+"
+            },
+            {
+              "value": "20390",
+              "text": "Duo Trail (relay 2 x 30 km)"
+            },
+            {
+              "value": "20384",
+              "text": "Naturloppet 5km+"
+            },
+            {
+              "value": "20388",
+              "text": "Ekopark trail 13 km"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "A",
+              "text": "Män/Kvinnor"
+            },
+            {
+              "value": "M",
+              "text": "Män"
+            },
+            {
+              "value": "F",
+              "text": "Kvinnor"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla länder"
+            },
+            {
+              "value": "37",
+              "text": "Danmark"
+            },
+            {
+              "value": "45",
+              "text": "England"
+            },
+            {
+              "value": "52",
+              "text": "Finland"
+            },
+            {
+              "value": "53",
+              "text": "Frankrig"
+            },
+            {
+              "value": "74",
+              "text": "Irland"
+            },
+            {
+              "value": "102",
+              "text": "Malaysia"
+            },
+            {
+              "value": "128",
+              "text": "Norge"
+            },
+            {
+              "value": "147",
+              "text": "Schweiz"
+            },
+            {
+              "value": "157",
+              "text": "Spanien"
+            },
+            {
+              "value": "198",
+              "text": "Storbritannien"
+            },
+            {
+              "value": "161",
+              "text": "Sverige"
+            },
+            {
+              "value": "164",
+              "text": "Sydkorea"
+            },
+            {
+              "value": "179",
+              "text": "Tyskland"
+            },
+            {
+              "value": "999",
+              "text": "Ukendt land"
+            }
+          ]
+        }
+      ],
+      "relevant_links": [
+        "/event/5719/app/results",
+        "/event/5719/app",
+        "/event/5719/app/participants",
+        "/event/5719/app/tracking",
+        "/event/5719/app/points",
+        "/event/5719/app/results/2501366",
+        "/event/5719/app/results/2467417",
+        "/event/5719/app/results/2627834",
+        "/event/5719/app/results/2520780",
+        "/event/5719/app/results/2592348",
+        "/event/5719/app/results/2577485",
+        "/event/5719/app/results/2587338",
+        "/event/5719/app/results/2578897",
+        "/event/5719/app/results/2592402",
+        "/event/5719/app/results/2494065",
+        "/event/5719/app/results/2597671",
+        "/event/5719/app/results/2597675",
+        "/event/5719/app/results/2594262",
+        "/event/5719/app/results/2548498",
+        "/event/5719/app/results/2467343",
+        "/event/5719/app/results/2537158",
+        "/event/5719/app/results/2589755",
+        "/event/5719/app/results/2466201",
+        "/event/5719/app/results/2556496",
+        "/event/5719/app/results/2544241",
+        "/event/5719/app/results/2602187",
+        "/event/5719/app/results/2603646",
+        "/event/5719/app/results/2557183",
+        "/event/5719/app/results/2480728",
+        "/event/5719/app/results/2521330",
+        "/event/5719/app/results/2595315",
+        "/event/5719/app/results/2503379",
+        "/event/5719/app/results/2480920",
+        "/event/5719/app/results/2595409",
+        "/event/5719/app/results/2473013",
+        "/event/5719/app/results/2505991",
+        "/event/5719/app/results/2475649",
+        "/event/5719/app/results/2536650",
+        "/event/5719/app/results/2544946",
+        "/event/5719/app/results/2562444",
+        "/event/5719/app/results/2477556",
+        "/event/5719/app/results/2496505",
+        "/event/5719/app/results/2501360",
+        "/event/5719/app/results/2502409",
+        "/event/5719/app/results/2502410",
+        "/event/5719/app/results/2483789",
+        "/event/5719/app/results/2562883",
+        "/event/5719/app/results/2618947",
+        "/event/5719/app/results/2603001",
+        "/event/5719/app/results/2473095",
+        "/event/5719/app/results/2505808",
+        "/event/5719/app/results/2625377",
+        "/event/5719/app/results/2627869",
+        "/event/5719/app/results/2627842",
+        "/event/5719/app/results/2475810",
+        "/event/5719/app/results?page=1",
+        "/event/5719/app/results?page=2",
+        "/event/5719/app/results?page=3",
+        "/event/5719/app/results?page=9"
+      ],
+      "structural_attributes": [
+        "data-bs-target=",
+        "data-bs-toggle=",
+        "data-placement=",
+        "data-toggle="
+      ],
+      "candidate_endpoint_strings": [
+        "#athletesearchpanel",
+        ");\r$.ajax({\rurl: ",
+        ");\rif (searchFields.length > 0)\rsearchFields[0].focus();\r}, 0);\r});\r});\rfunction setSelect2(nodeSet) {\rnodeSet.select2({ dropdownAutoWidth: true, width: ",
+        ", function (e) {\rwindow.setTimeout(function () {\rvar searchFields = $(",
+        "/js/resultlist.js?2.0",
+        "ResultListDoSearch(",
+        "athletesearchpanel",
+        "btn btn-primary float-end btnSearch",
+        "btnSearch",
+        "expandsearch_label",
+        "fa fa-search",
+        "form-control txtSearch",
+        "hidden-sm hidden-md hidden-lg resultlist-secondline",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic",
+        "page-filter-bar page-filter-bar-with-advancedsearch",
+        "panel-athletesearch-control collapsed text-center"
+      ]
+    },
+    {
+      "year": 2022,
+      "event_id": 9587,
+      "url": "https://www.sportstiming.dk/event/9587/app/results",
+      "html_bytes": 102708,
+      "forms": [],
+      "selects": [
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "46204",
+              "text": "Ultra 60km+"
+            },
+            {
+              "value": "46206",
+              "text": "Teleservice trail 21km+"
+            },
+            {
+              "value": "46209",
+              "text": "Duo Trail (relay 2 x 30 km)"
+            },
+            {
+              "value": "46207",
+              "text": "Ekopark trail 13 km"
+            },
+            {
+              "value": "46203",
+              "text": "Naturloppet 5km+"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "A",
+              "text": "Män/Kvinnor"
+            },
+            {
+              "value": "M",
+              "text": "Män"
+            },
+            {
+              "value": "F",
+              "text": "Kvinnor"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "27580",
+              "text": "0-11 år"
+            },
+            {
+              "value": "27581",
+              "text": "12-13 år"
+            },
+            {
+              "value": "27582",
+              "text": "14-15 år"
+            },
+            {
+              "value": "27583",
+              "text": "16-17 år"
+            },
+            {
+              "value": "27584",
+              "text": "18-19 år"
+            },
+            {
+              "value": "27585",
+              "text": "20-24 år"
+            },
+            {
+              "value": "27586",
+              "text": "25-29 år"
+            },
+            {
+              "value": "27587",
+              "text": "30-34 år"
+            },
+            {
+              "value": "27588",
+              "text": "35-39 år"
+            },
+            {
+              "value": "27589",
+              "text": "40-44 år"
+            },
+            {
+              "value": "27590",
+              "text": "45-49 år"
+            },
+            {
+              "value": "27591",
+              "text": "50-54 år"
+            },
+            {
+              "value": "27592",
+              "text": "55-59 år"
+            },
+            {
+              "value": "27593",
+              "text": "60-64 år"
+            },
+            {
+              "value": "27594",
+              "text": "65-69 år"
+            },
+            {
+              "value": "27595",
+              "text": "70-74 år"
+            },
+            {
+              "value": "27596",
+              "text": "75-79 år"
+            },
+            {
+              "value": "27597",
+              "text": "80-84 år"
+            },
+            {
+              "value": "27598",
+              "text": "85-89 år"
+            },
+            {
+              "value": "27599",
+              "text": "90+ år"
+            },
+            {
+              "value": "27600",
+              "text": "championship för Joelette"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "27580",
+              "text": "0-11 år"
+            },
+            {
+              "value": "27581",
+              "text": "12-13 år"
+            },
+            {
+              "value": "27582",
+              "text": "14-15 år"
+            },
+            {
+              "value": "27583",
+              "text": "16-17 år"
+            },
+            {
+              "value": "27584",
+              "text": "18-19 år"
+            },
+            {
+              "value": "27585",
+              "text": "20-24 år"
+            },
+            {
+              "value": "27586",
+              "text": "25-29 år"
+            },
+            {
+              "value": "27587",
+              "text": "30-34 år"
+            },
+            {
+              "value": "27588",
+              "text": "35-39 år"
+            },
+            {
+              "value": "27589",
+              "text": "40-44 år"
+            },
+            {
+              "value": "27590",
+              "text": "45-49 år"
+            },
+            {
+              "value": "27591",
+              "text": "50-54 år"
+            },
+            {
+              "value": "27592",
+              "text": "55-59 år"
+            },
+            {
+              "value": "27593",
+              "text": "60-64 år"
+            },
+            {
+              "value": "27594",
+              "text": "65-69 år"
+            },
+            {
+              "value": "27595",
+              "text": "70-74 år"
+            },
+            {
+              "value": "27596",
+              "text": "75-79 år"
+            },
+            {
+              "value": "27597",
+              "text": "80-84 år"
+            },
+            {
+              "value": "27598",
+              "text": "85-89 år"
+            },
+            {
+              "value": "27599",
+              "text": "90+ år"
+            },
+            {
+              "value": "27600",
+              "text": "championship för Joelette"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "27580",
+              "text": "0-11 år"
+            },
+            {
+              "value": "27581",
+              "text": "12-13 år"
+            },
+            {
+              "value": "27582",
+              "text": "14-15 år"
+            },
+            {
+              "value": "27583",
+              "text": "16-17 år"
+            },
+            {
+              "value": "27584",
+              "text": "18-19 år"
+            },
+            {
+              "value": "27585",
+              "text": "20-24 år"
+            },
+            {
+              "value": "27586",
+              "text": "25-29 år"
+            },
+            {
+              "value": "27587",
+              "text": "30-34 år"
+            },
+            {
+              "value": "27588",
+              "text": "35-39 år"
+            },
+            {
+              "value": "27589",
+              "text": "40-44 år"
+            },
+            {
+              "value": "27590",
+              "text": "45-49 år"
+            },
+            {
+              "value": "27591",
+              "text": "50-54 år"
+            },
+            {
+              "value": "27592",
+              "text": "55-59 år"
+            },
+            {
+              "value": "27593",
+              "text": "60-64 år"
+            },
+            {
+              "value": "27594",
+              "text": "65-69 år"
+            },
+            {
+              "value": "27595",
+              "text": "70-74 år"
+            },
+            {
+              "value": "27596",
+              "text": "75-79 år"
+            },
+            {
+              "value": "27597",
+              "text": "80-84 år"
+            },
+            {
+              "value": "27598",
+              "text": "85-89 år"
+            },
+            {
+              "value": "27599",
+              "text": "90+ år"
+            },
+            {
+              "value": "27600",
+              "text": "championship för Joelette"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "27580",
+              "text": "0-11 år"
+            },
+            {
+              "value": "27581",
+              "text": "12-13 år"
+            },
+            {
+              "value": "27582",
+              "text": "14-15 år"
+            },
+            {
+              "value": "27583",
+              "text": "16-17 år"
+            },
+            {
+              "value": "27584",
+              "text": "18-19 år"
+            },
+            {
+              "value": "27585",
+              "text": "20-24 år"
+            },
+            {
+              "value": "27586",
+              "text": "25-29 år"
+            },
+            {
+              "value": "27587",
+              "text": "30-34 år"
+            },
+            {
+              "value": "27588",
+              "text": "35-39 år"
+            },
+            {
+              "value": "27589",
+              "text": "40-44 år"
+            },
+            {
+              "value": "27590",
+              "text": "45-49 år"
+            },
+            {
+              "value": "27591",
+              "text": "50-54 år"
+            },
+            {
+              "value": "27592",
+              "text": "55-59 år"
+            },
+            {
+              "value": "27593",
+              "text": "60-64 år"
+            },
+            {
+              "value": "27594",
+              "text": "65-69 år"
+            },
+            {
+              "value": "27595",
+              "text": "70-74 år"
+            },
+            {
+              "value": "27596",
+              "text": "75-79 år"
+            },
+            {
+              "value": "27597",
+              "text": "80-84 år"
+            },
+            {
+              "value": "27598",
+              "text": "85-89 år"
+            },
+            {
+              "value": "27599",
+              "text": "90+ år"
+            },
+            {
+              "value": "27600",
+              "text": "championship för Joelette"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "27580",
+              "text": "0-11 år"
+            },
+            {
+              "value": "27581",
+              "text": "12-13 år"
+            },
+            {
+              "value": "27582",
+              "text": "14-15 år"
+            },
+            {
+              "value": "27583",
+              "text": "16-17 år"
+            },
+            {
+              "value": "27584",
+              "text": "18-19 år"
+            },
+            {
+              "value": "27585",
+              "text": "20-24 år"
+            },
+            {
+              "value": "27586",
+              "text": "25-29 år"
+            },
+            {
+              "value": "27587",
+              "text": "30-34 år"
+            },
+            {
+              "value": "27588",
+              "text": "35-39 år"
+            },
+            {
+              "value": "27589",
+              "text": "40-44 år"
+            },
+            {
+              "value": "27590",
+              "text": "45-49 år"
+            },
+            {
+              "value": "27591",
+              "text": "50-54 år"
+            },
+            {
+              "value": "27592",
+              "text": "55-59 år"
+            },
+            {
+              "value": "27593",
+              "text": "60-64 år"
+            },
+            {
+              "value": "27594",
+              "text": "65-69 år"
+            },
+            {
+              "value": "27595",
+              "text": "70-74 år"
+            },
+            {
+              "value": "27596",
+              "text": "75-79 år"
+            },
+            {
+              "value": "27597",
+              "text": "80-84 år"
+            },
+            {
+              "value": "27598",
+              "text": "85-89 år"
+            },
+            {
+              "value": "27599",
+              "text": "90+ år"
+            },
+            {
+              "value": "27600",
+              "text": "championship för Joelette"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "27580",
+              "text": "0-11 år"
+            },
+            {
+              "value": "27581",
+              "text": "12-13 år"
+            },
+            {
+              "value": "27582",
+              "text": "14-15 år"
+            },
+            {
+              "value": "27583",
+              "text": "16-17 år"
+            },
+            {
+              "value": "27584",
+              "text": "18-19 år"
+            },
+            {
+              "value": "27585",
+              "text": "20-24 år"
+            },
+            {
+              "value": "27586",
+              "text": "25-29 år"
+            },
+            {
+              "value": "27587",
+              "text": "30-34 år"
+            },
+            {
+              "value": "27588",
+              "text": "35-39 år"
+            },
+            {
+              "value": "27589",
+              "text": "40-44 år"
+            },
+            {
+              "value": "27590",
+              "text": "45-49 år"
+            },
+            {
+              "value": "27591",
+              "text": "50-54 år"
+            },
+            {
+              "value": "27592",
+              "text": "55-59 år"
+            },
+            {
+              "value": "27593",
+              "text": "60-64 år"
+            },
+            {
+              "value": "27594",
+              "text": "65-69 år"
+            },
+            {
+              "value": "27595",
+              "text": "70-74 år"
+            },
+            {
+              "value": "27596",
+              "text": "75-79 år"
+            },
+            {
+              "value": "27597",
+              "text": "80-84 år"
+            },
+            {
+              "value": "27598",
+              "text": "85-89 år"
+            },
+            {
+              "value": "27599",
+              "text": "90+ år"
+            },
+            {
+              "value": "27600",
+              "text": "championship för Joelette"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "27580",
+              "text": "0-11 år"
+            },
+            {
+              "value": "27581",
+              "text": "12-13 år"
+            },
+            {
+              "value": "27582",
+              "text": "14-15 år"
+            },
+            {
+              "value": "27583",
+              "text": "16-17 år"
+            },
+            {
+              "value": "27584",
+              "text": "18-19 år"
+            },
+            {
+              "value": "27585",
+              "text": "20-24 år"
+            },
+            {
+              "value": "27586",
+              "text": "25-29 år"
+            },
+            {
+              "value": "27587",
+              "text": "30-34 år"
+            },
+            {
+              "value": "27588",
+              "text": "35-39 år"
+            },
+            {
+              "value": "27589",
+              "text": "40-44 år"
+            },
+            {
+              "value": "27590",
+              "text": "45-49 år"
+            },
+            {
+              "value": "27591",
+              "text": "50-54 år"
+            },
+            {
+              "value": "27592",
+              "text": "55-59 år"
+            },
+            {
+              "value": "27593",
+              "text": "60-64 år"
+            },
+            {
+              "value": "27594",
+              "text": "65-69 år"
+            },
+            {
+              "value": "27595",
+              "text": "70-74 år"
+            },
+            {
+              "value": "27596",
+              "text": "75-79 år"
+            },
+            {
+              "value": "27597",
+              "text": "80-84 år"
+            },
+            {
+              "value": "27598",
+              "text": "85-89 år"
+            },
+            {
+              "value": "27599",
+              "text": "90+ år"
+            },
+            {
+              "value": "27600",
+              "text": "championship för Joelette"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "27580",
+              "text": "0-11 år"
+            },
+            {
+              "value": "27581",
+              "text": "12-13 år"
+            },
+            {
+              "value": "27582",
+              "text": "14-15 år"
+            },
+            {
+              "value": "27583",
+              "text": "16-17 år"
+            },
+            {
+              "value": "27584",
+              "text": "18-19 år"
+            },
+            {
+              "value": "27585",
+              "text": "20-24 år"
+            },
+            {
+              "value": "27586",
+              "text": "25-29 år"
+            },
+            {
+              "value": "27587",
+              "text": "30-34 år"
+            },
+            {
+              "value": "27588",
+              "text": "35-39 år"
+            },
+            {
+              "value": "27589",
+              "text": "40-44 år"
+            },
+            {
+              "value": "27590",
+              "text": "45-49 år"
+            },
+            {
+              "value": "27591",
+              "text": "50-54 år"
+            },
+            {
+              "value": "27592",
+              "text": "55-59 år"
+            },
+            {
+              "value": "27593",
+              "text": "60-64 år"
+            },
+            {
+              "value": "27594",
+              "text": "65-69 år"
+            },
+            {
+              "value": "27595",
+              "text": "70-74 år"
+            },
+            {
+              "value": "27596",
+              "text": "75-79 år"
+            },
+            {
+              "value": "27597",
+              "text": "80-84 år"
+            },
+            {
+              "value": "27598",
+              "text": "85-89 år"
+            },
+            {
+              "value": "27599",
+              "text": "90+ år"
+            },
+            {
+              "value": "27600",
+              "text": "championship för Joelette"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla länder"
+            },
+            {
+              "value": "9",
+              "text": "Australien"
+            },
+            {
+              "value": "14",
+              "text": "Belgien"
+            },
+            {
+              "value": "37",
+              "text": "Danmark"
+            },
+            {
+              "value": "52",
+              "text": "Finland"
+            },
+            {
+              "value": "53",
+              "text": "Frankrig"
+            },
+            {
+              "value": "60",
+              "text": "Grækenland"
+            },
+            {
+              "value": "67",
+              "text": "Holland"
+            },
+            {
+              "value": "74",
+              "text": "Irland"
+            },
+            {
+              "value": "75",
+              "text": "Island"
+            },
+            {
+              "value": "84",
+              "text": "Kina"
+            },
+            {
+              "value": "92",
+              "text": "Letland"
+            },
+            {
+              "value": "97",
+              "text": "Litauen"
+            },
+            {
+              "value": "128",
+              "text": "Norge"
+            },
+            {
+              "value": "137",
+              "text": "Polen"
+            },
+            {
+              "value": "157",
+              "text": "Spanien"
+            },
+            {
+              "value": "198",
+              "text": "Storbritannien"
+            },
+            {
+              "value": "161",
+              "text": "Sverige"
+            },
+            {
+              "value": "179",
+              "text": "Tyskland"
+            },
+            {
+              "value": "999",
+              "text": "Ukendt land"
+            },
+            {
+              "value": "182",
+              "text": "Ukraine"
+            }
+          ]
+        }
+      ],
+      "relevant_links": [
+        "/event/9587/app/results",
+        "/event/9587/app",
+        "/event/9587/app/participants",
+        "/event/9587/app/tracking",
+        "/event/9587/app/results/4086428",
+        "/event/9587/app/results/4105679",
+        "/event/9587/app/results/4268447",
+        "/event/9587/app/results/4082284",
+        "/event/9587/app/results/4309697",
+        "/event/9587/app/results/4332808",
+        "/event/9587/app/results/4359276",
+        "/event/9587/app/results/4254454",
+        "/event/9587/app/results/4271874",
+        "/event/9587/app/results/4180065",
+        "/event/9587/app/results/4290446",
+        "/event/9587/app/results/4340961",
+        "/event/9587/app/results/4086449",
+        "/event/9587/app/results/4123858",
+        "/event/9587/app/results/4342839",
+        "/event/9587/app/results/4088187",
+        "/event/9587/app/results/4086800",
+        "/event/9587/app/results/4102690",
+        "/event/9587/app/results/4338043",
+        "/event/9587/app/results/4271473",
+        "/event/9587/app/results/4327754",
+        "/event/9587/app/results/4079596",
+        "/event/9587/app/results/4359284",
+        "/event/9587/app/results/4173734",
+        "/event/9587/app/results/4293460",
+        "/event/9587/app/results/4308317",
+        "/event/9587/app/results/4085350",
+        "/event/9587/app/results/4085985",
+        "/event/9587/app/results/4076877",
+        "/event/9587/app/results/4161508",
+        "/event/9587/app/results/4086435",
+        "/event/9587/app/results/4179355",
+        "/event/9587/app/results/4194095",
+        "/event/9587/app/results/4308674",
+        "/event/9587/app/results/4345995",
+        "/event/9587/app/results/4291025",
+        "/event/9587/app/results/4341125",
+        "/event/9587/app/results/4085620",
+        "/event/9587/app/results/4170840",
+        "/event/9587/app/results/4290370",
+        "/event/9587/app/results/4092081",
+        "/event/9587/app/results/4263521",
+        "/event/9587/app/results/4251386",
+        "/event/9587/app/results/4086704",
+        "/event/9587/app/results/4281989",
+        "/event/9587/app/results/4129727",
+        "/event/9587/app/results/4286238",
+        "/event/9587/app/results/4296558",
+        "/event/9587/app/results/4192354",
+        "/event/9587/app/results/4325756",
+        "/event/9587/app/results?page=1",
+        "/event/9587/app/results?page=2",
+        "/event/9587/app/results?page=3"
+      ],
+      "structural_attributes": [
+        "data-bs-target=",
+        "data-bs-toggle=",
+        "data-placement=",
+        "data-toggle="
+      ],
+      "candidate_endpoint_strings": [
+        "#athletesearchpanel",
+        ");\r$.ajax({\rurl: ",
+        ");\rif (searchFields.length > 0)\rsearchFields[0].focus();\r}, 0);\r});\r});\rfunction setSelect2(nodeSet) {\rnodeSet.select2({ dropdownAutoWidth: true, width: ",
+        ", function (e) {\rwindow.setTimeout(function () {\rvar searchFields = $(",
+        "/js/resultlist.js?2.0",
+        "ResultListDoSearch(",
+        "athletesearchpanel",
+        "btn btn-primary float-end btnSearch",
+        "btnSearch",
+        "expandsearch_label",
+        "fa fa-search",
+        "form-control txtSearch",
+        "hidden-sm hidden-md hidden-lg resultlist-secondline",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic",
+        "page-filter-bar page-filter-bar-with-advancedsearch",
+        "panel-athletesearch-control collapsed text-center"
+      ]
+    },
+    {
+      "year": 2023,
+      "event_id": 11274,
+      "url": "https://www.sportstiming.dk/event/11274/app/results",
+      "html_bytes": 97203,
+      "forms": [],
+      "selects": [
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "58343",
+              "text": "Ultra 60km+"
+            },
+            {
+              "value": "58345",
+              "text": "Fogarolli trail 21km+"
+            },
+            {
+              "value": "58348",
+              "text": "Duo Trail (relay 2 x 30 km)"
+            },
+            {
+              "value": "58346",
+              "text": "Ekopark trail 13 km"
+            },
+            {
+              "value": "58342",
+              "text": "Naturloppet 5km+"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "A",
+              "text": "Män/Kvinnor"
+            },
+            {
+              "value": "M",
+              "text": "Män"
+            },
+            {
+              "value": "F",
+              "text": "Kvinnor"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "30121",
+              "text": "championship för Joelette"
+            },
+            {
+              "value": "30120",
+              "text": "90+ år"
+            },
+            {
+              "value": "30119",
+              "text": "85-89 år"
+            },
+            {
+              "value": "30118",
+              "text": "80-84 år"
+            },
+            {
+              "value": "30117",
+              "text": "75-79 år"
+            },
+            {
+              "value": "30116",
+              "text": "70-74 år"
+            },
+            {
+              "value": "30115",
+              "text": "65-69 år"
+            },
+            {
+              "value": "30114",
+              "text": "60-64 år"
+            },
+            {
+              "value": "30113",
+              "text": "55-59 år"
+            },
+            {
+              "value": "30112",
+              "text": "50-54 år"
+            },
+            {
+              "value": "30111",
+              "text": "45-49 år"
+            },
+            {
+              "value": "30110",
+              "text": "40-44 år"
+            },
+            {
+              "value": "30109",
+              "text": "35-39 år"
+            },
+            {
+              "value": "30108",
+              "text": "30-34 år"
+            },
+            {
+              "value": "30107",
+              "text": "25-29 år"
+            },
+            {
+              "value": "30106",
+              "text": "20-24 år"
+            },
+            {
+              "value": "30105",
+              "text": "18-19 år"
+            },
+            {
+              "value": "30104",
+              "text": "16-17 år"
+            },
+            {
+              "value": "30103",
+              "text": "14-15 år"
+            },
+            {
+              "value": "30102",
+              "text": "12-13 år"
+            },
+            {
+              "value": "30101",
+              "text": "0-11 år"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "30121",
+              "text": "championship för Joelette"
+            },
+            {
+              "value": "30120",
+              "text": "90+ år"
+            },
+            {
+              "value": "30119",
+              "text": "85-89 år"
+            },
+            {
+              "value": "30118",
+              "text": "80-84 år"
+            },
+            {
+              "value": "30117",
+              "text": "75-79 år"
+            },
+            {
+              "value": "30116",
+              "text": "70-74 år"
+            },
+            {
+              "value": "30115",
+              "text": "65-69 år"
+            },
+            {
+              "value": "30114",
+              "text": "60-64 år"
+            },
+            {
+              "value": "30113",
+              "text": "55-59 år"
+            },
+            {
+              "value": "30112",
+              "text": "50-54 år"
+            },
+            {
+              "value": "30111",
+              "text": "45-49 år"
+            },
+            {
+              "value": "30110",
+              "text": "40-44 år"
+            },
+            {
+              "value": "30109",
+              "text": "35-39 år"
+            },
+            {
+              "value": "30108",
+              "text": "30-34 år"
+            },
+            {
+              "value": "30107",
+              "text": "25-29 år"
+            },
+            {
+              "value": "30106",
+              "text": "20-24 år"
+            },
+            {
+              "value": "30105",
+              "text": "18-19 år"
+            },
+            {
+              "value": "30104",
+              "text": "16-17 år"
+            },
+            {
+              "value": "30103",
+              "text": "14-15 år"
+            },
+            {
+              "value": "30102",
+              "text": "12-13 år"
+            },
+            {
+              "value": "30101",
+              "text": "0-11 år"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "30121",
+              "text": "championship för Joelette"
+            },
+            {
+              "value": "30120",
+              "text": "90+ år"
+            },
+            {
+              "value": "30119",
+              "text": "85-89 år"
+            },
+            {
+              "value": "30118",
+              "text": "80-84 år"
+            },
+            {
+              "value": "30117",
+              "text": "75-79 år"
+            },
+            {
+              "value": "30116",
+              "text": "70-74 år"
+            },
+            {
+              "value": "30115",
+              "text": "65-69 år"
+            },
+            {
+              "value": "30114",
+              "text": "60-64 år"
+            },
+            {
+              "value": "30113",
+              "text": "55-59 år"
+            },
+            {
+              "value": "30112",
+              "text": "50-54 år"
+            },
+            {
+              "value": "30111",
+              "text": "45-49 år"
+            },
+            {
+              "value": "30110",
+              "text": "40-44 år"
+            },
+            {
+              "value": "30109",
+              "text": "35-39 år"
+            },
+            {
+              "value": "30108",
+              "text": "30-34 år"
+            },
+            {
+              "value": "30107",
+              "text": "25-29 år"
+            },
+            {
+              "value": "30106",
+              "text": "20-24 år"
+            },
+            {
+              "value": "30105",
+              "text": "18-19 år"
+            },
+            {
+              "value": "30104",
+              "text": "16-17 år"
+            },
+            {
+              "value": "30103",
+              "text": "14-15 år"
+            },
+            {
+              "value": "30102",
+              "text": "12-13 år"
+            },
+            {
+              "value": "30101",
+              "text": "0-11 år"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "30121",
+              "text": "championship för Joelette"
+            },
+            {
+              "value": "30120",
+              "text": "90+ år"
+            },
+            {
+              "value": "30119",
+              "text": "85-89 år"
+            },
+            {
+              "value": "30118",
+              "text": "80-84 år"
+            },
+            {
+              "value": "30117",
+              "text": "75-79 år"
+            },
+            {
+              "value": "30116",
+              "text": "70-74 år"
+            },
+            {
+              "value": "30115",
+              "text": "65-69 år"
+            },
+            {
+              "value": "30114",
+              "text": "60-64 år"
+            },
+            {
+              "value": "30113",
+              "text": "55-59 år"
+            },
+            {
+              "value": "30112",
+              "text": "50-54 år"
+            },
+            {
+              "value": "30111",
+              "text": "45-49 år"
+            },
+            {
+              "value": "30110",
+              "text": "40-44 år"
+            },
+            {
+              "value": "30109",
+              "text": "35-39 år"
+            },
+            {
+              "value": "30108",
+              "text": "30-34 år"
+            },
+            {
+              "value": "30107",
+              "text": "25-29 år"
+            },
+            {
+              "value": "30106",
+              "text": "20-24 år"
+            },
+            {
+              "value": "30105",
+              "text": "18-19 år"
+            },
+            {
+              "value": "30104",
+              "text": "16-17 år"
+            },
+            {
+              "value": "30103",
+              "text": "14-15 år"
+            },
+            {
+              "value": "30102",
+              "text": "12-13 år"
+            },
+            {
+              "value": "30101",
+              "text": "0-11 år"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "30121",
+              "text": "championship för Joelette"
+            },
+            {
+              "value": "30120",
+              "text": "90+ år"
+            },
+            {
+              "value": "30119",
+              "text": "85-89 år"
+            },
+            {
+              "value": "30118",
+              "text": "80-84 år"
+            },
+            {
+              "value": "30117",
+              "text": "75-79 år"
+            },
+            {
+              "value": "30116",
+              "text": "70-74 år"
+            },
+            {
+              "value": "30115",
+              "text": "65-69 år"
+            },
+            {
+              "value": "30114",
+              "text": "60-64 år"
+            },
+            {
+              "value": "30113",
+              "text": "55-59 år"
+            },
+            {
+              "value": "30112",
+              "text": "50-54 år"
+            },
+            {
+              "value": "30111",
+              "text": "45-49 år"
+            },
+            {
+              "value": "30110",
+              "text": "40-44 år"
+            },
+            {
+              "value": "30109",
+              "text": "35-39 år"
+            },
+            {
+              "value": "30108",
+              "text": "30-34 år"
+            },
+            {
+              "value": "30107",
+              "text": "25-29 år"
+            },
+            {
+              "value": "30106",
+              "text": "20-24 år"
+            },
+            {
+              "value": "30105",
+              "text": "18-19 år"
+            },
+            {
+              "value": "30104",
+              "text": "16-17 år"
+            },
+            {
+              "value": "30103",
+              "text": "14-15 år"
+            },
+            {
+              "value": "30102",
+              "text": "12-13 år"
+            },
+            {
+              "value": "30101",
+              "text": "0-11 år"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "30121",
+              "text": "championship för Joelette"
+            },
+            {
+              "value": "30120",
+              "text": "90+ år"
+            },
+            {
+              "value": "30119",
+              "text": "85-89 år"
+            },
+            {
+              "value": "30118",
+              "text": "80-84 år"
+            },
+            {
+              "value": "30117",
+              "text": "75-79 år"
+            },
+            {
+              "value": "30116",
+              "text": "70-74 år"
+            },
+            {
+              "value": "30115",
+              "text": "65-69 år"
+            },
+            {
+              "value": "30114",
+              "text": "60-64 år"
+            },
+            {
+              "value": "30113",
+              "text": "55-59 år"
+            },
+            {
+              "value": "30112",
+              "text": "50-54 år"
+            },
+            {
+              "value": "30111",
+              "text": "45-49 år"
+            },
+            {
+              "value": "30110",
+              "text": "40-44 år"
+            },
+            {
+              "value": "30109",
+              "text": "35-39 år"
+            },
+            {
+              "value": "30108",
+              "text": "30-34 år"
+            },
+            {
+              "value": "30107",
+              "text": "25-29 år"
+            },
+            {
+              "value": "30106",
+              "text": "20-24 år"
+            },
+            {
+              "value": "30105",
+              "text": "18-19 år"
+            },
+            {
+              "value": "30104",
+              "text": "16-17 år"
+            },
+            {
+              "value": "30103",
+              "text": "14-15 år"
+            },
+            {
+              "value": "30102",
+              "text": "12-13 år"
+            },
+            {
+              "value": "30101",
+              "text": "0-11 år"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "30121",
+              "text": "championship för Joelette"
+            },
+            {
+              "value": "30120",
+              "text": "90+ år"
+            },
+            {
+              "value": "30119",
+              "text": "85-89 år"
+            },
+            {
+              "value": "30118",
+              "text": "80-84 år"
+            },
+            {
+              "value": "30117",
+              "text": "75-79 år"
+            },
+            {
+              "value": "30116",
+              "text": "70-74 år"
+            },
+            {
+              "value": "30115",
+              "text": "65-69 år"
+            },
+            {
+              "value": "30114",
+              "text": "60-64 år"
+            },
+            {
+              "value": "30113",
+              "text": "55-59 år"
+            },
+            {
+              "value": "30112",
+              "text": "50-54 år"
+            },
+            {
+              "value": "30111",
+              "text": "45-49 år"
+            },
+            {
+              "value": "30110",
+              "text": "40-44 år"
+            },
+            {
+              "value": "30109",
+              "text": "35-39 år"
+            },
+            {
+              "value": "30108",
+              "text": "30-34 år"
+            },
+            {
+              "value": "30107",
+              "text": "25-29 år"
+            },
+            {
+              "value": "30106",
+              "text": "20-24 år"
+            },
+            {
+              "value": "30105",
+              "text": "18-19 år"
+            },
+            {
+              "value": "30104",
+              "text": "16-17 år"
+            },
+            {
+              "value": "30103",
+              "text": "14-15 år"
+            },
+            {
+              "value": "30102",
+              "text": "12-13 år"
+            },
+            {
+              "value": "30101",
+              "text": "0-11 år"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "30121",
+              "text": "championship för Joelette"
+            },
+            {
+              "value": "30120",
+              "text": "90+ år"
+            },
+            {
+              "value": "30119",
+              "text": "85-89 år"
+            },
+            {
+              "value": "30118",
+              "text": "80-84 år"
+            },
+            {
+              "value": "30117",
+              "text": "75-79 år"
+            },
+            {
+              "value": "30116",
+              "text": "70-74 år"
+            },
+            {
+              "value": "30115",
+              "text": "65-69 år"
+            },
+            {
+              "value": "30114",
+              "text": "60-64 år"
+            },
+            {
+              "value": "30113",
+              "text": "55-59 år"
+            },
+            {
+              "value": "30112",
+              "text": "50-54 år"
+            },
+            {
+              "value": "30111",
+              "text": "45-49 år"
+            },
+            {
+              "value": "30110",
+              "text": "40-44 år"
+            },
+            {
+              "value": "30109",
+              "text": "35-39 år"
+            },
+            {
+              "value": "30108",
+              "text": "30-34 år"
+            },
+            {
+              "value": "30107",
+              "text": "25-29 år"
+            },
+            {
+              "value": "30106",
+              "text": "20-24 år"
+            },
+            {
+              "value": "30105",
+              "text": "18-19 år"
+            },
+            {
+              "value": "30104",
+              "text": "16-17 år"
+            },
+            {
+              "value": "30103",
+              "text": "14-15 år"
+            },
+            {
+              "value": "30102",
+              "text": "12-13 år"
+            },
+            {
+              "value": "30101",
+              "text": "0-11 år"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "30121",
+              "text": "championship för Joelette"
+            },
+            {
+              "value": "30120",
+              "text": "90+ år"
+            },
+            {
+              "value": "30119",
+              "text": "85-89 år"
+            },
+            {
+              "value": "30118",
+              "text": "80-84 år"
+            },
+            {
+              "value": "30117",
+              "text": "75-79 år"
+            },
+            {
+              "value": "30116",
+              "text": "70-74 år"
+            },
+            {
+              "value": "30115",
+              "text": "65-69 år"
+            },
+            {
+              "value": "30114",
+              "text": "60-64 år"
+            },
+            {
+              "value": "30113",
+              "text": "55-59 år"
+            },
+            {
+              "value": "30112",
+              "text": "50-54 år"
+            },
+            {
+              "value": "30111",
+              "text": "45-49 år"
+            },
+            {
+              "value": "30110",
+              "text": "40-44 år"
+            },
+            {
+              "value": "30109",
+              "text": "35-39 år"
+            },
+            {
+              "value": "30108",
+              "text": "30-34 år"
+            },
+            {
+              "value": "30107",
+              "text": "25-29 år"
+            },
+            {
+              "value": "30106",
+              "text": "20-24 år"
+            },
+            {
+              "value": "30105",
+              "text": "18-19 år"
+            },
+            {
+              "value": "30104",
+              "text": "16-17 år"
+            },
+            {
+              "value": "30103",
+              "text": "14-15 år"
+            },
+            {
+              "value": "30102",
+              "text": "12-13 år"
+            },
+            {
+              "value": "30101",
+              "text": "0-11 år"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla länder"
+            },
+            {
+              "value": "22",
+              "text": "Brasilien"
+            },
+            {
+              "value": "37",
+              "text": "Danmark"
+            },
+            {
+              "value": "52",
+              "text": "Finland"
+            },
+            {
+              "value": "53",
+              "text": "Frankrig"
+            },
+            {
+              "value": "67",
+              "text": "Holland"
+            },
+            {
+              "value": "74",
+              "text": "Irland"
+            },
+            {
+              "value": "75",
+              "text": "Island"
+            },
+            {
+              "value": "77",
+              "text": "Italien"
+            },
+            {
+              "value": "79",
+              "text": "Japan"
+            },
+            {
+              "value": "106",
+              "text": "Marokko"
+            },
+            {
+              "value": "128",
+              "text": "Norge"
+            },
+            {
+              "value": "137",
+              "text": "Polen"
+            },
+            {
+              "value": "147",
+              "text": "Schweiz"
+            },
+            {
+              "value": "149",
+              "text": "Serbien"
+            },
+            {
+              "value": "157",
+              "text": "Spanien"
+            },
+            {
+              "value": "198",
+              "text": "Storbritannien"
+            },
+            {
+              "value": "161",
+              "text": "Sverige"
+            },
+            {
+              "value": "163",
+              "text": "Sydafrika"
+            },
+            {
+              "value": "164",
+              "text": "Sydkorea"
+            },
+            {
+              "value": "171",
+              "text": "Tjekkiet"
+            },
+            {
+              "value": "179",
+              "text": "Tyskland"
+            },
+            {
+              "value": "999",
+              "text": "Ukendt land"
+            },
+            {
+              "value": "182",
+              "text": "Ukraine"
+            },
+            {
+              "value": "185",
+              "text": "USA"
+            }
+          ]
+        }
+      ],
+      "relevant_links": [
+        "/event/11274/app/results",
+        "/event/11274/app",
+        "/event/11274/app/participants",
+        "/event/11274/app/results/5123093",
+        "/event/11274/app/results/5059052",
+        "/event/11274/app/results/4786770",
+        "/event/11274/app/results/4967695",
+        "/event/11274/app/results/5123096",
+        "/event/11274/app/results/5040419",
+        "/event/11274/app/results/5095023",
+        "/event/11274/app/results/4969572",
+        "/event/11274/app/results/5084439",
+        "/event/11274/app/results/4787106",
+        "/event/11274/app/results/5062318",
+        "/event/11274/app/results/4999309",
+        "/event/11274/app/results/5123084",
+        "/event/11274/app/results/4968184",
+        "/event/11274/app/results/5031705",
+        "/event/11274/app/results/5122971",
+        "/event/11274/app/results/4906094",
+        "/event/11274/app/results/4786594",
+        "/event/11274/app/results/5075203",
+        "/event/11274/app/results/4880065",
+        "/event/11274/app/results/5017793",
+        "/event/11274/app/results/4918307",
+        "/event/11274/app/results/4894265",
+        "/event/11274/app/results/5092606",
+        "/event/11274/app/results/5040714",
+        "/event/11274/app/results/5105237",
+        "/event/11274/app/results/4924367",
+        "/event/11274/app/results/5100921",
+        "/event/11274/app/results/4990720",
+        "/event/11274/app/results/4918555",
+        "/event/11274/app/results/5123085",
+        "/event/11274/app/results/4997087",
+        "/event/11274/app/results/4786432",
+        "/event/11274/app/results/4786433",
+        "/event/11274/app/results/5123188",
+        "/event/11274/app/results/5071219",
+        "/event/11274/app/results/4891296",
+        "/event/11274/app/results/4969524",
+        "/event/11274/app/results/4918556",
+        "/event/11274/app/results/5123097",
+        "/event/11274/app/results/4920970",
+        "/event/11274/app/results/4848413",
+        "/event/11274/app/results/5123100",
+        "/event/11274/app/results/4985267",
+        "/event/11274/app/results/5037523",
+        "/event/11274/app/results/4907477",
+        "/event/11274/app/results/5056482",
+        "/event/11274/app/results/4848464",
+        "/event/11274/app/results/5072916",
+        "/event/11274/app/results/4786466",
+        "/event/11274/app/results?page=1",
+        "/event/11274/app/results?page=2",
+        "/event/11274/app/results?page=3",
+        "/event/11274/app/results?page=7"
+      ],
+      "structural_attributes": [
+        "data-bs-target=",
+        "data-bs-toggle=",
+        "data-placement=",
+        "data-toggle="
+      ],
+      "candidate_endpoint_strings": [
+        "#athletesearchpanel",
+        ");\r$.ajax({\rurl: ",
+        ");\rif (searchFields.length > 0)\rsearchFields[0].focus();\r}, 0);\r});\r});\rfunction setSelect2(nodeSet) {\rnodeSet.select2({ dropdownAutoWidth: true, width: ",
+        ", function (e) {\rwindow.setTimeout(function () {\rvar searchFields = $(",
+        "/js/resultlist.js?2.0",
+        "ResultListDoSearch(",
+        "athletesearchpanel",
+        "btn btn-primary float-end btnSearch",
+        "btnSearch",
+        "expandsearch_label",
+        "fa fa-search",
+        "form-control txtSearch",
+        "hidden-sm hidden-md hidden-lg resultlist-secondline",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic",
+        "page-filter-bar page-filter-bar-with-advancedsearch",
+        "panel-athletesearch-control collapsed text-center"
+      ]
+    },
+    {
+      "year": 2024,
+      "event_id": 12349,
+      "url": "https://www.sportstiming.dk/event/12349/app/results",
+      "html_bytes": 93729,
+      "forms": [],
+      "selects": [
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "65781",
+              "text": "60 k ÖST ultra med COROS"
+            },
+            {
+              "value": "65782",
+              "text": "Fogarolli trail 21km+"
+            },
+            {
+              "value": "65784",
+              "text": "Duo Trail (relay 2 x 30 km)"
+            },
+            {
+              "value": "65783",
+              "text": "Ekopark trail 14 km"
+            },
+            {
+              "value": "65780",
+              "text": "Naturloppet 5km+"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "A",
+              "text": "Män/Kvinnor"
+            },
+            {
+              "value": "M",
+              "text": "Män"
+            },
+            {
+              "value": "F",
+              "text": "Kvinnor"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "32721",
+              "text": "90-"
+            },
+            {
+              "value": "32722",
+              "text": "85-89"
+            },
+            {
+              "value": "32723",
+              "text": "80-84"
+            },
+            {
+              "value": "32724",
+              "text": "75-79"
+            },
+            {
+              "value": "32725",
+              "text": "70-74"
+            },
+            {
+              "value": "32726",
+              "text": "65-69"
+            },
+            {
+              "value": "32727",
+              "text": "60-64"
+            },
+            {
+              "value": "32728",
+              "text": "55-59"
+            },
+            {
+              "value": "32729",
+              "text": "50-54"
+            },
+            {
+              "value": "32730",
+              "text": "45-49"
+            },
+            {
+              "value": "32731",
+              "text": "40-44"
+            },
+            {
+              "value": "32732",
+              "text": "35-39"
+            },
+            {
+              "value": "32733",
+              "text": "30-34"
+            },
+            {
+              "value": "32734",
+              "text": "25-29"
+            },
+            {
+              "value": "32735",
+              "text": "20-24"
+            },
+            {
+              "value": "32736",
+              "text": "18-19"
+            },
+            {
+              "value": "32737",
+              "text": "16-17"
+            },
+            {
+              "value": "32738",
+              "text": "14-15"
+            },
+            {
+              "value": "32739",
+              "text": "12-13"
+            },
+            {
+              "value": "32740",
+              "text": "0-11"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "32721",
+              "text": "90-"
+            },
+            {
+              "value": "32722",
+              "text": "85-89"
+            },
+            {
+              "value": "32723",
+              "text": "80-84"
+            },
+            {
+              "value": "32724",
+              "text": "75-79"
+            },
+            {
+              "value": "32725",
+              "text": "70-74"
+            },
+            {
+              "value": "32726",
+              "text": "65-69"
+            },
+            {
+              "value": "32727",
+              "text": "60-64"
+            },
+            {
+              "value": "32728",
+              "text": "55-59"
+            },
+            {
+              "value": "32729",
+              "text": "50-54"
+            },
+            {
+              "value": "32730",
+              "text": "45-49"
+            },
+            {
+              "value": "32731",
+              "text": "40-44"
+            },
+            {
+              "value": "32732",
+              "text": "35-39"
+            },
+            {
+              "value": "32733",
+              "text": "30-34"
+            },
+            {
+              "value": "32734",
+              "text": "25-29"
+            },
+            {
+              "value": "32735",
+              "text": "20-24"
+            },
+            {
+              "value": "32736",
+              "text": "18-19"
+            },
+            {
+              "value": "32737",
+              "text": "16-17"
+            },
+            {
+              "value": "32738",
+              "text": "14-15"
+            },
+            {
+              "value": "32739",
+              "text": "12-13"
+            },
+            {
+              "value": "32740",
+              "text": "0-11"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "32721",
+              "text": "90-"
+            },
+            {
+              "value": "32722",
+              "text": "85-89"
+            },
+            {
+              "value": "32723",
+              "text": "80-84"
+            },
+            {
+              "value": "32724",
+              "text": "75-79"
+            },
+            {
+              "value": "32725",
+              "text": "70-74"
+            },
+            {
+              "value": "32726",
+              "text": "65-69"
+            },
+            {
+              "value": "32727",
+              "text": "60-64"
+            },
+            {
+              "value": "32728",
+              "text": "55-59"
+            },
+            {
+              "value": "32729",
+              "text": "50-54"
+            },
+            {
+              "value": "32730",
+              "text": "45-49"
+            },
+            {
+              "value": "32731",
+              "text": "40-44"
+            },
+            {
+              "value": "32732",
+              "text": "35-39"
+            },
+            {
+              "value": "32733",
+              "text": "30-34"
+            },
+            {
+              "value": "32734",
+              "text": "25-29"
+            },
+            {
+              "value": "32735",
+              "text": "20-24"
+            },
+            {
+              "value": "32736",
+              "text": "18-19"
+            },
+            {
+              "value": "32737",
+              "text": "16-17"
+            },
+            {
+              "value": "32738",
+              "text": "14-15"
+            },
+            {
+              "value": "32739",
+              "text": "12-13"
+            },
+            {
+              "value": "32740",
+              "text": "0-11"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "32721",
+              "text": "90-"
+            },
+            {
+              "value": "32722",
+              "text": "85-89"
+            },
+            {
+              "value": "32723",
+              "text": "80-84"
+            },
+            {
+              "value": "32724",
+              "text": "75-79"
+            },
+            {
+              "value": "32725",
+              "text": "70-74"
+            },
+            {
+              "value": "32726",
+              "text": "65-69"
+            },
+            {
+              "value": "32727",
+              "text": "60-64"
+            },
+            {
+              "value": "32728",
+              "text": "55-59"
+            },
+            {
+              "value": "32729",
+              "text": "50-54"
+            },
+            {
+              "value": "32730",
+              "text": "45-49"
+            },
+            {
+              "value": "32731",
+              "text": "40-44"
+            },
+            {
+              "value": "32732",
+              "text": "35-39"
+            },
+            {
+              "value": "32733",
+              "text": "30-34"
+            },
+            {
+              "value": "32734",
+              "text": "25-29"
+            },
+            {
+              "value": "32735",
+              "text": "20-24"
+            },
+            {
+              "value": "32736",
+              "text": "18-19"
+            },
+            {
+              "value": "32737",
+              "text": "16-17"
+            },
+            {
+              "value": "32738",
+              "text": "14-15"
+            },
+            {
+              "value": "32739",
+              "text": "12-13"
+            },
+            {
+              "value": "32740",
+              "text": "0-11"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "32721",
+              "text": "90-"
+            },
+            {
+              "value": "32722",
+              "text": "85-89"
+            },
+            {
+              "value": "32723",
+              "text": "80-84"
+            },
+            {
+              "value": "32724",
+              "text": "75-79"
+            },
+            {
+              "value": "32725",
+              "text": "70-74"
+            },
+            {
+              "value": "32726",
+              "text": "65-69"
+            },
+            {
+              "value": "32727",
+              "text": "60-64"
+            },
+            {
+              "value": "32728",
+              "text": "55-59"
+            },
+            {
+              "value": "32729",
+              "text": "50-54"
+            },
+            {
+              "value": "32730",
+              "text": "45-49"
+            },
+            {
+              "value": "32731",
+              "text": "40-44"
+            },
+            {
+              "value": "32732",
+              "text": "35-39"
+            },
+            {
+              "value": "32733",
+              "text": "30-34"
+            },
+            {
+              "value": "32734",
+              "text": "25-29"
+            },
+            {
+              "value": "32735",
+              "text": "20-24"
+            },
+            {
+              "value": "32736",
+              "text": "18-19"
+            },
+            {
+              "value": "32737",
+              "text": "16-17"
+            },
+            {
+              "value": "32738",
+              "text": "14-15"
+            },
+            {
+              "value": "32739",
+              "text": "12-13"
+            },
+            {
+              "value": "32740",
+              "text": "0-11"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla länder"
+            },
+            {
+              "value": "6",
+              "text": "Argentina"
+            },
+            {
+              "value": "14",
+              "text": "Belgien"
+            },
+            {
+              "value": "24",
+              "text": "Bulgarien"
+            },
+            {
+              "value": "29",
+              "text": "Canada"
+            },
+            {
+              "value": "31",
+              "text": "Colombia"
+            },
+            {
+              "value": "37",
+              "text": "Danmark"
+            },
+            {
+              "value": "52",
+              "text": "Finland"
+            },
+            {
+              "value": "53",
+              "text": "Frankrig"
+            },
+            {
+              "value": "60",
+              "text": "Grækenland"
+            },
+            {
+              "value": "67",
+              "text": "Holland"
+            },
+            {
+              "value": "70",
+              "text": "Indien"
+            },
+            {
+              "value": "74",
+              "text": "Irland"
+            },
+            {
+              "value": "75",
+              "text": "Island"
+            },
+            {
+              "value": "77",
+              "text": "Italien"
+            },
+            {
+              "value": "110",
+              "text": "Mexico"
+            },
+            {
+              "value": "128",
+              "text": "Norge"
+            },
+            {
+              "value": "138",
+              "text": "Portugal"
+            },
+            {
+              "value": "149",
+              "text": "Serbien"
+            },
+            {
+              "value": "155",
+              "text": "Slovenien"
+            },
+            {
+              "value": "157",
+              "text": "Spanien"
+            },
+            {
+              "value": "161",
+              "text": "Sverige"
+            },
+            {
+              "value": "163",
+              "text": "Sydafrika"
+            },
+            {
+              "value": "168",
+              "text": "Taiwan"
+            },
+            {
+              "value": "171",
+              "text": "Tjekkiet"
+            },
+            {
+              "value": "179",
+              "text": "Tyskland"
+            },
+            {
+              "value": "182",
+              "text": "Ukraine"
+            },
+            {
+              "value": "185",
+              "text": "USA"
+            }
+          ]
+        }
+      ],
+      "relevant_links": [
+        "/event/12349/app/results",
+        "/event/12349/app",
+        "/event/12349/app/participants",
+        "/event/12349/app/results/5990158",
+        "/event/12349/app/results/5951823",
+        "/event/12349/app/results/5905972",
+        "/event/12349/app/results/5795468",
+        "/event/12349/app/results/6011670",
+        "/event/12349/app/results/5872163",
+        "/event/12349/app/results/5951984",
+        "/event/12349/app/results/5893960",
+        "/event/12349/app/results/5740258",
+        "/event/12349/app/results/5586532",
+        "/event/12349/app/results/5790900",
+        "/event/12349/app/results/5922602",
+        "/event/12349/app/results/5891104",
+        "/event/12349/app/results/6003041",
+        "/event/12349/app/results/5595121",
+        "/event/12349/app/results/5580814",
+        "/event/12349/app/results/5903766",
+        "/event/12349/app/results/5804866",
+        "/event/12349/app/results/5976958",
+        "/event/12349/app/results/5926309",
+        "/event/12349/app/results/5872381",
+        "/event/12349/app/results/5732330",
+        "/event/12349/app/results/5893778",
+        "/event/12349/app/results/5922603",
+        "/event/12349/app/results/5922377",
+        "/event/12349/app/results/5788497",
+        "/event/12349/app/results/5996575",
+        "/event/12349/app/results/6008539",
+        "/event/12349/app/results/5981894",
+        "/event/12349/app/results/5807528",
+        "/event/12349/app/results/5942987",
+        "/event/12349/app/results/5995698",
+        "/event/12349/app/results/5754051",
+        "/event/12349/app/results/5914851",
+        "/event/12349/app/results/5939076",
+        "/event/12349/app/results/5578807",
+        "/event/12349/app/results/5854737",
+        "/event/12349/app/results/5792976",
+        "/event/12349/app/results/5924583",
+        "/event/12349/app/results/5955880",
+        "/event/12349/app/results/5886088",
+        "/event/12349/app/results/5928191",
+        "/event/12349/app/results/5950114",
+        "/event/12349/app/results/5805478",
+        "/event/12349/app/results/5802101",
+        "/event/12349/app/results/5578740",
+        "/event/12349/app/results/5928190",
+        "/event/12349/app/results/5954939",
+        "/event/12349/app/results/6006195",
+        "/event/12349/app/results/5911142",
+        "/event/12349/app/results?page=1",
+        "/event/12349/app/results?page=2",
+        "/event/12349/app/results?page=3",
+        "/event/12349/app/results?page=9"
+      ],
+      "structural_attributes": [
+        "data-bs-target=",
+        "data-bs-toggle=",
+        "data-placement=",
+        "data-toggle="
+      ],
+      "candidate_endpoint_strings": [
+        "#athletesearchpanel",
+        ");\r$.ajax({\rurl: ",
+        ");\rif (searchFields.length > 0)\rsearchFields[0].focus();\r}, 0);\r});\r});\rfunction setSelect2(nodeSet) {\rnodeSet.select2({ dropdownAutoWidth: true, width: ",
+        ", function (e) {\rwindow.setTimeout(function () {\rvar searchFields = $(",
+        "/js/resultlist.js?2.0",
+        "ResultListDoSearch(",
+        "athletesearchpanel",
+        "btn btn-primary float-end btnSearch",
+        "btnSearch",
+        "expandsearch_label",
+        "fa fa-search",
+        "form-control txtSearch",
+        "hidden-sm hidden-md hidden-lg resultlist-secondline",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic",
+        "page-filter-bar page-filter-bar-with-advancedsearch",
+        "panel-athletesearch-control collapsed text-center"
+      ]
+    },
+    {
+      "year": 2025,
+      "event_id": 15015,
+      "url": "https://www.sportstiming.se/event/15015/app/results",
+      "html_bytes": 94083,
+      "forms": [],
+      "selects": [
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "84440",
+              "text": "CRAFT Ultra 60 k"
+            },
+            {
+              "value": "84441",
+              "text": "Fogarolli trail 22 K"
+            },
+            {
+              "value": "84443",
+              "text": "Duo Trail (relay 2 x 30 km)"
+            },
+            {
+              "value": "84442",
+              "text": "Ekopark trail 14 km"
+            },
+            {
+              "value": "84439",
+              "text": "Naturloppet 5km+"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "A",
+              "text": "Män/Kvinnor"
+            },
+            {
+              "value": "M",
+              "text": "Män"
+            },
+            {
+              "value": "F",
+              "text": "Kvinnor"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "40442",
+              "text": "90-"
+            },
+            {
+              "value": "40443",
+              "text": "85-89"
+            },
+            {
+              "value": "40444",
+              "text": "80-84"
+            },
+            {
+              "value": "40445",
+              "text": "75-79"
+            },
+            {
+              "value": "40446",
+              "text": "70-74"
+            },
+            {
+              "value": "40447",
+              "text": "65-69"
+            },
+            {
+              "value": "40448",
+              "text": "60-64"
+            },
+            {
+              "value": "40449",
+              "text": "55-59"
+            },
+            {
+              "value": "40450",
+              "text": "50-54"
+            },
+            {
+              "value": "40451",
+              "text": "45-49"
+            },
+            {
+              "value": "40452",
+              "text": "40-44"
+            },
+            {
+              "value": "40453",
+              "text": "35-39"
+            },
+            {
+              "value": "40454",
+              "text": "30-34"
+            },
+            {
+              "value": "40455",
+              "text": "25-29"
+            },
+            {
+              "value": "40456",
+              "text": "20-24"
+            },
+            {
+              "value": "40457",
+              "text": "18-19"
+            },
+            {
+              "value": "40458",
+              "text": "16-17"
+            },
+            {
+              "value": "40459",
+              "text": "14-15"
+            },
+            {
+              "value": "40460",
+              "text": "12-13"
+            },
+            {
+              "value": "40461",
+              "text": "0-11"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "40442",
+              "text": "90-"
+            },
+            {
+              "value": "40443",
+              "text": "85-89"
+            },
+            {
+              "value": "40444",
+              "text": "80-84"
+            },
+            {
+              "value": "40445",
+              "text": "75-79"
+            },
+            {
+              "value": "40446",
+              "text": "70-74"
+            },
+            {
+              "value": "40447",
+              "text": "65-69"
+            },
+            {
+              "value": "40448",
+              "text": "60-64"
+            },
+            {
+              "value": "40449",
+              "text": "55-59"
+            },
+            {
+              "value": "40450",
+              "text": "50-54"
+            },
+            {
+              "value": "40451",
+              "text": "45-49"
+            },
+            {
+              "value": "40452",
+              "text": "40-44"
+            },
+            {
+              "value": "40453",
+              "text": "35-39"
+            },
+            {
+              "value": "40454",
+              "text": "30-34"
+            },
+            {
+              "value": "40455",
+              "text": "25-29"
+            },
+            {
+              "value": "40456",
+              "text": "20-24"
+            },
+            {
+              "value": "40457",
+              "text": "18-19"
+            },
+            {
+              "value": "40458",
+              "text": "16-17"
+            },
+            {
+              "value": "40459",
+              "text": "14-15"
+            },
+            {
+              "value": "40460",
+              "text": "12-13"
+            },
+            {
+              "value": "40461",
+              "text": "0-11"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "40442",
+              "text": "90-"
+            },
+            {
+              "value": "40443",
+              "text": "85-89"
+            },
+            {
+              "value": "40444",
+              "text": "80-84"
+            },
+            {
+              "value": "40445",
+              "text": "75-79"
+            },
+            {
+              "value": "40446",
+              "text": "70-74"
+            },
+            {
+              "value": "40447",
+              "text": "65-69"
+            },
+            {
+              "value": "40448",
+              "text": "60-64"
+            },
+            {
+              "value": "40449",
+              "text": "55-59"
+            },
+            {
+              "value": "40450",
+              "text": "50-54"
+            },
+            {
+              "value": "40451",
+              "text": "45-49"
+            },
+            {
+              "value": "40452",
+              "text": "40-44"
+            },
+            {
+              "value": "40453",
+              "text": "35-39"
+            },
+            {
+              "value": "40454",
+              "text": "30-34"
+            },
+            {
+              "value": "40455",
+              "text": "25-29"
+            },
+            {
+              "value": "40456",
+              "text": "20-24"
+            },
+            {
+              "value": "40457",
+              "text": "18-19"
+            },
+            {
+              "value": "40458",
+              "text": "16-17"
+            },
+            {
+              "value": "40459",
+              "text": "14-15"
+            },
+            {
+              "value": "40460",
+              "text": "12-13"
+            },
+            {
+              "value": "40461",
+              "text": "0-11"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "40442",
+              "text": "90-"
+            },
+            {
+              "value": "40443",
+              "text": "85-89"
+            },
+            {
+              "value": "40444",
+              "text": "80-84"
+            },
+            {
+              "value": "40445",
+              "text": "75-79"
+            },
+            {
+              "value": "40446",
+              "text": "70-74"
+            },
+            {
+              "value": "40447",
+              "text": "65-69"
+            },
+            {
+              "value": "40448",
+              "text": "60-64"
+            },
+            {
+              "value": "40449",
+              "text": "55-59"
+            },
+            {
+              "value": "40450",
+              "text": "50-54"
+            },
+            {
+              "value": "40451",
+              "text": "45-49"
+            },
+            {
+              "value": "40452",
+              "text": "40-44"
+            },
+            {
+              "value": "40453",
+              "text": "35-39"
+            },
+            {
+              "value": "40454",
+              "text": "30-34"
+            },
+            {
+              "value": "40455",
+              "text": "25-29"
+            },
+            {
+              "value": "40456",
+              "text": "20-24"
+            },
+            {
+              "value": "40457",
+              "text": "18-19"
+            },
+            {
+              "value": "40458",
+              "text": "16-17"
+            },
+            {
+              "value": "40459",
+              "text": "14-15"
+            },
+            {
+              "value": "40460",
+              "text": "12-13"
+            },
+            {
+              "value": "40461",
+              "text": "0-11"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "40442",
+              "text": "90-"
+            },
+            {
+              "value": "40443",
+              "text": "85-89"
+            },
+            {
+              "value": "40444",
+              "text": "80-84"
+            },
+            {
+              "value": "40445",
+              "text": "75-79"
+            },
+            {
+              "value": "40446",
+              "text": "70-74"
+            },
+            {
+              "value": "40447",
+              "text": "65-69"
+            },
+            {
+              "value": "40448",
+              "text": "60-64"
+            },
+            {
+              "value": "40449",
+              "text": "55-59"
+            },
+            {
+              "value": "40450",
+              "text": "50-54"
+            },
+            {
+              "value": "40451",
+              "text": "45-49"
+            },
+            {
+              "value": "40452",
+              "text": "40-44"
+            },
+            {
+              "value": "40453",
+              "text": "35-39"
+            },
+            {
+              "value": "40454",
+              "text": "30-34"
+            },
+            {
+              "value": "40455",
+              "text": "25-29"
+            },
+            {
+              "value": "40456",
+              "text": "20-24"
+            },
+            {
+              "value": "40457",
+              "text": "18-19"
+            },
+            {
+              "value": "40458",
+              "text": "16-17"
+            },
+            {
+              "value": "40459",
+              "text": "14-15"
+            },
+            {
+              "value": "40460",
+              "text": "12-13"
+            },
+            {
+              "value": "40461",
+              "text": "0-11"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla länder"
+            },
+            {
+              "value": "6",
+              "text": "Argentina"
+            },
+            {
+              "value": "14",
+              "text": "Belgien"
+            },
+            {
+              "value": "29",
+              "text": "Canada"
+            },
+            {
+              "value": "37",
+              "text": "Danmark"
+            },
+            {
+              "value": "45",
+              "text": "England"
+            },
+            {
+              "value": "52",
+              "text": "Finland"
+            },
+            {
+              "value": "53",
+              "text": "Frankrig"
+            },
+            {
+              "value": "60",
+              "text": "Grækenland"
+            },
+            {
+              "value": "67",
+              "text": "Holland"
+            },
+            {
+              "value": "70",
+              "text": "Indien"
+            },
+            {
+              "value": "72",
+              "text": "Irak"
+            },
+            {
+              "value": "74",
+              "text": "Irland"
+            },
+            {
+              "value": "77",
+              "text": "Italien"
+            },
+            {
+              "value": "97",
+              "text": "Litauen"
+            },
+            {
+              "value": "110",
+              "text": "Mexico"
+            },
+            {
+              "value": "121",
+              "text": "New Zealand"
+            },
+            {
+              "value": "128",
+              "text": "Norge"
+            },
+            {
+              "value": "137",
+              "text": "Polen"
+            },
+            {
+              "value": "149",
+              "text": "Serbien"
+            },
+            {
+              "value": "152",
+              "text": "Singapore"
+            },
+            {
+              "value": "155",
+              "text": "Slovenien"
+            },
+            {
+              "value": "157",
+              "text": "Spanien"
+            },
+            {
+              "value": "198",
+              "text": "Storbritannien"
+            },
+            {
+              "value": "161",
+              "text": "Sverige"
+            },
+            {
+              "value": "163",
+              "text": "Sydafrika"
+            },
+            {
+              "value": "164",
+              "text": "Sydkorea"
+            },
+            {
+              "value": "167",
+              "text": "Tadsjikistan"
+            },
+            {
+              "value": "171",
+              "text": "Tjekkiet"
+            },
+            {
+              "value": "179",
+              "text": "Tyskland"
+            },
+            {
+              "value": "182",
+              "text": "Ukraine"
+            },
+            {
+              "value": "185",
+              "text": "USA"
+            },
+            {
+              "value": "188",
+              "text": "Venezuela"
+            },
+            {
+              "value": "353",
+              "text": "Virgin Islands"
+            }
+          ]
+        }
+      ],
+      "relevant_links": [
+        "/event/15015/app/results",
+        "/event/15015/app",
+        "/event/15015/app/participants",
+        "/event/15015/app/results/6939646",
+        "/event/15015/app/results/6963812",
+        "/event/15015/app/results/6963797",
+        "/event/15015/app/results/6963807",
+        "/event/15015/app/results/6871198",
+        "/event/15015/app/results/6961854",
+        "/event/15015/app/results/6838443",
+        "/event/15015/app/results/6767830",
+        "/event/15015/app/results/6564107",
+        "/event/15015/app/results/6752622",
+        "/event/15015/app/results/6848561",
+        "/event/15015/app/results/6961857",
+        "/event/15015/app/results/6863523",
+        "/event/15015/app/results/6912485",
+        "/event/15015/app/results/6797925",
+        "/event/15015/app/results/6810065",
+        "/event/15015/app/results/6801849",
+        "/event/15015/app/results/6818699",
+        "/event/15015/app/results/6755537",
+        "/event/15015/app/results/6914737",
+        "/event/15015/app/results/6951235",
+        "/event/15015/app/results/6848562",
+        "/event/15015/app/results/6908464",
+        "/event/15015/app/results/6940610",
+        "/event/15015/app/results/6795520",
+        "/event/15015/app/results/6963060",
+        "/event/15015/app/results/6850754",
+        "/event/15015/app/results/6758600",
+        "/event/15015/app/results/6565523",
+        "/event/15015/app/results/6565522",
+        "/event/15015/app/results/6957273",
+        "/event/15015/app/results/6790761",
+        "/event/15015/app/results/6891920",
+        "/event/15015/app/results/6763216",
+        "/event/15015/app/results/6758601",
+        "/event/15015/app/results/6861649",
+        "/event/15015/app/results/6718953",
+        "/event/15015/app/results/6801847",
+        "/event/15015/app/results/6813940",
+        "/event/15015/app/results/6564026",
+        "/event/15015/app/results/6766797",
+        "/event/15015/app/results/6963811",
+        "/event/15015/app/results/6749452",
+        "/event/15015/app/results/6566236",
+        "/event/15015/app/results/6565334",
+        "/event/15015/app/results/6726680",
+        "/event/15015/app/results/6799104",
+        "/event/15015/app/results/6709771",
+        "/event/15015/app/results/6566291",
+        "/event/15015/app/results/6566290",
+        "/event/15015/app/results?page=1",
+        "/event/15015/app/results?page=2",
+        "/event/15015/app/results?page=3",
+        "/event/15015/app/results?page=9"
+      ],
+      "structural_attributes": [
+        "data-bs-target=",
+        "data-bs-toggle=",
+        "data-placement=",
+        "data-toggle="
+      ],
+      "candidate_endpoint_strings": [
+        "#athletesearchpanel",
+        ");\r$.ajax({\rurl: ",
+        ");\rif (searchFields.length > 0)\rsearchFields[0].focus();\r}, 0);\r});\r});\rfunction setSelect2(nodeSet) {\rnodeSet.select2({ dropdownAutoWidth: true, width: ",
+        ", function (e) {\rwindow.setTimeout(function () {\rvar searchFields = $(",
+        "/js/resultlist.js?2.0",
+        "ResultListDoSearch(",
+        "athletesearchpanel",
+        "btn btn-primary float-end btnSearch",
+        "btnSearch",
+        "expandsearch_label",
+        "fa fa-search",
+        "form-control txtSearch",
+        "hidden-sm hidden-md hidden-lg resultlist-secondline",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic",
+        "page-filter-bar page-filter-bar-with-advancedsearch",
+        "panel-athletesearch-control collapsed text-center"
+      ]
+    },
+    {
+      "year": 2026,
+      "event_id": 16880,
+      "url": "https://www.sportstiming.dk/event/16880/app/results",
+      "html_bytes": 93121,
+      "forms": [],
+      "selects": [
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "97077",
+              "text": "CRAFT Ultra 60 k"
+            },
+            {
+              "value": "97078",
+              "text": "Fogarolli trail 22 K"
+            },
+            {
+              "value": "97080",
+              "text": "Duo Trail (relay 2 x 30 km)"
+            },
+            {
+              "value": "97079",
+              "text": "Söderberg & Sara 14K"
+            },
+            {
+              "value": "97076",
+              "text": "Naturloppet 5km+"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "A",
+              "text": "Män/Kvinnor"
+            },
+            {
+              "value": "M",
+              "text": "Män"
+            },
+            {
+              "value": "F",
+              "text": "Kvinnor"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "45147",
+              "text": "90-"
+            },
+            {
+              "value": "45148",
+              "text": "85-89"
+            },
+            {
+              "value": "45149",
+              "text": "80-84"
+            },
+            {
+              "value": "45150",
+              "text": "75-79"
+            },
+            {
+              "value": "45151",
+              "text": "70-74"
+            },
+            {
+              "value": "45152",
+              "text": "65-69"
+            },
+            {
+              "value": "45153",
+              "text": "60-64"
+            },
+            {
+              "value": "45154",
+              "text": "55-59"
+            },
+            {
+              "value": "45155",
+              "text": "50-54"
+            },
+            {
+              "value": "45156",
+              "text": "45-49"
+            },
+            {
+              "value": "45157",
+              "text": "40-44"
+            },
+            {
+              "value": "45158",
+              "text": "35-39"
+            },
+            {
+              "value": "45159",
+              "text": "30-34"
+            },
+            {
+              "value": "45160",
+              "text": "25-29"
+            },
+            {
+              "value": "45161",
+              "text": "20-24"
+            },
+            {
+              "value": "45162",
+              "text": "18-19"
+            },
+            {
+              "value": "45163",
+              "text": "16-17"
+            },
+            {
+              "value": "45164",
+              "text": "14-15"
+            },
+            {
+              "value": "45165",
+              "text": "12-13"
+            },
+            {
+              "value": "45166",
+              "text": "0-11"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "45147",
+              "text": "90-"
+            },
+            {
+              "value": "45148",
+              "text": "85-89"
+            },
+            {
+              "value": "45149",
+              "text": "80-84"
+            },
+            {
+              "value": "45150",
+              "text": "75-79"
+            },
+            {
+              "value": "45151",
+              "text": "70-74"
+            },
+            {
+              "value": "45152",
+              "text": "65-69"
+            },
+            {
+              "value": "45153",
+              "text": "60-64"
+            },
+            {
+              "value": "45154",
+              "text": "55-59"
+            },
+            {
+              "value": "45155",
+              "text": "50-54"
+            },
+            {
+              "value": "45156",
+              "text": "45-49"
+            },
+            {
+              "value": "45157",
+              "text": "40-44"
+            },
+            {
+              "value": "45158",
+              "text": "35-39"
+            },
+            {
+              "value": "45159",
+              "text": "30-34"
+            },
+            {
+              "value": "45160",
+              "text": "25-29"
+            },
+            {
+              "value": "45161",
+              "text": "20-24"
+            },
+            {
+              "value": "45162",
+              "text": "18-19"
+            },
+            {
+              "value": "45163",
+              "text": "16-17"
+            },
+            {
+              "value": "45164",
+              "text": "14-15"
+            },
+            {
+              "value": "45165",
+              "text": "12-13"
+            },
+            {
+              "value": "45166",
+              "text": "0-11"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "45147",
+              "text": "90-"
+            },
+            {
+              "value": "45148",
+              "text": "85-89"
+            },
+            {
+              "value": "45149",
+              "text": "80-84"
+            },
+            {
+              "value": "45150",
+              "text": "75-79"
+            },
+            {
+              "value": "45151",
+              "text": "70-74"
+            },
+            {
+              "value": "45152",
+              "text": "65-69"
+            },
+            {
+              "value": "45153",
+              "text": "60-64"
+            },
+            {
+              "value": "45154",
+              "text": "55-59"
+            },
+            {
+              "value": "45155",
+              "text": "50-54"
+            },
+            {
+              "value": "45156",
+              "text": "45-49"
+            },
+            {
+              "value": "45157",
+              "text": "40-44"
+            },
+            {
+              "value": "45158",
+              "text": "35-39"
+            },
+            {
+              "value": "45159",
+              "text": "30-34"
+            },
+            {
+              "value": "45160",
+              "text": "25-29"
+            },
+            {
+              "value": "45161",
+              "text": "20-24"
+            },
+            {
+              "value": "45162",
+              "text": "18-19"
+            },
+            {
+              "value": "45163",
+              "text": "16-17"
+            },
+            {
+              "value": "45164",
+              "text": "14-15"
+            },
+            {
+              "value": "45165",
+              "text": "12-13"
+            },
+            {
+              "value": "45166",
+              "text": "0-11"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "45147",
+              "text": "90-"
+            },
+            {
+              "value": "45148",
+              "text": "85-89"
+            },
+            {
+              "value": "45149",
+              "text": "80-84"
+            },
+            {
+              "value": "45150",
+              "text": "75-79"
+            },
+            {
+              "value": "45151",
+              "text": "70-74"
+            },
+            {
+              "value": "45152",
+              "text": "65-69"
+            },
+            {
+              "value": "45153",
+              "text": "60-64"
+            },
+            {
+              "value": "45154",
+              "text": "55-59"
+            },
+            {
+              "value": "45155",
+              "text": "50-54"
+            },
+            {
+              "value": "45156",
+              "text": "45-49"
+            },
+            {
+              "value": "45157",
+              "text": "40-44"
+            },
+            {
+              "value": "45158",
+              "text": "35-39"
+            },
+            {
+              "value": "45159",
+              "text": "30-34"
+            },
+            {
+              "value": "45160",
+              "text": "25-29"
+            },
+            {
+              "value": "45161",
+              "text": "20-24"
+            },
+            {
+              "value": "45162",
+              "text": "18-19"
+            },
+            {
+              "value": "45163",
+              "text": "16-17"
+            },
+            {
+              "value": "45164",
+              "text": "14-15"
+            },
+            {
+              "value": "45165",
+              "text": "12-13"
+            },
+            {
+              "value": "45166",
+              "text": "0-11"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla"
+            },
+            {
+              "value": "45147",
+              "text": "90-"
+            },
+            {
+              "value": "45148",
+              "text": "85-89"
+            },
+            {
+              "value": "45149",
+              "text": "80-84"
+            },
+            {
+              "value": "45150",
+              "text": "75-79"
+            },
+            {
+              "value": "45151",
+              "text": "70-74"
+            },
+            {
+              "value": "45152",
+              "text": "65-69"
+            },
+            {
+              "value": "45153",
+              "text": "60-64"
+            },
+            {
+              "value": "45154",
+              "text": "55-59"
+            },
+            {
+              "value": "45155",
+              "text": "50-54"
+            },
+            {
+              "value": "45156",
+              "text": "45-49"
+            },
+            {
+              "value": "45157",
+              "text": "40-44"
+            },
+            {
+              "value": "45158",
+              "text": "35-39"
+            },
+            {
+              "value": "45159",
+              "text": "30-34"
+            },
+            {
+              "value": "45160",
+              "text": "25-29"
+            },
+            {
+              "value": "45161",
+              "text": "20-24"
+            },
+            {
+              "value": "45162",
+              "text": "18-19"
+            },
+            {
+              "value": "45163",
+              "text": "16-17"
+            },
+            {
+              "value": "45164",
+              "text": "14-15"
+            },
+            {
+              "value": "45165",
+              "text": "12-13"
+            },
+            {
+              "value": "45166",
+              "text": "0-11"
+            }
+          ]
+        },
+        {
+          "name": null,
+          "id": null,
+          "options": [
+            {
+              "value": "all",
+              "text": "Alla länder"
+            },
+            {
+              "value": "9",
+              "text": "Australien"
+            },
+            {
+              "value": "14",
+              "text": "Belgien"
+            },
+            {
+              "value": "29",
+              "text": "Canada"
+            },
+            {
+              "value": "37",
+              "text": "Danmark"
+            },
+            {
+              "value": "45",
+              "text": "England"
+            },
+            {
+              "value": "52",
+              "text": "Finland"
+            },
+            {
+              "value": "53",
+              "text": "Frankrig"
+            },
+            {
+              "value": "60",
+              "text": "Grækenland"
+            },
+            {
+              "value": "67",
+              "text": "Holland"
+            },
+            {
+              "value": "70",
+              "text": "Indien"
+            },
+            {
+              "value": "72",
+              "text": "Irak"
+            },
+            {
+              "value": "74",
+              "text": "Irland"
+            },
+            {
+              "value": "75",
+              "text": "Island"
+            },
+            {
+              "value": "77",
+              "text": "Italien"
+            },
+            {
+              "value": "79",
+              "text": "Japan"
+            },
+            {
+              "value": "84",
+              "text": "Kina"
+            },
+            {
+              "value": "121",
+              "text": "New Zealand"
+            },
+            {
+              "value": "128",
+              "text": "Norge"
+            },
+            {
+              "value": "135",
+              "text": "Peru"
+            },
+            {
+              "value": "137",
+              "text": "Polen"
+            },
+            {
+              "value": "149",
+              "text": "Serbien"
+            },
+            {
+              "value": "157",
+              "text": "Spanien"
+            },
+            {
+              "value": "161",
+              "text": "Sverige"
+            },
+            {
+              "value": "163",
+              "text": "Sydafrika"
+            },
+            {
+              "value": "179",
+              "text": "Tyskland"
+            },
+            {
+              "value": "181",
+              "text": "Uganda"
+            },
+            {
+              "value": "182",
+              "text": "Ukraine"
+            },
+            {
+              "value": "185",
+              "text": "USA"
+            },
+            {
+              "value": "188",
+              "text": "Venezuela"
+            },
+            {
+              "value": "248",
+              "text": "Åland"
+            }
+          ]
+        }
+      ],
+      "relevant_links": [
+        "/event/16880/app/results",
+        "/event/16880/app",
+        "/event/16880/app/participants",
+        "/event/16880/app/results/7865622",
+        "/event/16880/app/results/7790713",
+        "/event/16880/app/results/7791633",
+        "/event/16880/app/results/7883647",
+        "/event/16880/app/results/7862923",
+        "/event/16880/app/results/7918058",
+        "/event/16880/app/results/7861778",
+        "/event/16880/app/results/8058056",
+        "/event/16880/app/results/7884348",
+        "/event/16880/app/results/7794180",
+        "/event/16880/app/results/7828123",
+        "/event/16880/app/results/7793139",
+        "/event/16880/app/results/7793938",
+        "/event/16880/app/results/7824928",
+        "/event/16880/app/results/7791913",
+        "/event/16880/app/results/8009424",
+        "/event/16880/app/results/7917084",
+        "/event/16880/app/results/7794139",
+        "/event/16880/app/results/8017064",
+        "/event/16880/app/results/7790743",
+        "/event/16880/app/results/7835357",
+        "/event/16880/app/results/7815199",
+        "/event/16880/app/results/7898755",
+        "/event/16880/app/results/7796760",
+        "/event/16880/app/results/7877769",
+        "/event/16880/app/results/7810172",
+        "/event/16880/app/results/7792421",
+        "/event/16880/app/results/7866034",
+        "/event/16880/app/results/7864689",
+        "/event/16880/app/results/7814998",
+        "/event/16880/app/results/7824628",
+        "/event/16880/app/results/7793169",
+        "/event/16880/app/results/7812918",
+        "/event/16880/app/results/7807621",
+        "/event/16880/app/results/7792318",
+        "/event/16880/app/results/7792267",
+        "/event/16880/app/results/7793239",
+        "/event/16880/app/results/7879873",
+        "/event/16880/app/results/7862154",
+        "/event/16880/app/results/8058057",
+        "/event/16880/app/results/7819894",
+        "/event/16880/app/results/7790849",
+        "/event/16880/app/results/7810655",
+        "/event/16880/app/results/7800557",
+        "/event/16880/app/results/7813916",
+        "/event/16880/app/results/7795480",
+        "/event/16880/app/results/7868772",
+        "/event/16880/app/results/7810342",
+        "/event/16880/app/results/7818762",
+        "/event/16880/app/results/7790756",
+        "/event/16880/app/results?page=1",
+        "/event/16880/app/results?page=2",
+        "/event/16880/app/results?page=3",
+        "/event/16880/app/results?page=10"
+      ],
+      "structural_attributes": [
+        "data-bs-target=",
+        "data-bs-toggle=",
+        "data-placement=",
+        "data-toggle="
+      ],
+      "candidate_endpoint_strings": [
+        "#athletesearchpanel",
+        ");\r$.ajax({\rurl: ",
+        ");\rif (searchFields.length > 0)\rsearchFields[0].focus();\r}, 0);\r});\r});\rfunction setSelect2(nodeSet) {\rnodeSet.select2({ dropdownAutoWidth: true, width: ",
+        ", function (e) {\rwindow.setTimeout(function () {\rvar searchFields = $(",
+        "/js/resultlist.js?2.0",
+        "ResultListDoSearch(",
+        "athletesearchpanel",
+        "btn btn-primary float-end btnSearch",
+        "btnSearch",
+        "expandsearch_label",
+        "fa fa-search",
+        "form-control txtSearch",
+        "hidden-sm hidden-md hidden-lg resultlist-secondline",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic",
+        "page-filter-bar page-filter-bar-with-advancedsearch",
+        "panel-athletesearch-control collapsed text-center"
+      ]
+    }
+  ]
+}
