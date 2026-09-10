@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "principle": "Features are enabled from observed source capabilities, not from race-name assumptions. Missing splits or geometry never get synthesized.",
+  "features": {
+    "results_database": {
+      "requires": ["sportstiming_class_observed"],
+      "description": "Searchable finish-result database for the selected race/year."
+    },
+    "finish_statistics": {
+      "requires": ["sportstiming_class_observed"],
+      "description": "Finish distributions, placement statistics and participation summaries."
+    },
+    "runner_profile": {
+      "requires_any_result_detail_status": ["participant_detail_observed", "relay_adapter_ready"],
+      "description": "Individual/team result profile with source-backed detail fields."
+    },
+    "split_analysis": {
+      "requires_timing_split_status": "split_table_observed",
+      "description": "Checkpoint and segment analysis using actual published split observations."
+    },
+    "runner_replay": {
+      "requires_timing_split_status": "split_table_observed",
+      "requires_route_geometry": true,
+      "minimum_observed_split_count": 2,
+      "description": "Interpolated replay between real timing observations on a verified route."
+    },
+    "map_duel": {
+      "requires_timing_split_status": "split_table_observed",
+      "requires_route_geometry": true,
+      "minimum_observed_split_count": 2,
+      "description": "Head-to-head map comparison driven by real timing observations and route interpolation."
+    },
+    "course_difficulty_vs_pacing": {
+      "requires_timing_split_status": "split_table_observed",
+      "requires_route_geometry": true,
+      "minimum_observed_split_count": 2,
+      "description": "Relates route characteristics to observed segment pacing."
+    },
+    "course_version_records": {
+      "requires": ["sportstiming_class_observed"],
+      "requires_course_version_assignment": true,
+      "description": "Records and cross-year performance comparisons restricted to verified comparable course versions."
+    },
+    "cross_year_participation": {
+      "requires": ["sportstiming_class_observed"],
+      "description": "Participation, gender, age and repeat-runner trends where source fields support them."
+    }
+  }
+}
