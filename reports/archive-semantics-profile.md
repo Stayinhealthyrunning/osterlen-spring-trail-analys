@@ -70,6 +70,6 @@
 
 ## Duo – anonymiserade rader med medlemslänk
 
-- header=['<TEXT>', '<EMPTY>', '<TEXT>']; linkkolumn=[2]; rad=['<TEXT>', '<EMPTY>', '<LINKED_TEXT>']; n=34
-- header=['<TEXT>', '<EMPTY>', '<TEXT>', 'Tid', 'Sluttidspunkt', '<TEXT>']; linkkolumn=[2]; rad=['<TEXT>', '<EMPTY>', '<LINKED_TEXT>', '<TIME>', '<TIME>', '<TEXT>']; n=16
-- header=['<TEXT>', '<EMPTY>', '<TEXT>', 'Tid', 'Sluttidspunkt', '<TEXT>']; linkkolumn=[2]; rad=['<NUMBER>', '<EMPTY>', '<LINKED_TEXT>', '<TIME>', '<TIME>', '<TEXT>']; n=2
+- header=['Startnummer', '<EMPTY>', 'Namn']; linkkolumn=[2]; rad=['<TEXT>', '<EMPTY>', '<LINKED_TEXT>']; n=34
+- header=['Startnummer', '<EMPTY>', 'Namn', 'Tid', 'Sluttidspunkt', 'Hastighet']; linkkolumn=[2]; rad=['<TEXT>', '<EMPTY>', '<LINKED_TEXT>', '<TIME>', '<TIME>', '<TEXT>']; n=16
+- header=['Startnummer', '<EMPTY>', 'Namn', 'Tid', 'Sluttidspunkt', 'Hastighet']; linkkolumn=[2]; rad=['<NUMBER>', '<EMPTY>', '<LINKED_TEXT>', '<TIME>', '<TIME>', '<TEXT>']; n=2

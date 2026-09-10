@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "unknown_status": {
     "2018:trail14:athlete": {
       "total": 2,
@@ -290,9 +290,9 @@
     "linked_row_contexts": [
       {
         "header": [
-          "<TEXT>",
+          "Startnummer",
           "<EMPTY>",
-          "<TEXT>"
+          "Namn"
         ],
         "member_link_columns": [
           2
@@ -306,12 +306,12 @@
       },
       {
         "header": [
-          "<TEXT>",
+          "Startnummer",
           "<EMPTY>",
-          "<TEXT>",
+          "Namn",
           "Tid",
           "Sluttidspunkt",
-          "<TEXT>"
+          "Hastighet"
         ],
         "member_link_columns": [
           2
@@ -328,12 +328,12 @@
       },
       {
         "header": [
-          "<TEXT>",
+          "Startnummer",
           "<EMPTY>",
-          "<TEXT>",
+          "Namn",
           "Tid",
           "Sluttidspunkt",
-          "<TEXT>"
+          "Hastighet"
         ],
         "member_link_columns": [
           2
