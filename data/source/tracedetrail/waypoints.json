@@ -1,0 +1,1425 @@
+{
+  "generated_at": "2026-09-10T09:24:21.267816+00:00",
+  "source": "Trace de Trail public dataPi payloads",
+  "routes": [
+    {
+      "trace_id": 7897,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2018,
+          "status": "candidate_needs_direct_reverification"
+        }
+      ],
+      "waypoints": [
+        {
+          "source_pi_id": "23131",
+          "types": [
+            "deparrivee"
+          ],
+          "lat": 55.71714,
+          "lon": 13.96054,
+          "elevation_m": "108",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 43970,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2018,
+          "status": "candidate_needs_direct_reverification"
+        }
+      ],
+      "waypoints": [
+        {
+          "source_pi_id": "114911",
+          "title": "Start",
+          "types": [
+            "depart"
+          ],
+          "lat": 55.5561488,
+          "lon": 14.3563503,
+          "elevation_m": "6",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "141213",
+          "title": "Erosionskydd/ svårpasserat stenparti",
+          "types": [
+            "vigilance"
+          ],
+          "lat": 55.6266687,
+          "lon": 14.280678,
+          "elevation_m": "13",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "141267",
+          "title": "Upphämtningsplats 1",
+          "types": [
+            "regroupement"
+          ],
+          "lat": 55.6553183,
+          "lon": 14.268105,
+          "elevation_m": "30",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "141260",
+          "title": "Tidsgräns 12:30 (2,5h efter start).",
+          "types": [
+            "bh"
+          ],
+          "lat": 55.6555952,
+          "lon": 14.2679179,
+          "elevation_m": "30",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "141214",
+          "title": "Buhres Fisk vätskestation",
+          "types": [
+            "ravitoc"
+          ],
+          "lat": 55.6874586,
+          "lon": 14.22801,
+          "elevation_m": "3",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "141340",
+          "title": "Obligatoriskt passage",
+          "types": [
+            "vigilance"
+          ],
+          "lat": 55.7111727,
+          "lon": 14.200123,
+          "elevation_m": "15",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "141268",
+          "title": "Upphämtningsplats 2",
+          "types": [
+            "regroupement"
+          ],
+          "lat": 55.724561,
+          "lon": 14.1931147,
+          "elevation_m": "15",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "141217",
+          "title": "Bengtemölla Vätskestation 1 (officiell)",
+          "types": [
+            "ravitoc"
+          ],
+          "lat": 55.7279997,
+          "lon": 14.1196864,
+          "elevation_m": "16",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "141263",
+          "title": "Tidsgräns 14:30 (4,5h efter start).",
+          "types": [
+            "bh"
+          ],
+          "lat": 55.7293339,
+          "lon": 14.1196055,
+          "elevation_m": "25",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "141273",
+          "title": "Upphämtningsplats 3",
+          "types": [
+            "regroupement"
+          ],
+          "lat": 55.7299614,
+          "lon": 14.1210395,
+          "elevation_m": "30",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "141274",
+          "title": "Upphämtningsplats 4",
+          "types": [
+            "regroupement"
+          ],
+          "lat": 55.7719381,
+          "lon": 14.1507495,
+          "elevation_m": "56",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "141275",
+          "title": "Upphämtningplats 5",
+          "types": [
+            "regroupement"
+          ],
+          "lat": 55.7592805,
+          "lon": 14.1319475,
+          "elevation_m": "47",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "141264",
+          "title": "Tidsgräns 16:00 (6h efter start).",
+          "types": [
+            "bh"
+          ],
+          "lat": 55.7586319,
+          "lon": 14.1340214,
+          "elevation_m": "37",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "141276",
+          "title": "Upphämtningsplats 6",
+          "types": [
+            "regroupement"
+          ],
+          "lat": 55.7346479,
+          "lon": 14.1122333,
+          "elevation_m": "40",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "141277",
+          "title": "Upphämtningsplats 7",
+          "types": [
+            "regroupement"
+          ],
+          "lat": 55.7250345,
+          "lon": 14.0615306,
+          "elevation_m": "30",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "141265",
+          "title": "Tidsgräns 17:30 (7,5h efter start).",
+          "types": [
+            "bh"
+          ],
+          "lat": 55.7235041,
+          "lon": 14.0599299,
+          "elevation_m": "35",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "141221",
+          "title": "Vantalängan aid station 2",
+          "types": [
+            "ravitoc"
+          ],
+          "lat": 55.7231,
+          "lon": 14.0595336,
+          "elevation_m": "32",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "141278",
+          "title": "Upphämtningsplats 8",
+          "types": [
+            "regroupement"
+          ],
+          "lat": 55.7085113,
+          "lon": 14.0184272,
+          "elevation_m": "72",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "114912",
+          "title": "Finish line in front of the castle",
+          "types": [
+            "arrivee"
+          ],
+          "lat": 55.7182078,
+          "lon": 13.9606379,
+          "elevation_m": "83",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "141279",
+          "title": "Tidsgäns målgång kl 19:00",
+          "types": [
+            "bh"
+          ],
+          "lat": 55.7182078,
+          "lon": 13.9606379,
+          "elevation_m": "113",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 69381,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2019,
+          "status": "verified"
+        }
+      ],
+      "waypoints": [
+        {
+          "source_pi_id": "197461",
+          "types": [
+            "depart"
+          ],
+          "lat": 55.5566675,
+          "lon": 14.3546363,
+          "elevation_m": "4",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "197462",
+          "types": [
+            "arrivee"
+          ],
+          "lat": 55.7173289,
+          "lon": 13.9605561,
+          "elevation_m": "119",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 69864,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2019,
+          "status": "verified"
+        }
+      ],
+      "waypoints": [
+        {
+          "source_pi_id": "199357",
+          "types": [
+            "deparrivee"
+          ],
+          "lat": 55.71714,
+          "lon": 13.96054,
+          "elevation_m": "108",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 165617,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2022,
+          "status": "verified"
+        }
+      ],
+      "waypoints": [
+        {
+          "source_pi_id": "493969",
+          "types": [
+            "depart"
+          ],
+          "lat": 55.717237,
+          "lon": 13.960603,
+          "elevation_m": "119",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "493970",
+          "types": [
+            "arrivee"
+          ],
+          "lat": 55.717184,
+          "lon": 13.960597,
+          "elevation_m": "120",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 172147,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2022,
+          "status": "candidate_needs_direct_reverification"
+        }
+      ],
+      "waypoints": [
+        {
+          "source_pi_id": "515865",
+          "types": [
+            "depart"
+          ],
+          "lat": 55.5567295,
+          "lon": 14.3547135,
+          "elevation_m": "3",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "521020",
+          "lat": 55.5567295,
+          "lon": 14.3547135,
+          "elevation_m": "3"
+        },
+        {
+          "source_pi_id": "521004",
+          "types": [
+            "erosion"
+          ],
+          "lat": 55.6308298,
+          "lon": 14.279821,
+          "elevation_m": "9"
+        },
+        {
+          "source_pi_id": "521007",
+          "types": [
+            "Regroupement"
+          ],
+          "lat": 55.6552405,
+          "lon": 14.2683414,
+          "elevation_m": "34"
+        },
+        {
+          "source_pi_id": "521008",
+          "lat": 55.724348,
+          "lon": 14.1921921,
+          "elevation_m": "13"
+        },
+        {
+          "source_pi_id": "521005",
+          "title": "Aid station nr 1 / Bengtemölla",
+          "types": [
+            "Ravitaillement",
+            "Regroupement"
+          ],
+          "lat": 55.7282655,
+          "lon": 14.1198912,
+          "elevation_m": "26"
+        },
+        {
+          "source_pi_id": "521010",
+          "lat": 55.7685085,
+          "lon": 14.1523959,
+          "elevation_m": "45"
+        },
+        {
+          "source_pi_id": "521012",
+          "types": [
+            "Regroupement"
+          ],
+          "lat": 55.7587109,
+          "lon": 14.133993,
+          "elevation_m": "46"
+        },
+        {
+          "source_pi_id": "521013",
+          "lat": 55.7347536,
+          "lon": 14.1123822,
+          "elevation_m": "52"
+        },
+        {
+          "source_pi_id": "521015",
+          "types": [
+            "BarrièreH"
+          ],
+          "lat": 55.7235198,
+          "lon": 14.0598568,
+          "elevation_m": "38"
+        },
+        {
+          "source_pi_id": "526248",
+          "lat": 55.7236028,
+          "lon": 14.059935,
+          "elevation_m": "38"
+        },
+        {
+          "source_pi_id": "526249",
+          "lat": 55.7236028,
+          "lon": 14.059935,
+          "elevation_m": "38"
+        },
+        {
+          "source_pi_id": "521017",
+          "lat": 55.7090832,
+          "lon": 14.014129,
+          "elevation_m": "91"
+        },
+        {
+          "source_pi_id": "526250",
+          "lat": 55.7089446,
+          "lon": 14.0141865,
+          "elevation_m": "91"
+        },
+        {
+          "source_pi_id": "515866",
+          "types": [
+            "arrivee"
+          ],
+          "lat": 55.7171938,
+          "lon": 13.9605202,
+          "elevation_m": "120",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "521018",
+          "types": [
+            "bh"
+          ],
+          "lat": 55.7171938,
+          "lon": 13.9605202,
+          "elevation_m": "120"
+        },
+        {
+          "source_pi_id": "521019",
+          "lat": 55.7171938,
+          "lon": 13.9605202,
+          "elevation_m": "120"
+        }
+      ]
+    },
+    {
+      "trace_id": 203146,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2023,
+          "status": "verified_via_organizer_trace_listing"
+        }
+      ],
+      "waypoints": [
+        {
+          "source_pi_id": "626895",
+          "types": [
+            "depart"
+          ],
+          "lat": 55.717237,
+          "lon": 13.960603,
+          "elevation_m": "119",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        },
+        {
+          "source_pi_id": "626896",
+          "types": [
+            "arrivee"
+          ],
+          "lat": 55.717184,
+          "lon": 13.960597,
+          "elevation_m": "120",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 203147,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2023,
+          "status": "verified"
+        }
+      ],
+      "waypoints": [
+        {
+          "source_pi_id": "626897",
+          "types": [
+            "depart"
+          ],
+          "lat": 55.5567295,
+          "lon": 14.3547135,
+          "elevation_m": "3",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        },
+        {
+          "source_pi_id": "626910",
+          "lat": 55.5567295,
+          "lon": 14.3547135,
+          "elevation_m": "3",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        },
+        {
+          "source_pi_id": "626899",
+          "types": [
+            "erosion"
+          ],
+          "lat": 55.6308298,
+          "lon": 14.279821,
+          "elevation_m": "9",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        },
+        {
+          "source_pi_id": "626901",
+          "types": [
+            "Regroupement"
+          ],
+          "lat": 55.6552405,
+          "lon": 14.2683414,
+          "elevation_m": "34",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        },
+        {
+          "source_pi_id": "626902",
+          "lat": 55.724348,
+          "lon": 14.1921921,
+          "elevation_m": "13",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        },
+        {
+          "source_pi_id": "626900",
+          "title": "Aid station nr 1 / Bengtemölla",
+          "types": [
+            "Ravitaillement",
+            "Regroupement"
+          ],
+          "lat": 55.7282655,
+          "lon": 14.1198912,
+          "elevation_m": "26",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        },
+        {
+          "source_pi_id": "626903",
+          "lat": 55.7685085,
+          "lon": 14.1523959,
+          "elevation_m": "45",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        },
+        {
+          "source_pi_id": "626904",
+          "types": [
+            "Regroupement"
+          ],
+          "lat": 55.7587109,
+          "lon": 14.133993,
+          "elevation_m": "46",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        },
+        {
+          "source_pi_id": "626905",
+          "lat": 55.7347536,
+          "lon": 14.1123822,
+          "elevation_m": "52",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        },
+        {
+          "source_pi_id": "626906",
+          "types": [
+            "BarrièreH"
+          ],
+          "lat": 55.7235198,
+          "lon": 14.0598568,
+          "elevation_m": "38",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        },
+        {
+          "source_pi_id": "626911",
+          "lat": 55.7236028,
+          "lon": 14.059935,
+          "elevation_m": "38",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        },
+        {
+          "source_pi_id": "626912",
+          "lat": 55.7236028,
+          "lon": 14.059935,
+          "elevation_m": "38",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        },
+        {
+          "source_pi_id": "626907",
+          "lat": 55.7090832,
+          "lon": 14.014129,
+          "elevation_m": "91",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        },
+        {
+          "source_pi_id": "626913",
+          "lat": 55.7089446,
+          "lon": 14.0141865,
+          "elevation_m": "91",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        },
+        {
+          "source_pi_id": "626898",
+          "types": [
+            "arrivee"
+          ],
+          "lat": 55.7171938,
+          "lon": 13.9605202,
+          "elevation_m": "120",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        },
+        {
+          "source_pi_id": "626908",
+          "types": [
+            "bh"
+          ],
+          "lat": 55.7171938,
+          "lon": 13.9605202,
+          "elevation_m": "120",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        },
+        {
+          "source_pi_id": "626909",
+          "lat": 55.7171938,
+          "lon": 13.9605202,
+          "elevation_m": "120",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 237224,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2024,
+          "status": "verified"
+        }
+      ],
+      "waypoints": [
+        {
+          "source_pi_id": "716920",
+          "types": [
+            "depart"
+          ],
+          "lat": 55.7172368,
+          "lon": 13.9606028,
+          "elevation_m": "119",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        },
+        {
+          "source_pi_id": "716921",
+          "types": [
+            "arrivee"
+          ],
+          "lat": 55.7171837,
+          "lon": 13.9605966,
+          "elevation_m": "120",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 251126,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2024,
+          "status": "verified"
+        }
+      ],
+      "waypoints": [
+        {
+          "source_pi_id": "753658",
+          "types": [
+            "depart"
+          ],
+          "lat": 55.55673,
+          "lon": 14.35471,
+          "elevation_m": "3",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "753659",
+          "types": [
+            "arrivee"
+          ],
+          "lat": 55.71719,
+          "lon": 13.96052,
+          "elevation_m": "120",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 272846,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2025,
+          "status": "verified"
+        }
+      ],
+      "waypoints": [
+        {
+          "source_pi_id": "817209",
+          "types": [
+            "depart"
+          ],
+          "lat": 55.5590346,
+          "lon": 14.3528846,
+          "elevation_m": "4",
+          "planned_time": "10.00",
+          "planned_time_detail": "2025-04-12 10:00:00",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "822787",
+          "title": "Privatmark / odlingsmark",
+          "types": [
+            "vigilance"
+          ],
+          "lat": 55.6268528,
+          "lon": 14.2807723,
+          "elevation_m": "10",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "822846",
+          "title": "End of private ground",
+          "types": [
+            "vigilance"
+          ],
+          "lat": 55.6411397,
+          "lon": 14.2707139,
+          "elevation_m": "27",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "822847",
+          "title": "Cut of time 12:45 + Minibus",
+          "types": [
+            "bh",
+            "bus"
+          ],
+          "lat": 55.6549927,
+          "lon": 14.2690708,
+          "elevation_m": "31",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "822815",
+          "title": "Road crossing / Danger",
+          "types": [
+            "danger"
+          ],
+          "lat": 55.6785668,
+          "lon": 14.2317647,
+          "elevation_m": "34",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "822826",
+          "title": "Solevi Idrottsplats / Aid station nr1",
+          "types": [
+            "basevie",
+            "ravitoliquide",
+            "ravitoc"
+          ],
+          "lat": 55.6838087,
+          "lon": 14.2365464,
+          "elevation_m": "12",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "822833",
+          "title": "No marking",
+          "types": [
+            "vigilance"
+          ],
+          "lat": 55.7011386,
+          "lon": 14.2041747,
+          "elevation_m": "4",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "822862",
+          "title": "End of the nature reserve. Minibus if DNF",
+          "types": [
+            "vigilance",
+            "bus"
+          ],
+          "lat": 55.7242488,
+          "lon": 14.1904027,
+          "elevation_m": "12",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "822859",
+          "title": "Bengtemölla Aid-station",
+          "types": [
+            "secours",
+            "basevie",
+            "bh"
+          ],
+          "lat": 55.7282079,
+          "lon": 14.1198768,
+          "elevation_m": "26",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "822867",
+          "title": "Minibus",
+          "types": [
+            "bus"
+          ],
+          "lat": 55.7714586,
+          "lon": 14.1511077,
+          "elevation_m": "57",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "822871",
+          "title": "Cut of time 16:15",
+          "types": [
+            "bh",
+            "bus"
+          ],
+          "lat": 55.7586987,
+          "lon": 14.1340136,
+          "elevation_m": "46",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "822872",
+          "title": "Minibus",
+          "types": [
+            "bus"
+          ],
+          "lat": 55.7346317,
+          "lon": 14.1122519,
+          "elevation_m": "51",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "822878",
+          "title": "Minibus",
+          "types": [
+            "bus"
+          ],
+          "lat": 55.726364,
+          "lon": 14.0628518,
+          "elevation_m": "38",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "822877",
+          "title": "Vantalägan / Aid station nr 3",
+          "types": [
+            "basevie",
+            "bh"
+          ],
+          "lat": 55.7233837,
+          "lon": 14.059873,
+          "elevation_m": "37",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "822879",
+          "title": "Minibus",
+          "types": [
+            "bus"
+          ],
+          "lat": 55.7088175,
+          "lon": 14.0179738,
+          "elevation_m": "84",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "822886",
+          "title": "Ambulance + paramedics",
+          "types": [
+            "secours",
+            "ambulance"
+          ],
+          "lat": 55.721537,
+          "lon": 13.9605013,
+          "elevation_m": "116",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "817210",
+          "title": "10.00",
+          "types": [
+            "arrivee"
+          ],
+          "lat": 55.7170779,
+          "lon": 13.9605615,
+          "elevation_m": "120",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "822885",
+          "types": [
+            "secours"
+          ],
+          "lat": 55.7170779,
+          "lon": 13.9605615,
+          "elevation_m": "120",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 280053,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2025,
+          "status": "verified"
+        }
+      ],
+      "waypoints": [
+        {
+          "source_pi_id": "839792",
+          "types": [
+            "depart"
+          ],
+          "lat": 55.7171396,
+          "lon": 13.96054,
+          "elevation_m": "120",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "839793",
+          "types": [
+            "arrivee"
+          ],
+          "lat": 55.7172798,
+          "lon": 13.9604897,
+          "elevation_m": "119",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 322314,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2026,
+          "status": "verified"
+        }
+      ],
+      "waypoints": [
+        {
+          "source_pi_id": "971288",
+          "types": [
+            "depart"
+          ],
+          "lat": 55.7171396,
+          "lon": 13.96054,
+          "elevation_m": "120",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "971289",
+          "types": [
+            "arrivee"
+          ],
+          "lat": 55.7172798,
+          "lon": 13.9604897,
+          "elevation_m": "119",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 322315,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2026,
+          "status": "verified"
+        }
+      ],
+      "waypoints": [
+        {
+          "source_pi_id": "971290",
+          "types": [
+            "depart"
+          ],
+          "lat": 55.5590346,
+          "lon": 14.3528846,
+          "elevation_m": "4",
+          "planned_time": "10.00",
+          "planned_time_detail": "2025-04-12 10:00:00",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "971292",
+          "title": "Privatmark / odlingsmark",
+          "types": [
+            "vigilance"
+          ],
+          "lat": 55.6268528,
+          "lon": 14.2807723,
+          "elevation_m": "10",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "971296",
+          "title": "End of private ground",
+          "types": [
+            "vigilance"
+          ],
+          "lat": 55.6411397,
+          "lon": 14.2707139,
+          "elevation_m": "27",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "971297",
+          "title": "Cut of time 12:45 + Minibus",
+          "types": [
+            "bh",
+            "bus"
+          ],
+          "lat": 55.6549927,
+          "lon": 14.2690708,
+          "elevation_m": "31",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "971293",
+          "title": "Road crossing / Danger",
+          "types": [
+            "danger"
+          ],
+          "lat": 55.6785668,
+          "lon": 14.2317647,
+          "elevation_m": "34",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "971294",
+          "title": "Solevi Idrottsplats / Aid station nr1",
+          "types": [
+            "basevie",
+            "ravitoliquide",
+            "ravitoc"
+          ],
+          "lat": 55.6838087,
+          "lon": 14.2365464,
+          "elevation_m": "12",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "971295",
+          "title": "No marking",
+          "types": [
+            "vigilance"
+          ],
+          "lat": 55.7011386,
+          "lon": 14.2041747,
+          "elevation_m": "4",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "971299",
+          "title": "End of the nature reserve. Minibus if DNF",
+          "types": [
+            "vigilance",
+            "bus"
+          ],
+          "lat": 55.7242488,
+          "lon": 14.1904027,
+          "elevation_m": "12",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "971298",
+          "title": "Bengtemölla Aid-station",
+          "types": [
+            "secours",
+            "basevie",
+            "bh"
+          ],
+          "lat": 55.7282079,
+          "lon": 14.1198768,
+          "elevation_m": "26",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "971300",
+          "title": "Minibus",
+          "types": [
+            "bus"
+          ],
+          "lat": 55.7714586,
+          "lon": 14.1511077,
+          "elevation_m": "57",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "971301",
+          "title": "Cut of time 16:15",
+          "types": [
+            "bh",
+            "bus"
+          ],
+          "lat": 55.7586987,
+          "lon": 14.1340136,
+          "elevation_m": "46",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "971302",
+          "title": "Minibus",
+          "types": [
+            "bus"
+          ],
+          "lat": 55.7346317,
+          "lon": 14.1122519,
+          "elevation_m": "51",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "971304",
+          "title": "Minibus",
+          "types": [
+            "bus"
+          ],
+          "lat": 55.726364,
+          "lon": 14.0628518,
+          "elevation_m": "38",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "971303",
+          "title": "Vantalägan / Aid station nr 3",
+          "types": [
+            "basevie",
+            "bh"
+          ],
+          "lat": 55.7233837,
+          "lon": 14.059873,
+          "elevation_m": "37",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "971305",
+          "title": "Minibus",
+          "types": [
+            "bus"
+          ],
+          "lat": 55.7088175,
+          "lon": 14.0179738,
+          "elevation_m": "84",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "971307",
+          "title": "Ambulance + paramedics",
+          "types": [
+            "secours",
+            "ambulance"
+          ],
+          "lat": 55.721537,
+          "lon": 13.9605013,
+          "elevation_m": "116",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "971291",
+          "title": "10.00",
+          "types": [
+            "arrivee"
+          ],
+          "lat": 55.7170779,
+          "lon": 13.9605615,
+          "elevation_m": "120",
+          "source_distance_fields": {
+            "passageTab": "oui"
+          }
+        },
+        {
+          "source_pi_id": "971306",
+          "types": [
+            "secours"
+          ],
+          "lat": 55.7170779,
+          "lon": 13.9605615,
+          "elevation_m": "120",
+          "source_distance_fields": {
+            "passageTab": "non"
+          }
+        }
+      ]
+    }
+  ]
+}
