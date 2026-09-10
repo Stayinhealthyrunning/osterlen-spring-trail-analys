@@ -16,6 +16,7 @@ on:
       - 'tools/inspect_sportstiming_list_table.py'
       - 'tools/inventory_sportstiming_splits.py'
       - 'tools/inventory_sportstiming_points.py'
+      - 'tools/inspect_sportstiming_relay.py'
       - 'tools/analyze_bengtemolla_double_timing.py'
       - 'tools/probe_tracedetrail_gpx_download.py'
       - 'tools/validate_source_model.py'
@@ -58,6 +59,8 @@ jobs:
         run: python tools/inventory_sportstiming_splits.py
       - name: Inventory Sportstiming points and tracking
         run: python tools/inventory_sportstiming_points.py
+      - name: Inspect Duo relay result structure
+        run: python tools/inspect_sportstiming_relay.py
       - name: Analyze Bengtemölla double timing
         run: python tools/analyze_bengtemolla_double_timing.py
       - name: Probe Trace de Trail GPX download mechanism
