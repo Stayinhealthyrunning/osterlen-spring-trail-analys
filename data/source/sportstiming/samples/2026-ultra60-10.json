@@ -11,7 +11,7 @@
       "page": 1,
       "url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=1",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=1",
-      "sha256": "48e7b6ea17d32d72f593cc67089632133e6f6c2448425a91bc52a10b4c3765fb",
+      "sha256": "cce030b5369f2cfc97a0390667f4d5f6a0d3431cebc6f7066d7cab70b6e5da4c",
       "result_links": 50,
       "new_result_ids": 50
     },
@@ -19,7 +19,7 @@
       "page": 2,
       "url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=2",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=2",
-      "sha256": "16585a435214b79f4621a325a778f0f77f2c8f480d47289c7cf23043568fe3fa",
+      "sha256": "9250a59acd81161038b9377e55997accb9473b5ad73b2708716c2939920a7667",
       "result_links": 50,
       "new_result_ids": 50
     },
@@ -27,7 +27,7 @@
       "page": 3,
       "url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=3",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=3",
-      "sha256": "3bdb3fa77a81b229aef71915feacbe2c807f9e5c880b8fb020277b5fc9b88b56",
+      "sha256": "a0bdccd121ced8b49dc107306b206d22bdef96496f6d484930478f01562bb595",
       "result_links": 50,
       "new_result_ids": 50
     },
@@ -35,7 +35,7 @@
       "page": 4,
       "url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=4",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=4",
-      "sha256": "1eead04a7ed56056f524d395487590e5ae31d562ce71293f9dbcae358c488c9c",
+      "sha256": "a578eea491c03ede0515ebc0e1f4adb05fd6d4936283db422e9649f37760aa80",
       "result_links": 50,
       "new_result_ids": 50
     },
@@ -43,7 +43,7 @@
       "page": 5,
       "url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=5",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=5",
-      "sha256": "cbfc9fa6fc41043d9f3c73c33f15786813c476dcb7fa0c7df00928573aa610b4",
+      "sha256": "3899373bb66eee05c44054e9a7ffad25032a0d1c5adacb22b3882f73ad8b792b",
       "result_links": 50,
       "new_result_ids": 50
     },
@@ -51,7 +51,7 @@
       "page": 6,
       "url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=6",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=6",
-      "sha256": "437fec7912f3141e206966fb5123c966f0c356e4141d5f9ed5aaaf70409ec2f2",
+      "sha256": "50132afde62139e1c1135e41045fbbf023b5acee34c695163918789863a9fded",
       "result_links": 50,
       "new_result_ids": 50
     },
@@ -59,7 +59,7 @@
       "page": 7,
       "url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=7",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=7",
-      "sha256": "84f5f2077b764413ae13189440e9a78737db4821349328915e592617bc5ec38d",
+      "sha256": "eec6bb827a9c53b82bc3681a19793a9efba2c529de41c6a7285644f2dae56f49",
       "result_links": 50,
       "new_result_ids": 50
     },
@@ -67,7 +67,7 @@
       "page": 8,
       "url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=8",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=8",
-      "sha256": "2a11d618f61522889be7d457c9fa782148600d21d5558c04dff42d59845b97b2",
+      "sha256": "6ececa48664f0a0788d2334798eb2594e76c02460a95432031507cfb0abb9a6d",
       "result_links": 50,
       "new_result_ids": 50
     },
@@ -75,7 +75,7 @@
       "page": 9,
       "url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=9",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=9",
-      "sha256": "460f980e7f164585380979b6eb488b2181053df82cc55a6e8610c055ef7205ff",
+      "sha256": "44e1cf9fd2e600c9d396aed9c2ee0b40316b5842c2144f54d13733e6730dd770",
       "result_links": 9,
       "new_result_ids": 9
     }
@@ -85,7 +85,7 @@
       "sportstiming_result_id": "7793098",
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7793098",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results/7793098",
-      "source_sha256": "a6ea40bedf034f7a295b4872339738f7f1ac72e6fd0ae27f205bc9cfd4a62d1b",
+      "source_sha256": "d934db9e0a1ef09f3fca4e183a0b522610cebb3e5291f4c4157b2225b9df7af4",
       "tables": [
         {
           "class": null,
@@ -616,7 +616,7 @@
       "sportstiming_result_id": "7796216",
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7796216",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results/7796216",
-      "source_sha256": "0755cf092eced983b883614fbd9b2f1511f48295d97f417fe317da8a24a71127",
+      "source_sha256": "f0bff9a0d63d564398867e39b001beb17de6e199c120b32fd7433987426de409",
       "tables": [
         {
           "class": null,
@@ -1147,7 +1147,7 @@
       "sportstiming_result_id": "7792471",
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7792471",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results/7792471",
-      "source_sha256": "3bcb538cbf413e462a202e1e152d374f033da71c3a0ecd48433eecf791f28651",
+      "source_sha256": "7d338f328d3b5f704ee5dac75f8f507ff010384e4071eeb28d78fd3557a59ceb",
       "tables": [
         {
           "class": null,
@@ -1666,7 +1666,7 @@
       "sportstiming_result_id": "7794046",
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7794046",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results/7794046",
-      "source_sha256": "534c71227fef5255555be09a80b177fd64e093a98300e95b0a5d4aa4c05fb909",
+      "source_sha256": "cf9275cf88e2bd3928b529977a3395d99a3c252c528927cc4eea037cfb11aa27",
       "tables": [
         {
           "class": null,
@@ -2197,7 +2197,7 @@
       "sportstiming_result_id": "7791093",
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7791093",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results/7791093",
-      "source_sha256": "c0e014061e4e8cdaead54ccb352d52cb243efe4b5e5256e2873ec29a150b3d23",
+      "source_sha256": "913b7a7a45b46e0514fd78dfb533de98e6fa6f9bafea5e70cb88436f185a7a9f",
       "tables": [
         {
           "class": null,
@@ -2728,7 +2728,7 @@
       "sportstiming_result_id": "7792111",
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7792111",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results/7792111",
-      "source_sha256": "f61c282d7788604dace317750daf3e41198a8e2353fa515ea16d5a3403e0dec1",
+      "source_sha256": "e83e23d118605aff0303319c035f7e314fe6e22c10733d5b23fc232182483617",
       "tables": [
         {
           "class": null,
@@ -3259,7 +3259,7 @@
       "sportstiming_result_id": "7794298",
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7794298",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results/7794298",
-      "source_sha256": "ba1aec352b6fc4a407a14cc8bd2ac16042c026d2b852b3e34a86426a7941d8eb",
+      "source_sha256": "f5a398f75dc6acb25e0e66e334b45b98c301438801ede806e101f208f5d6dd53",
       "tables": [
         {
           "class": null,
@@ -3778,7 +3778,7 @@
       "sportstiming_result_id": "8125824",
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/8125824",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results/8125824",
-      "source_sha256": "edcb278ed7e2d652a867913c43993286a448e26c53123bb4afa9ed7bc915a10c",
+      "source_sha256": "6bdb46abdef83922272d10d0e138df4c645364bfb0a7b4ea12f838981b8fb9c3",
       "tables": [
         {
           "class": null,
@@ -4297,7 +4297,7 @@
       "sportstiming_result_id": "7792756",
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7792756",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results/7792756",
-      "source_sha256": "1445971d04f7a832f0f8cee227f39b29e5c38c73d502c4c253fccf597666eea2",
+      "source_sha256": "b6c2a491147a9682f0cad0feb3f7f41903998c5fad1eb6ce2784bd912d8abca3",
       "tables": [
         {
           "class": null,
@@ -4828,7 +4828,7 @@
       "sportstiming_result_id": "7798220",
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7798220",
       "final_url": "https://www.sportstiming.dk/event/16880/app/results/7798220",
-      "source_sha256": "63707ec8de9f3be931f8ad6bb96d54ea86ba32e8183b237395a754d3bd618da9",
+      "source_sha256": "60f3df8b6e881f6166f33b5e2b56188a99c1196addd995bd81b0b7d612b67748",
       "tables": [
         {
           "class": null,

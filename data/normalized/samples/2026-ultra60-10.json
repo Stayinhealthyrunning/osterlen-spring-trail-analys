@@ -4,6 +4,7 @@
   "year": 2026,
   "race_family": "ultra60",
   "event_id": 16880,
+  "checkpoint_mapping_config": "config/checkpoint-normalization.json",
   "records": [
     {
       "result_uid": "st:16880:7793098",
@@ -36,6 +37,12 @@
         {
           "checkpoint_source_label": "34 km",
           "checkpoint_key": "34-km",
+          "checkpoint_semantic_key": "bengtemolla",
+          "canonical_landmark_key": "bengtemolla",
+          "checkpoint_role": "aid_station_timing",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "high_distance_geometry_match",
+          "checkpoint_mapping_evidence": "Distance-only timing label. Bengtemölla is independently placed at about 33.5-33.6 km by route/waypoint evidence, so 34 km is treated as its rounded timing checkpoint while the source label remains visible.",
           "reported_checkpoint_distance_km": 34.0,
           "segment_distance_km": 34.0,
           "segment_seconds": 8997,
@@ -63,6 +70,12 @@
         {
           "checkpoint_source_label": "60 km",
           "checkpoint_key": "60-km",
+          "checkpoint_semantic_key": "finish",
+          "canonical_landmark_key": null,
+          "checkpoint_role": "finish",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "source_distance_finish_context",
+          "checkpoint_mapping_evidence": null,
           "reported_checkpoint_distance_km": 60.0,
           "segment_distance_km": 26.0,
           "segment_seconds": 7504,
@@ -89,7 +102,7 @@
         }
       ],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7793098",
-      "source_sha256": "a6ea40bedf034f7a295b4872339738f7f1ac72e6fd0ae27f205bc9cfd4a62d1b",
+      "source_sha256": "d934db9e0a1ef09f3fca4e183a0b522610cebb3e5291f4c4157b2225b9df7af4",
       "raw_tables": [
         {
           "class": null,
@@ -647,6 +660,12 @@
         {
           "checkpoint_source_label": "34 km",
           "checkpoint_key": "34-km",
+          "checkpoint_semantic_key": "bengtemolla",
+          "canonical_landmark_key": "bengtemolla",
+          "checkpoint_role": "aid_station_timing",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "high_distance_geometry_match",
+          "checkpoint_mapping_evidence": "Distance-only timing label. Bengtemölla is independently placed at about 33.5-33.6 km by route/waypoint evidence, so 34 km is treated as its rounded timing checkpoint while the source label remains visible.",
           "reported_checkpoint_distance_km": 34.0,
           "segment_distance_km": 34.0,
           "segment_seconds": 8673,
@@ -674,6 +693,12 @@
         {
           "checkpoint_source_label": "60 km",
           "checkpoint_key": "60-km",
+          "checkpoint_semantic_key": "finish",
+          "canonical_landmark_key": null,
+          "checkpoint_role": "finish",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "source_distance_finish_context",
+          "checkpoint_mapping_evidence": null,
           "reported_checkpoint_distance_km": 60.0,
           "segment_distance_km": 26.0,
           "segment_seconds": 7935,
@@ -700,7 +725,7 @@
         }
       ],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7796216",
-      "source_sha256": "0755cf092eced983b883614fbd9b2f1511f48295d97f417fe317da8a24a71127",
+      "source_sha256": "f0bff9a0d63d564398867e39b001beb17de6e199c120b32fd7433987426de409",
       "raw_tables": [
         {
           "class": null,
@@ -1258,6 +1283,12 @@
         {
           "checkpoint_source_label": "34 km",
           "checkpoint_key": "34-km",
+          "checkpoint_semantic_key": "bengtemolla",
+          "canonical_landmark_key": "bengtemolla",
+          "checkpoint_role": "aid_station_timing",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "high_distance_geometry_match",
+          "checkpoint_mapping_evidence": "Distance-only timing label. Bengtemölla is independently placed at about 33.5-33.6 km by route/waypoint evidence, so 34 km is treated as its rounded timing checkpoint while the source label remains visible.",
           "reported_checkpoint_distance_km": 34.0,
           "segment_distance_km": 34.0,
           "segment_seconds": 9003,
@@ -1285,6 +1316,12 @@
         {
           "checkpoint_source_label": "60 km",
           "checkpoint_key": "60-km",
+          "checkpoint_semantic_key": "finish",
+          "canonical_landmark_key": null,
+          "checkpoint_role": "finish",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "source_distance_finish_context",
+          "checkpoint_mapping_evidence": null,
           "reported_checkpoint_distance_km": 60.0,
           "segment_distance_km": 26.0,
           "segment_seconds": 8278,
@@ -1311,7 +1348,7 @@
         }
       ],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7792471",
-      "source_sha256": "3bcb538cbf413e462a202e1e152d374f033da71c3a0ecd48433eecf791f28651",
+      "source_sha256": "7d338f328d3b5f704ee5dac75f8f507ff010384e4071eeb28d78fd3557a59ceb",
       "raw_tables": [
         {
           "class": null,
@@ -1857,6 +1894,12 @@
         {
           "checkpoint_source_label": "34 km",
           "checkpoint_key": "34-km",
+          "checkpoint_semantic_key": "bengtemolla",
+          "canonical_landmark_key": "bengtemolla",
+          "checkpoint_role": "aid_station_timing",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "high_distance_geometry_match",
+          "checkpoint_mapping_evidence": "Distance-only timing label. Bengtemölla is independently placed at about 33.5-33.6 km by route/waypoint evidence, so 34 km is treated as its rounded timing checkpoint while the source label remains visible.",
           "reported_checkpoint_distance_km": 34.0,
           "segment_distance_km": 34.0,
           "segment_seconds": 9459,
@@ -1884,6 +1927,12 @@
         {
           "checkpoint_source_label": "60 km",
           "checkpoint_key": "60-km",
+          "checkpoint_semantic_key": "finish",
+          "canonical_landmark_key": null,
+          "checkpoint_role": "finish",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "source_distance_finish_context",
+          "checkpoint_mapping_evidence": null,
           "reported_checkpoint_distance_km": 60.0,
           "segment_distance_km": 26.0,
           "segment_seconds": 7842,
@@ -1910,7 +1959,7 @@
         }
       ],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7794046",
-      "source_sha256": "534c71227fef5255555be09a80b177fd64e093a98300e95b0a5d4aa4c05fb909",
+      "source_sha256": "cf9275cf88e2bd3928b529977a3395d99a3c252c528927cc4eea037cfb11aa27",
       "raw_tables": [
         {
           "class": null,
@@ -2468,6 +2517,12 @@
         {
           "checkpoint_source_label": "34 km",
           "checkpoint_key": "34-km",
+          "checkpoint_semantic_key": "bengtemolla",
+          "canonical_landmark_key": "bengtemolla",
+          "checkpoint_role": "aid_station_timing",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "high_distance_geometry_match",
+          "checkpoint_mapping_evidence": "Distance-only timing label. Bengtemölla is independently placed at about 33.5-33.6 km by route/waypoint evidence, so 34 km is treated as its rounded timing checkpoint while the source label remains visible.",
           "reported_checkpoint_distance_km": 34.0,
           "segment_distance_km": 34.0,
           "segment_seconds": 9769,
@@ -2495,6 +2550,12 @@
         {
           "checkpoint_source_label": "60 km",
           "checkpoint_key": "60-km",
+          "checkpoint_semantic_key": "finish",
+          "canonical_landmark_key": null,
+          "checkpoint_role": "finish",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "source_distance_finish_context",
+          "checkpoint_mapping_evidence": null,
           "reported_checkpoint_distance_km": 60.0,
           "segment_distance_km": 26.0,
           "segment_seconds": 8311,
@@ -2521,7 +2582,7 @@
         }
       ],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7791093",
-      "source_sha256": "c0e014061e4e8cdaead54ccb352d52cb243efe4b5e5256e2873ec29a150b3d23",
+      "source_sha256": "913b7a7a45b46e0514fd78dfb533de98e6fa6f9bafea5e70cb88436f185a7a9f",
       "raw_tables": [
         {
           "class": null,
@@ -3079,6 +3140,12 @@
         {
           "checkpoint_source_label": "34 km",
           "checkpoint_key": "34-km",
+          "checkpoint_semantic_key": "bengtemolla",
+          "canonical_landmark_key": "bengtemolla",
+          "checkpoint_role": "aid_station_timing",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "high_distance_geometry_match",
+          "checkpoint_mapping_evidence": "Distance-only timing label. Bengtemölla is independently placed at about 33.5-33.6 km by route/waypoint evidence, so 34 km is treated as its rounded timing checkpoint while the source label remains visible.",
           "reported_checkpoint_distance_km": 34.0,
           "segment_distance_km": 34.0,
           "segment_seconds": 9744,
@@ -3106,6 +3173,12 @@
         {
           "checkpoint_source_label": "60 km",
           "checkpoint_key": "60-km",
+          "checkpoint_semantic_key": "finish",
+          "canonical_landmark_key": null,
+          "checkpoint_role": "finish",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "source_distance_finish_context",
+          "checkpoint_mapping_evidence": null,
           "reported_checkpoint_distance_km": 60.0,
           "segment_distance_km": 26.0,
           "segment_seconds": 9201,
@@ -3132,7 +3205,7 @@
         }
       ],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7792111",
-      "source_sha256": "f61c282d7788604dace317750daf3e41198a8e2353fa515ea16d5a3403e0dec1",
+      "source_sha256": "e83e23d118605aff0303319c035f7e314fe6e22c10733d5b23fc232182483617",
       "raw_tables": [
         {
           "class": null,
@@ -3690,6 +3763,12 @@
         {
           "checkpoint_source_label": "34 km",
           "checkpoint_key": "34-km",
+          "checkpoint_semantic_key": "bengtemolla",
+          "canonical_landmark_key": "bengtemolla",
+          "checkpoint_role": "aid_station_timing",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "high_distance_geometry_match",
+          "checkpoint_mapping_evidence": "Distance-only timing label. Bengtemölla is independently placed at about 33.5-33.6 km by route/waypoint evidence, so 34 km is treated as its rounded timing checkpoint while the source label remains visible.",
           "reported_checkpoint_distance_km": 34.0,
           "segment_distance_km": 34.0,
           "segment_seconds": 9953,
@@ -3717,6 +3796,12 @@
         {
           "checkpoint_source_label": "60 km",
           "checkpoint_key": "60-km",
+          "checkpoint_semantic_key": "finish",
+          "canonical_landmark_key": null,
+          "checkpoint_role": "finish",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "source_distance_finish_context",
+          "checkpoint_mapping_evidence": null,
           "reported_checkpoint_distance_km": 60.0,
           "segment_distance_km": 26.0,
           "segment_seconds": 9009,
@@ -3743,7 +3828,7 @@
         }
       ],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7794298",
-      "source_sha256": "ba1aec352b6fc4a407a14cc8bd2ac16042c026d2b852b3e34a86426a7941d8eb",
+      "source_sha256": "f5a398f75dc6acb25e0e66e334b45b98c301438801ede806e101f208f5d6dd53",
       "raw_tables": [
         {
           "class": null,
@@ -4289,6 +4374,12 @@
         {
           "checkpoint_source_label": "34 km",
           "checkpoint_key": "34-km",
+          "checkpoint_semantic_key": "bengtemolla",
+          "canonical_landmark_key": "bengtemolla",
+          "checkpoint_role": "aid_station_timing",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "high_distance_geometry_match",
+          "checkpoint_mapping_evidence": "Distance-only timing label. Bengtemölla is independently placed at about 33.5-33.6 km by route/waypoint evidence, so 34 km is treated as its rounded timing checkpoint while the source label remains visible.",
           "reported_checkpoint_distance_km": 34.0,
           "segment_distance_km": 34.0,
           "segment_seconds": 10317,
@@ -4316,6 +4407,12 @@
         {
           "checkpoint_source_label": "60 km",
           "checkpoint_key": "60-km",
+          "checkpoint_semantic_key": "finish",
+          "canonical_landmark_key": null,
+          "checkpoint_role": "finish",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "source_distance_finish_context",
+          "checkpoint_mapping_evidence": null,
           "reported_checkpoint_distance_km": 60.0,
           "segment_distance_km": 26.0,
           "segment_seconds": 8657,
@@ -4342,7 +4439,7 @@
         }
       ],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/8125824",
-      "source_sha256": "edcb278ed7e2d652a867913c43993286a448e26c53123bb4afa9ed7bc915a10c",
+      "source_sha256": "6bdb46abdef83922272d10d0e138df4c645364bfb0a7b4ea12f838981b8fb9c3",
       "raw_tables": [
         {
           "class": null,
@@ -4888,6 +4985,12 @@
         {
           "checkpoint_source_label": "34 km",
           "checkpoint_key": "34-km",
+          "checkpoint_semantic_key": "bengtemolla",
+          "canonical_landmark_key": "bengtemolla",
+          "checkpoint_role": "aid_station_timing",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "high_distance_geometry_match",
+          "checkpoint_mapping_evidence": "Distance-only timing label. Bengtemölla is independently placed at about 33.5-33.6 km by route/waypoint evidence, so 34 km is treated as its rounded timing checkpoint while the source label remains visible.",
           "reported_checkpoint_distance_km": 34.0,
           "segment_distance_km": 34.0,
           "segment_seconds": 10097,
@@ -4915,6 +5018,12 @@
         {
           "checkpoint_source_label": "60 km",
           "checkpoint_key": "60-km",
+          "checkpoint_semantic_key": "finish",
+          "canonical_landmark_key": null,
+          "checkpoint_role": "finish",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "source_distance_finish_context",
+          "checkpoint_mapping_evidence": null,
           "reported_checkpoint_distance_km": 60.0,
           "segment_distance_km": 26.0,
           "segment_seconds": 9097,
@@ -4941,7 +5050,7 @@
         }
       ],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7792756",
-      "source_sha256": "1445971d04f7a832f0f8cee227f39b29e5c38c73d502c4c253fccf597666eea2",
+      "source_sha256": "b6c2a491147a9682f0cad0feb3f7f41903998c5fad1eb6ce2784bd912d8abca3",
       "raw_tables": [
         {
           "class": null,
@@ -5499,6 +5608,12 @@
         {
           "checkpoint_source_label": "34 km",
           "checkpoint_key": "34-km",
+          "checkpoint_semantic_key": "bengtemolla",
+          "canonical_landmark_key": "bengtemolla",
+          "checkpoint_role": "aid_station_timing",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "high_distance_geometry_match",
+          "checkpoint_mapping_evidence": "Distance-only timing label. Bengtemölla is independently placed at about 33.5-33.6 km by route/waypoint evidence, so 34 km is treated as its rounded timing checkpoint while the source label remains visible.",
           "reported_checkpoint_distance_km": 34.0,
           "segment_distance_km": 34.0,
           "segment_seconds": 10333,
@@ -5526,6 +5641,12 @@
         {
           "checkpoint_source_label": "60 km",
           "checkpoint_key": "60-km",
+          "checkpoint_semantic_key": "finish",
+          "canonical_landmark_key": null,
+          "checkpoint_role": "finish",
+          "analysis_primary": true,
+          "checkpoint_mapping_confidence": "source_distance_finish_context",
+          "checkpoint_mapping_evidence": null,
           "reported_checkpoint_distance_km": 60.0,
           "segment_distance_km": 26.0,
           "segment_seconds": 8903,
@@ -5552,7 +5673,7 @@
         }
       ],
       "source_url": "https://www.sportstiming.dk/event/16880/app/results/7798220",
-      "source_sha256": "63707ec8de9f3be931f8ad6bb96d54ea86ba32e8183b237395a754d3bd618da9",
+      "source_sha256": "60f3df8b6e881f6166f33b5e2b56188a99c1196addd995bd81b0b7d612b67748",
       "raw_tables": [
         {
           "class": null,
