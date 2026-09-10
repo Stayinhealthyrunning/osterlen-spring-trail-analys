@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "principles": [
+    "A course-version ID describes verified route geometry, not merely a marketing distance label.",
+    "Years may share a course-version only when the same route source or geometric comparison supports equivalence.",
+    "Unknown historical years remain unassigned until route geometry is recovered and compared.",
+    "Duo inherits the Ultra 60 full-course version for the same year; its relay exchange is modelled separately."
+  ],
+  "versions": [
+    {
+      "course_version_id": "ultra60-2024",
+      "route_family": "ultra60",
+      "years": [2024],
+      "status": "verified_distinct_route_source",
+      "primary_source_path": "data/source/gpx/ultra60/ost-ultra60-2024-organizer.gpx",
+      "notes": "Organizer-direct GPX. Kept separate from 2025/2026 because the organizer provides a different GPX and current diagnostics show different start and route length."
+    },
+    {
+      "course_version_id": "ultra60-2025-2026",
+      "route_family": "ultra60",
+      "years": [2025, 2026],
+      "status": "verified_same_organizer_route_source",
+      "primary_source_path": "data/source/gpx/ultra60/ost-ultra60-2025-2026-organizer.gpx",
+      "notes": "The organizer's 2026 material points to the same GPX file used for the 2025/2026 route; the filename contains 2025."
+    }
+  ],
+  "assignments": [
+    {"year":2018,"family":"ultra60","course_version_id":null,"status":"pending_geometry"},
+    {"year":2019,"family":"ultra60","course_version_id":null,"status":"pending_geometry"},
+    {"year":2022,"family":"ultra60","course_version_id":null,"status":"pending_geometry"},
+    {"year":2023,"family":"ultra60","course_version_id":null,"status":"pending_geometry"},
+    {"year":2024,"family":"ultra60","course_version_id":"ultra60-2024","status":"assigned"},
+    {"year":2025,"family":"ultra60","course_version_id":"ultra60-2025-2026","status":"assigned"},
+    {"year":2026,"family":"ultra60","course_version_id":"ultra60-2025-2026","status":"assigned"},
+
+    {"year":2019,"family":"duo60","course_version_id":null,"inherits_from":"ultra60","status":"pending_parent_geometry"},
+    {"year":2022,"family":"duo60","course_version_id":null,"inherits_from":"ultra60","status":"pending_parent_geometry"},
+    {"year":2023,"family":"duo60","course_version_id":null,"inherits_from":"ultra60","status":"pending_parent_geometry"},
+    {"year":2024,"family":"duo60","course_version_id":"ultra60-2024","inherits_from":"ultra60","status":"assigned_inherited"},
+    {"year":2025,"family":"duo60","course_version_id":"ultra60-2025-2026","inherits_from":"ultra60","status":"assigned_inherited"},
+    {"year":2026,"family":"duo60","course_version_id":"ultra60-2025-2026","inherits_from":"ultra60","status":"assigned_inherited"}
+  ],
+  "unassigned_route_families": ["trail22", "trail14", "trail5"]
+}
