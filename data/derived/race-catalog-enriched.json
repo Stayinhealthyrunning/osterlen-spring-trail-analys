@@ -1,0 +1,3045 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-10T13:39:27.995757+00:00",
+  "source_catalog": "config/race-catalog.json",
+  "derived_from": [
+    "data/source/sportstiming/class-catalog.json",
+    "config/course-versions.json",
+    "reports/source-coverage.json",
+    "data/derived/analysis-capabilities.json",
+    "reports/tracedetrail-public-geometry-analysis.json (when available)"
+  ],
+  "rules": [
+    "The curated source catalog is never modified by this builder.",
+    "Observed Sportstiming and route capability fields override stale placeholder status only in this derived output.",
+    "course_version comes only from config/course-versions.json assignments.",
+    "Feature readiness is source-driven and does not imply that the production UI/import has already been implemented."
+  ],
+  "races": [
+    {
+      "race_key": "ost-2018-ultra60",
+      "event_key": "osterlen-spring-trail",
+      "year": 2018,
+      "race_family": "ultra60",
+      "race_type": "individual",
+      "source_event_key": "4950",
+      "sportstiming_event_id": 4950,
+      "source_race_name": "Simris Alg Ultra 60km+",
+      "race_date": "2018-04-14",
+      "scheduled_start_local": "10:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 60,
+      "canonical_family_distance_km": 60,
+      "route_family_ref": "ultra60",
+      "trace_id": 43970,
+      "data_status": "source_catalogued",
+      "timing_split_status": "split_table_observed",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/4950",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": "ultra60-2018",
+      "course_version_assignment_status": "assigned_from_public_geometry",
+      "sportstiming_distance_id": "15266",
+      "sportstiming_source_label": "Simris Alg Ultra 60km+ (ca. 1150m höjdmeter)",
+      "observed_split_labels": [
+        "Stenshuvud km 14",
+        "Bengtemölla km 32",
+        "Vantalängan km 52",
+        "Finish"
+      ],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "reference_only",
+      "tracking_distance_match": true,
+      "trace_geometry_evidence": {
+        "trace_id": 43970,
+        "source_date_compet": "14/04/2018",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "bb0a90f2178ef7e946e18d32fa7ae9ea145ea248c71da36efa77f76e35b65112",
+        "derived_path_distance_km": 62.055,
+        "landmarks": [
+          {
+            "source_pi_id": "141260",
+            "title": "Tidsgräns 12:30 (2,5h efter start).",
+            "semantic_key": null,
+            "types": [
+              "bh"
+            ],
+            "projected_distance_km": 14.584,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "141214",
+            "title": "Buhres Fisk vätskestation",
+            "semantic_key": null,
+            "types": [
+              "ravitoc"
+            ],
+            "projected_distance_km": 21.161,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "141217",
+            "title": "Bengtemölla Vätskestation 1 (officiell)",
+            "semantic_key": "bengtemolla",
+            "types": [
+              "ravitoc"
+            ],
+            "projected_distance_km": 33.479,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "141263",
+            "title": "Tidsgräns 14:30 (4,5h efter start).",
+            "semantic_key": null,
+            "types": [
+              "bh"
+            ],
+            "projected_distance_km": 33.675,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "141264",
+            "title": "Tidsgräns 16:00 (6h efter start).",
+            "semantic_key": null,
+            "types": [
+              "bh"
+            ],
+            "projected_distance_km": 44.516,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "141265",
+            "title": "Tidsgräns 17:30 (7,5h efter start).",
+            "semantic_key": null,
+            "types": [
+              "bh"
+            ],
+            "projected_distance_km": 53.559,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "141221",
+            "title": "Vantalängan aid station 2",
+            "semantic_key": "vantalangan",
+            "types": [
+              "ravitoc"
+            ],
+            "projected_distance_km": 53.611,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "141279",
+            "title": "Tidsgäns målgång kl 19:00",
+            "semantic_key": null,
+            "types": [
+              "bh"
+            ],
+            "projected_distance_km": 62.055,
+            "off_route_m": 0.0
+          }
+        ]
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "source_ready",
+          "reason": "4 published split/checkpoint labels observed in sampled result."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: archived route geometry."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version ultra60-2018."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2018-trail22",
+      "event_key": "osterlen-spring-trail",
+      "year": 2018,
+      "race_family": "trail22",
+      "race_type": "individual",
+      "source_event_key": "4950",
+      "sportstiming_event_id": 4950,
+      "source_race_name": "Verkeån trail 21km+",
+      "race_date": "2018-04-14",
+      "scheduled_start_local": "11:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 21,
+      "canonical_family_distance_km": 22,
+      "route_family_ref": "trail22",
+      "trace_id": 7897,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/4950",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": null,
+      "course_version_assignment_status": "pending_year_specific_provenance",
+      "sportstiming_distance_id": "15268",
+      "sportstiming_source_label": "Verkeån trail 21km+ (ca. 500m höjdmeter)",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "reference_only",
+      "tracking_distance_match": false,
+      "trace_geometry_evidence": {
+        "trace_id": 7897,
+        "source_date_compet": "16/04/2016",
+        "manifest_year_match": false,
+        "public_geometry_sha256": "98400a8a0f05f92d0fba2dd9071d5d7491c40f20f8d5070348106b3d09c1a31c",
+        "derived_path_distance_km": 21.688,
+        "landmarks": []
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "blocked_pending_geometry",
+          "reason": "Course version is not yet assigned."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2018-trail14",
+      "event_key": "osterlen-spring-trail",
+      "year": 2018,
+      "race_family": "trail14",
+      "race_type": "individual",
+      "source_event_key": "4950",
+      "sportstiming_event_id": 4950,
+      "source_race_name": "Ekopark trail 13 km",
+      "race_date": "2018-04-15",
+      "scheduled_start_local": "12:30",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 13,
+      "canonical_family_distance_km": 14,
+      "route_family_ref": "trail14",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/4950",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": null,
+      "course_version_assignment_status": "not_assigned",
+      "sportstiming_distance_id": "15269",
+      "sportstiming_source_label": "Ekopark trail 13 km",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "missing",
+      "tracking_distance_match": false,
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "blocked_pending_geometry",
+          "reason": "Course version is not yet assigned."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2018-trail5",
+      "event_key": "osterlen-spring-trail",
+      "year": 2018,
+      "race_family": "trail5",
+      "race_type": "individual",
+      "source_event_key": "4950",
+      "sportstiming_event_id": 4950,
+      "source_race_name": "Naturloppet 5km+",
+      "race_date": "2018-04-15",
+      "scheduled_start_local": "10:45",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 5,
+      "canonical_family_distance_km": 5,
+      "route_family_ref": "trail5",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/4950",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": null,
+      "course_version_assignment_status": "not_assigned",
+      "sportstiming_distance_id": "15265",
+      "sportstiming_source_label": "Naturloppet 5km+",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "missing",
+      "tracking_distance_match": false,
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "blocked_pending_geometry",
+          "reason": "Course version is not yet assigned."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2019-ultra60",
+      "event_key": "osterlen-spring-trail",
+      "year": 2019,
+      "race_family": "ultra60",
+      "race_type": "individual",
+      "source_event_key": "5719",
+      "sportstiming_event_id": 5719,
+      "source_race_name": "Simris Alg Ultra 60km+",
+      "race_date": "2019-04-13",
+      "scheduled_start_local": "10:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 60,
+      "canonical_family_distance_km": 60,
+      "route_family_ref": "ultra60",
+      "trace_id": 69381,
+      "data_status": "source_catalogued",
+      "timing_split_status": "split_table_observed",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/5719",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": "ultra60-2019",
+      "course_version_assignment_status": "assigned_from_public_geometry",
+      "sportstiming_distance_id": "20385",
+      "sportstiming_source_label": "Simris Alg Ultra 60km+ (ca. 1450m höjdmeter)",
+      "observed_split_labels": [
+        "Stenshuvud km 14",
+        "Bengtemölla km 32",
+        "Vantalängan km 52",
+        "Finish Km 60+"
+      ],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "reference_only",
+      "tracking_distance_match": true,
+      "trace_geometry_evidence": {
+        "trace_id": 69381,
+        "source_date_compet": "13/04/2019",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "ba16b78ba88395ac0bdaf3f0556eba922d55fd3663ce17fa40e588cf45cf22c6",
+        "derived_path_distance_km": 58.612,
+        "landmarks": []
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "source_ready",
+          "reason": "4 published split/checkpoint labels observed in sampled result."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: archived route geometry."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version ultra60-2019."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2019-duo60",
+      "event_key": "osterlen-spring-trail",
+      "year": 2019,
+      "race_family": "duo60",
+      "race_type": "relay",
+      "source_event_key": "5719",
+      "sportstiming_event_id": 5719,
+      "source_race_name": "Duo Trail (relay 2 x 30 km)",
+      "race_date": "2019-04-13",
+      "scheduled_start_local": "10:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 60,
+      "canonical_family_distance_km": 60,
+      "route_family_ref": "ultra60",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/5719",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "route_race_key": "ost-2019-ultra60",
+      "relay_legs": 2,
+      "exchange_name": "Bengtemölla",
+      "source_catalog_course_version": null,
+      "course_version": "ultra60-2019",
+      "course_version_assignment_status": "assigned_inherited",
+      "sportstiming_distance_id": "20390",
+      "sportstiming_source_label": "Duo Trail (relay 2 x 30 km)",
+      "observed_split_labels": [],
+      "result_detail_status": "team_or_relay_adapter_needed",
+      "route_geometry_status": "ultra_reference_only",
+      "tracking_distance_match": false,
+      "trace_geometry_evidence": {
+        "trace_id": 69381,
+        "source_date_compet": "13/04/2019",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "ba16b78ba88395ac0bdaf3f0556eba922d55fd3663ce17fa40e588cf45cf22c6",
+        "derived_path_distance_km": 58.612,
+        "landmarks": []
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "adapter_needed",
+          "reason": "Relay/team result format needs a dedicated adapter."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version ultra60-2019."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2019-trail22",
+      "event_key": "osterlen-spring-trail",
+      "year": 2019,
+      "race_family": "trail22",
+      "race_type": "individual",
+      "source_event_key": "5719",
+      "sportstiming_event_id": 5719,
+      "source_race_name": "Verkeån trail 21km+",
+      "race_date": "2019-04-13",
+      "scheduled_start_local": "11:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 21,
+      "canonical_family_distance_km": 22,
+      "route_family_ref": "trail22",
+      "trace_id": 69864,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/5719",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": "trail22-2019",
+      "course_version_assignment_status": "assigned_from_public_geometry",
+      "sportstiming_distance_id": "20387",
+      "sportstiming_source_label": "Verkeån trail 21km+",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "reference_only",
+      "tracking_distance_match": false,
+      "trace_geometry_evidence": {
+        "trace_id": 69864,
+        "source_date_compet": "13/04/2019",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "ee8ab4532a44b3abfdeb6b695185494c35a07ac47596f982feec1ecb3e9bef3e",
+        "derived_path_distance_km": 21.726,
+        "landmarks": []
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version trail22-2019."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2019-trail14",
+      "event_key": "osterlen-spring-trail",
+      "year": 2019,
+      "race_family": "trail14",
+      "race_type": "individual",
+      "source_event_key": "5719",
+      "sportstiming_event_id": 5719,
+      "source_race_name": "Ekopark trail 13 km",
+      "race_date": "2019-04-14",
+      "scheduled_start_local": "12:30",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 13,
+      "canonical_family_distance_km": 14,
+      "route_family_ref": "trail14",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/5719",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": null,
+      "course_version_assignment_status": "not_assigned",
+      "sportstiming_distance_id": "20388",
+      "sportstiming_source_label": "Ekopark trail 13 km",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "missing",
+      "tracking_distance_match": false,
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "blocked_pending_geometry",
+          "reason": "Course version is not yet assigned."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2019-trail5",
+      "event_key": "osterlen-spring-trail",
+      "year": 2019,
+      "race_family": "trail5",
+      "race_type": "individual",
+      "source_event_key": "5719",
+      "sportstiming_event_id": 5719,
+      "source_race_name": "Naturloppet 5km+",
+      "race_date": "2019-04-14",
+      "scheduled_start_local": "10:45",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 5,
+      "canonical_family_distance_km": 5,
+      "route_family_ref": "trail5",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/5719",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": null,
+      "course_version_assignment_status": "not_assigned",
+      "sportstiming_distance_id": "20384",
+      "sportstiming_source_label": "Naturloppet 5km+",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "missing",
+      "tracking_distance_match": false,
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "blocked_pending_geometry",
+          "reason": "Course version is not yet assigned."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2022-ultra60",
+      "event_key": "osterlen-spring-trail",
+      "year": 2022,
+      "race_family": "ultra60",
+      "race_type": "individual",
+      "source_event_key": "9587",
+      "sportstiming_event_id": 9587,
+      "source_race_name": "Ultra 60km+",
+      "race_date": "2022-04-09",
+      "scheduled_start_local": "10:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 60,
+      "canonical_family_distance_km": 60,
+      "route_family_ref": "ultra60",
+      "trace_id": 172147,
+      "data_status": "source_catalogued",
+      "timing_split_status": "split_table_observed",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/9587",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": "ultra60-2022-2023",
+      "course_version_assignment_status": "assigned_from_public_geometry",
+      "sportstiming_distance_id": "46204",
+      "sportstiming_source_label": "Ultra 60km+",
+      "observed_split_labels": [
+        "32 km",
+        "Bengtemölla",
+        "62 km"
+      ],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "reference_only",
+      "tracking_distance_match": true,
+      "trace_geometry_evidence": {
+        "trace_id": 172147,
+        "source_date_compet": "09/04/2022",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "d65a4c4f615601056da54eda115d937f1a496bd61253950c49209b30dc06b33a",
+        "derived_path_distance_km": 58.347,
+        "landmarks": [
+          {
+            "source_pi_id": "521005",
+            "title": "Aid station nr 1 / Bengtemölla",
+            "semantic_key": "bengtemolla",
+            "types": [
+              "Ravitaillement",
+              "Regroupement"
+            ],
+            "projected_distance_km": 32.212,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "521018",
+            "title": null,
+            "semantic_key": null,
+            "types": [
+              "bh"
+            ],
+            "projected_distance_km": 58.347,
+            "off_route_m": 0.0
+          }
+        ]
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "source_ready",
+          "reason": "3 published split/checkpoint labels observed in sampled result."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: archived route geometry."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version ultra60-2022-2023."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2022-duo60",
+      "event_key": "osterlen-spring-trail",
+      "year": 2022,
+      "race_family": "duo60",
+      "race_type": "relay",
+      "source_event_key": "9587",
+      "sportstiming_event_id": 9587,
+      "source_race_name": "Duo Trail (relay 2 x 30 km)",
+      "race_date": "2022-04-09",
+      "scheduled_start_local": "10:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 60,
+      "canonical_family_distance_km": 60,
+      "route_family_ref": "ultra60",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/9587",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "route_race_key": "ost-2022-ultra60",
+      "relay_legs": 2,
+      "exchange_name": "Bengtemölla",
+      "source_catalog_course_version": null,
+      "course_version": "ultra60-2022-2023",
+      "course_version_assignment_status": "assigned_inherited",
+      "sportstiming_distance_id": "46209",
+      "sportstiming_source_label": "Duo Trail (relay 2 x 30 km)",
+      "observed_split_labels": [],
+      "result_detail_status": "team_or_relay_adapter_needed",
+      "route_geometry_status": "ultra_reference_only",
+      "tracking_distance_match": false,
+      "trace_geometry_evidence": {
+        "trace_id": 172147,
+        "source_date_compet": "09/04/2022",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "d65a4c4f615601056da54eda115d937f1a496bd61253950c49209b30dc06b33a",
+        "derived_path_distance_km": 58.347,
+        "landmarks": [
+          {
+            "source_pi_id": "521005",
+            "title": "Aid station nr 1 / Bengtemölla",
+            "semantic_key": "bengtemolla",
+            "types": [
+              "Ravitaillement",
+              "Regroupement"
+            ],
+            "projected_distance_km": 32.212,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "521018",
+            "title": null,
+            "semantic_key": null,
+            "types": [
+              "bh"
+            ],
+            "projected_distance_km": 58.347,
+            "off_route_m": 0.0
+          }
+        ]
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "adapter_needed",
+          "reason": "Relay/team result format needs a dedicated adapter."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version ultra60-2022-2023."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2022-trail22",
+      "event_key": "osterlen-spring-trail",
+      "year": 2022,
+      "race_family": "trail22",
+      "race_type": "individual",
+      "source_event_key": "9587",
+      "sportstiming_event_id": 9587,
+      "source_race_name": "Teleservice trail 21km+",
+      "race_date": "2022-04-09",
+      "scheduled_start_local": "11:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 21,
+      "canonical_family_distance_km": 22,
+      "route_family_ref": "trail22",
+      "trace_id": 165617,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/9587",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": "trail22-2022-2024",
+      "course_version_assignment_status": "assigned_from_public_geometry",
+      "sportstiming_distance_id": "46206",
+      "sportstiming_source_label": "Teleservice trail 21km+",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "reference_only",
+      "tracking_distance_match": false,
+      "trace_geometry_evidence": {
+        "trace_id": 165617,
+        "source_date_compet": "09/04/2022",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "4e6dd245a2aab78c96b79720208d0b1deae23a3e206ee3ce80eda3a2957596bf",
+        "derived_path_distance_km": 21.741,
+        "landmarks": []
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version trail22-2022-2024."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2022-trail14",
+      "event_key": "osterlen-spring-trail",
+      "year": 2022,
+      "race_family": "trail14",
+      "race_type": "individual",
+      "source_event_key": "9587",
+      "sportstiming_event_id": 9587,
+      "source_race_name": "Ekopark trail 13 km",
+      "race_date": "2022-04-10",
+      "scheduled_start_local": "12:30",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 13,
+      "canonical_family_distance_km": 14,
+      "route_family_ref": "trail14",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/9587",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": null,
+      "course_version_assignment_status": "not_assigned",
+      "sportstiming_distance_id": "46207",
+      "sportstiming_source_label": "Ekopark trail 13 km",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "missing",
+      "tracking_distance_match": false,
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "blocked_pending_geometry",
+          "reason": "Course version is not yet assigned."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2022-trail5",
+      "event_key": "osterlen-spring-trail",
+      "year": 2022,
+      "race_family": "trail5",
+      "race_type": "individual",
+      "source_event_key": "9587",
+      "sportstiming_event_id": 9587,
+      "source_race_name": "Naturloppet 5km+",
+      "race_date": "2022-04-10",
+      "scheduled_start_local": "11:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 5,
+      "canonical_family_distance_km": 5,
+      "route_family_ref": "trail5",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/9587",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": null,
+      "course_version_assignment_status": "not_assigned",
+      "sportstiming_distance_id": "46203",
+      "sportstiming_source_label": "Naturloppet 5km+",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "missing",
+      "tracking_distance_match": false,
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "blocked_pending_geometry",
+          "reason": "Course version is not yet assigned."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2023-ultra60",
+      "event_key": "osterlen-spring-trail",
+      "year": 2023,
+      "race_family": "ultra60",
+      "race_type": "individual",
+      "source_event_key": "11274",
+      "sportstiming_event_id": 11274,
+      "source_race_name": "Ultra 60km+",
+      "race_date": "2023-04-15",
+      "scheduled_start_local": "10:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 60,
+      "canonical_family_distance_km": 60,
+      "route_family_ref": "ultra60",
+      "trace_id": 203147,
+      "data_status": "source_catalogued",
+      "timing_split_status": "split_table_observed",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/11274",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": "ultra60-2022-2023",
+      "course_version_assignment_status": "assigned_from_public_geometry",
+      "sportstiming_distance_id": "58343",
+      "sportstiming_source_label": "Ultra 60km+",
+      "observed_split_labels": [
+        "32 km",
+        "Bengtemölla",
+        "62 km"
+      ],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "reference_only",
+      "tracking_distance_match": false,
+      "trace_geometry_evidence": {
+        "trace_id": 203147,
+        "source_date_compet": "15/04/2023",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "d65a4c4f615601056da54eda115d937f1a496bd61253950c49209b30dc06b33a",
+        "derived_path_distance_km": 58.347,
+        "landmarks": [
+          {
+            "source_pi_id": "626900",
+            "title": "Aid station nr 1 / Bengtemölla",
+            "semantic_key": "bengtemolla",
+            "types": [
+              "Ravitaillement",
+              "Regroupement"
+            ],
+            "projected_distance_km": 32.212,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "626908",
+            "title": null,
+            "semantic_key": null,
+            "types": [
+              "bh"
+            ],
+            "projected_distance_km": 58.347,
+            "off_route_m": 0.0
+          }
+        ]
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "source_ready",
+          "reason": "3 published split/checkpoint labels observed in sampled result."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: archived route geometry."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version ultra60-2022-2023."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2023-duo60",
+      "event_key": "osterlen-spring-trail",
+      "year": 2023,
+      "race_family": "duo60",
+      "race_type": "relay",
+      "source_event_key": "11274",
+      "sportstiming_event_id": 11274,
+      "source_race_name": "Duo Trail (relay 2 x 30 km)",
+      "race_date": "2023-04-15",
+      "scheduled_start_local": "10:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 60,
+      "canonical_family_distance_km": 60,
+      "route_family_ref": "ultra60",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/11274",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "route_race_key": "ost-2023-ultra60",
+      "relay_legs": 2,
+      "exchange_name": "Bengtemölla",
+      "source_catalog_course_version": null,
+      "course_version": "ultra60-2022-2023",
+      "course_version_assignment_status": "assigned_inherited",
+      "sportstiming_distance_id": "58348",
+      "sportstiming_source_label": "Duo Trail (relay 2 x 30 km)",
+      "observed_split_labels": [],
+      "result_detail_status": "team_or_relay_adapter_needed",
+      "route_geometry_status": "ultra_reference_only",
+      "tracking_distance_match": false,
+      "trace_geometry_evidence": {
+        "trace_id": 203147,
+        "source_date_compet": "15/04/2023",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "d65a4c4f615601056da54eda115d937f1a496bd61253950c49209b30dc06b33a",
+        "derived_path_distance_km": 58.347,
+        "landmarks": [
+          {
+            "source_pi_id": "626900",
+            "title": "Aid station nr 1 / Bengtemölla",
+            "semantic_key": "bengtemolla",
+            "types": [
+              "Ravitaillement",
+              "Regroupement"
+            ],
+            "projected_distance_km": 32.212,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "626908",
+            "title": null,
+            "semantic_key": null,
+            "types": [
+              "bh"
+            ],
+            "projected_distance_km": 58.347,
+            "off_route_m": 0.0
+          }
+        ]
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "adapter_needed",
+          "reason": "Relay/team result format needs a dedicated adapter."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version ultra60-2022-2023."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2023-trail22",
+      "event_key": "osterlen-spring-trail",
+      "year": 2023,
+      "race_family": "trail22",
+      "race_type": "individual",
+      "source_event_key": "11274",
+      "sportstiming_event_id": 11274,
+      "source_race_name": "Fogarolli trail 21km+",
+      "race_date": "2023-04-15",
+      "scheduled_start_local": "11:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 21,
+      "canonical_family_distance_km": 22,
+      "route_family_ref": "trail22",
+      "trace_id": 203146,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/11274",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": "trail22-2022-2024",
+      "course_version_assignment_status": "assigned_from_public_geometry",
+      "sportstiming_distance_id": "58345",
+      "sportstiming_source_label": "Fogarolli trail 21km+",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "reference_only",
+      "tracking_distance_match": false,
+      "trace_geometry_evidence": {
+        "trace_id": 203146,
+        "source_date_compet": "15/04/2023",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "4e6dd245a2aab78c96b79720208d0b1deae23a3e206ee3ce80eda3a2957596bf",
+        "derived_path_distance_km": 21.741,
+        "landmarks": []
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version trail22-2022-2024."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2023-trail14",
+      "event_key": "osterlen-spring-trail",
+      "year": 2023,
+      "race_family": "trail14",
+      "race_type": "individual",
+      "source_event_key": "11274",
+      "sportstiming_event_id": 11274,
+      "source_race_name": "Ekopark trail 13 km",
+      "race_date": "2023-04-16",
+      "scheduled_start_local": "12:30",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 13,
+      "canonical_family_distance_km": 14,
+      "route_family_ref": "trail14",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/11274",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": null,
+      "course_version_assignment_status": "not_assigned",
+      "sportstiming_distance_id": "58346",
+      "sportstiming_source_label": "Ekopark trail 13 km",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "missing",
+      "tracking_distance_match": false,
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "blocked_pending_geometry",
+          "reason": "Course version is not yet assigned."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2023-trail5",
+      "event_key": "osterlen-spring-trail",
+      "year": 2023,
+      "race_family": "trail5",
+      "race_type": "individual",
+      "source_event_key": "11274",
+      "sportstiming_event_id": 11274,
+      "source_race_name": "Naturloppet 5km+",
+      "race_date": "2023-04-16",
+      "scheduled_start_local": "11:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 5,
+      "canonical_family_distance_km": 5,
+      "route_family_ref": "trail5",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/11274",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": null,
+      "course_version_assignment_status": "not_assigned",
+      "sportstiming_distance_id": "58342",
+      "sportstiming_source_label": "Naturloppet 5km+",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "missing",
+      "tracking_distance_match": false,
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "blocked_pending_geometry",
+          "reason": "Course version is not yet assigned."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2024-ultra60",
+      "event_key": "osterlen-spring-trail",
+      "year": 2024,
+      "race_family": "ultra60",
+      "race_type": "individual",
+      "source_event_key": "12349",
+      "sportstiming_event_id": 12349,
+      "source_race_name": "60 k ÖST ultra med COROS",
+      "race_date": "2024-04-13",
+      "scheduled_start_local": "10:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 60,
+      "canonical_family_distance_km": 60,
+      "route_family_ref": "ultra60",
+      "trace_id": 251126,
+      "data_status": "source_catalogued",
+      "timing_split_status": "split_table_observed",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.se/event/12349",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": "ultra60-2024",
+      "course_version_assignment_status": "assigned",
+      "sportstiming_distance_id": "65781",
+      "sportstiming_source_label": "60 k ÖST ultra med COROS",
+      "observed_split_labels": [
+        "34 km",
+        "60 km"
+      ],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "archived",
+      "tracking_distance_match": false,
+      "trace_geometry_evidence": {
+        "trace_id": 251126,
+        "source_date_compet": "13/04/2024",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "2c8774fa3e2095e308d6ee4eb150f4cb588be31d65f7da813021b7e8f2e71c08",
+        "derived_path_distance_km": 60.598,
+        "landmarks": []
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "source_ready",
+          "reason": "2 published split/checkpoint labels observed in sampled result."
+        },
+        "runner_replay": {
+          "status": "source_ready",
+          "reason": "Published checkpoints and archived route geometry are both available."
+        },
+        "map_duel": {
+          "status": "source_ready",
+          "reason": "Published checkpoints and archived route geometry are both available."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "source_ready",
+          "reason": "Published checkpoints and archived route geometry are both available."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version ultra60-2024."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2024-duo60",
+      "event_key": "osterlen-spring-trail",
+      "year": 2024,
+      "race_family": "duo60",
+      "race_type": "relay",
+      "source_event_key": "12349",
+      "sportstiming_event_id": 12349,
+      "source_race_name": "Duo Trail (relay 2 x 30 km)",
+      "race_date": "2024-04-13",
+      "scheduled_start_local": "10:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 60,
+      "canonical_family_distance_km": 60,
+      "route_family_ref": "ultra60",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.se/event/12349",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "route_race_key": "ost-2024-ultra60",
+      "relay_legs": 2,
+      "exchange_name": "Bengtemölla",
+      "source_catalog_course_version": null,
+      "course_version": "ultra60-2024",
+      "course_version_assignment_status": "assigned_inherited",
+      "sportstiming_distance_id": "65784",
+      "sportstiming_source_label": "Duo Trail (relay 2 x 30 km)",
+      "observed_split_labels": [],
+      "result_detail_status": "team_or_relay_adapter_needed",
+      "route_geometry_status": "via_same_year_ultra60",
+      "tracking_distance_match": false,
+      "trace_geometry_evidence": {
+        "trace_id": 251126,
+        "source_date_compet": "13/04/2024",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "2c8774fa3e2095e308d6ee4eb150f4cb588be31d65f7da813021b7e8f2e71c08",
+        "derived_path_distance_km": 60.598,
+        "landmarks": []
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "adapter_needed",
+          "reason": "Relay/team result format needs a dedicated adapter."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version ultra60-2024."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2024-trail22",
+      "event_key": "osterlen-spring-trail",
+      "year": 2024,
+      "race_family": "trail22",
+      "race_type": "individual",
+      "source_event_key": "12349",
+      "sportstiming_event_id": 12349,
+      "source_race_name": "Fogarolli trail 21km+",
+      "race_date": "2024-04-13",
+      "scheduled_start_local": "11:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 21,
+      "canonical_family_distance_km": 22,
+      "route_family_ref": "trail22",
+      "trace_id": 237224,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.se/event/12349",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": "trail22-2022-2024",
+      "course_version_assignment_status": "assigned_from_public_geometry",
+      "sportstiming_distance_id": "65782",
+      "sportstiming_source_label": "Fogarolli trail 21km+",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "reference_only",
+      "tracking_distance_match": false,
+      "trace_geometry_evidence": {
+        "trace_id": 237224,
+        "source_date_compet": "13/04/2024",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "4e6dd245a2aab78c96b79720208d0b1deae23a3e206ee3ce80eda3a2957596bf",
+        "derived_path_distance_km": 21.741,
+        "landmarks": []
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version trail22-2022-2024."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2024-trail14",
+      "event_key": "osterlen-spring-trail",
+      "year": 2024,
+      "race_family": "trail14",
+      "race_type": "individual",
+      "source_event_key": "12349",
+      "sportstiming_event_id": 12349,
+      "source_race_name": "Ekopark trail 14 km",
+      "race_date": "2024-04-14",
+      "scheduled_start_local": "12:30",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 14,
+      "canonical_family_distance_km": 14,
+      "route_family_ref": "trail14",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.se/event/12349",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": null,
+      "course_version_assignment_status": "not_assigned",
+      "sportstiming_distance_id": "65783",
+      "sportstiming_source_label": "Ekopark trail 14 km",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "missing",
+      "tracking_distance_match": false,
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "blocked_pending_geometry",
+          "reason": "Course version is not yet assigned."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2024-trail5",
+      "event_key": "osterlen-spring-trail",
+      "year": 2024,
+      "race_family": "trail5",
+      "race_type": "individual",
+      "source_event_key": "12349",
+      "sportstiming_event_id": 12349,
+      "source_race_name": "Naturloppet 5km+",
+      "race_date": "2024-04-14",
+      "scheduled_start_local": "11:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 5,
+      "canonical_family_distance_km": 5,
+      "route_family_ref": "trail5",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.se/event/12349",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": null,
+      "course_version_assignment_status": "not_assigned",
+      "sportstiming_distance_id": "65780",
+      "sportstiming_source_label": "Naturloppet 5km+",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "missing",
+      "tracking_distance_match": false,
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "blocked_pending_geometry",
+          "reason": "Course version is not yet assigned."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2025-ultra60",
+      "event_key": "osterlen-spring-trail",
+      "year": 2025,
+      "race_family": "ultra60",
+      "race_type": "individual",
+      "source_event_key": "15015",
+      "sportstiming_event_id": 15015,
+      "source_race_name": "CRAFT Ultra 60 k",
+      "race_date": "2025-04-12",
+      "scheduled_start_local": "10:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 60,
+      "canonical_family_distance_km": 60,
+      "route_family_ref": "ultra60",
+      "trace_id": 272846,
+      "data_status": "source_catalogued",
+      "timing_split_status": "split_table_observed",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.se/event/15015",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": "ultra60-2025-2026",
+      "course_version_assignment_status": "assigned",
+      "sportstiming_distance_id": "84440",
+      "sportstiming_source_label": "CRAFT Ultra 60 k",
+      "observed_split_labels": [
+        "34 km",
+        "60 km"
+      ],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "archived",
+      "tracking_distance_match": false,
+      "trace_geometry_evidence": {
+        "trace_id": 272846,
+        "source_date_compet": "13/04/2025",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "57e39f38d4f8db6dc43f1a7d816ae8ff859373a10bc77591d0bcd7cca7c128b9",
+        "derived_path_distance_km": 59.592,
+        "landmarks": [
+          {
+            "source_pi_id": "822847",
+            "title": "Cut of time 12:45 + Minibus",
+            "semantic_key": null,
+            "types": [
+              "bh",
+              "bus"
+            ],
+            "projected_distance_km": 15.29,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "822826",
+            "title": "Solevi Idrottsplats / Aid station nr1",
+            "semantic_key": null,
+            "types": [
+              "basevie",
+              "ravitoliquide",
+              "ravitoc"
+            ],
+            "projected_distance_km": 21.043,
+            "off_route_m": 73.6
+          },
+          {
+            "source_pi_id": "822859",
+            "title": "Bengtemölla Aid-station",
+            "semantic_key": "bengtemolla",
+            "types": [
+              "secours",
+              "basevie",
+              "bh"
+            ],
+            "projected_distance_km": 33.479,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "822871",
+            "title": "Cut of time 16:15",
+            "semantic_key": null,
+            "types": [
+              "bh",
+              "bus"
+            ],
+            "projected_distance_km": 42.49,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "822877",
+            "title": "Vantalägan / Aid station nr 3",
+            "semantic_key": "vantalangan",
+            "types": [
+              "basevie",
+              "bh"
+            ],
+            "projected_distance_km": 51.221,
+            "off_route_m": 0.0
+          }
+        ]
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "source_ready",
+          "reason": "2 published split/checkpoint labels observed in sampled result."
+        },
+        "runner_replay": {
+          "status": "source_ready",
+          "reason": "Published checkpoints and archived route geometry are both available."
+        },
+        "map_duel": {
+          "status": "source_ready",
+          "reason": "Published checkpoints and archived route geometry are both available."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "source_ready",
+          "reason": "Published checkpoints and archived route geometry are both available."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version ultra60-2025-2026."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2025-duo60",
+      "event_key": "osterlen-spring-trail",
+      "year": 2025,
+      "race_family": "duo60",
+      "race_type": "relay",
+      "source_event_key": "15015",
+      "sportstiming_event_id": 15015,
+      "source_race_name": "Duo Trail (relay 2 x 30 km)",
+      "race_date": "2025-04-12",
+      "scheduled_start_local": "10:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 60,
+      "canonical_family_distance_km": 60,
+      "route_family_ref": "ultra60",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.se/event/15015",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "route_race_key": "ost-2025-ultra60",
+      "relay_legs": 2,
+      "exchange_name": "Bengtemölla",
+      "source_catalog_course_version": null,
+      "course_version": "ultra60-2025-2026",
+      "course_version_assignment_status": "assigned_inherited",
+      "sportstiming_distance_id": "84443",
+      "sportstiming_source_label": "Duo Trail (relay 2 x 30 km)",
+      "observed_split_labels": [],
+      "result_detail_status": "team_or_relay_adapter_needed",
+      "route_geometry_status": "via_same_year_ultra60",
+      "tracking_distance_match": false,
+      "trace_geometry_evidence": {
+        "trace_id": 272846,
+        "source_date_compet": "13/04/2025",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "57e39f38d4f8db6dc43f1a7d816ae8ff859373a10bc77591d0bcd7cca7c128b9",
+        "derived_path_distance_km": 59.592,
+        "landmarks": [
+          {
+            "source_pi_id": "822847",
+            "title": "Cut of time 12:45 + Minibus",
+            "semantic_key": null,
+            "types": [
+              "bh",
+              "bus"
+            ],
+            "projected_distance_km": 15.29,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "822826",
+            "title": "Solevi Idrottsplats / Aid station nr1",
+            "semantic_key": null,
+            "types": [
+              "basevie",
+              "ravitoliquide",
+              "ravitoc"
+            ],
+            "projected_distance_km": 21.043,
+            "off_route_m": 73.6
+          },
+          {
+            "source_pi_id": "822859",
+            "title": "Bengtemölla Aid-station",
+            "semantic_key": "bengtemolla",
+            "types": [
+              "secours",
+              "basevie",
+              "bh"
+            ],
+            "projected_distance_km": 33.479,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "822871",
+            "title": "Cut of time 16:15",
+            "semantic_key": null,
+            "types": [
+              "bh",
+              "bus"
+            ],
+            "projected_distance_km": 42.49,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "822877",
+            "title": "Vantalägan / Aid station nr 3",
+            "semantic_key": "vantalangan",
+            "types": [
+              "basevie",
+              "bh"
+            ],
+            "projected_distance_km": 51.221,
+            "off_route_m": 0.0
+          }
+        ]
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "adapter_needed",
+          "reason": "Relay/team result format needs a dedicated adapter."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version ultra60-2025-2026."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2025-trail22",
+      "event_key": "osterlen-spring-trail",
+      "year": 2025,
+      "race_family": "trail22",
+      "race_type": "individual",
+      "source_event_key": "15015",
+      "sportstiming_event_id": 15015,
+      "source_race_name": "Fogarolli trail 22 K",
+      "race_date": "2025-04-12",
+      "scheduled_start_local": "11:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 22,
+      "canonical_family_distance_km": 22,
+      "route_family_ref": "trail22",
+      "trace_id": 280053,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.se/event/15015",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": "trail22-2025-2026",
+      "course_version_assignment_status": "assigned_from_public_geometry",
+      "sportstiming_distance_id": "84441",
+      "sportstiming_source_label": "Fogarolli trail 22 K",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "reference_only",
+      "tracking_distance_match": false,
+      "trace_geometry_evidence": {
+        "trace_id": 280053,
+        "source_date_compet": "12/04/2025",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "f10e7f48905566e2a8defc166b3a4c41bce4c921069513c22de8086921604bcb",
+        "derived_path_distance_km": 21.71,
+        "landmarks": []
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version trail22-2025-2026."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2025-trail14",
+      "event_key": "osterlen-spring-trail",
+      "year": 2025,
+      "race_family": "trail14",
+      "race_type": "individual",
+      "source_event_key": "15015",
+      "sportstiming_event_id": 15015,
+      "source_race_name": "Ekopark trail 14 km",
+      "race_date": "2025-04-13",
+      "scheduled_start_local": "12:30",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 14,
+      "canonical_family_distance_km": 14,
+      "route_family_ref": "trail14",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.se/event/15015",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": null,
+      "course_version_assignment_status": "not_assigned",
+      "sportstiming_distance_id": "84442",
+      "sportstiming_source_label": "Ekopark trail 14 km",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "missing",
+      "tracking_distance_match": false,
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "blocked_pending_geometry",
+          "reason": "Course version is not yet assigned."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2025-trail5",
+      "event_key": "osterlen-spring-trail",
+      "year": 2025,
+      "race_family": "trail5",
+      "race_type": "individual",
+      "source_event_key": "15015",
+      "sportstiming_event_id": 15015,
+      "source_race_name": "Naturloppet 5km+",
+      "race_date": "2025-04-13",
+      "scheduled_start_local": "11:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 5,
+      "canonical_family_distance_km": 5,
+      "route_family_ref": "trail5",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.se/event/15015",
+        "https://www.osterlentrail.se/resultat.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": null,
+      "course_version_assignment_status": "not_assigned",
+      "sportstiming_distance_id": "84439",
+      "sportstiming_source_label": "Naturloppet 5km+",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "missing",
+      "tracking_distance_match": false,
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "blocked_pending_geometry",
+          "reason": "Course version is not yet assigned."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2026-ultra60",
+      "event_key": "osterlen-spring-trail",
+      "year": 2026,
+      "race_family": "ultra60",
+      "race_type": "individual",
+      "source_event_key": "16880",
+      "sportstiming_event_id": 16880,
+      "source_race_name": "CRAFT Ultra 60 k",
+      "race_date": "2026-04-18",
+      "scheduled_start_local": "10:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 60,
+      "canonical_family_distance_km": 60,
+      "route_family_ref": "ultra60",
+      "trace_id": 322315,
+      "data_status": "source_catalogued",
+      "timing_split_status": "split_table_observed",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/16880",
+        "https://www.osterlentrail.se/resultat.html",
+        "https://www.osterlentrail.se/race-pm-60km.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": "ultra60-2025-2026",
+      "course_version_assignment_status": "assigned",
+      "sportstiming_distance_id": "97077",
+      "sportstiming_source_label": "CRAFT Ultra 60 k",
+      "observed_split_labels": [
+        "34 km",
+        "60 km"
+      ],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "archived",
+      "tracking_distance_match": false,
+      "trace_geometry_evidence": {
+        "trace_id": 322315,
+        "source_date_compet": "18/04/2026",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "29af78c7e734144e5a0387e8480e3d662a0edc88c8778695f0f9bfaee0fc66e7",
+        "derived_path_distance_km": 59.592,
+        "landmarks": [
+          {
+            "source_pi_id": "971297",
+            "title": "Cut of time 12:45 + Minibus",
+            "semantic_key": null,
+            "types": [
+              "bh",
+              "bus"
+            ],
+            "projected_distance_km": 15.29,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "971294",
+            "title": "Solevi Idrottsplats / Aid station nr1",
+            "semantic_key": null,
+            "types": [
+              "basevie",
+              "ravitoliquide",
+              "ravitoc"
+            ],
+            "projected_distance_km": 21.043,
+            "off_route_m": 73.6
+          },
+          {
+            "source_pi_id": "971298",
+            "title": "Bengtemölla Aid-station",
+            "semantic_key": "bengtemolla",
+            "types": [
+              "secours",
+              "basevie",
+              "bh"
+            ],
+            "projected_distance_km": 33.479,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "971301",
+            "title": "Cut of time 16:15",
+            "semantic_key": null,
+            "types": [
+              "bh",
+              "bus"
+            ],
+            "projected_distance_km": 42.49,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "971303",
+            "title": "Vantalägan / Aid station nr 3",
+            "semantic_key": "vantalangan",
+            "types": [
+              "basevie",
+              "bh"
+            ],
+            "projected_distance_km": 51.221,
+            "off_route_m": 0.0
+          }
+        ]
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "source_ready",
+          "reason": "2 published split/checkpoint labels observed in sampled result."
+        },
+        "runner_replay": {
+          "status": "source_ready",
+          "reason": "Published checkpoints and archived route geometry are both available."
+        },
+        "map_duel": {
+          "status": "source_ready",
+          "reason": "Published checkpoints and archived route geometry are both available."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "source_ready",
+          "reason": "Published checkpoints and archived route geometry are both available."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version ultra60-2025-2026."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2026-duo60",
+      "event_key": "osterlen-spring-trail",
+      "year": 2026,
+      "race_family": "duo60",
+      "race_type": "relay",
+      "source_event_key": "16880",
+      "sportstiming_event_id": 16880,
+      "source_race_name": "Duo Trail (relay 2 x 30 km)",
+      "race_date": "2026-04-18",
+      "scheduled_start_local": "10:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 60,
+      "canonical_family_distance_km": 60,
+      "route_family_ref": "ultra60",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/16880",
+        "https://www.osterlentrail.se/resultat.html",
+        "https://www.osterlentrail.se/loumlpar-pm-duo-trail.html"
+      ],
+      "route_race_key": "ost-2026-ultra60",
+      "relay_legs": 2,
+      "exchange_name": "Bengtemölla",
+      "source_catalog_course_version": null,
+      "course_version": "ultra60-2025-2026",
+      "course_version_assignment_status": "assigned_inherited",
+      "sportstiming_distance_id": "97080",
+      "sportstiming_source_label": "Duo Trail (relay 2 x 30 km)",
+      "observed_split_labels": [],
+      "result_detail_status": "team_or_relay_adapter_needed",
+      "route_geometry_status": "via_same_year_ultra60",
+      "tracking_distance_match": false,
+      "trace_geometry_evidence": {
+        "trace_id": 322315,
+        "source_date_compet": "18/04/2026",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "29af78c7e734144e5a0387e8480e3d662a0edc88c8778695f0f9bfaee0fc66e7",
+        "derived_path_distance_km": 59.592,
+        "landmarks": [
+          {
+            "source_pi_id": "971297",
+            "title": "Cut of time 12:45 + Minibus",
+            "semantic_key": null,
+            "types": [
+              "bh",
+              "bus"
+            ],
+            "projected_distance_km": 15.29,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "971294",
+            "title": "Solevi Idrottsplats / Aid station nr1",
+            "semantic_key": null,
+            "types": [
+              "basevie",
+              "ravitoliquide",
+              "ravitoc"
+            ],
+            "projected_distance_km": 21.043,
+            "off_route_m": 73.6
+          },
+          {
+            "source_pi_id": "971298",
+            "title": "Bengtemölla Aid-station",
+            "semantic_key": "bengtemolla",
+            "types": [
+              "secours",
+              "basevie",
+              "bh"
+            ],
+            "projected_distance_km": 33.479,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "971301",
+            "title": "Cut of time 16:15",
+            "semantic_key": null,
+            "types": [
+              "bh",
+              "bus"
+            ],
+            "projected_distance_km": 42.49,
+            "off_route_m": 0.0
+          },
+          {
+            "source_pi_id": "971303",
+            "title": "Vantalägan / Aid station nr 3",
+            "semantic_key": "vantalangan",
+            "types": [
+              "basevie",
+              "bh"
+            ],
+            "projected_distance_km": 51.221,
+            "off_route_m": 0.0
+          }
+        ]
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "adapter_needed",
+          "reason": "Relay/team result format needs a dedicated adapter."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version ultra60-2025-2026."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2026-trail22",
+      "event_key": "osterlen-spring-trail",
+      "year": 2026,
+      "race_family": "trail22",
+      "race_type": "individual",
+      "source_event_key": "16880",
+      "sportstiming_event_id": 16880,
+      "source_race_name": "Fogarolli trail 22 K",
+      "race_date": "2026-04-18",
+      "scheduled_start_local": "11:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 22,
+      "canonical_family_distance_km": 22,
+      "route_family_ref": "trail22",
+      "trace_id": 322314,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/16880",
+        "https://www.osterlentrail.se/resultat.html",
+        "https://www.osterlentrail.se/race-pm-22km.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": "trail22-2025-2026",
+      "course_version_assignment_status": "assigned_from_public_geometry",
+      "sportstiming_distance_id": "97078",
+      "sportstiming_source_label": "Fogarolli trail 22 K",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "reference_only",
+      "tracking_distance_match": false,
+      "trace_geometry_evidence": {
+        "trace_id": 322314,
+        "source_date_compet": "18/04/2026",
+        "manifest_year_match": true,
+        "public_geometry_sha256": "f10e7f48905566e2a8defc166b3a4c41bce4c921069513c22de8086921604bcb",
+        "derived_path_distance_km": 21.71,
+        "landmarks": []
+      },
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "source_ready",
+          "reason": "Assigned to verified course version trail22-2025-2026."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2026-trail14",
+      "event_key": "osterlen-spring-trail",
+      "year": 2026,
+      "race_family": "trail14",
+      "race_type": "individual",
+      "source_event_key": "16880",
+      "sportstiming_event_id": 16880,
+      "source_race_name": "Ekopark trail 14 km",
+      "race_date": "2026-04-19",
+      "scheduled_start_local": "12:30",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 14,
+      "canonical_family_distance_km": 14,
+      "route_family_ref": "trail14",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/16880",
+        "https://www.osterlentrail.se/resultat.html",
+        "https://www.osterlentrail.se/race-pm-14km.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": null,
+      "course_version_assignment_status": "not_assigned",
+      "sportstiming_distance_id": "97079",
+      "sportstiming_source_label": "Söderberg & Sara 14K",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "missing",
+      "tracking_distance_match": false,
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "blocked_pending_geometry",
+          "reason": "Course version is not yet assigned."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    },
+    {
+      "race_key": "ost-2026-trail5",
+      "event_key": "osterlen-spring-trail",
+      "year": 2026,
+      "race_family": "trail5",
+      "race_type": "individual",
+      "source_event_key": "16880",
+      "sportstiming_event_id": 16880,
+      "source_race_name": "Naturloppet 5km+",
+      "race_date": "2026-04-19",
+      "scheduled_start_local": "11:00",
+      "timezone": "Europe/Stockholm",
+      "nominal_distance_km": 5,
+      "canonical_family_distance_km": 5,
+      "route_family_ref": "trail5",
+      "trace_id": null,
+      "data_status": "source_catalogued",
+      "timing_split_status": "no_split_table_in_sample",
+      "schedule_status": "verified_program",
+      "source_urls": [
+        "https://www.sportstiming.dk/event/16880",
+        "https://www.osterlentrail.se/resultat.html",
+        "https://www.osterlentrail.se/race-pm-5km.html"
+      ],
+      "source_catalog_course_version": null,
+      "course_version": null,
+      "course_version_assignment_status": "not_assigned",
+      "sportstiming_distance_id": "97076",
+      "sportstiming_source_label": "Naturloppet 5km+",
+      "observed_split_labels": [],
+      "result_detail_status": "participant_detail_observed",
+      "route_geometry_status": "missing",
+      "tracking_distance_match": false,
+      "analysis_capabilities": {
+        "results_database": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "finish_statistics": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        },
+        "runner_profile": {
+          "status": "source_ready",
+          "reason": "Participant detail page observed."
+        },
+        "split_analysis": {
+          "status": "not_available_in_sample",
+          "reason": "No split table observed in the sampled result for this class."
+        },
+        "runner_replay": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "map_duel": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_difficulty_vs_pacing": {
+          "status": "blocked_pending_source",
+          "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
+        },
+        "course_version_records": {
+          "status": "blocked_pending_geometry",
+          "reason": "Course version is not yet assigned."
+        },
+        "cross_year_participation": {
+          "status": "source_ready",
+          "reason": "Sportstiming class discovered."
+        }
+      }
+    }
+  ]
+}
