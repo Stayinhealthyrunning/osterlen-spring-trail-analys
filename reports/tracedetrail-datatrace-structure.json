@@ -1,0 +1,2402 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-10T11:45:29.646096+00:00",
+  "rows": [
+    {
+      "trace_id": 7897,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2018
+        }
+      ],
+      "data_trace_found": true,
+      "data_trace_length": 136696,
+      "properties": [
+        {
+          "key": "traceID",
+          "kind": "scalar",
+          "value_length": 4,
+          "raw_length": 4,
+          "sha256": "2f80a4ecf7635729bedf552c655cc292e7f3474a9c8d3d5fc457ef63fee198ef",
+          "prefix": "7897",
+          "numeric_value": 7897
+        },
+        {
+          "key": "sections",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "variantes",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "dateCompet",
+          "kind": "string",
+          "value_length": 10,
+          "raw_length": 12,
+          "sha256": "d67e69a8d916ce08e18ee88846d7f43b40e366a82e44077f852eb7700ec59acb",
+          "prefix": "16/04/2016"
+        },
+        {
+          "key": "distance",
+          "kind": "scalar",
+          "value_length": 4,
+          "raw_length": 4,
+          "sha256": "adfc8056b40fc7851af193a4c12610176d852de9c5777d69896e6429393cc508",
+          "prefix": "21.7",
+          "numeric_value": 21.7
+        },
+        {
+          "key": "bulles",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "prefix": "2",
+          "numeric_value": 2
+        },
+        {
+          "key": "alti_min",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "alti_max",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "9ae2bdd7beedc2e766c6b76585530e16925115707dc7a06ab5ee4aa2776b2c7b",
+          "prefix": "150",
+          "numeric_value": 150
+        },
+        {
+          "key": "pt_culminant",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "65a699905c02619370bcf9207f5a477c3d67130ca71ec6f750e07fe8d510b084",
+          "prefix": "126",
+          "numeric_value": 126
+        },
+        {
+          "key": "pt_bas",
+          "kind": "scalar",
+          "value_length": 2,
+          "raw_length": 2,
+          "sha256": "9400f1b21cb527d7fa3d3eabba93557a18ebe7a2ca4e471cfe5e4c5b4ca7f767",
+          "prefix": "19",
+          "numeric_value": 19
+        },
+        {
+          "key": "pentesColor",
+          "kind": "string",
+          "value_length": 20,
+          "raw_length": 22,
+          "sha256": "8c0ae80e5b9145a5b2d164c7f8a072a5a596b51f4fb5e0f208036be438bdb77e",
+          "prefix": "9bdef7_16baf7_0e609c"
+        },
+        {
+          "key": "pentesPos",
+          "kind": "string",
+          "value_length": 8,
+          "raw_length": 10,
+          "sha256": "65435f582243c915898a2dc1b251fd2bc4e657f8db219c72e3e4c696e1e77106",
+          "prefix": "10_20_30"
+        },
+        {
+          "key": "styleTrace",
+          "kind": "string",
+          "value_length": 21,
+          "raw_length": 23,
+          "sha256": "22f92e75dcc9040e486d3b794f10b2b55f93380c212a381d7210baf0a6f7dfd9",
+          "prefix": "#cc1046|3|0|10|unique"
+        },
+        {
+          "key": "couleur",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "5d2883f5df318bd821f6ff7ed352ee45f836689c3588ecc8229ff2af0d690cda",
+          "prefix": "#4EA6CD"
+        },
+        {
+          "key": "couleur2",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "14465f2a1cab8eaa06dcba7119ac1f81e19c845fea96a598632a4b817667a5cc",
+          "prefix": "#30323d"
+        },
+        {
+          "key": "profil",
+          "kind": "string",
+          "value_length": 5,
+          "raw_length": 7,
+          "sha256": "bc24715b4651963026b109ef5da19654fc753c5db5e16a0414f9c4d45ffdbd09",
+          "prefix": "plein"
+        },
+        {
+          "key": "geometry",
+          "kind": "string",
+          "value_length": 114954,
+          "raw_length": 136174,
+          "sha256": "98400a8a0f05f92d0fba2dd9071d5d7491c40f20f8d5070348106b3d09c1a31c",
+          "prefix": "[{\"lon\":1554080.2,\"lat\":7502311,\"x\":0,\"y\":108,\"dp\":0,\"dn\":0,\"y0\":108},{\"lon\":1554080.2,\"lat\":7502311,\"x\":0,\"y\":108,\"dp\":0,\"dn\":0,\"y0\":108},{",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 1516,
+            "keys": null
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 43970,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2018
+        }
+      ],
+      "data_trace_found": true,
+      "data_trace_length": 242357,
+      "properties": [
+        {
+          "key": "traceID",
+          "kind": "scalar",
+          "value_length": 5,
+          "raw_length": 5,
+          "sha256": "c825319ab5058d24cfa83a0238abc24885a80bf50bd82c5d63b6c3ae788afdd5",
+          "prefix": "43970",
+          "numeric_value": 43970
+        },
+        {
+          "key": "sections",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "variantes",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "dateCompet",
+          "kind": "string",
+          "value_length": 10,
+          "raw_length": 12,
+          "sha256": "2bb75f6d3548206606ebbfca2377ee52fc709a6d035732901c63ac17f2978e5b",
+          "prefix": "14/04/2018"
+        },
+        {
+          "key": "distance",
+          "kind": "scalar",
+          "value_length": 4,
+          "raw_length": 4,
+          "sha256": "60dbf126d1fc8560bf0c1c84b0feb20cd454cbb05877183ee700a6155661ed46",
+          "prefix": "62.6",
+          "numeric_value": 62.6
+        },
+        {
+          "key": "bulles",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+          "prefix": "6",
+          "numeric_value": 6
+        },
+        {
+          "key": "alti_min",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "alti_max",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "983bd614bb5afece5ab3b6023f71147cd7b6bc2314f9d27af7422541c6558389",
+          "prefix": "300",
+          "numeric_value": 300
+        },
+        {
+          "key": "pt_culminant",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+          "prefix": "123",
+          "numeric_value": 123
+        },
+        {
+          "key": "pt_bas",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "pentesColor",
+          "kind": "string",
+          "value_length": 20,
+          "raw_length": 22,
+          "sha256": "8c0ae80e5b9145a5b2d164c7f8a072a5a596b51f4fb5e0f208036be438bdb77e",
+          "prefix": "9bdef7_16baf7_0e609c"
+        },
+        {
+          "key": "pentesPos",
+          "kind": "string",
+          "value_length": 8,
+          "raw_length": 10,
+          "sha256": "65435f582243c915898a2dc1b251fd2bc4e657f8db219c72e3e4c696e1e77106",
+          "prefix": "10_20_30"
+        },
+        {
+          "key": "styleTrace",
+          "kind": "string",
+          "value_length": 21,
+          "raw_length": 23,
+          "sha256": "22f92e75dcc9040e486d3b794f10b2b55f93380c212a381d7210baf0a6f7dfd9",
+          "prefix": "#cc1046|3|0|10|unique"
+        },
+        {
+          "key": "couleur",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "5d2883f5df318bd821f6ff7ed352ee45f836689c3588ecc8229ff2af0d690cda",
+          "prefix": "#4EA6CD"
+        },
+        {
+          "key": "couleur2",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "14465f2a1cab8eaa06dcba7119ac1f81e19c845fea96a598632a4b817667a5cc",
+          "prefix": "#30323d"
+        },
+        {
+          "key": "profil",
+          "kind": "string",
+          "value_length": 5,
+          "raw_length": 7,
+          "sha256": "bc24715b4651963026b109ef5da19654fc753c5db5e16a0414f9c4d45ffdbd09",
+          "prefix": "plein"
+        },
+        {
+          "key": "geometry",
+          "kind": "string",
+          "value_length": 203971,
+          "raw_length": 241835,
+          "sha256": "bb0a90f2178ef7e946e18d32fa7ae9ea145ea248c71da36efa77f76e35b65112",
+          "prefix": "[{\"lon\":1598141.6,\"lat\":7470560.1,\"x\":0,\"y\":7,\"dp\":0,\"dn\":0,\"y0\":53},{\"lon\":1598131.8,\"lat\":7470565.8,\"y0\":50},{\"lon\":1598116.1,\"lat\":747057",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 2872,
+            "keys": null
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 69381,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2019
+        }
+      ],
+      "data_trace_found": true,
+      "data_trace_length": 344328,
+      "properties": [
+        {
+          "key": "traceID",
+          "kind": "scalar",
+          "value_length": 5,
+          "raw_length": 5,
+          "sha256": "31665bad8e31c2873a6511d0ba9d6ad5015916ad63226bca3820e5f39629b3b7",
+          "prefix": "69381",
+          "numeric_value": 69381
+        },
+        {
+          "key": "sections",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "variantes",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "dateCompet",
+          "kind": "string",
+          "value_length": 10,
+          "raw_length": 12,
+          "sha256": "cd3543c9020282358959ccf4663d52ddecc34977ee2797bf648eb9527abee852",
+          "prefix": "13/04/2019"
+        },
+        {
+          "key": "distance",
+          "kind": "scalar",
+          "value_length": 4,
+          "raw_length": 4,
+          "sha256": "b5bf33f5a1baee124d2165cb267bc05df2e9935b95ba90fdf47e3f46942ffa36",
+          "prefix": "58.7",
+          "numeric_value": 58.7
+        },
+        {
+          "key": "bulles",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+          "prefix": "5",
+          "numeric_value": 5
+        },
+        {
+          "key": "alti_min",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "alti_max",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a",
+          "prefix": "500",
+          "numeric_value": 500
+        },
+        {
+          "key": "pt_culminant",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "6affdae3b3c1aa6aa7689e9b6a7b3225a636aa1ac0025f490cca1285ceaf1487",
+          "prefix": "124",
+          "numeric_value": 124
+        },
+        {
+          "key": "pt_bas",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "pentesColor",
+          "kind": "string",
+          "value_length": 20,
+          "raw_length": 22,
+          "sha256": "8c0ae80e5b9145a5b2d164c7f8a072a5a596b51f4fb5e0f208036be438bdb77e",
+          "prefix": "9bdef7_16baf7_0e609c"
+        },
+        {
+          "key": "pentesPos",
+          "kind": "string",
+          "value_length": 8,
+          "raw_length": 10,
+          "sha256": "65435f582243c915898a2dc1b251fd2bc4e657f8db219c72e3e4c696e1e77106",
+          "prefix": "10_20_30"
+        },
+        {
+          "key": "styleTrace",
+          "kind": "string",
+          "value_length": 21,
+          "raw_length": 23,
+          "sha256": "f3962fd9a7abf50bcf108ea3e7145670df63180a299f328b763c5d1f5fa0ff80",
+          "prefix": "#CC1046|4|0|10|unique"
+        },
+        {
+          "key": "couleur",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "5d2883f5df318bd821f6ff7ed352ee45f836689c3588ecc8229ff2af0d690cda",
+          "prefix": "#4EA6CD"
+        },
+        {
+          "key": "couleur2",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "14465f2a1cab8eaa06dcba7119ac1f81e19c845fea96a598632a4b817667a5cc",
+          "prefix": "#30323d"
+        },
+        {
+          "key": "profil",
+          "kind": "string",
+          "value_length": 5,
+          "raw_length": 7,
+          "sha256": "bc24715b4651963026b109ef5da19654fc753c5db5e16a0414f9c4d45ffdbd09",
+          "prefix": "plein"
+        },
+        {
+          "key": "geometry",
+          "kind": "string",
+          "value_length": 285310,
+          "raw_length": 343806,
+          "sha256": "ba16b78ba88395ac0bdaf3f0556eba922d55fd3663ce17fa40e588cf45cf22c6",
+          "prefix": "[{\"lon\":1597950.8,\"lat\":7470662.2,\"y\":4,\"o\":\"gpx\",\"y0\":-5,\"x\":0,\"dp\":0,\"dn\":0},{\"lon\":1597921,\"lat\":7470680.5,\"y\":4,\"o\":\"gpx\",\"y0\":-5,\"x\":0.",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 4033,
+            "keys": null
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 69864,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2019
+        }
+      ],
+      "data_trace_found": true,
+      "data_trace_length": 140186,
+      "properties": [
+        {
+          "key": "traceID",
+          "kind": "scalar",
+          "value_length": 5,
+          "raw_length": 5,
+          "sha256": "c79e00ab8f938d40ff3362ed01c7b3127a21050116b1c495330f12d0d148f464",
+          "prefix": "69864",
+          "numeric_value": 69864
+        },
+        {
+          "key": "sections",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "variantes",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "dateCompet",
+          "kind": "string",
+          "value_length": 10,
+          "raw_length": 12,
+          "sha256": "cd3543c9020282358959ccf4663d52ddecc34977ee2797bf648eb9527abee852",
+          "prefix": "13/04/2019"
+        },
+        {
+          "key": "distance",
+          "kind": "scalar",
+          "value_length": 4,
+          "raw_length": 4,
+          "sha256": "2c3685f674e2728ff38267755e4806e2986747a43f64cf1ad9e8a97f7d05bc91",
+          "prefix": "21.8",
+          "numeric_value": 21.8
+        },
+        {
+          "key": "bulles",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "prefix": "2",
+          "numeric_value": 2
+        },
+        {
+          "key": "alti_min",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "alti_max",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a",
+          "prefix": "500",
+          "numeric_value": 500
+        },
+        {
+          "key": "pt_culminant",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "65a699905c02619370bcf9207f5a477c3d67130ca71ec6f750e07fe8d510b084",
+          "prefix": "126",
+          "numeric_value": 126
+        },
+        {
+          "key": "pt_bas",
+          "kind": "scalar",
+          "value_length": 2,
+          "raw_length": 2,
+          "sha256": "9400f1b21cb527d7fa3d3eabba93557a18ebe7a2ca4e471cfe5e4c5b4ca7f767",
+          "prefix": "19",
+          "numeric_value": 19
+        },
+        {
+          "key": "pentesColor",
+          "kind": "string",
+          "value_length": 20,
+          "raw_length": 22,
+          "sha256": "8c0ae80e5b9145a5b2d164c7f8a072a5a596b51f4fb5e0f208036be438bdb77e",
+          "prefix": "9bdef7_16baf7_0e609c"
+        },
+        {
+          "key": "pentesPos",
+          "kind": "string",
+          "value_length": 8,
+          "raw_length": 10,
+          "sha256": "65435f582243c915898a2dc1b251fd2bc4e657f8db219c72e3e4c696e1e77106",
+          "prefix": "10_20_30"
+        },
+        {
+          "key": "styleTrace",
+          "kind": "string",
+          "value_length": 21,
+          "raw_length": 23,
+          "sha256": "f3962fd9a7abf50bcf108ea3e7145670df63180a299f328b763c5d1f5fa0ff80",
+          "prefix": "#CC1046|4|0|10|unique"
+        },
+        {
+          "key": "couleur",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "5d2883f5df318bd821f6ff7ed352ee45f836689c3588ecc8229ff2af0d690cda",
+          "prefix": "#4EA6CD"
+        },
+        {
+          "key": "couleur2",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "14465f2a1cab8eaa06dcba7119ac1f81e19c845fea96a598632a4b817667a5cc",
+          "prefix": "#30323d"
+        },
+        {
+          "key": "profil",
+          "kind": "string",
+          "value_length": 5,
+          "raw_length": 7,
+          "sha256": "bc24715b4651963026b109ef5da19654fc753c5db5e16a0414f9c4d45ffdbd09",
+          "prefix": "plein"
+        },
+        {
+          "key": "geometry",
+          "kind": "string",
+          "value_length": 115461,
+          "raw_length": 139663,
+          "sha256": "ee8ab4532a44b3abfdeb6b695185494c35a07ac47596f982feec1ecb3e9bef3e",
+          "prefix": "[{\"lon\":1554080.2,\"lat\":7502311,\"o\":\"gpx\",\"y0\":108,\"y\":108,\"x\":0,\"dp\":0,\"dn\":0},{\"lon\":1554080.2,\"lat\":7502295.2,\"o\":\"gpx\",\"y0\":108,\"y\":108,",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 1345,
+            "keys": null
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 165617,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2022
+        }
+      ],
+      "data_trace_found": true,
+      "data_trace_length": 122287,
+      "properties": [
+        {
+          "key": "traceID",
+          "kind": "scalar",
+          "value_length": 6,
+          "raw_length": 6,
+          "sha256": "87f275b9ba65d19a0690e652d9a69b30276f9e1f1cc82ad8c01cfa3c5769554e",
+          "prefix": "165617",
+          "numeric_value": 165617
+        },
+        {
+          "key": "sections",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "variantes",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "dateCompet",
+          "kind": "string",
+          "value_length": 10,
+          "raw_length": 12,
+          "sha256": "70c469e91e8c96dc1e4f41b7aedce6e8512190da21e7cd1a189bfb431108630f",
+          "prefix": "09/04/2022"
+        },
+        {
+          "key": "distance",
+          "kind": "scalar",
+          "value_length": 4,
+          "raw_length": 4,
+          "sha256": "2c3685f674e2728ff38267755e4806e2986747a43f64cf1ad9e8a97f7d05bc91",
+          "prefix": "21.8",
+          "numeric_value": 21.8
+        },
+        {
+          "key": "bulles",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "prefix": "2",
+          "numeric_value": 2
+        },
+        {
+          "key": "alti_min",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "alti_max",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a",
+          "prefix": "500",
+          "numeric_value": 500
+        },
+        {
+          "key": "pt_culminant",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "8d27ba37c5d810106b55f3fd6cdb35842007e88754184bfc0e6035f9bcede633",
+          "prefix": "139",
+          "numeric_value": 139
+        },
+        {
+          "key": "pt_bas",
+          "kind": "scalar",
+          "value_length": 2,
+          "raw_length": 2,
+          "sha256": "86e50149658661312a9e0b35558d84f6c6d3da797f552a9657fe0558ca40cdef",
+          "prefix": "34",
+          "numeric_value": 34
+        },
+        {
+          "key": "pentesColor",
+          "kind": "string",
+          "value_length": 20,
+          "raw_length": 22,
+          "sha256": "8c0ae80e5b9145a5b2d164c7f8a072a5a596b51f4fb5e0f208036be438bdb77e",
+          "prefix": "9bdef7_16baf7_0e609c"
+        },
+        {
+          "key": "pentesPos",
+          "kind": "string",
+          "value_length": 8,
+          "raw_length": 10,
+          "sha256": "65435f582243c915898a2dc1b251fd2bc4e657f8db219c72e3e4c696e1e77106",
+          "prefix": "10_20_30"
+        },
+        {
+          "key": "styleTrace",
+          "kind": "string",
+          "value_length": 21,
+          "raw_length": 23,
+          "sha256": "f3962fd9a7abf50bcf108ea3e7145670df63180a299f328b763c5d1f5fa0ff80",
+          "prefix": "#CC1046|4|0|10|unique"
+        },
+        {
+          "key": "couleur",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "5d2883f5df318bd821f6ff7ed352ee45f836689c3588ecc8229ff2af0d690cda",
+          "prefix": "#4EA6CD"
+        },
+        {
+          "key": "couleur2",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "14465f2a1cab8eaa06dcba7119ac1f81e19c845fea96a598632a4b817667a5cc",
+          "prefix": "#30323d"
+        },
+        {
+          "key": "profil",
+          "kind": "string",
+          "value_length": 5,
+          "raw_length": 7,
+          "sha256": "bc24715b4651963026b109ef5da19654fc753c5db5e16a0414f9c4d45ffdbd09",
+          "prefix": "plein"
+        },
+        {
+          "key": "geometry",
+          "kind": "string",
+          "value_length": 101115,
+          "raw_length": 121763,
+          "sha256": "4e6dd245a2aab78c96b79720208d0b1deae23a3e206ee3ce80eda3a2957596bf",
+          "prefix": "[{\"lon\":1554087.2,\"lat\":7502330.2,\"y\":119,\"o\":\"gpx\",\"y0\":116,\"x\":0,\"dp\":0,\"dn\":0},{\"lon\":1554085.6,\"lat\":7502313.4,\"o\":\"gpx\",\"y0\":115},{\"lon",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 1395,
+            "keys": null
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 172147,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2022
+        }
+      ],
+      "data_trace_found": true,
+      "data_trace_length": 312000,
+      "properties": [
+        {
+          "key": "traceID",
+          "kind": "scalar",
+          "value_length": 6,
+          "raw_length": 6,
+          "sha256": "3aef994ee32ca7c23bf37db24e9ed03ce4c94c15d4fd6b7bfc709f305077dfde",
+          "prefix": "172147",
+          "numeric_value": 172147
+        },
+        {
+          "key": "sections",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "variantes",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "dateCompet",
+          "kind": "string",
+          "value_length": 10,
+          "raw_length": 12,
+          "sha256": "70c469e91e8c96dc1e4f41b7aedce6e8512190da21e7cd1a189bfb431108630f",
+          "prefix": "09/04/2022"
+        },
+        {
+          "key": "distance",
+          "kind": "scalar",
+          "value_length": 4,
+          "raw_length": 4,
+          "sha256": "4d030e9e3cefba72d948aabdc3535b2e1d3626d826100ec1d36a800543bafeb6",
+          "prefix": "58.5",
+          "numeric_value": 58.5
+        },
+        {
+          "key": "bulles",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+          "prefix": "5",
+          "numeric_value": 5
+        },
+        {
+          "key": "alti_min",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "alti_max",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a",
+          "prefix": "500",
+          "numeric_value": 500
+        },
+        {
+          "key": "pt_culminant",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "6affdae3b3c1aa6aa7689e9b6a7b3225a636aa1ac0025f490cca1285ceaf1487",
+          "prefix": "124",
+          "numeric_value": 124
+        },
+        {
+          "key": "pt_bas",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "pentesColor",
+          "kind": "string",
+          "value_length": 20,
+          "raw_length": 22,
+          "sha256": "8c0ae80e5b9145a5b2d164c7f8a072a5a596b51f4fb5e0f208036be438bdb77e",
+          "prefix": "9bdef7_16baf7_0e609c"
+        },
+        {
+          "key": "pentesPos",
+          "kind": "string",
+          "value_length": 8,
+          "raw_length": 10,
+          "sha256": "65435f582243c915898a2dc1b251fd2bc4e657f8db219c72e3e4c696e1e77106",
+          "prefix": "10_20_30"
+        },
+        {
+          "key": "styleTrace",
+          "kind": "string",
+          "value_length": 21,
+          "raw_length": 23,
+          "sha256": "f3962fd9a7abf50bcf108ea3e7145670df63180a299f328b763c5d1f5fa0ff80",
+          "prefix": "#CC1046|4|0|10|unique"
+        },
+        {
+          "key": "couleur",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "5d2883f5df318bd821f6ff7ed352ee45f836689c3588ecc8229ff2af0d690cda",
+          "prefix": "#4EA6CD"
+        },
+        {
+          "key": "couleur2",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "14465f2a1cab8eaa06dcba7119ac1f81e19c845fea96a598632a4b817667a5cc",
+          "prefix": "#30323d"
+        },
+        {
+          "key": "profil",
+          "kind": "string",
+          "value_length": 5,
+          "raw_length": 7,
+          "sha256": "bc24715b4651963026b109ef5da19654fc753c5db5e16a0414f9c4d45ffdbd09",
+          "prefix": "plein"
+        },
+        {
+          "key": "geometry",
+          "kind": "string",
+          "value_length": 258167,
+          "raw_length": 311477,
+          "sha256": "d65a4c4f615601056da54eda115d937f1a496bd61253950c49209b30dc06b33a",
+          "prefix": "[{\"lon\":1597959.4,\"lat\":7470674.4,\"y\":3,\"o\":\"gpx\",\"y0\":3,\"x\":0,\"dp\":0,\"dn\":0},{\"lon\":1597952.9,\"lat\":7470674.8,\"o\":\"gpx\",\"y0\":3},{\"lon\":1597",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 3552,
+            "keys": null
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 203146,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2023
+        }
+      ],
+      "data_trace_found": true,
+      "data_trace_length": 122287,
+      "properties": [
+        {
+          "key": "traceID",
+          "kind": "scalar",
+          "value_length": 6,
+          "raw_length": 6,
+          "sha256": "ab15d061e01b10399f058e5f98e2fa39175b85c8494c99d9f2f70b571f736ad9",
+          "prefix": "203146",
+          "numeric_value": 203146
+        },
+        {
+          "key": "sections",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "variantes",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "dateCompet",
+          "kind": "string",
+          "value_length": 10,
+          "raw_length": 12,
+          "sha256": "56139db2ad6d4c56a05945cde36a098fe087e3ec1ac7680521fbc168f6e2744e",
+          "prefix": "15/04/2023"
+        },
+        {
+          "key": "distance",
+          "kind": "scalar",
+          "value_length": 4,
+          "raw_length": 4,
+          "sha256": "2c3685f674e2728ff38267755e4806e2986747a43f64cf1ad9e8a97f7d05bc91",
+          "prefix": "21.8",
+          "numeric_value": 21.8
+        },
+        {
+          "key": "bulles",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "prefix": "2",
+          "numeric_value": 2
+        },
+        {
+          "key": "alti_min",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "alti_max",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a",
+          "prefix": "500",
+          "numeric_value": 500
+        },
+        {
+          "key": "pt_culminant",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "8d27ba37c5d810106b55f3fd6cdb35842007e88754184bfc0e6035f9bcede633",
+          "prefix": "139",
+          "numeric_value": 139
+        },
+        {
+          "key": "pt_bas",
+          "kind": "scalar",
+          "value_length": 2,
+          "raw_length": 2,
+          "sha256": "86e50149658661312a9e0b35558d84f6c6d3da797f552a9657fe0558ca40cdef",
+          "prefix": "34",
+          "numeric_value": 34
+        },
+        {
+          "key": "pentesColor",
+          "kind": "string",
+          "value_length": 20,
+          "raw_length": 22,
+          "sha256": "8c0ae80e5b9145a5b2d164c7f8a072a5a596b51f4fb5e0f208036be438bdb77e",
+          "prefix": "9bdef7_16baf7_0e609c"
+        },
+        {
+          "key": "pentesPos",
+          "kind": "string",
+          "value_length": 8,
+          "raw_length": 10,
+          "sha256": "65435f582243c915898a2dc1b251fd2bc4e657f8db219c72e3e4c696e1e77106",
+          "prefix": "10_20_30"
+        },
+        {
+          "key": "styleTrace",
+          "kind": "string",
+          "value_length": 21,
+          "raw_length": 23,
+          "sha256": "f3962fd9a7abf50bcf108ea3e7145670df63180a299f328b763c5d1f5fa0ff80",
+          "prefix": "#CC1046|4|0|10|unique"
+        },
+        {
+          "key": "couleur",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "5d2883f5df318bd821f6ff7ed352ee45f836689c3588ecc8229ff2af0d690cda",
+          "prefix": "#4EA6CD"
+        },
+        {
+          "key": "couleur2",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "14465f2a1cab8eaa06dcba7119ac1f81e19c845fea96a598632a4b817667a5cc",
+          "prefix": "#30323d"
+        },
+        {
+          "key": "profil",
+          "kind": "string",
+          "value_length": 5,
+          "raw_length": 7,
+          "sha256": "bc24715b4651963026b109ef5da19654fc753c5db5e16a0414f9c4d45ffdbd09",
+          "prefix": "plein"
+        },
+        {
+          "key": "geometry",
+          "kind": "string",
+          "value_length": 101115,
+          "raw_length": 121763,
+          "sha256": "4e6dd245a2aab78c96b79720208d0b1deae23a3e206ee3ce80eda3a2957596bf",
+          "prefix": "[{\"lon\":1554087.2,\"lat\":7502330.2,\"y\":119,\"o\":\"gpx\",\"y0\":116,\"x\":0,\"dp\":0,\"dn\":0},{\"lon\":1554085.6,\"lat\":7502313.4,\"o\":\"gpx\",\"y0\":115},{\"lon",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 1395,
+            "keys": null
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 203147,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2023
+        }
+      ],
+      "data_trace_found": true,
+      "data_trace_length": 312000,
+      "properties": [
+        {
+          "key": "traceID",
+          "kind": "scalar",
+          "value_length": 6,
+          "raw_length": 6,
+          "sha256": "baf1e931daf3626250d3b5fa14e4454a885a09a48954ebf406100e53c412c6d2",
+          "prefix": "203147",
+          "numeric_value": 203147
+        },
+        {
+          "key": "sections",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "variantes",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "dateCompet",
+          "kind": "string",
+          "value_length": 10,
+          "raw_length": 12,
+          "sha256": "56139db2ad6d4c56a05945cde36a098fe087e3ec1ac7680521fbc168f6e2744e",
+          "prefix": "15/04/2023"
+        },
+        {
+          "key": "distance",
+          "kind": "scalar",
+          "value_length": 4,
+          "raw_length": 4,
+          "sha256": "4d030e9e3cefba72d948aabdc3535b2e1d3626d826100ec1d36a800543bafeb6",
+          "prefix": "58.5",
+          "numeric_value": 58.5
+        },
+        {
+          "key": "bulles",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+          "prefix": "5",
+          "numeric_value": 5
+        },
+        {
+          "key": "alti_min",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "alti_max",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a",
+          "prefix": "500",
+          "numeric_value": 500
+        },
+        {
+          "key": "pt_culminant",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "6affdae3b3c1aa6aa7689e9b6a7b3225a636aa1ac0025f490cca1285ceaf1487",
+          "prefix": "124",
+          "numeric_value": 124
+        },
+        {
+          "key": "pt_bas",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "pentesColor",
+          "kind": "string",
+          "value_length": 20,
+          "raw_length": 22,
+          "sha256": "8c0ae80e5b9145a5b2d164c7f8a072a5a596b51f4fb5e0f208036be438bdb77e",
+          "prefix": "9bdef7_16baf7_0e609c"
+        },
+        {
+          "key": "pentesPos",
+          "kind": "string",
+          "value_length": 8,
+          "raw_length": 10,
+          "sha256": "65435f582243c915898a2dc1b251fd2bc4e657f8db219c72e3e4c696e1e77106",
+          "prefix": "10_20_30"
+        },
+        {
+          "key": "styleTrace",
+          "kind": "string",
+          "value_length": 21,
+          "raw_length": 23,
+          "sha256": "f3962fd9a7abf50bcf108ea3e7145670df63180a299f328b763c5d1f5fa0ff80",
+          "prefix": "#CC1046|4|0|10|unique"
+        },
+        {
+          "key": "couleur",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "5d2883f5df318bd821f6ff7ed352ee45f836689c3588ecc8229ff2af0d690cda",
+          "prefix": "#4EA6CD"
+        },
+        {
+          "key": "couleur2",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "14465f2a1cab8eaa06dcba7119ac1f81e19c845fea96a598632a4b817667a5cc",
+          "prefix": "#30323d"
+        },
+        {
+          "key": "profil",
+          "kind": "string",
+          "value_length": 5,
+          "raw_length": 7,
+          "sha256": "bc24715b4651963026b109ef5da19654fc753c5db5e16a0414f9c4d45ffdbd09",
+          "prefix": "plein"
+        },
+        {
+          "key": "geometry",
+          "kind": "string",
+          "value_length": 258167,
+          "raw_length": 311477,
+          "sha256": "d65a4c4f615601056da54eda115d937f1a496bd61253950c49209b30dc06b33a",
+          "prefix": "[{\"lon\":1597959.4,\"lat\":7470674.4,\"y\":3,\"o\":\"gpx\",\"y0\":3,\"x\":0,\"dp\":0,\"dn\":0},{\"lon\":1597952.9,\"lat\":7470674.8,\"o\":\"gpx\",\"y0\":3},{\"lon\":1597",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 3552,
+            "keys": null
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 237224,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2024
+        }
+      ],
+      "data_trace_found": true,
+      "data_trace_length": 122287,
+      "properties": [
+        {
+          "key": "traceID",
+          "kind": "scalar",
+          "value_length": 6,
+          "raw_length": 6,
+          "sha256": "583ee4ecfd577fe70ec75b3952ece3d1938d2df2c49f93b00b583448b7576b4e",
+          "prefix": "237224",
+          "numeric_value": 237224
+        },
+        {
+          "key": "sections",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "variantes",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "dateCompet",
+          "kind": "string",
+          "value_length": 10,
+          "raw_length": 12,
+          "sha256": "1cd59b8bf8ce0a14da19d7fe773a68a8178100b62620b1d480f834587050a750",
+          "prefix": "13/04/2024"
+        },
+        {
+          "key": "distance",
+          "kind": "scalar",
+          "value_length": 4,
+          "raw_length": 4,
+          "sha256": "2c3685f674e2728ff38267755e4806e2986747a43f64cf1ad9e8a97f7d05bc91",
+          "prefix": "21.8",
+          "numeric_value": 21.8
+        },
+        {
+          "key": "bulles",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "prefix": "2",
+          "numeric_value": 2
+        },
+        {
+          "key": "alti_min",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "alti_max",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a",
+          "prefix": "500",
+          "numeric_value": 500
+        },
+        {
+          "key": "pt_culminant",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "8d27ba37c5d810106b55f3fd6cdb35842007e88754184bfc0e6035f9bcede633",
+          "prefix": "139",
+          "numeric_value": 139
+        },
+        {
+          "key": "pt_bas",
+          "kind": "scalar",
+          "value_length": 2,
+          "raw_length": 2,
+          "sha256": "86e50149658661312a9e0b35558d84f6c6d3da797f552a9657fe0558ca40cdef",
+          "prefix": "34",
+          "numeric_value": 34
+        },
+        {
+          "key": "pentesColor",
+          "kind": "string",
+          "value_length": 20,
+          "raw_length": 22,
+          "sha256": "8c0ae80e5b9145a5b2d164c7f8a072a5a596b51f4fb5e0f208036be438bdb77e",
+          "prefix": "9bdef7_16baf7_0e609c"
+        },
+        {
+          "key": "pentesPos",
+          "kind": "string",
+          "value_length": 8,
+          "raw_length": 10,
+          "sha256": "65435f582243c915898a2dc1b251fd2bc4e657f8db219c72e3e4c696e1e77106",
+          "prefix": "10_20_30"
+        },
+        {
+          "key": "styleTrace",
+          "kind": "string",
+          "value_length": 21,
+          "raw_length": 23,
+          "sha256": "f3962fd9a7abf50bcf108ea3e7145670df63180a299f328b763c5d1f5fa0ff80",
+          "prefix": "#CC1046|4|0|10|unique"
+        },
+        {
+          "key": "couleur",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "5d2883f5df318bd821f6ff7ed352ee45f836689c3588ecc8229ff2af0d690cda",
+          "prefix": "#4EA6CD"
+        },
+        {
+          "key": "couleur2",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "14465f2a1cab8eaa06dcba7119ac1f81e19c845fea96a598632a4b817667a5cc",
+          "prefix": "#30323d"
+        },
+        {
+          "key": "profil",
+          "kind": "string",
+          "value_length": 5,
+          "raw_length": 7,
+          "sha256": "bc24715b4651963026b109ef5da19654fc753c5db5e16a0414f9c4d45ffdbd09",
+          "prefix": "plein"
+        },
+        {
+          "key": "geometry",
+          "kind": "string",
+          "value_length": 101115,
+          "raw_length": 121763,
+          "sha256": "4e6dd245a2aab78c96b79720208d0b1deae23a3e206ee3ce80eda3a2957596bf",
+          "prefix": "[{\"lon\":1554087.2,\"lat\":7502330.2,\"y\":119,\"o\":\"gpx\",\"y0\":116,\"x\":0,\"dp\":0,\"dn\":0},{\"lon\":1554085.6,\"lat\":7502313.4,\"o\":\"gpx\",\"y0\":115},{\"lon",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 1395,
+            "keys": null
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 251126,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2024
+        }
+      ],
+      "data_trace_found": true,
+      "data_trace_length": 284198,
+      "properties": [
+        {
+          "key": "traceID",
+          "kind": "scalar",
+          "value_length": 6,
+          "raw_length": 6,
+          "sha256": "e5af42e35c3fb1fe989dee4acf652b81ef0dc956753926d6b22b705d110b01fc",
+          "prefix": "251126",
+          "numeric_value": 251126
+        },
+        {
+          "key": "sections",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "variantes",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "dateCompet",
+          "kind": "string",
+          "value_length": 10,
+          "raw_length": 12,
+          "sha256": "1cd59b8bf8ce0a14da19d7fe773a68a8178100b62620b1d480f834587050a750",
+          "prefix": "13/04/2024"
+        },
+        {
+          "key": "distance",
+          "kind": "scalar",
+          "value_length": 4,
+          "raw_length": 4,
+          "sha256": "54fc393aa1b28e3ba3384a35bf8cce0aec512050aae027670f705f1d1b39bef9",
+          "prefix": "60.7",
+          "numeric_value": 60.7
+        },
+        {
+          "key": "bulles",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+          "prefix": "6",
+          "numeric_value": 6
+        },
+        {
+          "key": "alti_min",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "alti_max",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a",
+          "prefix": "500",
+          "numeric_value": 500
+        },
+        {
+          "key": "pt_culminant",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "6affdae3b3c1aa6aa7689e9b6a7b3225a636aa1ac0025f490cca1285ceaf1487",
+          "prefix": "124",
+          "numeric_value": 124
+        },
+        {
+          "key": "pt_bas",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "pentesColor",
+          "kind": "string",
+          "value_length": 20,
+          "raw_length": 22,
+          "sha256": "8c0ae80e5b9145a5b2d164c7f8a072a5a596b51f4fb5e0f208036be438bdb77e",
+          "prefix": "9bdef7_16baf7_0e609c"
+        },
+        {
+          "key": "pentesPos",
+          "kind": "string",
+          "value_length": 8,
+          "raw_length": 10,
+          "sha256": "65435f582243c915898a2dc1b251fd2bc4e657f8db219c72e3e4c696e1e77106",
+          "prefix": "10_20_30"
+        },
+        {
+          "key": "styleTrace",
+          "kind": "string",
+          "value_length": 21,
+          "raw_length": 23,
+          "sha256": "f3962fd9a7abf50bcf108ea3e7145670df63180a299f328b763c5d1f5fa0ff80",
+          "prefix": "#CC1046|4|0|10|unique"
+        },
+        {
+          "key": "couleur",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "5d2883f5df318bd821f6ff7ed352ee45f836689c3588ecc8229ff2af0d690cda",
+          "prefix": "#4EA6CD"
+        },
+        {
+          "key": "couleur2",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "14465f2a1cab8eaa06dcba7119ac1f81e19c845fea96a598632a4b817667a5cc",
+          "prefix": "#30323d"
+        },
+        {
+          "key": "profil",
+          "kind": "string",
+          "value_length": 5,
+          "raw_length": 7,
+          "sha256": "bc24715b4651963026b109ef5da19654fc753c5db5e16a0414f9c4d45ffdbd09",
+          "prefix": "plein"
+        },
+        {
+          "key": "geometry",
+          "kind": "string",
+          "value_length": 235203,
+          "raw_length": 283675,
+          "sha256": "2c8774fa3e2095e308d6ee4eb150f4cb588be31d65f7da813021b7e8f2e71c08",
+          "prefix": "[{\"lon\":1597959,\"lat\":7470674.4,\"y\":3,\"o\":\"gpx\",\"y0\":10,\"x\":0,\"dp\":0,\"dn\":0},{\"lon\":1597953.4,\"lat\":7470674.4,\"o\":\"gpx\"},{\"lon\":1597941.1,\"l",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 3258,
+            "keys": null
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 272846,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2025
+        }
+      ],
+      "data_trace_found": true,
+      "data_trace_length": 469825,
+      "properties": [
+        {
+          "key": "traceID",
+          "kind": "scalar",
+          "value_length": 6,
+          "raw_length": 6,
+          "sha256": "3ed065daf7d83a5e907b6421c706715f32de5e9c143ce9b09a5d7cd5f47eba6a",
+          "prefix": "272846",
+          "numeric_value": 272846
+        },
+        {
+          "key": "sections",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "variantes",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "dateCompet",
+          "kind": "string",
+          "value_length": 10,
+          "raw_length": 12,
+          "sha256": "3a5053fe2ee2a0eb90f51686e82ed94c701b0379bd680cc2996be6f958fc2eb8",
+          "prefix": "13/04/2025"
+        },
+        {
+          "key": "distance",
+          "kind": "scalar",
+          "value_length": 5,
+          "raw_length": 5,
+          "sha256": "ef75d99ebada54ce637e87ba5a91586dde1d87ac9af8fe0742f7575f104e5f77",
+          "prefix": "59.76",
+          "numeric_value": 59.76
+        },
+        {
+          "key": "bulles",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+          "prefix": "5",
+          "numeric_value": 5
+        },
+        {
+          "key": "alti_min",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "alti_max",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a",
+          "prefix": "500",
+          "numeric_value": 500
+        },
+        {
+          "key": "pt_culminant",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "89aa1e580023722db67646e8149eb246c748e180e34a1cf679ab0b41a416d904",
+          "prefix": "121",
+          "numeric_value": 121
+        },
+        {
+          "key": "pt_bas",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "pentesColor",
+          "kind": "string",
+          "value_length": 20,
+          "raw_length": 22,
+          "sha256": "8c0ae80e5b9145a5b2d164c7f8a072a5a596b51f4fb5e0f208036be438bdb77e",
+          "prefix": "9bdef7_16baf7_0e609c"
+        },
+        {
+          "key": "pentesPos",
+          "kind": "string",
+          "value_length": 8,
+          "raw_length": 10,
+          "sha256": "65435f582243c915898a2dc1b251fd2bc4e657f8db219c72e3e4c696e1e77106",
+          "prefix": "10_20_30"
+        },
+        {
+          "key": "styleTrace",
+          "kind": "string",
+          "value_length": 21,
+          "raw_length": 23,
+          "sha256": "856bfb1087fe73d6dd97b3eac98f8834609710ffea80bfba28ebf2820987a7c3",
+          "prefix": "#cc1046|4|0|10|unique"
+        },
+        {
+          "key": "couleur",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "5d2883f5df318bd821f6ff7ed352ee45f836689c3588ecc8229ff2af0d690cda",
+          "prefix": "#4EA6CD"
+        },
+        {
+          "key": "couleur2",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "14465f2a1cab8eaa06dcba7119ac1f81e19c845fea96a598632a4b817667a5cc",
+          "prefix": "#30323d"
+        },
+        {
+          "key": "profil",
+          "kind": "string",
+          "value_length": 5,
+          "raw_length": 7,
+          "sha256": "bc24715b4651963026b109ef5da19654fc753c5db5e16a0414f9c4d45ffdbd09",
+          "prefix": "plein"
+        },
+        {
+          "key": "geometry",
+          "kind": "string",
+          "value_length": 385885,
+          "raw_length": 469301,
+          "sha256": "57e39f38d4f8db6dc43f1a7d816ae8ff859373a10bc77591d0bcd7cca7c128b9",
+          "prefix": "[{\"lon\":1597755.8,\"lat\":7471128.1,\"o\":\"gpx\",\"x\":0,\"y\":4,\"dp\":0,\"dn\":0},{\"lon\":1597741.3,\"lat\":7471137.6,\"o\":\"gpx\",\"y\":5,\"x\":0.009,\"dp\":0,\"dn",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 4246,
+            "keys": null
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 280053,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2025
+        }
+      ],
+      "data_trace_found": true,
+      "data_trace_length": 156795,
+      "properties": [
+        {
+          "key": "traceID",
+          "kind": "scalar",
+          "value_length": 6,
+          "raw_length": 6,
+          "sha256": "74eeb20cb5f6709c9406cca19d660c0b7fe52406fd2d358f3af735f6004cef42",
+          "prefix": "280053",
+          "numeric_value": 280053
+        },
+        {
+          "key": "sections",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "variantes",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "dateCompet",
+          "kind": "string",
+          "value_length": 10,
+          "raw_length": 12,
+          "sha256": "60d97fbe023bc03992c37ace76fa3190360dceb938ef93e06b1e05098eccecaf",
+          "prefix": "12/04/2025"
+        },
+        {
+          "key": "distance",
+          "kind": "scalar",
+          "value_length": 5,
+          "raw_length": 5,
+          "sha256": "58117d0695b486bae830cdc70b241382e46df189846059a21933e77fb13a66fe",
+          "prefix": "21.77",
+          "numeric_value": 21.77
+        },
+        {
+          "key": "bulles",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "prefix": "2",
+          "numeric_value": 2
+        },
+        {
+          "key": "alti_min",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "alti_max",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a",
+          "prefix": "500",
+          "numeric_value": 500
+        },
+        {
+          "key": "pt_culminant",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "8d27ba37c5d810106b55f3fd6cdb35842007e88754184bfc0e6035f9bcede633",
+          "prefix": "139",
+          "numeric_value": 139
+        },
+        {
+          "key": "pt_bas",
+          "kind": "scalar",
+          "value_length": 2,
+          "raw_length": 2,
+          "sha256": "86e50149658661312a9e0b35558d84f6c6d3da797f552a9657fe0558ca40cdef",
+          "prefix": "34",
+          "numeric_value": 34
+        },
+        {
+          "key": "pentesColor",
+          "kind": "string",
+          "value_length": 20,
+          "raw_length": 22,
+          "sha256": "8c0ae80e5b9145a5b2d164c7f8a072a5a596b51f4fb5e0f208036be438bdb77e",
+          "prefix": "9bdef7_16baf7_0e609c"
+        },
+        {
+          "key": "pentesPos",
+          "kind": "string",
+          "value_length": 8,
+          "raw_length": 10,
+          "sha256": "65435f582243c915898a2dc1b251fd2bc4e657f8db219c72e3e4c696e1e77106",
+          "prefix": "10_20_30"
+        },
+        {
+          "key": "styleTrace",
+          "kind": "string",
+          "value_length": 21,
+          "raw_length": 23,
+          "sha256": "856bfb1087fe73d6dd97b3eac98f8834609710ffea80bfba28ebf2820987a7c3",
+          "prefix": "#cc1046|4|0|10|unique"
+        },
+        {
+          "key": "couleur",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "5d2883f5df318bd821f6ff7ed352ee45f836689c3588ecc8229ff2af0d690cda",
+          "prefix": "#4EA6CD"
+        },
+        {
+          "key": "couleur2",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "14465f2a1cab8eaa06dcba7119ac1f81e19c845fea96a598632a4b817667a5cc",
+          "prefix": "#30323d"
+        },
+        {
+          "key": "profil",
+          "kind": "string",
+          "value_length": 5,
+          "raw_length": 7,
+          "sha256": "bc24715b4651963026b109ef5da19654fc753c5db5e16a0414f9c4d45ffdbd09",
+          "prefix": "plein"
+        },
+        {
+          "key": "geometry",
+          "kind": "string",
+          "value_length": 128472,
+          "raw_length": 156270,
+          "sha256": "f10e7f48905566e2a8defc166b3a4c41bce4c921069513c22de8086921604bcb",
+          "prefix": "[{\"lon\":1554080.2,\"lat\":7502311,\"o\":\"gpx\",\"y0\":108,\"y\":120,\"x\":0,\"dp\":0,\"dn\":0},{\"lon\":1554080.2,\"lat\":7502295.2,\"o\":\"gpx\",\"y0\":108,\"y\":120,",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 1395,
+            "keys": null
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 322314,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2026
+        }
+      ],
+      "data_trace_found": true,
+      "data_trace_length": 156795,
+      "properties": [
+        {
+          "key": "traceID",
+          "kind": "scalar",
+          "value_length": 6,
+          "raw_length": 6,
+          "sha256": "7295039dd1e7b343304a45d49f4dd116d396497e975f386cbc7a34ddd8546eff",
+          "prefix": "322314",
+          "numeric_value": 322314
+        },
+        {
+          "key": "sections",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "variantes",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "dateCompet",
+          "kind": "string",
+          "value_length": 10,
+          "raw_length": 12,
+          "sha256": "e3605af7ce52de1b55068ca0cbf80bd2cd9cc830b08b177714dc3dcfcf735a99",
+          "prefix": "18/04/2026"
+        },
+        {
+          "key": "distance",
+          "kind": "scalar",
+          "value_length": 5,
+          "raw_length": 5,
+          "sha256": "58117d0695b486bae830cdc70b241382e46df189846059a21933e77fb13a66fe",
+          "prefix": "21.77",
+          "numeric_value": 21.77
+        },
+        {
+          "key": "bulles",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "prefix": "2",
+          "numeric_value": 2
+        },
+        {
+          "key": "alti_min",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "alti_max",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a",
+          "prefix": "500",
+          "numeric_value": 500
+        },
+        {
+          "key": "pt_culminant",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "8d27ba37c5d810106b55f3fd6cdb35842007e88754184bfc0e6035f9bcede633",
+          "prefix": "139",
+          "numeric_value": 139
+        },
+        {
+          "key": "pt_bas",
+          "kind": "scalar",
+          "value_length": 2,
+          "raw_length": 2,
+          "sha256": "86e50149658661312a9e0b35558d84f6c6d3da797f552a9657fe0558ca40cdef",
+          "prefix": "34",
+          "numeric_value": 34
+        },
+        {
+          "key": "pentesColor",
+          "kind": "string",
+          "value_length": 20,
+          "raw_length": 22,
+          "sha256": "8c0ae80e5b9145a5b2d164c7f8a072a5a596b51f4fb5e0f208036be438bdb77e",
+          "prefix": "9bdef7_16baf7_0e609c"
+        },
+        {
+          "key": "pentesPos",
+          "kind": "string",
+          "value_length": 8,
+          "raw_length": 10,
+          "sha256": "65435f582243c915898a2dc1b251fd2bc4e657f8db219c72e3e4c696e1e77106",
+          "prefix": "10_20_30"
+        },
+        {
+          "key": "styleTrace",
+          "kind": "string",
+          "value_length": 21,
+          "raw_length": 23,
+          "sha256": "856bfb1087fe73d6dd97b3eac98f8834609710ffea80bfba28ebf2820987a7c3",
+          "prefix": "#cc1046|4|0|10|unique"
+        },
+        {
+          "key": "couleur",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "5d2883f5df318bd821f6ff7ed352ee45f836689c3588ecc8229ff2af0d690cda",
+          "prefix": "#4EA6CD"
+        },
+        {
+          "key": "couleur2",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "14465f2a1cab8eaa06dcba7119ac1f81e19c845fea96a598632a4b817667a5cc",
+          "prefix": "#30323d"
+        },
+        {
+          "key": "profil",
+          "kind": "string",
+          "value_length": 5,
+          "raw_length": 7,
+          "sha256": "bc24715b4651963026b109ef5da19654fc753c5db5e16a0414f9c4d45ffdbd09",
+          "prefix": "plein"
+        },
+        {
+          "key": "geometry",
+          "kind": "string",
+          "value_length": 128472,
+          "raw_length": 156270,
+          "sha256": "f10e7f48905566e2a8defc166b3a4c41bce4c921069513c22de8086921604bcb",
+          "prefix": "[{\"lon\":1554080.2,\"lat\":7502311,\"o\":\"gpx\",\"y0\":108,\"y\":120,\"x\":0,\"dp\":0,\"dn\":0},{\"lon\":1554080.2,\"lat\":7502295.2,\"o\":\"gpx\",\"y0\":108,\"y\":120,",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 1395,
+            "keys": null
+          }
+        }
+      ]
+    },
+    {
+      "trace_id": 322315,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2026
+        }
+      ],
+      "data_trace_found": true,
+      "data_trace_length": 472185,
+      "properties": [
+        {
+          "key": "traceID",
+          "kind": "scalar",
+          "value_length": 6,
+          "raw_length": 6,
+          "sha256": "e4e2fb1ef384fcc404cb0d0008e8e33e36a2fce63fcb03750e65390d5cd94103",
+          "prefix": "322315",
+          "numeric_value": 322315
+        },
+        {
+          "key": "sections",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "variantes",
+          "kind": "string",
+          "value_length": 2,
+          "raw_length": 4,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "prefix": "[]",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 0,
+            "keys": null
+          }
+        },
+        {
+          "key": "dateCompet",
+          "kind": "string",
+          "value_length": 10,
+          "raw_length": 12,
+          "sha256": "e3605af7ce52de1b55068ca0cbf80bd2cd9cc830b08b177714dc3dcfcf735a99",
+          "prefix": "18/04/2026"
+        },
+        {
+          "key": "distance",
+          "kind": "scalar",
+          "value_length": 5,
+          "raw_length": 5,
+          "sha256": "ef75d99ebada54ce637e87ba5a91586dde1d87ac9af8fe0742f7575f104e5f77",
+          "prefix": "59.76",
+          "numeric_value": 59.76
+        },
+        {
+          "key": "bulles",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+          "prefix": "5",
+          "numeric_value": 5
+        },
+        {
+          "key": "alti_min",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "alti_max",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a",
+          "prefix": "500",
+          "numeric_value": 500
+        },
+        {
+          "key": "pt_culminant",
+          "kind": "scalar",
+          "value_length": 3,
+          "raw_length": 3,
+          "sha256": "89aa1e580023722db67646e8149eb246c748e180e34a1cf679ab0b41a416d904",
+          "prefix": "121",
+          "numeric_value": 121
+        },
+        {
+          "key": "pt_bas",
+          "kind": "scalar",
+          "value_length": 1,
+          "raw_length": 1,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "prefix": "0",
+          "numeric_value": 0
+        },
+        {
+          "key": "pentesColor",
+          "kind": "string",
+          "value_length": 20,
+          "raw_length": 22,
+          "sha256": "8c0ae80e5b9145a5b2d164c7f8a072a5a596b51f4fb5e0f208036be438bdb77e",
+          "prefix": "9bdef7_16baf7_0e609c"
+        },
+        {
+          "key": "pentesPos",
+          "kind": "string",
+          "value_length": 8,
+          "raw_length": 10,
+          "sha256": "65435f582243c915898a2dc1b251fd2bc4e657f8db219c72e3e4c696e1e77106",
+          "prefix": "10_20_30"
+        },
+        {
+          "key": "styleTrace",
+          "kind": "string",
+          "value_length": 21,
+          "raw_length": 23,
+          "sha256": "856bfb1087fe73d6dd97b3eac98f8834609710ffea80bfba28ebf2820987a7c3",
+          "prefix": "#cc1046|4|0|10|unique"
+        },
+        {
+          "key": "couleur",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "5d2883f5df318bd821f6ff7ed352ee45f836689c3588ecc8229ff2af0d690cda",
+          "prefix": "#4EA6CD"
+        },
+        {
+          "key": "couleur2",
+          "kind": "string",
+          "value_length": 7,
+          "raw_length": 9,
+          "sha256": "14465f2a1cab8eaa06dcba7119ac1f81e19c845fea96a598632a4b817667a5cc",
+          "prefix": "#30323d"
+        },
+        {
+          "key": "profil",
+          "kind": "string",
+          "value_length": 5,
+          "raw_length": 7,
+          "sha256": "bc24715b4651963026b109ef5da19654fc753c5db5e16a0414f9c4d45ffdbd09",
+          "prefix": "plein"
+        },
+        {
+          "key": "geometry",
+          "kind": "string",
+          "value_length": 387831,
+          "raw_length": 471661,
+          "sha256": "29af78c7e734144e5a0387e8480e3d662a0edc88c8778695f0f9bfaee0fc66e7",
+          "prefix": "[{\"lon\":1597755.8,\"lat\":7471128.1,\"o\":\"gpx\",\"x\":0,\"y\":4,\"dp\":0,\"dn\":0},{\"lon\":1597741.3,\"lat\":7471137.6,\"o\":\"gpx\",\"y\":5,\"x\":0.009,\"dp\":0,\"dn",
+          "decoded_json_summary": {
+            "json_type": "list",
+            "count": 4269,
+            "keys": null
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "note": "Only top-level property metadata and short prefixes are stored; complete dataTrace payloads are not mirrored."
+}
