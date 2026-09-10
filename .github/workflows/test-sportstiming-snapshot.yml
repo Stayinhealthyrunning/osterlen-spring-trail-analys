@@ -6,6 +6,7 @@ on:
     paths:
       - 'tools/fetch_sportstiming_snapshot.py'
       - 'tools/normalize_sportstiming_snapshot.py'
+      - 'config/checkpoint-normalization.json'
       - '.github/workflows/test-sportstiming-snapshot.yml'
 
 concurrency:
@@ -27,9 +28,9 @@ jobs:
           python-version: '3.12'
       - name: Fetch 10 public 2026 Ultra results
         run: python tools/fetch_sportstiming_snapshot.py --year 2026 --family ultra60 --limit 10 --workers 4 --output data/source/sportstiming/samples/2026-ultra60-10.json
-      - name: Normalize smoke snapshot
+      - name: Normalize 2026 smoke snapshot
         run: python tools/normalize_sportstiming_snapshot.py data/source/sportstiming/samples/2026-ultra60-10.json --output data/normalized/samples/2026-ultra60-10.json
-      - name: Sanity check normalized sample
+      - name: Sanity check 2026 normalized sample
         shell: python
         run: |
           import json
@@ -40,8 +41,43 @@ jobs:
           assert all(r['race_family']=='ultra60' for r in d['records'])
           assert sum(bool(r['finish_seconds']) for r in d['records']) >= 8
           assert sum(bool(r['splits']) for r in d['records']) >= 8
-          print('Normalized smoke sample OK')
-      - name: Commit smoke-test outputs
+          mapped=0
+          for r in d['records']:
+            for s in r['splits']:
+              if s['checkpoint_source_label']=='34 km':
+                assert s['checkpoint_semantic_key']=='bengtemolla', s
+                assert s['analysis_primary'] is True, s
+                mapped+=1
+          assert mapped >= 8, mapped
+          print('2026 normalized smoke sample OK; 34 km -> Bengtemölla semantics verified')
+      - name: Fetch and normalize 2022/2023 historical timing samples
+        shell: bash
+        run: |
+          for y in 2022 2023; do
+            python tools/fetch_sportstiming_snapshot.py --year "$y" --family ultra60 --limit 5 --workers 3 --output "/tmp/${y}-source.json"
+            python tools/normalize_sportstiming_snapshot.py "/tmp/${y}-source.json" --output "/tmp/${y}-normalized.json"
+          done
+      - name: Verify Bengtemölla double-timing semantics
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+          for y in (2022, 2023):
+            d=json.loads(Path(f'/tmp/{y}-normalized.json').read_text(encoding='utf-8'))
+            assert len(d['records']) == 5
+            verified=0
+            for r in d['records']:
+              by={s.get('checkpoint_semantic_key'):s for s in r['splits']}
+              if 'bengtemolla_approach' in by and 'bengtemolla' in by:
+                assert by['bengtemolla_approach']['analysis_primary'] is False
+                assert by['bengtemolla']['analysis_primary'] is True
+                m={x['metric_key']:x for x in r.get('derived_checkpoint_metrics',[])}
+                assert 'bengtemolla_between_mats_seconds' in m, m
+                assert m['bengtemolla_between_mats_seconds']['seconds'] is not None
+                verified+=1
+            assert verified >= 4, (y, verified)
+            print(y, 'double timing semantics verified for', verified, 'records')
+      - name: Commit 2026 smoke-test outputs
         shell: bash
         run: |
           paths=(data/source/sportstiming/samples/2026-ultra60-10.json data/normalized/samples/2026-ultra60-10.json)
