@@ -5,6 +5,7 @@
     "organizer_official",
     "sportstiming_official",
     "organizer_trace_reference",
+    "user_race_recording",
     "itra_utmb_duv_crosscheck",
     "specialist_press_crosscheck",
     "other_secondary"
@@ -12,7 +13,8 @@
   "rules": [
     "Official Sportstiming data is the result source of record when available.",
     "Organizer-published route files and race PMs outrank secondary course databases.",
-    "Trace de Trail references created by ÖST are authoritative route leads but raw third-party GPX bodies are not redistributed automatically.",
+    "Trace de Trail references created by ÖST are authoritative route leads; public GPX acquisition may be automated when a normal public download is exposed, while acquisition and redistribution are treated as separate provenance decisions.",
+    "A user-supplied race-day GPX may validate route geometry and barometric elevation shape, but it does not silently override organizer geometry or an official timing observation.",
     "ITRA, UTMB and DUV are cross-check sources and never silently overwrite official timing or organizer route data.",
     "Race-day marking may differ from a published GPX; this limitation must remain explicit in public methodology.",
     "Unknown values remain null and are never inferred into official observations."
@@ -45,8 +47,16 @@
       "tier": "organizer_trace_reference",
       "provider": "Trace de Trail",
       "base_url": "https://tracedetrail.fr/",
-      "uses": ["historical_route_reference", "published_route_distance", "public_route_poi"],
-      "note": "Only route references and public metadata/POIs are archived automatically until GPX redistribution/reuse is explicitly cleared."
+      "uses": ["historical_route_reference", "published_route_distance", "public_route_poi", "public_gpx_acquisition"],
+      "note": "Project owner authorized automated acquisition through Trace de Trail's normal public GPX download path on 2026-09-10. This authorization is operational; third-party redistribution rights are evaluated separately."
+    },
+    {
+      "code": "user_suunto_2025_ultra60",
+      "tier": "user_race_recording",
+      "provider": "User-supplied Suunto race-day recording",
+      "uses": ["2025_route_crosscheck", "barometric_elevation_reference", "checkpoint_projection_crosscheck"],
+      "artifact": "data/source/gpx/ultra60/ost-ultra60-2025-user-suunto-barometric-reference.json",
+      "note": "The user states the elevation values originate from the watch barometer. The raw GPX is not required by the analysis engine; a provenance-preserving derived reference is stored."
     },
     {
       "code": "itra",
