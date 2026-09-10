@@ -23,9 +23,11 @@ on:
       - 'tools/validate_source_model.py'
       - '.github/workflows/build-source-reports.yml'
 
+# This workflow and source-coverage both generate/commit files on main.
+# Sharing a concurrency group prevents simultaneous rebases/pushes.
 concurrency:
-  group: ost-source-reports-main
-  cancel-in-progress: true
+  group: ost-generated-main
+  cancel-in-progress: false
 
 permissions:
   contents: write
