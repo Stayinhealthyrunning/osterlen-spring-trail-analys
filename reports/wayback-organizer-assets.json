@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-09-10T09:18:15.429257+00:00",
+  "scope": "historical organizer-hosted GPX/PDF discovery; metadata only",
+  "queries": [
+    {
+      "pattern": "www.osterlentrail.se/uploads/4/1/8/7/41870619/*.gpx",
+      "captures": []
+    },
+    {
+      "pattern": "osterlentrail.se/uploads/4/1/8/7/41870619/*.gpx",
+      "captures": []
+    },
+    {
+      "pattern": "www.osterlentrail.se/uploads/4/1/8/7/41870619/*.pdf",
+      "captures": []
+    },
+    {
+      "pattern": "osterlentrail.se/uploads/4/1/8/7/41870619/*.pdf",
+      "error": "URLError: <urlopen error timed out>",
+      "captures": []
+    }
+  ],
+  "unique_assets": [],
+  "gpx_assets": [],
+  "pdf_assets": [],
+  "policy": "Archive captures are leads. Validate provenance/content before adding any historical body to the repository."
+}
