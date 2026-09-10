@@ -1,0 +1,70 @@
+name: Freeze Sportstiming results
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/fetch_sportstiming_snapshot.py'
+      - 'tools/normalize_sportstiming_snapshot.py'
+      - 'tools/normalize_sportstiming_team_snapshot.py'
+      - 'tools/build_frozen_results_db.py'
+      - 'tools/run_full_sportstiming_import.py'
+      - 'data/source/sportstiming/class-catalog.json'
+      - 'config/checkpoint-normalization.json'
+      - '.github/workflows/freeze-sportstiming-results.yml'
+
+concurrency:
+  group: ost-frozen-results
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch all results and build frozen SQLite archive
+        run: python tools/run_full_sportstiming_import.py --workers 6
+      - name: Verify archive and summary
+        run: |
+          test -s data/archive/ost-results-2018-2026.sqlite
+          test -s data/archive/ost-results-2018-2026.sqlite.gz
+          test -s reports/result-archive-summary.json
+          python - <<'PY'
+          import json, sqlite3
+          from pathlib import Path
+          s=json.loads(Path('reports/result-archive-summary.json').read_text())
+          assert s['integrity_check']=='ok'
+          assert s['source_errors']==0
+          assert s['expected_family_year_imports']==34
+          assert s['total_results']>0
+          con=sqlite3.connect('data/archive/ost-results-2018-2026.sqlite')
+          assert con.execute('pragma integrity_check').fetchone()[0]=='ok'
+          assert con.execute('select count(*) from imports').fetchone()[0]==34
+          assert con.execute('select count(*) from results').fetchone()[0]==s['total_results']
+          print('archive verified:',s['total_results'],'results,',s['total_splits'],'splits')
+          PY
+      - name: Commit frozen archive and audit summary
+        shell: bash
+        run: |
+          rm -f data/archive/ost-results-2018-2026.sqlite
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f data/archive/ost-results-2018-2026.sqlite.gz
+          git add reports/result-archive-summary.json reports/result-archive-summary.md
+          if git diff --cached --quiet; then
+            echo 'Frozen archive already current.'
+          else
+            git commit -m 'Freeze complete ÖST Sportstiming result archive'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
