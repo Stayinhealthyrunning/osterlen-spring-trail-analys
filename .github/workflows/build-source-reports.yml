@@ -12,6 +12,7 @@ on:
       - 'tools/inspect_sportstiming_client.py'
       - 'tools/build_sportstiming_catalog.py'
       - 'tools/sample_sportstiming_result_structure.py'
+      - 'tools/inspect_sportstiming_tables.py'
       - '.github/workflows/build-source-reports.yml'
 
 concurrency:
@@ -43,6 +44,8 @@ jobs:
         run: python tools/build_sportstiming_catalog.py
       - name: Sample Sportstiming result structure
         run: python tools/sample_sportstiming_result_structure.py
+      - name: Inspect Sportstiming result tables
+        run: python tools/inspect_sportstiming_tables.py
       - name: Commit generated metadata and reports
         shell: bash
         run: |
