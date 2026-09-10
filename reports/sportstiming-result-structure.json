@@ -1,0 +1,746 @@
+{
+  "event_id": 16880,
+  "round_id": 97077,
+  "list_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=1",
+  "list_html_bytes": 101728,
+  "result_links_on_page": 50,
+  "sample_result_ids": [
+    "7793098",
+    "7796216",
+    "7792471"
+  ],
+  "details": [
+    {
+      "result_id": "7793098",
+      "html_bytes": 29138,
+      "labels": [
+        "Mellantid",
+        "Total tid",
+        "Nettotid"
+      ],
+      "structural_tokens": [
+        {
+          "tag": "div",
+          "id": "page-wrapper"
+        },
+        {
+          "tag": "div",
+          "class": "item ",
+          "id": "slide-1"
+        },
+        {
+          "tag": "div",
+          "class": "container"
+        },
+        {
+          "tag": "div",
+          "class": "row"
+        },
+        {
+          "tag": "div",
+          "class": "col-12"
+        },
+        {
+          "tag": "div",
+          "class": "container-fluid headertabs-container-outer"
+        },
+        {
+          "tag": "div",
+          "class": "container headertabs-container"
+        },
+        {
+          "tag": "div",
+          "class": "headertabs"
+        },
+        {
+          "tag": "div",
+          "class": "headertabs-bottom"
+        },
+        {
+          "tag": "div",
+          "id": "mainBody"
+        },
+        {
+          "tag": "div",
+          "class": "page-filter-bar results-img-inputs"
+        },
+        {
+          "tag": "div",
+          "class": "col-md-5 col-sm-8 col-12"
+        },
+        {
+          "tag": "div",
+          "class": "col-md-2 col-sm-3 hidden-sm hidden-xs"
+        },
+        {
+          "tag": "div",
+          "class": "col-md-2 hidden-sm hidden-xs"
+        },
+        {
+          "tag": "div",
+          "class": "col-md-3 col-sm-4 col-12 text-center"
+        },
+        {
+          "tag": "div",
+          "class": "bg-color-2"
+        },
+        {
+          "tag": "div",
+          "class": "content customBackgroundWrapper"
+        },
+        {
+          "tag": "div",
+          "class": "col-md-4 col-sm-6"
+        },
+        {
+          "tag": "div",
+          "class": "panel panel-primary"
+        },
+        {
+          "tag": "div",
+          "class": "panel-heading"
+        },
+        {
+          "tag": "div",
+          "class": "panel-body"
+        },
+        {
+          "tag": "div",
+          "class": "comingsoon text-center"
+        },
+        {
+          "tag": "div",
+          "class": "digits"
+        },
+        {
+          "tag": "div",
+          "class": "countdown-labels countdown-labels-small"
+        },
+        {
+          "tag": "table",
+          "class": "table"
+        },
+        {
+          "tag": "div",
+          "class": "collapse",
+          "id": "results-detail-collapse"
+        },
+        {
+          "tag": "div",
+          "class": "detail-collapse text-center"
+        },
+        {
+          "tag": "div",
+          "class": "expand-details-div collapsed text-center"
+        },
+        {
+          "tag": "div",
+          "class": "expandsearch_label"
+        },
+        {
+          "tag": "tr",
+          "class": "tooltip-init"
+        },
+        {
+          "tag": "div",
+          "class": "row margin-bottom-20"
+        },
+        {
+          "tag": "div",
+          "class": "col-12 text-center"
+        },
+        {
+          "tag": "div",
+          "class": "col-md-12"
+        },
+        {
+          "tag": "div",
+          "class": "col-4"
+        },
+        {
+          "tag": "div",
+          "class": "col-8 text-end"
+        },
+        {
+          "tag": "span",
+          "class": "hidden-xs"
+        },
+        {
+          "tag": "div",
+          "class": "btn-group"
+        },
+        {
+          "tag": "span",
+          "class": "splitpos-select-label"
+        },
+        {
+          "tag": "span",
+          "class": "text-center visible-xs"
+        },
+        {
+          "tag": "div",
+          "class": "table-responsive"
+        },
+        {
+          "tag": "table",
+          "class": "splits-table table table-striped table-hover"
+        },
+        {
+          "tag": "tr",
+          "class": "splits-header"
+        },
+        {
+          "tag": "th",
+          "class": "splits-vertdivide"
+        },
+        {
+          "tag": "tr",
+          "class": "splits-subheader"
+        },
+        {
+          "tag": "td",
+          "class": "splits-valuecol splits-vertdivide"
+        },
+        {
+          "tag": "td",
+          "class": "splits-valuecol hidden"
+        },
+        {
+          "tag": "td",
+          "class": "splits-valuecol"
+        },
+        {
+          "tag": "td",
+          "class": "splits-valuecol "
+        },
+        {
+          "tag": "span",
+          "class": "splitpos-span splitpos-span-0"
+        },
+        {
+          "tag": "span",
+          "class": "splitpos-span splitpos-span-1"
+        },
+        {
+          "tag": "span",
+          "class": "splitpos-span splitpos-span-2"
+        },
+        {
+          "tag": "div",
+          "class": "otherResultsLazyTrigger"
+        },
+        {
+          "tag": "div",
+          "class": "row otherResultsLazyRow"
+        },
+        {
+          "tag": "div",
+          "class": "panel-body otherResultsLazyBody"
+        },
+        {
+          "tag": "div",
+          "class": "text-center"
+        },
+        {
+          "tag": "div",
+          "class": "content bg-color-2"
+        },
+        {
+          "tag": "div",
+          "class": "container-fluid"
+        }
+      ],
+      "contains_split_words": true,
+      "links_to_tracking": false,
+      "links_to_points": false
+    },
+    {
+      "result_id": "7796216",
+      "html_bytes": 29123,
+      "labels": [
+        "Mellantid",
+        "Total tid",
+        "Nettotid"
+      ],
+      "structural_tokens": [
+        {
+          "tag": "div",
+          "id": "page-wrapper"
+        },
+        {
+          "tag": "div",
+          "class": "item ",
+          "id": "slide-1"
+        },
+        {
+          "tag": "div",
+          "class": "container"
+        },
+        {
+          "tag": "div",
+          "class": "row"
+        },
+        {
+          "tag": "div",
+          "class": "col-12"
+        },
+        {
+          "tag": "div",
+          "class": "container-fluid headertabs-container-outer"
+        },
+        {
+          "tag": "div",
+          "class": "container headertabs-container"
+        },
+        {
+          "tag": "div",
+          "class": "headertabs"
+        },
+        {
+          "tag": "div",
+          "class": "headertabs-bottom"
+        },
+        {
+          "tag": "div",
+          "id": "mainBody"
+        },
+        {
+          "tag": "div",
+          "class": "page-filter-bar results-img-inputs"
+        },
+        {
+          "tag": "div",
+          "class": "col-md-5 col-sm-8 col-12"
+        },
+        {
+          "tag": "div",
+          "class": "col-md-2 col-sm-3 hidden-sm hidden-xs"
+        },
+        {
+          "tag": "div",
+          "class": "col-md-2 hidden-sm hidden-xs"
+        },
+        {
+          "tag": "div",
+          "class": "col-md-3 col-sm-4 col-12 text-center"
+        },
+        {
+          "tag": "div",
+          "class": "bg-color-2"
+        },
+        {
+          "tag": "div",
+          "class": "content customBackgroundWrapper"
+        },
+        {
+          "tag": "div",
+          "class": "col-md-4 col-sm-6"
+        },
+        {
+          "tag": "div",
+          "class": "panel panel-primary"
+        },
+        {
+          "tag": "div",
+          "class": "panel-heading"
+        },
+        {
+          "tag": "div",
+          "class": "panel-body"
+        },
+        {
+          "tag": "div",
+          "class": "comingsoon text-center"
+        },
+        {
+          "tag": "div",
+          "class": "digits"
+        },
+        {
+          "tag": "div",
+          "class": "countdown-labels countdown-labels-small"
+        },
+        {
+          "tag": "table",
+          "class": "table"
+        },
+        {
+          "tag": "div",
+          "class": "collapse",
+          "id": "results-detail-collapse"
+        },
+        {
+          "tag": "div",
+          "class": "detail-collapse text-center"
+        },
+        {
+          "tag": "div",
+          "class": "expand-details-div collapsed text-center"
+        },
+        {
+          "tag": "div",
+          "class": "expandsearch_label"
+        },
+        {
+          "tag": "tr",
+          "class": "tooltip-init"
+        },
+        {
+          "tag": "div",
+          "class": "row margin-bottom-20"
+        },
+        {
+          "tag": "div",
+          "class": "col-12 text-center"
+        },
+        {
+          "tag": "div",
+          "class": "col-md-12"
+        },
+        {
+          "tag": "div",
+          "class": "col-4"
+        },
+        {
+          "tag": "div",
+          "class": "col-8 text-end"
+        },
+        {
+          "tag": "span",
+          "class": "hidden-xs"
+        },
+        {
+          "tag": "div",
+          "class": "btn-group"
+        },
+        {
+          "tag": "span",
+          "class": "splitpos-select-label"
+        },
+        {
+          "tag": "span",
+          "class": "text-center visible-xs"
+        },
+        {
+          "tag": "div",
+          "class": "table-responsive"
+        },
+        {
+          "tag": "table",
+          "class": "splits-table table table-striped table-hover"
+        },
+        {
+          "tag": "tr",
+          "class": "splits-header"
+        },
+        {
+          "tag": "th",
+          "class": "splits-vertdivide"
+        },
+        {
+          "tag": "tr",
+          "class": "splits-subheader"
+        },
+        {
+          "tag": "td",
+          "class": "splits-valuecol splits-vertdivide"
+        },
+        {
+          "tag": "td",
+          "class": "splits-valuecol hidden"
+        },
+        {
+          "tag": "td",
+          "class": "splits-valuecol"
+        },
+        {
+          "tag": "td",
+          "class": "splits-valuecol "
+        },
+        {
+          "tag": "span",
+          "class": "splitpos-span splitpos-span-0"
+        },
+        {
+          "tag": "span",
+          "class": "splitpos-span splitpos-span-1"
+        },
+        {
+          "tag": "span",
+          "class": "splitpos-span splitpos-span-2"
+        },
+        {
+          "tag": "div",
+          "class": "otherResultsLazyTrigger"
+        },
+        {
+          "tag": "div",
+          "class": "row otherResultsLazyRow"
+        },
+        {
+          "tag": "div",
+          "class": "panel-body otherResultsLazyBody"
+        },
+        {
+          "tag": "div",
+          "class": "text-center"
+        },
+        {
+          "tag": "div",
+          "class": "content bg-color-2"
+        },
+        {
+          "tag": "div",
+          "class": "container-fluid"
+        }
+      ],
+      "contains_split_words": true,
+      "links_to_tracking": false,
+      "links_to_points": false
+    },
+    {
+      "result_id": "7792471",
+      "html_bytes": 28911,
+      "labels": [
+        "Mellantid",
+        "Total tid",
+        "Nettotid"
+      ],
+      "structural_tokens": [
+        {
+          "tag": "div",
+          "id": "page-wrapper"
+        },
+        {
+          "tag": "div",
+          "class": "item ",
+          "id": "slide-1"
+        },
+        {
+          "tag": "div",
+          "class": "container"
+        },
+        {
+          "tag": "div",
+          "class": "row"
+        },
+        {
+          "tag": "div",
+          "class": "col-12"
+        },
+        {
+          "tag": "div",
+          "class": "container-fluid headertabs-container-outer"
+        },
+        {
+          "tag": "div",
+          "class": "container headertabs-container"
+        },
+        {
+          "tag": "div",
+          "class": "headertabs"
+        },
+        {
+          "tag": "div",
+          "class": "headertabs-bottom"
+        },
+        {
+          "tag": "div",
+          "id": "mainBody"
+        },
+        {
+          "tag": "div",
+          "class": "page-filter-bar results-img-inputs"
+        },
+        {
+          "tag": "div",
+          "class": "col-md-5 col-sm-8 col-12"
+        },
+        {
+          "tag": "div",
+          "class": "col-md-2 col-sm-3 hidden-sm hidden-xs"
+        },
+        {
+          "tag": "div",
+          "class": "col-md-2 hidden-sm hidden-xs"
+        },
+        {
+          "tag": "div",
+          "class": "col-md-3 col-sm-4 col-12 text-center"
+        },
+        {
+          "tag": "div",
+          "class": "bg-color-2"
+        },
+        {
+          "tag": "div",
+          "class": "content customBackgroundWrapper"
+        },
+        {
+          "tag": "div",
+          "class": "col-md-4 col-sm-6"
+        },
+        {
+          "tag": "div",
+          "class": "panel panel-primary"
+        },
+        {
+          "tag": "div",
+          "class": "panel-heading"
+        },
+        {
+          "tag": "div",
+          "class": "panel-body"
+        },
+        {
+          "tag": "div",
+          "class": "comingsoon text-center"
+        },
+        {
+          "tag": "div",
+          "class": "digits"
+        },
+        {
+          "tag": "div",
+          "class": "countdown-labels countdown-labels-small"
+        },
+        {
+          "tag": "table",
+          "class": "table"
+        },
+        {
+          "tag": "div",
+          "class": "collapse",
+          "id": "results-detail-collapse"
+        },
+        {
+          "tag": "div",
+          "class": "detail-collapse text-center"
+        },
+        {
+          "tag": "div",
+          "class": "expand-details-div collapsed text-center"
+        },
+        {
+          "tag": "div",
+          "class": "expandsearch_label"
+        },
+        {
+          "tag": "tr",
+          "class": "tooltip-init"
+        },
+        {
+          "tag": "div",
+          "class": "row margin-bottom-20"
+        },
+        {
+          "tag": "div",
+          "class": "col-12 text-center"
+        },
+        {
+          "tag": "div",
+          "class": "col-md-12"
+        },
+        {
+          "tag": "div",
+          "class": "col-4"
+        },
+        {
+          "tag": "div",
+          "class": "col-8 text-end"
+        },
+        {
+          "tag": "span",
+          "class": "hidden-xs"
+        },
+        {
+          "tag": "div",
+          "class": "btn-group"
+        },
+        {
+          "tag": "span",
+          "class": "splitpos-select-label"
+        },
+        {
+          "tag": "span",
+          "class": "text-center visible-xs"
+        },
+        {
+          "tag": "div",
+          "class": "table-responsive"
+        },
+        {
+          "tag": "table",
+          "class": "splits-table table table-striped table-hover"
+        },
+        {
+          "tag": "tr",
+          "class": "splits-header"
+        },
+        {
+          "tag": "th",
+          "class": "splits-vertdivide"
+        },
+        {
+          "tag": "tr",
+          "class": "splits-subheader"
+        },
+        {
+          "tag": "td",
+          "class": "splits-valuecol splits-vertdivide"
+        },
+        {
+          "tag": "td",
+          "class": "splits-valuecol hidden"
+        },
+        {
+          "tag": "td",
+          "class": "splits-valuecol"
+        },
+        {
+          "tag": "td",
+          "class": "splits-valuecol "
+        },
+        {
+          "tag": "span",
+          "class": "splitpos-span splitpos-span-0"
+        },
+        {
+          "tag": "span",
+          "class": "splitpos-span splitpos-span-1"
+        },
+        {
+          "tag": "span",
+          "class": "splitpos-span splitpos-span-2"
+        },
+        {
+          "tag": "div",
+          "class": "otherResultsLazyTrigger"
+        },
+        {
+          "tag": "div",
+          "class": "row otherResultsLazyRow"
+        },
+        {
+          "tag": "div",
+          "class": "panel-body otherResultsLazyBody"
+        },
+        {
+          "tag": "div",
+          "class": "text-center"
+        },
+        {
+          "tag": "div",
+          "class": "content bg-color-2"
+        },
+        {
+          "tag": "div",
+          "class": "container-fluid"
+        }
+      ],
+      "contains_split_words": true,
+      "links_to_tracking": false,
+      "links_to_points": false
+    }
+  ]
+}
