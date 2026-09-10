@@ -15,6 +15,7 @@ on:
       - 'AGENTS.md'
       - 'README.md'
       - 'tools/validate_foundation.py'
+      - '.github/workflows/build-source-reports.yml'
       - '.github/workflows/validate-foundation.yml'
   pull_request:
     branches: [main]
