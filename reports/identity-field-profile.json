@@ -1,0 +1,1975 @@
+{
+  "schema_version": 1,
+  "source": "data/archive/ost-results-2018-2026.sqlite.gz",
+  "privacy_rule": "Aggregate structure only; participant/team names are not emitted.",
+  "totals": {
+    "source_records": 9871,
+    "results": 9871
+  },
+  "list_header_sets": {
+    "2018:trail14": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Klubb/Firma/Sponsor",
+          "Land"
+        ],
+        "records": 372
+      }
+    ],
+    "2018:trail22": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Klubb/Firma/Sponsor",
+          "Land"
+        ],
+        "records": 465
+      }
+    ],
+    "2018:trail5": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Klubb/Firma/Sponsor",
+          "Land"
+        ],
+        "records": 126
+      }
+    ],
+    "2018:ultra60": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Klubb/Firma/Sponsor",
+          "Land",
+          "Stenshuvud km 14",
+          "Bengtemölla km 32",
+          "Vantalängan km 52"
+        ],
+        "records": 150
+      }
+    ],
+    "2019:duo60": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Lag",
+          "Kategori"
+        ],
+        "records": 64
+      }
+    ],
+    "2019:trail14": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Klubb/Firma/Sponsor",
+          "Land",
+          "ITRA Points"
+        ],
+        "records": 434
+      }
+    ],
+    "2019:trail22": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Klubb/Firma/Sponsor",
+          "Land",
+          "ITRA Points"
+        ],
+        "records": 469
+      }
+    ],
+    "2019:trail5": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Klubb/Firma/Sponsor",
+          "Land",
+          "ITRA Points"
+        ],
+        "records": 100
+      }
+    ],
+    "2019:ultra60": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Klubb/Firma/Sponsor",
+          "Land",
+          "ITRA Points"
+        ],
+        "records": 278
+      }
+    ],
+    "2022:duo60": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Lag",
+          "Kategori",
+          "32 km",
+          "Bengtemölla",
+          "62 km"
+        ],
+        "records": 43
+      }
+    ],
+    "2022:trail14": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Kategori",
+          "Klubb/Firma/Sponsor",
+          "Land",
+          "\"Low footprint\"",
+          "JM"
+        ],
+        "records": 249
+      }
+    ],
+    "2022:trail22": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Kategori",
+          "Klubb/Firma/Sponsor",
+          "Land",
+          "\"Low footprint\"",
+          "JM"
+        ],
+        "records": 432
+      }
+    ],
+    "2022:trail5": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Kategori",
+          "Klubb/Firma/Sponsor",
+          "Land",
+          "\"Low footprint\"",
+          "JM"
+        ],
+        "records": 85
+      }
+    ],
+    "2022:ultra60": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Kategori",
+          "Klubb/Firma/Sponsor",
+          "Land",
+          "32 km",
+          "Bengtemölla",
+          "62 km",
+          "\"Low footprint\"",
+          "JM"
+        ],
+        "records": 318
+      }
+    ],
+    "2023:duo60": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Lag",
+          "Kategori",
+          "32 km",
+          "Bengtemölla",
+          "62 km"
+        ],
+        "records": 48
+      }
+    ],
+    "2023:trail14": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Klubb/Firma/Sponsor",
+          "Land"
+        ],
+        "records": 306
+      }
+    ],
+    "2023:trail22": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Klubb/Firma/Sponsor",
+          "Land"
+        ],
+        "records": 484
+      }
+    ],
+    "2023:trail5": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Klubb/Firma/Sponsor",
+          "Land"
+        ],
+        "records": 185
+      }
+    ],
+    "2023:ultra60": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Klubb/Firma/Sponsor",
+          "Land",
+          "32 km",
+          "Bengtemölla",
+          "62 km"
+        ],
+        "records": 330
+      }
+    ],
+    "2024:duo60": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Lag",
+          "Kategori",
+          "34 km",
+          "60 km"
+        ],
+        "records": 46
+      }
+    ],
+    "2024:trail14": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Kategori",
+          "Klubb/Firma/Sponsor",
+          "Land"
+        ],
+        "records": 417
+      }
+    ],
+    "2024:trail22": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Kategori",
+          "Klubb/Firma/Sponsor",
+          "Land"
+        ],
+        "records": 506
+      }
+    ],
+    "2024:trail5": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Kategori",
+          "Klubb/Firma/Sponsor",
+          "Land"
+        ],
+        "records": 223
+      }
+    ],
+    "2024:ultra60": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Kategori",
+          "Klubb/Firma/Sponsor",
+          "Land",
+          "34 km",
+          "60 km"
+        ],
+        "records": 420
+      }
+    ],
+    "2025:duo60": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Lag",
+          "Kategori",
+          "34 km",
+          "60 km"
+        ],
+        "records": 47
+      }
+    ],
+    "2025:trail14": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Kategori",
+          "Klubb/Firma/Sponsor",
+          "Land"
+        ],
+        "records": 403
+      }
+    ],
+    "2025:trail22": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Kategori",
+          "Klubb/Firma/Sponsor",
+          "Land"
+        ],
+        "records": 520
+      }
+    ],
+    "2025:trail5": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Kategori",
+          "Klubb/Firma/Sponsor",
+          "Land"
+        ],
+        "records": 235
+      }
+    ],
+    "2025:ultra60": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Kategori",
+          "Klubb/Firma/Sponsor",
+          "Land",
+          "34 km",
+          "60 km"
+        ],
+        "records": 400
+      }
+    ],
+    "2026:duo60": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Lag",
+          "Kategori",
+          "34 km",
+          "60 km"
+        ],
+        "records": 52
+      }
+    ],
+    "2026:trail14": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Kategori",
+          "Klubb/Firma/Sponsor",
+          "Land"
+        ],
+        "records": 456
+      }
+    ],
+    "2026:trail22": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Kategori",
+          "Klubb/Firma/Sponsor",
+          "Land"
+        ],
+        "records": 504
+      }
+    ],
+    "2026:trail5": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Kategori",
+          "Klubb/Firma/Sponsor",
+          "Land"
+        ],
+        "records": 295
+      }
+    ],
+    "2026:ultra60": [
+      {
+        "headers": [
+          "Plac.",
+          "Startnr.",
+          "Nettotid",
+          "Bruttotid",
+          "Deltagare",
+          "Kategori",
+          "Klubb/Firma/Sponsor",
+          "Land",
+          "34 km",
+          "60 km"
+        ],
+        "records": 409
+      }
+    ]
+  },
+  "list_nonempty_by_header": {
+    "2018:trail14": {
+      "Plac.": 372,
+      "Startnr.": 372,
+      "Nettotid": 372,
+      "Bruttotid": 372,
+      "Deltagare": 372,
+      "Klubb/Firma/Sponsor": 135,
+      "Land": 372
+    },
+    "2018:trail22": {
+      "Plac.": 465,
+      "Startnr.": 465,
+      "Nettotid": 465,
+      "Bruttotid": 465,
+      "Deltagare": 465,
+      "Land": 465,
+      "Klubb/Firma/Sponsor": 267
+    },
+    "2018:trail5": {
+      "Plac.": 126,
+      "Startnr.": 126,
+      "Nettotid": 126,
+      "Bruttotid": 126,
+      "Deltagare": 126,
+      "Land": 126,
+      "Klubb/Firma/Sponsor": 50
+    },
+    "2018:ultra60": {
+      "Plac.": 150,
+      "Startnr.": 150,
+      "Nettotid": 150,
+      "Bruttotid": 150,
+      "Deltagare": 150,
+      "Klubb/Firma/Sponsor": 108,
+      "Land": 150,
+      "Stenshuvud km 14": 150,
+      "Bengtemölla km 32": 150,
+      "Vantalängan km 52": 150
+    },
+    "2019:duo60": {
+      "Plac.": 64,
+      "Startnr.": 64,
+      "Nettotid": 64,
+      "Bruttotid": 64,
+      "Lag": 64,
+      "Kategori": 64
+    },
+    "2019:trail14": {
+      "Plac.": 434,
+      "Startnr.": 434,
+      "Nettotid": 434,
+      "Bruttotid": 434,
+      "Deltagare": 434,
+      "Klubb/Firma/Sponsor": 164,
+      "Land": 434
+    },
+    "2019:trail22": {
+      "Plac.": 469,
+      "Startnr.": 469,
+      "Nettotid": 469,
+      "Bruttotid": 469,
+      "Deltagare": 469,
+      "Klubb/Firma/Sponsor": 255,
+      "Land": 469
+    },
+    "2019:trail5": {
+      "Plac.": 100,
+      "Startnr.": 100,
+      "Nettotid": 100,
+      "Bruttotid": 100,
+      "Deltagare": 100,
+      "Klubb/Firma/Sponsor": 38,
+      "Land": 100
+    },
+    "2019:ultra60": {
+      "Plac.": 278,
+      "Startnr.": 278,
+      "Nettotid": 278,
+      "Bruttotid": 278,
+      "Deltagare": 278,
+      "Land": 278,
+      "Klubb/Firma/Sponsor": 178
+    },
+    "2022:duo60": {
+      "Plac.": 43,
+      "Startnr.": 43,
+      "Nettotid": 43,
+      "Bruttotid": 43,
+      "Lag": 43,
+      "Kategori": 43,
+      "32 km": 43,
+      "Bengtemölla": 43,
+      "62 km": 43
+    },
+    "2022:trail14": {
+      "Plac.": 249,
+      "Startnr.": 249,
+      "Nettotid": 249,
+      "Bruttotid": 249,
+      "Deltagare": 249,
+      "Kategori": 249,
+      "Klubb/Firma/Sponsor": 91,
+      "Land": 249,
+      "\"Low footprint\"": 8
+    },
+    "2022:trail22": {
+      "Plac.": 432,
+      "Startnr.": 432,
+      "Nettotid": 432,
+      "Bruttotid": 432,
+      "Deltagare": 432,
+      "Kategori": 432,
+      "Klubb/Firma/Sponsor": 203,
+      "Land": 432,
+      "\"Low footprint\"": 22
+    },
+    "2022:trail5": {
+      "Plac.": 85,
+      "Startnr.": 85,
+      "Nettotid": 85,
+      "Bruttotid": 85,
+      "Deltagare": 85,
+      "Kategori": 85,
+      "Klubb/Firma/Sponsor": 29,
+      "Land": 85,
+      "\"Low footprint\"": 3
+    },
+    "2022:ultra60": {
+      "Plac.": 318,
+      "Startnr.": 318,
+      "Nettotid": 318,
+      "Bruttotid": 318,
+      "Deltagare": 318,
+      "Kategori": 318,
+      "Klubb/Firma/Sponsor": 212,
+      "Land": 318,
+      "32 km": 318,
+      "Bengtemölla": 318,
+      "62 km": 318,
+      "\"Low footprint\"": 23
+    },
+    "2023:duo60": {
+      "Plac.": 48,
+      "Startnr.": 48,
+      "Nettotid": 48,
+      "Bruttotid": 48,
+      "Lag": 48,
+      "Kategori": 48,
+      "32 km": 48,
+      "Bengtemölla": 48,
+      "62 km": 48
+    },
+    "2023:trail14": {
+      "Plac.": 306,
+      "Startnr.": 306,
+      "Nettotid": 306,
+      "Bruttotid": 306,
+      "Deltagare": 306,
+      "Land": 306,
+      "Klubb/Firma/Sponsor": 112
+    },
+    "2023:trail22": {
+      "Plac.": 484,
+      "Startnr.": 484,
+      "Nettotid": 484,
+      "Bruttotid": 484,
+      "Deltagare": 484,
+      "Klubb/Firma/Sponsor": 222,
+      "Land": 484
+    },
+    "2023:trail5": {
+      "Plac.": 185,
+      "Startnr.": 185,
+      "Nettotid": 185,
+      "Bruttotid": 185,
+      "Deltagare": 185,
+      "Klubb/Firma/Sponsor": 54,
+      "Land": 185
+    },
+    "2023:ultra60": {
+      "Plac.": 330,
+      "Startnr.": 330,
+      "Nettotid": 330,
+      "Bruttotid": 330,
+      "Deltagare": 330,
+      "Klubb/Firma/Sponsor": 227,
+      "Land": 330,
+      "32 km": 330,
+      "Bengtemölla": 330,
+      "62 km": 330
+    },
+    "2024:duo60": {
+      "Plac.": 46,
+      "Startnr.": 46,
+      "Nettotid": 46,
+      "Bruttotid": 46,
+      "Lag": 46,
+      "Kategori": 46,
+      "34 km": 46,
+      "60 km": 46
+    },
+    "2024:trail14": {
+      "Plac.": 417,
+      "Startnr.": 417,
+      "Nettotid": 417,
+      "Bruttotid": 417,
+      "Deltagare": 417,
+      "Kategori": 417,
+      "Klubb/Firma/Sponsor": 139,
+      "Land": 417
+    },
+    "2024:trail22": {
+      "Plac.": 506,
+      "Startnr.": 506,
+      "Nettotid": 506,
+      "Bruttotid": 506,
+      "Deltagare": 506,
+      "Kategori": 506,
+      "Land": 506,
+      "Klubb/Firma/Sponsor": 225
+    },
+    "2024:trail5": {
+      "Plac.": 223,
+      "Startnr.": 223,
+      "Nettotid": 223,
+      "Bruttotid": 223,
+      "Deltagare": 223,
+      "Kategori": 223,
+      "Klubb/Firma/Sponsor": 43,
+      "Land": 223
+    },
+    "2024:ultra60": {
+      "Plac.": 420,
+      "Startnr.": 420,
+      "Nettotid": 420,
+      "Bruttotid": 420,
+      "Deltagare": 420,
+      "Kategori": 420,
+      "Klubb/Firma/Sponsor": 279,
+      "Land": 420,
+      "34 km": 420,
+      "60 km": 420
+    },
+    "2025:duo60": {
+      "Plac.": 47,
+      "Startnr.": 47,
+      "Nettotid": 47,
+      "Bruttotid": 47,
+      "Lag": 47,
+      "Kategori": 47,
+      "34 km": 47,
+      "60 km": 47
+    },
+    "2025:trail14": {
+      "Plac.": 403,
+      "Startnr.": 403,
+      "Nettotid": 403,
+      "Bruttotid": 403,
+      "Deltagare": 403,
+      "Kategori": 403,
+      "Klubb/Firma/Sponsor": 117,
+      "Land": 403
+    },
+    "2025:trail22": {
+      "Plac.": 520,
+      "Startnr.": 520,
+      "Nettotid": 520,
+      "Bruttotid": 520,
+      "Deltagare": 520,
+      "Kategori": 520,
+      "Klubb/Firma/Sponsor": 257,
+      "Land": 520
+    },
+    "2025:trail5": {
+      "Plac.": 235,
+      "Startnr.": 235,
+      "Nettotid": 235,
+      "Bruttotid": 235,
+      "Deltagare": 235,
+      "Kategori": 235,
+      "Klubb/Firma/Sponsor": 62,
+      "Land": 235
+    },
+    "2025:ultra60": {
+      "Plac.": 400,
+      "Startnr.": 400,
+      "Nettotid": 400,
+      "Bruttotid": 400,
+      "Deltagare": 400,
+      "Kategori": 400,
+      "Klubb/Firma/Sponsor": 239,
+      "Land": 400,
+      "34 km": 400,
+      "60 km": 400
+    },
+    "2026:duo60": {
+      "Plac.": 52,
+      "Startnr.": 52,
+      "Nettotid": 52,
+      "Bruttotid": 52,
+      "Lag": 52,
+      "Kategori": 52,
+      "34 km": 52,
+      "60 km": 52
+    },
+    "2026:trail14": {
+      "Plac.": 456,
+      "Startnr.": 456,
+      "Nettotid": 456,
+      "Bruttotid": 456,
+      "Deltagare": 456,
+      "Kategori": 456,
+      "Land": 456,
+      "Klubb/Firma/Sponsor": 118
+    },
+    "2026:trail22": {
+      "Plac.": 504,
+      "Startnr.": 504,
+      "Nettotid": 504,
+      "Bruttotid": 504,
+      "Deltagare": 504,
+      "Kategori": 504,
+      "Klubb/Firma/Sponsor": 201,
+      "Land": 504
+    },
+    "2026:trail5": {
+      "Plac.": 295,
+      "Startnr.": 295,
+      "Nettotid": 295,
+      "Bruttotid": 295,
+      "Deltagare": 295,
+      "Kategori": 295,
+      "Klubb/Firma/Sponsor": 90,
+      "Land": 295
+    },
+    "2026:ultra60": {
+      "Plac.": 409,
+      "Startnr.": 409,
+      "Nettotid": 409,
+      "Bruttotid": 409,
+      "Deltagare": 409,
+      "Kategori": 409,
+      "Klubb/Firma/Sponsor": 222,
+      "Land": 409,
+      "34 km": 409,
+      "60 km": 409
+    }
+  },
+  "normalized_field_counts": {
+    "2018:trail14": {
+      "name": 372,
+      "club": 372,
+      "country": 370,
+      "overall_place": 370,
+      "finish_seconds": 370
+    },
+    "2018:trail22": {
+      "name": 465,
+      "club": 465,
+      "country": 463,
+      "overall_place": 447,
+      "finish_seconds": 447
+    },
+    "2018:trail5": {
+      "name": 126,
+      "club": 126,
+      "country": 126,
+      "overall_place": 126,
+      "finish_seconds": 126
+    },
+    "2018:ultra60": {
+      "name": 150,
+      "club": 150,
+      "country": 148,
+      "overall_place": 125,
+      "finish_seconds": 125
+    },
+    "2019:duo60": {
+      "name": 64,
+      "overall_place": 62,
+      "finish_seconds": 62
+    },
+    "2019:trail14": {
+      "name": 434,
+      "club": 433,
+      "country": 433,
+      "overall_place": 431,
+      "finish_seconds": 431
+    },
+    "2019:trail22": {
+      "name": 469,
+      "club": 469,
+      "country": 462,
+      "overall_place": 466,
+      "finish_seconds": 466
+    },
+    "2019:trail5": {
+      "name": 100,
+      "club": 100,
+      "country": 97,
+      "overall_place": 99,
+      "finish_seconds": 100
+    },
+    "2019:ultra60": {
+      "name": 278,
+      "club": 278,
+      "country": 275,
+      "overall_place": 243,
+      "finish_seconds": 243
+    },
+    "2022:duo60": {
+      "name": 43,
+      "overall_place": 43,
+      "finish_seconds": 43
+    },
+    "2022:trail14": {
+      "name": 249,
+      "club": 249,
+      "country": 238,
+      "overall_place": 246,
+      "finish_seconds": 246
+    },
+    "2022:trail22": {
+      "name": 432,
+      "club": 432,
+      "country": 413,
+      "overall_place": 429,
+      "finish_seconds": 429
+    },
+    "2022:trail5": {
+      "name": 85,
+      "club": 85,
+      "country": 84,
+      "overall_place": 85,
+      "finish_seconds": 85
+    },
+    "2022:ultra60": {
+      "name": 318,
+      "club": 318,
+      "country": 306,
+      "overall_place": 280,
+      "finish_seconds": 282
+    },
+    "2023:duo60": {
+      "name": 48,
+      "overall_place": 46,
+      "finish_seconds": 46
+    },
+    "2023:trail14": {
+      "name": 306,
+      "club": 304,
+      "country": 290,
+      "overall_place": 306,
+      "finish_seconds": 306
+    },
+    "2023:trail22": {
+      "name": 484,
+      "club": 484,
+      "country": 461,
+      "overall_place": 483,
+      "finish_seconds": 483
+    },
+    "2023:trail5": {
+      "name": 185,
+      "club": 185,
+      "country": 177,
+      "overall_place": 185,
+      "finish_seconds": 185
+    },
+    "2023:ultra60": {
+      "name": 330,
+      "club": 330,
+      "country": 322,
+      "overall_place": 306,
+      "finish_seconds": 306
+    },
+    "2024:duo60": {
+      "name": 46,
+      "overall_place": 43,
+      "finish_seconds": 44
+    },
+    "2024:trail14": {
+      "name": 417,
+      "club": 151,
+      "gender": 417,
+      "age": 417,
+      "age_category": 417,
+      "overall_place": 416,
+      "class_place": 416,
+      "gender_place": 416,
+      "finish_seconds": 416,
+      "country": 401
+    },
+    "2024:trail22": {
+      "name": 506,
+      "country": 490,
+      "gender": 504,
+      "age": 504,
+      "age_category": 506,
+      "overall_place": 501,
+      "class_place": 501,
+      "gender_place": 499,
+      "finish_seconds": 501,
+      "club": 239
+    },
+    "2024:trail5": {
+      "name": 223,
+      "club": 49,
+      "country": 217,
+      "gender": 221,
+      "age": 221,
+      "age_category": 221,
+      "overall_place": 223,
+      "class_place": 221,
+      "gender_place": 221,
+      "finish_seconds": 223
+    },
+    "2024:ultra60": {
+      "name": 420,
+      "club": 280,
+      "country": 414,
+      "gender": 420,
+      "age": 420,
+      "age_category": 420,
+      "overall_place": 330,
+      "class_place": 330,
+      "gender_place": 330,
+      "finish_seconds": 330
+    },
+    "2025:duo60": {
+      "name": 47,
+      "overall_place": 42,
+      "finish_seconds": 42
+    },
+    "2025:trail14": {
+      "name": 403,
+      "club": 125,
+      "country": 394,
+      "gender": 400,
+      "age": 400,
+      "age_category": 401,
+      "overall_place": 400,
+      "class_place": 398,
+      "gender_place": 397,
+      "finish_seconds": 400
+    },
+    "2025:trail22": {
+      "name": 520,
+      "club": 269,
+      "country": 504,
+      "gender": 520,
+      "age": 520,
+      "age_category": 520,
+      "overall_place": 518,
+      "class_place": 518,
+      "gender_place": 518,
+      "finish_seconds": 518
+    },
+    "2025:trail5": {
+      "name": 235,
+      "club": 66,
+      "country": 229,
+      "gender": 234,
+      "age": 234,
+      "age_category": 234,
+      "overall_place": 232,
+      "class_place": 231,
+      "gender_place": 231,
+      "finish_seconds": 235
+    },
+    "2025:ultra60": {
+      "name": 400,
+      "club": 241,
+      "country": 395,
+      "gender": 400,
+      "age": 400,
+      "age_category": 400,
+      "overall_place": 370,
+      "class_place": 370,
+      "gender_place": 370,
+      "finish_seconds": 371
+    },
+    "2026:duo60": {
+      "name": 52,
+      "overall_place": 47,
+      "finish_seconds": 47
+    },
+    "2026:trail14": {
+      "name": 456,
+      "country": 438,
+      "gender": 455,
+      "age": 455,
+      "age_category": 455,
+      "overall_place": 452,
+      "class_place": 451,
+      "gender_place": 451,
+      "finish_seconds": 453,
+      "club": 133
+    },
+    "2026:trail22": {
+      "name": 504,
+      "club": 209,
+      "country": 494,
+      "gender": 502,
+      "age": 502,
+      "age_category": 502,
+      "overall_place": 495,
+      "class_place": 493,
+      "gender_place": 493,
+      "finish_seconds": 495
+    },
+    "2026:trail5": {
+      "name": 295,
+      "club": 95,
+      "gender": 294,
+      "age": 294,
+      "age_category": 295,
+      "overall_place": 295,
+      "class_place": 295,
+      "gender_place": 294,
+      "finish_seconds": 295,
+      "country": 288
+    },
+    "2026:ultra60": {
+      "name": 409,
+      "club": 231,
+      "country": 395,
+      "gender": 408,
+      "age": 408,
+      "age_category": 408,
+      "overall_place": 367,
+      "class_place": 366,
+      "gender_place": 366,
+      "finish_seconds": 367
+    }
+  },
+  "identity_value_shapes": {
+    "2018:trail14": {
+      "<A> <A>": 628,
+      "<A>": 398,
+      "<A>, <<A>>": 371,
+      "<<A>> <A> <<A>> <A>": 370,
+      "<<A>>:<<A>>:<<A>> <A>": 361,
+      "<A> <A> <A>": 91,
+      "<A> <A> <A> <A>": 61,
+      "<A> <A> <A> <A> <A>": 27,
+      "<<A>>:<<A>> <A>": 9,
+      "<A>-<A> <A>": 5,
+      "<A> <A>-<A>": 4,
+      "<A> <A> <A><<A>>": 2,
+      "<A><<A>>": 2,
+      "<A> <A>-<A> <A> <A>": 2,
+      "<A> <A> <A>.": 2,
+      "<A>.": 2,
+      "<A> <A> <A> <A> <A> <A>": 2,
+      "<A> <A> <<A>>": 2,
+      "<<A>>": 2,
+      "<A> <A> <A>-<A>": 1
+    },
+    "2018:trail22": {
+      "<A> <A>": 763,
+      "<A>": 522,
+      "<A>, <<A>>": 461,
+      "<<A>>:<<A>>:<<A>> <A>": 447,
+      "<<A>> <A> <<A>> <A>": 447,
+      "<A> <A> <A> <A>": 141,
+      "<A> <A> <A>": 126,
+      "<A> <A> <A> <A> <A>": 54,
+      "<A>-<A> <A>": 10,
+      "<A> <A> <A>-<A>": 8,
+      "<A>-<A>": 6,
+      "<A> <A> <A> <A> <A> <A>": 5,
+      "<A> <A> <A> <A> <A>-<A>": 3,
+      "<A> <A> <A> <A> <A> <A> <A>": 3,
+      "<A> <A>-<A>": 3,
+      "<A> <A> <A>-<A> <A>": 2,
+      "<A> <A> <A> \"<A> <A> <A> <A>\"": 2,
+      "<A> \"<A> <A> <A> <A>\"": 2,
+      "<A>-<A> <A> <A> <A>": 2,
+      "<A> <A> <A>. <A>": 2
+    },
+    "2018:trail5": {
+      "<A> <A>": 197,
+      "<A>": 139,
+      "<<A>> <A> <<A>> <A>": 126,
+      "<A>, <<A>>": 126,
+      "<<A>>:<<A>> <A>": 125,
+      "<A> <A> <A>": 32,
+      "<A> <A> <A> <A>": 24,
+      "<A>-<A> <A>": 6,
+      "<A> <A> <A> <A> <A>": 5,
+      "<A> <A> <<A>>": 3,
+      "<<A>>": 3,
+      "<A>-<A> <A>-<A>": 2,
+      "<A> <A> <A> <A> <A> <A>": 2,
+      "<A> <A>-<A>": 2,
+      "<A> <A> <A> <A> & <A>": 2,
+      "<A> <A> & <A>": 2,
+      "<A> <A> <A>-<<A>><A>": 1,
+      "<A>-<<A>><A>": 1,
+      "<A> <A> <A> <A>-<<A>><A>, <A>": 1,
+      "<A>-<<A>><A>, <A>": 1
+    },
+    "2018:ultra60": {
+      "<A>": 466,
+      "<A> <A>": 246,
+      "<A>, <<A>>": 147,
+      "<<A>>:<<A>>:<<A>> <A>": 125,
+      "<<A>> <A> <<A>> <A>": 125,
+      "<A> <A> <A> <A>": 57,
+      "<A> <A> <A>": 56,
+      "<A> <A> <A> <A> <A>": 34,
+      "<A> <A> <A>-<A>": 2,
+      "<A>-<A>": 2,
+      "<A>-<A> <A>": 2,
+      "<A> <A>-<A>": 2,
+      "<A> <A> -": 2,
+      "-": 2,
+      "<A> <A> <A>/<A> <A>": 1,
+      "<A>/<A> <A>": 1,
+      "<A> <A> <A> - <A>": 1,
+      "<A> - <A>": 1,
+      "<A> <A> <A> <A> <A> <A>": 1,
+      "<A>-<A> <A> <A> <A>": 1
+    },
+    "2019:duo60": {
+      "<A>": 290,
+      "<<A>>:<<A>>:<<A>> <A>": 62,
+      "<<A>> <A> <<A>> <A> <A>": 62,
+      "<<A>> <A>, <<A>> <A>": 33,
+      "<<A>> <A>, <<A>> <A>, <<A>> <A>": 31,
+      "<A> <A>": 28,
+      "<A> <A> <A>": 13,
+      "<A> <A> <A> <A>": 3,
+      "<A> & <A>": 2,
+      "<A> <A> <<A>>": 2,
+      "<A> <<A>>": 2,
+      "<A>!": 2,
+      "<A> <A> <A> <A> <A>": 2,
+      "<A>'<A> <A>": 1,
+      "<A> <A> & <A> <A>": 1,
+      "<A>/<A>": 1,
+      "<A>-<A>": 1,
+      "<A> <A>-<A>": 1,
+      "-<A>-": 1,
+      "<A>-<A> <A> <A> <A>": 1
+    },
+    "2019:trail14": {
+      "<A> <A>": 732,
+      "<A>": 483,
+      "<A>, <<A>>": 432,
+      "<<A>> <A> <<A>> <A>": 431,
+      "<<A>>:<<A>>:<<A>> <A>": 419,
+      "<A> <A> <A>": 100,
+      "<A> <A> <A> <A>": 83,
+      "<A> <A> <A> <A> <A>": 22,
+      "<<A>>:<<A>> <A>": 12,
+      "<A>-<A> <A>": 10,
+      "<A> <A> <<A>>": 5,
+      "<<A>>": 5,
+      "<A> <A> <A> <A> <A> <A>": 4,
+      "<A> <A>-<A>": 2,
+      "<A> <A> <A> <A> <A> <A> <A>": 2,
+      "<A> <A> <A>.<A>": 2,
+      "<A>.<A>": 2,
+      "<A> <<A>> <A>": 2,
+      "<A> <A>-<A> <A> <A>": 1,
+      "<A> <A> <A>-<A>": 1
+    },
+    "2019:trail22": {
+      "<A> <A>": 765,
+      "<A>": 516,
+      "<A>, <<A>>": 468,
+      "<<A>>:<<A>>:<<A>> <A>": 466,
+      "<<A>> <A> <<A>> <A>": 466,
+      "<A> <A> <A>": 137,
+      "<A> <A> <A> <A>": 128,
+      "<A> <A> <A> <A> <A>": 53,
+      "<A> <A> <A> <A> <A> <A>": 11,
+      "<A> <A>-<A>": 3,
+      "<A> <A> <A>-<A>": 3,
+      "<A> <A> <A>.<A>": 2,
+      "<A>.<A>": 2,
+      "<A>-<A> <A>": 2,
+      "<A> <A> <A>&<A>": 2,
+      "<A>&<A>": 2,
+      "<A>-<A>": 2,
+      "<A>-<A> <A> <A> <A>": 2,
+      "<A> <A> -": 2,
+      "-": 2
+    },
+    "2019:trail5": {
+      "<A> <A>": 168,
+      "<A>": 108,
+      "<<A>>:<<A>> <A>": 100,
+      "<<A>> <A> <<A>> <A>": 99,
+      "<A>, <<A>>": 98,
+      "<A> <A> <A>": 22,
+      "<A> <A> <A> <A>": 18,
+      "<A> <A> <A> <A> <A>": 10,
+      "<A> <A>-<A>": 3,
+      "<A>-<A> <A>": 2,
+      "<A> <A>'<A>": 2,
+      "<A> <A> <A> <A>-<A>": 1,
+      "<A> <A> <A> & <A>": 1,
+      "<A> & <A>": 1
+    },
+    "2019:ultra60": {
+      "<A>": 871,
+      "<A> <A>": 437,
+      "<A>, <<A>>": 277,
+      "<<A>>:<<A>>:<<A>> <A>": 243,
+      "<<A>> <A> <<A>> <A>": 243,
+      "<A> <A> <A>": 125,
+      "<A> <A> <A> <A>": 86,
+      "<A> <A> <A> <A> <A>": 40,
+      "<A>-<A> <A>": 8,
+      "<A> <A> <A> <A> <A> <A>": 3,
+      "<A> <A>-<A>": 2,
+      "<A> <A> <A>.<A>": 2,
+      "<A>.<A>": 2,
+      "<A> <A> <A> <A>.<A>": 2,
+      "<A> <A>.<A>": 2,
+      "<A>-<A> <A> <A> <A>": 2,
+      "<A> <<A>> <A>": 2,
+      "<A> <A> <A> / <A> <A>": 1,
+      "<A> / <A> <A>": 1,
+      "<A> <A> <A> <A>.<A>.<A>.": 1
+    },
+    "2022:duo60": {
+      "<A>": 142,
+      "<<A>>:<<A>>:<<A>> <A>": 43,
+      "<<A>> <A> <<A>> <A> <A>": 43,
+      "<A> <A>": 24,
+      "<<A>> <A>, <<A>> <A>": 22,
+      "<<A>> <A>, <<A>> <A>, <<A>> <A>": 21,
+      "<A> <A> <A>": 11,
+      "<A> & <A>": 4,
+      "<A> <A> <A> <A> <A>": 3,
+      "<A> <A> <A> <A>": 2,
+      "<<A>>": 1,
+      "<A> <<A>><A><<A>><A>": 1,
+      "<A> & <A> <A>": 1,
+      "<A> <A>/<A>": 1,
+      "<A><<A>>": 1,
+      "<A>.<A>": 1,
+      "<A> (<A> <A>)": 1,
+      "<A> <A>!": 1
+    },
+    "2022:trail14": {
+      "<A>": 511,
+      "<A> <A>": 404,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 249,
+      "<<A>> <A> <<A>> <A>": 246,
+      "<<A>>:<<A>>:<<A>> <A>": 245,
+      "<A> <A> <A>": 55,
+      "<A> <A> <A> <A>": 39,
+      "<A> <A> <A> <A> <A>": 14,
+      "<A>-<A> <A>": 12,
+      "<A>&<A> <A>": 5,
+      "<A> <A> <A>&<A> <A>": 4,
+      "<A> <A>-<A>": 3,
+      "<A> <A> <A> & <A> <A>": 3,
+      "<A> & <A> <A>": 3,
+      "<A> <A> & <A>": 2,
+      "<A> <A> -": 2,
+      "-": 2,
+      "<A>- <A> <A>": 2,
+      "<<A>>:<<A>> <A>": 1,
+      "<A> <A> <A>-<A>": 1
+    },
+    "2022:trail22": {
+      "<A>": 897,
+      "<A> <A>": 708,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 431,
+      "<<A>>:<<A>>:<<A>> <A>": 429,
+      "<<A>> <A> <<A>> <A>": 429,
+      "<A> <A> <A>": 109,
+      "<A> <A> <A> <A>": 99,
+      "<A> <A> <A> <A> <A>": 30,
+      "<A> <A> <A> <A> <A> <A>": 9,
+      "<A>-<A> <A>": 7,
+      "<A>-<A> <A> <A> <A>": 4,
+      "<A> & <A> <A>": 4,
+      "<A> <A> <A> & <A> <A>": 3,
+      "<A>&<A> <A>": 3,
+      "<A> <A> <A>-<A> <A>": 2,
+      "<A> <<A>>": 2,
+      "<A> <A> <A> <A> <A> <A> <A>": 2,
+      "<A> <A> <<A>>": 2,
+      "<<A>>": 2,
+      "<A> <A> <A>.<A>": 2
+    },
+    "2022:trail5": {
+      "<A>": 170,
+      "<A> <A>": 148,
+      "<<A>>:<<A>> <A>": 85,
+      "<<A>> <A> <<A>> <A>": 85,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 85,
+      "<A> <A> <A>": 16,
+      "<A> <A> <A> <A>": 15,
+      "<A> <A> <A> <A> <A>": 10,
+      "<A>-<A> <A>": 2,
+      "<A> <A> <A><<A>> <A>": 1,
+      "<A><<A>> <A>": 1,
+      "<A> <A> <A>&<A> <A>": 1,
+      "<A>&<A> <A>": 1,
+      "<A>-<A> <A> <A>": 1,
+      "<A>-<A> <A> <A> <A>": 1
+    },
+    "2022:ultra60": {
+      "<A>": 1290,
+      "<A> <A>": 507,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 318,
+      "<<A>>:<<A>>:<<A>> <A>": 282,
+      "<<A>> <A> <<A>> <A>": 280,
+      "<A> <A> <A>": 125,
+      "<A> <A> <A> <A>": 109,
+      "<A> <A> <A> <A> <A>": 46,
+      "<A>-<A> <A>": 10,
+      "<A> <A>-<A>": 7,
+      "<A> <A> <A> <A> <A> <A>": 3,
+      "<A> <A>-<A> <A> <A>": 2,
+      "<A> <A> <A> <A> / <A>": 1,
+      "<A> <A> / <A>": 1,
+      "<A> <A> <A> <A> <A>, <A> <A> <A>, <A> <A>": 1,
+      "<A> <A> <A>, <A> <A> <A>, <A> <A>": 1,
+      "<A> <A> <A>.<A>": 1,
+      "<A>.<A>": 1,
+      "<A> <A>-<A> <A>": 1,
+      "<A> <A> <A> <A> <A>, <A> <A> <A>": 1
+    },
+    "2023:duo60": {
+      "<A>": 156,
+      "<<A>>:<<A>>:<<A>> <A>": 46,
+      "<<A>> <A> <<A>> <A> <A>": 46,
+      "<A> <A>": 42,
+      "<<A>> <A>, <<A>> <A>": 29,
+      "<<A>> <A>, <<A>> <A>, <<A>> <A>": 19,
+      "<A> <A> <A>": 8,
+      "<A> & <A>": 2,
+      "<A> <A> <A> <A>": 2,
+      "<A> <A>(<A>)<A> <A>": 1,
+      "<A> <A>!": 1,
+      "<A> 🍍": 1,
+      "<A>_<A>": 1,
+      "<A>-<A>": 1,
+      "<A><<A>>": 1
+    },
+    "2023:trail14": {
+      "<A>": 639,
+      "<A> <A>": 487,
+      "<<A>> <A> <<A>> <A>": 306,
+      "<<A>>:<<A>>:<<A>> <A>": 302,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 298,
+      "<A> <A> <A>": 78,
+      "<A> <A> <A> <A>": 42,
+      "<A> <A> <A> <A> <A>": 23,
+      "<A>-<A> <A>": 9,
+      "<A> <A>-<A>": 5,
+      "<<A>>:<<A>> <A>": 4,
+      "<A> & <A> <A>": 4,
+      "<A> <A> <A> <A> <A> <A>": 3,
+      "<A> <A> <A> & <A> <A>": 3,
+      "<A> <A> <A>&<A> <A>": 3,
+      "<A>&<A> <A>": 3,
+      "<A> <<A>>. <A>": 2,
+      "<A> <A> <A> <A> & <A> <A>": 2,
+      "<A> <A> <A> <A> <A> <A> <A> <A> <A>": 1,
+      "<A> <A> <A> <A> <A> <A> <A>": 1
+    },
+    "2023:trail22": {
+      "<A>": 998,
+      "<A> <A>": 800,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 484,
+      "<<A>>:<<A>>:<<A>> <A>": 483,
+      "<<A>> <A> <<A>> <A>": 483,
+      "<A> <A> <A> <A>": 113,
+      "<A> <A> <A>": 110,
+      "<A> <A> <A> <A> <A>": 37,
+      "<A>-<A> <A>": 8,
+      "<A> <A>-<A>": 5,
+      "<A>&<A> <A>": 5,
+      "<A> <A> <A>&<A> <A>": 3,
+      "<A> <<A>>": 3,
+      "<A> <A> <A> & <A> <A>": 3,
+      "<A> & <A> <A>": 3,
+      "<A> <A> <A> <A> <A> <A>": 2,
+      "<A> <A> <<A>>": 2,
+      "<<A>>": 2,
+      "<A> <A> <A> <<A>> <A>": 2,
+      "<A> <<A>> <A>": 2
+    },
+    "2023:trail5": {
+      "<A>": 380,
+      "<A> <A>": 298,
+      "<<A>> <A> <<A>> <A>": 185,
+      "<<A>>:<<A>> <A>": 184,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 182,
+      "<A> <A> <A>": 45,
+      "<A> <A> <A> <A>": 23,
+      "<A> <A> <A> <A> <A>": 11,
+      "<A> <A>-<A>": 7,
+      "<A>-<A> <A>": 3,
+      "<A> <A> <A> <A> <A> <A>": 2,
+      "<A> <A> <A> <A>.<A>": 1,
+      "<A> <A>.<A>": 1,
+      "<A> <A>-<A> <A> <A> <A> <A>": 1,
+      "<A> <A> <A> & <A> <A>": 1,
+      "<A> & <A> <A>": 1,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 1,
+      "<A>-<A> <A> <A>": 1,
+      "<A> <A> <<A>>": 1,
+      "<<A>>": 1
+    },
+    "2023:ultra60": {
+      "<A>": 1340,
+      "<A> <A>": 521,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 330,
+      "<<A>>:<<A>>:<<A>> <A>": 306,
+      "<<A>> <A> <<A>> <A>": 306,
+      "<A> <A> <A>": 121,
+      "<A> <A> <A> <A>": 113,
+      "<A> <A> <A> <A> <A>": 53,
+      "<A> <A> <A> <A> <A> <A>": 6,
+      "<A> <A>-<A>": 6,
+      "<A> & <A>": 4,
+      "<A>-<A> <A>": 3,
+      "<A> <A> <A> & <A>": 3,
+      "<A> <A> -": 2,
+      "-": 2,
+      "<A> <A> <A> <A> & <A>": 2,
+      "<A> <A> <<A>><A>": 2,
+      "<<A>><A>": 2,
+      "<A> <A> <A> <A>-<A>": 2,
+      "<A> <A> <A>/<A>": 2
+    },
+    "2024:duo60": {
+      "<A>": 145,
+      "<<A>>:<<A>>:<<A>> <A>": 44,
+      "<<A>> <A> <<A>> <A> <A>": 43,
+      "<<A>> <A>, <<A>> <A>": 28,
+      "<A> <A>": 27,
+      "<<A>> <A>, <<A>> <A>, <<A>> <A>": 17,
+      "<A> <A> <A>": 11,
+      "<A> & <A>": 4,
+      "<A> <A> <A> <A>": 2,
+      "<A>.<A>. <A>": 1,
+      "<A> <<A>>": 1,
+      "<A> <A> <A> <A> <A>": 1,
+      "<A> <<A>>:<<A>>": 1,
+      "<A> <A>/<A>": 1,
+      "<A>/<A>": 1
+    },
+    "2024:trail14": {
+      "<A> <A>": 705,
+      "<A>": 444,
+      "<A>, <<A>> <A> (<<A>> <A> <A>)": 417,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 417,
+      "<<A>> <A> <<A>> <A>": 416,
+      "<<A>>:<<A>>:<<A>> <A>": 415,
+      "<A> <A> <A>": 99,
+      "<A> <A> <A> <A>": 73,
+      "<A> <A> <A> <A> <A>": 25,
+      "<A> <A> <A> <A> <A> <A>": 13,
+      "<A>-<A> <A>": 6,
+      "<A> <A>-<A>": 3,
+      "<A> <A> <<A>> <A>": 2,
+      "<<A>> <A>": 2,
+      "<A> <A> <A>- <A> <A> <A> <A>": 2,
+      "<A>- <A> <A> <A> <A>": 2,
+      "<A> <A> -": 2,
+      "-": 2,
+      "<A> <A> <A><<A>> <A>": 2,
+      "<A><<A>> <A>": 2
+    },
+    "2024:trail22": {
+      "<A> <A>": 823,
+      "<A>": 558,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 506,
+      "<A>, <<A>> <A> (<<A>> <A> <A>)": 504,
+      "<<A>>:<<A>>:<<A>> <A>": 501,
+      "<<A>> <A> <<A>> <A>": 501,
+      "<A> <A> <A>": 131,
+      "<A> <A> <A> <A>": 114,
+      "<A> <A> <A> <A> <A>": 44,
+      "<A>-<A> <A>": 8,
+      "<A> <A>-<A>": 5,
+      "<A> <A> <A> & <A> <A>": 4,
+      "<A> & <A> <A>": 4,
+      "<A> <A> -": 3,
+      "-": 3,
+      "<A> <A> <A> <<A>>": 3,
+      "<A> <A> <A> <A> <A> <A>": 3,
+      "<A>-<A> <A>-<A>": 2,
+      "<A> <A>-<A> <A>": 2,
+      "<A> <<A>>": 2
+    },
+    "2024:trail5": {
+      "<A> <A>": 400,
+      "<A>": 233,
+      "<<A>>:<<A>> <A>": 223,
+      "<<A>> <A> <<A>> <A>": 222,
+      "<A>, <<A>> <A> (<<A>> <A> <A>)": 221,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 221,
+      "<A> <A> <A>": 30,
+      "<A> <A> <A> <A>": 23,
+      "<A> <A> <A> <A> <A>": 7,
+      "<A> <<A>>": 4,
+      "<A>-<A> <A>": 3,
+      "<A> <A> -": 2,
+      "-": 2,
+      "<<A>>": 2,
+      "<<A>> <A> <<A>>": 2,
+      "<A> <A>-<A> <A> <A> <A> <A>": 1,
+      "<A> <A>-<A>": 1,
+      "<A>-<A> <A> <A> <A> <A>": 1,
+      "<A> <A> <A> <<A>>": 1,
+      "<A> <A> <A>/<A>": 1
+    },
+    "2024:ultra60": {
+      "<A>": 1192,
+      "<A> <A>": 652,
+      "<A>, <<A>> <A> (<<A>> <A> <A>)": 420,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 420,
+      "<<A>>:<<A>>:<<A>> <A>": 330,
+      "<<A>> <A> <<A>> <A>": 330,
+      "<A> <A> <A>": 216,
+      "<A> <A> <A> <A>": 135,
+      "<A> <A> <A> <A> <A>": 63,
+      "<A> <A> <A> <A> <A> <A>": 15,
+      "<A> <A>-<A>": 10,
+      "<A> & <A>": 6,
+      "<A>-<A> <A>": 5,
+      "<A> <A> <A> & <A>": 4,
+      "<A> <A> <A> & <A> <A>": 3,
+      "<A> & <A> <A>": 3,
+      "<A> <A> <A><<A>>": 3,
+      "<A><<A>>": 3,
+      "<A> <A> <A>-<A>": 2,
+      "<A>-<A>": 2
+    },
+    "2025:duo60": {
+      "<A>": 151,
+      "<<A>>:<<A>>:<<A>> <A>": 42,
+      "<<A>> <A> <<A>> <A> <A>": 42,
+      "<A> <A>": 28,
+      "<<A>> <A>, <<A>> <A>": 26,
+      "<<A>> <A>, <<A>> <A>, <<A>> <A>": 21,
+      "<A> <A> <A>": 12,
+      "<A> & <A>": 3,
+      "<A> <A><<A>>": 2,
+      "<A> <A><<A>> <A>": 2,
+      "<A>/<A>": 1,
+      "<A> <A> <A> <A> <A>": 1,
+      "<A> <A> <A> <A>": 1,
+      "#<A>#": 1,
+      "<A>&<A>": 1
+    },
+    "2025:trail14": {
+      "<A> <A>": 701,
+      "<A>": 438,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 401,
+      "<A>, <<A>> <A> (<<A>> <A> <A>)": 400,
+      "<<A>> <A> <<A>> <A>": 398,
+      "<<A>>:<<A>>:<<A>> <A>": 396,
+      "<A> <A> <A>": 78,
+      "<A> <A> <A> <A>": 64,
+      "<A> <A> <A> <A> <A>": 18,
+      "<A> <A> <A> <A> <A> <A>": 6,
+      "<A>-<A> <A>": 6,
+      "<<A>>:<<A>> <A>": 4,
+      "<A> <A>-<A>": 4,
+      "<<A>> <A> <<A>>": 4,
+      "<A> <A> <<A>> <A>": 2,
+      "<<A>> <A>": 2,
+      "<<A>> <A> (<<A>> <A> <A>)": 2,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 2,
+      "<A> <A> <A> <A>- <A> <A> <A>": 1,
+      "<A> <A>- <A> <A> <A>": 1
+    },
+    "2025:trail22": {
+      "<A> <A>": 836,
+      "<A>": 583,
+      "<A>, <<A>> <A> (<<A>> <A> <A>)": 520,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 520,
+      "<<A>>:<<A>>:<<A>> <A>": 518,
+      "<<A>> <A> <<A>> <A>": 518,
+      "<A> <A> <A>": 160,
+      "<A> <A> <A> <A>": 119,
+      "<A> <A> <A> <A> <A>": 53,
+      "<A> <A> <A> <A> <A> <A>": 7,
+      "<A> <A>-<A>": 7,
+      "<A>-<A> <A>": 6,
+      "<A>&<A> <A>": 4,
+      "<A> <A>-<A> <A> <A>": 3,
+      "<A> <A>-<A> <A> <A> <A>": 2,
+      "<A> <A> <A>-<A>": 2,
+      "<A> <A> <A> & <A> <A>": 2,
+      "<A> & <A> <A>": 2,
+      "<A> <A> -": 2,
+      "-": 2
+    },
+    "2025:trail5": {
+      "<A> <A>": 403,
+      "<A>": 242,
+      "<<A>>:<<A>> <A>": 234,
+      "<A>, <<A>> <A> (<<A>> <A> <A>)": 234,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 234,
+      "<<A>> <A> <<A>> <A>": 231,
+      "<A> <A> <A>": 48,
+      "<A> <A> <A> <A>": 27,
+      "<A> <A> <A> <A> <A>": 14,
+      "<A> <A> <A><<A>>": 9,
+      "<A><<A>>": 9,
+      "<A> <A> <A><<A>> <A>": 2,
+      "<A><<A>> <A>": 2,
+      "<A> <A>-<A>": 2,
+      "<<A>> <A> <<A>>": 2,
+      "<A> <A> <A> <A> <A>- <A> <A>": 1,
+      "<A> <A> <A>- <A> <A>": 1,
+      "<A> <A> <A>- <A> <A> <A> <A>": 1,
+      "<A>- <A> <A> <A> <A>": 1,
+      "<A>-<A> <A> <A> <A>": 1
+    },
+    "2025:ultra60": {
+      "<A>": 1200,
+      "<A> <A>": 657,
+      "<A>, <<A>> <A> (<<A>> <A> <A>)": 400,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 400,
+      "<<A>>:<<A>>:<<A>> <A>": 371,
+      "<<A>> <A> <<A>> <A>": 370,
+      "<A> <A> <A> <A>": 130,
+      "<A> <A> <A>": 124,
+      "<A> <A> <A> <A> <A>": 50,
+      "<A> & <A>": 7,
+      "<A> <A> <A> <A> <A> <A>": 6,
+      "<A> <A>-<A>": 5,
+      "<A> <A> <A> & <A>": 5,
+      "<A>-<A> <A>": 3,
+      "<A> <A> <A><<A>>": 3,
+      "<A><<A>>": 3,
+      "<A> <A> <A> <A> / <A> <A>": 2,
+      "<A> <A> / <A> <A>": 2,
+      "<A> <A> <A> <A> / <A>": 2,
+      "<A> <A> / <A>": 2
+    },
+    "2026:duo60": {
+      "<A>": 171,
+      "<<A>>:<<A>>:<<A>> <A>": 47,
+      "<<A>> <A> <<A>> <A> <A>": 47,
+      "<<A>> <A>, <<A>> <A>": 29,
+      "<A> <A>": 25,
+      "<<A>> <A>, <<A>> <A>, <<A>> <A>": 23,
+      "<A> <A> <A>": 15,
+      "<A> & <A>": 4,
+      "<A> <A> <A> <A>": 3,
+      "<A>&<A>": 2,
+      "<A> <A> <A> <A> <A> <A>": 1,
+      "<A> -<A>": 1,
+      "<A> <A> <A> <A> <A> <A>!!": 1,
+      "<A>’<A>": 1,
+      "<A> <A>-<A>": 1,
+      "<A> & <A>!": 1,
+      "<A>/<A>": 1,
+      "<A> <A> <A>!": 1
+    },
+    "2026:trail14": {
+      "<A> <A>": 782,
+      "<A>": 489,
+      "<A>, <<A>> <A>": 455,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 455,
+      "<<A>> <A> <<A>> <A>": 452,
+      "<<A>>:<<A>>:<<A>> <A>": 451,
+      "<A> <A> <A>": 101,
+      "<A> <A> <A> <A>": 51,
+      "<A> <A> <A> <A> <A>": 19,
+      "<A>-<A> <A>": 5,
+      "<A> <A> <A> <A> <A> <A>": 4,
+      "<A> <A> <A> & <A>": 4,
+      "<A> & <A>": 4,
+      "<<A>>:<<A>> <A>": 2,
+      "<A> <A> <A>-<A>": 2,
+      "<A>-<A>": 2,
+      "<A> <A> <A> & <A> <A>": 2,
+      "<A> & <A> <A>": 2,
+      "<A> <A> <A> <A> <A>’<A>": 2,
+      "<A> <A> <A>’<A>": 2
+    },
+    "2026:trail22": {
+      "<A> <A>": 828,
+      "<A>": 538,
+      "<A>, <<A>> <A>": 502,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 502,
+      "<<A>>:<<A>>:<<A>> <A>": 495,
+      "<<A>> <A> <<A>> <A>": 493,
+      "<A> <A> <A>": 131,
+      "<A> <A> <A> <A>": 90,
+      "<A> <A> <A> <A> <A>": 52,
+      "<A>-<A> <A>": 9,
+      "<A> & <A> <A>": 8,
+      "<A> <A> <A> & <A> <A>": 7,
+      "<A> <A> <A> <A> <A> <A>": 5,
+      "<A>-<A> <A> <A>": 4,
+      "<A> <A>-<A>": 4,
+      "<<A>> <A> <<A>>": 4,
+      "<A>&<A> <A>": 4,
+      "<A> <A> <A>.<A>": 2,
+      "<A>.<A>": 2,
+      "<A> <A> <A>-<A>": 2
+    },
+    "2026:trail5": {
+      "<A> <A>": 520,
+      "<A>": 311,
+      "<<A>> <A> <<A>> <A>": 295,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 295,
+      "<A>, <<A>> <A>": 294,
+      "<<A>>:<<A>> <A>": 289,
+      "<A> <A> <A> <A>": 56,
+      "<A> <A> <A>": 49,
+      "<A> <A> <A> <A> <A>": 14,
+      "<<A>>:<<A>>:<<A>> <A>": 6,
+      "<A>-<A> <A>": 5,
+      "<A> <A> <A><<A>> <A>": 3,
+      "<A><<A>> <A>": 3,
+      "<A> <A> <A> <A> <A>’<A>": 2,
+      "<A> <A> <A>’<A>": 2,
+      "<A> <A> <A> <A> <A> <A>": 2,
+      "<A> <A>-<A>": 2,
+      "<A> <A> <A>, <A>": 1,
+      "<A>, <A>": 1,
+      "<A>-<A> <A> <A> <A>": 1
+    },
+    "2026:ultra60": {
+      "<A>": 1206,
+      "<A> <A>": 679,
+      "<A>, <<A>> <A>": 408,
+      "<<A>>-<<A>> <A> <A> <A> <A> <A> <A>. <A> <A> <A> <<A>> <A> <<A>>.": 408,
+      "<<A>>:<<A>>:<<A>> <A>": 367,
+      "<<A>> <A> <<A>> <A>": 366,
+      "<A> <A> <A>": 141,
+      "<A> <A> <A> <A>": 116,
+      "<A> <A> <A> <A> <A>": 48,
+      "<A> <A> <A> <A> <A> <A>": 7,
+      "<A>-<A> <A>": 6,
+      "<A> <A>-<A>": 5,
+      "<A> <A> <A><<A>><A>": 4,
+      "<A><<A>><A>": 4,
+      "<A> <A> <A> <A> / <A>": 2,
+      "<A> <A> / <A>": 2,
+      "<A> <A> <A><<A>>": 2,
+      "<A><<A>>": 2,
+      "<A> <A> <A> <A><<A>>": 2,
+      "<A> <A><<A>>": 2
+    }
+  },
+  "frequent_detail_first_cell_labels": {
+    "Klass": 9871,
+    "Distans": 9871,
+    "Starttidspunkt": 9871,
+    "Datum": 9871,
+    "Hastighet": 9533,
+    "Tempo": 9533,
+    "Nettotid": 9518,
+    "Bruttotid": 9518,
+    "Sluttidspunkt": 9518,
+    "Total": 9509,
+    "Män": 5294,
+    "Nettotid som 21-29 år": 4193,
+    "VO2 max (Beräknad)": 4130,
+    "VO2 rating": 4024,
+    "Kvinnor": 3920,
+    "Totalt": 2289,
+    "34 km": 1262,
+    "60 km": 1201,
+    "\"Low footprint\"": 1084,
+    "JM": 1084,
+    "32 km": 719,
+    "Bengtemölla": 699,
+    "62 km": 677,
+    "45-49 män": 475,
+    "40-44 män": 472,
+    "Vantalängan km 52": 428,
+    "Stenshuvud km 14": 403,
+    "40-44 kvinnor": 369,
+    "35-39 män": 351,
+    "50-54 män": 346,
+    "45-49 kvinnor": 332,
+    "Finish Km 60+": 305,
+    "35-39 kvinnor": 303,
+    "Bengtemölla km 32": 302,
+    "Startnummer": 299,
+    "30-34 män": 284,
+    "45-49 år män": 248,
+    "40-44 år män": 238,
+    "50-54 kvinnor": 233,
+    "40-44 år kvinnor": 229,
+    "30-34 kvinnor": 225,
+    "55-59 män": 221,
+    "35-39 år män": 202,
+    "50-54 år män": 160,
+    "45-49 år kvinnor": 148,
+    "35-39 år kvinnor": 146,
+    "30-34 år män": 145,
+    "25-29 kvinnor": 139,
+    "55-59 kvinnor": 136,
+    "Mix lag": 128,
+    "25-29 män": 128,
+    "Finish": 127,
+    "Mellantid 4": 124,
+    "Mellantid 3": 122,
+    "Herr lag": 119,
+    "50-54 år kvinnor": 115,
+    "55-59 år män": 99,
+    "30-34 år kvinnor": 96,
+    "60-64 män": 94,
+    "25-29 år män": 81,
+    "Mellantid 1": 78,
+    "Mellantid 2": 72,
+    "55-59 år kvinnor": 68,
+    "60-64 kvinnor": 68,
+    "25-29 år kvinnor": 66,
+    "20-24 män": 53,
+    "20-24 kvinnor": 51,
+    "0-11 män": 49,
+    "60-64 år män": 43,
+    "65-69 män": 37,
+    "Dam lag": 36,
+    "12-13 män": 33,
+    "20-24 år kvinnor": 30,
+    "60-64 år kvinnor": 29,
+    "20-24 år män": 28,
+    "14-15 män": 28,
+    "65-69 år män": 24,
+    "12-13 kvinnor": 23,
+    "0-11 kvinnor": 22,
+    "14-15 kvinnor": 20
+  }
+}
