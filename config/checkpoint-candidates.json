@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "year": 2026,
+  "warning": "These are course/aid/cutoff/relay landmarks. They are not Sportstiming checkpoints unless timing data independently proves that role.",
+  "families": {
+    "ultra60": {
+      "source_urls": [
+        "https://www.osterlentrail.se/race-pm-60km.html",
+        "https://www.osterlentrail.se/loumlpar-pm-duo-trail.html"
+      ],
+      "landmarks": [
+        {"key":"start_simrishamn","name":"Start Simrishamn","role":["start"],"nominal_km":0,"timing_status":"unknown"},
+        {"key":"stenshuvud_naturrum","name":"Stenshuvud Naturrum","role":["cutoff","rescue"],"nominal_km":17,"timing_status":"unknown"},
+        {"key":"kivik_aid","name":"Kivik","role":["aid_station"],"nominal_km":19,"timing_status":"unknown","source_variant_note":"Ultra PM names Kiviks Idrottsplats/Solevi; Duo PM names Kiviks hamn. Preserve as unresolved source variant until route/POI review."},
+        {"key":"havang","name":"Haväng","role":["rescue","course_landmark"],"nominal_km":27,"timing_status":"unknown"},
+        {"key":"bengtemolla","name":"Bengtemölla gård","role":["aid_station","drop_bag","relay_exchange","cutoff"],"nominal_km":32,"nominal_km_variants":[32,33,34],"timing_status":"unknown","note":"Official pages use 32/33 km for the station and ~34 km in cutoff/rescue lists; project onto master GPX rather than hard-coding a single distance."},
+        {"key":"drakamollan","name":"Drakamöllan","role":["cutoff","rescue"],"nominal_km":42,"nominal_km_variants":[42,44],"timing_status":"unknown"},
+        {"key":"piratens_trafikplats","name":"Piratens trafikplats","role":["rescue"],"nominal_km":49,"timing_status":"unknown"},
+        {"key":"vantalangan","name":"Vantalängan","role":["aid_station","cutoff","rescue"],"nominal_km":50,"nominal_km_variants":[50,53],"timing_status":"unknown","note":"Aid-station list and cutoff/rescue list use different rounded distances."},
+        {"key":"hallamolla","name":"Hallamölla","role":["rescue","course_landmark"],"nominal_km":58,"timing_status":"unknown"},
+        {"key":"finish_christinehof","name":"Mål Christinehof","role":["finish"],"nominal_km":60,"nominal_km_variants":[60,61],"timing_status":"finish_expected"}
+      ]
+    },
+    "duo60": {
+      "route_family_ref":"ultra60",
+      "route_race_key":"ost-2026-ultra60",
+      "exchange_landmark_ref":"bengtemolla",
+      "timing_status":"unknown",
+      "note":"Same full route as Ultra 60. Bengtemölla is the relay exchange. Leg lengths must be derived from actual exchange projection/source timing, not assumed 30+30."
+    },
+    "trail22": {
+      "source_url":"https://www.osterlentrail.se/race-pm-22km.html",
+      "landmarks":[
+        {"key":"start_finish_christinehof","name":"Christinehof","role":["start","finish"],"nominal_km":0,"finish_nominal_km":22,"timing_status":"finish_expected"},
+        {"key":"vantalangan","name":"Vantalängan","role":["aid_station","cutoff"],"nominal_km":13,"timing_status":"unknown"},
+        {"key":"hallamolla","name":"Hallamölla","role":["course_midpoint","rescue","toilet"],"nominal_km":16,"timing_status":"unknown","note":"Race PM describes the course as a figure-eight with Hallamölla as midpoint; the 16 km value is from the listed rescue location on the return section."}
+      ]
+    },
+    "trail14": {
+      "source_url":"https://www.osterlentrail.se/race-pm-14km.html",
+      "landmarks":[
+        {"key":"start_finish_christinehof","name":"Christinehof","role":["start","finish"],"nominal_km":0,"finish_nominal_km":14,"timing_status":"finish_expected"},
+        {"key":"hallamolla","name":"Hallamölla","role":["course_midpoint","toilet"],"nominal_km":null,"timing_status":"unknown"}
+      ],
+      "aid_station_count":0
+    },
+    "trail5": {
+      "source_url":"https://www.osterlentrail.se/race-pm-5km.html",
+      "landmarks":[
+        {"key":"start_finish_christinehof","name":"Christinehof","role":["start","finish"],"nominal_km":0,"finish_nominal_km":5,"timing_status":"finish_expected"}
+      ],
+      "aid_station_count":0
+    }
+  }
+}
