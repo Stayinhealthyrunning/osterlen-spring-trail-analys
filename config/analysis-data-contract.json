@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "purpose": "Stable contract between ÖST source normalization and the generic Gotaleden-derived analysis engine.",
+  "required_entities": {
+    "events": ["event_id", "year", "status"],
+    "races": ["race_key", "year", "family", "type", "nominal_distance_km", "course_version"],
+    "participants": ["participant_uid", "bib", "name", "sex", "age", "birth_year", "club", "country"],
+    "results": ["result_uid", "race_key", "participant_uid", "status", "finish_seconds", "gross_seconds", "overall_place", "class_place", "gender_place", "raw_json"],
+    "splits": ["result_uid", "checkpoint_key", "elapsed_seconds", "clock_time", "overall_place", "class_place", "gender_place", "raw_json"],
+    "checkpoints": ["race_key", "checkpoint_key", "name", "route_distance_km", "race_distance_km", "timing_role", "analysis_boundary", "replay_anchor"],
+    "routes": ["course_version", "source_gpx", "distance_km", "geometry_provenance"],
+    "relay_teams": ["team_uid", "race_key", "bib", "team_name", "members"]
+  },
+  "status_values": ["FINISHED", "DNF", "DNS", "DSQ", "UNKNOWN"],
+  "timing_role_values": ["start", "intermediate", "exchange", "finish", "non_timing_landmark"],
+  "rules": [
+    "No missing split may be interpolated and presented as official timing data.",
+    "Raw source payloads must be preserved before normalization.",
+    "Course version is independent from marketing distance label.",
+    "Duo uses the matching Ultra 60 route geometry and adds relay structure only.",
+    "Cancelled years are represented explicitly and never treated as missing data.",
+    "Cross-year segment analysis requires geometrically comparable course sections."
+  ]
+}
