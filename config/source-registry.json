@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "updated": "2026-09-10",
+  "precedence": [
+    "organizer_official",
+    "sportstiming_official",
+    "organizer_trace_reference",
+    "itra_utmb_duv_crosscheck",
+    "specialist_press_crosscheck",
+    "other_secondary"
+  ],
+  "rules": [
+    "Official Sportstiming data is the result source of record when available.",
+    "Organizer-published route files and race PMs outrank secondary course databases.",
+    "Trace de Trail references created by ÖST are authoritative route leads but raw third-party GPX bodies are not redistributed automatically.",
+    "ITRA, UTMB and DUV are cross-check sources and never silently overwrite official timing or organizer route data.",
+    "Race-day marking may differ from a published GPX; this limitation must remain explicit in public methodology.",
+    "Unknown values remain null and are never inferred into official observations."
+  ],
+  "sources": [
+    {
+      "code": "ost_website",
+      "tier": "organizer_official",
+      "provider": "Österlen Spring Trail / ADP sport events AB",
+      "base_url": "https://www.osterlentrail.se/",
+      "uses": ["race_program", "race_pm", "route_links", "aid_stations", "cutoffs", "logistics"]
+    },
+    {
+      "code": "ost_results_archive",
+      "tier": "organizer_official",
+      "provider": "Österlen Spring Trail / ADP sport events AB",
+      "url": "https://www.osterlentrail.se/resultat.html",
+      "uses": ["official_event_linkage", "year_coverage"]
+    },
+    {
+      "code": "sportstiming",
+      "tier": "sportstiming_official",
+      "provider": "Sportstiming",
+      "base_url": "https://www.sportstiming.se/",
+      "alternate_base_url": "https://www.sportstiming.dk/",
+      "uses": ["participants", "results", "classes", "bib", "net_time", "gross_time", "status", "public_demographics", "relay_members", "splits_if_exposed"]
+    },
+    {
+      "code": "tracedetrail_ost",
+      "tier": "organizer_trace_reference",
+      "provider": "Trace de Trail",
+      "base_url": "https://tracedetrail.fr/",
+      "uses": ["historical_route_reference", "published_route_distance", "public_route_poi"],
+      "note": "Only route references and public metadata/POIs are archived automatically until GPX redistribution/reuse is explicitly cleared."
+    },
+    {
+      "code": "itra",
+      "tier": "itra_utmb_duv_crosscheck",
+      "provider": "ITRA",
+      "base_url": "https://itra.run/",
+      "uses": ["race_date_crosscheck", "distance_crosscheck", "elevation_crosscheck", "aid_station_count_crosscheck"]
+    },
+    {
+      "code": "utmb",
+      "tier": "itra_utmb_duv_crosscheck",
+      "provider": "UTMB World",
+      "base_url": "https://utmb.world/",
+      "uses": ["race_date_crosscheck", "distance_crosscheck", "historical_result_crosscheck"]
+    },
+    {
+      "code": "duv",
+      "tier": "itra_utmb_duv_crosscheck",
+      "provider": "DUV",
+      "base_url": "https://statistik.d-u-v.org/",
+      "uses": ["ultra_finisher_crosscheck", "ultra_history"]
+    },
+    {
+      "code": "trailrunning_sweden",
+      "tier": "specialist_press_crosscheck",
+      "provider": "Trailrunning Sweden",
+      "base_url": "https://trailrunningsweden.se/",
+      "uses": ["program_crosscheck", "winner_crosscheck", "historical_context"]
+    },
+    {
+      "code": "kondis",
+      "tier": "specialist_press_crosscheck",
+      "provider": "Kondis",
+      "base_url": "https://www.kondis.no/",
+      "uses": ["program_crosscheck", "historical_context"]
+    }
+  ]
+}
