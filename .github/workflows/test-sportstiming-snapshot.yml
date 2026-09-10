@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'tools/fetch_sportstiming_snapshot.py'
+      - 'tools/normalize_sportstiming_snapshot.py'
       - '.github/workflows/test-sportstiming-snapshot.yml'
 
 concurrency:
@@ -26,15 +27,29 @@ jobs:
           python-version: '3.12'
       - name: Fetch 10 public 2026 Ultra results
         run: python tools/fetch_sportstiming_snapshot.py --year 2026 --family ultra60 --limit 10 --workers 4 --output data/source/sportstiming/samples/2026-ultra60-10.json
-      - name: Commit smoke-test snapshot
+      - name: Normalize smoke snapshot
+        run: python tools/normalize_sportstiming_snapshot.py data/source/sportstiming/samples/2026-ultra60-10.json --output data/normalized/samples/2026-ultra60-10.json
+      - name: Sanity check normalized sample
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+          p=Path('data/normalized/samples/2026-ultra60-10.json')
+          d=json.loads(p.read_text(encoding='utf-8'))
+          assert len(d['records']) == 10, len(d['records'])
+          assert all(r['race_family']=='ultra60' for r in d['records'])
+          assert sum(bool(r['finish_seconds']) for r in d['records']) >= 8
+          assert sum(bool(r['splits']) for r in d['records']) >= 8
+          print('Normalized smoke sample OK')
+      - name: Commit smoke-test outputs
         shell: bash
         run: |
-          file=data/source/sportstiming/samples/2026-ultra60-10.json
-          if [[ -n "$(git status --porcelain -- "$file")" ]]; then
+          paths=(data/source/sportstiming/samples/2026-ultra60-10.json data/normalized/samples/2026-ultra60-10.json)
+          if [[ -n "$(git status --porcelain -- "${paths[@]}")" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add "$file"
-            git commit -m "Update Sportstiming importer smoke snapshot"
+            git add -- "${paths[@]}"
+            git commit -m "Update Sportstiming importer smoke data"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
