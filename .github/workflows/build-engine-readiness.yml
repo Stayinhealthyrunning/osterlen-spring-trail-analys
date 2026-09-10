@@ -1,0 +1,43 @@
+name: Build ÖST engine readiness report
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/derived/ost-analysis-2018-2026.sqlite.gz'
+      - 'tools/build_engine_readiness_report.py'
+      - '.github/workflows/build-engine-readiness.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ost-engine-readiness
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build readiness report
+        run: python tools/build_engine_readiness_report.py
+      - name: Commit readiness report
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/engine-readiness.json reports/engine-readiness.md
+          if git diff --cached --quiet; then
+            echo 'Readiness report already current.'
+          else
+            git commit -m 'Build ÖST engine readiness report'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
