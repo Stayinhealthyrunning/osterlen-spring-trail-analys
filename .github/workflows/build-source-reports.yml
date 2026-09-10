@@ -13,6 +13,8 @@ on:
       - 'tools/build_sportstiming_catalog.py'
       - 'tools/sample_sportstiming_result_structure.py'
       - 'tools/inspect_sportstiming_tables.py'
+      - 'tools/inventory_sportstiming_splits.py'
+      - 'tools/inventory_sportstiming_points.py'
       - '.github/workflows/build-source-reports.yml'
 
 concurrency:
@@ -46,13 +48,18 @@ jobs:
         run: python tools/sample_sportstiming_result_structure.py
       - name: Inspect Sportstiming result tables
         run: python tools/inspect_sportstiming_tables.py
+      - name: Inventory Sportstiming split schemas
+        run: python tools/inventory_sportstiming_splits.py
+      - name: Inventory Sportstiming points and tracking
+        run: python tools/inventory_sportstiming_points.py
       - name: Commit generated metadata and reports
         shell: bash
         run: |
-          if [[ -n "$(git status --porcelain reports/ data/source/sportstiming/class-catalog.json)" ]]; then
+          paths=(reports/ data/source/sportstiming/class-catalog.json data/source/sportstiming/split-inventory.json data/source/sportstiming/points-tracking-inventory.json)
+          if [[ -n "$(git status --porcelain -- "${paths[@]}")" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add reports/ data/source/sportstiming/class-catalog.json
+            git add -- "${paths[@]}"
             git commit -m "Update ÖST source diagnostics"
             git pull --rebase origin main
             git push origin HEAD:main
