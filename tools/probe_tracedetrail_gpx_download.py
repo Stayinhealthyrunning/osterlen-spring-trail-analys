@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Discover the public Trace de Trail GPX download mechanism without bypassing access controls.
+"""Discover Trace de Trail's normal public GPX download mechanism.
 
-Fetches one public trace page and its referenced JavaScript assets, then records only
-small request-related snippets around `downloadGpx`/GPX tokens. This is a diagnostic;
-it does not yet archive the GPX body.
+Fetches one public trace page and same-origin JavaScript assets, retaining only
+request-related snippets needed to reproduce the public route-only download.
 """
 from __future__ import annotations
 from html.parser import HTMLParser
@@ -54,17 +53,21 @@ def main():
         except Exception as exc:
             scripts.append({'url':u,'error':f'{type(exc).__name__}: {exc}'}); continue
         toks={}
-        for token in ('downloadGpx','gpx','traceDownloads','download'):
-            ss=snippets(body,token)
+        for token in ('downloadGpx','submitDownload:function','download:function(param)','getFile/','checkDownload','gpx'):
+            span=4000 if token in ('submitDownload:function','download:function(param)','checkDownload') else 700
+            ss=snippets(body,token,span=span,limit=8)
             if ss:toks[token]=ss
         if toks: scripts.append({'url':u,'final_url':fu,'content_type':ct,'bytes':len(body.encode('utf-8')),'snippets':toks})
         time.sleep(.05)
-    page_snips={t:snippets(html,t) for t in ('downloadGpx','traceDownloads','gpx') if snippets(html,t)}
-    payload={'schema_version':1,'trace_id':TRACE_ID,'page_url':page,'final_url':final,'page_bytes':len(html.encode('utf-8')),
-             'gpx_related_elements':p.buttons,'page_snippets':page_snips,'script_hits':scripts,
-             'note':'Small request-related snippets only; no complete third-party JS or GPX body mirrored.'}
+    page_tokens={}
+    for token in ('downloadGpx','traceDownloads','platform','base_url','carto.initialize','traceID'):
+        ss=snippets(html,token,span=1200,limit=12)
+        if ss: page_tokens[token]=ss
+    payload={'schema_version':2,'trace_id':TRACE_ID,'page_url':page,'final_url':final,'page_bytes':len(html.encode('utf-8')),
+             'gpx_related_elements':p.buttons,'page_snippets':page_tokens,'script_hits':scripts,
+             'note':'Request-flow snippets only; no complete third-party JS or GPX body mirrored.'}
     OUT_JSON.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    lines=['# Trace de Trail GPX download probe','',f'- Trace: {TRACE_ID}',f'- GPX-related page elements: {len(p.buttons)}',f'- Script assets with GPX/download hits: {len(scripts)}','']
+    lines=['# Trace de Trail GPX download probe','',f'- Trace: {TRACE_ID}',f'- GPX-related page elements: {len(p.buttons)}',f'- Script assets with request-flow hits: {len(scripts)}','']
     for b in p.buttons: lines.append(f"- element: `{json.dumps(b,ensure_ascii=False)}`")
     lines+=['','## Script hits','']
     for s in scripts:
@@ -72,7 +75,7 @@ def main():
         if s.get('error'): lines.append(f"- error: {s['error']}")
         for token,ss in s.get('snippets',{}).items():
             lines.append(f'- `{token}`:')
-            for x in ss[:5]: lines.append(f'  - `{x[:900]}`')
+            for x in ss[:3]: lines.append(f'  - `{x[:3500]}`')
         lines.append('')
     OUT_MD.write_text('\n'.join(lines)+'\n',encoding='utf-8')
 
