@@ -1,0 +1,1377 @@
+{
+  "generated_by": "tools/probe_sportstiming.py",
+  "rows": [
+    {
+      "year": 2018,
+      "event_id": 4950,
+      "path": "results",
+      "url": "https://www.sportstiming.dk/event/4950/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/4950/results",
+      "title": "Verify you&#39;re human",
+      "human_check": true,
+      "contains_results_words": true,
+      "contains_participant_words": false,
+      "script_srcs": [
+        "https://challenges.cloudflare.com/turnstile/v0/api.js"
+      ],
+      "candidate_api_links": [],
+      "body_bytes_sampled": 4869
+    },
+    {
+      "year": 2018,
+      "event_id": 4950,
+      "path": "participants",
+      "url": "https://www.sportstiming.dk/event/4950/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/4950/participants",
+      "title": "Verify you&#39;re human",
+      "human_check": true,
+      "contains_results_words": false,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://challenges.cloudflare.com/turnstile/v0/api.js"
+      ],
+      "candidate_api_links": [],
+      "body_bytes_sampled": 4874
+    },
+    {
+      "year": 2018,
+      "event_id": 4950,
+      "path": "app/results",
+      "url": "https://www.sportstiming.dk/event/4950/app/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/4950/app/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2018",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 87404
+    },
+    {
+      "year": 2018,
+      "event_id": 4950,
+      "path": "app/participants",
+      "url": "https://www.sportstiming.dk/event/4950/app/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/4950/app/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2018",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 88044
+    },
+    {
+      "year": 2018,
+      "event_id": 4950,
+      "path": "embed/results",
+      "url": "https://www.sportstiming.dk/event/4950/embed/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/4950/embed/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2018",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 83487
+    },
+    {
+      "year": 2018,
+      "event_id": 4950,
+      "path": "embed/participants",
+      "url": "https://www.sportstiming.dk/event/4950/embed/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/4950/embed/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2018",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 84075
+    },
+    {
+      "year": 2018,
+      "event_id": 4950,
+      "path": "embedtabs/results",
+      "url": "https://www.sportstiming.dk/event/4950/embedtabs/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/4950/embedtabs/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2018",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 87480
+    },
+    {
+      "year": 2018,
+      "event_id": 4950,
+      "path": "embedtabs/participants",
+      "url": "https://www.sportstiming.dk/event/4950/embedtabs/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/4950/embedtabs/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2018",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 88117
+    },
+    {
+      "year": 2019,
+      "event_id": 5719,
+      "path": "results",
+      "url": "https://www.sportstiming.dk/event/5719/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/5719/results",
+      "title": "Verify you&#39;re human",
+      "human_check": true,
+      "contains_results_words": true,
+      "contains_participant_words": false,
+      "script_srcs": [
+        "https://challenges.cloudflare.com/turnstile/v0/api.js"
+      ],
+      "candidate_api_links": [],
+      "body_bytes_sampled": 4869
+    },
+    {
+      "year": 2019,
+      "event_id": 5719,
+      "path": "participants",
+      "url": "https://www.sportstiming.dk/event/5719/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/5719/participants",
+      "title": "Verify you&#39;re human",
+      "human_check": true,
+      "contains_results_words": false,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://challenges.cloudflare.com/turnstile/v0/api.js"
+      ],
+      "candidate_api_links": [],
+      "body_bytes_sampled": 4874
+    },
+    {
+      "year": 2019,
+      "event_id": 5719,
+      "path": "app/results",
+      "url": "https://www.sportstiming.dk/event/5719/app/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/5719/app/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2019",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 89465
+    },
+    {
+      "year": 2019,
+      "event_id": 5719,
+      "path": "app/participants",
+      "url": "https://www.sportstiming.dk/event/5719/app/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/5719/app/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2019",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 91559
+    },
+    {
+      "year": 2019,
+      "event_id": 5719,
+      "path": "embed/results",
+      "url": "https://www.sportstiming.dk/event/5719/embed/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/5719/embed/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2019",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 85230
+    },
+    {
+      "year": 2019,
+      "event_id": 5719,
+      "path": "embed/participants",
+      "url": "https://www.sportstiming.dk/event/5719/embed/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/5719/embed/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2019",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 87275
+    },
+    {
+      "year": 2019,
+      "event_id": 5719,
+      "path": "embedtabs/results",
+      "url": "https://www.sportstiming.dk/event/5719/embedtabs/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/5719/embedtabs/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2019",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 89545
+    },
+    {
+      "year": 2019,
+      "event_id": 5719,
+      "path": "embedtabs/participants",
+      "url": "https://www.sportstiming.dk/event/5719/embedtabs/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/5719/embedtabs/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2019",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 91639
+    },
+    {
+      "year": 2022,
+      "event_id": 9587,
+      "path": "results",
+      "url": "https://www.sportstiming.dk/event/9587/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/9587/results",
+      "title": "Verify you&#39;re human",
+      "human_check": true,
+      "contains_results_words": true,
+      "contains_participant_words": false,
+      "script_srcs": [
+        "https://challenges.cloudflare.com/turnstile/v0/api.js"
+      ],
+      "candidate_api_links": [],
+      "body_bytes_sampled": 4869
+    },
+    {
+      "year": 2022,
+      "event_id": 9587,
+      "path": "participants",
+      "url": "https://www.sportstiming.dk/event/9587/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/9587/participants",
+      "title": "Verify you&#39;re human",
+      "human_check": true,
+      "contains_results_words": false,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://challenges.cloudflare.com/turnstile/v0/api.js"
+      ],
+      "candidate_api_links": [],
+      "body_bytes_sampled": 4874
+    },
+    {
+      "year": 2022,
+      "event_id": 9587,
+      "path": "app/results",
+      "url": "https://www.sportstiming.dk/event/9587/app/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/9587/app/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2022",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 102708
+    },
+    {
+      "year": 2022,
+      "event_id": 9587,
+      "path": "app/participants",
+      "url": "https://www.sportstiming.dk/event/9587/app/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/9587/app/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2022",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 104103
+    },
+    {
+      "year": 2022,
+      "event_id": 9587,
+      "path": "embed/results",
+      "url": "https://www.sportstiming.dk/event/9587/embed/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/9587/embed/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2022",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 98783
+    },
+    {
+      "year": 2022,
+      "event_id": 9587,
+      "path": "embed/participants",
+      "url": "https://www.sportstiming.dk/event/9587/embed/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/9587/embed/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2022",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 100130
+    },
+    {
+      "year": 2022,
+      "event_id": 9587,
+      "path": "embedtabs/results",
+      "url": "https://www.sportstiming.dk/event/9587/embedtabs/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/9587/embedtabs/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2022",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 102772
+    },
+    {
+      "year": 2022,
+      "event_id": 9587,
+      "path": "embedtabs/participants",
+      "url": "https://www.sportstiming.dk/event/9587/embedtabs/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/9587/embedtabs/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2022",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 104175
+    },
+    {
+      "year": 2023,
+      "event_id": 11274,
+      "path": "results",
+      "url": "https://www.sportstiming.dk/event/11274/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/11274/results",
+      "title": "Verify you&#39;re human",
+      "human_check": true,
+      "contains_results_words": true,
+      "contains_participant_words": false,
+      "script_srcs": [
+        "https://challenges.cloudflare.com/turnstile/v0/api.js"
+      ],
+      "candidate_api_links": [],
+      "body_bytes_sampled": 4870
+    },
+    {
+      "year": 2023,
+      "event_id": 11274,
+      "path": "participants",
+      "url": "https://www.sportstiming.dk/event/11274/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/11274/participants",
+      "title": "Verify you&#39;re human",
+      "human_check": true,
+      "contains_results_words": false,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://challenges.cloudflare.com/turnstile/v0/api.js"
+      ],
+      "candidate_api_links": [],
+      "body_bytes_sampled": 4875
+    },
+    {
+      "year": 2023,
+      "event_id": 11274,
+      "path": "app/results",
+      "url": "https://www.sportstiming.dk/event/11274/app/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/11274/app/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2023",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 97203
+    },
+    {
+      "year": 2023,
+      "event_id": 11274,
+      "path": "app/participants",
+      "url": "https://www.sportstiming.dk/event/11274/app/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/11274/app/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2023",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 99089
+    },
+    {
+      "year": 2023,
+      "event_id": 11274,
+      "path": "embed/results",
+      "url": "https://www.sportstiming.dk/event/11274/embed/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/11274/embed/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2023",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 93717
+    },
+    {
+      "year": 2023,
+      "event_id": 11274,
+      "path": "embed/participants",
+      "url": "https://www.sportstiming.dk/event/11274/embed/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/11274/embed/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2023",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 95552
+    },
+    {
+      "year": 2023,
+      "event_id": 11274,
+      "path": "embedtabs/results",
+      "url": "https://www.sportstiming.dk/event/11274/embedtabs/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/11274/embedtabs/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2023",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 97266
+    },
+    {
+      "year": 2023,
+      "event_id": 11274,
+      "path": "embedtabs/participants",
+      "url": "https://www.sportstiming.dk/event/11274/embedtabs/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/11274/embedtabs/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2023",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 99150
+    },
+    {
+      "year": 2024,
+      "event_id": 12349,
+      "path": "results",
+      "url": "https://www.sportstiming.dk/event/12349/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/12349/results",
+      "title": "Verify you&#39;re human",
+      "human_check": true,
+      "contains_results_words": true,
+      "contains_participant_words": false,
+      "script_srcs": [
+        "https://challenges.cloudflare.com/turnstile/v0/api.js"
+      ],
+      "candidate_api_links": [],
+      "body_bytes_sampled": 4870
+    },
+    {
+      "year": 2024,
+      "event_id": 12349,
+      "path": "participants",
+      "url": "https://www.sportstiming.dk/event/12349/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/12349/participants",
+      "title": "Verify you&#39;re human",
+      "human_check": true,
+      "contains_results_words": false,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://challenges.cloudflare.com/turnstile/v0/api.js"
+      ],
+      "candidate_api_links": [],
+      "body_bytes_sampled": 4875
+    },
+    {
+      "year": 2024,
+      "event_id": 12349,
+      "path": "app/results",
+      "url": "https://www.sportstiming.dk/event/12349/app/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/12349/app/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2024",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 93729
+    },
+    {
+      "year": 2024,
+      "event_id": 12349,
+      "path": "app/participants",
+      "url": "https://www.sportstiming.dk/event/12349/app/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/12349/app/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2024",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 93817
+    },
+    {
+      "year": 2024,
+      "event_id": 12349,
+      "path": "embed/results",
+      "url": "https://www.sportstiming.dk/event/12349/embed/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/12349/embed/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2024",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 90243
+    },
+    {
+      "year": 2024,
+      "event_id": 12349,
+      "path": "embed/participants",
+      "url": "https://www.sportstiming.dk/event/12349/embed/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/12349/embed/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2024",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 90281
+    },
+    {
+      "year": 2024,
+      "event_id": 12349,
+      "path": "embedtabs/results",
+      "url": "https://www.sportstiming.dk/event/12349/embedtabs/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/12349/embedtabs/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2024",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 93790
+    },
+    {
+      "year": 2024,
+      "event_id": 12349,
+      "path": "embedtabs/participants",
+      "url": "https://www.sportstiming.dk/event/12349/embedtabs/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/12349/embedtabs/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2024",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 93879
+    },
+    {
+      "year": 2025,
+      "event_id": 15015,
+      "path": "results",
+      "url": "https://www.sportstiming.se/event/15015/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.se/event/15015/results",
+      "title": "Verify you&#39;re human",
+      "human_check": true,
+      "contains_results_words": true,
+      "contains_participant_words": false,
+      "script_srcs": [
+        "https://challenges.cloudflare.com/turnstile/v0/api.js"
+      ],
+      "candidate_api_links": [],
+      "body_bytes_sampled": 4870
+    },
+    {
+      "year": 2025,
+      "event_id": 15015,
+      "path": "participants",
+      "url": "https://www.sportstiming.se/event/15015/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.se/event/15015/participants",
+      "title": "Verify you&#39;re human",
+      "human_check": true,
+      "contains_results_words": false,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://challenges.cloudflare.com/turnstile/v0/api.js"
+      ],
+      "candidate_api_links": [],
+      "body_bytes_sampled": 4875
+    },
+    {
+      "year": 2025,
+      "event_id": 15015,
+      "path": "app/results",
+      "url": "https://www.sportstiming.se/event/15015/app/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.se/event/15015/app/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2025",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 94083
+    },
+    {
+      "year": 2025,
+      "event_id": 15015,
+      "path": "app/participants",
+      "url": "https://www.sportstiming.se/event/15015/app/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.se/event/15015/app/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2025",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 94037
+    },
+    {
+      "year": 2025,
+      "event_id": 15015,
+      "path": "embed/results",
+      "url": "https://www.sportstiming.se/event/15015/embed/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.se/event/15015/embed/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2025",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 90601
+    },
+    {
+      "year": 2025,
+      "event_id": 15015,
+      "path": "embed/participants",
+      "url": "https://www.sportstiming.se/event/15015/embed/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.se/event/15015/embed/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2025",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 90504
+    },
+    {
+      "year": 2025,
+      "event_id": 15015,
+      "path": "embedtabs/results",
+      "url": "https://www.sportstiming.se/event/15015/embedtabs/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.se/event/15015/embedtabs/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2025",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 94148
+    },
+    {
+      "year": 2025,
+      "event_id": 15015,
+      "path": "embedtabs/participants",
+      "url": "https://www.sportstiming.se/event/15015/embedtabs/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.se/event/15015/embedtabs/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2025",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 94101
+    },
+    {
+      "year": 2026,
+      "event_id": 16880,
+      "path": "results",
+      "url": "https://www.sportstiming.dk/event/16880/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/16880/results",
+      "title": "Verify you&#39;re human",
+      "human_check": true,
+      "contains_results_words": true,
+      "contains_participant_words": false,
+      "script_srcs": [
+        "https://challenges.cloudflare.com/turnstile/v0/api.js"
+      ],
+      "candidate_api_links": [],
+      "body_bytes_sampled": 4870
+    },
+    {
+      "year": 2026,
+      "event_id": 16880,
+      "path": "participants",
+      "url": "https://www.sportstiming.dk/event/16880/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/16880/participants",
+      "title": "Verify you&#39;re human",
+      "human_check": true,
+      "contains_results_words": false,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://challenges.cloudflare.com/turnstile/v0/api.js"
+      ],
+      "candidate_api_links": [],
+      "body_bytes_sampled": 4875
+    },
+    {
+      "year": 2026,
+      "event_id": 16880,
+      "path": "app/results",
+      "url": "https://www.sportstiming.dk/event/16880/app/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/16880/app/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2026",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 93121
+    },
+    {
+      "year": 2026,
+      "event_id": 16880,
+      "path": "app/participants",
+      "url": "https://www.sportstiming.dk/event/16880/app/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/16880/app/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2026",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 92421
+    },
+    {
+      "year": 2026,
+      "event_id": 16880,
+      "path": "embed/results",
+      "url": "https://www.sportstiming.dk/event/16880/embed/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/16880/embed/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2026",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 89635
+    },
+    {
+      "year": 2026,
+      "event_id": 16880,
+      "path": "embed/participants",
+      "url": "https://www.sportstiming.dk/event/16880/embed/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/16880/embed/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2026",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 88885
+    },
+    {
+      "year": 2026,
+      "event_id": 16880,
+      "path": "embedtabs/results",
+      "url": "https://www.sportstiming.dk/event/16880/embedtabs/results",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/16880/embedtabs/results",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2026",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 93184
+    },
+    {
+      "year": 2026,
+      "event_id": 16880,
+      "path": "embedtabs/participants",
+      "url": "https://www.sportstiming.dk/event/16880/embedtabs/participants",
+      "http_status": 200,
+      "final_url": "https://www.sportstiming.dk/event/16880/embedtabs/participants",
+      "title": "Sportstiming - &#214;sterlen Spring Trail 2026",
+      "human_check": false,
+      "contains_results_words": true,
+      "contains_participant_words": true,
+      "script_srcs": [
+        "https://code.jquery.com/jquery-3.6.0.min.js",
+        "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+        "/js/select2.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.7/iframeResizer.contentWindow.min.js",
+        "/js/resultlist.js?2.0",
+        "/js/bootstrap/bundle?v=gVEdFue3GVSnGc9Vz5XePoOGrCj76oHcKM-J5xQofV41",
+        "/js/roxtheme/bundle?v=KhYX29F4HrtJZDTA1jDJr00Gc3Ki6JxMdKWhg_r6gcA1"
+      ],
+      "candidate_api_links": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext",
+        "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic",
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"
+      ],
+      "body_bytes_sampled": 92483
+    }
+  ]
+}

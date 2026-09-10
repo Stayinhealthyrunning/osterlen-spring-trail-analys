@@ -1,0 +1,53 @@
+{
+  "method": "Haversine track length from source GPX; raw elevation differences are unsmoothed and are not authoritative D+.",
+  "files": [
+    {
+      "path": "data/source/gpx/ultra60/ost-ultra60-2024-organizer.gpx",
+      "point_count": 3258,
+      "distance_km": 60.598,
+      "raw_ascent_m": 0.0,
+      "raw_descent_m": 0.0,
+      "start": [
+        55.55673,
+        14.35471
+      ],
+      "finish": [
+        55.71719,
+        13.96052
+      ],
+      "min_ele_m": 0.0,
+      "max_ele_m": 124.0
+    },
+    {
+      "path": "data/source/gpx/ultra60/ost-ultra60-2025-2026-organizer.gpx",
+      "point_count": 4246,
+      "distance_km": 59.621,
+      "raw_ascent_m": 1058.0,
+      "raw_descent_m": 942.0,
+      "start": [
+        55.55903,
+        14.35288
+      ],
+      "finish": [
+        55.71708,
+        13.96056
+      ],
+      "min_ele_m": 0.0,
+      "max_ele_m": 121.0
+    }
+  ],
+  "same_family_comparisons": [
+    {
+      "a": "data/source/gpx/ultra60/ost-ultra60-2024-organizer.gpx",
+      "b": "data/source/gpx/ultra60/ost-ultra60-2025-2026-organizer.gpx",
+      "start_separation_m": 280.45,
+      "finish_separation_m": 12.49,
+      "mean_progress_separation_m": 317.81,
+      "median_progress_separation_m": 372.23,
+      "p95_progress_separation_m": 537.11,
+      "max_progress_separation_m": 616.38,
+      "distance_difference_km": -0.98,
+      "warning": "Progress-aligned separation is diagnostic only; it is not a final shared-corridor percentage."
+    }
+  ]
+}
