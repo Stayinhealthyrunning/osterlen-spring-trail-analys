@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "purpose": "Historical route-source inventory. These records are references and factual metadata; third-party GPX geometry is not automatically redistributed.",
+  "tracks": [
+    {"family":"ultra60","year":2018,"trace_id":43970,"url":"https://tracedetrail.fr/en/trace/43970","reported_distance_km":62.6,"status":"candidate_needs_direct_reverification"},
+    {"family":"ultra60","year":2019,"trace_id":69381,"url":"https://tracedetrail.fr/en/trace/69381","reported_distance_km":58.7,"reported_ascent_m":851,"reported_descent_m":736,"status":"verified_public_reference"},
+    {"family":"ultra60","year":2022,"trace_id":172147,"url":"https://tracedetrail.fr/en/trace/172147","reported_distance_km":58.5,"status":"candidate_needs_direct_reverification"},
+    {"family":"ultra60","year":2023,"trace_id":203147,"url":"https://tracedetrail.fr/en/trace/203147","title":"Österlen Ultra 60 km","date":"2023-04-15","creator":"ÖST","reported_distance_km":58.5,"reported_ascent_m":838,"reported_descent_m":721,"quality":"1pt/16m","status":"verified_public_reference"},
+    {"family":"ultra60","year":2024,"trace_id":251126,"url":"https://tracedetrail.fr/en/trace/251126","title":"Österlen Spring Trail 2024 - ÖST Ultra 60k with COROS","date":"2024-04-13","creator":"ÖST","reported_distance_km":60.7,"reported_ascent_m":693,"reported_descent_m":578,"quality":"1pt/18m","status":"verified_public_reference"},
+    {"family":"ultra60","year":2025,"trace_id":272846,"url":"https://tracedetrail.fr/en/trace/272846","title":"CRAFT Ultra 60 K","reported_distance_km":59.76,"status":"verified_public_reference"},
+    {"family":"ultra60","year":2026,"trace_id":322315,"url":"https://tracedetrail.fr/en/trace/322315","title":"CRAFT Ultra 60 K","creator":"ÖST","reported_distance_km":59.76,"reported_ascent_m":683,"reported_descent_m":567,"quality":"1pt/13m","status":"verified_public_reference"},
+    {"family":"trail22","year":2018,"trace_id":7897,"url":"https://tracedetrail.fr/en/trace/7897","reported_distance_km":21.7,"status":"candidate_needs_direct_reverification"},
+    {"family":"trail22","year":2019,"trace_id":69864,"url":"https://tracedetrail.fr/en/trace/69864","title":"Österlen Spring Trail 2019 - Verkeån Trail 21 km","reported_distance_km":21.8,"status":"verified_public_reference"},
+    {"family":"trail22","year":2022,"trace_id":165617,"url":"https://tracedetrail.fr/en/trace/165617","title":"Österlen Spring Trail 2022 - 21 km","reported_distance_km":21.8,"reported_ascent_m":329,"reported_descent_m":328,"status":"verified_public_reference"},
+    {"family":"trail22","year":2023,"trace_id":203146,"url":"https://tracedetrail.fr/en/trace/203146","reported_distance_km":21.8,"status":"verified_via_organizer_trace_listing"},
+    {"family":"trail22","year":2024,"trace_id":237224,"url":"https://tracedetrail.fr/en/trace/237224","title":"Österlen Spring Trail 2024 - Fogarolli trail 21k","reported_distance_km":21.8,"status":"verified_public_reference"},
+    {"family":"trail22","year":2025,"trace_id":280053,"url":"https://tracedetrail.fr/en/trace/280053","title":"Fogarolli trail 22 k","reported_distance_km":21.77,"status":"verified_public_reference"},
+    {"family":"trail22","year":2026,"trace_id":322314,"url":"https://tracedetrail.fr/en/trace/322314","title":"Fogarolli trail 22 k","reported_distance_km":21.77,"status":"verified_public_reference"}
+  ],
+  "notes": [
+    "Trace de Trail exposes a public GPX download control, but this repository does not automatically redistribute historical third-party GPX files until reuse/redistribution rights are clarified.",
+    "A public route page may still be used to verify factual metadata and to guide manual/authorized GPX acquisition.",
+    "The organizer-hosted 2024 and 2025/2026 Ultra GPX files in data/source/gpx/ are preferred over the corresponding third-party references."
+  ]
+}
