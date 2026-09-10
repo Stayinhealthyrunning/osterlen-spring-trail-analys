@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-09-10T09:16:22.981348+00:00",
+  "gpx_count": 2,
+  "error_count": 0,
+  "files": [
+    {
+      "path": "data/source/gpx/ultra60/ost-ultra60-2024-organizer.gpx",
+      "bytes": 295779,
+      "sha256": "34431f5dd4a57738e9057c864e8d209c6e054f4320f4750af1afbbcde0111a0a",
+      "points": 3258,
+      "computed_distance_km": 60.5979,
+      "start": {
+        "lat": 55.55673,
+        "lon": 14.35471
+      },
+      "finish": {
+        "lat": 55.71719,
+        "lon": 13.96052
+      },
+      "elevation_points": 2240,
+      "raw_gpx_ascent_m": 433.0,
+      "raw_gpx_descent_m": 395.0,
+      "elevation_warning": "Raw GPX ascent/descent is diagnostic only; not harmonized elevation for public cross-year comparison."
+    },
+    {
+      "path": "data/source/gpx/ultra60/ost-ultra60-2025-2026-organizer.gpx",
+      "bytes": 542655,
+      "sha256": "4c394db3079e1dad2da0ece555cb90abd50654c5adeeb05b1008fc389d22c5ab",
+      "points": 4246,
+      "computed_distance_km": 59.6214,
+      "start": {
+        "lat": 55.55903,
+        "lon": 14.35288
+      },
+      "finish": {
+        "lat": 55.71708,
+        "lon": 13.96056
+      },
+      "elevation_points": 4246,
+      "raw_gpx_ascent_m": 1058.0,
+      "raw_gpx_descent_m": 942.0,
+      "elevation_warning": "Raw GPX ascent/descent is diagnostic only; not harmonized elevation for public cross-year comparison."
+    }
+  ],
+  "errors": []
+}

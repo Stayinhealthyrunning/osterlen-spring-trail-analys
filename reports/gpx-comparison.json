@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-09-10T09:16:23.932670+00:00",
+  "method": {
+    "resample_step_m": 100.0,
+    "comparison": "symmetric nearest-route-point distance"
+  },
+  "comparisons": [
+    {
+      "a": "data/source/gpx/ultra60/ost-ultra60-2024-organizer.gpx",
+      "b": "data/source/gpx/ultra60/ost-ultra60-2025-2026-organizer.gpx",
+      "resample_step_m": 100.0,
+      "length_a_km": 60.5979,
+      "length_b_km": 59.6214,
+      "absolute_length_delta_km": 0.9765,
+      "start_separation_m": 280.5,
+      "finish_separation_m": 12.5,
+      "symmetric_nearest_distance_m": {
+        "median": 28.2,
+        "p95": 49.4,
+        "max": 280.5
+      },
+      "fraction_within_m": {
+        "10": 0.1278,
+        "25": 0.4407,
+        "50": 0.9568,
+        "100": 0.9892,
+        "250": 0.9983
+      },
+      "fingerprint_a": "baf2c94a187b7b55a1dc419d3333a30094858c2e08afec831e67949f23fdeb57",
+      "fingerprint_b": "4fb8ec99f4097feaa17faad3318a2e16552933aaf8132f5df50e4dcd8e1c94ad",
+      "identical_fingerprint": false,
+      "interpretation_hint": "high_overlap",
+      "warning": "Nearest-distance overlap is diagnostic. Course versions must still be explicitly reviewed/assigned."
+    }
+  ]
+}
