@@ -1,0 +1,19 @@
+{
+  "id": "osterlen-spring-trail",
+  "name": "Österlen Spring Trail",
+  "short_name": "ÖST",
+  "organizer": "ADP sport events AB",
+  "official_website": "https://www.osterlentrail.se/",
+  "analysis_start_year": 2018,
+  "timing_provider": "Sportstiming",
+  "result_source_of_record": "Sportstiming",
+  "held_years": [2018, 2019, 2022, 2023, 2024, 2025, 2026],
+  "cancelled_years": [2020, 2021],
+  "race_families": ["ultra60", "duo60", "trail22", "trail14", "trail5"],
+  "principles": [
+    "2018 is the first year in analysis scope.",
+    "Duo uses the same course geometry as Ultra 60 and is a relay format.",
+    "No course versions are considered equivalent until GPX geometry comparison has verified it.",
+    "No missing split, checkpoint or participant relation may be fabricated."
+  ]
+}
