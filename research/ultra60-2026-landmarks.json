@@ -1,0 +1,14 @@
+{
+  "family": "ultra60",
+  "year": 2026,
+  "status": "research_only_not_timing_checkpoints",
+  "source": "https://tracedetrail.fr/en/trace/322315",
+  "points": [
+    {"name":"Start Simrishamn","reported_distance_km":0.0},
+    {"name":"Solevi Idrottsplats / aid station 1","reported_distance_km":21.1},
+    {"name":"Bengtemölla / aid station 2 / Duo exchange","reported_distance_km":33.6},
+    {"name":"Vantalängan / aid station 3","reported_distance_km":51.4},
+    {"name":"Finish Christinehof","reported_distance_km":59.8}
+  ],
+  "warning": "These are route/aid-station landmarks, not assumed Sportstiming split locations. Timing checkpoints must be discovered independently."
+}
