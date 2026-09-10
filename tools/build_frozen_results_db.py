@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Build the frozen multi-year ÖST result archive from fetched Sportstiming snapshots.
 
-The SQLite database is intentionally source-rich: each family/year source snapshot
-is embedded verbatim as JSON, while normalized result/split tables make later
-analysis-engine integration cheap. The final database is gzip-compressed for the
-repository and accompanied by machine-readable/human-readable audit summaries.
+Each family/year source snapshot is embedded verbatim as JSON in SQLite, while
+normalized result/split tables make later analysis-engine integration cheap.
+The database is gzip-compressed for repository storage and audited by summaries.
 """
 from __future__ import annotations
 from pathlib import Path
@@ -65,11 +64,8 @@ def schema(con):
     CREATE INDEX idx_results_year_family ON results(year,race_family);
     CREATE INDEX idx_results_finish ON results(year,race_family,finish_seconds);
     CREATE INDEX idx_results_name ON results(name);
-    CREATE INDEX idx_splits_checkpoint ON splits(checkpoint_semantic_key,year) WHERE 0;
+    CREATE INDEX idx_splits_semantic ON splits(checkpoint_semantic_key);
     ''')
-    # SQLite cannot index a non-existing `year` column in splits; use useful real indexes instead.
-    con.execute('DROP INDEX IF EXISTS idx_splits_checkpoint')
-    con.execute('CREATE INDEX idx_splits_semantic ON splits(checkpoint_semantic_key)')
 
 def as_int_bool(v):
     if v is None:return None
@@ -99,16 +95,16 @@ def main():
             con.execute('INSERT INTO source_errors VALUES(?,?,?,?,?)',(year,family,str(e.get('sportstiming_result_id') or ''),str(e.get('error') or 'unknown'),json.dumps(e,ensure_ascii=False)))
         for r in norm.get('records',[]):
             uid=r['result_uid']; entity=r.get('entity_type') or ('team' if family=='duo60' else 'athlete')
-            con.execute('''INSERT INTO results VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',(
-              uid,year,family,event_id,distance_id,str(r.get('sportstiming_result_id') or ''),entity,r.get('name'),r.get('bib'),r.get('club'),r.get('country'),r.get('gender'),r.get('age'),
+            vals=(uid,year,family,event_id,distance_id,str(r.get('sportstiming_result_id') or ''),entity,r.get('name'),r.get('bib'),r.get('club'),r.get('country'),r.get('gender'),r.get('age'),
               r.get('age_category'),r.get('source_class'),r.get('status'),r.get('distance_km'),r.get('finish_seconds'),r.get('gross_seconds'),r.get('net_seconds') if r.get('net_seconds') is not None else r.get('finish_seconds'),
               r.get('overall_place'),r.get('overall_count'),r.get('gender_place'),r.get('gender_count'),r.get('class_place'),r.get('class_count'),
-              r.get('start_clock'),r.get('finish_clock'),r.get('date_source'),r.get('speed_source'),r.get('pace_source'),r.get('source_url'),r.get('source_sha256'),json.dumps(r,ensure_ascii=False,separators=(',',':'))))
+              r.get('start_clock'),r.get('finish_clock'),r.get('date_source'),r.get('speed_source'),r.get('pace_source'),r.get('source_url'),r.get('source_sha256'),json.dumps(r,ensure_ascii=False,separators=(',',':')))
+            con.execute('INSERT INTO results VALUES('+','.join('?' for _ in vals)+')',vals)
             for i,s in enumerate(r.get('splits',[]),1):
-                con.execute('''INSERT INTO splits VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',(
-                  uid,i,s.get('checkpoint_source_label'),s.get('checkpoint_key'),s.get('checkpoint_semantic_key'),s.get('canonical_landmark_key'),s.get('checkpoint_role'),as_int_bool(s.get('analysis_primary')),
+                vals=(uid,i,s.get('checkpoint_source_label'),s.get('checkpoint_key'),s.get('checkpoint_semantic_key'),s.get('canonical_landmark_key'),s.get('checkpoint_role'),as_int_bool(s.get('analysis_primary')),
                   s.get('reported_checkpoint_distance_km'),s.get('segment_distance_km'),s.get('segment_seconds'),s.get('segment_place_overall'),s.get('segment_place_gender'),s.get('segment_place_class'),s.get('segment_pace_source'),
-                  s.get('elapsed_seconds'),s.get('place_overall'),s.get('place_gender'),s.get('place_class'),s.get('clock_time'),json.dumps(s,ensure_ascii=False,separators=(',',':'))))
+                  s.get('elapsed_seconds'),s.get('place_overall'),s.get('place_gender'),s.get('place_class'),s.get('clock_time'),json.dumps(s,ensure_ascii=False,separators=(',',':')))
+                con.execute('INSERT INTO splits VALUES('+','.join('?' for _ in vals)+')',vals)
             for m in r.get('derived_checkpoint_metrics',[]):
                 if not m.get('metric_key'): continue
                 con.execute('INSERT OR REPLACE INTO derived_metrics VALUES(?,?,?,?,?,?,?,?)',(
@@ -123,9 +119,8 @@ def main():
     con.execute('VACUUM'); con.close()
     if integrity!='ok': raise SystemExit(f'SQLite integrity_check failed: {integrity}')
     if total_errors: raise SystemExit(f'Archive contains {total_errors} source errors; refusing to freeze incomplete database')
-    if any(x['discovered']<=0 or x['normalized']!=x['discovered'] for x in coverage):
-        bad=[x for x in coverage if x['discovered']<=0 or x['normalized']!=x['discovered']]
-        raise SystemExit(f'Incomplete class coverage: {bad}')
+    bad=[x for x in coverage if x['discovered']<=0 or x['normalized']!=x['discovered']]
+    if bad: raise SystemExit(f'Incomplete class coverage: {bad}')
 
     gz=out.with_suffix(out.suffix+'.gz')
     with out.open('rb') as srcf, gz.open('wb') as rawgz:
