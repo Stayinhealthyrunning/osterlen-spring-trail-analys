@@ -244,7 +244,16 @@ def main():
   status_counts=Counter();status_promotions=Counter();individual_split_count=0;duo_split_count=0;member_count=0;service_metrics=0
   for rr in src.execute('SELECT * FROM results ORDER BY year,race_family,result_uid'):
    y=int(rr['year']);fam=rr['race_family'];race_key=race_lookup[(y,fam)];rid=str(rr['source_result_id']);norm=json.loads(rr['normalized_json']);srec=source_records.get((y,fam,rid),{})
-   bib=rr['bib'] or list_value(srec,'Startnummer') or list_value(srec,'Startnr') or list_value(srec,'Startnummer.')
+   bib=rr['bib'] or list_value(srec,'Startnummer') or list_value(srec,'Startnr') or list_value(srec,'Startnr.') or list_value(srec,'Startnummer.')
+   category=list_value(srec,'Kategori')
+   sex=rr['gender'];age_category=rr['age_category']
+   if rr['entity_type']=='athlete' and category:
+    cm=re.fullmatch(r'([FM])(\d{1,2}-\d{1,2})',category)
+    if cm:
+     if not sex:sex=cm.group(1)
+     if not age_category:age_category=category
+   club=rr['club'] or list_value(srec,'Klubb/Firma/Sponsor')
+   country=rr['country'] or list_value(srec,'Land')
    status=rr['status'];status_source='frozen_normalized';status_evidence=None
    if status=='UNKNOWN':
     source_detail=norm.get('raw_tables',norm.get('raw_record',{}).get('tables',[]));explicit=explicit_status(source_detail,srec.get('list_row',[]))
@@ -254,12 +263,12 @@ def main():
    uid=rr['result_uid'];entity=rr['entity_type'];participant_uid=None;team_uid=None
    if entity=='athlete':
     participant_uid='p:'+uid
-    dst.execute('INSERT INTO participants VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)',(participant_uid,race_key,rid,bib,rr['name'],rr['gender'],rr['age'],None,rr['age_category'],rr['club'],rr['country'],'race_result','source_local'))
+    dst.execute('INSERT INTO participants VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)',(participant_uid,race_key,rid,bib,rr['name'],sex,rr['age'],None,age_category,club,country,'race_result','source_local'))
    else:
     team_uid='team:'+uid
-    dst.execute('INSERT INTO relay_teams VALUES(?,?,?,?,?,?)',(team_uid,race_key,rid,bib,rr['name'],rr['source_class']))
+    dst.execute('INSERT INTO relay_teams VALUES(?,?,?,?,?,?)',(team_uid,race_key,rid,bib,rr['name'],category or rr['source_class']))
    dst.execute('''INSERT INTO results VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',(
-    uid,race_key,y,fam,rid,entity,participant_uid,team_uid,bib,rr['name'],rr['gender'],rr['age'],rr['age_category'],rr['club'],rr['country'],rr['source_class'],status,status_source,status_evidence,
+    uid,race_key,y,fam,rid,entity,participant_uid,team_uid,bib,rr['name'],sex,rr['age'],age_category,club,country,category or rr['source_class'],status,status_source,status_evidence,
     rr['finish_seconds'],rr['gross_seconds'],rr['net_seconds'],rr['overall_place'],rr['gender_place'],rr['class_place'],rr['start_clock'],rr['finish_clock'],rr['date_source'],rr['pace_source'],rr['speed_source'],rr['source_url'],rr['source_sha256'],rr['normalized_json']))
 
    splits=[]
