@@ -1,0 +1,49 @@
+{
+  "ultra60": {
+    "type": "individual",
+    "canonical_label": "Ultra 60",
+    "nominal_distance_km": 60,
+    "first_year_in_scope": 2018,
+    "years": [2018, 2019, 2022, 2023, 2024, 2025, 2026],
+    "historical_nominal_labels": {"2018":"60 km","2019":"60 km","2022":"60 km","2023":"60 km","2024":"60 km","2025":"60 km","2026":"60 km"},
+    "course_version_policy": "unassigned_until_geometry_comparison"
+  },
+  "duo60": {
+    "type": "relay",
+    "canonical_label": "Duo 60",
+    "nominal_distance_km": 60,
+    "first_year_in_scope": 2019,
+    "years": [2019, 2022, 2023, 2024, 2025, 2026],
+    "route_family_ref": "ultra60",
+    "legs": 2,
+    "exchange_location": "Bengtemölla",
+    "note": "Uses the same full route as Ultra 60. Leg lengths vary with the actual exchange-point position; do not hard-code 30+30 km."
+  },
+  "trail22": {
+    "type": "individual",
+    "canonical_label": "Trail 21/22",
+    "nominal_distance_km": 22,
+    "first_year_in_scope": 2018,
+    "years": [2018, 2019, 2022, 2023, 2024, 2025, 2026],
+    "historical_nominal_labels": {"2018":"21 km","2019":"21 km","2022":"21 km","2023":"21 km","2024":"21 km","2025":"22 km","2026":"22 km"},
+    "course_version_policy": "unassigned_until_geometry_comparison"
+  },
+  "trail14": {
+    "type": "individual",
+    "canonical_label": "Trail 13/14",
+    "nominal_distance_km": 14,
+    "first_year_in_scope": 2018,
+    "years": [2018, 2019, 2022, 2023, 2024, 2025, 2026],
+    "historical_nominal_labels": {"2018":"13 km","2019":"13 km","2022":"13 km","2023":"13 km","2024":"14 km","2025":"14 km","2026":"14 km"},
+    "course_version_policy": "unassigned_until_geometry_comparison"
+  },
+  "trail5": {
+    "type": "individual",
+    "canonical_label": "Trail 5",
+    "nominal_distance_km": 5,
+    "first_year_in_scope": 2018,
+    "years": [2018, 2019, 2022, 2023, 2024, 2025, 2026],
+    "historical_nominal_labels": {"2018":"5 km","2019":"5 km","2022":"5 km","2023":"5 km","2024":"5 km","2025":"5 km","2026":"5 km"},
+    "course_version_policy": "unassigned_until_geometry_comparison"
+  }
+}
