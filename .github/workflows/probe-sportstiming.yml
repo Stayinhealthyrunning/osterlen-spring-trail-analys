@@ -1,0 +1,39 @@
+name: Probe Sportstiming public surface
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/probe_sportstiming_public.py'
+      - '.github/workflows/probe-sportstiming.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Probe unauthenticated public surface
+        run: python tools/probe_sportstiming_public.py
+
+      - name: Commit probe report
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/sportstiming-public-probe.json
+          if git diff --cached --quiet; then
+            echo 'No probe report changes to commit.'
+          else
+            git commit -m 'Record Sportstiming public endpoint probe'
+            git push
+          fi
