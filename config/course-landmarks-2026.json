@@ -1,0 +1,49 @@
+{
+  "year": 2026,
+  "warning": "Route/aid-station landmarks are not assumed to be Sportstiming timing checkpoints. Timing points must be verified separately.",
+  "ultra60": {
+    "source": "https://tracedetrail.fr/en/trace/322315",
+    "start": {"name": "Simrishamn", "distance_km": 0.0, "start_time": "10:00"},
+    "landmarks": [
+      {"name": "Privatmark / odlingsmark", "distance_km": 9.6, "role": "information"},
+      {"name": "End of private ground", "distance_km": 11.7, "role": "information"},
+      {"name": "Cut-off + minibus", "distance_km": 15.3, "role": "cutoff", "cutoff_time": "12:45"},
+      {"name": "Road crossing / Danger", "distance_km": 20.2, "role": "safety"},
+      {"name": "Solevi Idrottsplats", "distance_km": 21.1, "role": "aid_station", "aid_station_no": 1},
+      {"name": "No marking", "distance_km": 24.6, "role": "information"},
+      {"name": "End of nature reserve / DNF minibus", "distance_km": 27.7, "role": "dnf_pickup"},
+      {"name": "Bengtemölla", "distance_km": 33.6, "role": "aid_station_exchange", "aid_station_no": 2},
+      {"name": "Minibus", "distance_km": 39.1, "role": "dnf_pickup"},
+      {"name": "Cut-off", "distance_km": 42.6, "role": "cutoff", "cutoff_time": "16:15"},
+      {"name": "Minibus", "distance_km": 47.3, "role": "dnf_pickup"},
+      {"name": "Minibus", "distance_km": 51.0, "role": "dnf_pickup"},
+      {"name": "Vantalängan", "distance_km": 51.4, "role": "aid_station", "aid_station_no": 3},
+      {"name": "Minibus", "distance_km": 55.1, "role": "dnf_pickup"},
+      {"name": "Ambulance + paramedics", "distance_km": 59.6, "role": "medical"}
+    ],
+    "finish": {"name": "Christinehof", "distance_km": 59.8}
+  },
+  "duo60": {
+    "route_ref": "ultra60",
+    "exchange": {"name": "Bengtemölla", "distance_km": 33.6},
+    "note": "The marketed leg split is approximate; use the actual exchange-point distance on the year's Ultra geometry."
+  },
+  "trail22": {
+    "source": "https://www.osterlentrail.se/race-pm-22km.html",
+    "start_finish": "Christinehof",
+    "start_time": "11:00",
+    "course_shape": "figure-eight",
+    "midpoint": "Hallamölla",
+    "aid_stations": [{"name": "Vantalängan", "reported_distance_km": 13.0}]
+  },
+  "trail14": {
+    "source": "https://www.osterlentrail.se/race-pm-14km.html",
+    "start_finish": "Christinehof",
+    "note": "Current official race-PM source retained; exact GPX geometry still to be archived."
+  },
+  "trail5": {
+    "source": "https://www.osterlentrail.se/race-pm-5km.html",
+    "start_finish": "Christinehof",
+    "note": "Current official race-PM source retained; exact GPX geometry still to be archived."
+  }
+}
