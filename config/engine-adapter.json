@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "status": "pre_engine_handoff_contract",
+  "target": {
+    "reference_repository": "Stayinhealthyrunning/gotaleden-splits",
+    "reference_frontend_adapter": "docs/assets/data-adapter.js",
+    "strategy": "Reuse the generalized analysis engine after the Gotaleden refactor is finished; keep ÖST event-specific acquisition and normalization in this repository."
+  },
+  "invariants": [
+    "Never fabricate checkpoint passages, status, rank, route geometry or relay structure.",
+    "Keep raw source identifiers and labels alongside semantic normalization.",
+    "A race family is not a course version. Cross-year course comparison is gated by verified geometry evidence.",
+    "Trace de Trail public geometry diagnostics may establish comparability but are not automatically redistributed as route assets.",
+    "Duo inherits the same-year Ultra route/course version, but team/member result parsing is handled by a dedicated relay adapter.",
+    "Bengtemölla is the canonical named checkpoint for 2022/2023. The preceding 32 km observation remains a separate approach/prewarning candidate.",
+    "Feature availability is data-driven through data/derived/analysis-capabilities.json."
+  ],
+  "source_inputs": {
+    "curated_race_catalog": "config/race-catalog.json",
+    "derived_race_catalog": "data/derived/race-catalog-enriched.json",
+    "course_versions": "config/course-versions.json",
+    "checkpoint_semantics": "config/checkpoint-normalization.json",
+    "feature_policy": "config/analysis-feature-policy.json",
+    "feature_matrix": "data/derived/analysis-capabilities.json",
+    "sportstiming_events": "data/source/sportstiming/events.json",
+    "sportstiming_classes": "data/source/sportstiming/class-catalog.json",
+    "sportstiming_split_inventory": "data/source/sportstiming/split-inventory.json",
+    "route_source_manifest": "config/course-source-manifest.json",
+    "public_geometry_diagnostics": "reports/tracedetrail-public-geometry-analysis.json",
+    "local_route_assets_root": "data/source/gpx"
+  },
+  "target_results_payload": {
+    "required_top_level_keys": ["race_catalog", "courses", "races", "checkpoints", "teams", "splits"],
+    "race_catalog": {
+      "key": "race_key",
+      "purpose": "Display/source metadata for each race-year instance."
+    },
+    "courses": {
+      "key": "course_version",
+      "required_fields": ["event_key", "checkpoint_catalog", "assets"],
+      "optional_fields": ["whole_course_comparison_group", "official_elevation_gain_m", "official_elevation_loss_m"],
+      "rule": "Only expose a route asset when a locally usable route source exists. Geometry-comparison evidence alone does not satisfy this requirement."
+    },
+    "races": {
+      "key": "race_key",
+      "required_fields": ["event_key", "race_family", "year", "race_date", "course_version", "data_status", "section", "type", "nominal_distance_km", "gpx_distance_km", "records"],
+      "type_values": ["individual", "relay"],
+      "rule": "course_version may be null while historical geometry remains unresolved; frontend features requiring route data must then be disabled."
+    },
+    "checkpoints": {
+      "keyed_by": "race_key",
+      "required_fields": ["key", "name", "route_distance_km", "race_distance_km", "analysis_boundary", "replay_anchor"],
+      "recommended_fields": ["source_point_name", "source_label", "semantic_key", "mapping_confidence", "role"],
+      "rule": "Keep non-primary timing observations in provenance/source data even when analysis_boundary=false."
+    },
+    "records": {
+      "required_fields": ["bib", "status", "finish_seconds"],
+      "recommended_fields": ["name", "club", "gender", "age", "age_category", "class_name", "overall_place", "class_place", "gender_place", "person_key", "identity_status", "identity_scope"],
+      "status_values": ["FINISHED", "DNF", "DNS", "DSQ", "UNKNOWN"]
+    },
+    "splits": {
+      "required_fields": ["race_key", "bib", "checkpoint", "elapsed_seconds"],
+      "recommended_fields": ["place_overall", "place_class", "place_gender", "split_place_overall", "split_seconds", "split_speed_kmh", "split_pace_min_per_km", "cumulative_speed_kmh", "cumulative_pace_min_per_km", "source_point_name"],
+      "rule": "Only published/observed passages are emitted. No interpolation belongs in the source split table; interpolation happens in the frontend replay model."
+    },
+    "teams": {
+      "required_for": ["duo60"],
+      "rule": "Do not emit synthetic team-member structures before Sportstiming Duo parsing is verified."
+    }
+  },
+  "route_bundle_contract": {
+    "keyed_by": "course_version",
+    "route": {
+      "required_fields": ["points", "full_distance_km"],
+      "point_shape": "[lat, lon, optional elevation, route_distance_km]"
+    },
+    "elevation": {
+      "accepted_fields": ["profile", "points"],
+      "point_required_fields": ["route_distance_km"],
+      "rule": "Use one common smoothing/resampling method for cross-year D+/profile comparisons; raw dense barometric sums are not authoritative."
+    }
+  },
+  "checkpoint_policy": {
+    "ultra60": {
+      "2018_2019": ["start", "stenshuvud", "bengtemolla", "vantalangan", "finish"],
+      "2022_2023_source_order": ["start", "bengtemolla_approach", "bengtemolla", "finish"],
+      "2022_2023_analysis_primary": ["start", "bengtemolla", "finish"],
+      "2024_2026": ["start", "bengtemolla", "finish"]
+    },
+    "duo60": {
+      "exchange_semantic_key": "bengtemolla",
+      "route_source_family": "ultra60"
+    }
+  },
+  "feature_gating": {
+    "source": "data/derived/analysis-capabilities.json",
+    "frontend_rule": "Hide or explain unavailable features instead of rendering empty/fictional analyses.",
+    "known_current_pattern": {
+      "ultra60": "Finish/result analysis source-ready for all held years; advanced split analysis exists for all held years; replay/map features additionally require a usable local route asset.",
+      "duo60": "Finish class exists, route inherited from Ultra; dedicated team/relay parsing is still required.",
+      "trail22_trail14_trail5": "Finish/result analysis is source-ready; sampled Sportstiming result details do not currently expose intermediate split tables, so replay/split features stay off unless stronger source evidence is later found."
+    }
+  },
+  "identity_policy": {
+    "default": "Do not infer stable cross-year identity from names alone without an explicit matching methodology and confidence field.",
+    "repeat_runner_analysis": "May use a separately documented probabilistic/normalized-name linkage layer, never overwrite source identity."
+  }
+}
