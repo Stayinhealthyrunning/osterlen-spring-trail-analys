@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "years": {
+    "2019": {
+      "teams": 64,
+      "member_count_2": 63,
+      "two_members": 63,
+      "member_count_3": 1
+    },
+    "2022": {
+      "teams": 43,
+      "member_count_2": 43,
+      "two_members": 43,
+      "teams_with_linked_member": 1,
+      "two_members_with_both_times": 1,
+      "member_time_sum_comparable": 1,
+      "two_members_with_both_clocks": 1,
+      "second_clock_vs_team_finish_comparable": 1,
+      "second_clock_matches_team_finish_le_2s": 1,
+      "first_clock_vs_exchange_comparable": 1
+    },
+    "2023": {
+      "teams": 48,
+      "member_count_2": 48,
+      "two_members": 48
+    },
+    "2024": {
+      "teams": 46,
+      "member_count_2": 45,
+      "two_members": 45,
+      "member_count_0": 1
+    },
+    "2025": {
+      "teams": 47,
+      "member_count_2": 47,
+      "two_members": 47,
+      "teams_with_linked_member": 42,
+      "two_members_with_both_times": 8,
+      "member_time_sum_comparable": 8,
+      "two_members_with_both_clocks": 8,
+      "second_clock_vs_team_finish_comparable": 8,
+      "second_clock_matches_team_finish_le_2s": 5,
+      "first_clock_vs_exchange_comparable": 8,
+      "member_clocks_in_source_order": 3
+    },
+    "2026": {
+      "teams": 52,
+      "member_count_2": 52,
+      "two_members": 52
+    }
+  },
+  "totals": {
+    "teams": 300,
+    "member_count_2": 298,
+    "two_members": 298,
+    "member_count_3": 1,
+    "teams_with_linked_member": 43,
+    "two_members_with_both_times": 9,
+    "member_time_sum_comparable": 9,
+    "two_members_with_both_clocks": 9,
+    "second_clock_vs_team_finish_comparable": 9,
+    "second_clock_matches_team_finish_le_2s": 6,
+    "first_clock_vs_exchange_comparable": 9,
+    "member_count_0": 1,
+    "member_clocks_in_source_order": 3
+  },
+  "evidence_rates": {
+    "two_member_coverage_pct": 99.33,
+    "member_time_sum_matches_team_le_2s_pct": 0.0,
+    "first_member_clock_matches_exchange_le_2s_pct": 0.0,
+    "second_member_clock_matches_team_finish_le_2s_pct": 66.67,
+    "member_clocks_in_source_order_pct": 33.33
+  },
+  "interpretation": {
+    "member_rows_verified_as_public_team_member_rows": true,
+    "leg_order_can_be_assigned_when_two_rows_present": false,
+    "rule": "Only assign leg_no from row order if aggregate timing evidence validates row 1 as exchange and row 2 as final finisher. Otherwise retain source sequence without inventing a leg number."
+  }
+}
