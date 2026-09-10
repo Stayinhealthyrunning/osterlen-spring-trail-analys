@@ -1,0 +1,584 @@
+{
+  "generated_at": "2026-09-10T09:26:44.629314+00:00",
+  "rows": [
+    {
+      "year": 2018,
+      "family": "ultra60",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 4950,
+      "route_reference_count": 1,
+      "trace_ids": [
+        43970
+      ],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "reference_only",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2018,
+      "family": "duo60",
+      "race_expected": false,
+      "official_result_event": false,
+      "sportstiming_event_id": null,
+      "route_reference_count": 0,
+      "trace_ids": [],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "not_applicable",
+      "timing_split_status": "not_applicable"
+    },
+    {
+      "year": 2018,
+      "family": "trail22",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 4950,
+      "route_reference_count": 1,
+      "trace_ids": [
+        7897
+      ],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "reference_only",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2018,
+      "family": "trail14",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 4950,
+      "route_reference_count": 0,
+      "trace_ids": [],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "missing",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2018,
+      "family": "trail5",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 4950,
+      "route_reference_count": 0,
+      "trace_ids": [],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "missing",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2019,
+      "family": "ultra60",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 5719,
+      "route_reference_count": 1,
+      "trace_ids": [
+        69381
+      ],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "reference_only",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2019,
+      "family": "duo60",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 5719,
+      "route_reference_count": 1,
+      "trace_ids": [
+        69381
+      ],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "via_same_year_ultra60",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2019,
+      "family": "trail22",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 5719,
+      "route_reference_count": 1,
+      "trace_ids": [
+        69864
+      ],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 1,
+      "map_paths": [
+        "data/source/maps/ost-trail21-2019-organizer-map.pdf"
+      ],
+      "route_geometry_status": "reference_only",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2019,
+      "family": "trail14",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 5719,
+      "route_reference_count": 0,
+      "trace_ids": [],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "missing",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2019,
+      "family": "trail5",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 5719,
+      "route_reference_count": 0,
+      "trace_ids": [],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "missing",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2022,
+      "family": "ultra60",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 9587,
+      "route_reference_count": 1,
+      "trace_ids": [
+        172147
+      ],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "reference_only",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2022,
+      "family": "duo60",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 9587,
+      "route_reference_count": 1,
+      "trace_ids": [
+        172147
+      ],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "via_same_year_ultra60",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2022,
+      "family": "trail22",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 9587,
+      "route_reference_count": 1,
+      "trace_ids": [
+        165617
+      ],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "reference_only",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2022,
+      "family": "trail14",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 9587,
+      "route_reference_count": 0,
+      "trace_ids": [],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "missing",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2022,
+      "family": "trail5",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 9587,
+      "route_reference_count": 0,
+      "trace_ids": [],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "missing",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2023,
+      "family": "ultra60",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 11274,
+      "route_reference_count": 1,
+      "trace_ids": [
+        203147
+      ],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "reference_only",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2023,
+      "family": "duo60",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 11274,
+      "route_reference_count": 1,
+      "trace_ids": [
+        203147
+      ],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "via_same_year_ultra60",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2023,
+      "family": "trail22",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 11274,
+      "route_reference_count": 1,
+      "trace_ids": [
+        203146
+      ],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "reference_only",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2023,
+      "family": "trail14",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 11274,
+      "route_reference_count": 0,
+      "trace_ids": [],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "missing",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2023,
+      "family": "trail5",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 11274,
+      "route_reference_count": 0,
+      "trace_ids": [],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "missing",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2024,
+      "family": "ultra60",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 12349,
+      "route_reference_count": 1,
+      "trace_ids": [
+        251126
+      ],
+      "actual_gpx_count": 1,
+      "actual_gpx_paths": [
+        "data/source/gpx/ultra60/ost-ultra60-2024-organizer.gpx"
+      ],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "archived",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2024,
+      "family": "duo60",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 12349,
+      "route_reference_count": 1,
+      "trace_ids": [
+        251126
+      ],
+      "actual_gpx_count": 1,
+      "actual_gpx_paths": [
+        "data/source/gpx/ultra60/ost-ultra60-2024-organizer.gpx"
+      ],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "via_same_year_ultra60",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2024,
+      "family": "trail22",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 12349,
+      "route_reference_count": 1,
+      "trace_ids": [
+        237224
+      ],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "reference_only",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2024,
+      "family": "trail14",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 12349,
+      "route_reference_count": 0,
+      "trace_ids": [],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "missing",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2024,
+      "family": "trail5",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 12349,
+      "route_reference_count": 0,
+      "trace_ids": [],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "missing",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2025,
+      "family": "ultra60",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 15015,
+      "route_reference_count": 1,
+      "trace_ids": [
+        272846
+      ],
+      "actual_gpx_count": 1,
+      "actual_gpx_paths": [
+        "data/source/gpx/ultra60/ost-ultra60-2025-2026-organizer.gpx"
+      ],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "archived",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2025,
+      "family": "duo60",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 15015,
+      "route_reference_count": 1,
+      "trace_ids": [
+        272846
+      ],
+      "actual_gpx_count": 1,
+      "actual_gpx_paths": [
+        "data/source/gpx/ultra60/ost-ultra60-2025-2026-organizer.gpx"
+      ],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "via_same_year_ultra60",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2025,
+      "family": "trail22",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 15015,
+      "route_reference_count": 1,
+      "trace_ids": [
+        280053
+      ],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "reference_only",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2025,
+      "family": "trail14",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 15015,
+      "route_reference_count": 0,
+      "trace_ids": [],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "missing",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2025,
+      "family": "trail5",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 15015,
+      "route_reference_count": 0,
+      "trace_ids": [],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "missing",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2026,
+      "family": "ultra60",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 16880,
+      "route_reference_count": 1,
+      "trace_ids": [
+        322315
+      ],
+      "actual_gpx_count": 1,
+      "actual_gpx_paths": [
+        "data/source/gpx/ultra60/ost-ultra60-2025-2026-organizer.gpx"
+      ],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "archived",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2026,
+      "family": "duo60",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 16880,
+      "route_reference_count": 1,
+      "trace_ids": [
+        322315
+      ],
+      "actual_gpx_count": 1,
+      "actual_gpx_paths": [
+        "data/source/gpx/ultra60/ost-ultra60-2025-2026-organizer.gpx"
+      ],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "via_same_year_ultra60",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2026,
+      "family": "trail22",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 16880,
+      "route_reference_count": 1,
+      "trace_ids": [
+        322314
+      ],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "reference_only",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2026,
+      "family": "trail14",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 16880,
+      "route_reference_count": 0,
+      "trace_ids": [],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "missing",
+      "timing_split_status": "unknown"
+    },
+    {
+      "year": 2026,
+      "family": "trail5",
+      "race_expected": true,
+      "official_result_event": true,
+      "sportstiming_event_id": 16880,
+      "route_reference_count": 0,
+      "trace_ids": [],
+      "actual_gpx_count": 0,
+      "actual_gpx_paths": [],
+      "actual_map_count": 0,
+      "map_paths": [],
+      "route_geometry_status": "missing",
+      "timing_split_status": "unknown"
+    }
+  ]
+}
