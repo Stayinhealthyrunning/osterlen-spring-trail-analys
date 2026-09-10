@@ -7,7 +7,9 @@ on:
     paths:
       - 'tools/discover_tracedetrail_public.py'
       - 'tools/inspect_tracedetrail_datatrace.py'
+      - 'tools/analyze_tracedetrail_public_geometry.py'
       - 'config/course-source-manifest.json'
+      - 'data/source/tracedetrail/waypoints.json'
       - '.github/workflows/discover-tracedetrail.yml'
 
 permissions:
@@ -27,15 +29,17 @@ jobs:
         run: python tools/discover_tracedetrail_public.py
       - name: Inventory public dataTrace properties
         run: python tools/inspect_tracedetrail_datatrace.py
+      - name: Analyze public route geometry transiently
+        run: python tools/analyze_tracedetrail_public_geometry.py
       - name: Commit discovery data
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add reports/tracedetrail-public-discovery.json reports/tracedetrail-datatrace-structure.json reports/tracedetrail-datatrace-structure.md data/source/tracedetrail/waypoints.json data/source/tracedetrail/trace-payload-summary.json
+          git add reports/tracedetrail-public-discovery.json reports/tracedetrail-datatrace-structure.json reports/tracedetrail-datatrace-structure.md reports/tracedetrail-public-geometry-analysis.json reports/tracedetrail-public-geometry-analysis.md data/source/tracedetrail/waypoints.json data/source/tracedetrail/trace-payload-summary.json
           if git diff --cached --quiet; then
             echo 'No changes.'
           else
-            git commit -m 'Record Trace de Trail public route metadata'
+            git commit -m 'Record Trace de Trail public route metadata and geometry diagnostics'
             git pull --rebase origin main
             git push origin HEAD:main
           fi
