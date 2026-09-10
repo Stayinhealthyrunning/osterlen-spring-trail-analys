@@ -8,91 +8,152 @@
       "forms": [],
       "selects": [
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectDistance"
+          },
           "options": [
             {
               "value": "15266",
+              "attrs": {
+                "value": "15266"
+              },
               "text": "Simris Alg Ultra 60km+ (ca. 1150m höjdmeter)"
             },
             {
               "value": "15268",
+              "attrs": {
+                "value": "15268"
+              },
               "text": "Verkeån trail 21km+ (ca. 500m höjdmeter)"
             },
             {
               "value": "15265",
+              "attrs": {
+                "value": "15265"
+              },
               "text": "Naturloppet 5km+"
             },
             {
               "value": "15269",
+              "attrs": {
+                "selected": "selected",
+                "value": "15269"
+              },
               "text": "Ekopark trail 13 km"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectGender"
+          },
           "options": [
             {
               "value": "A",
+              "attrs": {
+                "value": "A"
+              },
               "text": "Män/Kvinnor"
             },
             {
               "value": "M",
+              "attrs": {
+                "value": "M"
+              },
               "text": "Män"
             },
             {
               "value": "F",
+              "attrs": {
+                "value": "F"
+              },
               "text": "Kvinnor"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectCountry"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "value": "all"
+              },
               "text": "Alla länder"
             },
             {
               "value": "14",
+              "attrs": {
+                "value": "14"
+              },
               "text": "Belgien"
             },
             {
               "value": "37",
+              "attrs": {
+                "value": "37"
+              },
               "text": "Danmark"
             },
             {
               "value": "52",
+              "attrs": {
+                "value": "52"
+              },
               "text": "Finland"
             },
             {
               "value": "53",
+              "attrs": {
+                "value": "53"
+              },
               "text": "Frankrig"
             },
             {
               "value": "77",
+              "attrs": {
+                "value": "77"
+              },
               "text": "Italien"
             },
             {
               "value": "128",
+              "attrs": {
+                "value": "128"
+              },
               "text": "Norge"
             },
             {
               "value": "198",
+              "attrs": {
+                "value": "198"
+              },
               "text": "Storbritannien"
             },
             {
               "value": "161",
+              "attrs": {
+                "value": "161"
+              },
               "text": "Sverige"
             },
             {
               "value": "999",
+              "attrs": {
+                "value": "999"
+              },
               "text": "Ukendt land"
             },
             {
               "value": "185",
+              "attrs": {
+                "value": "185"
+              },
               "text": "USA"
             }
           ]
@@ -158,6 +219,32 @@
         "/event/4950/app/results?page=3",
         "/event/4950/app/results?page=8"
       ],
+      "link_patterns": [
+        {
+          "pattern": "/event/4950/app/results/{result_id}",
+          "count": 50
+        },
+        {
+          "pattern": "/event/4950/app/results?page={page}",
+          "count": 4
+        },
+        {
+          "pattern": "/event/4950/app",
+          "count": 1
+        },
+        {
+          "pattern": "/event/4950/app/participants",
+          "count": 1
+        },
+        {
+          "pattern": "/event/4950/app/results",
+          "count": 1
+        },
+        {
+          "pattern": "/event/4950/app/tracking",
+          "count": 1
+        }
+      ],
       "structural_attributes": [
         "data-bs-target=",
         "data-bs-toggle=",
@@ -194,111 +281,187 @@
       "forms": [],
       "selects": [
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectDistance"
+          },
           "options": [
             {
               "value": "20385",
+              "attrs": {
+                "value": "20385"
+              },
               "text": "Simris Alg Ultra 60km+ (ca. 1450m höjdmeter)"
             },
             {
               "value": "20387",
+              "attrs": {
+                "value": "20387"
+              },
               "text": "Verkeån trail 21km+"
             },
             {
               "value": "20390",
+              "attrs": {
+                "value": "20390"
+              },
               "text": "Duo Trail (relay 2 x 30 km)"
             },
             {
               "value": "20384",
+              "attrs": {
+                "value": "20384"
+              },
               "text": "Naturloppet 5km+"
             },
             {
               "value": "20388",
+              "attrs": {
+                "selected": "selected",
+                "value": "20388"
+              },
               "text": "Ekopark trail 13 km"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectGender"
+          },
           "options": [
             {
               "value": "A",
+              "attrs": {
+                "value": "A"
+              },
               "text": "Män/Kvinnor"
             },
             {
               "value": "M",
+              "attrs": {
+                "value": "M"
+              },
               "text": "Män"
             },
             {
               "value": "F",
+              "attrs": {
+                "value": "F"
+              },
               "text": "Kvinnor"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectCountry"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "value": "all"
+              },
               "text": "Alla länder"
             },
             {
               "value": "37",
+              "attrs": {
+                "value": "37"
+              },
               "text": "Danmark"
             },
             {
               "value": "45",
+              "attrs": {
+                "value": "45"
+              },
               "text": "England"
             },
             {
               "value": "52",
+              "attrs": {
+                "value": "52"
+              },
               "text": "Finland"
             },
             {
               "value": "53",
+              "attrs": {
+                "value": "53"
+              },
               "text": "Frankrig"
             },
             {
               "value": "74",
+              "attrs": {
+                "value": "74"
+              },
               "text": "Irland"
             },
             {
               "value": "102",
+              "attrs": {
+                "value": "102"
+              },
               "text": "Malaysia"
             },
             {
               "value": "128",
+              "attrs": {
+                "value": "128"
+              },
               "text": "Norge"
             },
             {
               "value": "147",
+              "attrs": {
+                "value": "147"
+              },
               "text": "Schweiz"
             },
             {
               "value": "157",
+              "attrs": {
+                "value": "157"
+              },
               "text": "Spanien"
             },
             {
               "value": "198",
+              "attrs": {
+                "value": "198"
+              },
               "text": "Storbritannien"
             },
             {
               "value": "161",
+              "attrs": {
+                "value": "161"
+              },
               "text": "Sverige"
             },
             {
               "value": "164",
+              "attrs": {
+                "value": "164"
+              },
               "text": "Sydkorea"
             },
             {
               "value": "179",
+              "attrs": {
+                "value": "179"
+              },
               "text": "Tyskland"
             },
             {
               "value": "999",
+              "attrs": {
+                "value": "999"
+              },
               "text": "Ukendt land"
             }
           ]
@@ -365,6 +528,36 @@
         "/event/5719/app/results?page=3",
         "/event/5719/app/results?page=9"
       ],
+      "link_patterns": [
+        {
+          "pattern": "/event/5719/app/results/{result_id}",
+          "count": 50
+        },
+        {
+          "pattern": "/event/5719/app/results?page={page}",
+          "count": 4
+        },
+        {
+          "pattern": "/event/5719/app",
+          "count": 1
+        },
+        {
+          "pattern": "/event/5719/app/participants",
+          "count": 1
+        },
+        {
+          "pattern": "/event/5719/app/points",
+          "count": 1
+        },
+        {
+          "pattern": "/event/5719/app/results",
+          "count": 1
+        },
+        {
+          "pattern": "/event/5719/app/tracking",
+          "count": 1
+        }
+      ],
       "structural_attributes": [
         "data-bs-target=",
         "data-bs-toggle=",
@@ -401,887 +594,1540 @@
       "forms": [],
       "selects": [
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectDistance"
+          },
           "options": [
             {
               "value": "46204",
+              "attrs": {
+                "value": "46204"
+              },
               "text": "Ultra 60km+"
             },
             {
               "value": "46206",
+              "attrs": {
+                "value": "46206"
+              },
               "text": "Teleservice trail 21km+"
             },
             {
               "value": "46209",
+              "attrs": {
+                "value": "46209"
+              },
               "text": "Duo Trail (relay 2 x 30 km)"
             },
             {
               "value": "46207",
+              "attrs": {
+                "selected": "selected",
+                "value": "46207"
+              },
               "text": "Ekopark trail 13 km"
             },
             {
               "value": "46203",
+              "attrs": {
+                "value": "46203"
+              },
               "text": "Naturloppet 5km+"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectGender"
+          },
           "options": [
             {
               "value": "A",
+              "attrs": {
+                "value": "A"
+              },
               "text": "Män/Kvinnor"
             },
             {
               "value": "M",
+              "attrs": {
+                "value": "M"
+              },
               "text": "Män"
             },
             {
               "value": "F",
+              "attrs": {
+                "value": "F"
+              },
               "text": "Kvinnor"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_46204",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "27580",
+              "attrs": {
+                "value": "27580"
+              },
               "text": "0-11 år"
             },
             {
               "value": "27581",
+              "attrs": {
+                "value": "27581"
+              },
               "text": "12-13 år"
             },
             {
               "value": "27582",
+              "attrs": {
+                "value": "27582"
+              },
               "text": "14-15 år"
             },
             {
               "value": "27583",
+              "attrs": {
+                "value": "27583"
+              },
               "text": "16-17 år"
             },
             {
               "value": "27584",
+              "attrs": {
+                "value": "27584"
+              },
               "text": "18-19 år"
             },
             {
               "value": "27585",
+              "attrs": {
+                "value": "27585"
+              },
               "text": "20-24 år"
             },
             {
               "value": "27586",
+              "attrs": {
+                "value": "27586"
+              },
               "text": "25-29 år"
             },
             {
               "value": "27587",
+              "attrs": {
+                "value": "27587"
+              },
               "text": "30-34 år"
             },
             {
               "value": "27588",
+              "attrs": {
+                "value": "27588"
+              },
               "text": "35-39 år"
             },
             {
               "value": "27589",
+              "attrs": {
+                "value": "27589"
+              },
               "text": "40-44 år"
             },
             {
               "value": "27590",
+              "attrs": {
+                "value": "27590"
+              },
               "text": "45-49 år"
             },
             {
               "value": "27591",
+              "attrs": {
+                "value": "27591"
+              },
               "text": "50-54 år"
             },
             {
               "value": "27592",
+              "attrs": {
+                "value": "27592"
+              },
               "text": "55-59 år"
             },
             {
               "value": "27593",
+              "attrs": {
+                "value": "27593"
+              },
               "text": "60-64 år"
             },
             {
               "value": "27594",
+              "attrs": {
+                "value": "27594"
+              },
               "text": "65-69 år"
             },
             {
               "value": "27595",
+              "attrs": {
+                "value": "27595"
+              },
               "text": "70-74 år"
             },
             {
               "value": "27596",
+              "attrs": {
+                "value": "27596"
+              },
               "text": "75-79 år"
             },
             {
               "value": "27597",
+              "attrs": {
+                "value": "27597"
+              },
               "text": "80-84 år"
             },
             {
               "value": "27598",
+              "attrs": {
+                "value": "27598"
+              },
               "text": "85-89 år"
             },
             {
               "value": "27599",
+              "attrs": {
+                "value": "27599"
+              },
               "text": "90+ år"
             },
             {
               "value": "27600",
+              "attrs": {
+                "value": "27600"
+              },
               "text": "championship för Joelette"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_46206",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "27580",
+              "attrs": {
+                "value": "27580"
+              },
               "text": "0-11 år"
             },
             {
               "value": "27581",
+              "attrs": {
+                "value": "27581"
+              },
               "text": "12-13 år"
             },
             {
               "value": "27582",
+              "attrs": {
+                "value": "27582"
+              },
               "text": "14-15 år"
             },
             {
               "value": "27583",
+              "attrs": {
+                "value": "27583"
+              },
               "text": "16-17 år"
             },
             {
               "value": "27584",
+              "attrs": {
+                "value": "27584"
+              },
               "text": "18-19 år"
             },
             {
               "value": "27585",
+              "attrs": {
+                "value": "27585"
+              },
               "text": "20-24 år"
             },
             {
               "value": "27586",
+              "attrs": {
+                "value": "27586"
+              },
               "text": "25-29 år"
             },
             {
               "value": "27587",
+              "attrs": {
+                "value": "27587"
+              },
               "text": "30-34 år"
             },
             {
               "value": "27588",
+              "attrs": {
+                "value": "27588"
+              },
               "text": "35-39 år"
             },
             {
               "value": "27589",
+              "attrs": {
+                "value": "27589"
+              },
               "text": "40-44 år"
             },
             {
               "value": "27590",
+              "attrs": {
+                "value": "27590"
+              },
               "text": "45-49 år"
             },
             {
               "value": "27591",
+              "attrs": {
+                "value": "27591"
+              },
               "text": "50-54 år"
             },
             {
               "value": "27592",
+              "attrs": {
+                "value": "27592"
+              },
               "text": "55-59 år"
             },
             {
               "value": "27593",
+              "attrs": {
+                "value": "27593"
+              },
               "text": "60-64 år"
             },
             {
               "value": "27594",
+              "attrs": {
+                "value": "27594"
+              },
               "text": "65-69 år"
             },
             {
               "value": "27595",
+              "attrs": {
+                "value": "27595"
+              },
               "text": "70-74 år"
             },
             {
               "value": "27596",
+              "attrs": {
+                "value": "27596"
+              },
               "text": "75-79 år"
             },
             {
               "value": "27597",
+              "attrs": {
+                "value": "27597"
+              },
               "text": "80-84 år"
             },
             {
               "value": "27598",
+              "attrs": {
+                "value": "27598"
+              },
               "text": "85-89 år"
             },
             {
               "value": "27599",
+              "attrs": {
+                "value": "27599"
+              },
               "text": "90+ år"
             },
             {
               "value": "27600",
+              "attrs": {
+                "value": "27600"
+              },
               "text": "championship för Joelette"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_46209",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "27580",
+              "attrs": {
+                "value": "27580"
+              },
               "text": "0-11 år"
             },
             {
               "value": "27581",
+              "attrs": {
+                "value": "27581"
+              },
               "text": "12-13 år"
             },
             {
               "value": "27582",
+              "attrs": {
+                "value": "27582"
+              },
               "text": "14-15 år"
             },
             {
               "value": "27583",
+              "attrs": {
+                "value": "27583"
+              },
               "text": "16-17 år"
             },
             {
               "value": "27584",
+              "attrs": {
+                "value": "27584"
+              },
               "text": "18-19 år"
             },
             {
               "value": "27585",
+              "attrs": {
+                "value": "27585"
+              },
               "text": "20-24 år"
             },
             {
               "value": "27586",
+              "attrs": {
+                "value": "27586"
+              },
               "text": "25-29 år"
             },
             {
               "value": "27587",
+              "attrs": {
+                "value": "27587"
+              },
               "text": "30-34 år"
             },
             {
               "value": "27588",
+              "attrs": {
+                "value": "27588"
+              },
               "text": "35-39 år"
             },
             {
               "value": "27589",
+              "attrs": {
+                "value": "27589"
+              },
               "text": "40-44 år"
             },
             {
               "value": "27590",
+              "attrs": {
+                "value": "27590"
+              },
               "text": "45-49 år"
             },
             {
               "value": "27591",
+              "attrs": {
+                "value": "27591"
+              },
               "text": "50-54 år"
             },
             {
               "value": "27592",
+              "attrs": {
+                "value": "27592"
+              },
               "text": "55-59 år"
             },
             {
               "value": "27593",
+              "attrs": {
+                "value": "27593"
+              },
               "text": "60-64 år"
             },
             {
               "value": "27594",
+              "attrs": {
+                "value": "27594"
+              },
               "text": "65-69 år"
             },
             {
               "value": "27595",
+              "attrs": {
+                "value": "27595"
+              },
               "text": "70-74 år"
             },
             {
               "value": "27596",
+              "attrs": {
+                "value": "27596"
+              },
               "text": "75-79 år"
             },
             {
               "value": "27597",
+              "attrs": {
+                "value": "27597"
+              },
               "text": "80-84 år"
             },
             {
               "value": "27598",
+              "attrs": {
+                "value": "27598"
+              },
               "text": "85-89 år"
             },
             {
               "value": "27599",
+              "attrs": {
+                "value": "27599"
+              },
               "text": "90+ år"
             },
             {
               "value": "27600",
+              "attrs": {
+                "value": "27600"
+              },
               "text": "championship för Joelette"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_46207"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "27580",
+              "attrs": {
+                "value": "27580"
+              },
               "text": "0-11 år"
             },
             {
               "value": "27581",
+              "attrs": {
+                "value": "27581"
+              },
               "text": "12-13 år"
             },
             {
               "value": "27582",
+              "attrs": {
+                "value": "27582"
+              },
               "text": "14-15 år"
             },
             {
               "value": "27583",
+              "attrs": {
+                "value": "27583"
+              },
               "text": "16-17 år"
             },
             {
               "value": "27584",
+              "attrs": {
+                "value": "27584"
+              },
               "text": "18-19 år"
             },
             {
               "value": "27585",
+              "attrs": {
+                "value": "27585"
+              },
               "text": "20-24 år"
             },
             {
               "value": "27586",
+              "attrs": {
+                "value": "27586"
+              },
               "text": "25-29 år"
             },
             {
               "value": "27587",
+              "attrs": {
+                "value": "27587"
+              },
               "text": "30-34 år"
             },
             {
               "value": "27588",
+              "attrs": {
+                "value": "27588"
+              },
               "text": "35-39 år"
             },
             {
               "value": "27589",
+              "attrs": {
+                "value": "27589"
+              },
               "text": "40-44 år"
             },
             {
               "value": "27590",
+              "attrs": {
+                "value": "27590"
+              },
               "text": "45-49 år"
             },
             {
               "value": "27591",
+              "attrs": {
+                "value": "27591"
+              },
               "text": "50-54 år"
             },
             {
               "value": "27592",
+              "attrs": {
+                "value": "27592"
+              },
               "text": "55-59 år"
             },
             {
               "value": "27593",
+              "attrs": {
+                "value": "27593"
+              },
               "text": "60-64 år"
             },
             {
               "value": "27594",
+              "attrs": {
+                "value": "27594"
+              },
               "text": "65-69 år"
             },
             {
               "value": "27595",
+              "attrs": {
+                "value": "27595"
+              },
               "text": "70-74 år"
             },
             {
               "value": "27596",
+              "attrs": {
+                "value": "27596"
+              },
               "text": "75-79 år"
             },
             {
               "value": "27597",
+              "attrs": {
+                "value": "27597"
+              },
               "text": "80-84 år"
             },
             {
               "value": "27598",
+              "attrs": {
+                "value": "27598"
+              },
               "text": "85-89 år"
             },
             {
               "value": "27599",
+              "attrs": {
+                "value": "27599"
+              },
               "text": "90+ år"
             },
             {
               "value": "27600",
+              "attrs": {
+                "value": "27600"
+              },
               "text": "championship för Joelette"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_46203",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "27580",
+              "attrs": {
+                "value": "27580"
+              },
               "text": "0-11 år"
             },
             {
               "value": "27581",
+              "attrs": {
+                "value": "27581"
+              },
               "text": "12-13 år"
             },
             {
               "value": "27582",
+              "attrs": {
+                "value": "27582"
+              },
               "text": "14-15 år"
             },
             {
               "value": "27583",
+              "attrs": {
+                "value": "27583"
+              },
               "text": "16-17 år"
             },
             {
               "value": "27584",
+              "attrs": {
+                "value": "27584"
+              },
               "text": "18-19 år"
             },
             {
               "value": "27585",
+              "attrs": {
+                "value": "27585"
+              },
               "text": "20-24 år"
             },
             {
               "value": "27586",
+              "attrs": {
+                "value": "27586"
+              },
               "text": "25-29 år"
             },
             {
               "value": "27587",
+              "attrs": {
+                "value": "27587"
+              },
               "text": "30-34 år"
             },
             {
               "value": "27588",
+              "attrs": {
+                "value": "27588"
+              },
               "text": "35-39 år"
             },
             {
               "value": "27589",
+              "attrs": {
+                "value": "27589"
+              },
               "text": "40-44 år"
             },
             {
               "value": "27590",
+              "attrs": {
+                "value": "27590"
+              },
               "text": "45-49 år"
             },
             {
               "value": "27591",
+              "attrs": {
+                "value": "27591"
+              },
               "text": "50-54 år"
             },
             {
               "value": "27592",
+              "attrs": {
+                "value": "27592"
+              },
               "text": "55-59 år"
             },
             {
               "value": "27593",
+              "attrs": {
+                "value": "27593"
+              },
               "text": "60-64 år"
             },
             {
               "value": "27594",
+              "attrs": {
+                "value": "27594"
+              },
               "text": "65-69 år"
             },
             {
               "value": "27595",
+              "attrs": {
+                "value": "27595"
+              },
               "text": "70-74 år"
             },
             {
               "value": "27596",
+              "attrs": {
+                "value": "27596"
+              },
               "text": "75-79 år"
             },
             {
               "value": "27597",
+              "attrs": {
+                "value": "27597"
+              },
               "text": "80-84 år"
             },
             {
               "value": "27598",
+              "attrs": {
+                "value": "27598"
+              },
               "text": "85-89 år"
             },
             {
               "value": "27599",
+              "attrs": {
+                "value": "27599"
+              },
               "text": "90+ år"
             },
             {
               "value": "27600",
+              "attrs": {
+                "value": "27600"
+              },
               "text": "championship för Joelette"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_46208",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "27580",
+              "attrs": {
+                "value": "27580"
+              },
               "text": "0-11 år"
             },
             {
               "value": "27581",
+              "attrs": {
+                "value": "27581"
+              },
               "text": "12-13 år"
             },
             {
               "value": "27582",
+              "attrs": {
+                "value": "27582"
+              },
               "text": "14-15 år"
             },
             {
               "value": "27583",
+              "attrs": {
+                "value": "27583"
+              },
               "text": "16-17 år"
             },
             {
               "value": "27584",
+              "attrs": {
+                "value": "27584"
+              },
               "text": "18-19 år"
             },
             {
               "value": "27585",
+              "attrs": {
+                "value": "27585"
+              },
               "text": "20-24 år"
             },
             {
               "value": "27586",
+              "attrs": {
+                "value": "27586"
+              },
               "text": "25-29 år"
             },
             {
               "value": "27587",
+              "attrs": {
+                "value": "27587"
+              },
               "text": "30-34 år"
             },
             {
               "value": "27588",
+              "attrs": {
+                "value": "27588"
+              },
               "text": "35-39 år"
             },
             {
               "value": "27589",
+              "attrs": {
+                "value": "27589"
+              },
               "text": "40-44 år"
             },
             {
               "value": "27590",
+              "attrs": {
+                "value": "27590"
+              },
               "text": "45-49 år"
             },
             {
               "value": "27591",
+              "attrs": {
+                "value": "27591"
+              },
               "text": "50-54 år"
             },
             {
               "value": "27592",
+              "attrs": {
+                "value": "27592"
+              },
               "text": "55-59 år"
             },
             {
               "value": "27593",
+              "attrs": {
+                "value": "27593"
+              },
               "text": "60-64 år"
             },
             {
               "value": "27594",
+              "attrs": {
+                "value": "27594"
+              },
               "text": "65-69 år"
             },
             {
               "value": "27595",
+              "attrs": {
+                "value": "27595"
+              },
               "text": "70-74 år"
             },
             {
               "value": "27596",
+              "attrs": {
+                "value": "27596"
+              },
               "text": "75-79 år"
             },
             {
               "value": "27597",
+              "attrs": {
+                "value": "27597"
+              },
               "text": "80-84 år"
             },
             {
               "value": "27598",
+              "attrs": {
+                "value": "27598"
+              },
               "text": "85-89 år"
             },
             {
               "value": "27599",
+              "attrs": {
+                "value": "27599"
+              },
               "text": "90+ år"
             },
             {
               "value": "27600",
+              "attrs": {
+                "value": "27600"
+              },
               "text": "championship för Joelette"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_46205",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "27580",
+              "attrs": {
+                "value": "27580"
+              },
               "text": "0-11 år"
             },
             {
               "value": "27581",
+              "attrs": {
+                "value": "27581"
+              },
               "text": "12-13 år"
             },
             {
               "value": "27582",
+              "attrs": {
+                "value": "27582"
+              },
               "text": "14-15 år"
             },
             {
               "value": "27583",
+              "attrs": {
+                "value": "27583"
+              },
               "text": "16-17 år"
             },
             {
               "value": "27584",
+              "attrs": {
+                "value": "27584"
+              },
               "text": "18-19 år"
             },
             {
               "value": "27585",
+              "attrs": {
+                "value": "27585"
+              },
               "text": "20-24 år"
             },
             {
               "value": "27586",
+              "attrs": {
+                "value": "27586"
+              },
               "text": "25-29 år"
             },
             {
               "value": "27587",
+              "attrs": {
+                "value": "27587"
+              },
               "text": "30-34 år"
             },
             {
               "value": "27588",
+              "attrs": {
+                "value": "27588"
+              },
               "text": "35-39 år"
             },
             {
               "value": "27589",
+              "attrs": {
+                "value": "27589"
+              },
               "text": "40-44 år"
             },
             {
               "value": "27590",
+              "attrs": {
+                "value": "27590"
+              },
               "text": "45-49 år"
             },
             {
               "value": "27591",
+              "attrs": {
+                "value": "27591"
+              },
               "text": "50-54 år"
             },
             {
               "value": "27592",
+              "attrs": {
+                "value": "27592"
+              },
               "text": "55-59 år"
             },
             {
               "value": "27593",
+              "attrs": {
+                "value": "27593"
+              },
               "text": "60-64 år"
             },
             {
               "value": "27594",
+              "attrs": {
+                "value": "27594"
+              },
               "text": "65-69 år"
             },
             {
               "value": "27595",
+              "attrs": {
+                "value": "27595"
+              },
               "text": "70-74 år"
             },
             {
               "value": "27596",
+              "attrs": {
+                "value": "27596"
+              },
               "text": "75-79 år"
             },
             {
               "value": "27597",
+              "attrs": {
+                "value": "27597"
+              },
               "text": "80-84 år"
             },
             {
               "value": "27598",
+              "attrs": {
+                "value": "27598"
+              },
               "text": "85-89 år"
             },
             {
               "value": "27599",
+              "attrs": {
+                "value": "27599"
+              },
               "text": "90+ år"
             },
             {
               "value": "27600",
+              "attrs": {
+                "value": "27600"
+              },
               "text": "championship för Joelette"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_52720",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "27580",
+              "attrs": {
+                "value": "27580"
+              },
               "text": "0-11 år"
             },
             {
               "value": "27581",
+              "attrs": {
+                "value": "27581"
+              },
               "text": "12-13 år"
             },
             {
               "value": "27582",
+              "attrs": {
+                "value": "27582"
+              },
               "text": "14-15 år"
             },
             {
               "value": "27583",
+              "attrs": {
+                "value": "27583"
+              },
               "text": "16-17 år"
             },
             {
               "value": "27584",
+              "attrs": {
+                "value": "27584"
+              },
               "text": "18-19 år"
             },
             {
               "value": "27585",
+              "attrs": {
+                "value": "27585"
+              },
               "text": "20-24 år"
             },
             {
               "value": "27586",
+              "attrs": {
+                "value": "27586"
+              },
               "text": "25-29 år"
             },
             {
               "value": "27587",
+              "attrs": {
+                "value": "27587"
+              },
               "text": "30-34 år"
             },
             {
               "value": "27588",
+              "attrs": {
+                "value": "27588"
+              },
               "text": "35-39 år"
             },
             {
               "value": "27589",
+              "attrs": {
+                "value": "27589"
+              },
               "text": "40-44 år"
             },
             {
               "value": "27590",
+              "attrs": {
+                "value": "27590"
+              },
               "text": "45-49 år"
             },
             {
               "value": "27591",
+              "attrs": {
+                "value": "27591"
+              },
               "text": "50-54 år"
             },
             {
               "value": "27592",
+              "attrs": {
+                "value": "27592"
+              },
               "text": "55-59 år"
             },
             {
               "value": "27593",
+              "attrs": {
+                "value": "27593"
+              },
               "text": "60-64 år"
             },
             {
               "value": "27594",
+              "attrs": {
+                "value": "27594"
+              },
               "text": "65-69 år"
             },
             {
               "value": "27595",
+              "attrs": {
+                "value": "27595"
+              },
               "text": "70-74 år"
             },
             {
               "value": "27596",
+              "attrs": {
+                "value": "27596"
+              },
               "text": "75-79 år"
             },
             {
               "value": "27597",
+              "attrs": {
+                "value": "27597"
+              },
               "text": "80-84 år"
             },
             {
               "value": "27598",
+              "attrs": {
+                "value": "27598"
+              },
               "text": "85-89 år"
             },
             {
               "value": "27599",
+              "attrs": {
+                "value": "27599"
+              },
               "text": "90+ år"
             },
             {
               "value": "27600",
+              "attrs": {
+                "value": "27600"
+              },
               "text": "championship för Joelette"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectCountry"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "value": "all"
+              },
               "text": "Alla länder"
             },
             {
               "value": "9",
+              "attrs": {
+                "value": "9"
+              },
               "text": "Australien"
             },
             {
               "value": "14",
+              "attrs": {
+                "value": "14"
+              },
               "text": "Belgien"
             },
             {
               "value": "37",
+              "attrs": {
+                "value": "37"
+              },
               "text": "Danmark"
             },
             {
               "value": "52",
+              "attrs": {
+                "value": "52"
+              },
               "text": "Finland"
             },
             {
               "value": "53",
+              "attrs": {
+                "value": "53"
+              },
               "text": "Frankrig"
             },
             {
               "value": "60",
+              "attrs": {
+                "value": "60"
+              },
               "text": "Grækenland"
             },
             {
               "value": "67",
+              "attrs": {
+                "value": "67"
+              },
               "text": "Holland"
             },
             {
               "value": "74",
+              "attrs": {
+                "value": "74"
+              },
               "text": "Irland"
             },
             {
               "value": "75",
+              "attrs": {
+                "value": "75"
+              },
               "text": "Island"
             },
             {
               "value": "84",
+              "attrs": {
+                "value": "84"
+              },
               "text": "Kina"
             },
             {
               "value": "92",
+              "attrs": {
+                "value": "92"
+              },
               "text": "Letland"
             },
             {
               "value": "97",
+              "attrs": {
+                "value": "97"
+              },
               "text": "Litauen"
             },
             {
               "value": "128",
+              "attrs": {
+                "value": "128"
+              },
               "text": "Norge"
             },
             {
               "value": "137",
+              "attrs": {
+                "value": "137"
+              },
               "text": "Polen"
             },
             {
               "value": "157",
+              "attrs": {
+                "value": "157"
+              },
               "text": "Spanien"
             },
             {
               "value": "198",
+              "attrs": {
+                "value": "198"
+              },
               "text": "Storbritannien"
             },
             {
               "value": "161",
+              "attrs": {
+                "value": "161"
+              },
               "text": "Sverige"
             },
             {
               "value": "179",
+              "attrs": {
+                "value": "179"
+              },
               "text": "Tyskland"
             },
             {
               "value": "999",
+              "attrs": {
+                "value": "999"
+              },
               "text": "Ukendt land"
             },
             {
               "value": "182",
+              "attrs": {
+                "value": "182"
+              },
               "text": "Ukraine"
             }
           ]
@@ -1346,6 +2192,32 @@
         "/event/9587/app/results?page=2",
         "/event/9587/app/results?page=3"
       ],
+      "link_patterns": [
+        {
+          "pattern": "/event/9587/app/results/{result_id}",
+          "count": 50
+        },
+        {
+          "pattern": "/event/9587/app/results?page={page}",
+          "count": 3
+        },
+        {
+          "pattern": "/event/9587/app",
+          "count": 1
+        },
+        {
+          "pattern": "/event/9587/app/participants",
+          "count": 1
+        },
+        {
+          "pattern": "/event/9587/app/results",
+          "count": 1
+        },
+        {
+          "pattern": "/event/9587/app/tracking",
+          "count": 1
+        }
+      ],
       "structural_attributes": [
         "data-bs-target=",
         "data-bs-toggle=",
@@ -1382,997 +2254,1732 @@
       "forms": [],
       "selects": [
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectDistance"
+          },
           "options": [
             {
               "value": "58343",
+              "attrs": {
+                "value": "58343"
+              },
               "text": "Ultra 60km+"
             },
             {
               "value": "58345",
+              "attrs": {
+                "value": "58345"
+              },
               "text": "Fogarolli trail 21km+"
             },
             {
               "value": "58348",
+              "attrs": {
+                "value": "58348"
+              },
               "text": "Duo Trail (relay 2 x 30 km)"
             },
             {
               "value": "58346",
+              "attrs": {
+                "selected": "selected",
+                "value": "58346"
+              },
               "text": "Ekopark trail 13 km"
             },
             {
               "value": "58342",
+              "attrs": {
+                "value": "58342"
+              },
               "text": "Naturloppet 5km+"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectGender"
+          },
           "options": [
             {
               "value": "A",
+              "attrs": {
+                "value": "A"
+              },
               "text": "Män/Kvinnor"
             },
             {
               "value": "M",
+              "attrs": {
+                "value": "M"
+              },
               "text": "Män"
             },
             {
               "value": "F",
+              "attrs": {
+                "value": "F"
+              },
               "text": "Kvinnor"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_58343",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "30121",
+              "attrs": {
+                "value": "30121"
+              },
               "text": "championship för Joelette"
             },
             {
               "value": "30120",
+              "attrs": {
+                "value": "30120"
+              },
               "text": "90+ år"
             },
             {
               "value": "30119",
+              "attrs": {
+                "value": "30119"
+              },
               "text": "85-89 år"
             },
             {
               "value": "30118",
+              "attrs": {
+                "value": "30118"
+              },
               "text": "80-84 år"
             },
             {
               "value": "30117",
+              "attrs": {
+                "value": "30117"
+              },
               "text": "75-79 år"
             },
             {
               "value": "30116",
+              "attrs": {
+                "value": "30116"
+              },
               "text": "70-74 år"
             },
             {
               "value": "30115",
+              "attrs": {
+                "value": "30115"
+              },
               "text": "65-69 år"
             },
             {
               "value": "30114",
+              "attrs": {
+                "value": "30114"
+              },
               "text": "60-64 år"
             },
             {
               "value": "30113",
+              "attrs": {
+                "value": "30113"
+              },
               "text": "55-59 år"
             },
             {
               "value": "30112",
+              "attrs": {
+                "value": "30112"
+              },
               "text": "50-54 år"
             },
             {
               "value": "30111",
+              "attrs": {
+                "value": "30111"
+              },
               "text": "45-49 år"
             },
             {
               "value": "30110",
+              "attrs": {
+                "value": "30110"
+              },
               "text": "40-44 år"
             },
             {
               "value": "30109",
+              "attrs": {
+                "value": "30109"
+              },
               "text": "35-39 år"
             },
             {
               "value": "30108",
+              "attrs": {
+                "value": "30108"
+              },
               "text": "30-34 år"
             },
             {
               "value": "30107",
+              "attrs": {
+                "value": "30107"
+              },
               "text": "25-29 år"
             },
             {
               "value": "30106",
+              "attrs": {
+                "value": "30106"
+              },
               "text": "20-24 år"
             },
             {
               "value": "30105",
+              "attrs": {
+                "value": "30105"
+              },
               "text": "18-19 år"
             },
             {
               "value": "30104",
+              "attrs": {
+                "value": "30104"
+              },
               "text": "16-17 år"
             },
             {
               "value": "30103",
+              "attrs": {
+                "value": "30103"
+              },
               "text": "14-15 år"
             },
             {
               "value": "30102",
+              "attrs": {
+                "value": "30102"
+              },
               "text": "12-13 år"
             },
             {
               "value": "30101",
+              "attrs": {
+                "value": "30101"
+              },
               "text": "0-11 år"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_58345",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "30121",
+              "attrs": {
+                "value": "30121"
+              },
               "text": "championship för Joelette"
             },
             {
               "value": "30120",
+              "attrs": {
+                "value": "30120"
+              },
               "text": "90+ år"
             },
             {
               "value": "30119",
+              "attrs": {
+                "value": "30119"
+              },
               "text": "85-89 år"
             },
             {
               "value": "30118",
+              "attrs": {
+                "value": "30118"
+              },
               "text": "80-84 år"
             },
             {
               "value": "30117",
+              "attrs": {
+                "value": "30117"
+              },
               "text": "75-79 år"
             },
             {
               "value": "30116",
+              "attrs": {
+                "value": "30116"
+              },
               "text": "70-74 år"
             },
             {
               "value": "30115",
+              "attrs": {
+                "value": "30115"
+              },
               "text": "65-69 år"
             },
             {
               "value": "30114",
+              "attrs": {
+                "value": "30114"
+              },
               "text": "60-64 år"
             },
             {
               "value": "30113",
+              "attrs": {
+                "value": "30113"
+              },
               "text": "55-59 år"
             },
             {
               "value": "30112",
+              "attrs": {
+                "value": "30112"
+              },
               "text": "50-54 år"
             },
             {
               "value": "30111",
+              "attrs": {
+                "value": "30111"
+              },
               "text": "45-49 år"
             },
             {
               "value": "30110",
+              "attrs": {
+                "value": "30110"
+              },
               "text": "40-44 år"
             },
             {
               "value": "30109",
+              "attrs": {
+                "value": "30109"
+              },
               "text": "35-39 år"
             },
             {
               "value": "30108",
+              "attrs": {
+                "value": "30108"
+              },
               "text": "30-34 år"
             },
             {
               "value": "30107",
+              "attrs": {
+                "value": "30107"
+              },
               "text": "25-29 år"
             },
             {
               "value": "30106",
+              "attrs": {
+                "value": "30106"
+              },
               "text": "20-24 år"
             },
             {
               "value": "30105",
+              "attrs": {
+                "value": "30105"
+              },
               "text": "18-19 år"
             },
             {
               "value": "30104",
+              "attrs": {
+                "value": "30104"
+              },
               "text": "16-17 år"
             },
             {
               "value": "30103",
+              "attrs": {
+                "value": "30103"
+              },
               "text": "14-15 år"
             },
             {
               "value": "30102",
+              "attrs": {
+                "value": "30102"
+              },
               "text": "12-13 år"
             },
             {
               "value": "30101",
+              "attrs": {
+                "value": "30101"
+              },
               "text": "0-11 år"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_58348",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "30121",
+              "attrs": {
+                "value": "30121"
+              },
               "text": "championship för Joelette"
             },
             {
               "value": "30120",
+              "attrs": {
+                "value": "30120"
+              },
               "text": "90+ år"
             },
             {
               "value": "30119",
+              "attrs": {
+                "value": "30119"
+              },
               "text": "85-89 år"
             },
             {
               "value": "30118",
+              "attrs": {
+                "value": "30118"
+              },
               "text": "80-84 år"
             },
             {
               "value": "30117",
+              "attrs": {
+                "value": "30117"
+              },
               "text": "75-79 år"
             },
             {
               "value": "30116",
+              "attrs": {
+                "value": "30116"
+              },
               "text": "70-74 år"
             },
             {
               "value": "30115",
+              "attrs": {
+                "value": "30115"
+              },
               "text": "65-69 år"
             },
             {
               "value": "30114",
+              "attrs": {
+                "value": "30114"
+              },
               "text": "60-64 år"
             },
             {
               "value": "30113",
+              "attrs": {
+                "value": "30113"
+              },
               "text": "55-59 år"
             },
             {
               "value": "30112",
+              "attrs": {
+                "value": "30112"
+              },
               "text": "50-54 år"
             },
             {
               "value": "30111",
+              "attrs": {
+                "value": "30111"
+              },
               "text": "45-49 år"
             },
             {
               "value": "30110",
+              "attrs": {
+                "value": "30110"
+              },
               "text": "40-44 år"
             },
             {
               "value": "30109",
+              "attrs": {
+                "value": "30109"
+              },
               "text": "35-39 år"
             },
             {
               "value": "30108",
+              "attrs": {
+                "value": "30108"
+              },
               "text": "30-34 år"
             },
             {
               "value": "30107",
+              "attrs": {
+                "value": "30107"
+              },
               "text": "25-29 år"
             },
             {
               "value": "30106",
+              "attrs": {
+                "value": "30106"
+              },
               "text": "20-24 år"
             },
             {
               "value": "30105",
+              "attrs": {
+                "value": "30105"
+              },
               "text": "18-19 år"
             },
             {
               "value": "30104",
+              "attrs": {
+                "value": "30104"
+              },
               "text": "16-17 år"
             },
             {
               "value": "30103",
+              "attrs": {
+                "value": "30103"
+              },
               "text": "14-15 år"
             },
             {
               "value": "30102",
+              "attrs": {
+                "value": "30102"
+              },
               "text": "12-13 år"
             },
             {
               "value": "30101",
+              "attrs": {
+                "value": "30101"
+              },
               "text": "0-11 år"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_58346"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "30121",
+              "attrs": {
+                "value": "30121"
+              },
               "text": "championship för Joelette"
             },
             {
               "value": "30120",
+              "attrs": {
+                "value": "30120"
+              },
               "text": "90+ år"
             },
             {
               "value": "30119",
+              "attrs": {
+                "value": "30119"
+              },
               "text": "85-89 år"
             },
             {
               "value": "30118",
+              "attrs": {
+                "value": "30118"
+              },
               "text": "80-84 år"
             },
             {
               "value": "30117",
+              "attrs": {
+                "value": "30117"
+              },
               "text": "75-79 år"
             },
             {
               "value": "30116",
+              "attrs": {
+                "value": "30116"
+              },
               "text": "70-74 år"
             },
             {
               "value": "30115",
+              "attrs": {
+                "value": "30115"
+              },
               "text": "65-69 år"
             },
             {
               "value": "30114",
+              "attrs": {
+                "value": "30114"
+              },
               "text": "60-64 år"
             },
             {
               "value": "30113",
+              "attrs": {
+                "value": "30113"
+              },
               "text": "55-59 år"
             },
             {
               "value": "30112",
+              "attrs": {
+                "value": "30112"
+              },
               "text": "50-54 år"
             },
             {
               "value": "30111",
+              "attrs": {
+                "value": "30111"
+              },
               "text": "45-49 år"
             },
             {
               "value": "30110",
+              "attrs": {
+                "value": "30110"
+              },
               "text": "40-44 år"
             },
             {
               "value": "30109",
+              "attrs": {
+                "value": "30109"
+              },
               "text": "35-39 år"
             },
             {
               "value": "30108",
+              "attrs": {
+                "value": "30108"
+              },
               "text": "30-34 år"
             },
             {
               "value": "30107",
+              "attrs": {
+                "value": "30107"
+              },
               "text": "25-29 år"
             },
             {
               "value": "30106",
+              "attrs": {
+                "value": "30106"
+              },
               "text": "20-24 år"
             },
             {
               "value": "30105",
+              "attrs": {
+                "value": "30105"
+              },
               "text": "18-19 år"
             },
             {
               "value": "30104",
+              "attrs": {
+                "value": "30104"
+              },
               "text": "16-17 år"
             },
             {
               "value": "30103",
+              "attrs": {
+                "value": "30103"
+              },
               "text": "14-15 år"
             },
             {
               "value": "30102",
+              "attrs": {
+                "value": "30102"
+              },
               "text": "12-13 år"
             },
             {
               "value": "30101",
+              "attrs": {
+                "value": "30101"
+              },
               "text": "0-11 år"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_58342",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "30121",
+              "attrs": {
+                "value": "30121"
+              },
               "text": "championship för Joelette"
             },
             {
               "value": "30120",
+              "attrs": {
+                "value": "30120"
+              },
               "text": "90+ år"
             },
             {
               "value": "30119",
+              "attrs": {
+                "value": "30119"
+              },
               "text": "85-89 år"
             },
             {
               "value": "30118",
+              "attrs": {
+                "value": "30118"
+              },
               "text": "80-84 år"
             },
             {
               "value": "30117",
+              "attrs": {
+                "value": "30117"
+              },
               "text": "75-79 år"
             },
             {
               "value": "30116",
+              "attrs": {
+                "value": "30116"
+              },
               "text": "70-74 år"
             },
             {
               "value": "30115",
+              "attrs": {
+                "value": "30115"
+              },
               "text": "65-69 år"
             },
             {
               "value": "30114",
+              "attrs": {
+                "value": "30114"
+              },
               "text": "60-64 år"
             },
             {
               "value": "30113",
+              "attrs": {
+                "value": "30113"
+              },
               "text": "55-59 år"
             },
             {
               "value": "30112",
+              "attrs": {
+                "value": "30112"
+              },
               "text": "50-54 år"
             },
             {
               "value": "30111",
+              "attrs": {
+                "value": "30111"
+              },
               "text": "45-49 år"
             },
             {
               "value": "30110",
+              "attrs": {
+                "value": "30110"
+              },
               "text": "40-44 år"
             },
             {
               "value": "30109",
+              "attrs": {
+                "value": "30109"
+              },
               "text": "35-39 år"
             },
             {
               "value": "30108",
+              "attrs": {
+                "value": "30108"
+              },
               "text": "30-34 år"
             },
             {
               "value": "30107",
+              "attrs": {
+                "value": "30107"
+              },
               "text": "25-29 år"
             },
             {
               "value": "30106",
+              "attrs": {
+                "value": "30106"
+              },
               "text": "20-24 år"
             },
             {
               "value": "30105",
+              "attrs": {
+                "value": "30105"
+              },
               "text": "18-19 år"
             },
             {
               "value": "30104",
+              "attrs": {
+                "value": "30104"
+              },
               "text": "16-17 år"
             },
             {
               "value": "30103",
+              "attrs": {
+                "value": "30103"
+              },
               "text": "14-15 år"
             },
             {
               "value": "30102",
+              "attrs": {
+                "value": "30102"
+              },
               "text": "12-13 år"
             },
             {
               "value": "30101",
+              "attrs": {
+                "value": "30101"
+              },
               "text": "0-11 år"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_59371",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "30121",
+              "attrs": {
+                "value": "30121"
+              },
               "text": "championship för Joelette"
             },
             {
               "value": "30120",
+              "attrs": {
+                "value": "30120"
+              },
               "text": "90+ år"
             },
             {
               "value": "30119",
+              "attrs": {
+                "value": "30119"
+              },
               "text": "85-89 år"
             },
             {
               "value": "30118",
+              "attrs": {
+                "value": "30118"
+              },
               "text": "80-84 år"
             },
             {
               "value": "30117",
+              "attrs": {
+                "value": "30117"
+              },
               "text": "75-79 år"
             },
             {
               "value": "30116",
+              "attrs": {
+                "value": "30116"
+              },
               "text": "70-74 år"
             },
             {
               "value": "30115",
+              "attrs": {
+                "value": "30115"
+              },
               "text": "65-69 år"
             },
             {
               "value": "30114",
+              "attrs": {
+                "value": "30114"
+              },
               "text": "60-64 år"
             },
             {
               "value": "30113",
+              "attrs": {
+                "value": "30113"
+              },
               "text": "55-59 år"
             },
             {
               "value": "30112",
+              "attrs": {
+                "value": "30112"
+              },
               "text": "50-54 år"
             },
             {
               "value": "30111",
+              "attrs": {
+                "value": "30111"
+              },
               "text": "45-49 år"
             },
             {
               "value": "30110",
+              "attrs": {
+                "value": "30110"
+              },
               "text": "40-44 år"
             },
             {
               "value": "30109",
+              "attrs": {
+                "value": "30109"
+              },
               "text": "35-39 år"
             },
             {
               "value": "30108",
+              "attrs": {
+                "value": "30108"
+              },
               "text": "30-34 år"
             },
             {
               "value": "30107",
+              "attrs": {
+                "value": "30107"
+              },
               "text": "25-29 år"
             },
             {
               "value": "30106",
+              "attrs": {
+                "value": "30106"
+              },
               "text": "20-24 år"
             },
             {
               "value": "30105",
+              "attrs": {
+                "value": "30105"
+              },
               "text": "18-19 år"
             },
             {
               "value": "30104",
+              "attrs": {
+                "value": "30104"
+              },
               "text": "16-17 år"
             },
             {
               "value": "30103",
+              "attrs": {
+                "value": "30103"
+              },
               "text": "14-15 år"
             },
             {
               "value": "30102",
+              "attrs": {
+                "value": "30102"
+              },
               "text": "12-13 år"
             },
             {
               "value": "30101",
+              "attrs": {
+                "value": "30101"
+              },
               "text": "0-11 år"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_58347",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "30121",
+              "attrs": {
+                "value": "30121"
+              },
               "text": "championship för Joelette"
             },
             {
               "value": "30120",
+              "attrs": {
+                "value": "30120"
+              },
               "text": "90+ år"
             },
             {
               "value": "30119",
+              "attrs": {
+                "value": "30119"
+              },
               "text": "85-89 år"
             },
             {
               "value": "30118",
+              "attrs": {
+                "value": "30118"
+              },
               "text": "80-84 år"
             },
             {
               "value": "30117",
+              "attrs": {
+                "value": "30117"
+              },
               "text": "75-79 år"
             },
             {
               "value": "30116",
+              "attrs": {
+                "value": "30116"
+              },
               "text": "70-74 år"
             },
             {
               "value": "30115",
+              "attrs": {
+                "value": "30115"
+              },
               "text": "65-69 år"
             },
             {
               "value": "30114",
+              "attrs": {
+                "value": "30114"
+              },
               "text": "60-64 år"
             },
             {
               "value": "30113",
+              "attrs": {
+                "value": "30113"
+              },
               "text": "55-59 år"
             },
             {
               "value": "30112",
+              "attrs": {
+                "value": "30112"
+              },
               "text": "50-54 år"
             },
             {
               "value": "30111",
+              "attrs": {
+                "value": "30111"
+              },
               "text": "45-49 år"
             },
             {
               "value": "30110",
+              "attrs": {
+                "value": "30110"
+              },
               "text": "40-44 år"
             },
             {
               "value": "30109",
+              "attrs": {
+                "value": "30109"
+              },
               "text": "35-39 år"
             },
             {
               "value": "30108",
+              "attrs": {
+                "value": "30108"
+              },
               "text": "30-34 år"
             },
             {
               "value": "30107",
+              "attrs": {
+                "value": "30107"
+              },
               "text": "25-29 år"
             },
             {
               "value": "30106",
+              "attrs": {
+                "value": "30106"
+              },
               "text": "20-24 år"
             },
             {
               "value": "30105",
+              "attrs": {
+                "value": "30105"
+              },
               "text": "18-19 år"
             },
             {
               "value": "30104",
+              "attrs": {
+                "value": "30104"
+              },
               "text": "16-17 år"
             },
             {
               "value": "30103",
+              "attrs": {
+                "value": "30103"
+              },
               "text": "14-15 år"
             },
             {
               "value": "30102",
+              "attrs": {
+                "value": "30102"
+              },
               "text": "12-13 år"
             },
             {
               "value": "30101",
+              "attrs": {
+                "value": "30101"
+              },
               "text": "0-11 år"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_58344",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "30121",
+              "attrs": {
+                "value": "30121"
+              },
               "text": "championship för Joelette"
             },
             {
               "value": "30120",
+              "attrs": {
+                "value": "30120"
+              },
               "text": "90+ år"
             },
             {
               "value": "30119",
+              "attrs": {
+                "value": "30119"
+              },
               "text": "85-89 år"
             },
             {
               "value": "30118",
+              "attrs": {
+                "value": "30118"
+              },
               "text": "80-84 år"
             },
             {
               "value": "30117",
+              "attrs": {
+                "value": "30117"
+              },
               "text": "75-79 år"
             },
             {
               "value": "30116",
+              "attrs": {
+                "value": "30116"
+              },
               "text": "70-74 år"
             },
             {
               "value": "30115",
+              "attrs": {
+                "value": "30115"
+              },
               "text": "65-69 år"
             },
             {
               "value": "30114",
+              "attrs": {
+                "value": "30114"
+              },
               "text": "60-64 år"
             },
             {
               "value": "30113",
+              "attrs": {
+                "value": "30113"
+              },
               "text": "55-59 år"
             },
             {
               "value": "30112",
+              "attrs": {
+                "value": "30112"
+              },
               "text": "50-54 år"
             },
             {
               "value": "30111",
+              "attrs": {
+                "value": "30111"
+              },
               "text": "45-49 år"
             },
             {
               "value": "30110",
+              "attrs": {
+                "value": "30110"
+              },
               "text": "40-44 år"
             },
             {
               "value": "30109",
+              "attrs": {
+                "value": "30109"
+              },
               "text": "35-39 år"
             },
             {
               "value": "30108",
+              "attrs": {
+                "value": "30108"
+              },
               "text": "30-34 år"
             },
             {
               "value": "30107",
+              "attrs": {
+                "value": "30107"
+              },
               "text": "25-29 år"
             },
             {
               "value": "30106",
+              "attrs": {
+                "value": "30106"
+              },
               "text": "20-24 år"
             },
             {
               "value": "30105",
+              "attrs": {
+                "value": "30105"
+              },
               "text": "18-19 år"
             },
             {
               "value": "30104",
+              "attrs": {
+                "value": "30104"
+              },
               "text": "16-17 år"
             },
             {
               "value": "30103",
+              "attrs": {
+                "value": "30103"
+              },
               "text": "14-15 år"
             },
             {
               "value": "30102",
+              "attrs": {
+                "value": "30102"
+              },
               "text": "12-13 år"
             },
             {
               "value": "30101",
+              "attrs": {
+                "value": "30101"
+              },
               "text": "0-11 år"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_58349",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "30121",
+              "attrs": {
+                "value": "30121"
+              },
               "text": "championship för Joelette"
             },
             {
               "value": "30120",
+              "attrs": {
+                "value": "30120"
+              },
               "text": "90+ år"
             },
             {
               "value": "30119",
+              "attrs": {
+                "value": "30119"
+              },
               "text": "85-89 år"
             },
             {
               "value": "30118",
+              "attrs": {
+                "value": "30118"
+              },
               "text": "80-84 år"
             },
             {
               "value": "30117",
+              "attrs": {
+                "value": "30117"
+              },
               "text": "75-79 år"
             },
             {
               "value": "30116",
+              "attrs": {
+                "value": "30116"
+              },
               "text": "70-74 år"
             },
             {
               "value": "30115",
+              "attrs": {
+                "value": "30115"
+              },
               "text": "65-69 år"
             },
             {
               "value": "30114",
+              "attrs": {
+                "value": "30114"
+              },
               "text": "60-64 år"
             },
             {
               "value": "30113",
+              "attrs": {
+                "value": "30113"
+              },
               "text": "55-59 år"
             },
             {
               "value": "30112",
+              "attrs": {
+                "value": "30112"
+              },
               "text": "50-54 år"
             },
             {
               "value": "30111",
+              "attrs": {
+                "value": "30111"
+              },
               "text": "45-49 år"
             },
             {
               "value": "30110",
+              "attrs": {
+                "value": "30110"
+              },
               "text": "40-44 år"
             },
             {
               "value": "30109",
+              "attrs": {
+                "value": "30109"
+              },
               "text": "35-39 år"
             },
             {
               "value": "30108",
+              "attrs": {
+                "value": "30108"
+              },
               "text": "30-34 år"
             },
             {
               "value": "30107",
+              "attrs": {
+                "value": "30107"
+              },
               "text": "25-29 år"
             },
             {
               "value": "30106",
+              "attrs": {
+                "value": "30106"
+              },
               "text": "20-24 år"
             },
             {
               "value": "30105",
+              "attrs": {
+                "value": "30105"
+              },
               "text": "18-19 år"
             },
             {
               "value": "30104",
+              "attrs": {
+                "value": "30104"
+              },
               "text": "16-17 år"
             },
             {
               "value": "30103",
+              "attrs": {
+                "value": "30103"
+              },
               "text": "14-15 år"
             },
             {
               "value": "30102",
+              "attrs": {
+                "value": "30102"
+              },
               "text": "12-13 år"
             },
             {
               "value": "30101",
+              "attrs": {
+                "value": "30101"
+              },
               "text": "0-11 år"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectCountry"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "value": "all"
+              },
               "text": "Alla länder"
             },
             {
               "value": "22",
+              "attrs": {
+                "value": "22"
+              },
               "text": "Brasilien"
             },
             {
               "value": "37",
+              "attrs": {
+                "value": "37"
+              },
               "text": "Danmark"
             },
             {
               "value": "52",
+              "attrs": {
+                "value": "52"
+              },
               "text": "Finland"
             },
             {
               "value": "53",
+              "attrs": {
+                "value": "53"
+              },
               "text": "Frankrig"
             },
             {
               "value": "67",
+              "attrs": {
+                "value": "67"
+              },
               "text": "Holland"
             },
             {
               "value": "74",
+              "attrs": {
+                "value": "74"
+              },
               "text": "Irland"
             },
             {
               "value": "75",
+              "attrs": {
+                "value": "75"
+              },
               "text": "Island"
             },
             {
               "value": "77",
+              "attrs": {
+                "value": "77"
+              },
               "text": "Italien"
             },
             {
               "value": "79",
+              "attrs": {
+                "value": "79"
+              },
               "text": "Japan"
             },
             {
               "value": "106",
+              "attrs": {
+                "value": "106"
+              },
               "text": "Marokko"
             },
             {
               "value": "128",
+              "attrs": {
+                "value": "128"
+              },
               "text": "Norge"
             },
             {
               "value": "137",
+              "attrs": {
+                "value": "137"
+              },
               "text": "Polen"
             },
             {
               "value": "147",
+              "attrs": {
+                "value": "147"
+              },
               "text": "Schweiz"
             },
             {
               "value": "149",
+              "attrs": {
+                "value": "149"
+              },
               "text": "Serbien"
             },
             {
               "value": "157",
+              "attrs": {
+                "value": "157"
+              },
               "text": "Spanien"
             },
             {
               "value": "198",
+              "attrs": {
+                "value": "198"
+              },
               "text": "Storbritannien"
             },
             {
               "value": "161",
+              "attrs": {
+                "value": "161"
+              },
               "text": "Sverige"
             },
             {
               "value": "163",
+              "attrs": {
+                "value": "163"
+              },
               "text": "Sydafrika"
             },
             {
               "value": "164",
+              "attrs": {
+                "value": "164"
+              },
               "text": "Sydkorea"
             },
             {
               "value": "171",
+              "attrs": {
+                "value": "171"
+              },
               "text": "Tjekkiet"
             },
             {
               "value": "179",
+              "attrs": {
+                "value": "179"
+              },
               "text": "Tyskland"
             },
             {
               "value": "999",
+              "attrs": {
+                "value": "999"
+              },
               "text": "Ukendt land"
             },
             {
               "value": "182",
+              "attrs": {
+                "value": "182"
+              },
               "text": "Ukraine"
             },
             {
               "value": "185",
+              "attrs": {
+                "value": "185"
+              },
               "text": "USA"
             }
           ]
@@ -2437,6 +4044,28 @@
         "/event/11274/app/results?page=3",
         "/event/11274/app/results?page=7"
       ],
+      "link_patterns": [
+        {
+          "pattern": "/event/11274/app/results/{result_id}",
+          "count": 50
+        },
+        {
+          "pattern": "/event/11274/app/results?page={page}",
+          "count": 4
+        },
+        {
+          "pattern": "/event/11274/app",
+          "count": 1
+        },
+        {
+          "pattern": "/event/11274/app/participants",
+          "count": 1
+        },
+        {
+          "pattern": "/event/11274/app/results",
+          "count": 1
+        }
+      ],
       "structural_attributes": [
         "data-bs-target=",
         "data-bs-toggle=",
@@ -2473,613 +4102,1062 @@
       "forms": [],
       "selects": [
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectDistance"
+          },
           "options": [
             {
               "value": "65781",
+              "attrs": {
+                "value": "65781"
+              },
               "text": "60 k ÖST ultra med COROS"
             },
             {
               "value": "65782",
+              "attrs": {
+                "value": "65782"
+              },
               "text": "Fogarolli trail 21km+"
             },
             {
               "value": "65784",
+              "attrs": {
+                "value": "65784"
+              },
               "text": "Duo Trail (relay 2 x 30 km)"
             },
             {
               "value": "65783",
+              "attrs": {
+                "selected": "selected",
+                "value": "65783"
+              },
               "text": "Ekopark trail 14 km"
             },
             {
               "value": "65780",
+              "attrs": {
+                "value": "65780"
+              },
               "text": "Naturloppet 5km+"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectGender"
+          },
           "options": [
             {
               "value": "A",
+              "attrs": {
+                "value": "A"
+              },
               "text": "Män/Kvinnor"
             },
             {
               "value": "M",
+              "attrs": {
+                "value": "M"
+              },
               "text": "Män"
             },
             {
               "value": "F",
+              "attrs": {
+                "value": "F"
+              },
               "text": "Kvinnor"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_65781",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "32721",
+              "attrs": {
+                "value": "32721"
+              },
               "text": "90-"
             },
             {
               "value": "32722",
+              "attrs": {
+                "value": "32722"
+              },
               "text": "85-89"
             },
             {
               "value": "32723",
+              "attrs": {
+                "value": "32723"
+              },
               "text": "80-84"
             },
             {
               "value": "32724",
+              "attrs": {
+                "value": "32724"
+              },
               "text": "75-79"
             },
             {
               "value": "32725",
+              "attrs": {
+                "value": "32725"
+              },
               "text": "70-74"
             },
             {
               "value": "32726",
+              "attrs": {
+                "value": "32726"
+              },
               "text": "65-69"
             },
             {
               "value": "32727",
+              "attrs": {
+                "value": "32727"
+              },
               "text": "60-64"
             },
             {
               "value": "32728",
+              "attrs": {
+                "value": "32728"
+              },
               "text": "55-59"
             },
             {
               "value": "32729",
+              "attrs": {
+                "value": "32729"
+              },
               "text": "50-54"
             },
             {
               "value": "32730",
+              "attrs": {
+                "value": "32730"
+              },
               "text": "45-49"
             },
             {
               "value": "32731",
+              "attrs": {
+                "value": "32731"
+              },
               "text": "40-44"
             },
             {
               "value": "32732",
+              "attrs": {
+                "value": "32732"
+              },
               "text": "35-39"
             },
             {
               "value": "32733",
+              "attrs": {
+                "value": "32733"
+              },
               "text": "30-34"
             },
             {
               "value": "32734",
+              "attrs": {
+                "value": "32734"
+              },
               "text": "25-29"
             },
             {
               "value": "32735",
+              "attrs": {
+                "value": "32735"
+              },
               "text": "20-24"
             },
             {
               "value": "32736",
+              "attrs": {
+                "value": "32736"
+              },
               "text": "18-19"
             },
             {
               "value": "32737",
+              "attrs": {
+                "value": "32737"
+              },
               "text": "16-17"
             },
             {
               "value": "32738",
+              "attrs": {
+                "value": "32738"
+              },
               "text": "14-15"
             },
             {
               "value": "32739",
+              "attrs": {
+                "value": "32739"
+              },
               "text": "12-13"
             },
             {
               "value": "32740",
+              "attrs": {
+                "value": "32740"
+              },
               "text": "0-11"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_65782",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "32721",
+              "attrs": {
+                "value": "32721"
+              },
               "text": "90-"
             },
             {
               "value": "32722",
+              "attrs": {
+                "value": "32722"
+              },
               "text": "85-89"
             },
             {
               "value": "32723",
+              "attrs": {
+                "value": "32723"
+              },
               "text": "80-84"
             },
             {
               "value": "32724",
+              "attrs": {
+                "value": "32724"
+              },
               "text": "75-79"
             },
             {
               "value": "32725",
+              "attrs": {
+                "value": "32725"
+              },
               "text": "70-74"
             },
             {
               "value": "32726",
+              "attrs": {
+                "value": "32726"
+              },
               "text": "65-69"
             },
             {
               "value": "32727",
+              "attrs": {
+                "value": "32727"
+              },
               "text": "60-64"
             },
             {
               "value": "32728",
+              "attrs": {
+                "value": "32728"
+              },
               "text": "55-59"
             },
             {
               "value": "32729",
+              "attrs": {
+                "value": "32729"
+              },
               "text": "50-54"
             },
             {
               "value": "32730",
+              "attrs": {
+                "value": "32730"
+              },
               "text": "45-49"
             },
             {
               "value": "32731",
+              "attrs": {
+                "value": "32731"
+              },
               "text": "40-44"
             },
             {
               "value": "32732",
+              "attrs": {
+                "value": "32732"
+              },
               "text": "35-39"
             },
             {
               "value": "32733",
+              "attrs": {
+                "value": "32733"
+              },
               "text": "30-34"
             },
             {
               "value": "32734",
+              "attrs": {
+                "value": "32734"
+              },
               "text": "25-29"
             },
             {
               "value": "32735",
+              "attrs": {
+                "value": "32735"
+              },
               "text": "20-24"
             },
             {
               "value": "32736",
+              "attrs": {
+                "value": "32736"
+              },
               "text": "18-19"
             },
             {
               "value": "32737",
+              "attrs": {
+                "value": "32737"
+              },
               "text": "16-17"
             },
             {
               "value": "32738",
+              "attrs": {
+                "value": "32738"
+              },
               "text": "14-15"
             },
             {
               "value": "32739",
+              "attrs": {
+                "value": "32739"
+              },
               "text": "12-13"
             },
             {
               "value": "32740",
+              "attrs": {
+                "value": "32740"
+              },
               "text": "0-11"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_65784",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "32721",
+              "attrs": {
+                "value": "32721"
+              },
               "text": "90-"
             },
             {
               "value": "32722",
+              "attrs": {
+                "value": "32722"
+              },
               "text": "85-89"
             },
             {
               "value": "32723",
+              "attrs": {
+                "value": "32723"
+              },
               "text": "80-84"
             },
             {
               "value": "32724",
+              "attrs": {
+                "value": "32724"
+              },
               "text": "75-79"
             },
             {
               "value": "32725",
+              "attrs": {
+                "value": "32725"
+              },
               "text": "70-74"
             },
             {
               "value": "32726",
+              "attrs": {
+                "value": "32726"
+              },
               "text": "65-69"
             },
             {
               "value": "32727",
+              "attrs": {
+                "value": "32727"
+              },
               "text": "60-64"
             },
             {
               "value": "32728",
+              "attrs": {
+                "value": "32728"
+              },
               "text": "55-59"
             },
             {
               "value": "32729",
+              "attrs": {
+                "value": "32729"
+              },
               "text": "50-54"
             },
             {
               "value": "32730",
+              "attrs": {
+                "value": "32730"
+              },
               "text": "45-49"
             },
             {
               "value": "32731",
+              "attrs": {
+                "value": "32731"
+              },
               "text": "40-44"
             },
             {
               "value": "32732",
+              "attrs": {
+                "value": "32732"
+              },
               "text": "35-39"
             },
             {
               "value": "32733",
+              "attrs": {
+                "value": "32733"
+              },
               "text": "30-34"
             },
             {
               "value": "32734",
+              "attrs": {
+                "value": "32734"
+              },
               "text": "25-29"
             },
             {
               "value": "32735",
+              "attrs": {
+                "value": "32735"
+              },
               "text": "20-24"
             },
             {
               "value": "32736",
+              "attrs": {
+                "value": "32736"
+              },
               "text": "18-19"
             },
             {
               "value": "32737",
+              "attrs": {
+                "value": "32737"
+              },
               "text": "16-17"
             },
             {
               "value": "32738",
+              "attrs": {
+                "value": "32738"
+              },
               "text": "14-15"
             },
             {
               "value": "32739",
+              "attrs": {
+                "value": "32739"
+              },
               "text": "12-13"
             },
             {
               "value": "32740",
+              "attrs": {
+                "value": "32740"
+              },
               "text": "0-11"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_65783"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "32721",
+              "attrs": {
+                "value": "32721"
+              },
               "text": "90-"
             },
             {
               "value": "32722",
+              "attrs": {
+                "value": "32722"
+              },
               "text": "85-89"
             },
             {
               "value": "32723",
+              "attrs": {
+                "value": "32723"
+              },
               "text": "80-84"
             },
             {
               "value": "32724",
+              "attrs": {
+                "value": "32724"
+              },
               "text": "75-79"
             },
             {
               "value": "32725",
+              "attrs": {
+                "value": "32725"
+              },
               "text": "70-74"
             },
             {
               "value": "32726",
+              "attrs": {
+                "value": "32726"
+              },
               "text": "65-69"
             },
             {
               "value": "32727",
+              "attrs": {
+                "value": "32727"
+              },
               "text": "60-64"
             },
             {
               "value": "32728",
+              "attrs": {
+                "value": "32728"
+              },
               "text": "55-59"
             },
             {
               "value": "32729",
+              "attrs": {
+                "value": "32729"
+              },
               "text": "50-54"
             },
             {
               "value": "32730",
+              "attrs": {
+                "value": "32730"
+              },
               "text": "45-49"
             },
             {
               "value": "32731",
+              "attrs": {
+                "value": "32731"
+              },
               "text": "40-44"
             },
             {
               "value": "32732",
+              "attrs": {
+                "value": "32732"
+              },
               "text": "35-39"
             },
             {
               "value": "32733",
+              "attrs": {
+                "value": "32733"
+              },
               "text": "30-34"
             },
             {
               "value": "32734",
+              "attrs": {
+                "value": "32734"
+              },
               "text": "25-29"
             },
             {
               "value": "32735",
+              "attrs": {
+                "value": "32735"
+              },
               "text": "20-24"
             },
             {
               "value": "32736",
+              "attrs": {
+                "value": "32736"
+              },
               "text": "18-19"
             },
             {
               "value": "32737",
+              "attrs": {
+                "value": "32737"
+              },
               "text": "16-17"
             },
             {
               "value": "32738",
+              "attrs": {
+                "value": "32738"
+              },
               "text": "14-15"
             },
             {
               "value": "32739",
+              "attrs": {
+                "value": "32739"
+              },
               "text": "12-13"
             },
             {
               "value": "32740",
+              "attrs": {
+                "value": "32740"
+              },
               "text": "0-11"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_65780",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "32721",
+              "attrs": {
+                "value": "32721"
+              },
               "text": "90-"
             },
             {
               "value": "32722",
+              "attrs": {
+                "value": "32722"
+              },
               "text": "85-89"
             },
             {
               "value": "32723",
+              "attrs": {
+                "value": "32723"
+              },
               "text": "80-84"
             },
             {
               "value": "32724",
+              "attrs": {
+                "value": "32724"
+              },
               "text": "75-79"
             },
             {
               "value": "32725",
+              "attrs": {
+                "value": "32725"
+              },
               "text": "70-74"
             },
             {
               "value": "32726",
+              "attrs": {
+                "value": "32726"
+              },
               "text": "65-69"
             },
             {
               "value": "32727",
+              "attrs": {
+                "value": "32727"
+              },
               "text": "60-64"
             },
             {
               "value": "32728",
+              "attrs": {
+                "value": "32728"
+              },
               "text": "55-59"
             },
             {
               "value": "32729",
+              "attrs": {
+                "value": "32729"
+              },
               "text": "50-54"
             },
             {
               "value": "32730",
+              "attrs": {
+                "value": "32730"
+              },
               "text": "45-49"
             },
             {
               "value": "32731",
+              "attrs": {
+                "value": "32731"
+              },
               "text": "40-44"
             },
             {
               "value": "32732",
+              "attrs": {
+                "value": "32732"
+              },
               "text": "35-39"
             },
             {
               "value": "32733",
+              "attrs": {
+                "value": "32733"
+              },
               "text": "30-34"
             },
             {
               "value": "32734",
+              "attrs": {
+                "value": "32734"
+              },
               "text": "25-29"
             },
             {
               "value": "32735",
+              "attrs": {
+                "value": "32735"
+              },
               "text": "20-24"
             },
             {
               "value": "32736",
+              "attrs": {
+                "value": "32736"
+              },
               "text": "18-19"
             },
             {
               "value": "32737",
+              "attrs": {
+                "value": "32737"
+              },
               "text": "16-17"
             },
             {
               "value": "32738",
+              "attrs": {
+                "value": "32738"
+              },
               "text": "14-15"
             },
             {
               "value": "32739",
+              "attrs": {
+                "value": "32739"
+              },
               "text": "12-13"
             },
             {
               "value": "32740",
+              "attrs": {
+                "value": "32740"
+              },
               "text": "0-11"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectCountry"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "value": "all"
+              },
               "text": "Alla länder"
             },
             {
               "value": "6",
+              "attrs": {
+                "value": "6"
+              },
               "text": "Argentina"
             },
             {
               "value": "14",
+              "attrs": {
+                "value": "14"
+              },
               "text": "Belgien"
             },
             {
               "value": "24",
+              "attrs": {
+                "value": "24"
+              },
               "text": "Bulgarien"
             },
             {
               "value": "29",
+              "attrs": {
+                "value": "29"
+              },
               "text": "Canada"
             },
             {
               "value": "31",
+              "attrs": {
+                "value": "31"
+              },
               "text": "Colombia"
             },
             {
               "value": "37",
+              "attrs": {
+                "value": "37"
+              },
               "text": "Danmark"
             },
             {
               "value": "52",
+              "attrs": {
+                "value": "52"
+              },
               "text": "Finland"
             },
             {
               "value": "53",
+              "attrs": {
+                "value": "53"
+              },
               "text": "Frankrig"
             },
             {
               "value": "60",
+              "attrs": {
+                "value": "60"
+              },
               "text": "Grækenland"
             },
             {
               "value": "67",
+              "attrs": {
+                "value": "67"
+              },
               "text": "Holland"
             },
             {
               "value": "70",
+              "attrs": {
+                "value": "70"
+              },
               "text": "Indien"
             },
             {
               "value": "74",
+              "attrs": {
+                "value": "74"
+              },
               "text": "Irland"
             },
             {
               "value": "75",
+              "attrs": {
+                "value": "75"
+              },
               "text": "Island"
             },
             {
               "value": "77",
+              "attrs": {
+                "value": "77"
+              },
               "text": "Italien"
             },
             {
               "value": "110",
+              "attrs": {
+                "value": "110"
+              },
               "text": "Mexico"
             },
             {
               "value": "128",
+              "attrs": {
+                "value": "128"
+              },
               "text": "Norge"
             },
             {
               "value": "138",
+              "attrs": {
+                "value": "138"
+              },
               "text": "Portugal"
             },
             {
               "value": "149",
+              "attrs": {
+                "value": "149"
+              },
               "text": "Serbien"
             },
             {
               "value": "155",
+              "attrs": {
+                "value": "155"
+              },
               "text": "Slovenien"
             },
             {
               "value": "157",
+              "attrs": {
+                "value": "157"
+              },
               "text": "Spanien"
             },
             {
               "value": "161",
+              "attrs": {
+                "value": "161"
+              },
               "text": "Sverige"
             },
             {
               "value": "163",
+              "attrs": {
+                "value": "163"
+              },
               "text": "Sydafrika"
             },
             {
               "value": "168",
+              "attrs": {
+                "value": "168"
+              },
               "text": "Taiwan"
             },
             {
               "value": "171",
+              "attrs": {
+                "value": "171"
+              },
               "text": "Tjekkiet"
             },
             {
               "value": "179",
+              "attrs": {
+                "value": "179"
+              },
               "text": "Tyskland"
             },
             {
               "value": "182",
+              "attrs": {
+                "value": "182"
+              },
               "text": "Ukraine"
             },
             {
               "value": "185",
+              "attrs": {
+                "value": "185"
+              },
               "text": "USA"
             }
           ]
@@ -3144,6 +5222,28 @@
         "/event/12349/app/results?page=3",
         "/event/12349/app/results?page=9"
       ],
+      "link_patterns": [
+        {
+          "pattern": "/event/12349/app/results/{result_id}",
+          "count": 50
+        },
+        {
+          "pattern": "/event/12349/app/results?page={page}",
+          "count": 4
+        },
+        {
+          "pattern": "/event/12349/app",
+          "count": 1
+        },
+        {
+          "pattern": "/event/12349/app/participants",
+          "count": 1
+        },
+        {
+          "pattern": "/event/12349/app/results",
+          "count": 1
+        }
+      ],
       "structural_attributes": [
         "data-bs-target=",
         "data-bs-toggle=",
@@ -3180,637 +5280,1104 @@
       "forms": [],
       "selects": [
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectDistance"
+          },
           "options": [
             {
               "value": "84440",
+              "attrs": {
+                "value": "84440"
+              },
               "text": "CRAFT Ultra 60 k"
             },
             {
               "value": "84441",
+              "attrs": {
+                "value": "84441"
+              },
               "text": "Fogarolli trail 22 K"
             },
             {
               "value": "84443",
+              "attrs": {
+                "value": "84443"
+              },
               "text": "Duo Trail (relay 2 x 30 km)"
             },
             {
               "value": "84442",
+              "attrs": {
+                "selected": "selected",
+                "value": "84442"
+              },
               "text": "Ekopark trail 14 km"
             },
             {
               "value": "84439",
+              "attrs": {
+                "value": "84439"
+              },
               "text": "Naturloppet 5km+"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectGender"
+          },
           "options": [
             {
               "value": "A",
+              "attrs": {
+                "value": "A"
+              },
               "text": "Män/Kvinnor"
             },
             {
               "value": "M",
+              "attrs": {
+                "value": "M"
+              },
               "text": "Män"
             },
             {
               "value": "F",
+              "attrs": {
+                "value": "F"
+              },
               "text": "Kvinnor"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_84440",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "40442",
+              "attrs": {
+                "value": "40442"
+              },
               "text": "90-"
             },
             {
               "value": "40443",
+              "attrs": {
+                "value": "40443"
+              },
               "text": "85-89"
             },
             {
               "value": "40444",
+              "attrs": {
+                "value": "40444"
+              },
               "text": "80-84"
             },
             {
               "value": "40445",
+              "attrs": {
+                "value": "40445"
+              },
               "text": "75-79"
             },
             {
               "value": "40446",
+              "attrs": {
+                "value": "40446"
+              },
               "text": "70-74"
             },
             {
               "value": "40447",
+              "attrs": {
+                "value": "40447"
+              },
               "text": "65-69"
             },
             {
               "value": "40448",
+              "attrs": {
+                "value": "40448"
+              },
               "text": "60-64"
             },
             {
               "value": "40449",
+              "attrs": {
+                "value": "40449"
+              },
               "text": "55-59"
             },
             {
               "value": "40450",
+              "attrs": {
+                "value": "40450"
+              },
               "text": "50-54"
             },
             {
               "value": "40451",
+              "attrs": {
+                "value": "40451"
+              },
               "text": "45-49"
             },
             {
               "value": "40452",
+              "attrs": {
+                "value": "40452"
+              },
               "text": "40-44"
             },
             {
               "value": "40453",
+              "attrs": {
+                "value": "40453"
+              },
               "text": "35-39"
             },
             {
               "value": "40454",
+              "attrs": {
+                "value": "40454"
+              },
               "text": "30-34"
             },
             {
               "value": "40455",
+              "attrs": {
+                "value": "40455"
+              },
               "text": "25-29"
             },
             {
               "value": "40456",
+              "attrs": {
+                "value": "40456"
+              },
               "text": "20-24"
             },
             {
               "value": "40457",
+              "attrs": {
+                "value": "40457"
+              },
               "text": "18-19"
             },
             {
               "value": "40458",
+              "attrs": {
+                "value": "40458"
+              },
               "text": "16-17"
             },
             {
               "value": "40459",
+              "attrs": {
+                "value": "40459"
+              },
               "text": "14-15"
             },
             {
               "value": "40460",
+              "attrs": {
+                "value": "40460"
+              },
               "text": "12-13"
             },
             {
               "value": "40461",
+              "attrs": {
+                "value": "40461"
+              },
               "text": "0-11"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_84441",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "40442",
+              "attrs": {
+                "value": "40442"
+              },
               "text": "90-"
             },
             {
               "value": "40443",
+              "attrs": {
+                "value": "40443"
+              },
               "text": "85-89"
             },
             {
               "value": "40444",
+              "attrs": {
+                "value": "40444"
+              },
               "text": "80-84"
             },
             {
               "value": "40445",
+              "attrs": {
+                "value": "40445"
+              },
               "text": "75-79"
             },
             {
               "value": "40446",
+              "attrs": {
+                "value": "40446"
+              },
               "text": "70-74"
             },
             {
               "value": "40447",
+              "attrs": {
+                "value": "40447"
+              },
               "text": "65-69"
             },
             {
               "value": "40448",
+              "attrs": {
+                "value": "40448"
+              },
               "text": "60-64"
             },
             {
               "value": "40449",
+              "attrs": {
+                "value": "40449"
+              },
               "text": "55-59"
             },
             {
               "value": "40450",
+              "attrs": {
+                "value": "40450"
+              },
               "text": "50-54"
             },
             {
               "value": "40451",
+              "attrs": {
+                "value": "40451"
+              },
               "text": "45-49"
             },
             {
               "value": "40452",
+              "attrs": {
+                "value": "40452"
+              },
               "text": "40-44"
             },
             {
               "value": "40453",
+              "attrs": {
+                "value": "40453"
+              },
               "text": "35-39"
             },
             {
               "value": "40454",
+              "attrs": {
+                "value": "40454"
+              },
               "text": "30-34"
             },
             {
               "value": "40455",
+              "attrs": {
+                "value": "40455"
+              },
               "text": "25-29"
             },
             {
               "value": "40456",
+              "attrs": {
+                "value": "40456"
+              },
               "text": "20-24"
             },
             {
               "value": "40457",
+              "attrs": {
+                "value": "40457"
+              },
               "text": "18-19"
             },
             {
               "value": "40458",
+              "attrs": {
+                "value": "40458"
+              },
               "text": "16-17"
             },
             {
               "value": "40459",
+              "attrs": {
+                "value": "40459"
+              },
               "text": "14-15"
             },
             {
               "value": "40460",
+              "attrs": {
+                "value": "40460"
+              },
               "text": "12-13"
             },
             {
               "value": "40461",
+              "attrs": {
+                "value": "40461"
+              },
               "text": "0-11"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_84443",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "40442",
+              "attrs": {
+                "value": "40442"
+              },
               "text": "90-"
             },
             {
               "value": "40443",
+              "attrs": {
+                "value": "40443"
+              },
               "text": "85-89"
             },
             {
               "value": "40444",
+              "attrs": {
+                "value": "40444"
+              },
               "text": "80-84"
             },
             {
               "value": "40445",
+              "attrs": {
+                "value": "40445"
+              },
               "text": "75-79"
             },
             {
               "value": "40446",
+              "attrs": {
+                "value": "40446"
+              },
               "text": "70-74"
             },
             {
               "value": "40447",
+              "attrs": {
+                "value": "40447"
+              },
               "text": "65-69"
             },
             {
               "value": "40448",
+              "attrs": {
+                "value": "40448"
+              },
               "text": "60-64"
             },
             {
               "value": "40449",
+              "attrs": {
+                "value": "40449"
+              },
               "text": "55-59"
             },
             {
               "value": "40450",
+              "attrs": {
+                "value": "40450"
+              },
               "text": "50-54"
             },
             {
               "value": "40451",
+              "attrs": {
+                "value": "40451"
+              },
               "text": "45-49"
             },
             {
               "value": "40452",
+              "attrs": {
+                "value": "40452"
+              },
               "text": "40-44"
             },
             {
               "value": "40453",
+              "attrs": {
+                "value": "40453"
+              },
               "text": "35-39"
             },
             {
               "value": "40454",
+              "attrs": {
+                "value": "40454"
+              },
               "text": "30-34"
             },
             {
               "value": "40455",
+              "attrs": {
+                "value": "40455"
+              },
               "text": "25-29"
             },
             {
               "value": "40456",
+              "attrs": {
+                "value": "40456"
+              },
               "text": "20-24"
             },
             {
               "value": "40457",
+              "attrs": {
+                "value": "40457"
+              },
               "text": "18-19"
             },
             {
               "value": "40458",
+              "attrs": {
+                "value": "40458"
+              },
               "text": "16-17"
             },
             {
               "value": "40459",
+              "attrs": {
+                "value": "40459"
+              },
               "text": "14-15"
             },
             {
               "value": "40460",
+              "attrs": {
+                "value": "40460"
+              },
               "text": "12-13"
             },
             {
               "value": "40461",
+              "attrs": {
+                "value": "40461"
+              },
               "text": "0-11"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_84442"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "40442",
+              "attrs": {
+                "value": "40442"
+              },
               "text": "90-"
             },
             {
               "value": "40443",
+              "attrs": {
+                "value": "40443"
+              },
               "text": "85-89"
             },
             {
               "value": "40444",
+              "attrs": {
+                "value": "40444"
+              },
               "text": "80-84"
             },
             {
               "value": "40445",
+              "attrs": {
+                "value": "40445"
+              },
               "text": "75-79"
             },
             {
               "value": "40446",
+              "attrs": {
+                "value": "40446"
+              },
               "text": "70-74"
             },
             {
               "value": "40447",
+              "attrs": {
+                "value": "40447"
+              },
               "text": "65-69"
             },
             {
               "value": "40448",
+              "attrs": {
+                "value": "40448"
+              },
               "text": "60-64"
             },
             {
               "value": "40449",
+              "attrs": {
+                "value": "40449"
+              },
               "text": "55-59"
             },
             {
               "value": "40450",
+              "attrs": {
+                "value": "40450"
+              },
               "text": "50-54"
             },
             {
               "value": "40451",
+              "attrs": {
+                "value": "40451"
+              },
               "text": "45-49"
             },
             {
               "value": "40452",
+              "attrs": {
+                "value": "40452"
+              },
               "text": "40-44"
             },
             {
               "value": "40453",
+              "attrs": {
+                "value": "40453"
+              },
               "text": "35-39"
             },
             {
               "value": "40454",
+              "attrs": {
+                "value": "40454"
+              },
               "text": "30-34"
             },
             {
               "value": "40455",
+              "attrs": {
+                "value": "40455"
+              },
               "text": "25-29"
             },
             {
               "value": "40456",
+              "attrs": {
+                "value": "40456"
+              },
               "text": "20-24"
             },
             {
               "value": "40457",
+              "attrs": {
+                "value": "40457"
+              },
               "text": "18-19"
             },
             {
               "value": "40458",
+              "attrs": {
+                "value": "40458"
+              },
               "text": "16-17"
             },
             {
               "value": "40459",
+              "attrs": {
+                "value": "40459"
+              },
               "text": "14-15"
             },
             {
               "value": "40460",
+              "attrs": {
+                "value": "40460"
+              },
               "text": "12-13"
             },
             {
               "value": "40461",
+              "attrs": {
+                "value": "40461"
+              },
               "text": "0-11"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_84439",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "40442",
+              "attrs": {
+                "value": "40442"
+              },
               "text": "90-"
             },
             {
               "value": "40443",
+              "attrs": {
+                "value": "40443"
+              },
               "text": "85-89"
             },
             {
               "value": "40444",
+              "attrs": {
+                "value": "40444"
+              },
               "text": "80-84"
             },
             {
               "value": "40445",
+              "attrs": {
+                "value": "40445"
+              },
               "text": "75-79"
             },
             {
               "value": "40446",
+              "attrs": {
+                "value": "40446"
+              },
               "text": "70-74"
             },
             {
               "value": "40447",
+              "attrs": {
+                "value": "40447"
+              },
               "text": "65-69"
             },
             {
               "value": "40448",
+              "attrs": {
+                "value": "40448"
+              },
               "text": "60-64"
             },
             {
               "value": "40449",
+              "attrs": {
+                "value": "40449"
+              },
               "text": "55-59"
             },
             {
               "value": "40450",
+              "attrs": {
+                "value": "40450"
+              },
               "text": "50-54"
             },
             {
               "value": "40451",
+              "attrs": {
+                "value": "40451"
+              },
               "text": "45-49"
             },
             {
               "value": "40452",
+              "attrs": {
+                "value": "40452"
+              },
               "text": "40-44"
             },
             {
               "value": "40453",
+              "attrs": {
+                "value": "40453"
+              },
               "text": "35-39"
             },
             {
               "value": "40454",
+              "attrs": {
+                "value": "40454"
+              },
               "text": "30-34"
             },
             {
               "value": "40455",
+              "attrs": {
+                "value": "40455"
+              },
               "text": "25-29"
             },
             {
               "value": "40456",
+              "attrs": {
+                "value": "40456"
+              },
               "text": "20-24"
             },
             {
               "value": "40457",
+              "attrs": {
+                "value": "40457"
+              },
               "text": "18-19"
             },
             {
               "value": "40458",
+              "attrs": {
+                "value": "40458"
+              },
               "text": "16-17"
             },
             {
               "value": "40459",
+              "attrs": {
+                "value": "40459"
+              },
               "text": "14-15"
             },
             {
               "value": "40460",
+              "attrs": {
+                "value": "40460"
+              },
               "text": "12-13"
             },
             {
               "value": "40461",
+              "attrs": {
+                "value": "40461"
+              },
               "text": "0-11"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectCountry"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "value": "all"
+              },
               "text": "Alla länder"
             },
             {
               "value": "6",
+              "attrs": {
+                "value": "6"
+              },
               "text": "Argentina"
             },
             {
               "value": "14",
+              "attrs": {
+                "value": "14"
+              },
               "text": "Belgien"
             },
             {
               "value": "29",
+              "attrs": {
+                "value": "29"
+              },
               "text": "Canada"
             },
             {
               "value": "37",
+              "attrs": {
+                "value": "37"
+              },
               "text": "Danmark"
             },
             {
               "value": "45",
+              "attrs": {
+                "value": "45"
+              },
               "text": "England"
             },
             {
               "value": "52",
+              "attrs": {
+                "value": "52"
+              },
               "text": "Finland"
             },
             {
               "value": "53",
+              "attrs": {
+                "value": "53"
+              },
               "text": "Frankrig"
             },
             {
               "value": "60",
+              "attrs": {
+                "value": "60"
+              },
               "text": "Grækenland"
             },
             {
               "value": "67",
+              "attrs": {
+                "value": "67"
+              },
               "text": "Holland"
             },
             {
               "value": "70",
+              "attrs": {
+                "value": "70"
+              },
               "text": "Indien"
             },
             {
               "value": "72",
+              "attrs": {
+                "value": "72"
+              },
               "text": "Irak"
             },
             {
               "value": "74",
+              "attrs": {
+                "value": "74"
+              },
               "text": "Irland"
             },
             {
               "value": "77",
+              "attrs": {
+                "value": "77"
+              },
               "text": "Italien"
             },
             {
               "value": "97",
+              "attrs": {
+                "value": "97"
+              },
               "text": "Litauen"
             },
             {
               "value": "110",
+              "attrs": {
+                "value": "110"
+              },
               "text": "Mexico"
             },
             {
               "value": "121",
+              "attrs": {
+                "value": "121"
+              },
               "text": "New Zealand"
             },
             {
               "value": "128",
+              "attrs": {
+                "value": "128"
+              },
               "text": "Norge"
             },
             {
               "value": "137",
+              "attrs": {
+                "value": "137"
+              },
               "text": "Polen"
             },
             {
               "value": "149",
+              "attrs": {
+                "value": "149"
+              },
               "text": "Serbien"
             },
             {
               "value": "152",
+              "attrs": {
+                "value": "152"
+              },
               "text": "Singapore"
             },
             {
               "value": "155",
+              "attrs": {
+                "value": "155"
+              },
               "text": "Slovenien"
             },
             {
               "value": "157",
+              "attrs": {
+                "value": "157"
+              },
               "text": "Spanien"
             },
             {
               "value": "198",
+              "attrs": {
+                "value": "198"
+              },
               "text": "Storbritannien"
             },
             {
               "value": "161",
+              "attrs": {
+                "value": "161"
+              },
               "text": "Sverige"
             },
             {
               "value": "163",
+              "attrs": {
+                "value": "163"
+              },
               "text": "Sydafrika"
             },
             {
               "value": "164",
+              "attrs": {
+                "value": "164"
+              },
               "text": "Sydkorea"
             },
             {
               "value": "167",
+              "attrs": {
+                "value": "167"
+              },
               "text": "Tadsjikistan"
             },
             {
               "value": "171",
+              "attrs": {
+                "value": "171"
+              },
               "text": "Tjekkiet"
             },
             {
               "value": "179",
+              "attrs": {
+                "value": "179"
+              },
               "text": "Tyskland"
             },
             {
               "value": "182",
+              "attrs": {
+                "value": "182"
+              },
               "text": "Ukraine"
             },
             {
               "value": "185",
+              "attrs": {
+                "value": "185"
+              },
               "text": "USA"
             },
             {
               "value": "188",
+              "attrs": {
+                "value": "188"
+              },
               "text": "Venezuela"
             },
             {
               "value": "353",
+              "attrs": {
+                "value": "353"
+              },
               "text": "Virgin Islands"
             }
           ]
@@ -3875,6 +6442,28 @@
         "/event/15015/app/results?page=3",
         "/event/15015/app/results?page=9"
       ],
+      "link_patterns": [
+        {
+          "pattern": "/event/15015/app/results/{result_id}",
+          "count": 50
+        },
+        {
+          "pattern": "/event/15015/app/results?page={page}",
+          "count": 4
+        },
+        {
+          "pattern": "/event/15015/app",
+          "count": 1
+        },
+        {
+          "pattern": "/event/15015/app/participants",
+          "count": 1
+        },
+        {
+          "pattern": "/event/15015/app/results",
+          "count": 1
+        }
+      ],
       "structural_attributes": [
         "data-bs-target=",
         "data-bs-toggle=",
@@ -3911,625 +6500,1083 @@
       "forms": [],
       "selects": [
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectDistance"
+          },
           "options": [
             {
               "value": "97077",
+              "attrs": {
+                "value": "97077"
+              },
               "text": "CRAFT Ultra 60 k"
             },
             {
               "value": "97078",
+              "attrs": {
+                "value": "97078"
+              },
               "text": "Fogarolli trail 22 K"
             },
             {
               "value": "97080",
+              "attrs": {
+                "value": "97080"
+              },
               "text": "Duo Trail (relay 2 x 30 km)"
             },
             {
               "value": "97079",
+              "attrs": {
+                "selected": "selected",
+                "value": "97079"
+              },
               "text": "Söderberg & Sara 14K"
             },
             {
               "value": "97076",
+              "attrs": {
+                "value": "97076"
+              },
               "text": "Naturloppet 5km+"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectGender"
+          },
           "options": [
             {
               "value": "A",
+              "attrs": {
+                "value": "A"
+              },
               "text": "Män/Kvinnor"
             },
             {
               "value": "M",
+              "attrs": {
+                "value": "M"
+              },
               "text": "Män"
             },
             {
               "value": "F",
+              "attrs": {
+                "value": "F"
+              },
               "text": "Kvinnor"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_97077",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "45147",
+              "attrs": {
+                "value": "45147"
+              },
               "text": "90-"
             },
             {
               "value": "45148",
+              "attrs": {
+                "value": "45148"
+              },
               "text": "85-89"
             },
             {
               "value": "45149",
+              "attrs": {
+                "value": "45149"
+              },
               "text": "80-84"
             },
             {
               "value": "45150",
+              "attrs": {
+                "value": "45150"
+              },
               "text": "75-79"
             },
             {
               "value": "45151",
+              "attrs": {
+                "value": "45151"
+              },
               "text": "70-74"
             },
             {
               "value": "45152",
+              "attrs": {
+                "value": "45152"
+              },
               "text": "65-69"
             },
             {
               "value": "45153",
+              "attrs": {
+                "value": "45153"
+              },
               "text": "60-64"
             },
             {
               "value": "45154",
+              "attrs": {
+                "value": "45154"
+              },
               "text": "55-59"
             },
             {
               "value": "45155",
+              "attrs": {
+                "value": "45155"
+              },
               "text": "50-54"
             },
             {
               "value": "45156",
+              "attrs": {
+                "value": "45156"
+              },
               "text": "45-49"
             },
             {
               "value": "45157",
+              "attrs": {
+                "value": "45157"
+              },
               "text": "40-44"
             },
             {
               "value": "45158",
+              "attrs": {
+                "value": "45158"
+              },
               "text": "35-39"
             },
             {
               "value": "45159",
+              "attrs": {
+                "value": "45159"
+              },
               "text": "30-34"
             },
             {
               "value": "45160",
+              "attrs": {
+                "value": "45160"
+              },
               "text": "25-29"
             },
             {
               "value": "45161",
+              "attrs": {
+                "value": "45161"
+              },
               "text": "20-24"
             },
             {
               "value": "45162",
+              "attrs": {
+                "value": "45162"
+              },
               "text": "18-19"
             },
             {
               "value": "45163",
+              "attrs": {
+                "value": "45163"
+              },
               "text": "16-17"
             },
             {
               "value": "45164",
+              "attrs": {
+                "value": "45164"
+              },
               "text": "14-15"
             },
             {
               "value": "45165",
+              "attrs": {
+                "value": "45165"
+              },
               "text": "12-13"
             },
             {
               "value": "45166",
+              "attrs": {
+                "value": "45166"
+              },
               "text": "0-11"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_97078",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "45147",
+              "attrs": {
+                "value": "45147"
+              },
               "text": "90-"
             },
             {
               "value": "45148",
+              "attrs": {
+                "value": "45148"
+              },
               "text": "85-89"
             },
             {
               "value": "45149",
+              "attrs": {
+                "value": "45149"
+              },
               "text": "80-84"
             },
             {
               "value": "45150",
+              "attrs": {
+                "value": "45150"
+              },
               "text": "75-79"
             },
             {
               "value": "45151",
+              "attrs": {
+                "value": "45151"
+              },
               "text": "70-74"
             },
             {
               "value": "45152",
+              "attrs": {
+                "value": "45152"
+              },
               "text": "65-69"
             },
             {
               "value": "45153",
+              "attrs": {
+                "value": "45153"
+              },
               "text": "60-64"
             },
             {
               "value": "45154",
+              "attrs": {
+                "value": "45154"
+              },
               "text": "55-59"
             },
             {
               "value": "45155",
+              "attrs": {
+                "value": "45155"
+              },
               "text": "50-54"
             },
             {
               "value": "45156",
+              "attrs": {
+                "value": "45156"
+              },
               "text": "45-49"
             },
             {
               "value": "45157",
+              "attrs": {
+                "value": "45157"
+              },
               "text": "40-44"
             },
             {
               "value": "45158",
+              "attrs": {
+                "value": "45158"
+              },
               "text": "35-39"
             },
             {
               "value": "45159",
+              "attrs": {
+                "value": "45159"
+              },
               "text": "30-34"
             },
             {
               "value": "45160",
+              "attrs": {
+                "value": "45160"
+              },
               "text": "25-29"
             },
             {
               "value": "45161",
+              "attrs": {
+                "value": "45161"
+              },
               "text": "20-24"
             },
             {
               "value": "45162",
+              "attrs": {
+                "value": "45162"
+              },
               "text": "18-19"
             },
             {
               "value": "45163",
+              "attrs": {
+                "value": "45163"
+              },
               "text": "16-17"
             },
             {
               "value": "45164",
+              "attrs": {
+                "value": "45164"
+              },
               "text": "14-15"
             },
             {
               "value": "45165",
+              "attrs": {
+                "value": "45165"
+              },
               "text": "12-13"
             },
             {
               "value": "45166",
+              "attrs": {
+                "value": "45166"
+              },
               "text": "0-11"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_97080",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "45147",
+              "attrs": {
+                "value": "45147"
+              },
               "text": "90-"
             },
             {
               "value": "45148",
+              "attrs": {
+                "value": "45148"
+              },
               "text": "85-89"
             },
             {
               "value": "45149",
+              "attrs": {
+                "value": "45149"
+              },
               "text": "80-84"
             },
             {
               "value": "45150",
+              "attrs": {
+                "value": "45150"
+              },
               "text": "75-79"
             },
             {
               "value": "45151",
+              "attrs": {
+                "value": "45151"
+              },
               "text": "70-74"
             },
             {
               "value": "45152",
+              "attrs": {
+                "value": "45152"
+              },
               "text": "65-69"
             },
             {
               "value": "45153",
+              "attrs": {
+                "value": "45153"
+              },
               "text": "60-64"
             },
             {
               "value": "45154",
+              "attrs": {
+                "value": "45154"
+              },
               "text": "55-59"
             },
             {
               "value": "45155",
+              "attrs": {
+                "value": "45155"
+              },
               "text": "50-54"
             },
             {
               "value": "45156",
+              "attrs": {
+                "value": "45156"
+              },
               "text": "45-49"
             },
             {
               "value": "45157",
+              "attrs": {
+                "value": "45157"
+              },
               "text": "40-44"
             },
             {
               "value": "45158",
+              "attrs": {
+                "value": "45158"
+              },
               "text": "35-39"
             },
             {
               "value": "45159",
+              "attrs": {
+                "value": "45159"
+              },
               "text": "30-34"
             },
             {
               "value": "45160",
+              "attrs": {
+                "value": "45160"
+              },
               "text": "25-29"
             },
             {
               "value": "45161",
+              "attrs": {
+                "value": "45161"
+              },
               "text": "20-24"
             },
             {
               "value": "45162",
+              "attrs": {
+                "value": "45162"
+              },
               "text": "18-19"
             },
             {
               "value": "45163",
+              "attrs": {
+                "value": "45163"
+              },
               "text": "16-17"
             },
             {
               "value": "45164",
+              "attrs": {
+                "value": "45164"
+              },
               "text": "14-15"
             },
             {
               "value": "45165",
+              "attrs": {
+                "value": "45165"
+              },
               "text": "12-13"
             },
             {
               "value": "45166",
+              "attrs": {
+                "value": "45166"
+              },
               "text": "0-11"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_97079"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "45147",
+              "attrs": {
+                "value": "45147"
+              },
               "text": "90-"
             },
             {
               "value": "45148",
+              "attrs": {
+                "value": "45148"
+              },
               "text": "85-89"
             },
             {
               "value": "45149",
+              "attrs": {
+                "value": "45149"
+              },
               "text": "80-84"
             },
             {
               "value": "45150",
+              "attrs": {
+                "value": "45150"
+              },
               "text": "75-79"
             },
             {
               "value": "45151",
+              "attrs": {
+                "value": "45151"
+              },
               "text": "70-74"
             },
             {
               "value": "45152",
+              "attrs": {
+                "value": "45152"
+              },
               "text": "65-69"
             },
             {
               "value": "45153",
+              "attrs": {
+                "value": "45153"
+              },
               "text": "60-64"
             },
             {
               "value": "45154",
+              "attrs": {
+                "value": "45154"
+              },
               "text": "55-59"
             },
             {
               "value": "45155",
+              "attrs": {
+                "value": "45155"
+              },
               "text": "50-54"
             },
             {
               "value": "45156",
+              "attrs": {
+                "value": "45156"
+              },
               "text": "45-49"
             },
             {
               "value": "45157",
+              "attrs": {
+                "value": "45157"
+              },
               "text": "40-44"
             },
             {
               "value": "45158",
+              "attrs": {
+                "value": "45158"
+              },
               "text": "35-39"
             },
             {
               "value": "45159",
+              "attrs": {
+                "value": "45159"
+              },
               "text": "30-34"
             },
             {
               "value": "45160",
+              "attrs": {
+                "value": "45160"
+              },
               "text": "25-29"
             },
             {
               "value": "45161",
+              "attrs": {
+                "value": "45161"
+              },
               "text": "20-24"
             },
             {
               "value": "45162",
+              "attrs": {
+                "value": "45162"
+              },
               "text": "18-19"
             },
             {
               "value": "45163",
+              "attrs": {
+                "value": "45163"
+              },
               "text": "16-17"
             },
             {
               "value": "45164",
+              "attrs": {
+                "value": "45164"
+              },
               "text": "14-15"
             },
             {
               "value": "45165",
+              "attrs": {
+                "value": "45165"
+              },
               "text": "12-13"
             },
             {
               "value": "45166",
+              "attrs": {
+                "value": "45166"
+              },
               "text": "0-11"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": " form-control selectCategory selectCategory_97076",
+            "style": "display:none;"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "selected": "selected",
+                "value": "all"
+              },
               "text": "Alla"
             },
             {
               "value": "45147",
+              "attrs": {
+                "value": "45147"
+              },
               "text": "90-"
             },
             {
               "value": "45148",
+              "attrs": {
+                "value": "45148"
+              },
               "text": "85-89"
             },
             {
               "value": "45149",
+              "attrs": {
+                "value": "45149"
+              },
               "text": "80-84"
             },
             {
               "value": "45150",
+              "attrs": {
+                "value": "45150"
+              },
               "text": "75-79"
             },
             {
               "value": "45151",
+              "attrs": {
+                "value": "45151"
+              },
               "text": "70-74"
             },
             {
               "value": "45152",
+              "attrs": {
+                "value": "45152"
+              },
               "text": "65-69"
             },
             {
               "value": "45153",
+              "attrs": {
+                "value": "45153"
+              },
               "text": "60-64"
             },
             {
               "value": "45154",
+              "attrs": {
+                "value": "45154"
+              },
               "text": "55-59"
             },
             {
               "value": "45155",
+              "attrs": {
+                "value": "45155"
+              },
               "text": "50-54"
             },
             {
               "value": "45156",
+              "attrs": {
+                "value": "45156"
+              },
               "text": "45-49"
             },
             {
               "value": "45157",
+              "attrs": {
+                "value": "45157"
+              },
               "text": "40-44"
             },
             {
               "value": "45158",
+              "attrs": {
+                "value": "45158"
+              },
               "text": "35-39"
             },
             {
               "value": "45159",
+              "attrs": {
+                "value": "45159"
+              },
               "text": "30-34"
             },
             {
               "value": "45160",
+              "attrs": {
+                "value": "45160"
+              },
               "text": "25-29"
             },
             {
               "value": "45161",
+              "attrs": {
+                "value": "45161"
+              },
               "text": "20-24"
             },
             {
               "value": "45162",
+              "attrs": {
+                "value": "45162"
+              },
               "text": "18-19"
             },
             {
               "value": "45163",
+              "attrs": {
+                "value": "45163"
+              },
               "text": "16-17"
             },
             {
               "value": "45164",
+              "attrs": {
+                "value": "45164"
+              },
               "text": "14-15"
             },
             {
               "value": "45165",
+              "attrs": {
+                "value": "45165"
+              },
               "text": "12-13"
             },
             {
               "value": "45166",
+              "attrs": {
+                "value": "45166"
+              },
               "text": "0-11"
             }
           ]
         },
         {
-          "name": null,
-          "id": null,
+          "attrs": {
+            "name": null,
+            "class": "form-control selectCountry"
+          },
           "options": [
             {
               "value": "all",
+              "attrs": {
+                "value": "all"
+              },
               "text": "Alla länder"
             },
             {
               "value": "9",
+              "attrs": {
+                "value": "9"
+              },
               "text": "Australien"
             },
             {
               "value": "14",
+              "attrs": {
+                "value": "14"
+              },
               "text": "Belgien"
             },
             {
               "value": "29",
+              "attrs": {
+                "value": "29"
+              },
               "text": "Canada"
             },
             {
               "value": "37",
+              "attrs": {
+                "value": "37"
+              },
               "text": "Danmark"
             },
             {
               "value": "45",
+              "attrs": {
+                "value": "45"
+              },
               "text": "England"
             },
             {
               "value": "52",
+              "attrs": {
+                "value": "52"
+              },
               "text": "Finland"
             },
             {
               "value": "53",
+              "attrs": {
+                "value": "53"
+              },
               "text": "Frankrig"
             },
             {
               "value": "60",
+              "attrs": {
+                "value": "60"
+              },
               "text": "Grækenland"
             },
             {
               "value": "67",
+              "attrs": {
+                "value": "67"
+              },
               "text": "Holland"
             },
             {
               "value": "70",
+              "attrs": {
+                "value": "70"
+              },
               "text": "Indien"
             },
             {
               "value": "72",
+              "attrs": {
+                "value": "72"
+              },
               "text": "Irak"
             },
             {
               "value": "74",
+              "attrs": {
+                "value": "74"
+              },
               "text": "Irland"
             },
             {
               "value": "75",
+              "attrs": {
+                "value": "75"
+              },
               "text": "Island"
             },
             {
               "value": "77",
+              "attrs": {
+                "value": "77"
+              },
               "text": "Italien"
             },
             {
               "value": "79",
+              "attrs": {
+                "value": "79"
+              },
               "text": "Japan"
             },
             {
               "value": "84",
+              "attrs": {
+                "value": "84"
+              },
               "text": "Kina"
             },
             {
               "value": "121",
+              "attrs": {
+                "value": "121"
+              },
               "text": "New Zealand"
             },
             {
               "value": "128",
+              "attrs": {
+                "value": "128"
+              },
               "text": "Norge"
             },
             {
               "value": "135",
+              "attrs": {
+                "value": "135"
+              },
               "text": "Peru"
             },
             {
               "value": "137",
+              "attrs": {
+                "value": "137"
+              },
               "text": "Polen"
             },
             {
               "value": "149",
+              "attrs": {
+                "value": "149"
+              },
               "text": "Serbien"
             },
             {
               "value": "157",
+              "attrs": {
+                "value": "157"
+              },
               "text": "Spanien"
             },
             {
               "value": "161",
+              "attrs": {
+                "value": "161"
+              },
               "text": "Sverige"
             },
             {
               "value": "163",
+              "attrs": {
+                "value": "163"
+              },
               "text": "Sydafrika"
             },
             {
               "value": "179",
+              "attrs": {
+                "value": "179"
+              },
               "text": "Tyskland"
             },
             {
               "value": "181",
+              "attrs": {
+                "value": "181"
+              },
               "text": "Uganda"
             },
             {
               "value": "182",
+              "attrs": {
+                "value": "182"
+              },
               "text": "Ukraine"
             },
             {
               "value": "185",
+              "attrs": {
+                "value": "185"
+              },
               "text": "USA"
             },
             {
               "value": "188",
+              "attrs": {
+                "value": "188"
+              },
               "text": "Venezuela"
             },
             {
               "value": "248",
+              "attrs": {
+                "value": "248"
+              },
               "text": "Åland"
             }
           ]
@@ -4593,6 +7640,28 @@
         "/event/16880/app/results?page=2",
         "/event/16880/app/results?page=3",
         "/event/16880/app/results?page=10"
+      ],
+      "link_patterns": [
+        {
+          "pattern": "/event/16880/app/results/{result_id}",
+          "count": 50
+        },
+        {
+          "pattern": "/event/16880/app/results?page={page}",
+          "count": 4
+        },
+        {
+          "pattern": "/event/16880/app",
+          "count": 1
+        },
+        {
+          "pattern": "/event/16880/app/participants",
+          "count": 1
+        },
+        {
+          "pattern": "/event/16880/app/results",
+          "count": 1
+        }
       ],
       "structural_attributes": [
         "data-bs-target=",
