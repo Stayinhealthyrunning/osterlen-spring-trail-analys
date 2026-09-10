@@ -1,0 +1,11 @@
+[
+  {"year": 2018, "status": "held", "race_families": ["ultra60", "trail22", "trail14", "trail5"]},
+  {"year": 2019, "status": "held", "race_families": ["ultra60", "duo60", "trail22", "trail14", "trail5"]},
+  {"year": 2020, "status": "cancelled", "race_families": []},
+  {"year": 2021, "status": "cancelled", "race_families": []},
+  {"year": 2022, "status": "held", "race_families": ["ultra60", "duo60", "trail22", "trail14", "trail5"]},
+  {"year": 2023, "status": "held", "race_families": ["ultra60", "duo60", "trail22", "trail14", "trail5"]},
+  {"year": 2024, "status": "held", "race_families": ["ultra60", "duo60", "trail22", "trail14", "trail5"]},
+  {"year": 2025, "status": "held", "race_families": ["ultra60", "duo60", "trail22", "trail14", "trail5"]},
+  {"year": 2026, "status": "held", "race_families": ["ultra60", "duo60", "trail22", "trail14", "trail5"]}
+]
