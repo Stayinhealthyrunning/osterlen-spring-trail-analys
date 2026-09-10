@@ -1,0 +1,230 @@
+{
+  "generated_at": "2026-09-10T11:32:38.221664+00:00",
+  "source": "Trace de Trail public embedded dataTrace payloads",
+  "routes": [
+    {
+      "trace_id": 7897,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2018,
+          "status": "candidate_needs_direct_reverification"
+        }
+      ],
+      "found": false,
+      "bytes": 0,
+      "sha256": null,
+      "parse_error": null,
+      "structure": null,
+      "geometry_string_hints": []
+    },
+    {
+      "trace_id": 43970,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2018,
+          "status": "candidate_needs_direct_reverification"
+        }
+      ],
+      "found": false,
+      "bytes": 0,
+      "sha256": null,
+      "parse_error": null,
+      "structure": null,
+      "geometry_string_hints": []
+    },
+    {
+      "trace_id": 69381,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2019,
+          "status": "verified"
+        }
+      ],
+      "found": false,
+      "bytes": 0,
+      "sha256": null,
+      "parse_error": null,
+      "structure": null,
+      "geometry_string_hints": []
+    },
+    {
+      "trace_id": 69864,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2019,
+          "status": "verified"
+        }
+      ],
+      "found": false,
+      "bytes": 0,
+      "sha256": null,
+      "parse_error": null,
+      "structure": null,
+      "geometry_string_hints": []
+    },
+    {
+      "trace_id": 165617,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2022,
+          "status": "verified"
+        }
+      ],
+      "found": false,
+      "bytes": 0,
+      "sha256": null,
+      "parse_error": null,
+      "structure": null,
+      "geometry_string_hints": []
+    },
+    {
+      "trace_id": 172147,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2022,
+          "status": "candidate_needs_direct_reverification"
+        }
+      ],
+      "found": false,
+      "bytes": 0,
+      "sha256": null,
+      "parse_error": null,
+      "structure": null,
+      "geometry_string_hints": []
+    },
+    {
+      "trace_id": 203146,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2023,
+          "status": "verified_via_organizer_trace_listing"
+        }
+      ],
+      "found": false,
+      "bytes": 0,
+      "sha256": null,
+      "parse_error": null,
+      "structure": null,
+      "geometry_string_hints": []
+    },
+    {
+      "trace_id": 203147,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2023,
+          "status": "verified"
+        }
+      ],
+      "found": false,
+      "bytes": 0,
+      "sha256": null,
+      "parse_error": null,
+      "structure": null,
+      "geometry_string_hints": []
+    },
+    {
+      "trace_id": 237224,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2024,
+          "status": "verified"
+        }
+      ],
+      "found": false,
+      "bytes": 0,
+      "sha256": null,
+      "parse_error": null,
+      "structure": null,
+      "geometry_string_hints": []
+    },
+    {
+      "trace_id": 251126,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2024,
+          "status": "verified"
+        }
+      ],
+      "found": false,
+      "bytes": 0,
+      "sha256": null,
+      "parse_error": null,
+      "structure": null,
+      "geometry_string_hints": []
+    },
+    {
+      "trace_id": 272846,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2025,
+          "status": "verified"
+        }
+      ],
+      "found": false,
+      "bytes": 0,
+      "sha256": null,
+      "parse_error": null,
+      "structure": null,
+      "geometry_string_hints": []
+    },
+    {
+      "trace_id": 280053,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2025,
+          "status": "verified"
+        }
+      ],
+      "found": false,
+      "bytes": 0,
+      "sha256": null,
+      "parse_error": null,
+      "structure": null,
+      "geometry_string_hints": []
+    },
+    {
+      "trace_id": 322314,
+      "manifest_refs": [
+        {
+          "family": "trail22",
+          "year": 2026,
+          "status": "verified"
+        }
+      ],
+      "found": false,
+      "bytes": 0,
+      "sha256": null,
+      "parse_error": null,
+      "structure": null,
+      "geometry_string_hints": []
+    },
+    {
+      "trace_id": 322315,
+      "manifest_refs": [
+        {
+          "family": "ultra60",
+          "year": 2026,
+          "status": "verified"
+        }
+      ],
+      "found": false,
+      "bytes": 0,
+      "sha256": null,
+      "parse_error": null,
+      "structure": null,
+      "geometry_string_hints": []
+    }
+  ]
+}

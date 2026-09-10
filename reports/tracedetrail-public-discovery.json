@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-10T09:24:21.267816+00:00",
-  "policy": "Public page metadata/waypoints only; no third-party GPX body archived.",
+  "generated_at": "2026-09-10T11:32:38.221664+00:00",
+  "policy": "Public page metadata/waypoints and structural inspection of embedded dataTrace; no authenticated GPX download and no complete third-party page archived.",
   "traces": [
     {
       "trace_id": 7897,
@@ -9,7 +9,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "bytes": 272345,
-      "sha256": "a83c0f28925dd5d6290dca42b49c4d56dd14a7c094b7f954ac86ce87a1cdc2a7",
+      "sha256": "825e91dfddf50df9efb0748019a31b78f38cce1eefd245e02930aa2c3932c537",
       "data_pi_found": true,
       "data_pi_error": null,
       "data_pi_count": 1,
@@ -76,6 +76,12 @@
           }
         }
       ],
+      "data_trace_found": false,
+      "data_trace_bytes": 0,
+      "data_trace_sha256": null,
+      "data_trace_error": null,
+      "data_trace_structure": null,
+      "data_trace_string_hints": [],
       "gpx_related_links": [],
       "gpx_related_forms": [],
       "gpx_endpoint_literals": [
@@ -107,7 +113,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "bytes": 426577,
-      "sha256": "4e29522a776cdb0d883b1f3b599a1349bf2f210379a105608836917a0e124ca3",
+      "sha256": "9ac83b777c53b1639e364be487a171fd4502edf74bc60f1af706e2bdd8ecf5e6",
       "data_pi_found": true,
       "data_pi_error": null,
       "data_pi_count": 20,
@@ -422,6 +428,12 @@
           }
         }
       ],
+      "data_trace_found": false,
+      "data_trace_bytes": 0,
+      "data_trace_sha256": null,
+      "data_trace_error": null,
+      "data_trace_structure": null,
+      "data_trace_string_hints": [],
       "gpx_related_links": [],
       "gpx_related_forms": [],
       "gpx_endpoint_literals": [
@@ -453,7 +465,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "bytes": 481489,
-      "sha256": "6b0a81c6d34f677ae7f3f1073358e211d41a15dcf47ec6a397caee80faa7049d",
+      "sha256": "9b30d9abf3660cde64a601be49b6b277558feefa7bfb2a7d91d9d7fb240449e4",
       "data_pi_found": true,
       "data_pi_error": null,
       "data_pi_count": 2,
@@ -532,6 +544,12 @@
           }
         }
       ],
+      "data_trace_found": false,
+      "data_trace_bytes": 0,
+      "data_trace_sha256": null,
+      "data_trace_error": null,
+      "data_trace_structure": null,
+      "data_trace_string_hints": [],
       "gpx_related_links": [],
       "gpx_related_forms": [],
       "gpx_endpoint_literals": [
@@ -563,7 +581,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "bytes": 275893,
-      "sha256": "29e309cdc800eea8988c446ba7488dbe77b16fe7c58595ca482c881af1a135ac",
+      "sha256": "0c0328bfff21648abc3e0a61dcfc246ad06c90b65a0bafe9716f663c2c8c9c87",
       "data_pi_found": true,
       "data_pi_error": null,
       "data_pi_count": 1,
@@ -630,6 +648,12 @@
           }
         }
       ],
+      "data_trace_found": false,
+      "data_trace_bytes": 0,
+      "data_trace_sha256": null,
+      "data_trace_error": null,
+      "data_trace_structure": null,
+      "data_trace_string_hints": [],
       "gpx_related_links": [],
       "gpx_related_forms": [],
       "gpx_endpoint_literals": [
@@ -740,6 +764,12 @@
           }
         }
       ],
+      "data_trace_found": false,
+      "data_trace_bytes": 0,
+      "data_trace_sha256": null,
+      "data_trace_error": null,
+      "data_trace_structure": null,
+      "data_trace_string_hints": [],
       "gpx_related_links": [],
       "gpx_related_forms": [],
       "gpx_endpoint_literals": [
@@ -771,7 +801,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "bytes": 464736,
-      "sha256": "2324ec0dd4098cc2975ed8fec9949fde32a2eb90063d4a57de12e5d49b7e4ecc",
+      "sha256": "a63ed73af84935d3646aceeff1e8fbf5fb9ccb8dc78e59ba79eabc661320cae7",
       "data_pi_found": true,
       "data_pi_error": null,
       "data_pi_count": 17,
@@ -960,6 +990,12 @@
           "elevation_m": "120"
         }
       ],
+      "data_trace_found": false,
+      "data_trace_bytes": 0,
+      "data_trace_sha256": null,
+      "data_trace_error": null,
+      "data_trace_structure": null,
+      "data_trace_string_hints": [],
       "gpx_related_links": [],
       "gpx_related_forms": [],
       "gpx_endpoint_literals": [
@@ -991,7 +1027,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "bytes": 259033,
-      "sha256": "20026e12ab94f099e9fb1a11053163eb2c0a550a92cd16fcae4eff0ee03564d2",
+      "sha256": "b5fcf33a44d6b11374dc9b05051261d8eb8dc3f7cb79cbf440e6e7dd34325e5d",
       "data_pi_found": true,
       "data_pi_error": null,
       "data_pi_count": 2,
@@ -1070,6 +1106,12 @@
           }
         }
       ],
+      "data_trace_found": false,
+      "data_trace_bytes": 0,
+      "data_trace_sha256": null,
+      "data_trace_error": null,
+      "data_trace_structure": null,
+      "data_trace_string_hints": [],
       "gpx_related_links": [],
       "gpx_related_forms": [],
       "gpx_endpoint_literals": [
@@ -1101,7 +1143,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "bytes": 465265,
-      "sha256": "3936226052207ae3d14c8c53d80a0622f7c84c1205250dccbeae62226bcde813",
+      "sha256": "542f4c12bc792a41702b59bea7f5ceee1ae8be8e55d79139b8c03cbd147600d4",
       "data_pi_found": true,
       "data_pi_error": null,
       "data_pi_count": 17,
@@ -1335,6 +1377,12 @@
           }
         }
       ],
+      "data_trace_found": false,
+      "data_trace_bytes": 0,
+      "data_trace_sha256": null,
+      "data_trace_error": null,
+      "data_trace_structure": null,
+      "data_trace_string_hints": [],
       "gpx_related_links": [],
       "gpx_related_forms": [],
       "gpx_endpoint_literals": [
@@ -1366,7 +1414,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "bytes": 258855,
-      "sha256": "2d4b524d92bbca96ef818657c18cbd2c5b0db3a438806971bf4151b66b15242b",
+      "sha256": "37c90b838fcd25c639417d4142495fd14c9d216ffaa78926f7abd12bd6453b10",
       "data_pi_found": true,
       "data_pi_error": null,
       "data_pi_count": 2,
@@ -1445,6 +1493,12 @@
           }
         }
       ],
+      "data_trace_found": false,
+      "data_trace_bytes": 0,
+      "data_trace_sha256": null,
+      "data_trace_error": null,
+      "data_trace_structure": null,
+      "data_trace_string_hints": [],
       "gpx_related_links": [],
       "gpx_related_forms": [],
       "gpx_endpoint_literals": [
@@ -1555,6 +1609,12 @@
           }
         }
       ],
+      "data_trace_found": false,
+      "data_trace_bytes": 0,
+      "data_trace_sha256": null,
+      "data_trace_error": null,
+      "data_trace_structure": null,
+      "data_trace_string_hints": [],
       "gpx_related_links": [],
       "gpx_related_forms": [],
       "gpx_endpoint_literals": [
@@ -1884,6 +1944,12 @@
           }
         }
       ],
+      "data_trace_found": false,
+      "data_trace_bytes": 0,
+      "data_trace_sha256": null,
+      "data_trace_error": null,
+      "data_trace_structure": null,
+      "data_trace_string_hints": [],
       "gpx_related_links": [],
       "gpx_related_forms": [],
       "gpx_endpoint_literals": [
@@ -1994,6 +2060,12 @@
           }
         }
       ],
+      "data_trace_found": false,
+      "data_trace_bytes": 0,
+      "data_trace_sha256": null,
+      "data_trace_error": null,
+      "data_trace_structure": null,
+      "data_trace_string_hints": [],
       "gpx_related_links": [],
       "gpx_related_forms": [],
       "gpx_endpoint_literals": [
@@ -2025,7 +2097,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "bytes": 293481,
-      "sha256": "df5a26fc02cafbe3f89101d0b93b7a5afc65b74db5239172596b68ab734edda1",
+      "sha256": "afa68910c99295715e1d7989ae312beb9d00c8571a9619ba26d6b2f58e38917c",
       "data_pi_found": true,
       "data_pi_error": null,
       "data_pi_count": 2,
@@ -2104,6 +2176,12 @@
           }
         }
       ],
+      "data_trace_found": false,
+      "data_trace_bytes": 0,
+      "data_trace_sha256": null,
+      "data_trace_error": null,
+      "data_trace_structure": null,
+      "data_trace_string_hints": [],
       "gpx_related_links": [],
       "gpx_related_forms": [],
       "gpx_endpoint_literals": [
@@ -2433,6 +2511,12 @@
           }
         }
       ],
+      "data_trace_found": false,
+      "data_trace_bytes": 0,
+      "data_trace_sha256": null,
+      "data_trace_error": null,
+      "data_trace_structure": null,
+      "data_trace_string_hints": [],
       "gpx_related_links": [],
       "gpx_related_forms": [],
       "gpx_endpoint_literals": [
