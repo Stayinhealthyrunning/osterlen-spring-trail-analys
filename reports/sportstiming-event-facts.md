@@ -1,0 +1,173 @@
+# Sportstiming event facts
+
+Compact extraction from the public event-root pages. These are source facts/candidates, not yet normalized race records.
+
+## 2018 — event 4950
+
+Event root: 200; participant page challenged: True; result page challenged: True.
+
+Distances found: 13km, 21km, 21km+, 5km, 5km+, 60km, 60km+  
+Start times found: 10:00, 10:45, 11:00, 12:30  
+Dates found: 2018-04-14, 2018-04-15
+
+- Österlen Spring Trail 2017 | Österlen Spring Trail 2016 | Den 14 april 2018 - | Den 15 april 2018 | 60 km, 21 km, 5 km, 13 km
+- Österlen Spring Trail 2016 | Den 14 april 2018 - | Den 15 april 2018 | 60 km, 21 km, 5 km, 13 km | Stängt
+- Den 15 april 2018 | Anmälan stängd | www.osterlentrail.se | Simris Alg Ultra 60km+ (ca. 1150m höjdmeter) | Utsåld
+- Anmälan stängd | www.osterlentrail.se | Simris Alg Ultra 60km+ (ca. 1150m höjdmeter) | Utsåld | 60 km
+- Simris Alg Ultra 60km+ (ca. 1150m höjdmeter) | Utsåld | 60 km | Startar kl. 10:00 | Pris per deltagare
+- Verkeån trail 21km+ (ca. 500m höjdmeter) | Utsåld | 21 km | Startar kl. 11:00 | Pris per deltagare
+- 550,00 SEK + avgift | Avgift: 20,00 SEK per deltagare | Naturloppet 5km+ | 5 km | Startar kl. 10:45
+- Avgift: 20,00 SEK per deltagare | Naturloppet 5km+ | 5 km | Startar kl. 10:45 | Pris per deltagare
+- Naturloppet 5km+ | 5 km | Startar kl. 10:45 | Pris per deltagare | Fram till dec 31, 2017
+- 300,00 SEK + avgift | Avgift: 20,00 SEK per deltagare | Ekopark trail 13 km | 13 km | Startar kl. 12:30
+- Avgift: 20,00 SEK per deltagare | Ekopark trail 13 km | 13 km | Startar kl. 12:30 | Pris per deltagare
+- Ekopark trail 13 km | 13 km | Startar kl. 12:30 | Pris per deltagare | Fram till dec 31, 2017
+
+## 2019 — event 5719
+
+Event root: 200; participant page challenged: True; result page challenged: True.
+
+Distances found: 13km, 21km, 21km+, 5km, 5km+, 60km, 60km+  
+Start times found: 10:00, 10:45, 11:00, 12:30  
+Dates found: 2019-04-13, 2019-04-14
+
+- Österlen Spring Trail 2017 | Österlen Spring Trail 2016 | Den 13 april 2019 - | Den 14 april 2019 | 58678 meter, 21 km, 60 km, 5 km, 13 km
+- Österlen Spring Trail 2016 | Den 13 april 2019 - | Den 14 april 2019 | 58678 meter, 21 km, 60 km, 5 km, 13 km | Österlen Spring Trail 2020
+- Den 13 april 2019 - | Den 14 april 2019 | 58678 meter, 21 km, 60 km, 5 km, 13 km | Österlen Spring Trail 2020 | LÖRDAG 13:e APRIL
+- Den 14 april 2019 | 58678 meter, 21 km, 60 km, 5 km, 13 km | Österlen Spring Trail 2020 | LÖRDAG 13:e APRIL | SÖNDAG 14:e APRIL
+- 58678 meter, 21 km, 60 km, 5 km, 13 km | Österlen Spring Trail 2020 | LÖRDAG 13:e APRIL | SÖNDAG 14:e APRIL | I priserna ingår följande:
+- Den 14 april 2019 | Anmälan stängd | www.osterlentrail.se | Österlen Spring Trail 2020 | Simris Alg Ultra 60km+ (ca. 1450m höjdmeter)
+- Anmälan stängd | www.osterlentrail.se | Österlen Spring Trail 2020 | Simris Alg Ultra 60km+ (ca. 1450m höjdmeter) | Utsåld
+- www.osterlentrail.se | Österlen Spring Trail 2020 | Simris Alg Ultra 60km+ (ca. 1450m höjdmeter) | Utsåld | 58678 meter
+- Verkeån trail 21km+ | Utsåld | 21 km | Startar kl. 11:00 | Pris per deltagare
+- 595,00 SEK + avgift | Avgift: 20,00 SEK per deltagare | Duo Trail (relay 2 x 30 km) | Utsåld | 60 km
+- Duo Trail (relay 2 x 30 km) | Utsåld | 60 km | Startar kl. 10:00 | Team pris
+- 1 290,00 SEK + avgift | Avgift: 20,00 SEK | Naturloppet 5km+ | 5 km | Startar kl. 10:45
+- Avgift: 20,00 SEK | Naturloppet 5km+ | 5 km | Startar kl. 10:45 | Pris per deltagare
+- Naturloppet 5km+ | 5 km | Startar kl. 10:45 | Pris per deltagare | Fram till dec 31, 2018
+- 350,00 SEK + avgift | Avgift: 20,00 SEK per deltagare | Ekopark trail 13 km | Utsåld | 13 km
+- Ekopark trail 13 km | Utsåld | 13 km | Startar kl. 12:30 | Pris per deltagare
+
+## 2022 — event 9587
+
+Event root: 200; participant page challenged: True; result page challenged: True.
+
+Distances found: 13km, 21km, 21km+, 5km, 5km+, 60km, 60km+  
+Start times found: 10:00, 11:00, 12:30  
+Dates found: 2022-04-09, 2022-04-10
+
+- 62000 meter, 21 km, 60 km, 13 km, 5 km | Stängt | LÖRDAG 9 APRIL 2022: | SÖNDAG 10 APRIL 2022: | - Österlen Spring Trail startades 2015 och kan beskrivas som ett motionslopp där naturen, gemenskapen och upplevelsen är i fokus
+- Sverige | Anmälan stängd | www.osterlentrail.se | Ultra 60km+ | 62000 meter
+- Anmälan stängd | www.osterlentrail.se | Ultra 60km+ | 62000 meter | Startar kl. 10:00
+- Ultra 60km+ | 62000 meter | Startar kl. 10:00 | Pris per deltagare | Fram till dec 31, 2021
+- 1 190,00 SEK | Teleservice trail 21km+ | 21 km | Startar kl. 11:00 | Pris per deltagare
+- Teleservice trail 21km+ | 21 km | Startar kl. 11:00 | Pris per deltagare | Fram till dec 31, 2021
+- Från jan 1, 2022 | 690,00 SEK | Duo Trail (relay 2 x 30 km) | 60 km | Startar kl. 10:00
+- 690,00 SEK | Duo Trail (relay 2 x 30 km) | 60 km | Startar kl. 10:00 | Team pris
+- Duo Trail (relay 2 x 30 km) | 60 km | Startar kl. 10:00 | Team pris | Fram till dec 31, 2021
+- Från jan 1, 2022 | 1 290,00 SEK | Ekopark trail 13 km | 13 km | Startar kl. 12:30
+- 1 290,00 SEK | Ekopark trail 13 km | 13 km | Startar kl. 12:30 | Pris per deltagare
+- Ekopark trail 13 km | 13 km | Startar kl. 12:30 | Pris per deltagare | Fram till dec 31, 2021
+- Från jan 1, 2022 | 450,00 SEK | Naturloppet 5km+ | 5 km | Startar kl. 11:00
+- 450,00 SEK | Naturloppet 5km+ | 5 km | Startar kl. 11:00 | Pris per deltagare
+- Naturloppet 5km+ | 5 km | Startar kl. 11:00 | Pris per deltagare | Fram till mar 5, 2022
+
+## 2023 — event 11274
+
+Event root: 200; participant page challenged: True; result page challenged: True.
+
+Distances found: 13km, 21km, 21km+, 5km, 5km+, 60km, 60km+  
+Start times found: 10:00, 11:00, 12:30  
+Dates found: 2023-04-15, 2023-04-16
+
+- Andrarum | Sverige | 60 km, 21 km, 13 km, 5 km | Österlen Spring Trail 2024 | (På mobilen behöver du scrolla längst ner på sidan för att se priserna på de olika lopp)
+- Sverige | 60 km, 21 km, 13 km, 5 km | Österlen Spring Trail 2024 | (På mobilen behöver du scrolla längst ner på sidan för att se priserna på de olika lopp) | STUDENTRABATT: 30% på ordinariepris. Skriv till info@osterlentrail.se och bifogar studentbevis. Vi skickar tillbaka en rabattkod du kan använda vid anmälan.
+- - Äppelriket bjuder på lokalproducerade äpplen vid målgången. | - Högesta bjuder på äppelmust vid målgången. | - Burhes bjuder på mat i Kivik (endast till 60km och Duo). | - | UMARA
+- Sverige | Anmälan stängd | www.osterlentrail.se | Österlen Spring Trail 2024 | Ultra 60km+
+- Anmälan stängd | www.osterlentrail.se | Österlen Spring Trail 2024 | Ultra 60km+ | 60 km
+- www.osterlentrail.se | Österlen Spring Trail 2024 | Ultra 60km+ | 60 km | Startar kl. 10:00
+- Österlen Spring Trail 2024 | Ultra 60km+ | 60 km | Startar kl. 10:00 | Pris per deltagare
+- Ultra 60km+ | 60 km | Startar kl. 10:00 | Pris per deltagare | Fram till dec 31, 2022
+- Från jan 1, 2023 | 1 190,00 SEK | Fogarolli trail 21km+ | Utsåld | 21 km
+- Fogarolli trail 21km+ | Utsåld | 21 km | Startar kl. 11:00 | Pris per deltagare
+- Från jan 1, 2023 | 690,00 SEK | Duo Trail (relay 2 x 30 km) | Utsåld | 60 km
+- Duo Trail (relay 2 x 30 km) | Utsåld | 60 km | Startar kl. 10:00 | Team pris
+- Från jan 1, 2023 | 1 290,00 SEK | Ekopark trail 13 km | 13 km | Startar kl. 12:30
+- 1 290,00 SEK | Ekopark trail 13 km | 13 km | Startar kl. 12:30 | Pris per deltagare
+- Ekopark trail 13 km | 13 km | Startar kl. 12:30 | Pris per deltagare | Fram till dec 31, 2022
+- Från jan 1, 2023 | 390,00 SEK | Naturloppet 5km+ | 5 km | Startar kl. 11:00
+- 390,00 SEK | Naturloppet 5km+ | 5 km | Startar kl. 11:00 | Vuxen : Pris per deltagare
+- Naturloppet 5km+ | 5 km | Startar kl. 11:00 | Vuxen : Pris per deltagare | Fram till mar 5, 2023
+
+## 2024 — event 12349
+
+Event root: 200; participant page challenged: True; result page challenged: True.
+
+Distances found: 14km, 21km, 21km+, 5km, 5km+, 60km  
+Start times found: 10:00, 11:00, 12:30  
+Dates found: 2024-04-13, 2024-04-14
+
+- Andrarum | Sverige | 60 km, 21 km, 14 km, 5 km | Österlen Spring Trail 2025 | (På mobilen behöver du scrolla längst ner på sidan för att se priserna på de olika lopp)
+- Sverige | 60 km, 21 km, 14 km, 5 km | Österlen Spring Trail 2025 | (På mobilen behöver du scrolla längst ner på sidan för att se priserna på de olika lopp) | STUDENTRABATT: 25% på ordinariepris (ej 5 km loppet). Skriv till info@osterlentrail.se och bifogar studentbevis. Vi skickar tillbaka en rabattkod du kan använda vid anmälan.
+- Österlen Spring Trail 2025 | (På mobilen behöver du scrolla längst ner på sidan för att se priserna på de olika lopp) | STUDENTRABATT: 25% på ordinariepris (ej 5 km loppet). Skriv till info@osterlentrail.se och bifogar studentbevis. Vi skickar tillbaka en rabattkod du kan använda vid anmälan. | UKRAINIAN RUNNERS | = Free registration --> Write to us info@osterlentrail.se and we send you a code valid for a free registration.
+- STUDENTRABATT: 25% på ordinariepris (ej 5 km loppet). Skriv till info@osterlentrail.se och bifogar studentbevis. Vi skickar tillbaka en rabattkod du kan använda vid anmälan. | UKRAINIAN RUNNERS | = Free registration --> Write to us info@osterlentrail.se and we send you a code valid for a free registration. | I priserna ingår följande: | - Tidtagning med chip.
+- - Finisher medalj tillverkad i Sverige av Raw Cut Studio (Vill du inte ha medalj? I anmälan kan du välja "plantera ett träd" med NGO Vi-skogen i stället) | - Professionnel sjukvård på plats. | - Träningsprogram med Lisa Ring inkl en föreläsning (21k & Duo). | - Energi och vätska längs banan (21km & 60km bana) och vid målgången (alla lopp). | - Alkoholfri Öl vid målgången (enbart 60 k, 21 k och Duo!)
+- - Träningsprogram med Lisa Ring inkl en föreläsning (21k & Duo). | - Energi och vätska längs banan (21km & 60km bana) och vid målgången (alla lopp). | - Alkoholfri Öl vid målgången (enbart 60 k, 21 k och Duo!) | - En garanterat genuin och trevlig upplevelse! | - Fri tillgång till våra träffar, kurser och mini-events (Löp-teknik, komigång träningsprogram, träffar och pröva på.). I mån av plats, först till kvarn. Program och datum uppdtareas löpande på vår hemsida.
+- - Äppelriket bjuder på lokalproducerade äpplen vid målgången. | - Högesta bjuder på äppelmust vid målgången. | - Burhes bjuder på mat i Kivik (endast till 60km och Duo). | - | MAURTEN
+- www.osterlentrail.se | Österlen Spring Trail 2025 | 60 k ÖST ultra med COROS | Utsåld | 60 km
+- 60 k ÖST ultra med COROS | Utsåld | 60 km | Startar kl. 10:00 | Pris per deltagare
+- Från jan 2, 2024 | 1 290,00 SEK | Fogarolli trail 21km+ | Utsåld | 21 km
+- Fogarolli trail 21km+ | Utsåld | 21 km | Startar kl. 11:00 | Pris per deltagare
+- Från jan 2, 2024 | 690,00 SEK | Duo Trail (relay 2 x 30 km) | Utsåld | 60 km
+- Duo Trail (relay 2 x 30 km) | Utsåld | 60 km | Startar kl. 10:00 | Team pris
+- Från jan 2, 2024 | 1 290,00 SEK | Ekopark trail 14 km | 14 km | Startar kl. 12:30
+- 1 290,00 SEK | Ekopark trail 14 km | 14 km | Startar kl. 12:30 | Pris per deltagare
+- Ekopark trail 14 km | 14 km | Startar kl. 12:30 | Pris per deltagare | Fram till okt 27, 2023
+- Från jan 2, 2024 | 450,00 SEK | Naturloppet 5km+ | Utsåld | 5 km
+- Naturloppet 5km+ | Utsåld | 5 km | Startar kl. 11:00 | Vuxen : Pris per deltagare
+
+## 2025 — event 15015
+
+Event root: 200; participant page challenged: True; result page challenged: True.
+
+Distances found: 14km, 22km, 5km, 5km+, 60km  
+Start times found: 10:00, 11:00, 12:30  
+Dates found: 2025-04-12, 2025-04-13
+
+- Andrarum | Sverige | 60 km, 22 km, 14 km, 5 km | Österlen Spring Trail 2026 | (På mobilen behöver du scrolla längst ner på sidan för att se priserna på de olika lopp)
+- Sverige | 60 km, 22 km, 14 km, 5 km | Österlen Spring Trail 2026 | (På mobilen behöver du scrolla längst ner på sidan för att se priserna på de olika lopp) | All info om evenemanget -->
+- - | Chans att vinna en komplett "Trail kit" från CRAFT inklusive skor och kläder. Utloning bland alla startande på 60km loppet. | STUDENTRABATT: 25% på ordinariepris (ej 5 km loppet). Skriv till info@osterlentrail.se och bifogar studentbevis. Vi skickar tillbaka en rabattkod du kan använda vid anmälan. | Antal max platser med studentrabatt: | - 60 K = 20 st
+- www.osterlentrail.se | Österlen Spring Trail 2026 | CRAFT Ultra 60 k | Utsåld | 60 km
+- CRAFT Ultra 60 k | Utsåld | 60 km | Startar kl. 10:00 | Pris per deltagare
+- 1 475,00 SEK + avgift | Avgift: 25,00 SEK per deltagare | Fogarolli trail 22 K | Utsåld | 22 km
+- Fogarolli trail 22 K | Utsåld | 22 km | Startar kl. 11:00 | Pris per deltagare
+- 885,00 SEK + avgift | Avgift: 25,00 SEK per deltagare | Duo Trail (relay 2 x 30 km) | Utsåld | 60 km
+- Duo Trail (relay 2 x 30 km) | Utsåld | 60 km | Startar kl. 10:00 | Team pris
+- 1 785,00 SEK + avgift | Avgift: 25,00 SEK | Ekopark trail 14 km | 14 km | Startar kl. 12:30
+- Avgift: 25,00 SEK | Ekopark trail 14 km | 14 km | Startar kl. 12:30 | Pris per deltagare
+- Ekopark trail 14 km | 14 km | Startar kl. 12:30 | Pris per deltagare | Från jan 2, 2025 00:00
+- 590,00 SEK + avgift | Avgift: 25,00 SEK per deltagare | Naturloppet 5km+ | 5 km | Startar kl. 11:00
+- Avgift: 25,00 SEK per deltagare | Naturloppet 5km+ | 5 km | Startar kl. 11:00 | Vuxen : Pris per deltagare
+- Naturloppet 5km+ | 5 km | Startar kl. 11:00 | Vuxen : Pris per deltagare | Från mar 17, 2025
+
+## 2026 — event 16880
+
+Event root: 200; participant page challenged: True; result page challenged: True.
+
+Distances found: 22km, 5km, 5km+, 60km  
+Start times found: 10:00, 11:00  
+Dates found: 2026-04-18, 2026-04-19
+
+- - En garanterat genuin och trevlig upplevelse! | - Och mycket mer! | Till dig som springer 60 km ingår även: | - Busstransport till start (Christinehof till Simrishamn). --> Gäller även för Duo-löpare nr 1 och Duo-löpare nr 2 (till Brösarp). | - Transport av din "drop-bag" från starten i Simrishamn till Vätskestationen nr 2 i Bengtemölla (Brösarp) och därefter vidare till målgången. (gäler även Duo-Löpare)
+- - Och mycket mer! | Till dig som springer 60 km ingår även: | - Busstransport till start (Christinehof till Simrishamn). --> Gäller även för Duo-löpare nr 1 och Duo-löpare nr 2 (till Brösarp). | - Transport av din "drop-bag" från starten i Simrishamn till Vätskestationen nr 2 i Bengtemölla (Brösarp) och därefter vidare till målgången. (gäler även Duo-Löpare) | - Upphämtning ifall man bryter loppet.
+- Till dig som springer 60 km ingår även: | - Busstransport till start (Christinehof till Simrishamn). --> Gäller även för Duo-löpare nr 1 och Duo-löpare nr 2 (till Brösarp). | - Transport av din "drop-bag" från starten i Simrishamn till Vätskestationen nr 2 i Bengtemölla (Brösarp) och därefter vidare till målgången. (gäler även Duo-Löpare) | - Upphämtning ifall man bryter loppet. | - Varm mat vid målgången.
+- - Årets traditionella "finisher emaljerade muggen" | - Tre väl fyllda vätskestationer med funktionärer för att hjälpa dig. | STUDENTRABATT: 25% på ordinariepris (ej 5 km loppet). Skriv till info@osterlentrail.se och bifogar studentbevis. Vi skickar tillbaka en rabattkod du kan använda vid anmälan. | Antal max platser med studentrabatt: | - 60 K = 20 st
+- Anmälan stängd | www.osterlentrail.se | CRAFT Ultra 60 k | Utsåld | 60 km
+- CRAFT Ultra 60 k | Utsåld | 60 km | Startar kl. 10:00 | Pris per deltagare
+- 1 575,00 SEK + avgift | Avgift: 25,00 SEK per deltagare | Fogarolli trail 22 K | Utsåld | 22 km
+- Fogarolli trail 22 K | Utsåld | 22 km | Startar kl. 11:00 | Pris per deltagare
+- 895,00 SEK + avgift | Avgift: 25,00 SEK per deltagare | Duo Trail (relay 2 x 30 km) | Utsåld | 60 km
+- Duo Trail (relay 2 x 30 km) | Utsåld | 60 km | Startar kl. 10:00 | Team pris
+- 595,00 SEK + avgift | Avgift: 25,00 SEK per deltagare | Naturloppet 5km+ | 5 km | Startar kl. 11:00
+- Avgift: 25,00 SEK per deltagare | Naturloppet 5km+ | 5 km | Startar kl. 11:00 | Vuxen : Pris per deltagare
+- Naturloppet 5km+ | 5 km | Startar kl. 11:00 | Vuxen : Pris per deltagare | Från mar 17, 2026
