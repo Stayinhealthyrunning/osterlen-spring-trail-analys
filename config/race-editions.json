@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "scope_note": "Modern ÖST analysis period only. Dates and start times are source-backed where known; unknown/uncertain values are null rather than inferred.",
+  "editions": [
+    {
+      "year": 2018,
+      "event_start_date": "2018-04-14",
+      "event_end_date": "2018-04-15",
+      "sportstiming_event_id": 4950,
+      "races": {
+        "ultra60": {"source_label": "Simris Alg Ultra 60km+ (ca. 1150m höjdmeter)", "sportstiming_distance_id": 15266},
+        "trail22": {"source_label": "Verkeån trail 21km+ (ca. 500m höjdmeter)", "sportstiming_distance_id": 15268, "historical_nominal_km": 21},
+        "trail14": {"source_label": "Ekopark trail 13 km", "sportstiming_distance_id": 15269, "historical_nominal_km": 13},
+        "trail5": {"source_label": "Naturloppet 5km+", "sportstiming_distance_id": 15265, "historical_nominal_km": 5}
+      }
+    },
+    {
+      "year": 2019,
+      "event_start_date": "2019-04-13",
+      "event_end_date": "2019-04-14",
+      "sportstiming_event_id": 5719,
+      "races": {
+        "ultra60": {"source_label": "Simris Alg Ultra 60km+ (ca. 1450m höjdmeter)", "sportstiming_distance_id": 20385},
+        "trail22": {"source_label": "Verkeån trail 21km+", "sportstiming_distance_id": 20387, "historical_nominal_km": 21},
+        "duo60": {"source_label": "Duo Trail (relay 2 x 30 km)", "sportstiming_distance_id": 20390},
+        "trail14": {"source_label": "Ekopark trail 13 km", "sportstiming_distance_id": 20388, "historical_nominal_km": 13, "start_time": "12:30"},
+        "trail5": {"source_label": "Naturloppet 5km+", "sportstiming_distance_id": 20384, "historical_nominal_km": 5}
+      }
+    },
+    {
+      "year": 2020,
+      "status": "cancelled",
+      "races": {}
+    },
+    {
+      "year": 2021,
+      "status": "cancelled",
+      "races": {}
+    },
+    {
+      "year": 2022,
+      "event_start_date": "2022-04-09",
+      "event_end_date": "2022-04-10",
+      "sportstiming_event_id": 9587,
+      "races": {
+        "ultra60": {"source_label": "Ultra 60km+", "sportstiming_distance_id": 46204, "start_time": "10:00"},
+        "trail22": {"source_label": "Teleservice trail 21km+", "sportstiming_distance_id": 46206, "historical_nominal_km": 21},
+        "duo60": {"source_label": "Duo Trail (relay 2 x 30 km)", "sportstiming_distance_id": 46209},
+        "trail14": {"source_label": "Ekopark trail 13 km", "sportstiming_distance_id": 46207, "historical_nominal_km": 13},
+        "trail5": {"source_label": "Naturloppet 5km+", "sportstiming_distance_id": 46203, "historical_nominal_km": 5}
+      }
+    },
+    {
+      "year": 2023,
+      "event_start_date": "2023-04-15",
+      "event_end_date": "2023-04-16",
+      "sportstiming_event_id": 11274,
+      "races": {
+        "ultra60": {"source_label": "Ultra 60km+", "start_time": "10:00"},
+        "trail22": {"source_label": "Fogarolli trail 21km+", "historical_nominal_km": 21},
+        "duo60": {"source_label": "Duo Trail (relay 2 x 30 km)"},
+        "trail14": {"source_label": "Ekopark trail 13 km", "historical_nominal_km": 13},
+        "trail5": {"source_label": "Naturloppet 5km+", "historical_nominal_km": 5}
+      },
+      "note": "Sportstiming distance IDs are generated separately from live public page structure and should be merged rather than manually guessed."
+    },
+    {
+      "year": 2024,
+      "event_start_date": "2024-04-13",
+      "event_end_date": "2024-04-14",
+      "sportstiming_event_id": 12349,
+      "races": {
+        "ultra60": {"source_label": "60 k ÖST ultra med COROS", "start_time": "10:00", "historical_nominal_km": 60},
+        "trail22": {"source_label": "Fogarolli trail 21km+", "start_time": "11:00", "historical_nominal_km": 21},
+        "duo60": {"source_label": "Duo Trail (relay 2 x 30 km)", "start_time": "10:00"},
+        "trail14": {"source_label": "Ekopark trail 14 km", "start_time": "12:30", "historical_nominal_km": 14},
+        "trail5": {"source_label": "Naturloppet 5km+", "start_time": "11:00", "historical_nominal_km": 5}
+      }
+    },
+    {
+      "year": 2025,
+      "event_start_date": "2025-04-12",
+      "event_end_date": "2025-04-13",
+      "sportstiming_event_id": 15015,
+      "races": {
+        "ultra60": {"source_label": "CRAFT Ultra 60 k", "start_time": "10:00", "historical_nominal_km": 60},
+        "trail22": {"source_label": "Fogarolli trail 22 K", "start_time": "11:00", "historical_nominal_km": 22},
+        "duo60": {"source_label": "Duo Trail (relay 2 x 30 km)", "start_time": "10:00"},
+        "trail14": {"source_label": "Ekopark trail 14 km", "start_time": "12:30", "historical_nominal_km": 14},
+        "trail5": {"source_label": "Naturloppet 5km+", "start_time": "11:00", "historical_nominal_km": 5}
+      }
+    },
+    {
+      "year": 2026,
+      "event_start_date": "2026-04-18",
+      "event_end_date": "2026-04-19",
+      "sportstiming_event_id": 16880,
+      "races": {
+        "ultra60": {"source_label": "CRAFT Ultra 60 k", "start_time": "10:00", "start_place": "Simrishamn", "finish_place": "Christinehof"},
+        "trail22": {"source_label": "Fogarolli trail 22 K", "start_time": "11:00", "start_place": "Christinehof", "finish_place": "Christinehof"},
+        "duo60": {"source_label": "Duo Trail (relay 2 x 30 km)", "start_time": "10:00", "start_place": "Simrishamn", "finish_place": "Christinehof", "exchange_place": "Bengtemölla"},
+        "trail14": {"source_label": "Söderberg & Sara 14 km", "start_time": "12:30", "start_place": "Christinehof", "finish_place": "Christinehof"},
+        "trail5": {"source_label": "Naturloppet 5km+", "start_time": "11:00", "start_place": "Christinehof", "finish_place": "Christinehof"}
+      }
+    }
+  ],
+  "source_notes": [
+    "Sportstiming public page structure is authoritative for distance/class IDs and source labels.",
+    "Official ÖST race PMs are preferred for current start places, start times, course logistics and cutoffs.",
+    "Historical secondary sources are retained only when official static pages no longer expose the needed fact.",
+    "Null/missing fields are intentional and must not be filled by assumption."
+  ]
+}
