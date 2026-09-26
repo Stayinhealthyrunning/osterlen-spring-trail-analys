@@ -45,7 +45,7 @@ def main():
  nodes=list(G.nodes); nt=cKDTree(nodes)
  castle=(434707.,6175169.); hall=tr.transform(14.01780,55.70819)
  s=nodes[int(nt.query(castle)[1])]; h=nodes[int(nt.query(hall)[1])]
- # Generate plausible outbound paths; for each, force the return search away from its used edges.
+ # Candidate search: generate plausible outbound paths; for each, force the return search away from its used edges.
  first=[]
  for path in nx.shortest_simple_paths(G,s,h,weight="weight"):
   L=sum(G[u][v]["length"] for u,v in zip(path,path[1:])); cost=sum(G[u][v]["weight"] for u,v in zip(path,path[1:]))
