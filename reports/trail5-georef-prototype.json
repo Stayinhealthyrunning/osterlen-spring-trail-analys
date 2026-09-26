@@ -33,8 +33,19 @@
   "route_trace": {
     "method": "manual centreline sampling of organizer black course line in public raster rendering",
     "vertex_count": 62,
-    "derived_length_km": 5.002
+    "derived_length_km": 5.002,
+    "sampled_vertices_persisted": false,
+    "reproducible_from_report_alone": false,
+    "reproducibility_note": "The 62 image-space vertices used for the 5.002 km measurement were not persisted. Repeat digitization or use a persisted OSM way sequence before producing a route asset."
   },
   "interpretation": "Strong validation that the georeferenced organizer raster represents an approximately 5 km loop. Not canonical GPX; refine by snapping to Lantmateriet Topografi 10 road/path geometry and validate against participant GPS.",
-  "promotion_rule": "Do not label organizer GPX or race-day GPS. Provenance remains derived_from_georeferenced_organizer_map until independent participant GPS validation."
+  "promotion_rule": "Do not label organizer GPX or race-day GPS. Provenance remains derived_from_georeferenced_organizer_map until independent participant GPS validation.",
+  "wgs84_retrieval_bbox_derived": {
+    "west": 13.929567,
+    "south": 55.704858,
+    "east": 14.012122,
+    "north": 55.732867,
+    "purpose": "OpenStreetMap retrieval envelope derived from approximate SWEREF raster controls; not route geometry."
+  },
+  "next_geometry_source": "OpenStreetMap raw highway ways via config/short-course-map-reconstruction.json"
 }

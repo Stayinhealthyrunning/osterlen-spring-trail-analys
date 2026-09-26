@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "updated": "2026-09-26",
+  "purpose": "No-account/open-map reconstruction inputs for ÖST short-course geometry. This configuration retrieves candidate geometry; it does not declare a canonical race route.",
+  "evidence_hierarchy": [
+    "organizer_raster_route_choice",
+    "openstreetmap_candidate_vector_geometry",
+    "participant_race_day_gps_validation",
+    "suunto_public_heatmap_corroboration",
+    "organic_maps_visual_qa",
+    "satellite_visual_qa"
+  ],
+  "trail5": {
+    "source_raster": "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/st-5km-bana_orig.jpg",
+    "raster_status": "georeferenceable_organizer_map",
+    "sweref99tm_frame_approx": {
+      "epsg": 3006,
+      "southwest": {
+        "E": 432733,
+        "N": 6173751
+      },
+      "northeast": {
+        "E": 437965,
+        "N": 6176791
+      }
+    },
+    "wgs84_retrieval_bbox_derived": {
+      "epsg": 4326,
+      "west": 13.929567,
+      "south": 55.704858,
+      "east": 14.012122,
+      "north": 55.732867,
+      "note": "Derived from approximate organizer-raster SWEREF controls; retrieval envelope only, not course geometry."
+    },
+    "external_gross_control": {
+      "name": "Christinehof Castle",
+      "sweref99tm_approx": {
+        "E": 434707,
+        "N": 6175169
+      },
+      "wgs84_derived_approx": {
+        "lon": 13.960636,
+        "lat": 55.717867
+      }
+    },
+    "osm": {
+      "export_page": "https://www.openstreetmap.org/export",
+      "map_api_url": "https://api.openstreetmap.org/api/0.6/map?bbox=13.929567,55.704858,14.012122,55.732867",
+      "overpass_query": "[out:xml][timeout:60];\\nway[\\\"highway\\\"](55.704858,13.929567,55.732867,14.012122);\\n(._;>;);\\nout body;",
+      "extractor": "tools/extract_osm_path_network.py"
+    },
+    "prototype": {
+      "report": "reports/trail5-georef-prototype.json",
+      "measured_length_km": 5.002,
+      "sampled_vertex_count": 62,
+      "sampled_vertices_persisted": false,
+      "canonical_geometry": false
+    }
+  },
+  "source_roles": {
+    "openstreetmap": "candidate_vector_geometry",
+    "organic_maps": "human_visual_qa_same_osm_family",
+    "suunto_heatmap": "independent_aggregate_activity_corroboration_not_race_specific",
+    "google_satellite": "tertiary_visual_alignment_only"
+  }
+}

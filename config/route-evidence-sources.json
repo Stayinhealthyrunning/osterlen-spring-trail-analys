@@ -208,6 +208,25 @@
       "limitation": "Strong participant/result anchor for result→GPS matching, but no public coordinate series or watch distance was found.",
       "coordinate_access": "not_found",
       "local_asset": false
+    },
+    {
+      "id": "jogg-2023-short-courses-mathias-johansson",
+      "family": [
+        "trail14",
+        "trail5"
+      ],
+      "year": 2023,
+      "source_type": "participant_calendar_and_gps_lead",
+      "url": "https://www.jogg.se/Traning/TdBok.aspx?anvid=183005&ar=2026&manad=02",
+      "corroborating_url": "https://www.jogg.se/Forum/Trad.aspx?subid=56526",
+      "status": "verified_public_participation_gps_lead",
+      "participant": "Mathias Johansson",
+      "source_platform": "Jogg",
+      "activity_date": "2023-04-16",
+      "evidence": "Public Jogg calendar explicitly lists both Ekopark trail 13 km med Glädjeknuff and Naturloppet 5 km med Glädjeknuff on 2023-04-16; a public forum post by the same participant independently lists both races. His diary contains Garmin Connect imports generally, making him a high-value GPS lead.",
+      "limitation": "No exact public Pass.aspx/GPSPass.aspx identifier for either short-course recording was recovered. Garmin imports elsewhere in the diary do not prove these two specific race entries contain exportable GPS.",
+      "coordinate_access": "exact_race_activity_not_recovered",
+      "local_asset": false
     }
   ]
 }
