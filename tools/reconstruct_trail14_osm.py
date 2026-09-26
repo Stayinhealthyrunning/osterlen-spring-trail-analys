@@ -55,12 +55,25 @@ def main():
  for i,A in enumerate(first):
   for B in first[i+1:]:
    overlap=sum(G[tuple(e)[0]][tuple(e)[1]]["length"] for e in A[3]&B[3]); east=A[1]+B[1]
-   if not 7000<=east<=9500: continue
+   if not 7000<=east<=9200: continue
+   # A loop may share the short Christinehof/Alunbruket approach, but must not
+   # collapse into an out-and-back along most of the river corridor.
+   if overlap>1200: continue
    # Prefer two genuinely different corridors, raster fit and named hiking
    # relations. Distance is a broad plausibility term, not a target fit.
    rel_bonus=sum(G[u][v]["length"]*(0.35 if G[u][v]["skane"] or G[u][v]["back"] else 0) for P in (A[0],B[0]) for u,v in zip(P,P[1:]))
    far_pen=sum(G[u][v]["length"]*max(0,G[u][v]["dev"]-140)*3 for P in (A[0],B[0]) for u,v in zip(P,P[1:]))
-   score=A[2]+B[2]+overlap*90+abs(east-8300)*12+far_pen-rel_bonus
+   # Reward complementary named corridors (Skåneleden vs Backaleden).
+   def rel_lengths(P):
+    sk=ba=0.0
+    for u,v in zip(P,P[1:]):
+     e=G[u][v]
+     if e["skane"]: sk+=e["length"]
+     if e["back"]: ba+=e["length"]
+    return sk,ba
+   ask,aba=rel_lengths(A[0]); bsk,bba=rel_lengths(B[0])
+   complementary=max(min(ask,bba),min(aba,bsk))
+   score=A[2]+B[2]+overlap*120+abs(east-8300)*12+far_pen-rel_bonus-complementary*18
    if best is None or score<best[0]: best=(score,A,B,overlap,east)
  if best is None: raise RuntimeError(f"No eastern Hallamolla loop candidate; paths={len(first)}")
  _,A,B,overlap,east_total=best; east_route=A[0]+list(reversed(B[0]))[1:]
