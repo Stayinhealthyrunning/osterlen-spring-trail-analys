@@ -15,6 +15,8 @@ jobs:
           ref: automation/acquire-short-course-sources
           fetch-depth: 0
       - run: python -m pip install --quiet opencv-python-headless numpy pyproj networkx scikit-image scipy
+      - name: Extract OSM hiking relations
+        run: python tools/extract_osm_hiking_relations.py data/source/osm/christinehof-short-courses.osm reports/christinehof-osm-hiking-relations.json
       - name: Reconstruct Trail 5
         run: |
           mkdir -p routes/ost/trail5-current-reference
@@ -28,7 +30,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/trail5-reconstruction-run.log routes/ost/trail5-current-reference || true
+          git add reports/trail5-reconstruction-run.log reports/christinehof-osm-hiking-relations.json routes/ost/trail5-current-reference || true
           if ! git diff --cached --quiet; then git commit -m "Record Trail 5 reconstruction diagnostics"; git pull --rebase origin automation/acquire-short-course-sources; git push origin HEAD:automation/acquire-short-course-sources; fi
       - name: Enforce Trail 5 QA gate
         run: |
