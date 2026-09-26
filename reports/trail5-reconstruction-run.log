@@ -1,0 +1,4 @@
+  File "/home/runner/work/osterlen-spring-trail-analys/osterlen-spring-trail-analys/tools/reconstruct_trail5_osm.py", line 58
+    pix=extract_ordered(a.image); trace=[px_to_3006(p) for p in pix]\n # Translate the validated raster frame so the midpoint of its start/finish gap equals the independent Christinehof control.\n castle=(434707.0,6175169.0); gapmid=((trace[0][0]+trace[-1][0])/2,(trace[0][1]+trace[-1][1])/2); shift=(castle[0]-gapmid[0],castle[1]-gapmid[1]); trace=[(p[0]+shift[0],p[1]+shift[1]) for p in trace]; trace_s=sample(trace,150)
+                                                                     ^
+SyntaxError: unexpected character after line continuation character
