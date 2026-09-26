@@ -55,7 +55,9 @@ def build_osm(path,trace):
 
 def main():
  ap=argparse.ArgumentParser();ap.add_argument("--image");ap.add_argument("--network");ap.add_argument("--geojson");ap.add_argument("--gpx");ap.add_argument("--qa");a=ap.parse_args()
- pix=extract_ordered(a.image); trace=[px_to_3006(p) for p in pix]\n # Translate the validated raster frame so the midpoint of its start/finish gap equals the independent Christinehof control.\n castle=(434707.0,6175169.0); gapmid=((trace[0][0]+trace[-1][0])/2,(trace[0][1]+trace[-1][1])/2); shift=(castle[0]-gapmid[0],castle[1]-gapmid[1]); trace=[(p[0]+shift[0],p[1]+shift[1]) for p in trace]; trace_s=sample(trace,150)
+ pix=extract_ordered(a.image); trace=[px_to_3006(p) for p in pix]
+ # Translate the validated raster frame so the midpoint of its start/finish gap equals the independent Christinehof control.
+ castle=(434707.0,6175169.0); gapmid=((trace[0][0]+trace[-1][0])/2,(trace[0][1]+trace[-1][1])/2); shift=(castle[0]-gapmid[0],castle[1]-gapmid[1]); trace=[(p[0]+shift[0],p[1]+shift[1]) for p in trace]; trace_s=sample(trace,150)
  G=build_osm(a.network,trace); nodes=list(G.nodes); tree=cKDTree(nodes)
  anchors=[]; anchor_dev=[]
  for p in trace_s:
