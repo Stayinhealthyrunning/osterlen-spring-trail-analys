@@ -27,7 +27,7 @@ def pix_to_lonlat(x,y,frame,sw,ne,tr):
     fx=(x-frame["left"])/(frame["right"]-frame["left"])
     fy=(y-frame["top"])/(frame["bottom"]-frame["top"])
     E=sw[0]+fx*(ne[0]-sw[0]); N=ne[1]-fy*(ne[1]-sw[1])
-    lon,lat=tr.transform(E,N); return lon,lat
+    E += -198.0; N += 112.0\n    lon,lat=tr.transform(E,N); return lon,lat
 
 def local_xy(lon,lat,lat0):
     return lon*111320*math.cos(math.radians(lat0)),lat*110540
@@ -65,7 +65,7 @@ def main():
           "coordinates":c})
     ranked.sort(key=lambda z:(z["median_raster_distance_m"],z["p95_raster_distance_m"]))
     out={"method":"OSM way proximity to georeferenced organizer raster dark-route component","route_component_pixels":len(pix),
-         "map_frame_px":frame,"sweref_controls":{"sw":sw,"ne":ne},"top_ways":ranked[:80]}
+         "map_frame_px":frame,"sweref_controls":{"sw":sw,"ne":ne},"translation_control":{"target":"Christinehof start/finish","delta_E_m":-198.0,"delta_N_m":112.0},"top_ways":ranked[:80]}
     Path(a.out).write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\n")
     print(json.dumps([{k:x[k] for k in ("osm_way_id","highway","name","length_m","median_raster_distance_m","p95_raster_distance_m")} for x in ranked[:25]],ensure_ascii=False,indent=2))
 if __name__=="__main__": main()
