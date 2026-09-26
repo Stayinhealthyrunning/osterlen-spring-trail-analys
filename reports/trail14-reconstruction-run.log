@@ -1,8 +1,25 @@
-Traceback (most recent call last):
-  File "/home/runner/work/osterlen-spring-trail-analys/osterlen-spring-trail-analys/tools/reconstruct_trail14_osm.py", line 83, in <module>
-    main() # The organizer raster contains a western Christinehof loop plus the eastern
-    ^^^^^^
-  File "/home/runner/work/osterlen-spring-trail-analys/osterlen-spring-trail-analys/tools/reconstruct_trail14_osm.py", line 72, in main
-    ways=list(t5.get("properties",{}).get("osm_way_ids",[]));devs=[];hws=[]
-              ^^
-NameError: name 't5' is not defined. Did you mean: 'p5'?
+{
+  "distance_km": 14.579,
+  "participant_2023_reference_km": 13.67,
+  "western_trail5_km": 5.481,
+  "eastern_loop_km": 9.098,
+  "route_points": 408,
+  "candidate_paths_considered": 120,
+  "shared_out_return_m": 46.6,
+  "median_edge_to_raster_m": 40.9,
+  "p95_edge_to_raster_m": 365.4,
+  "start_finish_gap_m": 32.1,
+  "western_eastern_join_m": 32.1,
+  "hallamolla_control_m": 14.3,
+  "osm_way_count": 42,
+  "highway_types": [
+    "path",
+    "residential",
+    "service",
+    "tertiary",
+    "track",
+    "unclassified"
+  ],
+  "map_registration_median_px": 0.240141823887825,
+  "map_registration_p95_px": 1.5684036016464233
+}
