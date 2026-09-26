@@ -104,6 +104,12 @@ Trail 21/22:
 
 Trail 13/14 och Trail 5 väntar fortfarande på tillräckligt komplett verifierad historisk geometri för course-versionering.
 
+## Höjddata och D+
+
+Höjddata hålls isär från banans horisontella geometri. Trace de Trails publika banpayload innehåller verifierbara distans-/höjdfält och kumulativ D+/D− för samtliga katalogiserade Ultra- och Trail 21/22-rutter. De bevaras som **källspecifik höjdevidens** i `reports/route-elevation-evidence.json`.
+
+Dessa värden används inte som en jämförbar D+-serie mellan år eftersom metod, filtrering och källmaterial kan skilja sig. Exempelvis saknar 2024 års arrangörs-GPX användbar komplett råhöjd i nuvarande fil, medan motsvarande Trace-källa anger +693/-578 m; 2025/2026 års arrangörs-GPX summerar rått till +1058/-942 m medan Trace ligger betydligt lägre. För cross-year-analys ska därför `config/elevation-policy.json` användas: samma kanoniska ruttgeometri kompletteras med samma Lantmäteriet-baserade DEM- och filtreringsmetod för samtliga banversioner.
+
 ## Engine readiness
 
 `reports/engine-readiness.json` beräknas direkt från den kuraterade databasen och styr vilka funktioner som faktiskt kan erbjudas.
@@ -136,6 +142,8 @@ Nuvarande dataläge:
 - `reports/status-evidence-profile.json` – statusbevis för tidigare UNKNOWN-poster.
 - `reports/identity-field-profile.md` – offline-inventering av publicerade fält.
 - `config/course-versions.json` – verifierad banversionsmodell.
+- `config/elevation-policy.json` – gemensam metod för källhöjd och standardiserad DEM-höjd.
+- `reports/route-elevation-evidence.json` – källspecifik historisk höjdevidens utan lagrade koordinatserier.
 - `config/checkpoint-normalization.json` – årsspecifik timingsemantik.
 - `research/gotaleden-engine-handoff.md` – instruktioner för nästa integrationsfas.
 

@@ -6,6 +6,7 @@
     "Horizontal route geometry and elevation provenance are separate layers.",
     "Never alter horizontal coordinates merely to obtain elevation coverage.",
     "Preserve source GPX elevation, participant/barometric elevation and standardized DEM elevation as separate observations.",
+    "Trace de Trail route-distance/elevation fields may be retained as source-specific historical elevation evidence, but not used as a harmonized cross-year D+ series.",
     "Cross-year D+ comparisons must use one common DEM source and one common processing algorithm.",
     "Raw watch/GPX D+ is diagnostic metadata unless the same acquisition and filtering method is demonstrably comparable."
   ],
@@ -47,17 +48,36 @@
     {
       "route": "ultra60-2024",
       "issue": "Organizer GPX contains only partial elevation values and current raw GPX analysis cannot produce usable D+.",
-      "action": "Use organizer horizontal geometry and derive standardized elevation from the common DEM."
+      "action": "Use the matching Trace route as source-specific elevation evidence (+693/-578 m) and derive the standardized comparison profile from the common DEM on the organizer horizontal geometry."
     },
     {
       "route": "ultra60-2025-2026",
       "issue": "Organizer GPX contains full elevation but raw cumulative +1058/-942 m is method-dependent and not cross-year comparable.",
-      "action": "Keep raw source values as diagnostics and derive standardized elevation from the common DEM."
+      "action": "Keep raw source values as diagnostics, keep Trace source-specific values separately, and derive standardized elevation from the common DEM."
     },
     {
       "route": "ultra60-2025-user-suunto",
       "issue": "Dense barometric activity profile is valuable but cumulative ascent varies strongly with filtering/resampling.",
       "action": "Use for profile-shape and filtering calibration, not as the universal elevation source."
     }
-  ]
+  ],
+  "source_specific_elevation": {
+    "trace_de_trail": {
+      "source_fields": [
+        "x",
+        "y",
+        "y0",
+        "dp",
+        "dn"
+      ],
+      "persisted_summary": "reports/route-elevation-evidence.json",
+      "interpretation": "x/y provide source route-distance/elevation profile evidence; final dp/dn values provide source-specific cumulative ascent/descent where present.",
+      "restriction": "Keep as provenance-specific historical evidence. Method/filtering may differ between traces and years, so these values are not the standardized cross-year elevation metric."
+    },
+    "organizer_gpx": {
+      "persisted_summary": "reports/route-elevation-evidence.json",
+      "interpretation": "Raw embedded elevation and raw cumulative ascent/descent are retained as source diagnostics.",
+      "restriction": "Point density, missing elevations and source filtering can differ; raw GPX D+ is not the standardized cross-year metric."
+    }
+  }
 }
