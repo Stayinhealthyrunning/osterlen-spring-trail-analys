@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "provenance_classes": [
+    "organizer_gpx",
+    "organizer_vector_route",
+    "participant_gps_consensus",
+    "participant_gps_single",
+    "organizer_georeferenced_raster",
+    "official_local_trail",
+    "open_map_snapped",
+    "heatmap_corroborated",
+    "text_constraint",
+    "satellite_corroborated",
+    "manual_hypothesis",
+    "unresolved_gap"
+  ],
+  "segment_fields": [
+    "segment_id",
+    "geometry",
+    "provenance",
+    "confidence",
+    "evidence_ids",
+    "decision_reason"
+  ],
+  "candidate_checks": [
+    "start_finish_alignment",
+    "advertised_distance",
+    "known_control_points",
+    "organizer_raster_deviation",
+    "participant_gps_deviation",
+    "terrain_narrative",
+    "course_topology",
+    "year_version_compatibility"
+  ]
+}
