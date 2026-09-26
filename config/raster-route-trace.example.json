@@ -1,0 +1,10 @@
+{
+  "source_image": "URL or archived source identifier",
+  "map_frame_px": {"left": 0, "right": 0, "top": 0, "bottom": 0},
+  "sweref99tm_control": {
+    "southwest": {"E": 0, "N": 0},
+    "northeast": {"E": 0, "N": 0}
+  },
+  "pixel_vertices": [[0,0]],
+  "rule": "Pixel vertices are source evidence and must be persisted before any derived route geometry is promoted."
+}
