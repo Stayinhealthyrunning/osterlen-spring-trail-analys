@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "course_version_fields": [
+    "race_id",
+    "race_family",
+    "course_version_id",
+    "valid_from",
+    "valid_to",
+    "year_assignments",
+    "geometry_status",
+    "distance_km",
+    "start_finish",
+    "evidence_ids"
+  ],
+  "geometry_status_values": [
+    "source_organizer",
+    "validated_reconstruction",
+    "candidate_reconstruction",
+    "reference_geometry_only",
+    "unresolved"
+  ],
+  "year_assignment_values": [
+    "verified_same_geometry",
+    "strong_continuity_evidence",
+    "compatible_but_unverified",
+    "different_geometry",
+    "unknown"
+  ],
+  "version_split_signals": [
+    "organizer_declares_route_change",
+    "start_or_finish_moves",
+    "control_sequence_changes",
+    "participant_gps_geometry_changes",
+    "material_distance_change",
+    "raster_shape_changes",
+    "split_location_changes"
+  ],
+  "rule": "Race name and advertised distance are not sufficient to merge years into one course version."
+}
