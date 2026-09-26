@@ -42,5 +42,3 @@ jobs:
         run: python -m unittest tests/test_engine_v1_export.py
       - name: Validate route elevation evidence
         run: python -m unittest tests/test_route_elevation_evidence.py
-      - name: Research roster for short-course GPS matching
-        run: python tools/print_short_course_search_roster.py --year 2023 --year 2025 --family trail14 --family trail5
