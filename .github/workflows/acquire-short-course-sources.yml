@@ -1,0 +1,110 @@
+name: Acquire short-course route sources
+
+on:
+  push:
+    branches:
+      - automation/acquire-short-course-sources
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  acquire:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: automation/acquire-short-course-sources
+          fetch-depth: 0
+
+      - name: Prepare directories
+        run: |
+          mkdir -p data/source/maps data/source/osm data/source/gpx reports
+
+      - name: Download organizer maps
+        run: |
+          set -euxo pipefail
+          curl --retry 4 --retry-delay 3 -fL \
+            "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/st-5km-bana_orig.jpg" \
+            -o data/source/maps/ost-trail5-organizer-map.jpg
+          curl --retry 4 --retry-delay 3 -fL \
+            "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/13km-bana-h-jdkurvan-3_orig.jpg" \
+            -o data/source/maps/ost-trail13-14-organizer-map.jpg
+
+      - name: Download official Skaneleden GPX
+        run: |
+          set -euxo pipefail
+          curl --retry 4 --retry-delay 3 -fL \
+            "https://cdn.hoodin.com/uteiskane/assets/geomanager/geofiles/SL4_E7_Brosarp_Verkasjon.gpx" \
+            -o data/source/gpx/skaneleden-sl4-e7-brosarp-verkasjon.gpx
+
+      - name: Download raw OpenStreetMap data
+        shell: bash
+        run: |
+          set -euxo pipefail
+          BBOX="13.928,55.696,14.034,55.734"
+          if ! curl --retry 3 --retry-delay 5 -fL \
+            "https://api.openstreetmap.org/api/0.6/map?bbox=$BBOX" \
+            -o data/source/osm/christinehof-short-courses.osm; then
+            cat > /tmp/query.overpass <<'EOF'
+          [out:xml][timeout:180];
+          (
+            way["highway"](55.696,13.928,55.734,14.034);
+            relation["route"="hiking"](55.696,13.928,55.734,14.034);
+            relation["route"="foot"](55.696,13.928,55.734,14.034);
+          );
+          (._;>;);
+          out body;
+          EOF
+            curl --retry 3 --retry-delay 5 -fL \
+              --data-urlencode "data@/tmp/query.overpass" \
+              "https://overpass-api.de/api/interpreter" \
+              -o data/source/osm/christinehof-short-courses.osm
+          fi
+          test -s data/source/osm/christinehof-short-courses.osm
+
+      - name: Extract OSM path network
+        run: |
+          python tools/extract_osm_path_network.py \
+            data/source/osm/christinehof-short-courses.osm \
+            data/source/osm/christinehof-path-network.geojson
+
+      - name: Freeze checksums and source metadata
+        run: |
+          sha256sum \
+            data/source/maps/ost-trail5-organizer-map.jpg \
+            data/source/maps/ost-trail13-14-organizer-map.jpg \
+            data/source/gpx/skaneleden-sl4-e7-brosarp-verkasjon.gpx \
+            data/source/osm/christinehof-short-courses.osm \
+            data/source/osm/christinehof-path-network.geojson \
+            > data/source/short-course-source-checksums.sha256
+          python - <<'PY'
+          import json, pathlib, datetime
+          out={
+            "schema_version":1,
+            "retrieved_at":datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            "bbox_wgs84":[13.928,55.696,14.034,55.734],
+            "sources":{
+              "organizer_trail5":"https://www.osterlentrail.se/uploads/4/1/8/7/41870619/st-5km-bana_orig.jpg",
+              "organizer_trail13_14":"https://www.osterlentrail.se/uploads/4/1/8/7/41870619/13km-bana-h-jdkurvan-3_orig.jpg",
+              "skaneleden_sl4_e7":"https://cdn.hoodin.com/uteiskane/assets/geomanager/geofiles/SL4_E7_Brosarp_Verkasjon.gpx",
+              "osm":"https://www.openstreetmap.org/"
+            },
+            "note":"Raw OSM geometry is map/reference data, not organizer race geometry."
+          }
+          pathlib.Path("data/source/short-course-source-metadata.json").write_text(json.dumps(out,indent=2)+"\n")
+          PY
+
+      - name: Commit acquired sources
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/source
+          if git diff --cached --quiet; then
+            echo "No source changes"
+          else
+            git commit -m "Archive short-course map and OSM sources"
+            git push origin HEAD:automation/acquire-short-course-sources
+          fi
