@@ -1,4 +1,4 @@
-name: Analyze short-course route rasters
+name: Reconstruct short-course routes
 on:
   push:
     branches: [automation/acquire-short-course-sources]
@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 jobs:
-  analyze:
+  reconstruct:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
@@ -14,16 +14,31 @@ jobs:
         with:
           ref: automation/acquire-short-course-sources
           fetch-depth: 0
-      - run: |
-          python -m pip install --quiet opencv-python-headless numpy pyproj
-      - name: Match Trail 5 organizer raster to OSM
+      - run: python -m pip install --quiet opencv-python-headless numpy pyproj networkx scikit-image scipy
+      - name: Reconstruct Trail 5
         run: |
-          python tools/match_trail5_raster_to_osm.py --image data/source/maps/ost-trail5-organizer-map.jpg --network data/source/osm/christinehof-path-network.geojson --out reports/trail5-osm-raster-match.json
-      - name: Commit match
+          mkdir -p routes/ost/trail5-current-reference
+          python tools/reconstruct_trail5_osm.py \
+            --image data/source/maps/ost-trail5-organizer-map.jpg \
+            --network data/source/osm/christinehof-path-network.geojson \
+            --geojson routes/ost/trail5-current-reference/route.geojson \
+            --gpx routes/ost/trail5-current-reference/route.gpx \
+            --qa routes/ost/trail5-current-reference/qa.json
+      - name: Enforce Trail 5 QA gate
+        run: |
+          python - <<'PY'
+          import json
+          q=json.load(open("routes/ost/trail5-current-reference/qa.json"))
+          assert 4.4 <= q["distance_km"] <= 5.6, q
+          assert q["start_finish_gap_m"] <= 100, q
+          assert q["median_route_to_raster_m"] <= 60, q
+          print("Trail 5 QA gate passed",q)
+          PY
+      - name: Commit accepted reconstruction
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/trail5-osm-raster-match.json
+          git add routes/ost/trail5-current-reference
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Match Trail 5 organizer raster to OSM"
+          git commit -m "Update QA-passed Trail 5 reconstruction"
           git push origin HEAD:automation/acquire-short-course-sources
