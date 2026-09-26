@@ -163,6 +163,34 @@
       "limitation": "Jogg's aggregate page shows 15.55 km / 1:50:06, inconsistent with the participant's explicit race-watch values. Do not use the Jogg aggregate as course distance until the underlying coordinate series/segmentation is acquired and inspected.",
       "coordinate_access": "map_registration_public; raw_coordinate_export_not_acquired",
       "local_asset": false
+    },
+    {
+      "id": "organizer-2021-short-course-description",
+      "family": [
+        "trail5",
+        "trail14"
+      ],
+      "year": 2021,
+      "source_type": "organizer_program",
+      "url": "https://www.osterlentrail.se/program.html",
+      "status": "verified_historical_organizer_text",
+      "evidence": "Organizer programme states the 5 km course runs through Ekoparken with the first 3 km on gravel/forest roads and the last 2 km on narrow, fairly technical trails, with stairs on the finishing approach. The 13 km course is described as slightly shorter than 13 km.",
+      "limitation": "2021 races were affected by pandemic planning/cancellation context; this is historical course-description evidence, not proof that a race-day recording exists for 2021.",
+      "local_asset": false
+    },
+    {
+      "id": "organizer-2022-short-course-continuity-statement",
+      "family": [
+        "trail5",
+        "trail14"
+      ],
+      "year": 2022,
+      "source_type": "organizer_historical_event_page",
+      "url": "https://www.osterlentrail.se/oumlst-2022.html",
+      "status": "verified_historical_organizer_text",
+      "evidence": "The organizer's 2022 page states that start times may differ but course routes and other details are the same. Together with the retained historical programme, this supports continuity of the short-course concept around the 2021/2022 configuration.",
+      "limitation": "The statement does not provide coordinates and is not strong enough by itself to assign exact geometry or prove identity with the current raster.",
+      "local_asset": false
     }
   ]
 }
