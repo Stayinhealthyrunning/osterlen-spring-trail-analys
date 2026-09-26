@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "transport_policy": [
+    {
+      "priority": 1,
+      "method": "frozen_repository_blob",
+      "use_when": "source has already been archived in an accessible repository",
+      "benefit": "immutable and reproducible"
+    },
+    {
+      "priority": 2,
+      "method": "direct_public_source",
+      "use_when": "raw source endpoint is accessible",
+      "benefit": "fresh source data"
+    },
+    {
+      "priority": 3,
+      "method": "alternate_public_mirror_or_export",
+      "use_when": "primary endpoint transport fails",
+      "benefit": "preserves automated workflow"
+    },
+    {
+      "priority": 4,
+      "method": "user_supplied_raw_export",
+      "use_when": "authentication, subscription or execution-environment transport prevents automated acquisition",
+      "benefit": "unblocks analysis without weakening provenance"
+    }
+  ],
+  "rules": [
+    "Transport failure is not evidence failure.",
+    "Record the original source separately from the transport mechanism.",
+    "Checksum or immutable object ID should freeze every raw artifact used for canonical reconstruction.",
+    "Never substitute a visually similar route because a raw source cannot be transported."
+  ]
+}
