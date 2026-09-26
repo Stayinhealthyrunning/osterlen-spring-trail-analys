@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "race": {
+    "race_id": "example-race",
+    "name": "Example Race",
+    "country": "SE"
+  },
+  "course": {
+    "race_family": "trail-short",
+    "target_year": 2026,
+    "advertised_distance_km": 10.0,
+    "start_finish": [],
+    "known_controls": [],
+    "known_named_corridors": [],
+    "terrain_constraints": []
+  },
+  "sources": {
+    "organizer_gpx": [],
+    "organizer_maps": [],
+    "participant_gps": [],
+    "official_local_trails": [],
+    "text_descriptions": [],
+    "heatmaps": [],
+    "satellite_or_imagery": []
+  },
+  "network": {
+    "preferred_adapter": "osm_xml",
+    "bbox_wgs84": null
+  },
+  "output": {
+    "course_version_id": null,
+    "allow_candidate_gpx": true,
+    "require_provenance_sidecar": true
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "race": {
+    "race_id": "ost",
+    "name": "Österlen Spring Trail",
+    "country": "SE"
+  },
+  "course": {
+    "race_family": "trail5",
+    "target_year": 2026,
+    "advertised_distance_km": 5.0,
+    "start_finish": [
+      {
+        "name": "Christinehof",
+        "role": "start_finish_area"
+      }
+    ],
+    "known_controls": [
+      {
+        "name": "stone stairs",
+        "role": "finishing_approach",
+        "evidence": "historical organizer description plus independent 2024 race report"
+      }
+    ],
+    "known_named_corridors": [
+      "Christinehof Ekopark local path network"
+    ],
+    "terrain_constraints": [
+      "first approximately 3 km gravel or forest roads",
+      "last approximately 2 km narrow technical trails",
+      "stairs on finishing approach"
+    ]
+  },
+  "sources": {
+    "organizer_gpx": [],
+    "organizer_maps": [
+      "organizer-trail5-current-map"
+    ],
+    "participant_gps": [],
+    "official_local_trails": [
+      "Christinehof Ekopark trail network"
+    ],
+    "text_descriptions": [
+      "organizer-2021-short-course-description"
+    ],
+    "heatmaps": [
+      "Suunto trail-running heatmap when visually available"
+    ],
+    "satellite_or_imagery": []
+  },
+  "network": {
+    "preferred_adapter": "osm_xml",
+    "bbox_wgs84": {
+      "west": 13.929567,
+      "south": 55.704858,
+      "east": 14.012122,
+      "north": 55.732867
+    }
+  },
+  "calibration": {
+    "georeferenced_raster_length_km": 5.002,
+    "raw_trace_vertices_persisted": false
+  },
+  "output": {
+    "course_version_id": "trail5-current-reference",
+    "allow_candidate_gpx": true,
+    "require_provenance_sidecar": true
+  }
+}
