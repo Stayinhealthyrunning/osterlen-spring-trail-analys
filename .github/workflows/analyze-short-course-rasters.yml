@@ -21,7 +21,7 @@ jobs:
       - run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq tesseract-ocr
-          python -m pip install --quiet opencv-python-headless pytesseract numpy networkx scikit-image
+          python -m pip install --quiet opencv-python-headless pytesseract numpy networkx scikit-image scipy pyproj
       - name: Analyze organizer rasters
         run: |
           mkdir -p reports
@@ -36,11 +36,15 @@ jobs:
       - name: Cross-register organizer maps
         run: |
           python tools/register_organizer_maps.py --trail5 data/source/maps/ost-trail5-organizer-map.jpg --trail14 data/source/maps/ost-trail13-14-organizer-map.jpg --output reports/organizer-map-registration.json
+      - name: Reconstruct Trail 5 on OSM
+        run: |
+          mkdir -p routes/ost/trail5-current-reference
+          python tools/reconstruct_trail5_osm.py --image data/source/maps/ost-trail5-organizer-map.jpg --network data/source/osm/christinehof-path-network.geojson --geojson routes/ost/trail5-current-reference/route.geojson --gpx routes/ost/trail5-current-reference/route.gpx --qa routes/ost/trail5-current-reference/qa.json
       - name: Commit diagnostics
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/short-course-raster-diagnostics.json reports/trail5-route-skeleton.json reports/trail14-route-skeleton.json reports/organizer-map-registration.json
+          git add reports/short-course-raster-diagnostics.json reports/trail5-route-skeleton.json reports/trail14-route-skeleton.json reports/organizer-map-registration.json routes/ost/trail5-current-reference
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Analyze short-course organizer rasters"
           git push origin HEAD:automation/acquire-short-course-sources
