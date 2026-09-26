@@ -69,8 +69,8 @@ def main():
  _,A,B,overlap,total=best
  paths=first
  route=A[0]+list(reversed(B[0]))[1:]
- ways=[];devs=[];hws=[]
- for u,v in zip(route,route[1:]):
+ ways=list(t5.get("properties",{}).get("osm_way_ids",[]));devs=[];hws=[]
+ for u,v in zip(east_route,east_route[1:]):
   e=G[u][v];ways.append(e["way"]);devs.append(e["dev"]);hws.append(e["highway"])
  ll=[back.transform(*p) for p in route]
  props={"name":"ÖST Trail 13/14 km reconstructed","status":"validated_reconstruction_candidate","provenance":"organizer raster cross-registered to Trail5 and snapped to OpenStreetMap","distance_km":round(total/1000,3),"osm_way_ids":list(dict.fromkeys(x for x in ways if x))}
