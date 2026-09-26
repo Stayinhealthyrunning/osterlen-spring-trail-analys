@@ -1,0 +1,18 @@
+{
+  "distance_km": 13.248,
+  "nominal_km": 5.0,
+  "route_points": 431,
+  "anchors": 68,
+  "max_anchor_to_osm_m": 197.5,
+  "median_route_to_raster_m": 99.5,
+  "p95_route_to_raster_m": 376.1,
+  "start_finish_gap_m": 0.0,
+  "osm_way_count": 15,
+  "highway_types": [
+    "path",
+    "residential",
+    "service",
+    "tertiary",
+    "track"
+  ]
+}
