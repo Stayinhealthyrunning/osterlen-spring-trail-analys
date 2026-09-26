@@ -44,6 +44,11 @@ def main():
    G.add_edge(u,v,length=L,weight=fit*relation_factor,dev=dev,way=wid,highway=pr.get("highway"),skane=wid in skane,back=wid in backset)
  nodes=list(G.nodes); nt=cKDTree(nodes); castle=(434707.,6175169.); hall=tr.transform(14.01780,55.70819)
  s=nodes[int(nt.query(castle)[1])]; h=nodes[int(nt.query(hall)[1])]
+ # Alunbruket is a mandatory named corridor in both organizer evidence and
+ # Hallamöllaleden. Use the OSM/local-map vicinity as a topology gate rather
+ # than permitting arbitrary Christinehof-Hallamölla shortcuts.
+ alun=tr.transform(14.0032,55.7049)
+ an=nodes[int(nt.query(alun)[1])]
  # Eastern Hallamölla loop: two distinct Christinehof-Hallamölla corridors.
  first=[]
  for path in nx.shortest_simple_paths(G,s,h,weight="length"):
