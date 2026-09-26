@@ -1,10 +1,15 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "status": "source_side_ready_for_engine_integration",
   "target": {
-    "reference_repository": "Stayinhealthyrunning/gotaleden-splits",
-    "reference_frontend_adapter": "docs/assets/data-adapter.js",
-    "strategy": "Reuse the generalized analysis engine after the Gotaleden refactor is finished; keep ÖST acquisition, provenance and event-specific normalization in this repository."
+    "engine_contract": "loppanalys-engine-1.0",
+    "canonical_contract_repository": "Stayinhealthyrunning/gotaleden-splits",
+    "canonical_contract_path": "config/engine-contract-v1.json",
+    "reference_implementations": {
+      "event_competition_capabilities": "Stayinhealthyrunning/gotaleden-splits",
+      "modular_loading_route_identity_history": "Stayinhealthyrunning/ultravasan-analys"
+    },
+    "strategy": "Adapt the curated ÖST analysis database to the frozen Engine 1.0 semantic contract. Reuse proven engine semantics from both reference implementations; keep ÖST acquisition, provenance and event-specific normalization in this repository."
   },
   "primary_input": {
     "curated_analysis_database": "data/derived/ost-analysis-2018-2026.sqlite.gz",
@@ -65,7 +70,13 @@
       "splits": 6123,
       "derived_metrics": 699
     },
-    "status_values": ["FINISHED", "DNF", "DNS", "DSQ", "UNKNOWN"],
+    "status_values": [
+      "FINISHED",
+      "DNF",
+      "DNS",
+      "DSQ",
+      "UNKNOWN"
+    ],
     "current_status_counts": {
       "FINISHED": 9518,
       "DNF": 332,
@@ -80,64 +91,194 @@
     ]
   },
   "target_results_payload": {
-    "required_top_level_keys": ["race_catalog", "courses", "races", "checkpoints", "teams", "splits"],
+    "required_top_level_keys": [
+      "event",
+      "race_catalog",
+      "courses",
+      "races",
+      "checkpoints",
+      "splits"
+    ],
     "race_catalog": {
       "key": "race_key",
       "purpose": "Display/source metadata for each race-year instance."
     },
     "courses": {
       "key": "course_version",
-      "required_fields": ["event_key", "checkpoint_catalog", "assets"],
-      "optional_fields": ["whole_course_comparison_group", "official_elevation_gain_m", "official_elevation_loss_m"],
+      "required_fields": [
+        "event_key",
+        "checkpoint_catalog",
+        "assets"
+      ],
+      "optional_fields": [
+        "whole_course_comparison_group",
+        "official_elevation_gain_m",
+        "official_elevation_loss_m"
+      ],
       "rule": "Only expose a route asset when a locally usable route source exists. Geometry-comparison evidence alone does not satisfy this requirement."
     },
     "races": {
       "key": "race_key",
-      "required_fields": ["event_key", "race_family", "year", "race_date", "course_version", "data_status", "section", "type", "nominal_distance_km", "gpx_distance_km", "records"],
-      "type_values": ["individual", "relay"],
-      "rule": "course_version may be null while historical geometry remains unresolved; frontend features requiring route data must then be disabled."
+      "required_fields": [
+        "event_key",
+        "race_family",
+        "year",
+        "race_date",
+        "course_version",
+        "data_status",
+        "section",
+        "nominal_distance_km",
+        "participant",
+        "competition",
+        "capabilities",
+        "records"
+      ],
+      "type_values": [
+        "individual",
+        "team"
+      ],
+      "rule": "course_version may be null while historical geometry remains unresolved; route-dependent capabilities must then be false. participant/competition/capabilities are explicit Engine 1.0 semantics and must not be inferred in the frontend from race names."
     },
     "checkpoints": {
       "keyed_by": "race_key",
-      "required_fields": ["key", "name", "route_distance_km", "race_distance_km", "analysis_boundary", "replay_anchor"],
-      "recommended_fields": ["source_point_name", "source_label", "semantic_key", "mapping_confidence", "role"],
+      "required_fields": [
+        "key",
+        "name",
+        "route_distance_km",
+        "race_distance_km",
+        "analysis_boundary",
+        "replay_anchor"
+      ],
+      "recommended_fields": [
+        "source_point_name",
+        "source_label",
+        "semantic_key",
+        "mapping_confidence",
+        "role"
+      ],
       "rule": "Keep non-primary timing observations in provenance/source data even when analysis_boundary=false."
     },
     "records": {
-      "required_fields": ["source_result_id", "status"],
-      "recommended_fields": ["bib", "finish_seconds", "name", "club", "country", "gender", "age", "age_category", "class_name", "overall_place", "class_place", "gender_place", "person_key", "identity_status", "identity_scope"],
-      "status_values": ["FINISHED", "DNF", "DNS", "DSQ", "UNKNOWN"],
+      "required_fields": [
+        "source_result_id",
+        "status"
+      ],
+      "recommended_fields": [
+        "bib",
+        "finish_seconds",
+        "name",
+        "club",
+        "country",
+        "gender",
+        "age",
+        "age_category",
+        "class_name",
+        "overall_place",
+        "class_place",
+        "gender_place",
+        "person_key",
+        "identity_status",
+        "identity_scope"
+      ],
+      "status_values": [
+        "FINISHED",
+        "DNF",
+        "DNS",
+        "DSQ",
+        "UNKNOWN"
+      ],
       "rule": "FINISHED rows require a positive finish time; non-finish rows may legitimately have no finish_seconds."
     },
     "splits": {
-      "required_fields": ["race_key", "source_result_id", "checkpoint", "elapsed_seconds"],
-      "recommended_fields": ["bib", "place_overall", "place_class", "place_gender", "split_place_overall", "split_seconds", "split_speed_kmh", "split_pace_min_per_km", "cumulative_speed_kmh", "cumulative_pace_min_per_km", "source_point_name"],
+      "required_fields": [
+        "race_key",
+        "source_result_id",
+        "checkpoint",
+        "elapsed_seconds"
+      ],
+      "recommended_fields": [
+        "bib",
+        "place_overall",
+        "place_class",
+        "place_gender",
+        "split_place_overall",
+        "split_seconds",
+        "split_speed_kmh",
+        "split_pace_min_per_km",
+        "cumulative_speed_kmh",
+        "cumulative_pace_min_per_km",
+        "source_point_name"
+      ],
       "rule": "Only published/observed passages are emitted. No interpolation belongs in the source split table; interpolation happens in the frontend replay model."
     },
     "teams": {
-      "required_for": ["duo60"],
-      "member_fields": ["source_sequence", "source_member_result_id", "bib", "name_as_published", "member_time_seconds", "finish_clock", "speed_source", "leg_no"],
+      "required_for": [
+        "duo60"
+      ],
+      "member_fields": [
+        "source_sequence",
+        "source_member_result_id",
+        "bib",
+        "name_as_published",
+        "member_time_seconds",
+        "finish_clock",
+        "speed_source",
+        "leg_no"
+      ],
       "rule": "Team/member structures are now parsed from the frozen public source. source_sequence is preserved; leg_no must remain null unless later evidence validates leg ordering."
-    }
+    },
+    "optional_top_level_keys": [
+      "teams",
+      "team_members",
+      "capabilities",
+      "sources"
+    ]
   },
   "route_bundle_contract": {
     "keyed_by": "course_version",
     "route": {
-      "required_fields": ["points", "full_distance_km"],
+      "required_fields": [
+        "points",
+        "full_distance_km"
+      ],
       "point_shape": "[lat, lon, optional elevation, route_distance_km]"
     },
     "elevation": {
-      "accepted_fields": ["profile", "points"],
-      "point_required_fields": ["route_distance_km"],
+      "accepted_fields": [
+        "profile",
+        "points"
+      ],
+      "point_required_fields": [
+        "route_distance_km"
+      ],
       "rule": "Use one common smoothing/resampling method for cross-year D+/profile comparisons; raw dense barometric sums are not authoritative."
     }
   },
   "checkpoint_policy": {
     "ultra60": {
-      "2018_2019": ["start", "stenshuvud", "bengtemolla", "vantalangan", "finish"],
-      "2022_2023_source_order": ["start", "bengtemolla_approach", "bengtemolla", "finish"],
-      "2022_2023_analysis_primary": ["start", "bengtemolla", "finish"],
-      "2024_2026": ["start", "bengtemolla", "finish"]
+      "2018_2019": [
+        "start",
+        "stenshuvud",
+        "bengtemolla",
+        "vantalangan",
+        "finish"
+      ],
+      "2022_2023_source_order": [
+        "start",
+        "bengtemolla_approach",
+        "bengtemolla",
+        "finish"
+      ],
+      "2022_2023_analysis_primary": [
+        "start",
+        "bengtemolla",
+        "finish"
+      ],
+      "2024_2026": [
+        "start",
+        "bengtemolla",
+        "finish"
+      ]
     },
     "duo60": {
       "exchange_semantic_key": "bengtemolla",
@@ -158,5 +299,42 @@
     "source_identity": "participant_uid is race-result-local and does not assert that matching names across years are one person.",
     "repeat_runner_analysis": "Build a separate documented linkage layer with a person_key, confidence/evidence and ambiguity handling; never overwrite source identity.",
     "historical_field_gaps": "Sex/age are intentionally absent where not explicitly published in the frozen source."
+  },
+  "engine_1_0_mapping": {
+    "event": {
+      "event_key": "osterlen-spring-trail",
+      "name": "Österlen Spring Trail",
+      "product_title": "ÖST Analys",
+      "storage_namespace": "ost"
+    },
+    "competition_profiles": {
+      "individual": {
+        "participant": {
+          "entity": "person"
+        },
+        "competition": {
+          "format": "individual",
+          "team_structure": {
+            "kind": "none",
+            "member_assignment": "unknown"
+          }
+        }
+      },
+      "duo60": {
+        "participant": {
+          "entity": "team"
+        },
+        "competition": {
+          "format": "duo",
+          "team_structure": {
+            "kind": "sequential",
+            "leg_count": 2,
+            "member_assignment": "unknown"
+          }
+        }
+      }
+    },
+    "capability_source": "reports/engine-readiness.json",
+    "capability_rule": "Materialize capabilities per race edition from verified readiness/data coverage. Never enable a capability from family name alone."
   }
 }
