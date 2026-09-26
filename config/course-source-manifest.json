@@ -246,8 +246,9 @@
       "url": "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/st-5km-bana_orig.jpg",
       "status": "verified_current_organizer_page_embed",
       "course_version": null,
-      "redistribution": "reference_only",
-      "note": "Organizer-hosted current course map for the Christinehof 5 km loop. Verified route-shape evidence only; not georeferenced GPX and not proof of historical year-to-year identity."
+      "redistribution": "organizer_direct_download",
+      "note": "Organizer-hosted current course map for the Christinehof 5 km loop. Archive original raster for reproducible pixel-level georeferencing; any digitized line remains derived geometry, not organizer GPX.",
+      "target_path": "data/source/maps/ost-trail5-current-organizer-map.jpg"
     }
   ]
 }
