@@ -17,10 +17,10 @@ This file intentionally contains only issues that cannot be closed from the curr
 
 ## 3. Trail 13/14 and Trail 5 historical course versions
 
-**Status:** partially improved, still unresolved for version assignment.  
-**Known:** current organizer pages expose route-shape map images for both the Trail 13/14 family and the 5 km family. The Trail 13/14 image is legacy-labelled “ÖST 13km bana” while the current Race-PM describes approximately 14 km; the 5 km image shows the current Christinehof loop.  
-**Blocker:** no complete validated year-by-year GPX/coordinate archive has been secured, and static map images are not sufficient for replay-grade geometry or proof of year-to-year identity.  
-**Rule:** retain the organizer map images as verified shape evidence, but do not assign historical course versions from marketing distance/name or a non-georeferenced image alone.
+**Status:** materially improved, still unresolved for year-by-year version assignment.  
+**Known:** current organizer pages expose route-shape map images for both families. The Trail 5 raster includes SWEREF 99 TM map-edge coordinates, north arrow and scale, so it is georeferenceable and can support a derived reference geometry after pixel-level digitization. For Trail 13/14, a verified 2023 race-day Jogg GPSPass (Anna-Karin D, adid 10988506) proves a participant GPS registration and explicitly reports 13.67 km / 1:31:44 for the race segment.  
+**Blocker:** raw participant coordinate export has not been acquired, the 5 km raster has not yet been digitized from original image bytes, and no complete validated year-by-year GPX archive exists.  
+**Rule:** a raster-derived 5 km line must be labelled `derived_from_georeferenced_organizer_map`, not organizer GPX or race-day GPS. Promote it to canonical race-day geometry only after independent participant-GPS validation. Do not use Jogg's 15.55 km aggregate for the 2023 Trail 13/14 course because the participant explicitly reports 13.67 km for the race segment.
 
 ## 4. Trail 21/22 in 2018
 
