@@ -17,22 +17,23 @@ This file intentionally contains only issues that cannot be closed from the curr
 
 ## 3. Trail 13/14 and Trail 5 historical course versions
 
-**Status:** unresolved.  
-**Blocker:** no complete verified year-by-year route geometry archive has been secured.  
-**Rule:** do not assign course versions from marketing distance/name alone.
+**Status:** partially improved, still unresolved for version assignment.  
+**Known:** current organizer pages expose route-shape map images for both the Trail 13/14 family and the 5 km family. The Trail 13/14 image is legacy-labelled “ÖST 13km bana” while the current Race-PM describes approximately 14 km; the 5 km image shows the current Christinehof loop.  
+**Blocker:** no complete validated year-by-year GPX/coordinate archive has been secured, and static map images are not sufficient for replay-grade geometry or proof of year-to-year identity.  
+**Rule:** retain the organizer map images as verified shape evidence, but do not assign historical course versions from marketing distance/name or a non-georeferenced image alone.
 
 ## 4. Trail 21/22 in 2018
 
-**Status:** intentionally unassigned.  
-**Known:** candidate geometry is strongly compatible with the 2019 route.  
-**Blocker:** candidate Trace metadata is dated 2016, so year-specific provenance is not strong enough for formal 2018 assignment.
+**Status:** intentionally unassigned, with stronger race-day support than before.  
+**Known:** candidate geometry is strongly compatible with the 2019 route. An independently published participant activity from race day 2018-04-14 records 22.03 km for “Österlen Spring Trail 2018”, supporting a roughly 22 km actually run course.  
+**Blocker:** candidate Trace metadata is dated 2016, and the participant activity does not expose an anonymously acquired coordinate series, so exact year-specific geometry provenance is still not strong enough for formal 2018 assignment.
 
 ## 5. Duo leg attribution
 
-**Status:** member rows imported; leg numbers unresolved.  
-**Known:** 599 published member rows are retained and `source_sequence` is preserved.  
-**Blocker:** aggregate timing evidence does not validate that row 1/2 always means leg 1/2.  
-**Rule:** keep `leg_no = NULL` until stronger source/organizer evidence exists.
+**Status:** member rows imported; systematic leg-number attribution remains unresolved.  
+**Known:** 599 published member rows are retained and `source_sequence` is preserved. A verified 2019 participant activity independently records Duo leg 2 at 26.29 km and states the teammate's first leg was nearly 33 km, supporting materially asymmetric relay legs.  
+**Blocker:** one participant account does not validate that source row 1/2 always maps to leg 1/2 for every team/year.  
+**Rule:** keep `leg_no = NULL` globally until stronger source/organizer evidence exists; do not hard-code Duo as 30+30 km.
 
 ## 6. Historical gender / age gaps
 
