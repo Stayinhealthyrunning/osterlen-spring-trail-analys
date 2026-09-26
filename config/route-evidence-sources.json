@@ -191,6 +191,22 @@
       "evidence": "The organizer's 2022 page states that start times may differ but course routes and other details are the same. Together with the retained historical programme, this supports continuity of the short-course concept around the 2021/2022 configuration.",
       "limitation": "The statement does not provide coordinates and is not strong enough by itself to assign exact geometry or prove identity with the current raster.",
       "local_asset": false
+    },
+    {
+      "id": "kondis-2018-trail5-abelone-lyng",
+      "family": "trail5",
+      "year": 2018,
+      "source_type": "participant_result_and_race_report",
+      "url": "https://www.kondis.no/abelone-lyng-paa-pallen-to-ganger-i-loepet-av-24-timer.6109467-127676.html",
+      "status": "verified_independent_race_report",
+      "participant": "Abelone Lyng",
+      "activity_date": "2018-04-15",
+      "official_net_time": "23:10",
+      "official_gross_time": "23:13",
+      "evidence": "Independent contemporary race report confirms Abelone Lyng ran Naturloppet 5 km+ the day after her ÖST Ultra and finished joint second on net time. Bøler IF independently records the same 23:10 result.",
+      "limitation": "Strong participant/result anchor for result→GPS matching, but no public coordinate series or watch distance was found.",
+      "coordinate_access": "not_found",
+      "local_asset": false
     }
   ]
 }
