@@ -8,8 +8,8 @@ https://www.osterlentrail.se/uploads/4/1/8/7/41870619/st-5km-bana_orig.jpg
 
 The raster is stronger evidence than previously recorded. It contains a north arrow, map scale and printed SWEREF 99 TM corner coordinates. The visible corner labels are approximately:
 
-- south-west: N 6173751, E 437733
-- north-east: N 6176791, E 442965
+- south-west: N 6173751, E 432733
+- north-east: N 6176791, E 437965
 
 Therefore the black ÖST 5 km course line can be digitized into projected coordinates by affine georeferencing of the raster. This is **derived organizer-map geometry**, not an organizer GPX and not yet an actual race-day recording.
 
@@ -43,3 +43,11 @@ Public-source searches have confirmed several high-value result anchors but have
 - Anders Persson's 2024 race report independently describes the stone stairs on the finishing approach, matching the organizer's historical course description.
 
 No fabricated GPX has been created.
+
+## Pixel-georeferencing prototype
+
+A control reconstruction was performed against the 1000×738 public rendering of the organizer raster. The mapped frame was calibrated approximately to SWEREF 99 TM N 6173751 / E 432733 (south-west) and N 6176791 / E 437965 (north-east). An independent Christinehof castle position (about E 434707 / N 6175169 in EPSG:3006) falls at the expected castle location in the raster, providing an external gross-error check.
+
+A manually sampled centreline of the thick black organizer course line (62 image-space vertices) measures approximately **5.002 km** after affine transformation. This is a prototype measurement, not a canonical GPX: vertex placement is based on the rendered raster and is not yet snapped to authoritative vector path geometry. The result is nevertheless a strong internal validation because it independently reproduces the advertised approximately 5 km course length.
+
+The raster background itself is Lantmäteriet topography. The next refinement should therefore snap the reconstructed centreline to Topografi 10 road/path geometry (or trace the visible underlying mapped paths where vector access is unavailable), retaining the organizer line as the route-choice authority.
