@@ -51,7 +51,7 @@ def main():
   for B in first[i+1:]:
    overlap=sum(G[tuple(e)[0]][tuple(e)[1]]["length"] for e in A[3]&B[3]); east=A[1]+B[1]
    if not 7000<=east<=9500: continue
-   score=A[2]+B[2]+overlap*70+abs(east-8200)*4
+   score=A[2]+B[2]+overlap*70+abs(east-8200)*100
    if best is None or score<best[0]: best=(score,A,B,overlap,east)
  if best is None: raise RuntimeError(f"No eastern Hallamolla loop candidate; paths={len(first)}")
  _,A,B,overlap,east_total=best; east_route=A[0]+list(reversed(B[0]))[1:]
