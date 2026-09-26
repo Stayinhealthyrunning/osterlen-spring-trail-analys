@@ -55,12 +55,12 @@ def build_osm(path,trace):
 
 def main():
  ap=argparse.ArgumentParser();ap.add_argument("--image");ap.add_argument("--network");ap.add_argument("--geojson");ap.add_argument("--gpx");ap.add_argument("--qa");a=ap.parse_args()
- pix=extract_ordered(a.image); trace=[px_to_3006(p) for p in pix]; trace_s=sample(trace,35)
+ pix=extract_ordered(a.image); trace=[px_to_3006(p) for p in pix]\n # Translate the validated raster frame so the midpoint of its start/finish gap equals the independent Christinehof control.\n castle=(434707.0,6175169.0); gapmid=((trace[0][0]+trace[-1][0])/2,(trace[0][1]+trace[-1][1])/2); shift=(castle[0]-gapmid[0],castle[1]-gapmid[1]); trace=[(p[0]+shift[0],p[1]+shift[1]) for p in trace]; trace_s=sample(trace,150)
  G=build_osm(a.network,trace); nodes=list(G.nodes); tree=cKDTree(nodes)
  anchors=[]; anchor_dev=[]
  for p in trace_s:
   dd,ii=tree.query(p); n=nodes[int(ii)]
-  if not anchors or n!=anchors[-1]: anchors.append(n);anchor_dev.append(float(dd))
+  if dd<=75 and (not anchors or n!=anchors[-1]): anchors.append(n);anchor_dev.append(float(dd))
  route=[]
  usedways=[]; hws=[]
  for s,t in zip(anchors,anchors[1:]):
@@ -84,6 +84,6 @@ def main():
  Path(a.geojson).write_text(json.dumps(feat,ensure_ascii=False,indent=2)+"\n")
  pts="".join(f'<trkpt lat="{lat:.7f}" lon="{lon:.7f}"></trkpt>' for lon,lat in ll)
  Path(a.gpx).write_text('<?xml version="1.0" encoding="UTF-8"?><gpx version="1.1" creator="Loppanalys route reconstruction"><trk><name>ÖST Naturloppet 5 km reconstructed</name><trkseg>'+pts+'</trkseg></trk></gpx>\n')
- qa={"distance_km":round(length/1000,3),"nominal_km":5.0,"route_points":len(route),"anchors":len(anchors),"max_anchor_to_osm_m":round(max(anchor_dev),1),"median_route_to_raster_m":round(float(np.median(dev)),1),"p95_route_to_raster_m":round(float(np.percentile(dev,95)),1),"start_finish_gap_m":round(dist(route[0],route[-1]),1),"osm_way_count":len(set(x for x in usedways if x)),"highway_types":sorted(set(x for x in hws if x))}
+ qa={"distance_km":round(length/1000,3),"nominal_km":5.0,"route_points":len(route),"anchors":len(anchors),"raster_translation_m":[round(shift[0],1),round(shift[1],1)],"max_anchor_to_osm_m":round(max(anchor_dev),1),"median_route_to_raster_m":round(float(np.median(dev)),1),"p95_route_to_raster_m":round(float(np.percentile(dev,95)),1),"start_finish_gap_m":round(dist(route[0],route[-1]),1),"osm_way_count":len(set(x for x in usedways if x)),"highway_types":sorted(set(x for x in hws if x))}
  Path(a.qa).write_text(json.dumps(qa,indent=2)+"\n");print(json.dumps(qa,indent=2))
 if __name__=="__main__":main()
