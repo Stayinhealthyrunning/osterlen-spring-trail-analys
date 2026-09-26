@@ -1,4 +1,7 @@
-  File "/home/runner/work/osterlen-spring-trail-analys/osterlen-spring-trail-analys/tools/reconstruct_trail14_osm.py", line 83
-    if __name__=="__main__":\n main()\n
-                             ^
-SyntaxError: unexpected character after line continuation character
+Traceback (most recent call last):
+  File "/home/runner/work/osterlen-spring-trail-analys/osterlen-spring-trail-analys/tools/reconstruct_trail14_osm.py", line 84, in <module>
+    main()
+  File "/home/runner/work/osterlen-spring-trail-analys/osterlen-spring-trail-analys/tools/reconstruct_trail14_osm.py", line 69, in main
+    if best is None: raise RuntimeError(f"No two-corridor loop candidate; outbound count {len(first)}")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: No two-corridor loop candidate; outbound count 35
