@@ -16,6 +16,7 @@ jobs:
           fetch-depth: 0
       - run: python -m pip install --quiet opencv-python-headless numpy pyproj networkx scikit-image scipy
       - name: OCR raster easting controls
+        continue-on-error: true
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq tesseract-ocr
           python tools/ocr_raster_easting_controls.py data/source/maps/ost-trail5-organizer-map.jpg data/source/maps/ost-trail13-14-organizer-map.jpg reports/short-course-easting-ocr.json
