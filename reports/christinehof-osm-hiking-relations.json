@@ -1,0 +1,615 @@
+[
+  {
+    "id": 408995,
+    "tags": {
+      "colour": "orange",
+      "distance": "188",
+      "from": "Ystad",
+      "name": "Skåneleden 4: Österlen",
+      "network": "nwn",
+      "operator": "Region Skåne",
+      "osmc:symbol": "orange:orange::SL4:black",
+      "ref": "SL4",
+      "roundtrip": "yes",
+      "route": "hiking",
+      "symbol": "orange",
+      "to": "Ystad",
+      "type": "superroute",
+      "website": "https://www.skaneleden.se/delled/sl4-osterlen"
+    },
+    "members": [
+      {
+        "type": "relation",
+        "ref": 6345305,
+        "role": "main"
+      },
+      {
+        "type": "relation",
+        "ref": 6345306,
+        "role": "main"
+      },
+      {
+        "type": "relation",
+        "ref": 6346115,
+        "role": "main"
+      },
+      {
+        "type": "relation",
+        "ref": 6364675,
+        "role": "main"
+      },
+      {
+        "type": "relation",
+        "ref": 6364676,
+        "role": "main"
+      },
+      {
+        "type": "relation",
+        "ref": 1019766,
+        "role": "main"
+      },
+      {
+        "type": "relation",
+        "ref": 1019970,
+        "role": "main"
+      },
+      {
+        "type": "relation",
+        "ref": 1019969,
+        "role": "main"
+      },
+      {
+        "type": "relation",
+        "ref": 6386924,
+        "role": "main"
+      },
+      {
+        "type": "relation",
+        "ref": 6386922,
+        "role": "main"
+      },
+      {
+        "type": "relation",
+        "ref": 6386923,
+        "role": "main"
+      },
+      {
+        "type": "relation",
+        "ref": 6368152,
+        "role": "main"
+      },
+      {
+        "type": "relation",
+        "ref": 1019764,
+        "role": "alternative"
+      },
+      {
+        "type": "relation",
+        "ref": 1019765,
+        "role": "alternative"
+      }
+    ]
+  },
+  {
+    "id": 1019764,
+    "tags": {
+      "attribution": "Region Skåne",
+      "colour": "orange",
+      "distance": "9",
+      "from": "Alunbruket",
+      "name": "Skåneleden 4, Etapp 7A: Alunbruket – Agusa",
+      "network": "nwn",
+      "operator": "Stiftelsen för fritidsområden i Skåne",
+      "osmc:symbol": "orange:orange::SL4:black",
+      "ref": "7A",
+      "route": "hiking",
+      "symbol": "orange",
+      "to": "Agusa",
+      "type": "route",
+      "website": "https://www.skaneleden.se/etapp/7a-alunbruket-agusa"
+    },
+    "members": [
+      {
+        "type": "way",
+        "ref": 51096673,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 38780923,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 450631336,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 450631337,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 51096672,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 51096675,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 317595414,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 1193108819,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 1193108818,
+        "role": ""
+      }
+    ]
+  },
+  {
+    "id": 1019969,
+    "tags": {
+      "attribution": "Region Skåne",
+      "colour": "orange",
+      "distance": "8",
+      "from": "Alunbruket",
+      "name": "Skåneleden 4, Etapp 8: Alunbruket – Heinge",
+      "network": "nwn",
+      "operator": "Stiftelsen för fritidsområden i Skåne",
+      "osmc:symbol": "orange:orange::SL4:black",
+      "ref": "8",
+      "route": "hiking",
+      "symbol": "orange",
+      "to": "Heinge",
+      "type": "route",
+      "website": "https://www.skaneleden.se/etapp/8-alunbruket-heinge"
+    },
+    "members": [
+      {
+        "type": "way",
+        "ref": 831357957,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 203894112,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 203894167,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 1004685338,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 1004685337,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 50321318,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 50321317,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 1004684144,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 1082474450,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 1004639805,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 203894106,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 1125781897,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 429280128,
+        "role": ""
+      }
+    ]
+  },
+  {
+    "id": 1019970,
+    "tags": {
+      "attribution": "Region Skåne",
+      "colour": "orange",
+      "distance": "7",
+      "from": "Vantalängan",
+      "name": "Skåneleden 4, Etapp 7: Vantalängan – Alunbruket",
+      "network": "nwn",
+      "operator": "Stiftelsen för fritidsområden i Skåne",
+      "osmc:symbol": "orange:orange::SL4:black",
+      "ref": "7",
+      "route": "hiking",
+      "symbol": "orange",
+      "to": "Alunbruket",
+      "type": "route",
+      "website": "https://www.skaneleden.se/etapp/7-vantalangan-alunbruket"
+    },
+    "members": [
+      {
+        "type": "way",
+        "ref": 158019657,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 742004761,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 220636736,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 831799244,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 68423849,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 1084194487,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 68423850,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 1462383783,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 1462376249,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 220636739,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 1004689110,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 50321315,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 65046738,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 741759096,
+        "role": ""
+      }
+    ]
+  },
+  {
+    "id": 1721456,
+    "tags": {
+      "colour": "yellow",
+      "distance": "19.0",
+      "name": "Backaleden",
+      "network": "lwn",
+      "roundtrip": "no",
+      "route": "hiking",
+      "type": "route"
+    },
+    "members": [
+      {
+        "type": "way",
+        "ref": 694131274,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 694131273,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 831799245,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 450631369,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 450631366,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 68423849,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 831799244,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 712551208,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 712551207,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 230745249,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 230745250,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 712551206,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 831799241,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 230745248,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 712551202,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 712551203,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 127068135,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 831799240,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 158019652,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 127068150,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 36742913,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 36742909,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 36742912,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 368805106,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 36742890,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 36742894,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 1421318794,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 356243271,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 230747999,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 1431943768,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 230748000,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 831799235,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 831799233,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 413328651,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 831799232,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 971019387,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 986028049,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 831799231,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 986028047,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 230746223,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 831799230,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 39452793,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 148113669,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 831799229,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 297618889,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 831799228,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 831799227,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 297618887,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 297618886,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 831799225,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 356857429,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 356857378,
+        "role": ""
+      },
+      {
+        "type": "way",
+        "ref": 356857299,
+        "role": ""
+      }
+    ]
+  }
+]
