@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-26",
+  "family": "trail5",
+  "status": "prototype_reference_geometry_measurement",
+  "source_image": "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/st-5km-bana_orig.jpg",
+  "rendered_image_size_px": [
+    1000,
+    738
+  ],
+  "approximate_map_frame_px": {
+    "left": 23,
+    "right": 977,
+    "top": 47,
+    "bottom": 660
+  },
+  "sweref99tm_control": {
+    "southwest": {
+      "E": 432733,
+      "N": 6173751
+    },
+    "northeast": {
+      "E": 437965,
+      "N": 6176791
+    }
+  },
+  "external_control": {
+    "name": "Christinehof Castle",
+    "approx_E": 434707,
+    "approx_N": 6175169,
+    "purpose": "gross georeference check"
+  },
+  "route_trace": {
+    "method": "manual centreline sampling of organizer black course line in public raster rendering",
+    "vertex_count": 62,
+    "derived_length_km": 5.002
+  },
+  "interpretation": "Strong validation that the georeferenced organizer raster represents an approximately 5 km loop. Not canonical GPX; refine by snapping to Lantmateriet Topografi 10 road/path geometry and validate against participant GPS.",
+  "promotion_rule": "Do not label organizer GPX or race-day GPS. Provenance remains derived_from_georeferenced_organizer_map until independent participant GPS validation."
+}
