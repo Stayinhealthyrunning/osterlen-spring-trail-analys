@@ -16,11 +16,12 @@
       "year": 2026,
       "source_type": "organizer_map_image",
       "url": "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/13km-bana-h-jdkurvan-3_orig.jpg",
-      "status": "verified_current_organizer_page_embed",
+      "status": "verified_current_organizer_georeferenceable_map_legacy_13km_label",
       "published_label": "ÖST 13km bana",
-      "evidence": "Current 14 km Race-PM embeds this legacy-labelled organizer map/elevation image. It shows one loop from Christinehof with an eastern out-and-back/loop to the Hallamölla/Verkeån corridor and an approximately 13 km profile.",
-      "limitation": "The legacy 13 km label means the image alone must not be used to claim exact identity for every trail14 year or exact 2026 distance.",
-      "local_asset": false
+      "evidence": "Current 14 km Race-PM embeds this legacy-labelled organizer map/elevation image. It shows one loop from Christinehof with an eastern out-and-back/loop to the Hallamölla/Verkeån corridor and an approximately 13 km profile. Native image inspection confirms printed SWEREF 99 TM edge coordinates, north arrow and scale. The raster also contains a 0.0–13.0 km elevation-profile axis and its western Christinehof loop provides a second organizer-map registration of much of the Trail5 corridor.",
+      "limitation": "Georeferenceable organizer raster, not organizer GPX. Legacy 13 km labelling does not prove exact identity with every modern 14 km race year. Pixel-level georeferencing and participant-GPS validation are required before canonical assignment.",
+      "local_asset": false,
+      "coordinate_access": "georeferenceable_raster"
     },
     {
       "id": "organizer-trail5-current-map",
