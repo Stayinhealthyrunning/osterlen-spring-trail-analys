@@ -1,17 +1,17 @@
 {
-  "distance_km": 14.283,
+  "distance_km": 14.949,
   "participant_2023_reference_km": 13.67,
   "western_trail5_km": 5.481,
-  "eastern_loop_km": 8.802,
-  "route_points": 411,
+  "eastern_loop_km": 9.468,
+  "route_points": 506,
   "candidate_paths_considered": 120,
-  "shared_out_return_m": 126.1,
-  "median_edge_to_raster_m": 43.0,
-  "p95_edge_to_raster_m": 365.4,
+  "shared_out_return_m": 3644.7,
+  "median_edge_to_raster_m": 32.7,
+  "p95_edge_to_raster_m": 134.4,
   "start_finish_gap_m": 32.1,
   "western_eastern_join_m": 32.1,
   "hallamolla_control_m": 14.3,
-  "osm_way_count": 45,
+  "osm_way_count": 38,
   "highway_types": [
     "path",
     "residential",
@@ -21,17 +21,9 @@
     "unclassified"
   ],
   "far_raster_way_ids": [
-    68423854,
-    164681928,
-    425261670,
-    25931346,
-    220636737,
-    712554514,
-    38781022,
-    38780895,
-    164681934
+    694131274
   ],
-  "max_edge_to_raster_m": 450.6,
+  "max_edge_to_raster_m": 184.3,
   "map_registration_median_px": 0.240141823887825,
   "map_registration_p95_px": 1.5684036016464233
 }
