@@ -62,7 +62,6 @@ def main():
   Bedges={frozenset((u,v)) for u,v in zip(bp,bp[1:])}
   overlap=sum(G[tuple(e)[0]][tuple(e)[1]]["length"] for e in A[3]&Bedges)
   total=A[1]+BL
-  if not 12000<=total<=14800:continue
   score=A[2]+BC+overlap*100+abs(total-13670)*1.5
   B=(bp,BL,BC,Bedges)
   if best is None or score<best[0]:best=(score,A,B,overlap,total)
