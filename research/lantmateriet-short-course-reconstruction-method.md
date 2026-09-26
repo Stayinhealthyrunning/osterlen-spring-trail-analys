@@ -38,7 +38,11 @@ Do not derive the affine transform from coordinates transcribed by eye from the 
 
 ## Trail 13/14
 
-Apply the same procedure to the organizer's legacy-labelled 13 km raster if its native image contains sufficient coordinate/grid information. The 2023 Anna-Karin D GPSPass then becomes an independent race-day validation source rather than the sole geometry source.
+The legacy-labelled organizer image `13km-bana-h-jdkurvan-3_orig.jpg` was inspected during the feasibility test. It is also a Lantmäteriet-based map with printed SWEREF 99 TM edge coordinates, north arrow and scale. It is therefore independently georeferenceable by the same method.
+
+The image also contains a plotted elevation profile with a horizontal axis from 0.0 to 13.0 km and shows the long eastern Hallamölla/Verkeån section plus a western Christinehof loop. Visually, that western loop follows the same Christinehof/Södre-vång corridor shown much more tightly in the organizer's 5 km raster. This gives a valuable second organizer-map registration for the 5 km corridor at a different map extent/scale.
+
+Use the two raster registrations as a consistency check on branch selection and affine georeferencing. They are not independent race-day sources because both are organizer maps. The 2023 Anna-Karin D GPSPass remains independent participant evidence for the Trail 13/14 family.
 
 ## Evidence classification
 
