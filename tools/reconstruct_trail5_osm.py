@@ -63,9 +63,16 @@ def main():
   if dd<=75 and (not anchors or n!=anchors[-1]): anchors.append(n);anchor_dev.append(float(dd))
  route=[]
  usedways=[]; hws=[]
+ used_edges=set()
  for s,t in zip(anchors,anchors[1:]):
-  try:path=nx.shortest_path(G,s,t,weight="weight")
+  def dyn(u,v,d):
+   return d["weight"]*(80 if frozenset((u,v)) in used_edges else 1)
+  try:path=nx.shortest_path(G,s,t,weight=dyn)
   except nx.NetworkXNoPath:continue
+  plen=sum(G[u][v]["length"] for u,v in zip(path,path[1:]))
+  direct=dist(s,t)
+  if plen > max(550,direct*4.0): continue
+  for u,v in zip(path,path[1:]): used_edges.add(frozenset((u,v)))
   if route and path[0]==route[-1]:path=path[1:]
   route.extend(path)
  # close tiny organizer start/finish gap through graph
