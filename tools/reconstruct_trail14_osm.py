@@ -55,7 +55,7 @@ def main():
    if best is None or score<best[0]: best=(score,A,B,overlap,east)
  if best is None: raise RuntimeError(f"No eastern Hallamolla loop candidate; paths={len(first)}")
  _,A,B,overlap,east_total=best; east_route=A[0]+list(reversed(B[0]))[1:]
- # Western loop comes from the independently QA-passed Trail5 reconstruction.
+ # Western loop comes from the independently QA-passed Trail5 reconstruction; final serialized calibration run.
  t5=json.loads(Path(a.trail5).read_text()); t5ll=t5["geometry"]["coordinates"]; t5xy=[tr.transform(*p) for p in t5ll]
  if D(t5xy[-1],s)>D(t5xy[0],s): t5xy=list(reversed(t5xy))
  join=D(t5xy[-1],s); route=t5xy + east_route[1:]
