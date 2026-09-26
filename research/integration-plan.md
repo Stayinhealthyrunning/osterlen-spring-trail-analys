@@ -1,34 +1,40 @@
-# Integrationsplan mot Gotaleden-kärnan
+# Integrationsplan – Loppanalys Engine 1.0
 
-ÖST-projektet ska använda den generiska analyskärnan från Gotaleden när den pågående generaliseringen är färdig. Målet är inte en fristående hårdkodad kopia.
+ÖST ska byggas mot det frysta semantiska kontraktet `loppanalys-engine-1.0`, inte som en kopia av Gotaleden eller Ultravasan.
+
+## Referensansvar
+
+**Gotaleden** är referens för eventportabilitet, deltagartyp (person/team), tävlingsformat, capability-driven UI, framtida editions och event-scopad state.
+
+**Ultravasan** är referens för progressiv dataladdning, explicit route evidence, verifierad flerårsidentitet, course/history intelligence och senare analysmoduler.
+
+ÖST återanvänder kontrakten och algoritmerna där de passar men behåller sin egen source/provenance-normalisering.
 
 ## ÖST-specifikt lager
 
-ÖST ska själv äga:
-- event- och årskonfiguration
-- tävlingsfamiljer och banversioner
-- Sportstiming-import
-- GPX- och kartkällor
-- checkpoints och Duo-växlingar
-- flerårsregler och jämförbarhet
-- ÖST-specifik design/text
+ÖST äger:
+- Sportstiming-import och fryst källarkiv,
+- event-/år-/familjekatalog,
+- banversioner och ruttproveniens,
+- checkpointnormalisering,
+- Duo/Bengtemölla-semantik,
+- readiness/capability-evidens,
+- ÖST-specifik presentation.
 
-## Gemensam analyskärna
+## Engine-lager
 
-Så långt möjligt återanvänds:
-- resultatdatabas och sök
-- deltagar-/lagprofiler
-- diagram och percentiler
-- pacing- och segmentmotor
-- head-to-head
-- måltidssimulator
-- kartmotor, Runner Replay och Kartduell
-- höjd- och banprofil
-- metodhjälp
-- favoriter och delningsbara länkar
+Engine 1.0 förväntar:
+- event + race catalog,
+- person/team och competition format explicit,
+- records/splits/checkpoints,
+- course versions och route bundles,
+- capabilities per RaceEdition,
+- evidensstyrd historik/jämförbarhet.
 
-## Integrationsvillkor
+Gemensamma funktioner kan omfatta sök, profil, percentiler, pacing/segment, head-to-head, kartmotor/replay, höjdprofil, historik, favoriter och delningsbara länkar — men endast när aktuell RaceEdition har capability för funktionen.
 
-Överföringen bör ske först när Gotaleden kan startas från en event-konfiguration utan att kärnfunktioner förutsätter Gotaleden-specifika race keys, checkpointnamn, stafettklasser eller ett enda tävlingsår.
+## Integrationsgrind
 
-ÖST:s flerårsmodell ska läggas ovanpå kärnan i stället för att pressas in i Gotaledens premiärårsmodell.
+Ingen frontendfunktion får härleda stöd från namn, distans eller familj. Feature availability ska komma från data/readiness. Ingen source-observation får skapas för att fylla en UI-komponent.
+
+ÖST:s flerårsmodell är förstaklassig i kontraktet; den läggs inte ovanpå en antagen enårsmodell.

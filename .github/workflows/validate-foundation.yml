@@ -33,10 +33,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Validate foundation contracts and cross-file consistency
         run: python tools/validate_foundation.py
+      - name: Validate Engine 1.0 export against curated ÖST data
+        run: python -m unittest tests/test_engine_v1_export.py
