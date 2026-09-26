@@ -35,24 +35,30 @@ def main():
  nodes=list(G.nodes); nt=cKDTree(nodes)
  castle=(434707.,6175169.); hall=tr.transform(14.01780,55.70819)
  s=nodes[int(nt.query(castle)[1])]; h=nodes[int(nt.query(hall)[1])]
- # Generate several plausible raster-weighted paths, then pair two with little edge overlap and realistic total distance.
- paths=[]
+ # Generate plausible outbound paths; for each, force the return search away from its used edges.
+ first=[]
  for path in nx.shortest_simple_paths(G,s,h,weight="weight"):
   L=sum(G[u][v]["length"] for u,v in zip(path,path[1:])); cost=sum(G[u][v]["weight"] for u,v in zip(path,path[1:]))
-  if 3500<=L<=9000:
-   edges={frozenset((u,v)) for u,v in zip(path,path[1:])}
-   paths.append((path,L,cost,edges))
-  if len(paths)>=80:break
+  if 3500<=L<=8500:
+   edges={frozenset((u,v)) for u,v in zip(path,path[1:])}; first.append((path,L,cost,edges))
+  if len(first)>=35:break
  best=None
- for i,A in enumerate(paths):
-  for B in paths[i+1:]:
-   overlap=sum(G[tuple(e)[0]][tuple(e)[1]]["length"] for e in A[3]&B[3])
-   total=A[1]+B[1]
-   if not 11500<=total<=15000:continue
-   score=A[2]+B[2]+overlap*80+abs(total-13670)*2
-   if best is None or score<best[0]:best=(score,A,B,overlap,total)
- if best is None: raise RuntimeError(f"No two-path loop candidate; path count {len(paths)}")
+ for A in first:
+  def return_weight(u,v,d):
+   return d["weight"]*(60 if frozenset((u,v)) in A[3] else 1)
+  try: bp=nx.shortest_path(G,s,h,weight=return_weight)
+  except nx.NetworkXNoPath: continue
+  BL=sum(G[u][v]["length"] for u,v in zip(bp,bp[1:])); BC=sum(G[u][v]["weight"] for u,v in zip(bp,bp[1:]))
+  Bedges={frozenset((u,v)) for u,v in zip(bp,bp[1:])}
+  overlap=sum(G[tuple(e)[0]][tuple(e)[1]]["length"] for e in A[3]&Bedges)
+  total=A[1]+BL
+  if not 12000<=total<=14800:continue
+  score=A[2]+BC+overlap*100+abs(total-13670)*1.5
+  B=(bp,BL,BC,Bedges)
+  if best is None or score<best[0]:best=(score,A,B,overlap,total)
+ if best is None: raise RuntimeError(f"No two-corridor loop candidate; outbound count {len(first)}")
  _,A,B,overlap,total=best
+ paths=first
  route=A[0]+list(reversed(B[0]))[1:]
  ways=[];devs=[];hws=[]
  for u,v in zip(route,route[1:]):
