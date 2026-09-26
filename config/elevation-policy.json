@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "updated": "2026-09-26",
+  "purpose": "Define a reproducible elevation model for ÖST routes when source GPX elevation is missing, partial or not comparable across devices/years.",
+  "principles": [
+    "Horizontal route geometry and elevation provenance are separate layers.",
+    "Never alter horizontal coordinates merely to obtain elevation coverage.",
+    "Preserve source GPX elevation, participant/barometric elevation and standardized DEM elevation as separate observations.",
+    "Cross-year D+ comparisons must use one common DEM source and one common processing algorithm.",
+    "Raw watch/GPX D+ is diagnostic metadata unless the same acquisition and filtering method is demonstrably comparable."
+  ],
+  "standardized_elevation": {
+    "source_code": "lantmateriet_markhojdmodell",
+    "provider": "Lantmäteriet",
+    "product": "Markhöjdmodell Nedladdning",
+    "terrain_type": "ground_elevation_model",
+    "nominal_grid_resolution_m": 1,
+    "horizontal_reference": "SWEREF 99 TM",
+    "vertical_reference": "RH 2000",
+    "role": "derived_standardized_elevation",
+    "route_geometry_priority": [
+      "verified_actual_race_day_geometry_when_multiple_independent_recordings_support_it",
+      "organizer_direct_gpx",
+      "verified_course_version_geometry",
+      "best_supported_reference_geometry"
+    ],
+    "processing": {
+      "horizontal_resampling": "fixed interval; final interval to be selected by calibration, then held constant for all routes",
+      "dem_sampling": "sample the same Lantmäteriet ground DEM for all canonical route points",
+      "smoothing_and_ascent_filter": "pending calibration; one documented method must be used for every route version",
+      "calibration_reference": "2025 Ultra organizer geometry plus project-owner Suunto barometric profile-shape reference",
+      "output_fields": [
+        "standardized_elevation_profile",
+        "standardized_ascent_m",
+        "standardized_descent_m",
+        "elevation_method_version"
+      ]
+    }
+  },
+  "source_elevation_handling": {
+    "organizer_gpx": "retain unchanged as source elevation; do not assume raw cumulative D+ is authoritative",
+    "participant_gps": "retain as diagnostic/race-day evidence when provenance permits; barometric profiles may validate shape",
+    "missing_or_partial_elevation": "enrich the canonical horizontal geometry from the standardized DEM instead of borrowing elevations from a different route",
+    "conflicting_values": "do not overwrite; store provenance-specific observations side by side"
+  },
+  "current_known_examples": [
+    {
+      "route": "ultra60-2024",
+      "issue": "Organizer GPX contains only partial elevation values and current raw GPX analysis cannot produce usable D+.",
+      "action": "Use organizer horizontal geometry and derive standardized elevation from the common DEM."
+    },
+    {
+      "route": "ultra60-2025-2026",
+      "issue": "Organizer GPX contains full elevation but raw cumulative +1058/-942 m is method-dependent and not cross-year comparable.",
+      "action": "Keep raw source values as diagnostics and derive standardized elevation from the common DEM."
+    },
+    {
+      "route": "ultra60-2025-user-suunto",
+      "issue": "Dense barometric activity profile is valuable but cumulative ascent varies strongly with filtering/resampling.",
+      "action": "Use for profile-shape and filtering calibration, not as the universal elevation source."
+    }
+  ]
+}
