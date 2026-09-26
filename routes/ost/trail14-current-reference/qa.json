@@ -20,6 +20,18 @@
     "track",
     "unclassified"
   ],
+  "far_raster_way_ids": [
+    68423854,
+    164681928,
+    425261670,
+    25931346,
+    220636737,
+    712554514,
+    38781022,
+    38780895,
+    164681934
+  ],
+  "max_edge_to_raster_m": 450.6,
   "map_registration_median_px": 0.240141823887825,
   "map_registration_p95_px": 1.5684036016464233
 }
