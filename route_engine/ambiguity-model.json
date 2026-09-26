@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "ambiguity_record": {
+    "required_fields": [
+      "ambiguity_id",
+      "entry_control",
+      "exit_control",
+      "alternatives",
+      "resolution_status"
+    ],
+    "alternative_fields": [
+      "alternative_id",
+      "geometry",
+      "evidence_ids",
+      "candidate_score",
+      "contradictions"
+    ],
+    "resolution_status_values": [
+      "resolved",
+      "preferred_but_unresolved",
+      "unresolved"
+    ]
+  },
+  "decision_rules": [
+    "Keep alternatives when score separation is too small.",
+    "A hard contradiction disqualifies an alternative.",
+    "A perfect distance match cannot resolve an otherwise unsupported fork.",
+    "Exported candidate GPX must flag unresolved alternatives in its provenance sidecar.",
+    "Do not average two alternative geometries into a fictitious centreline."
+  ],
+  "default_score_margin_for_automatic_resolution": 0.15
+}
