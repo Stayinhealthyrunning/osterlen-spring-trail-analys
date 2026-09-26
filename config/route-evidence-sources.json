@@ -30,7 +30,7 @@
       "url": "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/st-5km-bana_orig.jpg",
       "status": "verified_current_organizer_georeferenceable_map",
       "published_label": "ÖST 5km bana",
-      "evidence": "Current Naturloppet page embeds an organizer map showing the 5 km loop west/north-west of Christinehof in the Ekopark. The image includes SWEREF 99 TM corner coordinates (SW approximately N 6173751 / E 437733; NE approximately N 6176791 / E 442965), a north arrow and scale information, so the published route line is georeferenceable rather than merely schematic.",
+      "evidence": "Current Naturloppet page embeds an organizer map showing the 5 km loop west/north-west of Christinehof in the Ekopark. The image includes SWEREF 99 TM corner coordinates (SW approximately N 6173751 / E 432733; NE approximately N 6176791 / E 437965), a north arrow and scale information, so the published route line is georeferenceable rather than merely schematic.",
       "limitation": "The route is still a raster line, not an organizer GPX. Any digitized coordinates must be labelled derived_from_georeferenced_organizer_map and validated against independent race-day GPS before promotion to canonical race-day geometry.",
       "local_asset": false,
       "coordinate_access": "georeferenceable_raster; digitization_pending_independent_validation"
