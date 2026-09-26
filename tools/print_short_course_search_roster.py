@@ -4,6 +4,7 @@
 This is a research helper only. It reads the already-curated local ÖST database,
 does no network access, and prints fields needed to cross-match public activity
 recordings against Sportstiming: year, family, name, bib, official time and place.
+The output is intended for reproducible public-GPS source research only.
 """
 from __future__ import annotations
 
