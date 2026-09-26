@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "adapter_contract": {
+    "required_metadata": [
+      "adapter_id",
+      "source_type",
+      "retrieved_at",
+      "source_reference",
+      "access_status",
+      "license_or_usage_note"
+    ],
+    "normalized_outputs": [
+      "vector_network",
+      "route_geometry",
+      "raster_map",
+      "control_points",
+      "text_constraints",
+      "heatmap_observation",
+      "elevation_profile"
+    ]
+  },
+  "planned_adapters": [
+    {
+      "adapter_id": "osm_xml",
+      "role": "vector_network",
+      "status": "parser_exists"
+    },
+    {
+      "adapter_id": "organizer_raster",
+      "role": "raster_map",
+      "status": "prototype_exists"
+    },
+    {
+      "adapter_id": "gpx",
+      "role": "route_geometry",
+      "status": "required"
+    },
+    {
+      "adapter_id": "official_local_trails",
+      "role": "control_points_and_corridors",
+      "status": "manual_registry"
+    },
+    {
+      "adapter_id": "participant_activity",
+      "role": "route_geometry_or_constraints",
+      "status": "source_dependent"
+    },
+    {
+      "adapter_id": "heatmap",
+      "role": "heatmap_observation",
+      "status": "visual_corroboration_only"
+    },
+    {
+      "adapter_id": "elevation",
+      "role": "elevation_profile",
+      "status": "provider_dependent"
+    }
+  ],
+  "failure_policy": "An unavailable adapter must be reported as unavailable; it must not be silently replaced with invented geometry."
+}
