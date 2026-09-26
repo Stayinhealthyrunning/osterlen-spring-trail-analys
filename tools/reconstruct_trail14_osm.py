@@ -54,6 +54,8 @@ def main():
  for path in nx.shortest_simple_paths(G,s,h,weight="length"):
   L=sum(G[u][v]["length"] for u,v in zip(path,path[1:])); C=sum(G[u][v]["weight"] for u,v in zip(path,path[1:]))
   if 3000<=L<=5200:
+   unsupported_far=sum(G[u][v]["length"] for u,v in zip(path,path[1:]) if G[u][v]["dev"]>150 and not (G[u][v]["skane"] or G[u][v]["back"]))
+   if unsupported_far>250: continue
    E={frozenset((u,v)) for u,v in zip(path,path[1:])}; first.append((path,L,C,E))
   if len(first)>=120: break
  best=None
