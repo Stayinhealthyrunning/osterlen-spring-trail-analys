@@ -80,44 +80,4 @@ def main():
  pts="".join(f'<trkpt lat="{lat:.7f}" lon="{lon:.7f}"></trkpt>' for lon,lat in ll);Path(a.gpx).write_text('<?xml version="1.0" encoding="UTF-8"?><gpx version="1.1" creator="Loppanalys route reconstruction"><trk><name>ÖST Trail 13/14 km reconstructed</name><trkseg>'+pts+'</trkseg></trk></gpx>\n')
  qa={"distance_km":round(total/1000,3),"participant_2023_reference_km":13.67,"route_points":len(route),"candidate_paths_considered":len(paths),"shared_out_return_m":round(overlap,1),"median_edge_to_raster_m":round(float(np.median(devs)),1),"p95_edge_to_raster_m":round(float(np.percentile(devs,95)),1),"start_finish_gap_m":round(D(route[0],route[-1]),1),"hallamolla_control_m":round(D(A[0][-1],hall),1),"osm_way_count":len(set(x for x in ways if x)),"highway_types":sorted(set(x for x in hws if x)),"map_registration_median_px":reg["reprojection_px"]["median"],"map_registration_p95_px":reg["reprojection_px"]["p95"]}
  Path(a.qa).write_text(json.dumps(qa,indent=2)+"\n");print(json.dumps(qa,indent=2))
-if __name__=="__main__":main() # Generate corridor-distinct paths. The organizer/official evidence says the
- # Verkeån loop uses two different trail corridors; OSM explicitly identifies
- # Skåneleden and Backaleden. Shared access near Christinehof/Alunbruket remains allowed.
- def wcorr(kind):
-  def w(u,v,d):
-   factor=1.0
-   if kind=="skane":
-    if d.get("skane"): factor*=0.28
-    if d.get("back"): factor*=2.5
-   else:
-    if d.get("back"): factor*=0.28
-    if d.get("skane"): factor*=2.5
-   return d["weight"]*factor
-  return w
- pathA=nx.shortest_path(G,s,h,weight=wcorr("skane"))
- pathB=nx.shortest_path(G,s,h,weight=wcorr("back"))
- def pack(path):
-  L=sum(G[u][v]["length"] for u,v in zip(path,path[1:]))
-  C=sum(G[u][v]["weight"] for u,v in zip(path,path[1:]))
-  E={frozenset((u,v)) for u,v in zip(path,path[1:])}
-  return (path,L,C,E)
- A=pack(pathA); B=pack(pathB)
- overlap=sum(G[tuple(e)[0]][tuple(e)[1]]["length"] for e in A[3]&B[3])
- total=A[1]+B[1]
- paths=[A,B]
- best=(A[2]+B[2],A,B,overlap,total)
- if best is None: raise RuntimeError(f"No two-corridor loop candidate; outbound count {len(first)}")
- _,A,B,overlap,total=best
- paths=first
- route=A[0]+list(reversed(B[0]))[1:]
- ways=[];devs=[];hws=[]
- for u,v in zip(route,route[1:]):
-  e=G[u][v];ways.append(e["way"]);devs.append(e["dev"]);hws.append(e["highway"])
- ll=[back.transform(*p) for p in route]
- props={"name":"ÖST Trail 13/14 km reconstructed","status":"validated_reconstruction_candidate","provenance":"organizer raster cross-registered to Trail5 and snapped to OpenStreetMap","distance_km":round(total/1000,3),"osm_way_ids":list(dict.fromkeys(x for x in ways if x))}
- feat={"type":"Feature","properties":props,"geometry":{"type":"LineString","coordinates":[list(x) for x in ll]}}
- Path(a.geojson).write_text(json.dumps(feat,ensure_ascii=False,indent=2)+"\n")
- pts="".join(f'<trkpt lat="{lat:.7f}" lon="{lon:.7f}"></trkpt>' for lon,lat in ll);Path(a.gpx).write_text('<?xml version="1.0" encoding="UTF-8"?><gpx version="1.1" creator="Loppanalys route reconstruction"><trk><name>ÖST Trail 13/14 km reconstructed</name><trkseg>'+pts+'</trkseg></trk></gpx>\n')
- qa={"distance_km":round(total/1000,3),"participant_2023_reference_km":13.67,"route_points":len(route),"candidate_paths_considered":len(paths),"shared_out_return_m":round(overlap,1),"median_edge_to_raster_m":round(float(np.median(devs)),1),"p95_edge_to_raster_m":round(float(np.percentile(devs,95)),1),"start_finish_gap_m":round(D(route[0],route[-1]),1),"hallamolla_control_m":round(D(A[0][-1],hall),1),"osm_way_count":len(set(x for x in ways if x)),"highway_types":sorted(set(x for x in hws if x)),"map_registration_median_px":reg["reprojection_px"]["median"],"map_registration_p95_px":reg["reprojection_px"]["p95"]}
- Path(a.qa).write_text(json.dumps(qa,indent=2)+"\n");print(json.dumps(qa,indent=2))
-if __name__=="__main__":main()
+if __name__=="__main__":main()\n
