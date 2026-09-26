@@ -28,11 +28,12 @@
       "year": 2026,
       "source_type": "organizer_map_image",
       "url": "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/st-5km-bana_orig.jpg",
-      "status": "verified_current_organizer_page_embed",
+      "status": "verified_current_organizer_georeferenceable_map",
       "published_label": "ÖST 5km bana",
-      "evidence": "Current Naturloppet page embeds an organizer map showing the 5 km loop west/north-west of Christinehof in the Ekopark.",
-      "limitation": "Map image is not a georeferenced GPX and does not by itself establish year-to-year identity.",
-      "local_asset": false
+      "evidence": "Current Naturloppet page embeds an organizer map showing the 5 km loop west/north-west of Christinehof in the Ekopark. The image includes SWEREF 99 TM corner coordinates (SW approximately N 6173751 / E 437733; NE approximately N 6176791 / E 442965), a north arrow and scale information, so the published route line is georeferenceable rather than merely schematic.",
+      "limitation": "The route is still a raster line, not an organizer GPX. Any digitized coordinates must be labelled derived_from_georeferenced_organizer_map and validated against independent race-day GPS before promotion to canonical race-day geometry.",
+      "local_asset": false,
+      "coordinate_access": "georeferenceable_raster; digitization_pending_independent_validation"
     },
     {
       "id": "jogg-2018-trail22-forsbacka",
@@ -141,6 +142,26 @@
       "reported_ascent_m": 476,
       "evidence": "Derivative copy confirms the published corridor is circulating publicly.",
       "limitation": "Explicitly derived from Trace de Trail; not independent race-day evidence and not used for course identity.",
+      "local_asset": false
+    },
+    {
+      "id": "jogg-2023-trail14-anna-karin-d",
+      "family": "trail14",
+      "year": 2023,
+      "source_type": "participant_race_activity",
+      "url": "https://www.jogg.se/Traning/GPSPass.aspx?adid=10988506",
+      "related_pass_url": "https://www.jogg.se/Traning/Pass.aspx?id=23408256",
+      "status": "verified_public_gpspass_metadata",
+      "participant": "Anna-Karin D",
+      "source_platform": "Jogg",
+      "activity_date": "2023-04-16",
+      "participant_reported_watch_distance_km": 13.67,
+      "participant_reported_watch_time": "1:31:44",
+      "jogg_page_distance_km": 15.55,
+      "jogg_page_time": "1:50:06",
+      "evidence": "The separate Jogg GPSPass page proves a GPS registration exists for the race-day activity. The participant text explicitly says ÖST 13+ km and reports her watch at 13.67 km / 1:31:44; Hallamölla is mentioned with 4.5 km remaining.",
+      "limitation": "Jogg's aggregate page shows 15.55 km / 1:50:06, inconsistent with the participant's explicit race-watch values. Do not use the Jogg aggregate as course distance until the underlying coordinate series/segmentation is acquired and inspected.",
+      "coordinate_access": "map_registration_public; raw_coordinate_export_not_acquired",
       "local_asset": false
     }
   ]
