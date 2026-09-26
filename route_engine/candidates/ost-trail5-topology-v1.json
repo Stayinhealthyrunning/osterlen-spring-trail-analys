@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "race_id": "ost",
+  "course_family": "trail5",
+  "status": "validated_raster_topology",
+  "segments": [
+    {"id":"t5-01","role":"castle_departure","evidence":["organizer_raster"],"geometry_status":"raster_trace_needs_persisting"},
+    {"id":"t5-02","role":"southwest_lake_edge_corridor","evidence":["organizer_raster"],"geometry_status":"raster_trace_needs_persisting"},
+    {"id":"t5-03","role":"western_forest_loop","evidence":["organizer_raster","organizer_terrain_description"],"geometry_status":"raster_trace_needs_persisting"},
+    {"id":"t5-04","role":"northern_return_loop","evidence":["organizer_raster","organizer_terrain_description"],"geometry_status":"raster_trace_needs_persisting"},
+    {"id":"t5-05","role":"castle_finish_approach","evidence":["organizer_raster","historical_organizer_description"],"geometry_status":"raster_trace_needs_persisting"}
+  ],
+  "quantitative_control": {
+    "previous_manual_trace_vertices": 62,
+    "affine_length_km": 5.002,
+    "raw_vertices_persisted": false,
+    "meaning": "strong validation of raster registration and course scale, not a canonical GPX"
+  },
+  "terrain_constraints": [
+    "approximately first 3 km easier gravel/forest road",
+    "approximately last 2 km narrower and more technical trail",
+    "stairs on finishing approach"
+  ],
+  "rule": "Re-digitize against the organizer raster and snap only where the rendered OSM/Organic Maps path is unambiguous."
+}
