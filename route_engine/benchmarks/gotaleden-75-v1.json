@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "benchmark_id": "gotaleden-75-reference-v1",
+  "truth": {
+    "repository": "Stayinhealthyrunning/gotaleden-splits",
+    "path": "data/source/gpx/Gotaleden_Ultra_75km-30april.gpx",
+    "git_blob_sha": "403b57b1ed63e3476b266a2bbf9f0e06b6ccb5e6",
+    "role": "withheld_truth"
+  },
+  "independent_observation": {
+    "repository": "Stayinhealthyrunning/gotaleden-splits",
+    "path": "data/source/gpx/Suunto 9 baro Gotaleden 75.gpx",
+    "git_blob_sha": "d5566becd056e450566c9a14077db71179be5c78",
+    "role": "participant_device_baseline"
+  },
+  "rules": {
+    "truth_hidden_during_reconstruction": true,
+    "participant_device_track_may_be_used_only_for_baseline_unless_explicitly_withheld": true,
+    "freeze_by_git_blob_sha": true
+  },
+  "purpose": "Calibrate natural route/GPS disagreement and later measure blind reconstruction error against an immutable known route."
+}
