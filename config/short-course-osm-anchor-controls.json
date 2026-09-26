@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "updated": "2026-09-26",
+  "purpose": "OSM-backed named anchors for short-course registration; not race-route geometry.",
+  "controls": [
+    {
+      "name": "Christinehof Castle",
+      "osm_type": "way",
+      "osm_id": 68423855,
+      "lat": 55.71787,
+      "lon": 13.96063,
+      "role": "start_finish_gross_control"
+    },
+    {
+      "name": "Hallamölla locality",
+      "osm_type": "node",
+      "osm_id": 820939109,
+      "lat": 55.70605,
+      "lon": 14.01908,
+      "role": "trail14_named_control"
+    },
+    {
+      "name": "Hallamölla waterfall and mill",
+      "osm_type": "node",
+      "osm_id": 823312726,
+      "lat": 55.70819,
+      "lon": 14.01780,
+      "role": "trail14_named_control"
+    }
+  ],
+  "warning": "These points constrain registration and corridor choice. They do not identify the race path between controls."
+}
