@@ -35,7 +35,10 @@ def main():
   for u,v in zip(pts,pts[1:]):
    L=D(u,v)
    if not L: continue
-   mid=((u[0]+v[0])/2,(u[1]+v[1])/2); dev=float(cloud.query(mid)[0]); fit=L*(1+(min(dev,300)/32)**2)
+   samples=[(u[0]+(v[0]-u[0])*t,u[1]+(v[1]-u[1])*t) for t in (0.0,0.25,0.5,0.75,1.0)]
+   sdev=[float(cloud.query(p)[0]) for p in samples]
+   dev=float(np.percentile(sdev,80))
+   fit=L*(1+(min(dev,300)/32)**2)
    # Organizer raster remains primary; named hiking relations are independent
    # corridor evidence. They can improve a close candidate but never override
    # a gross raster disagreement.
