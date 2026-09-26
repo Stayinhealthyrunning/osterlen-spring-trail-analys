@@ -28,7 +28,7 @@ jobs:
 
       - name: Show downloaded assets
         run: |
-          find data/source -type f \( -name '*.gpx' -o -name '*.pdf' -o -name '*.sha256' \) -print | sort
+          find data/source -type f \( -name '*.gpx' -o -name '*.pdf' -o -name '*.jpg' -o -name '*.sha256' \) -print | sort
 
       - name: Commit newly archived official assets
         run: |
