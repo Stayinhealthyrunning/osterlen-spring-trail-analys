@@ -1,4 +1,4 @@
   File "/home/runner/work/osterlen-spring-trail-analys/osterlen-spring-trail-analys/tools/reconstruct_trail14_osm.py", line 83
-    if __name__=="__main__":main()\n
-                                   ^
+    if __name__=="__main__":\n main()\n
+                             ^
 SyntaxError: unexpected character after line continuation character
