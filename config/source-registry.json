@@ -1,11 +1,14 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-10",
+  "updated": "2026-09-26",
   "precedence": [
     "organizer_official",
     "sportstiming_official",
     "organizer_trace_reference",
     "user_race_recording",
+    "participant_race_recording",
+    "national_elevation_model",
+    "public_route_reference",
     "itra_utmb_duv_crosscheck",
     "specialist_press_crosscheck",
     "other_secondary"
@@ -15,6 +18,9 @@
     "Organizer-published route files and race PMs outrank secondary course databases.",
     "Trace de Trail references created by ÖST are authoritative route leads; public GPX acquisition may be automated when a normal public download is exposed, while acquisition and redistribution are treated as separate provenance decisions.",
     "A user-supplied race-day GPX may validate route geometry and barometric elevation shape, but it does not silently override organizer geometry or an official timing observation.",
+    "A public participant race-day recording may independently support actual race-day geometry, distance and route-change evidence when its event/year/participant linkage is verified; it does not silently override organizer route provenance.",
+    "Public mapped routes and derivative route repositories are acquisition/cross-check leads unless provenance establishes that they are an actual race-day recording or organizer publication.",
+    "The national elevation model is authoritative only for the project's harmonized terrain-elevation layer; it never changes horizontal route geometry or official published ascent claims.",
     "ITRA, UTMB and DUV are cross-check sources and never silently overwrite official timing or organizer route data.",
     "Race-day marking may differ from a published GPX; this limitation must remain explicit in public methodology.",
     "Unknown values remain null and are never inferred into official observations."
@@ -25,14 +31,24 @@
       "tier": "organizer_official",
       "provider": "Österlen Spring Trail / ADP sport events AB",
       "base_url": "https://www.osterlentrail.se/",
-      "uses": ["race_program", "race_pm", "route_links", "aid_stations", "cutoffs", "logistics"]
+      "uses": [
+        "race_program",
+        "race_pm",
+        "route_links",
+        "aid_stations",
+        "cutoffs",
+        "logistics"
+      ]
     },
     {
       "code": "ost_results_archive",
       "tier": "organizer_official",
       "provider": "Österlen Spring Trail / ADP sport events AB",
       "url": "https://www.osterlentrail.se/resultat.html",
-      "uses": ["official_event_linkage", "year_coverage"]
+      "uses": [
+        "official_event_linkage",
+        "year_coverage"
+      ]
     },
     {
       "code": "sportstiming",
@@ -40,21 +56,41 @@
       "provider": "Sportstiming",
       "base_url": "https://www.sportstiming.se/",
       "alternate_base_url": "https://www.sportstiming.dk/",
-      "uses": ["participants", "results", "classes", "bib", "net_time", "gross_time", "status", "public_demographics", "relay_members", "splits_if_exposed"]
+      "uses": [
+        "participants",
+        "results",
+        "classes",
+        "bib",
+        "net_time",
+        "gross_time",
+        "status",
+        "public_demographics",
+        "relay_members",
+        "splits_if_exposed"
+      ]
     },
     {
       "code": "tracedetrail_ost",
       "tier": "organizer_trace_reference",
       "provider": "Trace de Trail",
       "base_url": "https://tracedetrail.fr/",
-      "uses": ["historical_route_reference", "published_route_distance", "public_route_poi", "public_gpx_acquisition"],
+      "uses": [
+        "historical_route_reference",
+        "published_route_distance",
+        "public_route_poi",
+        "public_gpx_acquisition"
+      ],
       "note": "Project owner authorized automated acquisition through Trace de Trail's normal public GPX download path on 2026-09-10. This authorization is operational; third-party redistribution rights are evaluated separately."
     },
     {
       "code": "user_suunto_2025_ultra60",
       "tier": "user_race_recording",
       "provider": "User-supplied Suunto race-day recording",
-      "uses": ["2025_route_crosscheck", "barometric_elevation_reference", "checkpoint_projection_crosscheck"],
+      "uses": [
+        "2025_route_crosscheck",
+        "barometric_elevation_reference",
+        "checkpoint_projection_crosscheck"
+      ],
       "artifact": "data/source/gpx/ultra60/ost-ultra60-2025-user-suunto-barometric-reference.json",
       "note": "The user states the elevation values originate from the watch barometer. The raw GPX is not required by the analysis engine; a provenance-preserving derived reference is stored."
     },
@@ -63,35 +99,113 @@
       "tier": "itra_utmb_duv_crosscheck",
       "provider": "ITRA",
       "base_url": "https://itra.run/",
-      "uses": ["race_date_crosscheck", "distance_crosscheck", "elevation_crosscheck", "aid_station_count_crosscheck"]
+      "uses": [
+        "race_date_crosscheck",
+        "distance_crosscheck",
+        "elevation_crosscheck",
+        "aid_station_count_crosscheck"
+      ]
     },
     {
       "code": "utmb",
       "tier": "itra_utmb_duv_crosscheck",
       "provider": "UTMB World",
       "base_url": "https://utmb.world/",
-      "uses": ["race_date_crosscheck", "distance_crosscheck", "historical_result_crosscheck"]
+      "uses": [
+        "race_date_crosscheck",
+        "distance_crosscheck",
+        "historical_result_crosscheck"
+      ]
     },
     {
       "code": "duv",
       "tier": "itra_utmb_duv_crosscheck",
       "provider": "DUV",
       "base_url": "https://statistik.d-u-v.org/",
-      "uses": ["ultra_finisher_crosscheck", "ultra_history"]
+      "uses": [
+        "ultra_finisher_crosscheck",
+        "ultra_history"
+      ]
     },
     {
       "code": "trailrunning_sweden",
       "tier": "specialist_press_crosscheck",
       "provider": "Trailrunning Sweden",
       "base_url": "https://trailrunningsweden.se/",
-      "uses": ["program_crosscheck", "winner_crosscheck", "historical_context"]
+      "uses": [
+        "program_crosscheck",
+        "winner_crosscheck",
+        "historical_context"
+      ]
     },
     {
       "code": "kondis",
       "tier": "specialist_press_crosscheck",
       "provider": "Kondis",
       "base_url": "https://www.kondis.no/",
-      "uses": ["program_crosscheck", "historical_context"]
+      "uses": [
+        "program_crosscheck",
+        "historical_context"
+      ]
+    },
+    {
+      "code": "jogg_public_activities",
+      "tier": "participant_race_recording",
+      "provider": "Jogg",
+      "base_url": "https://www.jogg.se/",
+      "uses": [
+        "participant_race_day_distance",
+        "participant_route_leads",
+        "relay_leg_length_crosscheck",
+        "watch_elevation_diagnostic"
+      ],
+      "note": "Only activities with verified event/year linkage are retained as race-day evidence. Public metadata may be retained even when coordinates/GPX export require account access."
+    },
+    {
+      "code": "strava_public_activities",
+      "tier": "participant_race_recording",
+      "provider": "Strava",
+      "base_url": "https://www.strava.com/",
+      "uses": [
+        "participant_route_leads",
+        "race_day_activity_crosscheck"
+      ],
+      "note": "Activity references are catalogued when the public landing page identifies the athlete/race; login-gated maps or exports are not bypassed."
+    },
+    {
+      "code": "plotaroute",
+      "tier": "public_route_reference",
+      "provider": "plotaroute.com",
+      "base_url": "https://www.plotaroute.com/",
+      "uses": [
+        "route_acquisition_leads",
+        "distance_crosscheck",
+        "geometry_crosscheck"
+      ],
+      "note": "Route titles and labels are user-supplied metadata unless separate provenance proves organizer or race-day origin."
+    },
+    {
+      "code": "wikiloc",
+      "tier": "public_route_reference",
+      "provider": "Wikiloc",
+      "base_url": "https://www.wikiloc.com/",
+      "uses": [
+        "route_acquisition_leads",
+        "derivative_route_crosscheck"
+      ],
+      "note": "Derivative copies, including routes explicitly sourced from Trace de Trail, are not treated as independent race-day geometry evidence."
+    },
+    {
+      "code": "lantmateriet_markhojdmodell",
+      "tier": "national_elevation_model",
+      "provider": "Lantmäteriet",
+      "base_url": "https://www.lantmateriet.se/",
+      "uses": [
+        "standardized_route_elevation",
+        "cross_year_elevation_comparison",
+        "missing_source_elevation_enrichment"
+      ],
+      "note": "Use the current Markhöjdmodell Nedladdning ground DEM (1 m grid, SWEREF 99 TM / RH 2000) for a harmonized derived elevation layer. Preserve source/barometric elevation separately."
     }
   ]
 }
