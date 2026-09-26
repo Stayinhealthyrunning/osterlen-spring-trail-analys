@@ -9,7 +9,7 @@ https://www.osterlentrail.se/uploads/4/1/8/7/41870619/st-5km-bana_orig.jpg
 The raster is stronger evidence than previously recorded. It contains a north arrow, map scale and printed SWEREF 99 TM corner coordinates. The visible corner labels are approximately:
 
 - south-west: N 6173751, E 437733
-- north-east: N 6176791, E 443965
+- north-east: N 6176791, E 442965
 
 Therefore the black ÖST 5 km course line can be digitized into projected coordinates by affine georeferencing of the raster. This is **derived organizer-map geometry**, not an organizer GPX and not yet an actual race-day recording.
 
