@@ -1,9 +1,6 @@
 name: Acquire short-course route sources
 
 on:
-  push:
-    branches:
-      - automation/acquire-short-course-sources
   workflow_dispatch:
 
 permissions:
