@@ -35,8 +35,13 @@ def main():
   for u,v in zip(pts,pts[1:]):
    L=D(u,v)
    if not L: continue
-   mid=((u[0]+v[0])/2,(u[1]+v[1])/2); dev=float(cloud.query(mid)[0]); fit=L*(1+(min(dev,150)/35)**2)
-   G.add_edge(u,v,length=L,weight=fit,dev=dev,way=wid,highway=pr.get("highway"),skane=wid in skane,back=wid in backset)
+   mid=((u[0]+v[0])/2,(u[1]+v[1])/2); dev=float(cloud.query(mid)[0]); fit=L*(1+(min(dev,300)/32)**2)
+   # Organizer raster remains primary; named hiking relations are independent
+   # corridor evidence. They can improve a close candidate but never override
+   # a gross raster disagreement.
+   relation_factor=0.72 if wid in skane else 0.82 if wid in backset else 1.0
+   if dev>180: relation_factor=max(relation_factor,1.35)
+   G.add_edge(u,v,length=L,weight=fit*relation_factor,dev=dev,way=wid,highway=pr.get("highway"),skane=wid in skane,back=wid in backset)
  nodes=list(G.nodes); nt=cKDTree(nodes); castle=(434707.,6175169.); hall=tr.transform(14.01780,55.70819)
  s=nodes[int(nt.query(castle)[1])]; h=nodes[int(nt.query(hall)[1])]
  # Eastern Hallamölla loop: two distinct Christinehof-Hallamölla corridors.
@@ -51,7 +56,11 @@ def main():
   for B in first[i+1:]:
    overlap=sum(G[tuple(e)[0]][tuple(e)[1]]["length"] for e in A[3]&B[3]); east=A[1]+B[1]
    if not 7000<=east<=9500: continue
-   score=A[2]+B[2]+overlap*70+abs(east-8200)*100
+   # Prefer two genuinely different corridors, raster fit and named hiking
+   # relations. Distance is a broad plausibility term, not a target fit.
+   rel_bonus=sum(G[u][v]["length"]*(0.35 if G[u][v]["skane"] or G[u][v]["back"] else 0) for P in (A[0],B[0]) for u,v in zip(P,P[1:]))
+   far_pen=sum(G[u][v]["length"]*max(0,G[u][v]["dev"]-140)*3 for P in (A[0],B[0]) for u,v in zip(P,P[1:]))
+   score=A[2]+B[2]+overlap*90+abs(east-8300)*12+far_pen-rel_bonus
    if best is None or score<best[0]: best=(score,A,B,overlap,east)
  if best is None: raise RuntimeError(f"No eastern Hallamolla loop candidate; paths={len(first)}")
  _,A,B,overlap,east_total=best; east_route=A[0]+list(reversed(B[0]))[1:]
