@@ -60,6 +60,9 @@ def download(source):
         validate_gpx(data)
     elif suffix == ".pdf":
         validate_pdf(data)
+    elif suffix in {".jpg", ".jpeg"}:
+        if not data.startswith(b"\\xff\\xd8\\xff"):
+            raise ValueError("Downloaded file is not a JPEG")
     else:
         raise ValueError(f"Unsupported target suffix: {suffix}")
     target.parent.mkdir(parents=True, exist_ok=True)
