@@ -4,7 +4,7 @@ Public `/app/results` views are reachable without the human-verification page. T
 
 ## 2018 (event 4950)
 
-- HTML sampled: 87404 bytes
+- HTML sampled: 87402 bytes
 - Forms: 0
 - Selects: 3
 - Relevant links: 58

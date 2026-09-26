@@ -12,7 +12,7 @@ Public `/app/points` and `/app/tracking` views inspected without bypassing acces
 
 ### tracking
 - HTTP: 200
-- HTML: 42516 bytes
+- HTML: 42514 bytes
 - Selects: 1
 - Relevant links: 10
 - Candidate text:
@@ -25,7 +25,7 @@ Public `/app/points` and `/app/tracking` views inspected without bypassing acces
 
 ### points
 - HTTP: 200
-- HTML: 183541 bytes
+- HTML: 183569 bytes
 - Selects: 2
 - Relevant links: 11
 - Candidate text:
@@ -97,13 +97,13 @@ Public `/app/points` and `/app/tracking` views inspected without bypassing acces
 
 ### tracking
 - HTTP: 200
-- HTML: 147375 bytes
+- HTML: 148765 bytes
 - Selects: 2
 - Relevant links: 10
 - Candidate text:
   - 2019 Österlen Spring Trail 2018 Österlen Spring Trail 2017 Österlen Spring Trail 2016 /* Point of interest pop up styles todo */ .leaflet-popup-content-wrapper { border-radius: 8px !important; background: #fff !important; padding: 0px
   - OverlayLayer instance /* Misc */ var isAarhusMotion = false; var isDeveloper = false; // Point of interest, such as start, finish, hotspot etc. class PointOfInterest { constructor(id, lng, lat, icon, name, image, text, link) { this.id
-  - this.layergroup.removeLayer(entry.marker); } } } } getPositionByDistance(distance) { var point = null; var pointTotalDistance = 0; var prevPoint = null; var prevPointTotalDistance = 0; var pointsOnRoute = this.polyLineArray; // Comput
+  - layergroup.removeLayer(entry.marker); } } } } getPositionByDistance(distance, laps) { var point = null; var pointTotalDistance = 0; var prevPoint = null; var prevPointTotalDistance = 0; var pointsOnRoute = this.polyLineArray; // Comput
   - oking for for (var i = 0; i < pointsOnRoute.length; i++) { // Store reference to previous point, if any prevPoint = point; prevPointTotalDistance = pointTotalDistance; // Compute how far we got on this point point = pointsOnRoute[i]; v
   - ar distanceSinceLastPoint = 0; if (prevPoint !== null && point !== null) { distanceSinceLastPoint = prevPoint.distanceTo(point); pointTotalDistance += distanceSinceLastPoint; } if (pointTotalDistance >=
   - ak; } } // If we have an exact match (theoretical due to decimal points, unless the start point), return the exact match point if (pointTotalDistance === distance) return point; // If only one (or none), return the last point reached i
@@ -122,13 +122,13 @@ Public `/app/points` and `/app/tracking` views inspected without bypassing acces
 
 ### tracking
 - HTTP: 200
-- HTML: 147375 bytes
+- HTML: 148765 bytes
 - Selects: 2
 - Relevant links: 10
 - Candidate text:
   - 2019 Österlen Spring Trail 2018 Österlen Spring Trail 2017 Österlen Spring Trail 2016 /* Point of interest pop up styles todo */ .leaflet-popup-content-wrapper { border-radius: 8px !important; background: #fff !important; padding: 0px
   - OverlayLayer instance /* Misc */ var isAarhusMotion = false; var isDeveloper = false; // Point of interest, such as start, finish, hotspot etc. class PointOfInterest { constructor(id, lng, lat, icon, name, image, text, link) { this.id
-  - this.layergroup.removeLayer(entry.marker); } } } } getPositionByDistance(distance) { var point = null; var pointTotalDistance = 0; var prevPoint = null; var prevPointTotalDistance = 0; var pointsOnRoute = this.polyLineArray; // Comput
+  - layergroup.removeLayer(entry.marker); } } } } getPositionByDistance(distance, laps) { var point = null; var pointTotalDistance = 0; var prevPoint = null; var prevPointTotalDistance = 0; var pointsOnRoute = this.polyLineArray; // Comput
   - oking for for (var i = 0; i < pointsOnRoute.length; i++) { // Store reference to previous point, if any prevPoint = point; prevPointTotalDistance = pointTotalDistance; // Compute how far we got on this point point = pointsOnRoute[i]; v
   - ar distanceSinceLastPoint = 0; if (prevPoint !== null && point !== null) { distanceSinceLastPoint = prevPoint.distanceTo(point); pointTotalDistance += distanceSinceLastPoint; } if (pointTotalDistance >=
   - ak; } } // If we have an exact match (theoretical due to decimal points, unless the start point), return the exact match point if (pointTotalDistance === distance) return point; // If only one (or none), return the last point reached i
@@ -147,13 +147,13 @@ Public `/app/points` and `/app/tracking` views inspected without bypassing acces
 
 ### tracking
 - HTTP: 200
-- HTML: 147371 bytes
+- HTML: 148758 bytes
 - Selects: 2
 - Relevant links: 10
 - Candidate text:
   - 2019 Österlen Spring Trail 2018 Österlen Spring Trail 2017 Österlen Spring Trail 2016 /* Point of interest pop up styles todo */ .leaflet-popup-content-wrapper { border-radius: 8px !important; background: #fff !important; padding: 0px
   - OverlayLayer instance /* Misc */ var isAarhusMotion = false; var isDeveloper = false; // Point of interest, such as start, finish, hotspot etc. class PointOfInterest { constructor(id, lng, lat, icon, name, image, text, link) { this.id
-  - this.layergroup.removeLayer(entry.marker); } } } } getPositionByDistance(distance) { var point = null; var pointTotalDistance = 0; var prevPoint = null; var prevPointTotalDistance = 0; var pointsOnRoute = this.polyLineArray; // Comput
+  - layergroup.removeLayer(entry.marker); } } } } getPositionByDistance(distance, laps) { var point = null; var pointTotalDistance = 0; var prevPoint = null; var prevPointTotalDistance = 0; var pointsOnRoute = this.polyLineArray; // Comput
   - oking for for (var i = 0; i < pointsOnRoute.length; i++) { // Store reference to previous point, if any prevPoint = point; prevPointTotalDistance = pointTotalDistance; // Compute how far we got on this point point = pointsOnRoute[i]; v
   - ar distanceSinceLastPoint = 0; if (prevPoint !== null && point !== null) { distanceSinceLastPoint = prevPoint.distanceTo(point); pointTotalDistance += distanceSinceLastPoint; } if (pointTotalDistance >=
   - ak; } } // If we have an exact match (theoretical due to decimal points, unless the start point), return the exact match point if (pointTotalDistance === distance) return point; // If only one (or none), return the last point reached i
