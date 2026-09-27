@@ -64,6 +64,18 @@ Läs även:
 - **Historiska kön/ålder:** 2018, 2019 och 2023 saknar tillräckligt explicit publicerad information i den frysta källan.
 - **Fysisk Bengtemölla-tolkning:** approach/utpassage-hypotesen är plausibel men inte officiellt verifierad.
 
+## Prestanda och browserleverans
+
+Den verkliga Engine 1.0-exporten är nu uppmätt: **5.2 MiB rå JSON / 440.0 KiB gzip** för samtliga 9 871 resultat, 6 123 splits och Duo-data. Browsern ska inte ladda hela exporten initialt.
+
+Beslutad leveransmodell:
+- bootstrapmetadata: **1.9 KiB gzip**,
+- ett komplett valt race-år i taget: max **28.5 KiB gzip** i nuvarande data,
+- bootstrap + tyngsta race: cirka **30.4 KiB gzip**,
+- rutt/höjd/replay laddas separat och först när funktionen behöver dem.
+
+Maskinläsbar budget finns i `config/frontend-performance-budget.json`. Reproducerbar profil finns i `reports/engine-payload-profile.json`, och browser-shards byggs med `tools/build_engine_delivery_shards.py`.
+
 ## Slutlig handoff-regel
 
 Förberedelsefasen betraktas som avslutad när foundation-validatorn är grön på denna version av `main`. Inför det stora bygget ska även `research/final-prebuild-checklist-2026-09-27.md` läsas. Därefter ska nästa utvecklingssteg vara adapter/integration mot den färdigrefaktorerade Gotaleden-kärnan — inte ny Sportstiming-import, ny banförstudie eller parallell frontend-fork.
