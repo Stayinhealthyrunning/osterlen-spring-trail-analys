@@ -1,46 +1,68 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "race": "Österlen Spring Trail",
   "course": "Trail 13/14 km",
-  "geometry_status": "unresolved",
-  "primary_geometry_basis": "organizer raster constrained by official/local trail geometry and OSM",
+  "geometry_status": "validated_raster_reference",
+  "primary_geometry_basis": "georeferenced organizer raster topology",
   "not_an_organizer_gpx": true,
+  "publishable_as_reconstructed_reference": true,
   "sources": [
     {
       "type": "organizer_georeferenced_raster",
       "path": "data/source/maps/ost-trail13-14-organizer-map.jpg",
-      "role": "primary course-shape evidence"
+      "role": "primary route geometry and topology"
+    },
+    {
+      "type": "map_registration",
+      "path": "reports/organizer-map-registration.json",
+      "role": "high-precision registration of Trail 13/14 raster into the georeferenced Trail 5 map frame"
+    },
+    {
+      "type": "participant_race_activity",
+      "source_id": "jogg-2023-trail14-anna-karin-d",
+      "participant": "Anna Karin Delborg",
+      "role": "independent direction/topology control only",
+      "observed_watch_distance_km": 13.67,
+      "official_finish_time": "1:31:44",
+      "observed_watch_time": "1:31:44",
+      "hallamolla_remaining_km": 4.5
     },
     {
       "type": "official_local_trail",
-      "path": "data/source/gpx/skaneleden-sl4-e7-brosarp-verkasjon.gpx",
-      "role": "exact vector control where the race follows the Skåneleden/Verkeån corridor; not an ÖST GPX"
+      "description": "Christinehof Ekopark Hallamöllaleden, published as 8.5 km",
+      "role": "independent corridor/topology corroboration; not used to force the raster geometry"
+    }
+  ],
+  "qa": {
+    "path": "qa.json",
+    "distance_km": 14.249,
+    "hallamolla_at_km": 9.725,
+    "hallamolla_remaining_km": 4.524,
+    "participant_hallamolla_remaining_km": 4.5,
+    "hallamolla_control_m": 99.8,
+    "start_finish_gap_m": 35.7,
+    "topology_qa_pass": true
+  },
+  "rejected_alternatives": [
+    {
+      "method": "OSM composite using complete Trail 5 reconstruction plus eastern loop",
+      "reason": "source/topology conflict; minimum candidate was too long and treated the full Trail 5 loop as a component without sufficient support"
     },
     {
-      "type": "open_map_snapped",
-      "path": "data/source/osm/christinehof-path-network.geojson",
-      "role": "vector path geometry"
-    },
-    {
-      "type": "participant_gps_single",
-      "description": "2023 public activity reports 13.67 km; used as plausibility evidence only because raw GPX is not accessible"
-    },
-    {
-      "type": "text_constraint",
-      "description": "one loop, Hallamölla midpoint, Verkeån corridor, Christinehof start/finish"
+      "method": "ordered OSM map-match v2",
+      "reason": "nearly 3 km duplicated edge geometry and failed QA despite reasonable local raster proximity"
     }
   ],
   "limitations": [
-    "No accessible organizer GPX has been found for this course version.",
-    "The organizer's current material embeds a legacy 13 km raster while the current course is described as 14 km.",
-    "Participant 2023 raw GPX is not accessible, so its recorded distance cannot define geometry.",
-    "Route remains candidate until local raster outliers and loop topology pass QA.",
-    "Current candidate has p95 route-to-raster deviation 285.2 m and must not be published as a validated course.",
-    "The reconstruction workflow previously masked a Python failure through a shell pipeline; this has been corrected with pipefail and strict QA restored.",
-    "The current OSM graph cannot produce an eastern Christinehof–Hallamölla loop compatible with the 2023 observed 13.67 km total: among 7,140 path-pair combinations, the shortest diagnostic eastern loop is 9.467 km; combined with the current western reconstruction this is 14.948 km.",
-    "This conflict indicates that the current assumption that the complete Trail 5 reconstruction is the western component of the 13/14 km course, or the available OSM network itself, is not sufficiently supported.",
-    "Do not publish route.geojson/route.gpx as the race course until authentic participant/organizer geometry or stronger vector evidence resolves this conflict."
+    "This is derived geometry reconstructed from the organizer's georeferenceable raster, not an organizer GPX or participant GPX.",
+    "The current organizer material retains a legacy 13 km map/profile while the modern event is marketed as about 14 km; exact year-to-year course identity is therefore not asserted.",
+    "The 2023 participant watch distance of 13.67 km is an independent plausibility observation, not a calibration target for route length.",
+    "Participant evidence is used to choose route direction because her race note places Hallamölla 4.5 km from the finish; the selected raster topology independently yields 4.524 km.",
+    "OSM is not used as the authoritative geometry where its graph conflicts with the organizer raster topology."
   ],
-  "qa_path": "qa.json",
-  "qa_acceptance": "blocked_by_source_geometry_conflict"
+  "reproducibility": {
+    "tool": "tools/reconstruct_trail14_raster_topology.py",
+    "skeleton": "reports/trail14-route-skeleton.json",
+    "registration": "reports/organizer-map-registration.json"
+  }
 }
