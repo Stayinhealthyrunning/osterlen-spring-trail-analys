@@ -30,5 +30,10 @@
   ],
   "max_edge_to_raster_m": 409.9,
   "map_registration_median_px": 0.240141823887825,
-  "map_registration_p95_px": 1.5684036016464233
+  "map_registration_p95_px": 1.5684036016464233,
+  "qa_status": "failed_strict_route_geometry_qa",
+  "qa_failures": [
+    "p95_edge_to_raster_m 285.2 > 150.0"
+  ],
+  "publishable_as_validated_route": false
 }
