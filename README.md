@@ -158,6 +158,19 @@ python tools/validate_foundation.py
 
 GitHub Action `Validate ÖST foundation` kör samma konsistenskontroll automatiskt.
 
+## Frontend-data och prestanda
+
+Den verkliga Engine 1.0-exporten är nu profilerad mot hela den kuraterade datamängden:
+
+- komplett payload: **5.2 MiB rå JSON / 440 KiB gzip**,
+- bootstrapmetadata: **1.9 KiB gzip**,
+- största enskilda race-bundle: cirka **29 KiB gzip**,
+- bootstrap + största race: cirka **31 KiB gzip**.
+
+Därför ska webbläsaren **inte** ladda hela Engine-exporten vid start. Produktionsmodellen är bootstrap + valt race, medan route/elevation/replay lazy-loadas separat. Maskinläsbar budget finns i config/frontend-performance-budget.json och CI validerar datastorlekarna.
+
+Se research/frontend-data-delivery-architecture-2026-09-27.md och reports/engine-payload-profile.md.
+
 ## Nästa fas
 
 När Gotaleden-kärnans generiska refaktorering är färdig ska arbetet börja med adapter/integration mot `data/derived/ost-analysis-2018-2026.sqlite.gz`.
