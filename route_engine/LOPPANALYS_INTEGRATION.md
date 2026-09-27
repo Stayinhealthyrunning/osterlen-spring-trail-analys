@@ -1,5 +1,7 @@
 # Loppanalys route-artifact contract
 
+> **Research boundary:** this document describes an upstream route-artifact concept, not the active ÖST Engine 1.0 runtime contract. `config/course-versions.json` and the Engine 1.0 export are authoritative for the large build.
+
 The reconstruction engine should be an upstream data tool, not frontend code.
 
 A race project consumes a versioned route package:
@@ -14,7 +16,7 @@ routes/<race>/<course-version>/
   elevation.json
 ```
 
-Only `route.geojson` and `route.gpx` contain the selected geometry. `provenance.json` records source classes and evidence per segment. `alternatives.geojson` retains unresolved forks rather than hiding them. `qa.json` records validation results. Elevation is separate because elevation providers and smoothing can change without changing horizontal course geometry.
+When a course version has an approved local route asset, `route.geojson` and/or `route.gpx` contain selected geometry. A recipe-only provisional reference, such as the current Trail 13/14 working hypothesis, intentionally has no frontend route asset. `provenance.json` records source classes and evidence per segment. `alternatives.geojson` retains unresolved forks rather than hiding them. `qa.json` records validation results. Elevation is separate because elevation providers and smoothing can change without changing horizontal course geometry.
 
 ## Frontend statuses
 
