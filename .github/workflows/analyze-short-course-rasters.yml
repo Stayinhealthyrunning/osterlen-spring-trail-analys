@@ -47,7 +47,7 @@ jobs:
           mkdir -p routes/ost/trail14-current-reference
           set +e
           set -o pipefail
-          python tools/reconstruct_trail14_osm.py --image data/source/maps/ost-trail13-14-organizer-map.jpg --network data/source/osm/christinehof-path-network.geojson --registration reports/organizer-map-registration.json --relations reports/christinehof-osm-hiking-relations.json --trail5 routes/ost/trail5-current-reference/route.geojson --geojson routes/ost/trail14-current-reference/route.geojson --gpx routes/ost/trail14-current-reference/route.gpx --qa routes/ost/trail14-current-reference/qa.json 2>&1 | tee reports/trail14-reconstruction-run.log
+          python tools/reconstruct_trail14_osm.py --image data/source/maps/ost-trail13-14-organizer-map.jpg --network data/source/osm/christinehof-path-network.geojson --registration reports/organizer-map-registration.json --relations reports/christinehof-osm-hiking-relations.json --local-gps data/source/gpx/public-probes/topogps-hallamolla-43794.gpx --trail5 routes/ost/trail5-current-reference/route.geojson --geojson routes/ost/trail14-current-reference/route.geojson --gpx routes/ost/trail14-current-reference/route.gpx --qa routes/ost/trail14-current-reference/qa.json 2>&1 | tee reports/trail14-reconstruction-run.log
           rc=${PIPESTATUS[0]}
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
