@@ -1,0 +1,4502 @@
+[
+  {
+    "overlap_m": 1190.9,
+    "east_km": 9.871,
+    "raster_cost": 41582.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 505875.3
+  },
+  {
+    "overlap_m": 1190.9,
+    "east_km": 9.871,
+    "raster_cost": 41582.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 505875.3
+  },
+  {
+    "overlap_m": 1190.9,
+    "east_km": 9.871,
+    "raster_cost": 41582.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 505875.3
+  },
+  {
+    "overlap_m": 1190.9,
+    "east_km": 9.871,
+    "raster_cost": 41582.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 505875.3
+  },
+  {
+    "overlap_m": 1190.9,
+    "east_km": 9.958,
+    "raster_cost": 42696.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 502486.1
+  },
+  {
+    "overlap_m": 1190.9,
+    "east_km": 9.958,
+    "raster_cost": 42696.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 502486.1
+  },
+  {
+    "overlap_m": 1190.9,
+    "east_km": 9.958,
+    "raster_cost": 42696.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 502486.1
+  },
+  {
+    "overlap_m": 1203.0,
+    "east_km": 9.871,
+    "raster_cost": 41583.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 510749.6
+  },
+  {
+    "overlap_m": 1203.0,
+    "east_km": 9.871,
+    "raster_cost": 41583.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 510749.6
+  },
+  {
+    "overlap_m": 1203.0,
+    "east_km": 9.871,
+    "raster_cost": 41583.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 510749.6
+  },
+  {
+    "overlap_m": 1203.0,
+    "east_km": 9.871,
+    "raster_cost": 41583.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 510749.6
+  },
+  {
+    "overlap_m": 1203.0,
+    "east_km": 9.957,
+    "raster_cost": 42697.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 507360.4
+  },
+  {
+    "overlap_m": 1203.0,
+    "east_km": 9.957,
+    "raster_cost": 42697.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 507360.4
+  },
+  {
+    "overlap_m": 1203.0,
+    "east_km": 9.957,
+    "raster_cost": 42697.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 507360.4
+  },
+  {
+    "overlap_m": 1214.6,
+    "east_km": 9.779,
+    "raster_cost": 41214.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 515009.3
+  },
+  {
+    "overlap_m": 1214.6,
+    "east_km": 9.779,
+    "raster_cost": 41214.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 515009.3
+  },
+  {
+    "overlap_m": 1214.6,
+    "east_km": 9.779,
+    "raster_cost": 41214.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 515009.3
+  },
+  {
+    "overlap_m": 1214.6,
+    "east_km": 9.779,
+    "raster_cost": 41214.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 515009.3
+  },
+  {
+    "overlap_m": 1214.6,
+    "east_km": 9.866,
+    "raster_cost": 42328.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 511620.0
+  },
+  {
+    "overlap_m": 1214.6,
+    "east_km": 9.866,
+    "raster_cost": 42328.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 511620.0
+  },
+  {
+    "overlap_m": 1215.2,
+    "east_km": 9.92,
+    "raster_cost": 41634.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 515667.7
+  },
+  {
+    "overlap_m": 1215.2,
+    "east_km": 9.92,
+    "raster_cost": 41634.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 515667.7
+  },
+  {
+    "overlap_m": 1215.2,
+    "east_km": 9.92,
+    "raster_cost": 41634.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 515667.7
+  },
+  {
+    "overlap_m": 1215.2,
+    "east_km": 9.92,
+    "raster_cost": 41634.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 515667.7
+  },
+  {
+    "overlap_m": 1215.2,
+    "east_km": 10.007,
+    "raster_cost": 42748.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 512278.4
+  },
+  {
+    "overlap_m": 1215.2,
+    "east_km": 10.007,
+    "raster_cost": 42748.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 512278.4
+  },
+  {
+    "overlap_m": 1215.2,
+    "east_km": 10.007,
+    "raster_cost": 42748.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 512278.4
+  },
+  {
+    "overlap_m": 1226.8,
+    "east_km": 9.779,
+    "raster_cost": 41214.9,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 519883.6
+  },
+  {
+    "overlap_m": 1226.8,
+    "east_km": 9.779,
+    "raster_cost": 41214.9,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 519883.6
+  },
+  {
+    "overlap_m": 1226.8,
+    "east_km": 9.779,
+    "raster_cost": 41214.9,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 519883.6
+  },
+  {
+    "overlap_m": 1226.8,
+    "east_km": 9.779,
+    "raster_cost": 41214.9,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 519883.6
+  },
+  {
+    "overlap_m": 1226.8,
+    "east_km": 9.866,
+    "raster_cost": 42329.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 516494.3
+  },
+  {
+    "overlap_m": 1226.8,
+    "east_km": 9.866,
+    "raster_cost": 42329.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 516494.3
+  },
+  {
+    "overlap_m": 1227.7,
+    "east_km": 9.92,
+    "raster_cost": 41633.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 520672.6
+  },
+  {
+    "overlap_m": 1227.7,
+    "east_km": 9.92,
+    "raster_cost": 41633.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 520672.6
+  },
+  {
+    "overlap_m": 1227.7,
+    "east_km": 9.92,
+    "raster_cost": 41633.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 520672.6
+  },
+  {
+    "overlap_m": 1227.7,
+    "east_km": 9.92,
+    "raster_cost": 41633.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 520672.6
+  },
+  {
+    "overlap_m": 1227.7,
+    "east_km": 10.007,
+    "raster_cost": 42747.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 517283.3
+  },
+  {
+    "overlap_m": 1227.7,
+    "east_km": 10.007,
+    "raster_cost": 42747.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 517283.3
+  },
+  {
+    "overlap_m": 1227.7,
+    "east_km": 10.007,
+    "raster_cost": 42747.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 517283.3
+  },
+  {
+    "overlap_m": 1237.5,
+    "east_km": 9.709,
+    "raster_cost": 41335.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 524315.9
+  },
+  {
+    "overlap_m": 1237.5,
+    "east_km": 9.709,
+    "raster_cost": 41335.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 524315.9
+  },
+  {
+    "overlap_m": 1237.5,
+    "east_km": 9.709,
+    "raster_cost": 41335.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 524315.9
+  },
+  {
+    "overlap_m": 1237.5,
+    "east_km": 9.709,
+    "raster_cost": 41335.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 524315.9
+  },
+  {
+    "overlap_m": 1237.5,
+    "east_km": 9.709,
+    "raster_cost": 41335.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 524315.9
+  },
+  {
+    "overlap_m": 1237.5,
+    "east_km": 9.709,
+    "raster_cost": 41335.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 524315.9
+  },
+  {
+    "overlap_m": 1237.5,
+    "east_km": 9.796,
+    "raster_cost": 42449.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 520926.6
+  },
+  {
+    "overlap_m": 1237.5,
+    "east_km": 9.796,
+    "raster_cost": 42449.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 520926.6
+  },
+  {
+    "overlap_m": 1237.5,
+    "east_km": 9.796,
+    "raster_cost": 42449.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 520926.6
+  },
+  {
+    "overlap_m": 1237.5,
+    "east_km": 9.796,
+    "raster_cost": 42449.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 520926.6
+  },
+  {
+    "overlap_m": 1237.5,
+    "east_km": 9.796,
+    "raster_cost": 42449.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 520926.6
+  },
+  {
+    "overlap_m": 1237.5,
+    "east_km": 9.796,
+    "raster_cost": 42449.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 520926.6
+  },
+  {
+    "overlap_m": 1239.0,
+    "east_km": 9.828,
+    "raster_cost": 41266.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 524801.6
+  },
+  {
+    "overlap_m": 1239.0,
+    "east_km": 9.828,
+    "raster_cost": 41266.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 524801.6
+  },
+  {
+    "overlap_m": 1239.0,
+    "east_km": 9.828,
+    "raster_cost": 41266.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 524801.6
+  },
+  {
+    "overlap_m": 1239.0,
+    "east_km": 9.915,
+    "raster_cost": 42380.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 521412.4
+  },
+  {
+    "overlap_m": 1239.0,
+    "east_km": 9.915,
+    "raster_cost": 42380.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 521412.4
+  },
+  {
+    "overlap_m": 1248.6,
+    "east_km": 9.987,
+    "raster_cost": 41748.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2301.7,
+    "score": 526662.1
+  },
+  {
+    "overlap_m": 1248.6,
+    "east_km": 9.987,
+    "raster_cost": 41748.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2301.7,
+    "score": 526662.1
+  },
+  {
+    "overlap_m": 1248.6,
+    "east_km": 9.987,
+    "raster_cost": 41748.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2301.7,
+    "score": 526662.1
+  },
+  {
+    "overlap_m": 1248.6,
+    "east_km": 9.987,
+    "raster_cost": 41748.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2301.7,
+    "score": 526662.1
+  },
+  {
+    "overlap_m": 1248.6,
+    "east_km": 10.073,
+    "raster_cost": 42863.2,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2301.7,
+    "score": 523272.8
+  },
+  {
+    "overlap_m": 1248.6,
+    "east_km": 10.073,
+    "raster_cost": 42863.2,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2301.7,
+    "score": 523272.8
+  },
+  {
+    "overlap_m": 1248.6,
+    "east_km": 10.073,
+    "raster_cost": 42863.2,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2301.7,
+    "score": 523272.8
+  },
+  {
+    "overlap_m": 1248.6,
+    "east_km": 10.073,
+    "raster_cost": 42863.2,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2301.7,
+    "score": 523272.8
+  },
+  {
+    "overlap_m": 1249.6,
+    "east_km": 9.709,
+    "raster_cost": 41336.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 529190.2
+  },
+  {
+    "overlap_m": 1249.6,
+    "east_km": 9.709,
+    "raster_cost": 41336.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 529190.2
+  },
+  {
+    "overlap_m": 1249.6,
+    "east_km": 9.709,
+    "raster_cost": 41336.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 529190.2
+  },
+  {
+    "overlap_m": 1249.6,
+    "east_km": 9.709,
+    "raster_cost": 41336.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 529190.2
+  },
+  {
+    "overlap_m": 1249.6,
+    "east_km": 9.709,
+    "raster_cost": 41336.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 529190.2
+  },
+  {
+    "overlap_m": 1249.6,
+    "east_km": 9.709,
+    "raster_cost": 41336.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 529190.2
+  },
+  {
+    "overlap_m": 1249.6,
+    "east_km": 9.796,
+    "raster_cost": 42450.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 525800.9
+  },
+  {
+    "overlap_m": 1249.6,
+    "east_km": 9.796,
+    "raster_cost": 42450.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 525800.9
+  },
+  {
+    "overlap_m": 1249.6,
+    "east_km": 9.796,
+    "raster_cost": 42450.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 525800.9
+  },
+  {
+    "overlap_m": 1249.6,
+    "east_km": 9.796,
+    "raster_cost": 42450.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 525800.9
+  },
+  {
+    "overlap_m": 1249.6,
+    "east_km": 9.796,
+    "raster_cost": 42450.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 525800.9
+  },
+  {
+    "overlap_m": 1249.6,
+    "east_km": 9.796,
+    "raster_cost": 42450.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 525800.9
+  },
+  {
+    "overlap_m": 1251.5,
+    "east_km": 9.828,
+    "raster_cost": 41265.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 529806.6
+  },
+  {
+    "overlap_m": 1251.5,
+    "east_km": 9.828,
+    "raster_cost": 41265.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 529806.6
+  },
+  {
+    "overlap_m": 1251.5,
+    "east_km": 9.828,
+    "raster_cost": 41265.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 529806.6
+  },
+  {
+    "overlap_m": 1251.5,
+    "east_km": 9.915,
+    "raster_cost": 42379.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 526417.3
+  },
+  {
+    "overlap_m": 1251.5,
+    "east_km": 9.915,
+    "raster_cost": 42379.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 526417.3
+  },
+  {
+    "overlap_m": 1255.5,
+    "east_km": 10.0,
+    "raster_cost": 41740.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2171.9,
+    "complementary_relation_m": 2802.7,
+    "score": 520337.5
+  },
+  {
+    "overlap_m": 1255.5,
+    "east_km": 10.0,
+    "raster_cost": 41740.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2171.9,
+    "complementary_relation_m": 2802.7,
+    "score": 520337.5
+  },
+  {
+    "overlap_m": 1255.5,
+    "east_km": 10.0,
+    "raster_cost": 41740.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2171.9,
+    "complementary_relation_m": 2802.7,
+    "score": 520337.5
+  },
+  {
+    "overlap_m": 1255.5,
+    "east_km": 10.087,
+    "raster_cost": 42854.7,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1965.3,
+    "complementary_relation_m": 2484.3,
+    "score": 522678.4
+  },
+  {
+    "overlap_m": 1255.5,
+    "east_km": 10.087,
+    "raster_cost": 42854.7,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1965.3,
+    "complementary_relation_m": 2460.6,
+    "score": 523106.4
+  },
+  {
+    "overlap_m": 1255.5,
+    "east_km": 10.087,
+    "raster_cost": 42854.7,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1965.3,
+    "complementary_relation_m": 2460.6,
+    "score": 523106.4
+  },
+  {
+    "overlap_m": 1260.8,
+    "east_km": 9.986,
+    "raster_cost": 41749.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2301.7,
+    "score": 531536.4
+  },
+  {
+    "overlap_m": 1260.8,
+    "east_km": 9.986,
+    "raster_cost": 41749.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2301.7,
+    "score": 531536.4
+  },
+  {
+    "overlap_m": 1260.8,
+    "east_km": 9.986,
+    "raster_cost": 41749.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2301.7,
+    "score": 531536.4
+  },
+  {
+    "overlap_m": 1260.8,
+    "east_km": 9.986,
+    "raster_cost": 41749.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2301.7,
+    "score": 531536.4
+  },
+  {
+    "overlap_m": 1260.8,
+    "east_km": 10.073,
+    "raster_cost": 42864.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2301.7,
+    "score": 528147.1
+  },
+  {
+    "overlap_m": 1260.8,
+    "east_km": 10.073,
+    "raster_cost": 42864.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2301.7,
+    "score": 528147.1
+  },
+  {
+    "overlap_m": 1260.8,
+    "east_km": 10.073,
+    "raster_cost": 42864.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2301.7,
+    "score": 528147.1
+  },
+  {
+    "overlap_m": 1260.8,
+    "east_km": 10.073,
+    "raster_cost": 42864.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2301.7,
+    "score": 528147.1
+  },
+  {
+    "overlap_m": 1261.2,
+    "east_km": 9.618,
+    "raster_cost": 40967.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 533449.8
+  },
+  {
+    "overlap_m": 1261.2,
+    "east_km": 9.618,
+    "raster_cost": 40967.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 533449.8
+  },
+  {
+    "overlap_m": 1261.2,
+    "east_km": 9.618,
+    "raster_cost": 40967.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 533449.8
+  },
+  {
+    "overlap_m": 1261.2,
+    "east_km": 9.618,
+    "raster_cost": 40967.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 533449.8
+  },
+  {
+    "overlap_m": 1261.2,
+    "east_km": 9.704,
+    "raster_cost": 42081.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 530060.5
+  },
+  {
+    "overlap_m": 1261.2,
+    "east_km": 9.704,
+    "raster_cost": 42081.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 530060.5
+  },
+  {
+    "overlap_m": 1261.2,
+    "east_km": 9.704,
+    "raster_cost": 42081.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 530060.5
+  },
+  {
+    "overlap_m": 1261.2,
+    "east_km": 9.704,
+    "raster_cost": 42081.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 530060.5
+  },
+  {
+    "overlap_m": 1261.8,
+    "east_km": 9.758,
+    "raster_cost": 41387.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 534108.2
+  },
+  {
+    "overlap_m": 1261.8,
+    "east_km": 9.758,
+    "raster_cost": 41387.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 534108.2
+  },
+  {
+    "overlap_m": 1261.8,
+    "east_km": 9.758,
+    "raster_cost": 41387.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 534108.2
+  },
+  {
+    "overlap_m": 1261.8,
+    "east_km": 9.758,
+    "raster_cost": 41387.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 534108.2
+  },
+  {
+    "overlap_m": 1261.8,
+    "east_km": 9.758,
+    "raster_cost": 41387.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 534108.2
+  },
+  {
+    "overlap_m": 1261.8,
+    "east_km": 9.758,
+    "raster_cost": 41387.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 534108.2
+  },
+  {
+    "overlap_m": 1261.8,
+    "east_km": 9.845,
+    "raster_cost": 42501.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 530718.9
+  },
+  {
+    "overlap_m": 1261.8,
+    "east_km": 9.845,
+    "raster_cost": 42501.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 530718.9
+  },
+  {
+    "overlap_m": 1261.8,
+    "east_km": 9.845,
+    "raster_cost": 42501.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 530718.9
+  },
+  {
+    "overlap_m": 1261.8,
+    "east_km": 9.845,
+    "raster_cost": 42501.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 530718.9
+  },
+  {
+    "overlap_m": 1267.7,
+    "east_km": 10.0,
+    "raster_cost": 41741.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2171.9,
+    "complementary_relation_m": 2802.7,
+    "score": 525211.8
+  },
+  {
+    "overlap_m": 1267.7,
+    "east_km": 10.0,
+    "raster_cost": 41741.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2171.9,
+    "complementary_relation_m": 2802.7,
+    "score": 525211.8
+  },
+  {
+    "overlap_m": 1267.7,
+    "east_km": 10.0,
+    "raster_cost": 41741.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2171.9,
+    "complementary_relation_m": 2802.7,
+    "score": 525211.8
+  },
+  {
+    "overlap_m": 1267.7,
+    "east_km": 10.087,
+    "raster_cost": 42855.7,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1965.3,
+    "complementary_relation_m": 2484.3,
+    "score": 527552.7
+  },
+  {
+    "overlap_m": 1267.7,
+    "east_km": 10.087,
+    "raster_cost": 42855.7,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1965.3,
+    "complementary_relation_m": 2460.6,
+    "score": 527980.7
+  },
+  {
+    "overlap_m": 1267.7,
+    "east_km": 10.087,
+    "raster_cost": 42855.7,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1965.3,
+    "complementary_relation_m": 2460.6,
+    "score": 527980.7
+  },
+  {
+    "overlap_m": 1270.4,
+    "east_km": 10.268,
+    "raster_cost": 42256.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 538366.2
+  },
+  {
+    "overlap_m": 1270.4,
+    "east_km": 10.268,
+    "raster_cost": 42256.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 538366.2
+  },
+  {
+    "overlap_m": 1270.4,
+    "east_km": 10.354,
+    "raster_cost": 43370.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 534976.9
+  },
+  {
+    "overlap_m": 1270.4,
+    "east_km": 10.354,
+    "raster_cost": 43370.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 534976.9
+  },
+  {
+    "overlap_m": 1272.4,
+    "east_km": 9.895,
+    "raster_cost": 41380.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2301.7,
+    "score": 535796.1
+  },
+  {
+    "overlap_m": 1272.4,
+    "east_km": 9.895,
+    "raster_cost": 41380.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2301.7,
+    "score": 535796.1
+  },
+  {
+    "overlap_m": 1272.4,
+    "east_km": 9.981,
+    "raster_cost": 42495.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2301.7,
+    "score": 532406.8
+  },
+  {
+    "overlap_m": 1272.4,
+    "east_km": 9.981,
+    "raster_cost": 42495.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2301.7,
+    "score": 532406.8
+  },
+  {
+    "overlap_m": 1273.0,
+    "east_km": 10.035,
+    "raster_cost": 41800.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2301.7,
+    "score": 536454.5
+  },
+  {
+    "overlap_m": 1273.0,
+    "east_km": 10.035,
+    "raster_cost": 41800.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2301.7,
+    "score": 536454.5
+  },
+  {
+    "overlap_m": 1273.0,
+    "east_km": 10.035,
+    "raster_cost": 41800.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2301.7,
+    "score": 536454.5
+  },
+  {
+    "overlap_m": 1273.0,
+    "east_km": 10.122,
+    "raster_cost": 42915.2,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2301.7,
+    "score": 533065.2
+  },
+  {
+    "overlap_m": 1273.0,
+    "east_km": 10.122,
+    "raster_cost": 42915.2,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2301.7,
+    "score": 533065.2
+  },
+  {
+    "overlap_m": 1273.4,
+    "east_km": 9.617,
+    "raster_cost": 40968.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 538324.1
+  },
+  {
+    "overlap_m": 1273.4,
+    "east_km": 9.617,
+    "raster_cost": 40968.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 538324.1
+  },
+  {
+    "overlap_m": 1273.4,
+    "east_km": 9.617,
+    "raster_cost": 40968.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 538324.1
+  },
+  {
+    "overlap_m": 1273.4,
+    "east_km": 9.617,
+    "raster_cost": 40968.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 538324.1
+  },
+  {
+    "overlap_m": 1273.4,
+    "east_km": 9.704,
+    "raster_cost": 42082.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 534934.8
+  },
+  {
+    "overlap_m": 1273.4,
+    "east_km": 9.704,
+    "raster_cost": 42082.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 534934.8
+  },
+  {
+    "overlap_m": 1273.4,
+    "east_km": 9.704,
+    "raster_cost": 42082.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 534934.8
+  },
+  {
+    "overlap_m": 1273.4,
+    "east_km": 9.704,
+    "raster_cost": 42082.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 534934.8
+  },
+  {
+    "overlap_m": 1274.3,
+    "east_km": 9.758,
+    "raster_cost": 41386.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 539113.1
+  },
+  {
+    "overlap_m": 1274.3,
+    "east_km": 9.758,
+    "raster_cost": 41386.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 539113.1
+  },
+  {
+    "overlap_m": 1274.3,
+    "east_km": 9.758,
+    "raster_cost": 41386.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 539113.1
+  },
+  {
+    "overlap_m": 1274.3,
+    "east_km": 9.758,
+    "raster_cost": 41386.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 539113.1
+  },
+  {
+    "overlap_m": 1274.3,
+    "east_km": 9.758,
+    "raster_cost": 41386.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 539113.1
+  },
+  {
+    "overlap_m": 1274.3,
+    "east_km": 9.758,
+    "raster_cost": 41386.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 539113.1
+  },
+  {
+    "overlap_m": 1274.3,
+    "east_km": 9.845,
+    "raster_cost": 42500.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 535723.8
+  },
+  {
+    "overlap_m": 1274.3,
+    "east_km": 9.845,
+    "raster_cost": 42500.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 535723.8
+  },
+  {
+    "overlap_m": 1274.3,
+    "east_km": 9.845,
+    "raster_cost": 42500.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 535723.8
+  },
+  {
+    "overlap_m": 1274.3,
+    "east_km": 9.845,
+    "raster_cost": 42500.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 535723.8
+  },
+  {
+    "overlap_m": 1279.3,
+    "east_km": 9.908,
+    "raster_cost": 41372.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2180.2,
+    "complementary_relation_m": 2802.7,
+    "score": 529471.4
+  },
+  {
+    "overlap_m": 1279.3,
+    "east_km": 9.908,
+    "raster_cost": 41372.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2180.2,
+    "complementary_relation_m": 2802.7,
+    "score": 529471.4
+  },
+  {
+    "overlap_m": 1279.3,
+    "east_km": 9.995,
+    "raster_cost": 42486.7,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1973.7,
+    "complementary_relation_m": 2484.3,
+    "score": 531812.4
+  },
+  {
+    "overlap_m": 1279.3,
+    "east_km": 9.995,
+    "raster_cost": 42486.7,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1973.7,
+    "complementary_relation_m": 2484.3,
+    "score": 531812.4
+  },
+  {
+    "overlap_m": 1279.8,
+    "east_km": 10.049,
+    "raster_cost": 41792.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2171.9,
+    "complementary_relation_m": 2802.7,
+    "score": 530129.8
+  },
+  {
+    "overlap_m": 1279.8,
+    "east_km": 10.049,
+    "raster_cost": 41792.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2171.9,
+    "complementary_relation_m": 2802.7,
+    "score": 530129.8
+  },
+  {
+    "overlap_m": 1279.8,
+    "east_km": 10.136,
+    "raster_cost": 42906.8,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1965.3,
+    "complementary_relation_m": 2460.6,
+    "score": 532898.7
+  },
+  {
+    "overlap_m": 1284.6,
+    "east_km": 9.894,
+    "raster_cost": 41381.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2301.7,
+    "score": 540670.4
+  },
+  {
+    "overlap_m": 1284.6,
+    "east_km": 9.894,
+    "raster_cost": 41381.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2301.7,
+    "score": 540670.4
+  },
+  {
+    "overlap_m": 1284.6,
+    "east_km": 9.981,
+    "raster_cost": 42496.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2301.7,
+    "score": 537281.1
+  },
+  {
+    "overlap_m": 1284.6,
+    "east_km": 9.981,
+    "raster_cost": 42496.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2301.7,
+    "score": 537281.1
+  },
+  {
+    "overlap_m": 1285.5,
+    "east_km": 10.036,
+    "raster_cost": 41799.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2301.7,
+    "score": 541459.4
+  },
+  {
+    "overlap_m": 1285.5,
+    "east_km": 10.036,
+    "raster_cost": 41799.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2301.7,
+    "score": 541459.4
+  },
+  {
+    "overlap_m": 1285.5,
+    "east_km": 10.036,
+    "raster_cost": 41799.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2301.7,
+    "score": 541459.4
+  },
+  {
+    "overlap_m": 1285.5,
+    "east_km": 10.122,
+    "raster_cost": 42914.3,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2301.7,
+    "score": 538070.1
+  },
+  {
+    "overlap_m": 1285.5,
+    "east_km": 10.122,
+    "raster_cost": 42914.3,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2301.7,
+    "score": 538070.1
+  },
+  {
+    "overlap_m": 1285.6,
+    "east_km": 9.666,
+    "raster_cost": 41019.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 543242.1
+  },
+  {
+    "overlap_m": 1285.6,
+    "east_km": 9.666,
+    "raster_cost": 41019.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 543242.1
+  },
+  {
+    "overlap_m": 1285.6,
+    "east_km": 9.666,
+    "raster_cost": 41019.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 543242.1
+  },
+  {
+    "overlap_m": 1285.6,
+    "east_km": 9.666,
+    "raster_cost": 41019.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 543242.1
+  },
+  {
+    "overlap_m": 1285.6,
+    "east_km": 9.753,
+    "raster_cost": 42133.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 539852.9
+  },
+  {
+    "overlap_m": 1285.6,
+    "east_km": 9.753,
+    "raster_cost": 42133.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 539852.9
+  },
+  {
+    "overlap_m": 1285.6,
+    "east_km": 9.753,
+    "raster_cost": 42133.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 539852.9
+  },
+  {
+    "overlap_m": 1285.6,
+    "east_km": 9.753,
+    "raster_cost": 42133.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 539852.9
+  },
+  {
+    "overlap_m": 1291.4,
+    "east_km": 9.908,
+    "raster_cost": 41373.2,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2180.2,
+    "complementary_relation_m": 2802.7,
+    "score": 534345.7
+  },
+  {
+    "overlap_m": 1291.4,
+    "east_km": 9.908,
+    "raster_cost": 41373.2,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2180.2,
+    "complementary_relation_m": 2802.7,
+    "score": 534345.7
+  },
+  {
+    "overlap_m": 1291.4,
+    "east_km": 9.995,
+    "raster_cost": 42487.7,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1973.7,
+    "complementary_relation_m": 2484.3,
+    "score": 536686.7
+  },
+  {
+    "overlap_m": 1291.4,
+    "east_km": 9.995,
+    "raster_cost": 42487.7,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1973.7,
+    "complementary_relation_m": 2484.3,
+    "score": 536686.7
+  },
+  {
+    "overlap_m": 1292.4,
+    "east_km": 10.049,
+    "raster_cost": 41791.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2171.9,
+    "complementary_relation_m": 2802.7,
+    "score": 535134.7
+  },
+  {
+    "overlap_m": 1292.4,
+    "east_km": 10.049,
+    "raster_cost": 41791.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2171.9,
+    "complementary_relation_m": 2802.7,
+    "score": 535134.7
+  },
+  {
+    "overlap_m": 1292.4,
+    "east_km": 10.136,
+    "raster_cost": 42905.9,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1965.3,
+    "complementary_relation_m": 2460.6,
+    "score": 537903.6
+  },
+  {
+    "overlap_m": 1292.7,
+    "east_km": 10.312,
+    "raster_cost": 42316.5,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 547341.2
+  },
+  {
+    "overlap_m": 1292.7,
+    "east_km": 10.312,
+    "raster_cost": 42316.5,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 547341.2
+  },
+  {
+    "overlap_m": 1294.2,
+    "east_km": 10.176,
+    "raster_cost": 41888.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 547500.1
+  },
+  {
+    "overlap_m": 1294.2,
+    "east_km": 10.176,
+    "raster_cost": 41888.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 547500.1
+  },
+  {
+    "overlap_m": 1294.2,
+    "east_km": 10.262,
+    "raster_cost": 43002.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 544110.9
+  },
+  {
+    "overlap_m": 1294.2,
+    "east_km": 10.262,
+    "raster_cost": 43002.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 544110.9
+  },
+  {
+    "overlap_m": 1296.7,
+    "east_km": 9.943,
+    "raster_cost": 41432.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2301.7,
+    "score": 545588.4
+  },
+  {
+    "overlap_m": 1296.7,
+    "east_km": 9.943,
+    "raster_cost": 41432.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2301.7,
+    "score": 545588.4
+  },
+  {
+    "overlap_m": 1296.7,
+    "east_km": 10.03,
+    "raster_cost": 42547.2,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2301.7,
+    "score": 542199.1
+  },
+  {
+    "overlap_m": 1296.7,
+    "east_km": 10.03,
+    "raster_cost": 42547.2,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2301.7,
+    "score": 542199.1
+  },
+  {
+    "overlap_m": 1298.1,
+    "east_km": 9.667,
+    "raster_cost": 41018.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 548247.1
+  },
+  {
+    "overlap_m": 1298.1,
+    "east_km": 9.667,
+    "raster_cost": 41018.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 548247.1
+  },
+  {
+    "overlap_m": 1298.1,
+    "east_km": 9.667,
+    "raster_cost": 41018.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 548247.1
+  },
+  {
+    "overlap_m": 1298.1,
+    "east_km": 9.667,
+    "raster_cost": 41018.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 548247.1
+  },
+  {
+    "overlap_m": 1298.1,
+    "east_km": 9.753,
+    "raster_cost": 42132.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 544857.8
+  },
+  {
+    "overlap_m": 1298.1,
+    "east_km": 9.753,
+    "raster_cost": 42132.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 544857.8
+  },
+  {
+    "overlap_m": 1298.1,
+    "east_km": 9.753,
+    "raster_cost": 42132.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 544857.8
+  },
+  {
+    "overlap_m": 1298.1,
+    "east_km": 9.753,
+    "raster_cost": 42132.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 544857.8
+  },
+  {
+    "overlap_m": 1302.1,
+    "east_km": 9.839,
+    "raster_cost": 41493.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2123.6,
+    "complementary_relation_m": 2664.9,
+    "score": 541259.1
+  },
+  {
+    "overlap_m": 1302.1,
+    "east_km": 9.839,
+    "raster_cost": 41493.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2123.6,
+    "complementary_relation_m": 2664.9,
+    "score": 541259.1
+  },
+  {
+    "overlap_m": 1302.1,
+    "east_km": 9.839,
+    "raster_cost": 41493.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2123.6,
+    "complementary_relation_m": 2664.9,
+    "score": 541259.1
+  },
+  {
+    "overlap_m": 1302.1,
+    "east_km": 9.925,
+    "raster_cost": 42607.8,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1917.1,
+    "complementary_relation_m": 2484.3,
+    "score": 541118.9
+  },
+  {
+    "overlap_m": 1302.1,
+    "east_km": 9.925,
+    "raster_cost": 42607.8,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1917.1,
+    "complementary_relation_m": 2460.6,
+    "score": 541546.9
+  },
+  {
+    "overlap_m": 1302.1,
+    "east_km": 9.925,
+    "raster_cost": 42607.8,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1917.1,
+    "complementary_relation_m": 2460.6,
+    "score": 541546.9
+  },
+  {
+    "overlap_m": 1303.6,
+    "east_km": 9.957,
+    "raster_cost": 41424.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2180.2,
+    "complementary_relation_m": 2802.7,
+    "score": 539263.8
+  },
+  {
+    "overlap_m": 1303.6,
+    "east_km": 9.957,
+    "raster_cost": 41424.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2180.2,
+    "complementary_relation_m": 2802.7,
+    "score": 539263.8
+  },
+  {
+    "overlap_m": 1303.6,
+    "east_km": 10.044,
+    "raster_cost": 42538.8,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1973.7,
+    "complementary_relation_m": 2484.3,
+    "score": 541604.7
+  },
+  {
+    "overlap_m": 1303.6,
+    "east_km": 10.044,
+    "raster_cost": 42538.8,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1973.7,
+    "complementary_relation_m": 2484.3,
+    "score": 541604.7
+  },
+  {
+    "overlap_m": 1304.9,
+    "east_km": 10.263,
+    "raster_cost": 42265.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 552163.4
+  },
+  {
+    "overlap_m": 1306.5,
+    "east_km": 9.963,
+    "raster_cost": 41950.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2118.3,
+    "complementary_relation_m": 2163.9,
+    "score": 552499.8
+  },
+  {
+    "overlap_m": 1306.5,
+    "east_km": 10.05,
+    "raster_cost": 43064.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1911.8,
+    "complementary_relation_m": 2163.9,
+    "score": 549110.6
+  },
+  {
+    "overlap_m": 1306.9,
+    "east_km": 10.267,
+    "raster_cost": 42256.9,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 552980.8
+  },
+  {
+    "overlap_m": 1306.9,
+    "east_km": 10.354,
+    "raster_cost": 43371.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 549591.5
+  },
+  {
+    "overlap_m": 1307.3,
+    "east_km": 10.268,
+    "raster_cost": 42255.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 553111.4
+  },
+  {
+    "overlap_m": 1307.3,
+    "east_km": 10.355,
+    "raster_cost": 43369.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 549722.1
+  },
+  {
+    "overlap_m": 1309.3,
+    "east_km": 9.944,
+    "raster_cost": 41431.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2301.7,
+    "score": 550593.3
+  },
+  {
+    "overlap_m": 1309.3,
+    "east_km": 9.944,
+    "raster_cost": 41431.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2301.7,
+    "score": 550593.3
+  },
+  {
+    "overlap_m": 1309.3,
+    "east_km": 10.031,
+    "raster_cost": 42546.3,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2301.7,
+    "score": 547204.0
+  },
+  {
+    "overlap_m": 1309.3,
+    "east_km": 10.031,
+    "raster_cost": 42546.3,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2301.7,
+    "score": 547204.0
+  },
+  {
+    "overlap_m": 1313.2,
+    "east_km": 10.116,
+    "raster_cost": 41907.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2171.9,
+    "complementary_relation_m": 2664.9,
+    "score": 546086.4
+  },
+  {
+    "overlap_m": 1314.3,
+    "east_km": 9.838,
+    "raster_cost": 41494.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2123.6,
+    "complementary_relation_m": 2664.9,
+    "score": 546133.4
+  },
+  {
+    "overlap_m": 1314.3,
+    "east_km": 9.838,
+    "raster_cost": 41494.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2123.6,
+    "complementary_relation_m": 2664.9,
+    "score": 546133.4
+  },
+  {
+    "overlap_m": 1314.3,
+    "east_km": 9.838,
+    "raster_cost": 41494.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2123.6,
+    "complementary_relation_m": 2664.9,
+    "score": 546133.4
+  },
+  {
+    "overlap_m": 1314.3,
+    "east_km": 9.925,
+    "raster_cost": 42608.7,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1917.1,
+    "complementary_relation_m": 2484.3,
+    "score": 545993.2
+  },
+  {
+    "overlap_m": 1314.3,
+    "east_km": 9.925,
+    "raster_cost": 42608.7,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1917.1,
+    "complementary_relation_m": 2460.6,
+    "score": 546421.2
+  },
+  {
+    "overlap_m": 1314.3,
+    "east_km": 9.925,
+    "raster_cost": 42608.7,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1917.1,
+    "complementary_relation_m": 2460.6,
+    "score": 546421.2
+  },
+  {
+    "overlap_m": 1316.1,
+    "east_km": 9.957,
+    "raster_cost": 41423.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2180.2,
+    "complementary_relation_m": 2802.7,
+    "score": 544268.7
+  },
+  {
+    "overlap_m": 1316.1,
+    "east_km": 9.957,
+    "raster_cost": 41423.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2180.2,
+    "complementary_relation_m": 2802.7,
+    "score": 544268.7
+  },
+  {
+    "overlap_m": 1316.1,
+    "east_km": 10.044,
+    "raster_cost": 42537.8,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1973.7,
+    "complementary_relation_m": 2484.3,
+    "score": 546609.6
+  },
+  {
+    "overlap_m": 1316.1,
+    "east_km": 10.044,
+    "raster_cost": 42537.8,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1973.7,
+    "complementary_relation_m": 2484.3,
+    "score": 546609.6
+  },
+  {
+    "overlap_m": 1316.5,
+    "east_km": 10.22,
+    "raster_cost": 41948.5,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 556475.1
+  },
+  {
+    "overlap_m": 1316.5,
+    "east_km": 10.22,
+    "raster_cost": 41948.5,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 556475.1
+  },
+  {
+    "overlap_m": 1317.0,
+    "east_km": 10.106,
+    "raster_cost": 42009.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 556806.7
+  },
+  {
+    "overlap_m": 1317.0,
+    "east_km": 10.106,
+    "raster_cost": 42009.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 556806.7
+  },
+  {
+    "overlap_m": 1317.0,
+    "east_km": 10.193,
+    "raster_cost": 43123.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 553417.4
+  },
+  {
+    "overlap_m": 1317.0,
+    "east_km": 10.193,
+    "raster_cost": 43123.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 553417.4
+  },
+  {
+    "overlap_m": 1318.7,
+    "east_km": 9.963,
+    "raster_cost": 41951.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2118.3,
+    "complementary_relation_m": 2163.9,
+    "score": 557374.1
+  },
+  {
+    "overlap_m": 1318.7,
+    "east_km": 10.049,
+    "raster_cost": 43065.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1911.8,
+    "complementary_relation_m": 2163.9,
+    "score": 553984.9
+  },
+  {
+    "overlap_m": 1325.4,
+    "east_km": 10.115,
+    "raster_cost": 41908.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2171.9,
+    "complementary_relation_m": 2664.9,
+    "score": 550960.7
+  },
+  {
+    "overlap_m": 1325.4,
+    "east_km": 10.202,
+    "raster_cost": 43022.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1965.3,
+    "complementary_relation_m": 2622.2,
+    "score": 548339.5
+  },
+  {
+    "overlap_m": 1325.9,
+    "east_km": 9.747,
+    "raster_cost": 41125.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2131.9,
+    "complementary_relation_m": 2664.9,
+    "score": 550393.0
+  },
+  {
+    "overlap_m": 1325.9,
+    "east_km": 9.747,
+    "raster_cost": 41125.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2131.9,
+    "complementary_relation_m": 2664.9,
+    "score": 550393.0
+  },
+  {
+    "overlap_m": 1325.9,
+    "east_km": 9.834,
+    "raster_cost": 42239.8,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1925.4,
+    "complementary_relation_m": 2484.3,
+    "score": 550252.9
+  },
+  {
+    "overlap_m": 1325.9,
+    "east_km": 9.834,
+    "raster_cost": 42239.8,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1925.4,
+    "complementary_relation_m": 2484.3,
+    "score": 550252.9
+  },
+  {
+    "overlap_m": 1326.4,
+    "east_km": 9.887,
+    "raster_cost": 41545.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2123.6,
+    "complementary_relation_m": 2664.9,
+    "score": 551051.4
+  },
+  {
+    "overlap_m": 1326.4,
+    "east_km": 9.887,
+    "raster_cost": 41545.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2123.6,
+    "complementary_relation_m": 2664.9,
+    "score": 551051.4
+  },
+  {
+    "overlap_m": 1326.4,
+    "east_km": 9.887,
+    "raster_cost": 41545.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2123.6,
+    "complementary_relation_m": 2664.9,
+    "score": 551051.4
+  },
+  {
+    "overlap_m": 1326.4,
+    "east_km": 9.974,
+    "raster_cost": 42659.8,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1917.1,
+    "complementary_relation_m": 2484.3,
+    "score": 550911.3
+  },
+  {
+    "overlap_m": 1326.4,
+    "east_km": 9.974,
+    "raster_cost": 42659.8,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1917.1,
+    "complementary_relation_m": 2460.6,
+    "score": 551339.2
+  },
+  {
+    "overlap_m": 1328.7,
+    "east_km": 10.171,
+    "raster_cost": 41897.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 561297.4
+  },
+  {
+    "overlap_m": 1330.7,
+    "east_km": 10.175,
+    "raster_cost": 41888.9,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 562114.7
+  },
+  {
+    "overlap_m": 1330.7,
+    "east_km": 10.262,
+    "raster_cost": 43003.3,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 558725.4
+  },
+  {
+    "overlap_m": 1330.8,
+    "east_km": 10.012,
+    "raster_cost": 42002.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2118.3,
+    "complementary_relation_m": 2163.9,
+    "score": 562292.2
+  },
+  {
+    "overlap_m": 1330.8,
+    "east_km": 10.098,
+    "raster_cost": 43116.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1911.8,
+    "complementary_relation_m": 2163.9,
+    "score": 558902.9
+  },
+  {
+    "overlap_m": 1331.0,
+    "east_km": 10.176,
+    "raster_cost": 41887.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 562245.3
+  },
+  {
+    "overlap_m": 1331.0,
+    "east_km": 10.263,
+    "raster_cost": 43001.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 558856.0
+  },
+  {
+    "overlap_m": 1337.0,
+    "east_km": 10.024,
+    "raster_cost": 41539.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2180.2,
+    "complementary_relation_m": 2664.9,
+    "score": 555220.4
+  },
+  {
+    "overlap_m": 1337.6,
+    "east_km": 10.165,
+    "raster_cost": 41959.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2171.9,
+    "complementary_relation_m": 2664.9,
+    "score": 555878.8
+  },
+  {
+    "overlap_m": 1337.6,
+    "east_km": 10.251,
+    "raster_cost": 43073.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1965.3,
+    "complementary_relation_m": 2622.2,
+    "score": 553257.5
+  },
+  {
+    "overlap_m": 1338.0,
+    "east_km": 9.747,
+    "raster_cost": 41126.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2131.9,
+    "complementary_relation_m": 2664.9,
+    "score": 555267.3
+  },
+  {
+    "overlap_m": 1338.0,
+    "east_km": 9.747,
+    "raster_cost": 41126.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2131.9,
+    "complementary_relation_m": 2664.9,
+    "score": 555267.3
+  },
+  {
+    "overlap_m": 1338.0,
+    "east_km": 9.833,
+    "raster_cost": 42240.7,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1925.4,
+    "complementary_relation_m": 2484.3,
+    "score": 555127.2
+  },
+  {
+    "overlap_m": 1338.0,
+    "east_km": 9.833,
+    "raster_cost": 42240.7,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1925.4,
+    "complementary_relation_m": 2484.3,
+    "score": 555127.2
+  },
+  {
+    "overlap_m": 1338.9,
+    "east_km": 9.888,
+    "raster_cost": 41544.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2123.6,
+    "complementary_relation_m": 2664.9,
+    "score": 556056.3
+  },
+  {
+    "overlap_m": 1338.9,
+    "east_km": 9.888,
+    "raster_cost": 41544.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2123.6,
+    "complementary_relation_m": 2664.9,
+    "score": 556056.3
+  },
+  {
+    "overlap_m": 1338.9,
+    "east_km": 9.888,
+    "raster_cost": 41544.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2123.6,
+    "complementary_relation_m": 2664.9,
+    "score": 556056.3
+  },
+  {
+    "overlap_m": 1338.9,
+    "east_km": 9.974,
+    "raster_cost": 42658.9,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1917.1,
+    "complementary_relation_m": 2484.3,
+    "score": 555916.2
+  },
+  {
+    "overlap_m": 1338.9,
+    "east_km": 9.974,
+    "raster_cost": 42658.9,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1917.1,
+    "complementary_relation_m": 2460.6,
+    "score": 556344.2
+  },
+  {
+    "overlap_m": 1339.3,
+    "east_km": 10.151,
+    "raster_cost": 42069.5,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 565781.7
+  },
+  {
+    "overlap_m": 1339.3,
+    "east_km": 10.151,
+    "raster_cost": 42069.5,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 565781.7
+  },
+  {
+    "overlap_m": 1339.3,
+    "east_km": 10.151,
+    "raster_cost": 42069.5,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 565781.7
+  },
+  {
+    "overlap_m": 1339.3,
+    "east_km": 10.151,
+    "raster_cost": 42069.5,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 565781.7
+  },
+  {
+    "overlap_m": 1339.3,
+    "east_km": 10.237,
+    "raster_cost": 43184.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 562392.4
+  },
+  {
+    "overlap_m": 1339.3,
+    "east_km": 10.237,
+    "raster_cost": 43184.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 562392.4
+  },
+  {
+    "overlap_m": 1339.3,
+    "east_km": 10.237,
+    "raster_cost": 43184.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 562392.4
+  },
+  {
+    "overlap_m": 1340.8,
+    "east_km": 10.014,
+    "raster_cost": 41641.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 565940.6
+  },
+  {
+    "overlap_m": 1340.8,
+    "east_km": 10.014,
+    "raster_cost": 41641.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 565940.6
+  },
+  {
+    "overlap_m": 1340.8,
+    "east_km": 10.101,
+    "raster_cost": 42755.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 562551.4
+  },
+  {
+    "overlap_m": 1340.8,
+    "east_km": 10.101,
+    "raster_cost": 42755.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 562551.4
+  },
+  {
+    "overlap_m": 1343.4,
+    "east_km": 10.012,
+    "raster_cost": 42001.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2118.3,
+    "complementary_relation_m": 2163.9,
+    "score": 567297.1
+  },
+  {
+    "overlap_m": 1343.4,
+    "east_km": 10.099,
+    "raster_cost": 43115.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1911.8,
+    "complementary_relation_m": 2163.9,
+    "score": 563907.8
+  },
+  {
+    "overlap_m": 1349.2,
+    "east_km": 10.024,
+    "raster_cost": 41540.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2180.2,
+    "complementary_relation_m": 2664.9,
+    "score": 560094.7
+  },
+  {
+    "overlap_m": 1349.2,
+    "east_km": 10.11,
+    "raster_cost": 42654.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1973.7,
+    "complementary_relation_m": 2622.2,
+    "score": 557473.5
+  },
+  {
+    "overlap_m": 1350.1,
+    "east_km": 10.165,
+    "raster_cost": 41958.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2171.9,
+    "complementary_relation_m": 2664.9,
+    "score": 560883.7
+  },
+  {
+    "overlap_m": 1350.2,
+    "east_km": 9.796,
+    "raster_cost": 41177.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2131.9,
+    "complementary_relation_m": 2664.9,
+    "score": 560185.4
+  },
+  {
+    "overlap_m": 1350.2,
+    "east_km": 9.796,
+    "raster_cost": 41177.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2131.9,
+    "complementary_relation_m": 2664.9,
+    "score": 560185.4
+  },
+  {
+    "overlap_m": 1350.2,
+    "east_km": 9.882,
+    "raster_cost": 42291.8,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1925.4,
+    "complementary_relation_m": 2484.3,
+    "score": 560045.2
+  },
+  {
+    "overlap_m": 1350.2,
+    "east_km": 9.882,
+    "raster_cost": 42291.8,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1925.4,
+    "complementary_relation_m": 2484.3,
+    "score": 560045.2
+  },
+  {
+    "overlap_m": 1351.5,
+    "east_km": 10.101,
+    "raster_cost": 42018.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 570603.9
+  },
+  {
+    "overlap_m": 1351.5,
+    "east_km": 10.101,
+    "raster_cost": 42018.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 570603.9
+  },
+  {
+    "overlap_m": 1351.5,
+    "east_km": 10.188,
+    "raster_cost": 43132.9,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 567214.6
+  },
+  {
+    "overlap_m": 1351.5,
+    "east_km": 10.188,
+    "raster_cost": 43132.9,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 567214.6
+  },
+  {
+    "overlap_m": 1353.1,
+    "east_km": 9.801,
+    "raster_cost": 41703.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2070.1,
+    "complementary_relation_m": 2163.9,
+    "score": 570940.4
+  },
+  {
+    "overlap_m": 1353.1,
+    "east_km": 9.801,
+    "raster_cost": 41703.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2070.1,
+    "complementary_relation_m": 2163.9,
+    "score": 570940.4
+  },
+  {
+    "overlap_m": 1353.1,
+    "east_km": 9.888,
+    "raster_cost": 42817.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1863.5,
+    "complementary_relation_m": 2163.9,
+    "score": 567551.1
+  },
+  {
+    "overlap_m": 1353.1,
+    "east_km": 9.888,
+    "raster_cost": 42817.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1863.5,
+    "complementary_relation_m": 2163.9,
+    "score": 567551.1
+  },
+  {
+    "overlap_m": 1353.5,
+    "east_km": 10.106,
+    "raster_cost": 42010.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 571421.3
+  },
+  {
+    "overlap_m": 1353.5,
+    "east_km": 10.192,
+    "raster_cost": 43124.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 568032.0
+  },
+  {
+    "overlap_m": 1353.9,
+    "east_km": 10.106,
+    "raster_cost": 42008.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 571551.9
+  },
+  {
+    "overlap_m": 1353.9,
+    "east_km": 10.361,
+    "raster_cost": 42367.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 571878.7
+  },
+  {
+    "overlap_m": 1353.9,
+    "east_km": 10.193,
+    "raster_cost": 43122.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 568162.6
+  },
+  {
+    "overlap_m": 1354.7,
+    "east_km": 10.113,
+    "raster_cost": 42548.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 572391.5
+  },
+  {
+    "overlap_m": 1354.7,
+    "east_km": 10.113,
+    "raster_cost": 42548.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 572391.5
+  },
+  {
+    "overlap_m": 1354.7,
+    "east_km": 10.2,
+    "raster_cost": 43663.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 569002.2
+  },
+  {
+    "overlap_m": 1354.7,
+    "east_km": 10.2,
+    "raster_cost": 43663.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 569002.2
+  },
+  {
+    "overlap_m": 1361.4,
+    "east_km": 10.073,
+    "raster_cost": 41591.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2180.2,
+    "complementary_relation_m": 2664.9,
+    "score": 565012.7
+  },
+  {
+    "overlap_m": 1361.4,
+    "east_km": 10.159,
+    "raster_cost": 42705.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1973.7,
+    "complementary_relation_m": 2622.2,
+    "score": 562391.5
+  },
+  {
+    "overlap_m": 1362.7,
+    "east_km": 9.796,
+    "raster_cost": 41176.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2131.9,
+    "complementary_relation_m": 2664.9,
+    "score": 565190.3
+  },
+  {
+    "overlap_m": 1362.7,
+    "east_km": 9.796,
+    "raster_cost": 41176.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2131.9,
+    "complementary_relation_m": 2664.9,
+    "score": 565190.3
+  },
+  {
+    "overlap_m": 1362.7,
+    "east_km": 9.883,
+    "raster_cost": 42290.9,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1925.4,
+    "complementary_relation_m": 2484.3,
+    "score": 565050.1
+  },
+  {
+    "overlap_m": 1362.7,
+    "east_km": 9.883,
+    "raster_cost": 42290.9,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1925.4,
+    "complementary_relation_m": 2484.3,
+    "score": 565050.1
+  },
+  {
+    "overlap_m": 1363.1,
+    "east_km": 10.059,
+    "raster_cost": 41701.5,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 574915.6
+  },
+  {
+    "overlap_m": 1363.1,
+    "east_km": 10.059,
+    "raster_cost": 41701.5,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 574915.6
+  },
+  {
+    "overlap_m": 1363.1,
+    "east_km": 10.145,
+    "raster_cost": 42816.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 571526.4
+  },
+  {
+    "overlap_m": 1363.1,
+    "east_km": 10.145,
+    "raster_cost": 42816.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 571526.4
+  },
+  {
+    "overlap_m": 1364.2,
+    "east_km": 10.078,
+    "raster_cost": 42116.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2118.3,
+    "complementary_relation_m": 2301.7,
+    "score": 573286.6
+  },
+  {
+    "overlap_m": 1364.2,
+    "east_km": 10.078,
+    "raster_cost": 42116.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2118.3,
+    "complementary_relation_m": 2301.7,
+    "score": 573286.6
+  },
+  {
+    "overlap_m": 1364.2,
+    "east_km": 10.165,
+    "raster_cost": 43231.2,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1911.8,
+    "complementary_relation_m": 2301.7,
+    "score": 569897.3
+  },
+  {
+    "overlap_m": 1364.2,
+    "east_km": 10.165,
+    "raster_cost": 43231.2,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1911.8,
+    "complementary_relation_m": 2301.7,
+    "score": 569897.3
+  },
+  {
+    "overlap_m": 1365.3,
+    "east_km": 9.801,
+    "raster_cost": 41704.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2070.1,
+    "complementary_relation_m": 2163.9,
+    "score": 575814.7
+  },
+  {
+    "overlap_m": 1365.3,
+    "east_km": 9.801,
+    "raster_cost": 41704.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2070.1,
+    "complementary_relation_m": 2163.9,
+    "score": 575814.7
+  },
+  {
+    "overlap_m": 1365.3,
+    "east_km": 9.888,
+    "raster_cost": 42818.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1863.5,
+    "complementary_relation_m": 2163.9,
+    "score": 572425.4
+  },
+  {
+    "overlap_m": 1365.3,
+    "east_km": 9.888,
+    "raster_cost": 42818.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1863.5,
+    "complementary_relation_m": 2163.9,
+    "score": 572425.4
+  },
+  {
+    "overlap_m": 1366.9,
+    "east_km": 10.113,
+    "raster_cost": 42549.5,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 577265.8
+  },
+  {
+    "overlap_m": 1366.9,
+    "east_km": 10.113,
+    "raster_cost": 42549.5,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 577265.8
+  },
+  {
+    "overlap_m": 1366.9,
+    "east_km": 10.199,
+    "raster_cost": 43664.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 573876.5
+  },
+  {
+    "overlap_m": 1366.9,
+    "east_km": 10.199,
+    "raster_cost": 43664.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 573876.5
+  },
+  {
+    "overlap_m": 1371.1,
+    "east_km": 10.092,
+    "raster_cost": 42108.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2163.5,
+    "complementary_relation_m": 2802.7,
+    "score": 566962.0
+  },
+  {
+    "overlap_m": 1371.1,
+    "east_km": 10.179,
+    "raster_cost": 43222.8,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1957.0,
+    "complementary_relation_m": 2460.6,
+    "score": 569730.9
+  },
+  {
+    "overlap_m": 1373.9,
+    "east_km": 10.073,
+    "raster_cost": 41590.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2180.2,
+    "complementary_relation_m": 2664.9,
+    "score": 570017.6
+  },
+  {
+    "overlap_m": 1375.3,
+    "east_km": 10.01,
+    "raster_cost": 41650.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 579737.9
+  },
+  {
+    "overlap_m": 1375.3,
+    "east_km": 10.096,
+    "raster_cost": 42764.9,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 576348.6
+  },
+  {
+    "overlap_m": 1376.4,
+    "east_km": 10.078,
+    "raster_cost": 42117.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2118.3,
+    "complementary_relation_m": 2301.7,
+    "score": 578160.9
+  },
+  {
+    "overlap_m": 1376.4,
+    "east_km": 10.078,
+    "raster_cost": 42117.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2118.3,
+    "complementary_relation_m": 2301.7,
+    "score": 578160.9
+  },
+  {
+    "overlap_m": 1376.4,
+    "east_km": 10.165,
+    "raster_cost": 43232.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1911.8,
+    "complementary_relation_m": 2301.7,
+    "score": 574771.6
+  },
+  {
+    "overlap_m": 1376.4,
+    "east_km": 10.165,
+    "raster_cost": 43232.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1911.8,
+    "complementary_relation_m": 2301.7,
+    "score": 574771.6
+  },
+  {
+    "overlap_m": 1377.3,
+    "east_km": 10.014,
+    "raster_cost": 41641.9,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 580555.2
+  },
+  {
+    "overlap_m": 1377.3,
+    "east_km": 10.101,
+    "raster_cost": 42756.4,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 577165.9
+  },
+  {
+    "overlap_m": 1377.4,
+    "east_km": 9.85,
+    "raster_cost": 41755.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2070.1,
+    "complementary_relation_m": 2163.9,
+    "score": 580732.7
+  },
+  {
+    "overlap_m": 1377.4,
+    "east_km": 9.85,
+    "raster_cost": 41755.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2070.1,
+    "complementary_relation_m": 2163.9,
+    "score": 580732.7
+  },
+  {
+    "overlap_m": 1377.4,
+    "east_km": 9.937,
+    "raster_cost": 42869.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1863.5,
+    "complementary_relation_m": 2163.9,
+    "score": 577343.4
+  },
+  {
+    "overlap_m": 1377.6,
+    "east_km": 10.014,
+    "raster_cost": 41640.0,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 580685.8
+  },
+  {
+    "overlap_m": 1377.6,
+    "east_km": 10.101,
+    "raster_cost": 42754.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 577296.6
+  },
+  {
+    "overlap_m": 1377.7,
+    "east_km": 10.269,
+    "raster_cost": 41999.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 581012.7
+  },
+  {
+    "overlap_m": 1378.5,
+    "east_km": 10.021,
+    "raster_cost": 42180.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 581525.5
+  },
+  {
+    "overlap_m": 1378.5,
+    "east_km": 10.108,
+    "raster_cost": 43295.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 578136.2
+  },
+  {
+    "overlap_m": 1379.1,
+    "east_km": 10.162,
+    "raster_cost": 42600.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 582183.8
+  },
+  {
+    "overlap_m": 1379.1,
+    "east_km": 10.162,
+    "raster_cost": 42600.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 582183.8
+  },
+  {
+    "overlap_m": 1379.1,
+    "east_km": 10.249,
+    "raster_cost": 43715.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 578794.6
+  },
+  {
+    "overlap_m": 1379.1,
+    "east_km": 10.249,
+    "raster_cost": 43715.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 578794.6
+  },
+  {
+    "overlap_m": 1383.3,
+    "east_km": 10.092,
+    "raster_cost": 42109.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2163.5,
+    "complementary_relation_m": 2802.7,
+    "score": 571836.3
+  },
+  {
+    "overlap_m": 1383.3,
+    "east_km": 10.179,
+    "raster_cost": 43223.7,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1957.0,
+    "complementary_relation_m": 2460.6,
+    "score": 574605.2
+  },
+  {
+    "overlap_m": 1388.6,
+    "east_km": 10.127,
+    "raster_cost": 42168.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2118.3,
+    "complementary_relation_m": 2301.7,
+    "score": 583079.0
+  },
+  {
+    "overlap_m": 1389.9,
+    "east_km": 9.85,
+    "raster_cost": 41754.2,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2070.1,
+    "complementary_relation_m": 2163.9,
+    "score": 585737.6
+  },
+  {
+    "overlap_m": 1389.9,
+    "east_km": 9.85,
+    "raster_cost": 41754.2,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2070.1,
+    "complementary_relation_m": 2163.9,
+    "score": 585737.6
+  },
+  {
+    "overlap_m": 1389.9,
+    "east_km": 9.937,
+    "raster_cost": 42868.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1863.5,
+    "complementary_relation_m": 2163.9,
+    "score": 582348.3
+  },
+  {
+    "overlap_m": 1390.7,
+    "east_km": 10.021,
+    "raster_cost": 42181.5,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 586399.8
+  },
+  {
+    "overlap_m": 1390.7,
+    "east_km": 10.108,
+    "raster_cost": 43295.9,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 583010.5
+  },
+  {
+    "overlap_m": 1391.6,
+    "east_km": 10.162,
+    "raster_cost": 42599.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 587188.8
+  },
+  {
+    "overlap_m": 1391.6,
+    "east_km": 10.162,
+    "raster_cost": 42599.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 587188.8
+  },
+  {
+    "overlap_m": 1391.6,
+    "east_km": 10.249,
+    "raster_cost": 43714.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 583799.5
+  },
+  {
+    "overlap_m": 1391.6,
+    "east_km": 10.249,
+    "raster_cost": 43714.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 583799.5
+  },
+  {
+    "overlap_m": 1400.5,
+    "east_km": 10.2,
+    "raster_cost": 42120.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 590319.2
+  },
+  {
+    "overlap_m": 1400.5,
+    "east_km": 10.2,
+    "raster_cost": 42120.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 590319.2
+  },
+  {
+    "overlap_m": 1400.5,
+    "east_km": 10.286,
+    "raster_cost": 43235.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 586929.9
+  },
+  {
+    "overlap_m": 1401.1,
+    "east_km": 10.127,
+    "raster_cost": 42167.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2118.3,
+    "complementary_relation_m": 2301.7,
+    "score": 588083.9
+  },
+  {
+    "overlap_m": 1401.3,
+    "east_km": 9.951,
+    "raster_cost": 42301.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 590832.0
+  },
+  {
+    "overlap_m": 1401.3,
+    "east_km": 9.951,
+    "raster_cost": 42301.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 590832.0
+  },
+  {
+    "overlap_m": 1401.3,
+    "east_km": 10.038,
+    "raster_cost": 43416.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 587442.7
+  },
+  {
+    "overlap_m": 1401.3,
+    "east_km": 10.038,
+    "raster_cost": 43416.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 587442.7
+  },
+  {
+    "overlap_m": 1402.9,
+    "east_km": 10.07,
+    "raster_cost": 42232.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 591317.8
+  },
+  {
+    "overlap_m": 1402.9,
+    "east_km": 10.157,
+    "raster_cost": 43347.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 587928.5
+  },
+  {
+    "overlap_m": 1413.5,
+    "east_km": 9.951,
+    "raster_cost": 42302.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 595706.3
+  },
+  {
+    "overlap_m": 1413.5,
+    "east_km": 9.951,
+    "raster_cost": 42302.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 595706.3
+  },
+  {
+    "overlap_m": 1413.5,
+    "east_km": 10.038,
+    "raster_cost": 43417.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 592317.0
+  },
+  {
+    "overlap_m": 1413.5,
+    "east_km": 10.038,
+    "raster_cost": 43417.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 592317.0
+  },
+  {
+    "overlap_m": 1415.4,
+    "east_km": 10.07,
+    "raster_cost": 42231.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 596322.7
+  },
+  {
+    "overlap_m": 1415.4,
+    "east_km": 10.157,
+    "raster_cost": 43346.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 592933.4
+  },
+  {
+    "overlap_m": 1417.7,
+    "east_km": 9.931,
+    "raster_cost": 41861.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2115.3,
+    "complementary_relation_m": 2664.9,
+    "score": 587883.6
+  },
+  {
+    "overlap_m": 1417.7,
+    "east_km": 10.017,
+    "raster_cost": 42975.8,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1908.8,
+    "complementary_relation_m": 2460.6,
+    "score": 588171.4
+  },
+  {
+    "overlap_m": 1424.3,
+    "east_km": 10.108,
+    "raster_cost": 41752.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 599453.2
+  },
+  {
+    "overlap_m": 1424.3,
+    "east_km": 10.194,
+    "raster_cost": 42867.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 596063.9
+  },
+  {
+    "overlap_m": 1425.1,
+    "east_km": 9.86,
+    "raster_cost": 41933.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 599966.0
+  },
+  {
+    "overlap_m": 1425.1,
+    "east_km": 9.946,
+    "raster_cost": 43048.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 596576.7
+  },
+  {
+    "overlap_m": 1425.7,
+    "east_km": 10.0,
+    "raster_cost": 42353.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 600624.4
+  },
+  {
+    "overlap_m": 1425.7,
+    "east_km": 10.0,
+    "raster_cost": 42353.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 600624.4
+  },
+  {
+    "overlap_m": 1425.7,
+    "east_km": 10.087,
+    "raster_cost": 43468.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 597235.1
+  },
+  {
+    "overlap_m": 1425.7,
+    "east_km": 10.087,
+    "raster_cost": 43468.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 597235.1
+  },
+  {
+    "overlap_m": 1429.9,
+    "east_km": 9.93,
+    "raster_cost": 41862.3,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2115.3,
+    "complementary_relation_m": 2664.9,
+    "score": 592757.9
+  },
+  {
+    "overlap_m": 1429.9,
+    "east_km": 10.017,
+    "raster_cost": 42976.7,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1908.8,
+    "complementary_relation_m": 2460.6,
+    "score": 593045.7
+  },
+  {
+    "overlap_m": 1434.3,
+    "east_km": 9.721,
+    "raster_cost": 41866.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 603525.9
+  },
+  {
+    "overlap_m": 1434.3,
+    "east_km": 9.721,
+    "raster_cost": 41866.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 603525.9
+  },
+  {
+    "overlap_m": 1434.3,
+    "east_km": 9.721,
+    "raster_cost": 41866.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 603525.9
+  },
+  {
+    "overlap_m": 1434.3,
+    "east_km": 9.721,
+    "raster_cost": 41866.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 603525.9
+  },
+  {
+    "overlap_m": 1434.3,
+    "east_km": 9.721,
+    "raster_cost": 41866.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 603525.9
+  },
+  {
+    "overlap_m": 1434.3,
+    "east_km": 9.721,
+    "raster_cost": 41866.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 603525.9
+  },
+  {
+    "overlap_m": 1434.3,
+    "east_km": 9.807,
+    "raster_cost": 42980.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 600136.7
+  },
+  {
+    "overlap_m": 1434.3,
+    "east_km": 9.807,
+    "raster_cost": 42980.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 600136.7
+  },
+  {
+    "overlap_m": 1434.3,
+    "east_km": 9.807,
+    "raster_cost": 42980.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 600136.7
+  },
+  {
+    "overlap_m": 1434.3,
+    "east_km": 9.807,
+    "raster_cost": 42980.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 600136.7
+  },
+  {
+    "overlap_m": 1434.3,
+    "east_km": 9.807,
+    "raster_cost": 42980.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 600136.7
+  },
+  {
+    "overlap_m": 1434.3,
+    "east_km": 9.807,
+    "raster_cost": 42980.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 600136.7
+  },
+  {
+    "overlap_m": 1437.3,
+    "east_km": 9.859,
+    "raster_cost": 41934.5,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 604840.3
+  },
+  {
+    "overlap_m": 1437.3,
+    "east_km": 9.946,
+    "raster_cost": 43049.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 601451.0
+  },
+  {
+    "overlap_m": 1438.2,
+    "east_km": 10.0,
+    "raster_cost": 42352.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 605629.3
+  },
+  {
+    "overlap_m": 1438.2,
+    "east_km": 10.0,
+    "raster_cost": 42352.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 605629.3
+  },
+  {
+    "overlap_m": 1438.2,
+    "east_km": 10.087,
+    "raster_cost": 43467.2,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 602240.0
+  },
+  {
+    "overlap_m": 1438.2,
+    "east_km": 10.087,
+    "raster_cost": 43467.2,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 602240.0
+  },
+  {
+    "overlap_m": 1442.1,
+    "east_km": 9.979,
+    "raster_cost": 41913.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2115.3,
+    "complementary_relation_m": 2664.9,
+    "score": 597675.9
+  },
+  {
+    "overlap_m": 1442.1,
+    "east_km": 10.066,
+    "raster_cost": 43027.9,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1908.8,
+    "complementary_relation_m": 2460.6,
+    "score": 597963.7
+  },
+  {
+    "overlap_m": 1449.5,
+    "east_km": 9.908,
+    "raster_cost": 41985.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 609758.3
+  },
+  {
+    "overlap_m": 1449.5,
+    "east_km": 9.995,
+    "raster_cost": 43100.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 606369.0
+  },
+  {
+    "overlap_m": 1454.6,
+    "east_km": 9.98,
+    "raster_cost": 41912.5,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2115.3,
+    "complementary_relation_m": 2664.9,
+    "score": 602680.8
+  },
+  {
+    "overlap_m": 1454.6,
+    "east_km": 10.066,
+    "raster_cost": 43026.9,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1908.8,
+    "complementary_relation_m": 2460.6,
+    "score": 602968.7
+  },
+  {
+    "overlap_m": 1454.9,
+    "east_km": 10.242,
+    "raster_cost": 42437.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2070.1,
+    "complementary_relation_m": 2163.9,
+    "score": 612406.2
+  },
+  {
+    "overlap_m": 1454.9,
+    "east_km": 10.242,
+    "raster_cost": 42437.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2070.1,
+    "complementary_relation_m": 2163.9,
+    "score": 612406.2
+  },
+  {
+    "overlap_m": 1454.9,
+    "east_km": 10.329,
+    "raster_cost": 43552.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1863.5,
+    "complementary_relation_m": 2163.9,
+    "score": 609016.9
+  },
+  {
+    "overlap_m": 1456.8,
+    "east_km": 10.148,
+    "raster_cost": 41995.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2174.9,
+    "complementary_relation_m": 2301.7,
+    "score": 610144.4
+  },
+  {
+    "overlap_m": 1456.8,
+    "east_km": 10.148,
+    "raster_cost": 41995.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2174.9,
+    "complementary_relation_m": 2301.7,
+    "score": 610144.4
+  },
+  {
+    "overlap_m": 1456.8,
+    "east_km": 10.148,
+    "raster_cost": 41995.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2174.9,
+    "complementary_relation_m": 2301.7,
+    "score": 610144.4
+  },
+  {
+    "overlap_m": 1456.8,
+    "east_km": 10.235,
+    "raster_cost": 43110.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1968.4,
+    "complementary_relation_m": 2301.7,
+    "score": 606755.1
+  },
+  {
+    "overlap_m": 1456.8,
+    "east_km": 10.235,
+    "raster_cost": 43110.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1968.4,
+    "complementary_relation_m": 2301.7,
+    "score": 606755.1
+  },
+  {
+    "overlap_m": 1458.1,
+    "east_km": 9.629,
+    "raster_cost": 41498.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 612659.9
+  },
+  {
+    "overlap_m": 1458.1,
+    "east_km": 9.629,
+    "raster_cost": 41498.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 612659.9
+  },
+  {
+    "overlap_m": 1458.1,
+    "east_km": 9.629,
+    "raster_cost": 41498.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 612659.9
+  },
+  {
+    "overlap_m": 1458.1,
+    "east_km": 9.629,
+    "raster_cost": 41498.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 612659.9
+  },
+  {
+    "overlap_m": 1458.1,
+    "east_km": 9.716,
+    "raster_cost": 42612.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 609270.6
+  },
+  {
+    "overlap_m": 1458.1,
+    "east_km": 9.716,
+    "raster_cost": 42612.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 609270.6
+  },
+  {
+    "overlap_m": 1458.1,
+    "east_km": 9.716,
+    "raster_cost": 42612.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 609270.6
+  },
+  {
+    "overlap_m": 1458.1,
+    "east_km": 9.716,
+    "raster_cost": 42612.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 609270.6
+  },
+  {
+    "overlap_m": 1462.0,
+    "east_km": 9.909,
+    "raster_cost": 41984.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2086.7,
+    "complementary_relation_m": 2163.9,
+    "score": 614763.2
+  },
+  {
+    "overlap_m": 1462.0,
+    "east_km": 9.995,
+    "raster_cost": 43099.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1880.2,
+    "complementary_relation_m": 2163.9,
+    "score": 611373.9
+  },
+  {
+    "overlap_m": 1467.1,
+    "east_km": 10.193,
+    "raster_cost": 42386.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2070.1,
+    "complementary_relation_m": 2163.9,
+    "score": 617228.4
+  },
+  {
+    "overlap_m": 1467.1,
+    "east_km": 10.28,
+    "raster_cost": 43500.9,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1863.5,
+    "complementary_relation_m": 2163.9,
+    "score": 613839.1
+  },
+  {
+    "overlap_m": 1469.0,
+    "east_km": 10.148,
+    "raster_cost": 41996.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2174.9,
+    "complementary_relation_m": 2301.7,
+    "score": 615018.7
+  },
+  {
+    "overlap_m": 1469.0,
+    "east_km": 10.148,
+    "raster_cost": 41996.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2174.9,
+    "complementary_relation_m": 2301.7,
+    "score": 615018.7
+  },
+  {
+    "overlap_m": 1469.0,
+    "east_km": 10.148,
+    "raster_cost": 41996.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2174.9,
+    "complementary_relation_m": 2301.7,
+    "score": 615018.7
+  },
+  {
+    "overlap_m": 1469.0,
+    "east_km": 10.235,
+    "raster_cost": 43111.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1968.4,
+    "complementary_relation_m": 2301.7,
+    "score": 611629.4
+  },
+  {
+    "overlap_m": 1469.0,
+    "east_km": 10.235,
+    "raster_cost": 43111.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1968.4,
+    "complementary_relation_m": 2301.7,
+    "score": 611629.4
+  },
+  {
+    "overlap_m": 1470.4,
+    "east_km": 10.205,
+    "raster_cost": 42916.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2118.3,
+    "complementary_relation_m": 2163.9,
+    "score": 619016.0
+  },
+  {
+    "overlap_m": 1470.4,
+    "east_km": 10.292,
+    "raster_cost": 44031.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1911.8,
+    "complementary_relation_m": 2163.9,
+    "score": 615626.7
+  },
+  {
+    "overlap_m": 1470.8,
+    "east_km": 9.72,
+    "raster_cost": 41867.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 618140.5
+  },
+  {
+    "overlap_m": 1470.8,
+    "east_km": 9.72,
+    "raster_cost": 41867.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 618140.5
+  },
+  {
+    "overlap_m": 1470.8,
+    "east_km": 9.72,
+    "raster_cost": 41867.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 618140.5
+  },
+  {
+    "overlap_m": 1470.8,
+    "east_km": 9.807,
+    "raster_cost": 42981.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 614751.2
+  },
+  {
+    "overlap_m": 1470.8,
+    "east_km": 9.807,
+    "raster_cost": 42981.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 614751.2
+  },
+  {
+    "overlap_m": 1470.8,
+    "east_km": 9.807,
+    "raster_cost": 42981.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 614751.2
+  },
+  {
+    "overlap_m": 1471.1,
+    "east_km": 9.721,
+    "raster_cost": 41865.2,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 618271.1
+  },
+  {
+    "overlap_m": 1471.1,
+    "east_km": 9.721,
+    "raster_cost": 41865.2,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 618271.1
+  },
+  {
+    "overlap_m": 1471.1,
+    "east_km": 9.721,
+    "raster_cost": 41865.2,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2163.9,
+    "score": 618271.1
+  },
+  {
+    "overlap_m": 1471.1,
+    "east_km": 9.808,
+    "raster_cost": 42979.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 614881.8
+  },
+  {
+    "overlap_m": 1471.1,
+    "east_km": 9.808,
+    "raster_cost": 42979.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 614881.8
+  },
+  {
+    "overlap_m": 1471.1,
+    "east_km": 9.808,
+    "raster_cost": 42979.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2163.9,
+    "score": 614881.8
+  },
+  {
+    "overlap_m": 1480.6,
+    "east_km": 10.056,
+    "raster_cost": 41627.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2183.2,
+    "complementary_relation_m": 2301.7,
+    "score": 619278.3
+  },
+  {
+    "overlap_m": 1480.6,
+    "east_km": 10.056,
+    "raster_cost": 41627.7,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2183.2,
+    "complementary_relation_m": 2301.7,
+    "score": 619278.3
+  },
+  {
+    "overlap_m": 1480.6,
+    "east_km": 10.143,
+    "raster_cost": 42742.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1976.7,
+    "complementary_relation_m": 2301.7,
+    "score": 615889.0
+  },
+  {
+    "overlap_m": 1480.9,
+    "east_km": 9.559,
+    "raster_cost": 41619.2,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 621966.4
+  },
+  {
+    "overlap_m": 1480.9,
+    "east_km": 9.559,
+    "raster_cost": 41619.2,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 621966.4
+  },
+  {
+    "overlap_m": 1480.9,
+    "east_km": 9.559,
+    "raster_cost": 41619.2,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 621966.4
+  },
+  {
+    "overlap_m": 1480.9,
+    "east_km": 9.559,
+    "raster_cost": 41619.2,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 621966.4
+  },
+  {
+    "overlap_m": 1480.9,
+    "east_km": 9.559,
+    "raster_cost": 41619.2,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 621966.4
+  },
+  {
+    "overlap_m": 1480.9,
+    "east_km": 9.559,
+    "raster_cost": 41619.2,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2078.4,
+    "complementary_relation_m": 2163.9,
+    "score": 621966.4
+  },
+  {
+    "overlap_m": 1480.9,
+    "east_km": 9.646,
+    "raster_cost": 42733.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 618577.2
+  },
+  {
+    "overlap_m": 1480.9,
+    "east_km": 9.646,
+    "raster_cost": 42733.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 618577.2
+  },
+  {
+    "overlap_m": 1480.9,
+    "east_km": 9.646,
+    "raster_cost": 42733.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 618577.2
+  },
+  {
+    "overlap_m": 1480.9,
+    "east_km": 9.646,
+    "raster_cost": 42733.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 618577.2
+  },
+  {
+    "overlap_m": 1480.9,
+    "east_km": 9.646,
+    "raster_cost": 42733.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 618577.2
+  },
+  {
+    "overlap_m": 1480.9,
+    "east_km": 9.646,
+    "raster_cost": 42733.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1871.9,
+    "complementary_relation_m": 2163.9,
+    "score": 618577.2
+  },
+  {
+    "overlap_m": 1481.2,
+    "east_km": 10.197,
+    "raster_cost": 42047.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2174.9,
+    "complementary_relation_m": 2301.7,
+    "score": 619936.7
+  },
+  {
+    "overlap_m": 1481.2,
+    "east_km": 10.197,
+    "raster_cost": 42047.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2174.9,
+    "complementary_relation_m": 2301.7,
+    "score": 619936.7
+  },
+  {
+    "overlap_m": 1481.2,
+    "east_km": 10.284,
+    "raster_cost": 43162.2,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1968.4,
+    "complementary_relation_m": 2301.7,
+    "score": 616547.4
+  },
+  {
+    "overlap_m": 1482.5,
+    "east_km": 10.205,
+    "raster_cost": 42917.5,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2118.3,
+    "complementary_relation_m": 2163.9,
+    "score": 623890.3
+  },
+  {
+    "overlap_m": 1482.5,
+    "east_km": 10.291,
+    "raster_cost": 44032.0,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1911.8,
+    "complementary_relation_m": 2163.9,
+    "score": 620501.0
+  },
+  {
+    "overlap_m": 1492.0,
+    "east_km": 9.836,
+    "raster_cost": 42032.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2301.7,
+    "score": 624312.7
+  },
+  {
+    "overlap_m": 1492.0,
+    "east_km": 9.836,
+    "raster_cost": 42032.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2301.7,
+    "score": 624312.7
+  },
+  {
+    "overlap_m": 1492.0,
+    "east_km": 9.836,
+    "raster_cost": 42032.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2301.7,
+    "score": 624312.7
+  },
+  {
+    "overlap_m": 1492.0,
+    "east_km": 9.836,
+    "raster_cost": 42032.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2126.6,
+    "complementary_relation_m": 2301.7,
+    "score": 624312.7
+  },
+  {
+    "overlap_m": 1492.0,
+    "east_km": 9.923,
+    "raster_cost": 43147.3,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2301.7,
+    "score": 620923.4
+  },
+  {
+    "overlap_m": 1492.0,
+    "east_km": 9.923,
+    "raster_cost": 43147.3,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2301.7,
+    "score": 620923.4
+  },
+  {
+    "overlap_m": 1492.0,
+    "east_km": 9.923,
+    "raster_cost": 43147.3,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2301.7,
+    "score": 620923.4
+  },
+  {
+    "overlap_m": 1492.0,
+    "east_km": 9.923,
+    "raster_cost": 43147.3,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1920.1,
+    "complementary_relation_m": 2301.7,
+    "score": 620923.4
+  },
+  {
+    "overlap_m": 1492.8,
+    "east_km": 10.056,
+    "raster_cost": 41628.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2183.2,
+    "complementary_relation_m": 2301.7,
+    "score": 624152.6
+  },
+  {
+    "overlap_m": 1492.8,
+    "east_km": 10.056,
+    "raster_cost": 41628.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2183.2,
+    "complementary_relation_m": 2301.7,
+    "score": 624152.6
+  },
+  {
+    "overlap_m": 1492.8,
+    "east_km": 10.143,
+    "raster_cost": 42743.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1976.7,
+    "complementary_relation_m": 2301.7,
+    "score": 620763.3
+  },
+  {
+    "overlap_m": 1493.7,
+    "east_km": 10.197,
+    "raster_cost": 42046.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2174.9,
+    "complementary_relation_m": 2301.7,
+    "score": 624941.6
+  },
+  {
+    "overlap_m": 1493.7,
+    "east_km": 10.197,
+    "raster_cost": 42046.8,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2174.9,
+    "complementary_relation_m": 2301.7,
+    "score": 624941.6
+  },
+  {
+    "overlap_m": 1493.7,
+    "east_km": 10.284,
+    "raster_cost": 43161.2,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1968.4,
+    "complementary_relation_m": 2301.7,
+    "score": 621552.3
+  },
+  {
+    "overlap_m": 1494.6,
+    "east_km": 9.628,
+    "raster_cost": 41499.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 627274.5
+  },
+  {
+    "overlap_m": 1494.6,
+    "east_km": 9.628,
+    "raster_cost": 41499.1,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 627274.5
+  },
+  {
+    "overlap_m": 1494.6,
+    "east_km": 9.715,
+    "raster_cost": 42613.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 623885.2
+  },
+  {
+    "overlap_m": 1494.6,
+    "east_km": 9.715,
+    "raster_cost": 42613.5,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 623885.2
+  },
+  {
+    "overlap_m": 1494.7,
+    "east_km": 10.254,
+    "raster_cost": 42968.6,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2118.3,
+    "complementary_relation_m": 2163.9,
+    "score": 628808.4
+  },
+  {
+    "overlap_m": 1494.7,
+    "east_km": 10.34,
+    "raster_cost": 44083.1,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1911.8,
+    "complementary_relation_m": 2163.9,
+    "score": 625419.1
+  },
+  {
+    "overlap_m": 1494.9,
+    "east_km": 9.629,
+    "raster_cost": 41497.2,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 627405.1
+  },
+  {
+    "overlap_m": 1494.9,
+    "east_km": 9.629,
+    "raster_cost": 41497.2,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2134.9,
+    "complementary_relation_m": 2163.9,
+    "score": 627405.1
+  },
+  {
+    "overlap_m": 1494.9,
+    "east_km": 9.716,
+    "raster_cost": 42611.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 624015.8
+  },
+  {
+    "overlap_m": 1494.9,
+    "east_km": 9.716,
+    "raster_cost": 42611.6,
+    "far_penalty": 24313.0,
+    "relation_bonus": 1928.4,
+    "complementary_relation_m": 2163.9,
+    "score": 624015.8
+  },
+  {
+    "overlap_m": 1498.9,
+    "east_km": 9.85,
+    "raster_cost": 42024.4,
+    "far_penalty": 29023.2,
+    "relation_bonus": 2171.9,
+    "complementary_relation_m": 2802.7,
+    "score": 617988.1
+  }
+]

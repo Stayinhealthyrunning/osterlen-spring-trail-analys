@@ -1,7 +1,31 @@
-Traceback (most recent call last):
-  File "/home/runner/work/osterlen-spring-trail-analys/osterlen-spring-trail-analys/tools/reconstruct_trail14_osm.py", line 116, in <module>
-    main()
-  File "/home/runner/work/osterlen-spring-trail-analys/osterlen-spring-trail-analys/tools/reconstruct_trail14_osm.py", line 93, in main
-    if best is None: raise RuntimeError(f"No eastern Hallamolla loop candidate; paths={len(first)}")
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-RuntimeError: No eastern Hallamolla loop candidate; paths=120
+{
+  "distance_km": 15.439,
+  "participant_2023_reference_km": 13.67,
+  "western_trail5_km": 5.481,
+  "eastern_loop_km": 9.958,
+  "route_points": 527,
+  "candidate_paths_considered": 120,
+  "shared_out_return_m": 1190.9,
+  "median_edge_to_raster_m": 36.0,
+  "p95_edge_to_raster_m": 120.2,
+  "start_finish_gap_m": 32.1,
+  "western_eastern_join_m": 32.1,
+  "hallamolla_control_m": 14.3,
+  "osm_way_count": 42,
+  "highway_types": [
+    "path",
+    "residential",
+    "service",
+    "tertiary",
+    "track",
+    "unclassified"
+  ],
+  "far_raster_way_ids": [
+    1462383784,
+    694131274
+  ],
+  "max_edge_to_raster_m": 185.1,
+  "map_registration_median_px": 0.240141823887825,
+  "map_registration_p95_px": 1.5684036016464233,
+  "candidate_pair_count": 5027
+}
