@@ -4,26 +4,9 @@
   "status": "data_frozen_curated_and_engine_handoff_ready",
   "scope": {
     "analysis_start_year": 2018,
-    "held_years": [
-      2018,
-      2019,
-      2022,
-      2023,
-      2024,
-      2025,
-      2026
-    ],
-    "cancelled_years": [
-      2020,
-      2021
-    ],
-    "race_families": [
-      "ultra60",
-      "duo60",
-      "trail22",
-      "trail14",
-      "trail5"
-    ],
+    "held_years": [2018, 2019, 2022, 2023, 2024, 2025, 2026],
+    "cancelled_years": [2020, 2021],
+    "race_families": ["ultra60", "duo60", "trail22", "trail14", "trail5"],
     "race_year_instances": 34
   },
   "primary_engine_input": "data/derived/ost-analysis-2018-2026.sqlite.gz",
@@ -98,70 +81,21 @@
   },
   "verified_timing_schema": {
     "ultra60": {
-      "2018": [
-        "Stenshuvud km 14",
-        "Bengtemölla km 32",
-        "Vantalängan km 52",
-        "Finish"
-      ],
-      "2019": [
-        "Stenshuvud km 14",
-        "Bengtemölla km 32",
-        "Vantalängan km 52",
-        "Finish Km 60+"
-      ],
-      "2022": [
-        "32 km",
-        "Bengtemölla",
-        "62 km"
-      ],
-      "2023": [
-        "32 km",
-        "Bengtemölla",
-        "62 km"
-      ],
-      "2024": [
-        "34 km",
-        "60 km"
-      ],
-      "2025": [
-        "34 km",
-        "60 km"
-      ],
-      "2026": [
-        "34 km",
-        "60 km"
-      ]
+      "2018": ["Stenshuvud km 14", "Bengtemölla km 32", "Vantalängan km 52", "Finish"],
+      "2019": ["Stenshuvud km 14", "Bengtemölla km 32", "Vantalängan km 52", "Finish Km 60+"],
+      "2022": ["32 km", "Bengtemölla", "62 km"],
+      "2023": ["32 km", "Bengtemölla", "62 km"],
+      "2024": ["34 km", "60 km"],
+      "2025": ["34 km", "60 km"],
+      "2026": ["34 km", "60 km"]
     },
     "duo60": {
-      "2019": [
-        "Stenshuvud km 14",
-        "Bengtemölla km 32",
-        "Vantalängan km 52",
-        "Finish Km 60+"
-      ],
-      "2022": [
-        "32 km",
-        "Bengtemölla",
-        "62 km"
-      ],
-      "2023": [
-        "32 km",
-        "Bengtemölla",
-        "62 km/Finish"
-      ],
-      "2024": [
-        "34 km",
-        "60 km"
-      ],
-      "2025": [
-        "34 km",
-        "60 km"
-      ],
-      "2026": [
-        "34 km",
-        "60 km"
-      ],
+      "2019": ["Stenshuvud km 14", "Bengtemölla km 32", "Vantalängan km 52", "Finish Km 60+"],
+      "2022": ["32 km", "Bengtemölla", "62 km"],
+      "2023": ["32 km", "Bengtemölla", "62 km/Finish"],
+      "2024": ["34 km", "60 km"],
+      "2025": ["34 km", "60 km"],
+      "2026": ["34 km", "60 km"],
       "member_policy": "Published member rows are retained with source_sequence. leg_no remains null until source evidence validates leg ordering."
     },
     "shorter_families": "No intermediate split table was found in the complete imported public result details; finish/result analysis remains available without synthetic splits."
