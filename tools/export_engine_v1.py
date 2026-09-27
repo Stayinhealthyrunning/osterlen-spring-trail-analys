@@ -102,7 +102,7 @@ def main():
                 "assets":assets}
         race_rows=con.execute("SELECT * FROM races ORDER BY year,race_family").fetchall()
         for rr in race_rows:
-            r=dict(rr);rk=r["race_key"];rd=ready[rk];sem=competition(r["race_type"],r["race_family"]);caps=capabilities(rd)\n            assignment=assignments.get((int(r["year"]),r["race_family"]),{})\n            course_version=assignment.get("course_version_id") if assignment.get("course_version_id") is not None else r["course_version"]
+            r=dict(rr);rk=r["race_key"];rd=ready[rk];sem=competition(r["race_type"],r["race_family"]);caps=capabilities(rd)\n            assignment=assignments.get((int(r["year"]),r["race_family"]),{})\n            course_version=assignment.get("course_version_id") if assignment else r["course_version"]
             records=[record(x) for x in con.execute("SELECT * FROM results WHERE race_key=? ORDER BY COALESCE(overall_place,999999),name_as_published",(rk,))]
             item={"race_key":rk,"event_key":r["event_key"],"race_family":r["race_family"],"year":r["year"],"race_date":r["race_date"],
                   "course_version":course_version,"data_status":"available","section":r["source_race_name"] or r["race_family"],
