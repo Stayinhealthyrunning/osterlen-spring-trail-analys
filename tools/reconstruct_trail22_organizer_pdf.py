@@ -119,7 +119,7 @@ def snap_ordered(projected, tree, red, z):
     # Simplify only after snapping to the organizer line. A sub-pixel epsilon
     # removes anti-aliasing jitter while retaining real bends in the mapped line.
     arr=np.asarray(pixel_path,dtype=np.float32).reshape(-1,1,2)
-    simp=cv2.approxPolyDP(arr,0.65,False).reshape(-1,2)
+    simp=cv2.approxPolyDP(arr,1.5,False).reshape(-1,2)
 
     out=[]
     for px,py in simp:
@@ -179,7 +179,7 @@ def main():
       "organizer_pdf_descent_m":480,
       "distance_km":round(total/1000,3),
       "point_count":len(snapped),
-      "post_snap_simplification_px":0.65,
+      "post_snap_simplification_px":1.5,
       "trace_registration_role":"transient registration/order only; no Trace coordinate array persisted",
       "trace_registration_id":69864,
       "registration_pixel_distance":{
