@@ -62,19 +62,23 @@
     "satellite_or_imagery": []
   },
   "network": {
-    "preferred_adapter": "osm_xml",
+    "preferred_adapter": "raster_native_primary_osm_secondary",
     "bbox_wgs84": null
   },
   "version_questions": [
-    "Current organizer map filename/profile retains legacy 13 km labelling.",
-    "2023 participant explicitly reports 13.67 km for the race segment.",
-    "Do not assume every historical 13 km and modern 14 km edition is identical."
+    "Current organizer map filename/profile retains legacy 13 km labelling while the event is marketed as approximately 14 km.",
+    "Raster-native reconstruction yields 13.664 km and is independently validated by the 2023 participant watch distance of 13.67 km without using that distance as geometry input.",
+    "Do not assume every historical 13 km and modern 14 km edition is identical; exact 2026 equivalence remains unconfirmed."
   ],
   "output": {
-    "course_version_id": "trail14-current-reference",
-    "allow_candidate_gpx": false,
+    "course_version_id": "trail14-raster-reference-v1",
+    "allow_candidate_gpx": true,
     "require_provenance_sidecar": true,
-    "geometry_status": "unresolved",
-    "blocker": "Authentic organizer/participant geometry or stronger vector evidence required before publication."
+    "geometry_status": "validated_reconstruction_reference",
+    "publication_scope": "derived_reference_geometry_only",
+    "route_asset": "routes/ost/trail14-current-reference/route.geojson",
+    "gpx_asset": "routes/ost/trail14-current-reference/route.gpx",
+    "exact_target_year_geometry_confirmed": false,
+    "blocker": "Exact 2026 equivalence and direction still require a current organizer/participant race-day GPS source; this does not block use of the provenance-labelled reconstructed reference geometry."
   }
 }
