@@ -39,7 +39,7 @@ def feature_status(row,feature,version_id):
     if feature in {'results_database','finish_statistics','cross_year_participation'}:
         return ('source_ready' if has_class else 'blocked_pending_source',
                 'Sportstiming class discovered.' if has_class else 'No Sportstiming class observed.')
-    if feature=='runner_profile':
+    if feature in {'runner_profile','runner_or_team_profile'}:
         if detail=='participant_detail_observed': return 'source_ready','Participant detail page observed.'
         if detail=='team_or_relay_adapter_needed': return 'adapter_needed','Relay/team result format needs a dedicated adapter.'
         return 'blocked_pending_source','Participant/team detail page not observed.'
@@ -96,6 +96,7 @@ def main():
     OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 
     lines=['# Analysis capability matrix','',
+           '> **Legacy discovery matrix:** Detta är ett källinventeringsartefakt, inte runtime-gate. Använd `reports/engine-readiness.md` för det stora bygget.','',
            '`source_ready` betyder att källdata som krävs har observerats. Det betyder inte att slutlig import eller UI redan är färdig.','',
            '| År | Familj | Resultat | Profil | Splits | Replay | Kartduell | Bana+pacing | Banversionsrekord |',
            '|---:|---|---|---|---|---|---|---|---|']
@@ -108,7 +109,7 @@ def main():
         f=row['features']
         vals=[
           short.get(f['results_database']['status'],f['results_database']['status']),
-          short.get(f['runner_profile']['status'],f['runner_profile']['status']),
+          short.get(f.get('runner_or_team_profile',f.get('runner_profile',{'status':'unknown'}))['status'],f.get('runner_or_team_profile',f.get('runner_profile',{'status':'unknown'}))['status']),
           short.get(f['split_analysis']['status'],f['split_analysis']['status']),
           short.get(f['runner_replay']['status'],f['runner_replay']['status']),
           short.get(f['map_duel']['status'],f['map_duel']['status']),
