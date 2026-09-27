@@ -201,7 +201,7 @@
   "engine_readiness": {
     "races_with_split_analysis": 13,
     "races_with_replay_and_map_data": 6,
-    "races_with_course_version": 19,
+    "races_with_course_version": 21,
     "rule": "Feature availability is derived from the curated database; route-dependent features require a local usable route asset."
   },
   "deferred_until_next_phase_or_new_evidence": [
