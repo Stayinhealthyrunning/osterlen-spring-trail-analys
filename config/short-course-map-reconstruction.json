@@ -1,11 +1,12 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-26",
-  "purpose": "No-account/open-map reconstruction inputs for ÖST short-course geometry. This configuration retrieves candidate geometry; it does not declare a canonical race route.",
+  "updated": "2026-09-27",
+  "purpose": "Reproducible reconstruction inputs and validation status for ÖST short-course geometry. Derived routes remain explicitly distinct from organizer/participant GPX.",
   "evidence_hierarchy": [
     "organizer_raster_route_choice",
-    "openstreetmap_candidate_vector_geometry",
     "participant_race_day_gps_validation",
+    "official_local_trail_topology",
+    "openstreetmap_candidate_vector_geometry",
     "suunto_public_heatmap_corroboration",
     "organic_maps_visual_qa",
     "satellite_visual_qa"
@@ -61,6 +62,35 @@
     "openstreetmap": "candidate_vector_geometry",
     "organic_maps": "human_visual_qa_same_osm_family",
     "suunto_heatmap": "independent_aggregate_activity_corroboration_not_race_specific",
-    "google_satellite": "tertiary_visual_alignment_only"
+    "google_satellite": "tertiary_visual_alignment_only",
+    "organizer_raster": "primary_route_choice_and_topology",
+    "official_local_trail": "independent_topology_and_named_corridor_control",
+    "participant_gps": "independent_race_day_validation_when_identity_is_verified"
+  },
+  "trail14": {
+    "source_raster": "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/13km-bana-h-jdkurvan-3_orig.jpg",
+    "raster_status": "georeferenceable_organizer_map_legacy_13km_label_on_current_14km_page",
+    "cross_registration": "reports/organizer-map-registration.json",
+    "skeleton_report": "reports/trail14-route-skeleton.json",
+    "reconstruction_script": "tools/reconstruct_trail14_raster.py",
+    "method": "largest raster-skeleton route cycle plus the two western start/finish arms attached at the leftmost principal-cycle junction; RDP simplification at organizer line-width scale",
+    "simplification_epsilon_px": 4,
+    "mean_route_component_width_px": 3.592,
+    "route_asset": "routes/ost/trail14-current-reference/route.geojson",
+    "gpx_asset": "routes/ost/trail14-current-reference/route.gpx",
+    "provenance": "routes/ost/trail14-current-reference/provenance.json",
+    "qa": "routes/ost/trail14-current-reference/qa.json",
+    "derived_distance_km": 13.664,
+    "independent_validation": {
+      "year": 2023,
+      "participant": "Anna Karin Delborg",
+      "watch_distance_km": 13.67,
+      "watch_time": "1:31:44",
+      "official_net_time": "1:31:44",
+      "distance_used_as_geometry_input": false,
+      "delta_to_reconstruction_m": 5.9
+    },
+    "status": "validated_reconstruction_2023_family_reference",
+    "exact_2026_version_confirmed": false
   }
 }
