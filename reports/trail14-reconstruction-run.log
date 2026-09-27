@@ -1,6 +1,48 @@
-Traceback (most recent call last):
-  File "/home/runner/work/osterlen-spring-trail-analys/osterlen-spring-trail-analys/tools/reconstruct_trail14_osm.py", line 131, in <module>
-    main()
-  File "/home/runner/work/osterlen-spring-trail-analys/osterlen-spring-trail-analys/tools/reconstruct_trail14_osm.py", line 108, in main
-    raise RuntimeError(f"No eastern Hallamolla loop candidate; paths={len(first)}; unrestricted_pairs={len(diag)}")
-RuntimeError: No eastern Hallamolla loop candidate; paths=120; unrestricted_pairs=7140
+{
+  "geometry_status": "validated_organizer_raster_reconstruction",
+  "distance_km": 13.084,
+  "organizer_map_label_km": 13.0,
+  "current_marketing_distance_km": 14.0,
+  "participant_2023_watch_km": 13.67,
+  "participant_difference_m": -585.7,
+  "source_pixels": 1836,
+  "route_vertices": 186,
+  "rdp_epsilon_px": 1.0,
+  "topology": {
+    "western_before_km": 3.651,
+    "shared_connector_one_way_km": 1.362,
+    "eastern_cycle_km": 6.643,
+    "western_finish_km": 0.066,
+    "connector_traversals": 2
+  },
+  "sweref99tm_controls": {
+    "southwest": {
+      "E": 432733.0,
+      "N": 6173751.0
+    },
+    "northeast": {
+      "E": 437465.0,
+      "N": 6176791.0
+    },
+    "east_control_correction_m": -500.0
+  },
+  "map_registration_median_px": 0.240141823887825,
+  "map_registration_p95_px": 1.5684036016464233,
+  "trail5_calibration_translation_m": [
+    9.3,
+    111.9
+  ],
+  "start_finish_gap_m": 35.7,
+  "hallamolla_control_m": 9.6,
+  "hallamolla_route_km": 8.451,
+  "hallamolla_remaining_km": 4.634,
+  "direction_evidence": "participant_2023_hallamolla_remaining_distance_plus_organizer_arrows",
+  "organizer_raster_centreline_primary": true,
+  "osm_role": "corroboration_only",
+  "osm_vertex_distance_m": {
+    "median": 17.6,
+    "p95": 44.6,
+    "max": 66.3
+  },
+  "legacy_map_assignment_warning": "Validated geometry for the organizer's legacy 13 km raster; not proof that every historical 13 km or current 14 km edition is identical."
+}
