@@ -68,7 +68,7 @@ def main():
    if not 7000<=east<=9200: continue
    # A loop may share the short Christinehof/Alunbruket approach, but must not
    # collapse into an out-and-back along most of the river corridor.
-   if overlap>1200: continue
+   if overlap>450: continue
    # Prefer two genuinely different corridors, raster fit and named hiking
    # relations. Distance is a broad plausibility term, not a target fit.
    rel_bonus=sum(G[u][v]["length"]*(0.35 if G[u][v]["skane"] or G[u][v]["back"] else 0) for P in (A[0],B[0]) for u,v in zip(P,P[1:]))
@@ -83,7 +83,10 @@ def main():
     return sk,ba
    ask,aba=rel_lengths(A[0]); bsk,bba=rel_lengths(B[0])
    complementary=max(min(ask,bba),min(aba,bsk))
-   score=A[2]+B[2]+overlap*120+abs(east-8300)*12+far_pen-rel_bonus-complementary*18
+   # Strongly prefer a loop rather than a disguised out-and-back. The organizer
+   # raster is a loop, so shared geometry beyond a short approach is a topology
+   # contradiction, not merely a soft distance penalty.
+   score=A[2]+B[2]+overlap*400+far_pen-rel_bonus-complementary*18
    if best is None or score<best[0]: best=(score,A,B,overlap,east)
  if best is None: raise RuntimeError(f"No eastern Hallamolla loop candidate; paths={len(first)}")
  _,A,B,overlap,east_total=best; east_route=A[0]+list(reversed(B[0]))[1:]
