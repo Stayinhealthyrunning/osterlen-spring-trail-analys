@@ -74,6 +74,7 @@ def main():
  approaches=candidates(s,an,"neutral",20); skpaths=candidates(an,h,"skane",60)
  backpaths=candidates(h,an,"back",60); returns=candidates(an,s,"neutral",20)
  pareto=[]; best=None
+ diagnostics={"approaches":len(approaches),"skpaths":len(skpaths),"backpaths":len(backpaths),"returns":len(returns),"skane_max_m":max([z["skane"] for _,z in skpaths],default=0),"back_max_m":max([z["back"] for _,z in backpaths],default=0),"approach_min_m":min([z["length"] for _,z in approaches],default=None),"skane_min_m":min([z["length"] for _,z in skpaths],default=None),"back_min_m":min([z["length"] for _,z in backpaths],default=None),"return_min_m":min([z["length"] for _,z in returns],default=None)}
  for A,sa in approaches[:8]:
   for B,sb in skpaths[:25]:
    for C,sc in backpaths[:25]:
@@ -89,7 +90,7 @@ def main():
      pareto.append(row)
      if best is None or score<best[0]: best=(score,east_route,overlap,east,row)
  if best is None:
-  Path(a.qa).with_name("candidate-frontier.json").write_text(json.dumps(sorted(pareto,key=lambda x:x["score"])[:1000],indent=2)+"\n")
+  Path(a.qa).with_name("candidate-frontier.json").write_text(json.dumps({"diagnostics":diagnostics,"candidates":sorted(pareto,key=lambda x:x["score"])[:1000]},indent=2)+"\n")
   raise RuntimeError("No Skaneleden-out/Backaleden-return candidate satisfies topology gates")
  _,east_route,overlap,east_total,bestrow=best
  # Western loop comes from the independently QA-passed Trail5 reconstruction; final serialized calibration run.
