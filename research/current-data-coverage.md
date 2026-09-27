@@ -1,6 +1,6 @@
 # Aktuell datatäckning
 
-Senast uppdaterad: 2026-09-10
+Senast uppdaterad: 2026-09-27
 
 ## Officiella resultat
 
@@ -20,9 +20,9 @@ Representativa individuella resultatsidor visar split-tabell för Ultra 60 samtl
 | 2025 | 34 km; 60 km |
 | 2026 | 34 km; 60 km |
 
-För Trail 21/22, Trail 13/14 och Trail 5 har ingen split-tabell observerats i nuvarande representativa prover. Detta ska tolkas konservativt: det bevisar schemafrånvaro i de testade deltagardetaljerna, inte universell frånvaro av all möjlig extra timingdata.
+Den fulla frysta importen bekräftar att Trail 21/22, Trail 13/14 och Trail 5 inte har någon importerad intermediate split-tabell i de publika resultatsidorna. De behandlas därför som finish/resultat-lopp i analysmotorn; splits eller replay får inte syntetiseras.
 
-Duo-resultatklassen finns 2019 och 2022–2026, men individuella resultatlänkar kan inte användas på samma sätt. En team/relay-adapter krävs.
+Duo-resultatklassen finns 2019 och 2022–2026. Teamdetaljer, verkliga team-splits och publicerade medlemsrader är nu parserade i den kuraterade databasen: 300 lag, 741 team-splitpassager och 599 medlemsrader. `source_sequence` bevaras; `leg_no` lämnas NULL tills uttrycklig källevidens kan verifiera etapptilldelningen.
 
 ## Bengtemölla 2022–2023
 
@@ -67,14 +67,18 @@ Aktuell course-versionmodell:
 
 ### Trail 13/14 och Trail 5
 
-År-för-år course versions är fortfarande öppna eftersom en komplett verifierad historisk geometri inte har säkrats.
+- Trail 13/14: den tidigare 14,249 km rasterrekonstruktionen är superseded efter visuell kontroll. Nuvarande arbetsreferens är ett **13,472 km Hallamölla-splice-recept** baserat på verifierad Trail 21/22-geometri 2022–2024. Ingen redistributerbar lokal ruttfil betraktas som auktoritativ; äkta deltagar-/arrangörs-GPX är fortfarande målet.
+- Trail 5: 2026 har en rekonstruerad referens på 5,481 km med oberoende full rasterkontroll på 5,545 km. Historisk exakt identitet är inte verifierad.
 
 ## Vad som återstår av datainsamlingen
 
-- Produktionsimport av samtliga Sportstiming-resultat och deltagardetaljer med råsnapshot/proveniens.
-- Duo lag-/medlemsadapter.
-- Fler lokala/redistributerbara historiska ruttfiler där karta/replay kräver det.
-- Historisk geometri för Trail 13/14 och Trail 5.
-- Årsspecifik proveniens för 2018 Trail 21/22.
+Den fulla Sportstiming-importen, råarkivet, auditkedjan och Duo-adaptern är **klara**. Återstående källarbete är icke-blockerande förbättringar:
 
-Dessa punkter är uppskjutna till implementationsfasen och blockerar inte att ÖST-grunden nu lämnas vilande.
+- autentisk deltagar-/arrangörs-GPX för Trail 13/14,
+- autentisk Trail 5-GPX och historisk kortbanegometri,
+- fler lokala/redistributerbara historiska ruttfiler där karta/replay kräver dem,
+- årsspecifik proveniens för Trail 21/22 2018,
+- uttryckligt källbevis för Duo-medlem → etapp,
+- fysisk verifiering av Bengtemölla-timingens 2022/2023-matplacering.
+
+Det stora bygget ska börja från den redan frysta och kuraterade databasen, inte med ny resultatskrapning.
