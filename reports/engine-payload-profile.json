@@ -1,0 +1,1691 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-27T17:24:14.357211+00:00",
+  "engine_contract": "loppanalys-engine-1.0",
+  "payload_sha256": "13f4a1470e3c305047c226187364376faf553ded9e3efa73e4f5ce423b0d62e8",
+  "whole_payload": {
+    "raw_bytes": 5417501,
+    "gzip_bytes": 450548,
+    "gzip_ratio": 0.0832
+  },
+  "bootstrap_candidate": {
+    "raw_bytes": 27041,
+    "gzip_bytes": 1980,
+    "gzip_ratio": 0.0732
+  },
+  "top_level": {
+    "engine_contract": {
+      "raw_bytes": 23,
+      "gzip_bytes": 43,
+      "gzip_ratio": 1.8696
+    },
+    "event": {
+      "raw_bytes": 125,
+      "gzip_bytes": 117,
+      "gzip_ratio": 0.936
+    },
+    "race_catalog": {
+      "raw_bytes": 23441,
+      "gzip_bytes": 1266,
+      "gzip_ratio": 0.054
+    },
+    "courses": {
+      "raw_bytes": 3222,
+      "gzip_bytes": 625,
+      "gzip_ratio": 0.194
+    },
+    "races": {
+      "raw_bytes": 3867071,
+      "gzip_bytes": 346900,
+      "gzip_ratio": 0.0897
+    },
+    "checkpoints": {
+      "raw_bytes": 18183,
+      "gzip_bytes": 648,
+      "gzip_ratio": 0.0356
+    },
+    "splits": {
+      "raw_bytes": 1293943,
+      "gzip_bytes": 85086,
+      "gzip_ratio": 0.0658
+    },
+    "teams": {
+      "raw_bytes": 36734,
+      "gzip_bytes": 4889,
+      "gzip_ratio": 0.1331
+    },
+    "team_members": {
+      "raw_bytes": 174470,
+      "gzip_bytes": 9748,
+      "gzip_ratio": 0.0559
+    },
+    "sources": {
+      "raw_bytes": 163,
+      "gzip_bytes": 140,
+      "gzip_ratio": 0.8589
+    }
+  },
+  "counts": {
+    "races": 34,
+    "records": 9871,
+    "splits": 6123,
+    "teams": 300,
+    "team_members": 599,
+    "courses": 10
+  },
+  "race_profiles": [
+    {
+      "race_key": "ost-2018-trail14",
+      "year": 2018,
+      "race_family": "trail14",
+      "records": 372,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 148484,
+        "gzip_bytes": 11891,
+        "gzip_ratio": 0.0801
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 148525,
+        "gzip_bytes": 11914,
+        "gzip_ratio": 0.0802
+      }
+    },
+    {
+      "race_key": "ost-2018-trail22",
+      "year": 2018,
+      "race_family": "trail22",
+      "records": 465,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 195846,
+        "gzip_bytes": 14793,
+        "gzip_ratio": 0.0755
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 195887,
+        "gzip_bytes": 14815,
+        "gzip_ratio": 0.0756
+      }
+    },
+    {
+      "race_key": "ost-2018-trail5",
+      "year": 2018,
+      "race_family": "trail5",
+      "records": 126,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 50619,
+        "gzip_bytes": 4625,
+        "gzip_ratio": 0.0914
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 50660,
+        "gzip_bytes": 4645,
+        "gzip_ratio": 0.0917
+      }
+    },
+    {
+      "race_key": "ost-2018-ultra60",
+      "year": 2018,
+      "race_family": "ultra60",
+      "records": 150,
+      "splits": 540,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 64834,
+        "gzip_bytes": 5574,
+        "gzip_ratio": 0.086
+      },
+      "splits_payload": {
+        "raw_bytes": 117562,
+        "gzip_bytes": 6621,
+        "gzip_ratio": 0.0563
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 182435,
+        "gzip_bytes": 12453,
+        "gzip_ratio": 0.0683
+      }
+    },
+    {
+      "race_key": "ost-2019-duo60",
+      "year": 2019,
+      "race_family": "duo60",
+      "records": 64,
+      "splits": 199,
+      "teams": 64,
+      "team_members": 129,
+      "core": {
+        "raw_bytes": 24991,
+        "gzip_bytes": 2525,
+        "gzip_ratio": 0.101
+      },
+      "splits_payload": {
+        "raw_bytes": 42870,
+        "gzip_bytes": 2574,
+        "gzip_ratio": 0.06
+      },
+      "team_payload": {
+        "raw_bytes": 45109,
+        "gzip_bytes": 3508,
+        "gzip_ratio": 0.0778
+      },
+      "selected_race_total": {
+        "raw_bytes": 112979,
+        "gzip_bytes": 8526,
+        "gzip_ratio": 0.0755
+      }
+    },
+    {
+      "race_key": "ost-2019-trail14",
+      "year": 2019,
+      "race_family": "trail14",
+      "records": 434,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 172733,
+        "gzip_bytes": 13465,
+        "gzip_ratio": 0.078
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 172774,
+        "gzip_bytes": 13487,
+        "gzip_ratio": 0.0781
+      }
+    },
+    {
+      "race_key": "ost-2019-trail22",
+      "year": 2019,
+      "race_family": "trail22",
+      "records": 469,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 187884,
+        "gzip_bytes": 14998,
+        "gzip_ratio": 0.0798
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 187925,
+        "gzip_bytes": 15021,
+        "gzip_ratio": 0.0799
+      }
+    },
+    {
+      "race_key": "ost-2019-trail5",
+      "year": 2019,
+      "race_family": "trail5",
+      "records": 100,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 40332,
+        "gzip_bytes": 3826,
+        "gzip_ratio": 0.0949
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 40373,
+        "gzip_bytes": 3846,
+        "gzip_ratio": 0.0953
+      }
+    },
+    {
+      "race_key": "ost-2019-ultra60",
+      "year": 2019,
+      "race_family": "ultra60",
+      "records": 278,
+      "splits": 824,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 118792,
+        "gzip_bytes": 9563,
+        "gzip_ratio": 0.0805
+      },
+      "splits_payload": {
+        "raw_bytes": 180954,
+        "gzip_bytes": 10594,
+        "gzip_ratio": 0.0585
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 299785,
+        "gzip_bytes": 20601,
+        "gzip_ratio": 0.0687
+      }
+    },
+    {
+      "race_key": "ost-2022-duo60",
+      "year": 2022,
+      "race_family": "duo60",
+      "records": 43,
+      "splits": 129,
+      "teams": 43,
+      "team_members": 86,
+      "core": {
+        "raw_bytes": 17222,
+        "gzip_bytes": 1976,
+        "gzip_ratio": 0.1147
+      },
+      "splits_payload": {
+        "raw_bytes": 27195,
+        "gzip_bytes": 1627,
+        "gzip_ratio": 0.0598
+      },
+      "team_payload": {
+        "raw_bytes": 30357,
+        "gzip_bytes": 2532,
+        "gzip_ratio": 0.0834
+      },
+      "selected_race_total": {
+        "raw_bytes": 74783,
+        "gzip_bytes": 5910,
+        "gzip_ratio": 0.079
+      }
+    },
+    {
+      "race_key": "ost-2022-trail14",
+      "year": 2022,
+      "race_family": "trail14",
+      "records": 249,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 96358,
+        "gzip_bytes": 8890,
+        "gzip_ratio": 0.0923
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 96399,
+        "gzip_bytes": 8908,
+        "gzip_ratio": 0.0924
+      }
+    },
+    {
+      "race_key": "ost-2022-trail22",
+      "year": 2022,
+      "race_family": "trail22",
+      "records": 432,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 166770,
+        "gzip_bytes": 14849,
+        "gzip_ratio": 0.089
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 166811,
+        "gzip_bytes": 14871,
+        "gzip_ratio": 0.0891
+      }
+    },
+    {
+      "race_key": "ost-2022-trail5",
+      "year": 2022,
+      "race_family": "trail5",
+      "records": 85,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 33469,
+        "gzip_bytes": 3514,
+        "gzip_ratio": 0.105
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 33510,
+        "gzip_bytes": 3535,
+        "gzip_ratio": 0.1055
+      }
+    },
+    {
+      "race_key": "ost-2022-ultra60",
+      "year": 2022,
+      "race_family": "ultra60",
+      "records": 318,
+      "splits": 884,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 123642,
+        "gzip_bytes": 11732,
+        "gzip_ratio": 0.0949
+      },
+      "splits_payload": {
+        "raw_bytes": 187760,
+        "gzip_bytes": 12877,
+        "gzip_ratio": 0.0686
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 311441,
+        "gzip_bytes": 25189,
+        "gzip_ratio": 0.0809
+      }
+    },
+    {
+      "race_key": "ost-2023-duo60",
+      "year": 2023,
+      "race_family": "duo60",
+      "records": 48,
+      "splits": 142,
+      "teams": 48,
+      "team_members": 96,
+      "core": {
+        "raw_bytes": 18987,
+        "gzip_bytes": 2089,
+        "gzip_ratio": 0.11
+      },
+      "splits_payload": {
+        "raw_bytes": 29946,
+        "gzip_bytes": 1864,
+        "gzip_ratio": 0.0622
+      },
+      "team_payload": {
+        "raw_bytes": 33781,
+        "gzip_bytes": 2721,
+        "gzip_ratio": 0.0805
+      },
+      "selected_race_total": {
+        "raw_bytes": 82723,
+        "gzip_bytes": 6493,
+        "gzip_ratio": 0.0785
+      }
+    },
+    {
+      "race_key": "ost-2023-trail14",
+      "year": 2023,
+      "race_family": "trail14",
+      "records": 306,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 121191,
+        "gzip_bytes": 9700,
+        "gzip_ratio": 0.08
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 121232,
+        "gzip_bytes": 9720,
+        "gzip_ratio": 0.0802
+      }
+    },
+    {
+      "race_key": "ost-2023-trail22",
+      "year": 2023,
+      "race_family": "trail22",
+      "records": 484,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 192417,
+        "gzip_bytes": 15529,
+        "gzip_ratio": 0.0807
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 192458,
+        "gzip_bytes": 15550,
+        "gzip_ratio": 0.0808
+      }
+    },
+    {
+      "race_key": "ost-2023-trail5",
+      "year": 2023,
+      "race_family": "trail5",
+      "records": 185,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 72990,
+        "gzip_bytes": 5861,
+        "gzip_ratio": 0.0803
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 73031,
+        "gzip_bytes": 5880,
+        "gzip_ratio": 0.0805
+      }
+    },
+    {
+      "race_key": "ost-2023-ultra60",
+      "year": 2023,
+      "race_family": "ultra60",
+      "records": 330,
+      "splits": 942,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 129047,
+        "gzip_bytes": 11370,
+        "gzip_ratio": 0.0881
+      },
+      "splits_payload": {
+        "raw_bytes": 199986,
+        "gzip_bytes": 13827,
+        "gzip_ratio": 0.0691
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 329072,
+        "gzip_bytes": 25801,
+        "gzip_ratio": 0.0784
+      }
+    },
+    {
+      "race_key": "ost-2024-duo60",
+      "year": 2024,
+      "race_family": "duo60",
+      "records": 46,
+      "splits": 88,
+      "teams": 46,
+      "team_members": 90,
+      "core": {
+        "raw_bytes": 18029,
+        "gzip_bytes": 1970,
+        "gzip_ratio": 0.1093
+      },
+      "splits_payload": {
+        "raw_bytes": 18036,
+        "gzip_bytes": 1319,
+        "gzip_ratio": 0.0731
+      },
+      "team_payload": {
+        "raw_bytes": 31835,
+        "gzip_bytes": 2591,
+        "gzip_ratio": 0.0814
+      },
+      "selected_race_total": {
+        "raw_bytes": 67909,
+        "gzip_bytes": 5498,
+        "gzip_ratio": 0.081
+      }
+    },
+    {
+      "race_key": "ost-2024-trail14",
+      "year": 2024,
+      "race_family": "trail14",
+      "records": 417,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 160884,
+        "gzip_bytes": 16784,
+        "gzip_ratio": 0.1043
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 160925,
+        "gzip_bytes": 16808,
+        "gzip_ratio": 0.1044
+      }
+    },
+    {
+      "race_key": "ost-2024-trail22",
+      "year": 2024,
+      "race_family": "trail22",
+      "records": 506,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 195580,
+        "gzip_bytes": 20852,
+        "gzip_ratio": 0.1066
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 195621,
+        "gzip_bytes": 20874,
+        "gzip_ratio": 0.1067
+      }
+    },
+    {
+      "race_key": "ost-2024-trail5",
+      "year": 2024,
+      "race_family": "trail5",
+      "records": 223,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 85731,
+        "gzip_bytes": 8794,
+        "gzip_ratio": 0.1026
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 85772,
+        "gzip_bytes": 8816,
+        "gzip_ratio": 0.1028
+      }
+    },
+    {
+      "race_key": "ost-2024-ultra60",
+      "year": 2024,
+      "race_family": "ultra60",
+      "records": 420,
+      "splits": 692,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 163557,
+        "gzip_bytes": 17282,
+        "gzip_ratio": 0.1057
+      },
+      "splits_payload": {
+        "raw_bytes": 142812,
+        "gzip_bytes": 10875,
+        "gzip_ratio": 0.0761
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 306408,
+        "gzip_bytes": 28652,
+        "gzip_ratio": 0.0935
+      }
+    },
+    {
+      "race_key": "ost-2025-duo60",
+      "year": 2025,
+      "race_family": "duo60",
+      "records": 47,
+      "splits": 87,
+      "teams": 47,
+      "team_members": 94,
+      "core": {
+        "raw_bytes": 18398,
+        "gzip_bytes": 2012,
+        "gzip_ratio": 0.1094
+      },
+      "splits_payload": {
+        "raw_bytes": 17829,
+        "gzip_bytes": 1288,
+        "gzip_ratio": 0.0722
+      },
+      "team_payload": {
+        "raw_bytes": 33613,
+        "gzip_bytes": 3262,
+        "gzip_ratio": 0.097
+      },
+      "selected_race_total": {
+        "raw_bytes": 69849,
+        "gzip_bytes": 6177,
+        "gzip_ratio": 0.0884
+      }
+    },
+    {
+      "race_key": "ost-2025-trail14",
+      "year": 2025,
+      "race_family": "trail14",
+      "records": 403,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 155229,
+        "gzip_bytes": 15822,
+        "gzip_ratio": 0.1019
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 155270,
+        "gzip_bytes": 15845,
+        "gzip_ratio": 0.102
+      }
+    },
+    {
+      "race_key": "ost-2025-trail22",
+      "year": 2025,
+      "race_family": "trail22",
+      "records": 520,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 201423,
+        "gzip_bytes": 21177,
+        "gzip_ratio": 0.1051
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 201464,
+        "gzip_bytes": 21198,
+        "gzip_ratio": 0.1052
+      }
+    },
+    {
+      "race_key": "ost-2025-trail5",
+      "year": 2025,
+      "race_family": "trail5",
+      "records": 235,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 90637,
+        "gzip_bytes": 9403,
+        "gzip_ratio": 0.1037
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 90678,
+        "gzip_bytes": 9423,
+        "gzip_ratio": 0.1039
+      }
+    },
+    {
+      "race_key": "ost-2025-ultra60",
+      "year": 2025,
+      "race_family": "ultra60",
+      "records": 400,
+      "splits": 757,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 155724,
+        "gzip_bytes": 16773,
+        "gzip_ratio": 0.1077
+      },
+      "splits_payload": {
+        "raw_bytes": 156155,
+        "gzip_bytes": 11826,
+        "gzip_ratio": 0.0757
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 311918,
+        "gzip_bytes": 29138,
+        "gzip_ratio": 0.0934
+      }
+    },
+    {
+      "race_key": "ost-2026-duo60",
+      "year": 2026,
+      "race_family": "duo60",
+      "records": 52,
+      "splits": 96,
+      "teams": 52,
+      "team_members": 104,
+      "core": {
+        "raw_bytes": 20267,
+        "gzip_bytes": 2145,
+        "gzip_ratio": 0.1058
+      },
+      "splits_payload": {
+        "raw_bytes": 19671,
+        "gzip_bytes": 1388,
+        "gzip_ratio": 0.0706
+      },
+      "team_payload": {
+        "raw_bytes": 36675,
+        "gzip_bytes": 2937,
+        "gzip_ratio": 0.0801
+      },
+      "selected_race_total": {
+        "raw_bytes": 76622,
+        "gzip_bytes": 6104,
+        "gzip_ratio": 0.0797
+      }
+    },
+    {
+      "race_key": "ost-2026-trail14",
+      "year": 2026,
+      "race_family": "trail14",
+      "records": 456,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 175376,
+        "gzip_bytes": 17640,
+        "gzip_ratio": 0.1006
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 175417,
+        "gzip_bytes": 17662,
+        "gzip_ratio": 0.1007
+      }
+    },
+    {
+      "race_key": "ost-2026-trail22",
+      "year": 2026,
+      "race_family": "trail22",
+      "records": 504,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 195085,
+        "gzip_bytes": 20043,
+        "gzip_ratio": 0.1027
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 195126,
+        "gzip_bytes": 20066,
+        "gzip_ratio": 0.1028
+      }
+    },
+    {
+      "race_key": "ost-2026-trail5",
+      "year": 2026,
+      "race_family": "trail5",
+      "records": 295,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 113659,
+        "gzip_bytes": 11678,
+        "gzip_ratio": 0.1027
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 113700,
+        "gzip_bytes": 11698,
+        "gzip_ratio": 0.1029
+      }
+    },
+    {
+      "race_key": "ost-2026-ultra60",
+      "year": 2026,
+      "race_family": "ultra60",
+      "records": 409,
+      "splits": 743,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 158559,
+        "gzip_bytes": 16555,
+        "gzip_ratio": 0.1044
+      },
+      "splits_payload": {
+        "raw_bytes": 153179,
+        "gzip_bytes": 11466,
+        "gzip_ratio": 0.0749
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 311777,
+        "gzip_bytes": 28595,
+        "gzip_ratio": 0.0917
+      }
+    }
+  ],
+  "largest_selected_races_raw": [
+    {
+      "race_key": "ost-2023-ultra60",
+      "year": 2023,
+      "race_family": "ultra60",
+      "records": 330,
+      "splits": 942,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 129047,
+        "gzip_bytes": 11370,
+        "gzip_ratio": 0.0881
+      },
+      "splits_payload": {
+        "raw_bytes": 199986,
+        "gzip_bytes": 13827,
+        "gzip_ratio": 0.0691
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 329072,
+        "gzip_bytes": 25801,
+        "gzip_ratio": 0.0784
+      }
+    },
+    {
+      "race_key": "ost-2025-ultra60",
+      "year": 2025,
+      "race_family": "ultra60",
+      "records": 400,
+      "splits": 757,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 155724,
+        "gzip_bytes": 16773,
+        "gzip_ratio": 0.1077
+      },
+      "splits_payload": {
+        "raw_bytes": 156155,
+        "gzip_bytes": 11826,
+        "gzip_ratio": 0.0757
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 311918,
+        "gzip_bytes": 29138,
+        "gzip_ratio": 0.0934
+      }
+    },
+    {
+      "race_key": "ost-2026-ultra60",
+      "year": 2026,
+      "race_family": "ultra60",
+      "records": 409,
+      "splits": 743,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 158559,
+        "gzip_bytes": 16555,
+        "gzip_ratio": 0.1044
+      },
+      "splits_payload": {
+        "raw_bytes": 153179,
+        "gzip_bytes": 11466,
+        "gzip_ratio": 0.0749
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 311777,
+        "gzip_bytes": 28595,
+        "gzip_ratio": 0.0917
+      }
+    },
+    {
+      "race_key": "ost-2022-ultra60",
+      "year": 2022,
+      "race_family": "ultra60",
+      "records": 318,
+      "splits": 884,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 123642,
+        "gzip_bytes": 11732,
+        "gzip_ratio": 0.0949
+      },
+      "splits_payload": {
+        "raw_bytes": 187760,
+        "gzip_bytes": 12877,
+        "gzip_ratio": 0.0686
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 311441,
+        "gzip_bytes": 25189,
+        "gzip_ratio": 0.0809
+      }
+    },
+    {
+      "race_key": "ost-2024-ultra60",
+      "year": 2024,
+      "race_family": "ultra60",
+      "records": 420,
+      "splits": 692,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 163557,
+        "gzip_bytes": 17282,
+        "gzip_ratio": 0.1057
+      },
+      "splits_payload": {
+        "raw_bytes": 142812,
+        "gzip_bytes": 10875,
+        "gzip_ratio": 0.0761
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 306408,
+        "gzip_bytes": 28652,
+        "gzip_ratio": 0.0935
+      }
+    },
+    {
+      "race_key": "ost-2019-ultra60",
+      "year": 2019,
+      "race_family": "ultra60",
+      "records": 278,
+      "splits": 824,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 118792,
+        "gzip_bytes": 9563,
+        "gzip_ratio": 0.0805
+      },
+      "splits_payload": {
+        "raw_bytes": 180954,
+        "gzip_bytes": 10594,
+        "gzip_ratio": 0.0585
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 299785,
+        "gzip_bytes": 20601,
+        "gzip_ratio": 0.0687
+      }
+    },
+    {
+      "race_key": "ost-2025-trail22",
+      "year": 2025,
+      "race_family": "trail22",
+      "records": 520,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 201423,
+        "gzip_bytes": 21177,
+        "gzip_ratio": 0.1051
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 201464,
+        "gzip_bytes": 21198,
+        "gzip_ratio": 0.1052
+      }
+    },
+    {
+      "race_key": "ost-2018-trail22",
+      "year": 2018,
+      "race_family": "trail22",
+      "records": 465,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 195846,
+        "gzip_bytes": 14793,
+        "gzip_ratio": 0.0755
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 195887,
+        "gzip_bytes": 14815,
+        "gzip_ratio": 0.0756
+      }
+    },
+    {
+      "race_key": "ost-2024-trail22",
+      "year": 2024,
+      "race_family": "trail22",
+      "records": 506,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 195580,
+        "gzip_bytes": 20852,
+        "gzip_ratio": 0.1066
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 195621,
+        "gzip_bytes": 20874,
+        "gzip_ratio": 0.1067
+      }
+    },
+    {
+      "race_key": "ost-2026-trail22",
+      "year": 2026,
+      "race_family": "trail22",
+      "records": 504,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 195085,
+        "gzip_bytes": 20043,
+        "gzip_ratio": 0.1027
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 195126,
+        "gzip_bytes": 20066,
+        "gzip_ratio": 0.1028
+      }
+    }
+  ],
+  "largest_selected_races_gzip": [
+    {
+      "race_key": "ost-2025-ultra60",
+      "year": 2025,
+      "race_family": "ultra60",
+      "records": 400,
+      "splits": 757,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 155724,
+        "gzip_bytes": 16773,
+        "gzip_ratio": 0.1077
+      },
+      "splits_payload": {
+        "raw_bytes": 156155,
+        "gzip_bytes": 11826,
+        "gzip_ratio": 0.0757
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 311918,
+        "gzip_bytes": 29138,
+        "gzip_ratio": 0.0934
+      }
+    },
+    {
+      "race_key": "ost-2024-ultra60",
+      "year": 2024,
+      "race_family": "ultra60",
+      "records": 420,
+      "splits": 692,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 163557,
+        "gzip_bytes": 17282,
+        "gzip_ratio": 0.1057
+      },
+      "splits_payload": {
+        "raw_bytes": 142812,
+        "gzip_bytes": 10875,
+        "gzip_ratio": 0.0761
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 306408,
+        "gzip_bytes": 28652,
+        "gzip_ratio": 0.0935
+      }
+    },
+    {
+      "race_key": "ost-2026-ultra60",
+      "year": 2026,
+      "race_family": "ultra60",
+      "records": 409,
+      "splits": 743,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 158559,
+        "gzip_bytes": 16555,
+        "gzip_ratio": 0.1044
+      },
+      "splits_payload": {
+        "raw_bytes": 153179,
+        "gzip_bytes": 11466,
+        "gzip_ratio": 0.0749
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 311777,
+        "gzip_bytes": 28595,
+        "gzip_ratio": 0.0917
+      }
+    },
+    {
+      "race_key": "ost-2023-ultra60",
+      "year": 2023,
+      "race_family": "ultra60",
+      "records": 330,
+      "splits": 942,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 129047,
+        "gzip_bytes": 11370,
+        "gzip_ratio": 0.0881
+      },
+      "splits_payload": {
+        "raw_bytes": 199986,
+        "gzip_bytes": 13827,
+        "gzip_ratio": 0.0691
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 329072,
+        "gzip_bytes": 25801,
+        "gzip_ratio": 0.0784
+      }
+    },
+    {
+      "race_key": "ost-2022-ultra60",
+      "year": 2022,
+      "race_family": "ultra60",
+      "records": 318,
+      "splits": 884,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 123642,
+        "gzip_bytes": 11732,
+        "gzip_ratio": 0.0949
+      },
+      "splits_payload": {
+        "raw_bytes": 187760,
+        "gzip_bytes": 12877,
+        "gzip_ratio": 0.0686
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 311441,
+        "gzip_bytes": 25189,
+        "gzip_ratio": 0.0809
+      }
+    },
+    {
+      "race_key": "ost-2025-trail22",
+      "year": 2025,
+      "race_family": "trail22",
+      "records": 520,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 201423,
+        "gzip_bytes": 21177,
+        "gzip_ratio": 0.1051
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 201464,
+        "gzip_bytes": 21198,
+        "gzip_ratio": 0.1052
+      }
+    },
+    {
+      "race_key": "ost-2024-trail22",
+      "year": 2024,
+      "race_family": "trail22",
+      "records": 506,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 195580,
+        "gzip_bytes": 20852,
+        "gzip_ratio": 0.1066
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 195621,
+        "gzip_bytes": 20874,
+        "gzip_ratio": 0.1067
+      }
+    },
+    {
+      "race_key": "ost-2019-ultra60",
+      "year": 2019,
+      "race_family": "ultra60",
+      "records": 278,
+      "splits": 824,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 118792,
+        "gzip_bytes": 9563,
+        "gzip_ratio": 0.0805
+      },
+      "splits_payload": {
+        "raw_bytes": 180954,
+        "gzip_bytes": 10594,
+        "gzip_ratio": 0.0585
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 299785,
+        "gzip_bytes": 20601,
+        "gzip_ratio": 0.0687
+      }
+    },
+    {
+      "race_key": "ost-2026-trail22",
+      "year": 2026,
+      "race_family": "trail22",
+      "records": 504,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 195085,
+        "gzip_bytes": 20043,
+        "gzip_ratio": 0.1027
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 195126,
+        "gzip_bytes": 20066,
+        "gzip_ratio": 0.1028
+      }
+    },
+    {
+      "race_key": "ost-2026-trail14",
+      "year": 2026,
+      "race_family": "trail14",
+      "records": 456,
+      "splits": 0,
+      "teams": 0,
+      "team_members": 0,
+      "core": {
+        "raw_bytes": 175376,
+        "gzip_bytes": 17640,
+        "gzip_ratio": 0.1006
+      },
+      "splits_payload": {
+        "raw_bytes": 2,
+        "gzip_bytes": 22,
+        "gzip_ratio": 11.0
+      },
+      "team_payload": {
+        "raw_bytes": 30,
+        "gzip_bytes": 43,
+        "gzip_ratio": 1.4333
+      },
+      "selected_race_total": {
+        "raw_bytes": 175417,
+        "gzip_bytes": 17662,
+        "gzip_ratio": 0.1007
+      }
+    }
+  ],
+  "family_summary": {
+    "duo60": {
+      "race_instances": 6,
+      "records": 300,
+      "splits": 741,
+      "selected_race_raw_bytes_sum": 484865,
+      "selected_race_gzip_bytes_sum": 38708
+    },
+    "trail14": {
+      "race_instances": 7,
+      "records": 2637,
+      "splits": 0,
+      "selected_race_raw_bytes_sum": 1030542,
+      "selected_race_gzip_bytes_sum": 94344
+    },
+    "trail22": {
+      "race_instances": 7,
+      "records": 3380,
+      "splits": 0,
+      "selected_race_raw_bytes_sum": 1335292,
+      "selected_race_gzip_bytes_sum": 122395
+    },
+    "trail5": {
+      "race_instances": 7,
+      "records": 1249,
+      "splits": 0,
+      "selected_race_raw_bytes_sum": 487724,
+      "selected_race_gzip_bytes_sum": 47843
+    },
+    "ultra60": {
+      "race_instances": 7,
+      "records": 2305,
+      "splits": 5382,
+      "selected_race_raw_bytes_sum": 2052836,
+      "selected_race_gzip_bytes_sum": 170429
+    }
+  },
+  "delivery_observations": {
+    "single_payload_initial_load_gzip_bytes": 450548,
+    "bootstrap_plus_largest_selected_race_gzip_bytes": 31118,
+    "bootstrap_plus_median_selected_race_gzip_bytes": 15467,
+    "route_and_elevation_assets_excluded_from_engine_payload": true
+  }
+}

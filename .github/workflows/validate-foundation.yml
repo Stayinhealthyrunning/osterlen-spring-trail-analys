@@ -19,6 +19,9 @@ on:
       - 'tools/audit_repository_hygiene.py'
       - 'tools/export_engine_v1.py'
       - 'tools/build_engine_readiness_report.py'
+      - 'tools/export_engine_web_bundle.py'
+      - 'tools/validate_frontend_performance_budget.py'
+      - 'config/frontend-performance-budget.json'
       - 'tests/**'
       - 'route_engine/**'
       - '.github/workflows/build-source-reports.yml'
@@ -52,3 +55,5 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_*.py'
       - name: Validate final prebuild readiness
         run: python tools/validate_prebuild_readiness.py
+      - name: Validate frontend data performance budget
+        run: python tools/validate_frontend_performance_budget.py
