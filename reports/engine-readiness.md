@@ -1,6 +1,6 @@
 # ÖST – engine readiness
 
-Feature flags are derived from the curated archive. Route-dependent features require a local usable route asset; relay leg assignment remains disabled until leg ordering is source-verified. Exact age and age-category coverage are reported separately.
+Feature flags are derived from the curated archive plus authoritative course-version assignments in `config/course-versions.json`. Route-dependent features require a local usable route asset; relay leg assignment remains disabled until leg ordering is source-verified. Exact age and age-category coverage are reported separately.
 
 | År | Familj | Resultat | DNF | ? | Splitpassager | Splitlöpare/lag | Bana | Lokal rutt | Splitanalys | Replay/kartduell |
 |---:|---|---:|---:|---:|---:|---:|---|---|---|---|
@@ -34,9 +34,9 @@ Feature flags are derived from the curated archive. Route-dependent features req
 | 2025 | trail5 | 235 | 0 | 0 | 0 | 0 | — | nej | nej | nej |
 | 2025 | ultra60 | 400 | 29 | 0 | 757 | 387 | ultra60-2025-2026 | ja | ja | ja |
 | 2026 | duo60 | 52 | 5 | 0 | 96 | 50 | ultra60-2025-2026 | ja | ja | ja |
-| 2026 | trail14 | 456 | 3 | 0 | 0 | 0 | — | nej | nej | nej |
+| 2026 | trail14 | 456 | 3 | 0 | 0 | 0 | trail14-current-reference | nej | nej | nej |
 | 2026 | trail22 | 504 | 9 | 0 | 0 | 0 | trail22-2025-2026 | nej | nej | nej |
-| 2026 | trail5 | 295 | 0 | 0 | 0 | 0 | — | nej | nej | nej |
+| 2026 | trail5 | 295 | 0 | 0 | 0 | 0 | trail5-current-reference | ja | nej | nej |
 | 2026 | ultra60 | 409 | 42 | 0 | 743 | 381 | ultra60-2025-2026 | ja | ja | ja |
 
 ## Fälttäckning
@@ -85,7 +85,7 @@ Feature flags are derived from the curated archive. Route-dependent features req
 - `split_passages`: **6,123**
 - `races_with_split_analysis`: **13**
 - `races_with_replay_ready_data`: **6**
-- `races_with_course_version`: **19**
+- `races_with_course_version`: **21**
 - `results_with_bib`: **9,871**
 - `results_with_gender`: **5,858**
 - `results_with_exact_age`: **4,775**
