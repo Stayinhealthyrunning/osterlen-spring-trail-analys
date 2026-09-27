@@ -58,6 +58,10 @@
     "research/final-prebuild-checklist-2026-09-27.md"
   ],
   "key_reports": [
+    "reports/engine-readiness.md",
+    "reports/engine-readiness.json",
+    "reports/curated-analysis-db-summary.json",
+    "reports/result-archive-audit.json",
     "reports/source-coverage.md",
     "reports/analysis-capabilities.md",
     "reports/bengtemolla-double-timing.md",
@@ -84,10 +88,13 @@
     "tools/build_analysis_capabilities.py",
     "tools/build_race_catalog.py",
     "tools/build_enriched_race_catalog.py",
-    "tools/validate_foundation.py"
+    "tools/validate_foundation.py",
+    "tools/build_engine_readiness_report.py",
+    "tools/export_engine_v1.py",
+    "tools/validate_prebuild_readiness.py"
   ],
   "validation": {
-    "command": "python tools/validate_foundation.py",
+    "command": "python tools/validate_foundation.py && python tools/validate_prebuild_readiness.py",
     "workflow": ".github/workflows/validate-foundation.yml"
   },
   "frontend": {
@@ -95,11 +102,11 @@
     "entry": "docs/index.html"
   },
   "deferred": [
-    "Production-grade complete Sportstiming result/detail raw snapshot importer",
-    "Duo team/member adapter",
     "Redistributable/local historical route assets required for map/replay",
     "2018 Trail 21/22 year-specific provenance",
     "Generic Gotaleden core integration",
-    "Authentic participant/organizer GPX for Trail 13/14 and historical exact short-course geometry"
+    "Authentic participant/organizer GPX for Trail 13/14 and historical exact short-course geometry",
+    "Duo member-to-leg assignment until explicit source evidence exists",
+    "Cross-year repeat-runner identity linkage with confidence/evidence"
   ]
 }
