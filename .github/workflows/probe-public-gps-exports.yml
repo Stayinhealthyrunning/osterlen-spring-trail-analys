@@ -1,0 +1,33 @@
+name: Probe public GPS exports
+on:
+  push:
+    branches: [research/public-gps-export-probe]
+    paths:
+      - '.github/workflows/probe-public-gps-exports.yml'
+      - 'tools/probe_public_gps_exports.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/public-gps-export-probe
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe exports
+        run: python tools/probe_public_gps_exports.py
+      - name: Commit public files and diagnostics
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/public-gps-probe data/source/gpx/public-probes 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Record public GPS export probe"
+            git push origin HEAD:research/public-gps-export-probe
+          fi
