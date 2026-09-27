@@ -223,10 +223,13 @@
       "year": 2026,
       "source_type": "organizer_map_image",
       "url": "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/13km-bana-h-jdkurvan-3_orig.jpg",
-      "status": "verified_current_organizer_page_embed_legacy_13km_label",
+      "status": "verified_current_organizer_georeferenceable_map_with_validated_reconstruction_reference",
       "course_version": null,
       "redistribution": "reference_only",
-      "note": "Current 14 km Race-PM embeds this organizer-hosted legacy 13 km route/elevation image. Verified route-shape evidence only; not replay-grade GPX and not proof of exact year-to-year identity."
+      "note": "Current 14 km Race-PM embeds this organizer-hosted legacy 13 km route/elevation image. Raster-native reconstruction now yields 13.664 km and passes CI QA; it is a derived reference geometry, not organizer GPX, and exact 2026 equivalence remains unconfirmed.",
+      "derived_route_asset": "routes/ost/trail14-current-reference/route.geojson",
+      "derived_route_distance_km": 13.664,
+      "derived_route_status": "validated_reconstruction_2023_family_reference"
     },
     {
       "family": "trail5",
@@ -248,7 +251,10 @@
       "course_version": null,
       "redistribution": "organizer_direct_download",
       "note": "Organizer-hosted current course map for the Christinehof 5 km loop. Archive original raster for reproducible pixel-level georeferencing; any digitized line remains derived geometry, not organizer GPX.",
-      "target_path": "data/source/maps/ost-trail5-current-organizer-map.jpg"
+      "target_path": "data/source/maps/ost-trail5-current-organizer-map.jpg",
+      "derived_route_asset": "routes/ost/trail5-current-reference/route.geojson",
+      "derived_route_distance_km": 5.481,
+      "derived_route_status": "validated_reconstruction_reference"
     }
   ]
 }
