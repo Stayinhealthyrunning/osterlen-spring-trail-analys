@@ -1,6 +1,6 @@
 # Förberedelsestatus
 
-Datum: 2026-09-10  
+Datum: 2026-09-27  
 Status: **DATA FÄRDIG / ENGINE-HANDOFF-READY**
 
 ÖST-repot är nu förberett så långt det är meningsfullt innan den generiska Gotaleden-kärnan är färdig. Full resultatinhämtning, råarkivering, datakvalitetskontroll, kuratering, Duo-normalisering och engine-readiness är genomförda. Kvarvarande punkter kräver antingen den färdigrefaktorerade analysmotorn eller nytt/verifierat källunderlag.
@@ -30,6 +30,9 @@ Status: **DATA FÄRDIG / ENGINE-HANDOFF-READY**
 - Ultra-course versions tilldelade för 2018, 2019, 2022–2023, 2024 och 2025–2026.
 - Trail 21/22-course versions tilldelade för 2019, 2022–2024 och 2025–2026; 2018 hålls oassignad på grund av provenance-mismatch.
 - Arrangörs-GPX lokalt arkiverad för Ultra 2024 och 2025/2026.
+- Trail 5 har QA-passerad lokal referensgeometri direkt från arrangörsraster: **5.003 km**. Ett tidigare kalibreringsfel är löst; kartans tryckta östkoordinat är E 437465, inte E 437965.
+- Trail 13/14 har QA-passerad legacy-13km referensgeometri direkt från sin egen arrangörsraster: **13.084 km**. Hallamölla ligger 9.6 m från linjen och passeras med 4.634 km kvar. Den tidigare 14.948 km-konflikten var en felaktig Trail5-komposit och är undanröjd.
+- Engine 1.0-exporten kan nu bära `route_references` separat från `course_version`, så kortbanekartor kan visas utan att historisk banidentitet fabriceras.
 - Source registry, source coverage, capability policy, analysis-data-contract och engine-adapter finns.
 - `reports/engine-readiness.json` byggs från den kuraterade databasen. Nuvarande läge: 13 race-instansers splitanalys är dataklar, 6 har även den lokala ruttgeometri som krävs för replay/kartduell, och 19 har verifierad course version.
 - GitHub Actions finns för import/audit, kuraterad databas, semantik/status/identitetsprofilering, geometri, source coverage, readiness och foundation validation.
@@ -55,9 +58,9 @@ Läs även:
 ## Verkligt kvarvarande / medvetet uppskjutet
 
 - **Generisk Gotaleden-core-integration:** väntar avsiktligt tills den pågående generiska refaktoreringen är färdig.
-- **Historiska lokala route assets:** äldre Ultra och Trail 21/22 har jämförbarhetsbevis men saknar i flera fall lokalt återanvändningsmässigt lämplig GPX för karta/replay.
-- **Trail 13/14 och Trail 5 course versions:** komplett verifierad historisk geometri saknas.
-- **Trail 21/22 2018:** kandidatspåret är geometriskt starkt kompatibelt med 2019 men metadata anger 2016; formell tilldelning kräver årsspecifik proveniens.
+- **Historiska lokala route assets:** äldre Ultra och Trail 21/22 har verifierad offentlig geometri men saknar i flera fall redistributionsgodkänd lokal GPX. Trace de Trails juridiska information ger inte projektet klar rätt att återpublicera deras koordinatserier, så de hålls som externa geometriereferenser.
+- **Trail 13/14 och Trail 5 årsspecifika course versions:** referensgeometrin är löst, men komplett verifierad år-för-år-identitet saknas. Detta är nu en provenancefråga, inte ett geometriblocker.
+- **Trail 21/22 2018:** kandidatspåret är geometriskt starkt kompatibelt med 2019 och en oberoende 2018-deltagaraktivitet stödjer cirka 22 km, men kandidatens Trace-metadata anger 2016; formell tilldelning kräver fortfarande årsspecifik proveniens.
 - **Duo etappnummer:** medlemmarna är importerade men tillgänglig evidens bevisar inte att medlemsrad 1/2 alltid betyder etapp 1/2.
 - **Cross-year personidentitet:** repeat-runner-funktion ska byggas som ett separat linkage-lager med confidence/evidence; namnlikhet får inte skriva över source-local identity.
 - **Historiska kön/ålder:** 2018, 2019 och 2023 saknar tillräckligt explicit publicerad information i den frysta källan.
