@@ -10,33 +10,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Find second 2023 participant activity
+      - name: Inspect Mathias 2023 EkoPark pass for GPS
         shell: python
         run: |
           import json,re,urllib.request
           from pathlib import Path
           from urllib.parse import urljoin
 
-          url="https://www.jogg.se/Traning/TdBok.aspx?anvid=183005&ar=2023&manad=04"
+          url="https://www.jogg.se/Traning/Pass.aspx?id=23407370"
           req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0","Accept":"text/html,*/*"})
           with urllib.request.urlopen(req,timeout=30) as r:
               html=r.read().decode("utf-8","replace")
-
           links=[]
-          for m in re.finditer(r'href=["\']([^"\']*(?:Pass|GPSPass)\.aspx[^"\']*)["\']',html,re.I):
-              href=urljoin(url,m.group(1))
-              context=re.sub(r'\s+',' ',html[max(0,m.start()-500):m.end()+900])
-              links.append({"href":href,"context":context[:1400]})
-          text=re.sub(r'<[^>]+>',' ',html)
-          text=re.sub(r'\s+',' ',text)
-          keycontexts=[]
-          for term in ["Ekopark","Glädjeknuff","Österlen","16 april","Naturloppet"]:
-              for m in list(re.finditer(term,text,re.I))[:10]:
-                  keycontexts.append({"term":term,"context":text[max(0,m.start()-500):m.end()+900]})
-
+          for m in re.finditer(r'(?:href|src)=["\']([^"\']+)["\']',html,re.I):
+              full=urljoin(url,m.group(1))
+              if any(t in full.lower() for t in ["gpspass","gps","map","route"]):
+                  links.append(full)
+          contexts=[]
+          for term in ["GPSPass","adid","GPS","Karta","coords","Leaflet"]:
+              for m in list(re.finditer(term,html,re.I))[:20]:
+                  contexts.append({"term":term,"context":re.sub(r'\s+',' ',html[max(0,m.start()-300):m.end()+700])[:1000]})
           out=Path("out-jogg"); out.mkdir(exist_ok=True)
-          (out/"mathias-april-2023-links.json").write_text(json.dumps({"url":url,"links":links,"contexts":keycontexts},ensure_ascii=False,indent=2),encoding="utf-8")
+          (out/"mathias-pass-gps-links.json").write_text(json.dumps({
+             "url":url,"bytes":len(html),"links":sorted(set(links)),"contexts":contexts
+          },ensure_ascii=False,indent=2),encoding="utf-8")
       - uses: actions/upload-artifact@v4
         with:
-          name: mathias-april-2023-links
-          path: out-jogg/mathias-april-2023-links.json
+          name: mathias-pass-gps-links
+          path: out-jogg/mathias-pass-gps-links.json
