@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "status": "prebuild_budget",
+  "measured_on": "2026-09-27",
+  "architecture": "bootstrap_plus_selected_race_shards",
+  "measured_reference": {
+    "engine_payload_raw_bytes": 5417501,
+    "engine_payload_gzip_bytes": 450548,
+    "bootstrap_raw_bytes": 27041,
+    "bootstrap_gzip_bytes": 1980,
+    "largest_selected_race_raw_bytes": 329072,
+    "largest_selected_race_gzip_bytes": 29172,
+    "bootstrap_plus_largest_selected_race_gzip_bytes": 31152
+  },
+  "data_budgets": {
+    "bootstrap_max_raw_bytes": 98304,
+    "bootstrap_max_gzip_bytes": 8192,
+    "selected_race_max_raw_bytes": 524288,
+    "selected_race_max_gzip_bytes": 49152,
+    "bootstrap_plus_selected_race_max_gzip_bytes": 65536,
+    "full_engine_payload_sanity_max_gzip_bytes": 786432
+  },
+  "frontend_budgets_provisional": {
+    "initial_html_css_js_max_gzip_bytes": 307200,
+    "initial_code_plus_engine_data_max_gzip_bytes": 393216,
+    "single_lazy_route_or_elevation_bundle_max_gzip_bytes": 307200
+  },
+  "rules": [
+    "Do not use the monolithic Engine 1.0 payload as the normal initial browser download.",
+    "Load bootstrap metadata first and one selected race-edition bundle on demand.",
+    "Keep route, elevation, map and replay assets lazy-loaded and keyed by course_version.",
+    "Do not expose SQLite, raw Sportstiming archives, source reports or research files to the frontend.",
+    "Cross-year views should use small precomputed aggregates or explicit on-demand shards rather than forcing all result records into the initial load.",
+    "Frontend code budgets are provisional until the real browser build exists; data budgets are enforceable immediately."
+  ]
+}
