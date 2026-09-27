@@ -66,15 +66,18 @@
     "bbox_wgs84": null
   },
   "version_questions": [
-    "Current organizer map filename/profile retains legacy 13 km labelling.",
-    "2023 participant explicitly reports 13.67 km for the race segment.",
-    "Do not assume every historical 13 km and modern 14 km edition is identical."
+    "The current organizer page embeds a legacy raster labelled 13 km while marketing the current race as approximately 14 km.",
+    "The organizer-raster geometry is validated as a family/reference line; exact identity of the current 14 km and every historical 13 km edition remains unproven.",
+    "The 2023 participant metadata independently corroborates Hallamölla position/direction and reports 13.67 km, but raw participant GPX is unavailable."
   ],
   "output": {
     "course_version_id": "trail14-current-reference",
-    "allow_candidate_gpx": false,
+    "allow_candidate_gpx": true,
     "require_provenance_sidecar": true,
-    "geometry_status": "unresolved",
-    "blocker": "Authentic organizer/participant geometry or stronger vector evidence required before publication."
+    "geometry_status": "validated_organizer_raster_reference",
+    "route_path": "routes/ost/trail14-current-reference/route.gpx",
+    "reference_distance_km": 13.084,
+    "exact_current_14km_identity_verified": false,
+    "usage": "family/reference map geometry with visible provenance; do not assert exact year identity"
   }
 }
