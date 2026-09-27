@@ -27,10 +27,8 @@ jobs:
           python tools/export_engine_v1.py --output out/ost-engine-v1.json
           gzip -9 -c out/ost-engine-v1.json > out/ost-engine-v1.json.gz
           sha256sum out/ost-engine-v1.json out/ost-engine-v1.json.gz > out/SHA256SUMS.txt
-      - name: Profile payload and build browser delivery shards
-        run: |
-          python tools/profile_engine_payload.py
-          python tools/build_engine_delivery_shards.py --output-dir out/engine-data --report out/engine-delivery-report.json
+      - name: Profile payload
+        run: python tools/profile_engine_payload.py
       - name: Build browser data bundle
         run: python tools/export_engine_web_bundle.py --output-dir out/web-data
       - name: Validate browser data budget
@@ -42,8 +40,6 @@ jobs:
           path: |
             out/ost-engine-v1.json.gz
             out/SHA256SUMS.txt
-            out/engine-data/
-            out/engine-delivery-report.json
             reports/engine-payload-profile.json
             reports/engine-payload-profile.md
             reports/engine-readiness.json
