@@ -90,3 +90,8 @@ Continue opportunistically, without delaying integration:
 - No inferred Duo leg assignment from row order.
 - No inferred cross-year person identity from name equality.
 - Correctly disabled functionality is preferable to invented completeness.
+
+
+## Frontend delivery / performance
+
+Den verkliga Engine 1.0-exporten har profilerats på hela den kuraterade datamängden. Monoliten är **5,417,501 byte rå JSON / 450,548 byte gzip**. En metadata-bootstrap är **27,041 byte rå / 1,980 byte gzip**, och största uppmätta valda race-bundle ligger kring **29 KB gzip**. Därför ska frontenden använda **bootstrap + race-edition-shards**, inte ladda hela Engine-payloaden vid start. Maskinläsbar budget finns i `config/performance-budget.json`, arkitektur i `research/frontend-delivery-architecture.md`, och CI verifierar budgeten via `tools/validate_performance_budget.py`.
