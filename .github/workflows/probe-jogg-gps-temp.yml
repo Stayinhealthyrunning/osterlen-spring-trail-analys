@@ -10,87 +10,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Extract public race GPS geometry
+      - name: Find second 2023 participant activity
         shell: python
         run: |
-          import json,re,urllib.request,math
+          import json,re,urllib.request
           from pathlib import Path
-          from xml.sax.saxutils import escape
+          from urllib.parse import urljoin
 
-          url="https://www.jogg.se/Traning/GPSPass.aspx?adid=10988506"
+          url="https://www.jogg.se/Traning/TdBok.aspx?anvid=183005&ar=2023&manad=04"
           req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0","Accept":"text/html,*/*"})
           with urllib.request.urlopen(req,timeout=30) as r:
               html=r.read().decode("utf-8","replace")
 
-          m=re.search(r'var\s+coords\s*=\s*',html)
-          if not m:
-              raise RuntimeError("coords array not found")
-          start=html.find("[",m.end())
-          depth=0
-          end=None
-          for i,ch in enumerate(html[start:],start):
-              if ch=="[":
-                  depth+=1
-              elif ch=="]":
-                  depth-=1
-                  if depth==0:
-                      end=i+1
-                      break
-          if end is None:
-              raise RuntimeError("coords array unterminated")
-          coords=json.loads(html[start:end])
-          pts=[(float(lat),float(lon)) for lat,lon,*_ in coords]
+          links=[]
+          for m in re.finditer(r'href=["\']([^"\']*(?:Pass|GPSPass)\.aspx[^"\']*)["\']',html,re.I):
+              href=urljoin(url,m.group(1))
+              context=re.sub(r'\s+',' ',html[max(0,m.start()-500):m.end()+900])
+              links.append({"href":href,"context":context[:1400]})
+          text=re.sub(r'<[^>]+>',' ',html)
+          text=re.sub(r'\s+',' ',text)
+          keycontexts=[]
+          for term in ["Ekopark","Glädjeknuff","Österlen","16 april","Naturloppet"]:
+              for m in list(re.finditer(term,text,re.I))[:10]:
+                  keycontexts.append({"term":term,"context":text[max(0,m.start()-500):m.end()+900]})
 
-          R=6371008.8
-          def hav(a,b):
-              la1,lo1=map(math.radians,a); la2,lo2=map(math.radians,b)
-              h=math.sin((la2-la1)/2)**2+math.cos(la1)*math.cos(la2)*math.sin((lo2-lo1)/2)**2
-              return 2*R*math.asin(min(1,math.sqrt(h)))
-
-          cum=[0.0]
-          jumps=[]
-          for i,(a,b) in enumerate(zip(pts,pts[1:])):
-              d=hav(a,b)
-              cum.append(cum[-1]+d)
-              if d>50:
-                  jumps.append({"i":i,"jump_m":round(d,1),"from":a,"to":b})
-          sf=hav(pts[0],pts[-1])
-
-          out=Path("out-jogg")
-          out.mkdir(exist_ok=True)
-          summary={
-              "source_url":url,
-              "point_count":len(pts),
-              "haversine_path_km":round(cum[-1]/1000,3),
-              "start":pts[0],
-              "finish":pts[-1],
-              "start_finish_gap_m":round(sf,1),
-              "lat_range":[min(p[0] for p in pts),max(p[0] for p in pts)],
-              "lon_range":[min(p[1] for p in pts),max(p[1] for p in pts)],
-              "jumps_over_50m":jumps[:50],
-              "source_note":"Public Jogg GPSPass activity for ÖST on 2023-04-16; participant text says race watch distance 13.67 km and race time 1:31:44."
-          }
-          (out/"summary.json").write_text(json.dumps(summary,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-
-          gpx=[
-              '<?xml version="1.0" encoding="UTF-8"?>',
-              '<gpx version="1.1" creator="OST analysis - public Jogg GPSPass extraction" xmlns="http://www.topografix.com/GPX/1/1">',
-              '<metadata><name>ÖST 13+ km participant GPS 2023-04-16</name><link href="'+escape(url)+'"/></metadata>',
-              '<trk><name>ÖST 13+ km participant GPS 2023-04-16</name><trkseg>'
-          ]
-          for lat,lon in pts:
-              gpx.append(f'<trkpt lat="{lat:.8f}" lon="{lon:.8f}"/>')
-          gpx += ['</trkseg></trk></gpx>']
-          (out/"ost-13plus-2023-participant-jogg-raw.gpx").write_text("\n".join(gpx)+"\n",encoding="utf-8")
-
-          geo={
-              "type":"Feature",
-              "properties":{"name":"ÖST 13+ km participant GPS 2023-04-16","source":url},
-              "geometry":{"type":"LineString","coordinates":[[lon,lat] for lat,lon in pts]}
-          }
-          (out/"ost-13plus-2023-participant-jogg-raw.geojson").write_text(json.dumps(geo,ensure_ascii=False)+"\n",encoding="utf-8")
-
+          out=Path("out-jogg"); out.mkdir(exist_ok=True)
+          (out/"mathias-april-2023-links.json").write_text(json.dumps({"url":url,"links":links,"contexts":keycontexts},ensure_ascii=False,indent=2),encoding="utf-8")
       - uses: actions/upload-artifact@v4
         with:
-          name: jogg-public-race-track
-          path: out-jogg/
+          name: mathias-april-2023-links
+          path: out-jogg/mathias-april-2023-links.json
