@@ -31,6 +31,9 @@ The Christinehof OSM research extract accounts for another **2.20 MB**. Python t
 5. **All Python tooling is syntax-compiled in CI.**
 6. **Transient build/test directories are ignored** (`out/`, `node_modules/`, pytest/ruff/mypy caches, `dist/`, coverage artifacts).
 7. **A repository-hygiene CI guard** rejects tracked transient artifacts and prevents raw SQLite/OSM files from leaking into the future `docs/` web surface.
+8. **Four completed short-course research workflows were removed from `main`** so they no longer clutter the Actions surface or suggest that route reconstruction is part of the production build.
+9. **Superseded Trail 13/14 GPX/GeoJSON/candidate files were removed from the active route directory.** QA/provenance remains, and exact historical bytes are recoverable from Git history.
+10. **The route-engine prototype was explicitly marked research-only and stale Trail 13/14/Trail 5 examples were brought into line with the current route policy.**
 
 ## What is intentionally retained
 
