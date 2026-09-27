@@ -2,45 +2,47 @@
   "schema_version": "1.0",
   "race": "Österlen Spring Trail",
   "course": "Trail 13/14 km",
-  "geometry_status": "unresolved",
-  "primary_geometry_basis": "organizer raster constrained by official/local trail geometry and OSM",
+  "geometry_status": "validated_reconstruction_2023_family_reference",
+  "primary_geometry_basis": "organizer georeferenced raster centreline",
   "not_an_organizer_gpx": true,
+  "confidence": {
+    "legacy_2023_course_family": "high",
+    "exact_current_2026_14km_version": "medium_unconfirmed"
+  },
   "sources": [
     {
       "type": "organizer_georeferenced_raster",
       "path": "data/source/maps/ost-trail13-14-organizer-map.jpg",
-      "role": "primary course-shape evidence"
+      "role": "primary route-choice and topology evidence"
     },
     {
-      "type": "official_local_trail",
-      "path": "data/source/gpx/skaneleden-sl4-e7-brosarp-verkasjon.gpx",
-      "role": "exact vector control where the race follows the Skåneleden/Verkeån corridor; not an ÖST GPX"
+      "type": "cross_map_registration",
+      "path": "reports/organizer-map-registration.json",
+      "role": "maps Trail 13/14 raster into the independently georeferenced Trail 5 raster frame"
     },
     {
-      "type": "open_map_snapped",
-      "path": "data/source/osm/christinehof-path-network.geojson",
-      "role": "vector path geometry"
+      "type": "participant_distance_validation",
+      "description": "2023 race-day watch observation 13.67 km / 1:31:44; independent validation only, not an input to route geometry"
     },
     {
-      "type": "participant_gps_single",
-      "description": "2023 public activity reports 13.67 km; used as plausibility evidence only because raw GPX is not accessible"
-    },
-    {
-      "type": "text_constraint",
-      "description": "one loop, Hallamölla midpoint, Verkeån corridor, Christinehof start/finish"
+      "type": "official_local_trail_topology",
+      "description": "Hallamölla corridor evidence supports the eastern loop topology; not used to force raster geometry"
     }
   ],
+  "method": {
+    "principal_cycle": "largest connected raster-skeleton cycle",
+    "western_arms": "two western raster endpoints connected to the leftmost principal-cycle junction",
+    "simplification": "Ramer-Douglas-Peucker within organizer line-width scale",
+    "epsilon_px": 4.0,
+    "mean_route_component_width_px": 3.592
+  },
   "limitations": [
-    "No accessible organizer GPX has been found for this course version.",
-    "The organizer's current material embeds a legacy 13 km raster while the current course is described as 14 km.",
-    "Participant 2023 raw GPX is not accessible, so its recorded distance cannot define geometry.",
-    "Route remains candidate until local raster outliers and loop topology pass QA.",
-    "Current candidate has p95 route-to-raster deviation 285.2 m and must not be published as a validated course.",
-    "The reconstruction workflow previously masked a Python failure through a shell pipeline; this has been corrected with pipefail and strict QA restored.",
-    "The current OSM graph cannot produce an eastern Christinehof–Hallamölla loop compatible with the 2023 observed 13.67 km total: among 7,140 path-pair combinations, the shortest diagnostic eastern loop is 9.467 km; combined with the current western reconstruction this is 14.948 km.",
-    "This conflict indicates that the current assumption that the complete Trail 5 reconstruction is the western component of the 13/14 km course, or the available OSM network itself, is not sufficiently supported.",
-    "Do not publish route.geojson/route.gpx as the race course until authentic participant/organizer geometry or stronger vector evidence resolves this conflict."
+    "No accessible organizer GPX has been found for this short-course version.",
+    "The participant 2023 raw GPX remains inaccessible; its distance is validation evidence only.",
+    "The current event is described as approximately 14 km while the organizer raster is labelled 13 km.",
+    "Exact 2026 course-version equivalence must remain unconfirmed until a current organizer/participant GPS trace is obtained.",
+    "Direction is not promoted here; geometry is suitable for map/course-shape analysis before directional segment semantics are finalized."
   ],
   "qa_path": "qa.json",
-  "qa_acceptance": "blocked_by_source_geometry_conflict"
+  "qa_acceptance": "validated_reconstruction_candidate"
 }
