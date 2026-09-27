@@ -1,13 +1,14 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-26",
+  "updated": "2026-09-27",
   "purpose": "Route evidence beyond the canonical organizer/Trace manifest. These references may support race-day geometry, historical course reconstruction and source triangulation, but do not automatically assign course versions.",
   "rules": [
     "A participant activity is evidence for a race-day recording only when the activity title/date/author can be linked to a known race participation or the activity text explicitly identifies the race.",
     "An activity landing page without exportable coordinates is retained as a reference lead, not a local route asset.",
     "Watch ascent is diagnostic only and must not be mixed directly with standardized cross-year elevation.",
     "Mapped/copy routes are weaker than actual race-day recordings for reconstructing what runners physically followed.",
-    "Organizer map images can establish route-shape evidence but do not enable replay or exact distance projection without georeferencing or GPX geometry."
+    "Organizer map images can establish route-shape evidence but do not enable replay or exact distance projection without georeferencing or GPX geometry.",
+    "A georeferenced organizer raster may support a publishable reconstructed reference when its route topology is reproducible and independently controlled; this does not by itself prove exact year-to-year course identity."
   ],
   "sources": [
     {
@@ -16,12 +17,13 @@
       "year": 2026,
       "source_type": "organizer_map_image",
       "url": "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/13km-bana-h-jdkurvan-3_orig.jpg",
-      "status": "verified_current_organizer_georeferenceable_map_legacy_13km_label",
+      "status": "verified_current_organizer_georeferenceable_map_archived",
       "published_label": "ÖST 13km bana",
       "evidence": "Current 14 km Race-PM embeds this legacy-labelled organizer map/elevation image. It shows one loop from Christinehof with an eastern out-and-back/loop to the Hallamölla/Verkeån corridor and an approximately 13 km profile. Native image inspection confirms printed SWEREF 99 TM edge coordinates, north arrow and scale. The raster also contains a 0.0–13.0 km elevation-profile axis and its western Christinehof loop provides a second organizer-map registration of much of the Trail5 corridor.",
-      "limitation": "Georeferenceable organizer raster, not organizer GPX. Legacy 13 km labelling does not prove exact identity with every modern 14 km race year. Pixel-level georeferencing and participant-GPS validation are required before canonical assignment.",
-      "local_asset": false,
-      "coordinate_access": "georeferenceable_raster"
+      "limitation": "Organizer raster, not organizer GPX. Its topology can support a reconstructed reference; legacy 13 km labelling does not prove exact identity with every modern 14 km race year.",
+      "local_asset": true,
+      "coordinate_access": "archived_georeferenceable_raster",
+      "local_path": "data/source/maps/ost-trail13-14-organizer-map.jpg"
     },
     {
       "id": "organizer-trail5-current-map",
@@ -29,12 +31,13 @@
       "year": 2026,
       "source_type": "organizer_map_image",
       "url": "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/st-5km-bana_orig.jpg",
-      "status": "verified_current_organizer_georeferenceable_map",
+      "status": "verified_current_organizer_georeferenceable_map_archived",
       "published_label": "ÖST 5km bana",
       "evidence": "Current Naturloppet page embeds an organizer map showing the 5 km loop west/north-west of Christinehof in the Ekopark. The image includes SWEREF 99 TM corner coordinates (SW approximately N 6173751 / E 432733; NE approximately N 6176791 / E 437965), a north arrow and scale information, so the published route line is georeferenceable rather than merely schematic.",
-      "limitation": "The route is still a raster line, not an organizer GPX. Any digitized coordinates must be labelled derived_from_georeferenced_organizer_map and validated against independent race-day GPS before promotion to canonical race-day geometry.",
-      "local_asset": false,
-      "coordinate_access": "georeferenceable_raster; digitization_pending_independent_validation"
+      "limitation": "Organizer raster, not organizer GPX. The raster-derived geometry is published only as reconstructed reference geometry with explicit provenance.",
+      "local_asset": true,
+      "coordinate_access": "archived_georeferenceable_raster",
+      "local_path": "data/source/maps/ost-trail5-organizer-map.jpg"
     },
     {
       "id": "jogg-2018-trail22-forsbacka",
@@ -152,18 +155,19 @@
       "source_type": "participant_race_activity",
       "url": "https://www.jogg.se/Traning/GPSPass.aspx?adid=10988506",
       "related_pass_url": "https://www.jogg.se/Traning/Pass.aspx?id=23408256",
-      "status": "verified_public_gpspass_metadata",
-      "participant": "Anna-Karin D",
+      "status": "verified_public_gpspass_metadata_and_official_result_match",
+      "participant": "Anna Karin Delborg",
       "source_platform": "Jogg",
       "activity_date": "2023-04-16",
       "participant_reported_watch_distance_km": 13.67,
       "participant_reported_watch_time": "1:31:44",
       "jogg_page_distance_km": 15.55,
       "jogg_page_time": "1:50:06",
-      "evidence": "The separate Jogg GPSPass page proves a GPS registration exists for the race-day activity. The participant text explicitly says ÖST 13+ km and reports her watch at 13.67 km / 1:31:44; Hallamölla is mentioned with 4.5 km remaining.",
+      "evidence": "Official Sportstiming result identifies Anna Karin Delborg at 1:31:44 in Ekopark trail 13 km on 2023-04-16. The Jogg GPSPass/activity reports the same watch time 1:31:44, 13.67 km and says Hallamölla had 4.5 km remaining. This is a high-confidence race-activity identity match even though raw coordinates remain inaccessible.",
       "limitation": "Jogg's aggregate page shows 15.55 km / 1:50:06, inconsistent with the participant's explicit race-watch values. Do not use the Jogg aggregate as course distance until the underlying coordinate series/segmentation is acquired and inspected.",
       "coordinate_access": "map_registration_public; raw_coordinate_export_not_acquired",
-      "local_asset": false
+      "local_asset": false,
+      "official_net_time": "1:31:44"
     },
     {
       "id": "organizer-2021-short-course-description",
@@ -226,6 +230,44 @@
       "evidence": "Public Jogg calendar explicitly lists both Ekopark trail 13 km med Glädjeknuff and Naturloppet 5 km med Glädjeknuff on 2023-04-16; a public forum post by the same participant independently lists both races. His diary contains Garmin Connect imports generally, making him a high-value GPS lead.",
       "limitation": "No exact public Pass.aspx/GPSPass.aspx identifier for either short-course recording was recovered. Garmin imports elsewhere in the diary do not prove these two specific race entries contain exportable GPS.",
       "coordinate_access": "exact_race_activity_not_recovered",
+      "local_asset": false
+    },
+    {
+      "id": "christinehof-hallamollaleden-official",
+      "family": "trail14",
+      "source_type": "official_local_trail_description",
+      "url": "https://www.christinehofsekopark.se/alltid/",
+      "status": "verified_official_local_trail",
+      "published_distance_km": 8.5,
+      "sequence": [
+        "Christinehof",
+        "Alunbruket",
+        "Verkeån söder via Skåneleden",
+        "Hallamölla",
+        "Verkafuret",
+        "Verkasjön",
+        "Alunbruket",
+        "Christinehof"
+      ],
+      "evidence": "Christinehofs Ekopark publishes Hallamöllaleden as 8.5 km with the same named eastern corridor used by the organizer raster.",
+      "limitation": "Local hiking-trail topology, not an ÖST race GPX; used as independent corridor corroboration only.",
+      "coordinate_access": "description_and_map",
+      "local_asset": false
+    },
+    {
+      "id": "wikiloc-2011-christinehof-hallamolla-verksjon",
+      "family": "trail14",
+      "source_type": "independent_local_gps_track_reference",
+      "url": "https://sv.wikiloc.com/spar-vandra/christinehofs-slott-1767530",
+      "status": "verified_public_recorded_track_metadata",
+      "source_platform": "Wikiloc",
+      "activity_date": "2011-06",
+      "reported_distance_km": 12.68,
+      "coordinate_count": 906,
+      "route_description": "Christinehofs slott - Alunbruket - Hallamölla - Verkasjön",
+      "evidence": "Independent recorded local loop corroborates the organizer raster's named Christinehof–Alunbruket–Hallamölla–Verkasjön corridor.",
+      "limitation": "Not race-day evidence and not used to calibrate ÖST distance or exact branch choices.",
+      "coordinate_access": "public_track_page; download not archived",
       "local_asset": false
     }
   ]
