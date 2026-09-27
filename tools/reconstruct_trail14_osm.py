@@ -68,7 +68,7 @@ def main():
   out=[]
   for P in nx.shortest_simple_paths(G,u,v,weight=w):
    z=st(P); unsupported=sum(e["length"] for _,_,e in ep(P) if e["dev"]>180 and not(e["skane"] or e["back"]))
-   if unsupported<=250: out.append((P,z))
+   if unsupported<=2000: out.append((P,z))
    if len(out)>=k: break
   return out
  approaches=candidates(s,an,"neutral",20); skpaths=candidates(an,h,"skane",60)
@@ -79,7 +79,7 @@ def main():
    for C,sc in backpaths[:25]:
     for P4,sd in returns[:8]:
      east_route=A+B[1:]+C[1:]+P4[1:]; east=sa["length"]+sb["length"]+sc["length"]+sd["length"]
-     if not 5000<=east<=12000: continue
+     if not 3000<=east<=16000: continue
      edges=[frozenset((u,v)) for u,v in zip(east_route,east_route[1:])]
      overlap=sum(G[tuple(e)[0]][tuple(e)[1]]["length"] for e in set(edges) if edges.count(e)>1)
      devs=sa["devs"]+sb["devs"]+sc["devs"]+sd["devs"]; p95=float(np.percentile(devs,95))
