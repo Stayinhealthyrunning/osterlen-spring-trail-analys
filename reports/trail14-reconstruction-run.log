@@ -1,7 +1,6 @@
 Traceback (most recent call last):
   File "/home/runner/work/osterlen-spring-trail-analys/osterlen-spring-trail-analys/tools/reconstruct_trail14_osm.py", line 116, in <module>
     main()
-  File "/home/runner/work/osterlen-spring-trail-analys/osterlen-spring-trail-analys/tools/reconstruct_trail14_osm.py", line 36, in main
-    L=D(u,v)
-      ^
-UnboundLocalError: cannot access local variable 'D' where it is not associated with a value
+  File "/home/runner/work/osterlen-spring-trail-analys/osterlen-spring-trail-analys/tools/reconstruct_trail14_osm.py", line 93, in main
+    raise RuntimeError("No Skaneleden-out/Backaleden-return candidate satisfies topology gates")
+RuntimeError: No Skaneleden-out/Backaleden-return candidate satisfies topology gates
