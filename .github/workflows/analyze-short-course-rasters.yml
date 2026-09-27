@@ -45,6 +45,7 @@ jobs:
       - name: Reconstruct Trail 13/14
         run: |
           mkdir -p routes/ost/trail14-current-reference
+          set -o pipefail
           python tools/reconstruct_trail14_osm.py --image data/source/maps/ost-trail13-14-organizer-map.jpg --network data/source/osm/christinehof-path-network.geojson --registration reports/organizer-map-registration.json --relations reports/christinehof-osm-hiking-relations.json --trail5 routes/ost/trail5-current-reference/route.geojson --geojson routes/ost/trail14-current-reference/route.geojson --gpx routes/ost/trail14-current-reference/route.gpx --qa routes/ost/trail14-current-reference/qa.json 2>&1 | tee reports/trail14-reconstruction-run.log
       - name: Commit Trail 13/14 diagnostics
         run: |
@@ -72,7 +73,7 @@ jobs:
           assert q["hallamolla_control_m"] <= 150, q
           assert q["shared_out_return_m"] <= 1400, q
           assert q["median_edge_to_raster_m"] <= 80, q
-          # Candidate frontier is diagnostic; final acceptance remains blocked until\n          # a supported corridor resolves the remaining raster outliers.\n          assert q["p95_edge_to_raster_m"] <= 300, q
+          # Candidate frontier is diagnostic; final acceptance remains blocked until\n          # a supported corridor resolves the remaining raster outliers.\n          assert q["p95_edge_to_raster_m"] <= 150, q
           print("Trail 13/14 QA gate passed",q)
           PY
       - name: Commit accepted reconstruction
