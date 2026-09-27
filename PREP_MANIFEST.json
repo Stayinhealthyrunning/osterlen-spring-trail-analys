@@ -32,7 +32,8 @@
     "config/analysis-data-contract.json",
     "config/analysis-feature-policy.json",
     "config/engine-adapter.json",
-    "config/foundation-state.json"
+    "config/foundation-state.json",
+    "config/frontend-performance-budget.json"
   ],
   "sportstiming_source_inventory": [
     "data/source/sportstiming/events.json",
@@ -66,6 +67,8 @@
     "research/frontend-data-delivery-architecture-2026-09-27.md"
   ],
   "key_reports": [
+    "reports/engine-payload-profile.md",
+    "reports/engine-payload-profile.json",
     "reports/engine-readiness.md",
     "reports/engine-readiness.json",
     "reports/curated-analysis-db-summary.json",
@@ -119,5 +122,14 @@
     "Authentic participant/organizer GPX for Trail 13/14 and historical exact short-course geometry",
     "Duo member-to-leg assignment until explicit source evidence exists",
     "Cross-year repeat-runner identity linkage with confidence/evidence"
-  ]
+  ],
+  "performance": {
+    "profile": "reports/engine-payload-profile.json",
+    "budget": "config/frontend-performance-budget.json",
+    "delivery_architecture": "research/frontend-data-delivery-architecture-2026-09-27.md",
+    "measured_full_engine_gzip_bytes": 450548,
+    "measured_bootstrap_gzip_bytes": 1980,
+    "measured_largest_selected_race_gzip_bytes": 29138,
+    "decision": "bootstrap_plus_per_race_bundle_with_lazy_route_elevation_assets"
+  }
 }
