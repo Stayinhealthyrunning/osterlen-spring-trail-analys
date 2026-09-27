@@ -223,10 +223,13 @@
       "year": 2026,
       "source_type": "organizer_map_image",
       "url": "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/13km-bana-h-jdkurvan-3_orig.jpg",
-      "status": "verified_current_organizer_page_embed_legacy_13km_label",
+      "status": "verified_current_embed_legacy13km_georeferenced_reference_reconstructed",
       "course_version": null,
       "redistribution": "reference_only",
-      "note": "Current 14 km Race-PM embeds this organizer-hosted legacy 13 km route/elevation image. Verified route-shape evidence only; not replay-grade GPX and not proof of exact year-to-year identity."
+      "note": "Current 14 km Race-PM embeds this legacy 13 km route/elevation image. Derived geometry is provenance-labelled reference geometry, not organizer GPX and not proof of exact current 14 km identity.",
+      "derived_route_path": "routes/ost/trail14-current-reference/route.gpx",
+      "derived_distance_km": 13.084,
+      "geometry_role": "primary organizer raster source for legacy 13 km family/reference route"
     },
     {
       "family": "trail5",
@@ -244,11 +247,14 @@
       "year": 2026,
       "source_type": "organizer_map_image",
       "url": "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/st-5km-bana_orig.jpg",
-      "status": "verified_current_organizer_page_embed",
+      "status": "verified_and_georeferenced_reference_reconstructed",
       "course_version": null,
       "redistribution": "organizer_direct_download",
-      "note": "Organizer-hosted current course map for the Christinehof 5 km loop. Archive original raster for reproducible pixel-level georeferencing; any digitized line remains derived geometry, not organizer GPX.",
-      "target_path": "data/source/maps/ost-trail5-current-organizer-map.jpg"
+      "note": "Source image prints NE easting E437465. Earlier project transcription E437965 was corrected. Derived route is not organizer GPX and does not prove year-by-year identity.",
+      "target_path": "data/source/maps/ost-trail5-current-organizer-map.jpg",
+      "derived_route_path": "routes/ost/trail5-current-reference/route.gpx",
+      "derived_distance_km": 5.003,
+      "geometry_role": "primary organizer raster source for derived reference route"
     }
   ]
 }
