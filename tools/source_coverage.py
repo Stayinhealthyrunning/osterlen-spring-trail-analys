@@ -139,7 +139,8 @@ def main():
     }
     OUT_JSON.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     lines=['# Source coverage','',
-           'Observed source coverage used to decide what the future analysis UI may safely enable. A sampled split table proves the schema exists, not that every runner has every split.','',
+           '> **Scope note:** Detta är en källinventering. För runtime-funktioner i det stora bygget är `reports/engine-readiness.md` + `config/course-versions.json` auktoritativa.','',
+           'Observed source coverage used to decide what source structures have been observed. A sampled split table proves the schema exists, not that every runner has every split.','',
            '| Year | Family | Result class | Detail | Splits | Split labels | Tracking | Route geometry | GPX | Trace ref |',
            '|---:|---|:---:|---|---|---|:---:|---|---:|---:|']
     for r in rows:
