@@ -67,21 +67,30 @@
   },
   "version_questions": [
     "The current organizer material embeds a legacy-labelled 13 km raster while the modern race is marketed as about 14 km.",
-    "The georeferenced organizer-raster topology measures 14.249 km; this is a derived reference length, not a claim about exact watch distance.",
-    "A verified 2023 participant activity reports 13.67 km and independently places Hallamölla 4.5 km from the finish; it supports topology/direction but does not prove 2023 and 2026 exact route identity.",
-    "Historical 13/14 km editions must remain version-separated until year-specific geometry evidence supports grouping."
+    "The former 14.249 km raster-derived route is superseded after visual map-context review showed systematic corridor displacement.",
+    "The accepted working hypothesis is a 13.472 km Hallamölla splice derived from verified Trail 21/22 2022-2024 geometry.",
+    "A verified 2023 participant activity reports 13.67 km and places Hallamölla about 4.5 km from the finish; this supports the working hypothesis but does not prove exact 2026 identity.",
+    "Historical 13/14 km editions remain version-separated until year-specific authentic geometry supports grouping."
   ],
   "output": {
     "course_version_id": "trail14-current-reference",
-    "allow_candidate_gpx": true,
+    "allow_candidate_gpx": false,
     "require_provenance_sidecar": true,
-    "geometry_status": "validated_raster_reference",
-    "route_geojson": "routes/ost/trail14-current-reference/route.geojson",
-    "route_gpx": "routes/ost/trail14-current-reference/route.gpx",
-    "qa": "routes/ost/trail14-current-reference/qa.json",
+    "geometry_status": "provisional_hallamolla_splice_reference",
+    "route_asset_available": false,
+    "reference_recipe": {
+      "base_course_version": "trail22-2022-2024",
+      "operation": "remove_eastern_loop_between_two_nearly_identical_hallamolla_passages",
+      "removed_loop_km": 8.269,
+      "splice_point_separation_m": 0.18,
+      "start_to_hallamolla_km": 8.687,
+      "hallamolla_to_finish_km": 4.784,
+      "total_km": 13.472
+    },
     "provenance": "routes/ost/trail14-current-reference/provenance.json",
-    "publication_label": "reconstructed from georeferenced organizer map",
-    "exact_year_identity_status": "current_organizer_reference_supported; historical_identity_unresolved",
-    "blocker": null
+    "qa": "routes/ost/trail14-current-reference/qa.json",
+    "publication_label": "provisional working reference; not organizer/participant GPX",
+    "exact_year_identity_status": "working_reference_only; historical_identity_unresolved",
+    "blocker": "Authentic organizer/participant GPX required before treating route geometry as authoritative/local asset."
   }
 }

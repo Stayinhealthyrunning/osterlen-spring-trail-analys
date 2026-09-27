@@ -1,27 +1,29 @@
 {
   "race_id": "ost",
   "course_version_id": "trail5-current-reference",
-  "status": "calibration_fixture_no_geometry",
+  "status": "validated_reconstruction_reference",
   "known_constraints": {
-    "advertised_distance_km": 5.0,
-    "raster_control_measurement_km": 5.002,
+    "advertised_distance_km": 5,
+    "raster_control_measurement_km": 5.545,
     "start_finish_area": "Christinehof",
     "terrain": [
       "first approximately 3 km gravel or forest roads",
       "last approximately 2 km narrow technical trails",
       "stone stairs on finishing approach"
-    ]
+    ],
+    "osm_snapped_reference_km": 5.481,
+    "previous_coarse_prototype_km": 5.002
   },
   "segments": [
     {
       "segment_id": "whole-reference-loop",
       "geometry": null,
-      "provenance": "organizer_georeferenced_raster",
+      "provenance": "organizer_raster_plus_open_map_path_geometry",
       "evidence_ids": [
         "organizer-trail5-current-map",
         "organizer-2021-short-course-description"
       ],
-      "decision_reason": "Calibration only. The georeferenced organizer raster independently measured 5.002 km; exact network geometry remains unresolved.",
+      "decision_reason": "Current 2026 reconstructed reference: full-resolution organizer-raster skeleton 5.545 km and OSM-snapped reference 5.481 km agree within about 64 m. The earlier 5.002 km coarse prototype is superseded.",
       "evidence": [
         {
           "source_id": "organizer-trail5-current-map",
@@ -35,8 +37,7 @@
         }
       ],
       "penalties": {
-        "geometry_not_persisted": 0.2,
-        "no_participant_gps": 0.15
+        "no_authentic_organizer_or_participant_gpx": 0.15
       }
     }
   ]

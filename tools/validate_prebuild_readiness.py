@@ -96,6 +96,13 @@ def main():
         errors.append("Trail 13/14 working reference distance is not 13.472 km")
     if t14.get("route_asset_status")!="recipe_only_not_archived" or t14.get("primary_source_path"):
         errors.append("Trail 13/14 provisional recipe must not masquerade as a stored route asset")
+    for stale in (
+        ROOT/"routes/ost/trail14-current-reference/route.gpx",
+        ROOT/"routes/ost/trail14-current-reference/route.geojson",
+        ROOT/"routes/ost/trail14-current-reference/candidate-frontier.json",
+    ):
+        if stale.exists():
+            errors.append(f"superseded Trail 13/14 active route artifact must stay removed: {stale.relative_to(ROOT)}")
     recipe=t14.get("reference_recipe",{})
     if recipe.get("base_course_version")!="trail22-2022-2024":
         errors.append("Trail 13/14 recipe base course must be trail22-2022-2024")

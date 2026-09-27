@@ -16,6 +16,11 @@ on:
       - 'README.md'
       - 'tools/validate_foundation.py'
       - 'tools/validate_prebuild_readiness.py'
+      - 'tools/audit_repository_hygiene.py'
+      - 'tools/export_engine_v1.py'
+      - 'tools/build_engine_readiness_report.py'
+      - 'tests/**'
+      - 'route_engine/**'
       - '.github/workflows/build-source-reports.yml'
       - '.github/workflows/source-coverage.yml'
       - '.github/workflows/validate-foundation.yml'
@@ -39,11 +44,11 @@ jobs:
           python-version: '3.12'
       - name: Validate foundation contracts and cross-file consistency
         run: python tools/validate_foundation.py
-      - name: Validate Engine 1.0 export against curated ÖST data
-        run: python -m unittest tests/test_engine_v1_export.py
+      - name: Audit repository hygiene
+        run: python tools/audit_repository_hygiene.py
+      - name: Compile Python tooling
+        run: python -m compileall -q tools tests route_engine
+      - name: Run all repository unit tests
+        run: python -m unittest discover -s tests -p 'test_*.py'
       - name: Validate final prebuild readiness
         run: python tools/validate_prebuild_readiness.py
-      - name: Validate route elevation evidence
-        run: python -m unittest tests/test_route_elevation_evidence.py
-      - name: Validate short-course reference geometry
-        run: python -m unittest tests/test_short_course_reference_geometry.py

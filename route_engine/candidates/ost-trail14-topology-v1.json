@@ -2,19 +2,82 @@
   "schema_version": 1,
   "race_id": "ost",
   "course_family": "trail14",
-  "status": "candidate_topology",
+  "status": "superseded_candidate_topology",
   "segments": [
-    {"id":"t14-01","from":"Christinehof","to":"Alunbruket","corridor":"Hallamollaleden","evidence":["organizer_raster","official_local_trail"],"geometry_status":"needs_vector_trace"},
-    {"id":"t14-02","from":"Alunbruket","to":"Hallamolla","corridor":"Verkean_south_Skaneleden","evidence":["organizer_raster","official_local_trail","organizer_terrain_text"],"geometry_status":"needs_vector_trace"},
-    {"id":"t14-03","from":"Hallamolla","to":"Verkafuret_Verksjon","corridor":"Hallamollaleden_return","evidence":["organizer_raster","official_local_trail"],"geometry_status":"needs_vector_trace"},
-    {"id":"t14-04","from":"Verkafuret_Verksjon","to":"Alunbruket","corridor":"Hallamollaleden_return","evidence":["organizer_raster","official_local_trail"],"geometry_status":"needs_vector_trace"},
-    {"id":"t14-05","from":"Alunbruket","to":"Christinehof","corridor":"Hallamollaleden","evidence":["organizer_raster","official_local_trail"],"geometry_status":"needs_vector_trace"},
-    {"id":"t14-06","from":"Christinehof","to":"Christinehof_finish","corridor":"western_organizer_loop","evidence":["trail14_organizer_raster","trail5_organizer_raster_overlap"],"geometry_status":"needs_vector_trace"}
+    {
+      "id": "t14-01",
+      "from": "Christinehof",
+      "to": "Alunbruket",
+      "corridor": "Hallamollaleden",
+      "evidence": [
+        "organizer_raster",
+        "official_local_trail"
+      ],
+      "geometry_status": "needs_vector_trace"
+    },
+    {
+      "id": "t14-02",
+      "from": "Alunbruket",
+      "to": "Hallamolla",
+      "corridor": "Verkean_south_Skaneleden",
+      "evidence": [
+        "organizer_raster",
+        "official_local_trail",
+        "organizer_terrain_text"
+      ],
+      "geometry_status": "needs_vector_trace"
+    },
+    {
+      "id": "t14-03",
+      "from": "Hallamolla",
+      "to": "Verkafuret_Verksjon",
+      "corridor": "Hallamollaleden_return",
+      "evidence": [
+        "organizer_raster",
+        "official_local_trail"
+      ],
+      "geometry_status": "needs_vector_trace"
+    },
+    {
+      "id": "t14-04",
+      "from": "Verkafuret_Verksjon",
+      "to": "Alunbruket",
+      "corridor": "Hallamollaleden_return",
+      "evidence": [
+        "organizer_raster",
+        "official_local_trail"
+      ],
+      "geometry_status": "needs_vector_trace"
+    },
+    {
+      "id": "t14-05",
+      "from": "Alunbruket",
+      "to": "Christinehof",
+      "corridor": "Hallamollaleden",
+      "evidence": [
+        "organizer_raster",
+        "official_local_trail"
+      ],
+      "geometry_status": "needs_vector_trace"
+    },
+    {
+      "id": "t14-06",
+      "from": "Christinehof",
+      "to": "Christinehof_finish",
+      "corridor": "western_organizer_loop",
+      "evidence": [
+        "trail14_organizer_raster",
+        "trail5_organizer_raster_overlap"
+      ],
+      "geometry_status": "needs_vector_trace"
+    }
   ],
   "constraints": {
     "hallamolla_is_midpoint_control": true,
     "single_lap": true,
     "western_loop_cross_registered_by_trail5_raster": true,
     "simple_distance_sum_is_not_route_proof": true
-  }
+  },
+  "superseded_reason": "Replaced as the preferred working hypothesis by the 13.472 km Hallamölla splice recipe derived from verified Trail 21/22 2022-2024 geometry.",
+  "do_not_promote": true
 }

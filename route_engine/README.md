@@ -1,5 +1,7 @@
 # Generic race-route reconstruction engine
 
+> **Research-only prototype.** This directory is not the ÖST analysis runtime and is not part of the Engine 1.0 frontend build path. It is retained for route-reconstruction methodology/provenance only. Runtime course truth lives in `config/course-versions.json`.
+
 Purpose: recover auditable race-course geometry when an original GPX is unavailable, while preserving the distinction between source geometry and reconstructed geometry.
 
 ## Pipeline
@@ -39,7 +41,7 @@ A mostly certain course can contain one unresolved fork. Confidence is therefore
 
 ## Calibration
 
-ÖST Trail 5 is the first raster-to-network calibration case: its georeferenceable organizer map produced a 5.002 km manual control measurement. Trail 13/14 tests named-corridor constraints around Christinehof, Alunbruket, Verkeån and Hallamölla. The engine is intentionally race-neutral so it can later move into the shared Loppanalys codebase.
+ÖST Trail 5 is the current calibration case: the full organizer-raster skeleton measures 5.545 km and the OSM-snapped reconstructed reference 5.481 km. The earlier coarse 5.002 km prototype is superseded. Trail 13/14's former 14.249 km raster reconstruction is also superseded; the accepted working hypothesis is now a 13.472 km Hallamölla-splice recipe derived from verified Trail 21/22 geometry. The engine is intentionally race-neutral and remains upstream research tooling, not frontend code.
 
 ## Authentic geometry precedence
 

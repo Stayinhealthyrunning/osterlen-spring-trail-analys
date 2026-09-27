@@ -6,7 +6,12 @@ on:
     branches: [main]
     paths:
       - 'data/source/**'
-      - 'config/**'
+      - 'config/course-source-manifest.json'
+      - 'config/checkpoint-candidates.json'
+      - 'config/checkpoint-normalization.json'
+      - 'config/race-families.json'
+      - 'config/years.json'
+      - 'config/source-registry.json'
       - 'tools/analyze_gpx_sources.py'
       - 'tools/probe_sportstiming.py'
       - 'tools/discover_sportstiming_structure.py'
