@@ -1,6 +1,6 @@
 # ÖST – engine readiness
 
-Feature flags are derived from the curated archive plus authoritative course-version assignments in `config/course-versions.json`. Route-dependent features require a local usable route asset; relay leg assignment remains disabled until leg ordering is source-verified. Exact age and age-category coverage are reported separately.
+Feature flags are derived from the curated archive plus authoritative course-version assignments in config/course-versions.json. Route-dependent features require a local usable route asset; relay leg assignment remains disabled until leg ordering is source-verified. Exact age and age-category coverage are reported separately.
 
 | År | Familj | Resultat | DNF | ? | Splitpassager | Splitlöpare/lag | Bana | Lokal rutt | Splitanalys | Replay/kartduell |
 |---:|---|---:|---:|---:|---:|---:|---|---|---|---|
