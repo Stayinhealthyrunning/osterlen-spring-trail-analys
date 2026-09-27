@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-26",
+  "updated": "2026-09-27",
   "purpose": "Route evidence beyond the canonical organizer/Trace manifest. These references may support race-day geometry, historical course reconstruction and source triangulation, but do not automatically assign course versions.",
   "rules": [
     "A participant activity is evidence for a race-day recording only when the activity title/date/author can be linked to a known race participation or the activity text explicitly identifies the race.",
@@ -16,12 +16,13 @@
       "year": 2026,
       "source_type": "organizer_map_image",
       "url": "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/13km-bana-h-jdkurvan-3_orig.jpg",
-      "status": "verified_current_organizer_georeferenceable_map_legacy_13km_label",
+      "status": "verified_current_organizer_georeferenceable_map_with_validated_reconstruction_reference",
       "published_label": "ÖST 13km bana",
-      "evidence": "Current 14 km Race-PM embeds this legacy-labelled organizer map/elevation image. It shows one loop from Christinehof with an eastern out-and-back/loop to the Hallamölla/Verkeån corridor and an approximately 13 km profile. Native image inspection confirms printed SWEREF 99 TM edge coordinates, north arrow and scale. The raster also contains a 0.0–13.0 km elevation-profile axis and its western Christinehof loop provides a second organizer-map registration of much of the Trail5 corridor.",
-      "limitation": "Georeferenceable organizer raster, not organizer GPX. Legacy 13 km labelling does not prove exact identity with every modern 14 km race year. Pixel-level georeferencing and participant-GPS validation are required before canonical assignment.",
-      "local_asset": false,
-      "coordinate_access": "georeferenceable_raster"
+      "evidence": "Current 14 km Race-PM embeds this legacy-labelled organizer map/elevation image. It shows one loop from Christinehof with an eastern out-and-back/loop to the Hallamölla/Verkeån corridor and an approximately 13 km profile. Native image inspection confirms printed SWEREF 99 TM edge coordinates, north arrow and scale. The raster also contains a 0.0–13.0 km elevation-profile axis and its western Christinehof loop provides a second organizer-map registration of much of the Trail5 corridor. A raster-native topology reconstruction using the principal route cycle plus the two western start/finish arms produces a 13.664 km reference route. CI QA passes; map-to-map registration p95 is 1.57 px.",
+      "limitation": "Derived organizer-raster geometry is now available and independently distance-validated for the 2023 family reference, but it is not organizer GPX and exact identity with the 2026 14 km course remains unconfirmed.",
+      "local_asset": true,
+      "coordinate_access": "derived_reconstruction_available",
+      "derived_route_asset": "routes/ost/trail14-current-reference/route.geojson"
     },
     {
       "id": "organizer-trail5-current-map",
@@ -33,8 +34,9 @@
       "published_label": "ÖST 5km bana",
       "evidence": "Current Naturloppet page embeds an organizer map showing the 5 km loop west/north-west of Christinehof in the Ekopark. The image includes SWEREF 99 TM corner coordinates (SW approximately N 6173751 / E 432733; NE approximately N 6176791 / E 437965), a north arrow and scale information, so the published route line is georeferenceable rather than merely schematic.",
       "limitation": "The route is still a raster line, not an organizer GPX. Any digitized coordinates must be labelled derived_from_georeferenced_organizer_map and validated against independent race-day GPS before promotion to canonical race-day geometry.",
-      "local_asset": false,
-      "coordinate_access": "georeferenceable_raster; digitization_pending_independent_validation"
+      "local_asset": true,
+      "coordinate_access": "validated_reconstruction_available; participant_gps_validation_pending",
+      "derived_route_asset": "routes/ost/trail5-current-reference/route.geojson"
     },
     {
       "id": "jogg-2018-trail22-forsbacka",
@@ -153,17 +155,19 @@
       "url": "https://www.jogg.se/Traning/GPSPass.aspx?adid=10988506",
       "related_pass_url": "https://www.jogg.se/Traning/Pass.aspx?id=23408256",
       "status": "verified_public_gpspass_metadata",
-      "participant": "Anna-Karin D",
+      "participant": "Anna Karin Delborg",
       "source_platform": "Jogg",
       "activity_date": "2023-04-16",
       "participant_reported_watch_distance_km": 13.67,
       "participant_reported_watch_time": "1:31:44",
       "jogg_page_distance_km": 15.55,
       "jogg_page_time": "1:50:06",
-      "evidence": "The separate Jogg GPSPass page proves a GPS registration exists for the race-day activity. The participant text explicitly says ÖST 13+ km and reports her watch at 13.67 km / 1:31:44; Hallamölla is mentioned with 4.5 km remaining.",
+      "evidence": "The separate Jogg GPSPass page proves a GPS registration exists for the race-day activity. Official ÖST 2023 results identify Anna Karin Delborg at exactly 1:31:44, matching the participant-reported watch time; her watch distance is 13.67 km. Hallamölla is mentioned with 4.5 km remaining. The 13.67 km value is used only as independent validation, never as an input to reconstructed geometry.",
       "limitation": "Jogg's aggregate page shows 15.55 km / 1:50:06, inconsistent with the participant's explicit race-watch values. Do not use the Jogg aggregate as course distance until the underlying coordinate series/segmentation is acquired and inspected.",
       "coordinate_access": "map_registration_public; raw_coordinate_export_not_acquired",
-      "local_asset": false
+      "local_asset": false,
+      "official_result_net_time": "1:31:44",
+      "official_result_crossmatch_status": "exact_name_and_net_time_match"
     },
     {
       "id": "organizer-2021-short-course-description",
