@@ -6,7 +6,7 @@
     "Near-identical but non-identical geometries use separate course versions and may share a whole_course_comparison_group when corridor analysis supports compatibility.",
     "A verified course-version assignment does not imply that a redistributable/local route asset exists for frontend maps or replay.",
     "Duo inherits the Ultra 60 full-course version for the same year; its relay exchange is modelled separately.",
-    "A source-year mismatch remains a provenance blocker even when its geometry resembles adjacent years."
+    "A source-year mismatch blocks direct year assignment unless independent year-specific evidence triangulates the candidate against race-day distance/elevation/landmarks or other documented controls; any stale source metadata must remain visible in provenance."
   ],
   "evidence_source": "reports/tracedetrail-public-geometry-analysis.json",
   "versions": [
@@ -102,6 +102,25 @@
       "whole_course_comparison_group": null,
       "notes": "The organizer points 2025/2026 to the same GPX route source. Trace map payloads have different hashes/point counts but 100% symmetric corridor overlap within 50 m and identical derived route length.",
       "external_geometry_reference_url": "https://tracedetrail.fr/en/trace/322315"
+    },
+    {
+      "course_version_id": "trail22-2018-triangulated",
+      "route_family": "trail22",
+      "years": [
+        2018
+      ],
+      "status": "verified_triangulated_2018_reference_geometry",
+      "trace_ids": [
+        7897
+      ],
+      "geometry_hash_prefix": "98400a8a0f05",
+      "derived_path_distance_km": 21.688,
+      "route_asset_status": "not_archived",
+      "whole_course_comparison_group": "trail22-2019-2026-compatible",
+      "external_geometry_reference_url": "https://tracedetrail.fr/en/trace/7897",
+      "external_geometry_reference_role": "triangulated public geometry reference only; source dateCompet is stale and coordinates are not redistributed",
+      "evidence_report": "reports/trail22-2018-triangulation.json",
+      "notes": "Trace 7897 carries dateCompet=16/04/2016, so it is not treated as a direct 2018 source. Independent 2018 controls support the geometry: 21.688 km vs official 21.7 km and race-day watch 22.03 km; Trace cumulative D+ 482 m vs official 2018 490 m (whereas official 2016 was 290 m); Vantalängan projects to km 13.292, 53 m from the route, matching the 2018 race report that the steep climb after Vantalängan occurred around km 14; Hallamölla is 4.6 m from the candidate. The candidate also lies 100% within 50 m of the verified 2019 route."
     },
     {
       "course_version_id": "trail22-2019",
@@ -265,10 +284,10 @@
     {
       "year": 2018,
       "family": "trail22",
-      "course_version_id": null,
-      "status": "pending_year_specific_provenance",
-      "candidate_trace_id": 7897,
-      "warning": "Trace dateCompet is 16/04/2016 rather than 2018 even though its geometry is strongly compatible with 2019."
+      "course_version_id": "trail22-2018-triangulated",
+      "status": "assigned_from_triangulated_year_specific_evidence",
+      "route_asset_available": false,
+      "provenance_warning": "Underlying Trace reference carries dateCompet=2016; 2018 identity is supported by independent 2018 distance/elevation/landmark/race-day evidence documented in reports/trail22-2018-triangulation.json."
     },
     {
       "year": 2019,
@@ -318,7 +337,6 @@
     "trail5"
   ],
   "unresolved": [
-    "2018 trail22 needs a year-specific source or independent evidence before formal assignment because candidate Trace 7897 is dated 2016.",
     "trail14 and trail5 now have locally usable provenance-labelled family/reference routes, but exact year-by-year course-version identity remains unresolved.",
     "Historical Ultra and Trail 21/22 course versions with Trace de Trail-only geometry remain reference-only because Trace de Trail's legal terms do not establish permission to redistribute those coordinate series in this public repository; verified source URLs are retained instead."
   ],
