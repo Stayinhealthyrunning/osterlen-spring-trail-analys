@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "race": "Österlen Spring Trail",
+  "course": "Trail 13/14 km",
+  "geometry_status": "candidate_reconstruction",
+  "primary_geometry_basis": "organizer raster constrained by official/local trail geometry and OSM",
+  "not_an_organizer_gpx": true,
+  "sources": [
+    {
+      "type": "organizer_georeferenced_raster",
+      "path": "data/source/maps/ost-trail13-14-organizer-map.jpg",
+      "role": "primary course-shape evidence"
+    },
+    {
+      "type": "official_local_trail",
+      "path": "data/source/gpx/skaneleden-sl4-e7-brosarp-verkasjon.gpx",
+      "role": "exact vector control where the race follows the Skåneleden/Verkeån corridor; not an ÖST GPX"
+    },
+    {
+      "type": "open_map_snapped",
+      "path": "data/source/osm/christinehof-path-network.geojson",
+      "role": "vector path geometry"
+    },
+    {
+      "type": "participant_gps_single",
+      "description": "2023 public activity reports 13.67 km; used as plausibility evidence only because raw GPX is not accessible"
+    },
+    {
+      "type": "text_constraint",
+      "description": "one loop, Hallamölla midpoint, Verkeån corridor, Christinehof start/finish"
+    }
+  ],
+  "limitations": [
+    "No accessible organizer GPX has been found for this course version.",
+    "The organizer's current material embeds a legacy 13 km raster while the current course is described as 14 km.",
+    "Participant 2023 raw GPX is not accessible, so its recorded distance cannot define geometry.",
+    "Route remains candidate until local raster outliers and loop topology pass QA."
+  ],
+  "qa_path": "qa.json"
+}
