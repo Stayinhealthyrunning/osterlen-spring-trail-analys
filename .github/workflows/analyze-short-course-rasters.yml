@@ -1,7 +1,7 @@
 name: Reconstruct short-course routes
 on:
   push:
-    branches: [automation/acquire-short-course-sources]
+    branches: [fix/trail14-skaneleden-backaleden-topology]
     paths:
       - 'tools/**'
       - '.github/workflows/analyze-short-course-rasters.yml'
@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: automation/acquire-short-course-sources
+          ref: fix/trail14-skaneleden-backaleden-topology
           fetch-depth: 0
       - run: python -m pip install --quiet opencv-python-headless numpy pyproj networkx scikit-image scipy
       - name: Preserve existing raster registration diagnostics
@@ -41,7 +41,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add reports/trail5-reconstruction-run.log reports/christinehof-osm-hiking-relations.json routes/ost/trail5-current-reference || true
-          if ! git diff --cached --quiet; then git commit -m "Record Trail 5 reconstruction diagnostics"; git pull --rebase origin automation/acquire-short-course-sources; git push origin HEAD:automation/acquire-short-course-sources; fi
+          if ! git diff --cached --quiet; then git commit -m "Record Trail 5 reconstruction diagnostics"; git pull --rebase origin fix/trail14-skaneleden-backaleden-topology; git push origin HEAD:fix/trail14-skaneleden-backaleden-topology; fi
       - name: Reconstruct Trail 13/14
         run: |
           mkdir -p routes/ost/trail14-current-reference
@@ -52,14 +52,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add reports/trail14-reconstruction-run.log routes/ost/trail14-current-reference/candidate-frontier.json 2>/dev/null || true
-          if ! git diff --cached --quiet; then git commit -m "Record Trail 14 candidate diagnostics"; git pull --rebase origin automation/acquire-short-course-sources; git push origin HEAD:automation/acquire-short-course-sources; fi
+          if ! git diff --cached --quiet; then git commit -m "Record Trail 14 candidate diagnostics"; git pull --rebase origin fix/trail14-skaneleden-backaleden-topology; git push origin HEAD:fix/trail14-skaneleden-backaleden-topology; fi
           exit $rc
       - name: Commit Trail 13/14 diagnostics
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add reports/trail14-reconstruction-run.log routes/ost/trail14-current-reference
-          if ! git diff --cached --quiet; then git commit -m "Record Trail 13/14 reconstruction diagnostics"; git pull --rebase origin automation/acquire-short-course-sources; git push origin HEAD:automation/acquire-short-course-sources; fi
+          if ! git diff --cached --quiet; then git commit -m "Record Trail 13/14 reconstruction diagnostics"; git pull --rebase origin fix/trail14-skaneleden-backaleden-topology; git push origin HEAD:fix/trail14-skaneleden-backaleden-topology; fi
       - name: Enforce Trail 5 QA gate
         run: |
           python - <<'PY'
@@ -75,7 +75,9 @@ jobs:
           python - <<'PY'
           import json
           q=json.load(open("routes/ost/trail14-current-reference/qa.json"))
-          assert 12.0 <= q["distance_km"] <= 14.8, q
+          assert 12.0 <= q["distance_km"] <= 15.0, q
+          assert q["skane_out_m"] >= 1000, q
+          assert q["back_return_m"] >= 1000, q
           assert q["start_finish_gap_m"] <= 100, q
           assert q["hallamolla_control_m"] <= 150, q
           assert q["shared_out_return_m"] <= 1400, q
@@ -90,4 +92,4 @@ jobs:
           git add routes/ost/trail5-current-reference routes/ost/trail14-current-reference reports/trail5-reconstruction-run.log reports/trail14-reconstruction-run.log
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Update QA-passed Trail 5 reconstruction"
-          git push origin HEAD:automation/acquire-short-course-sources
+          git push origin HEAD:fix/trail14-skaneleden-backaleden-topology
