@@ -54,7 +54,7 @@ def main():
  an=nodes[int(nt.query(alun)[1])]
  # Eastern Hallamölla loop: two distinct Christinehof-Hallamölla corridors.
  first=[]
- for path in nx.shortest_simple_paths(G,s,h,weight="length"):
+ for path in nx.shortest_simple_paths(G,s,h,weight="weight"):
   L=sum(G[u][v]["length"] for u,v in zip(path,path[1:])); C=sum(G[u][v]["weight"] for u,v in zip(path,path[1:]))
   if 3000<=L<=5200:
    unsupported_far=sum(G[u][v]["length"] for u,v in zip(path,path[1:]) if G[u][v]["dev"]>150 and not (G[u][v]["skane"] or G[u][v]["back"]))
