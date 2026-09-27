@@ -1,6 +1,23 @@
-Traceback (most recent call last):
-  File "/home/runner/work/osterlen-spring-trail-analys/osterlen-spring-trail-analys/tools/reconstruct_trail14_osm.py", line 131, in <module>
-    main()
-  File "/home/runner/work/osterlen-spring-trail-analys/osterlen-spring-trail-analys/tools/reconstruct_trail14_osm.py", line 108, in main
-    raise RuntimeError(f"No eastern Hallamolla loop candidate; paths={len(first)}; unrestricted_pairs={len(diag)}")
-RuntimeError: No eastern Hallamolla loop candidate; paths=120; unrestricted_pairs=7140
+{
+  "distance_km": 13.664,
+  "route_points": 73,
+  "start_finish_gap_m": 35.7,
+  "western_long_arm_km": 1.503,
+  "western_short_arm_km": 5.189,
+  "eastern_principal_cycle_km": 6.972,
+  "principal_cycle_nodes": 1037,
+  "principal_cycle_pixel_length": 1204.7564927611036,
+  "raster_component_mean_width_px": 3.592,
+  "raster_simplification_epsilon_px": 4.0,
+  "epsilon_to_mean_width_ratio": 1.114,
+  "map_registration_median_px": 0.240141823887825,
+  "map_registration_p95_px": 1.5684036016464233,
+  "participant_2023_reference_km": 13.67,
+  "participant_reference_used_as_geometry_input": false,
+  "participant_distance_delta_m": 5.9,
+  "topology": "two western start/finish arms attached to one principal eastern cycle",
+  "geometry_status": "validated_reconstruction_2023_family_reference",
+  "publishable_as_reconstructed_route": true,
+  "publishable_as_organizer_gpx": false,
+  "current_2026_exact_version_confirmed": false
+}
