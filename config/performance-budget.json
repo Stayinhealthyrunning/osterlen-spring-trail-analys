@@ -6,11 +6,11 @@
   "measured_reference": {
     "engine_payload_raw_bytes": 5417501,
     "engine_payload_gzip_bytes": 450548,
-    "bootstrap_raw_bytes": 27041,
-    "bootstrap_gzip_bytes": 1980,
-    "largest_selected_race_raw_bytes": 329072,
-    "largest_selected_race_gzip_bytes": 29172,
-    "bootstrap_plus_largest_selected_race_gzip_bytes": 31152
+    "bootstrap_raw_bytes": 31084,
+    "bootstrap_gzip_bytes": 2633,
+    "largest_selected_race_raw_bytes": 311937,
+    "largest_selected_race_gzip_bytes": 29151,
+    "bootstrap_plus_largest_selected_race_gzip_bytes": 31784
   },
   "data_budgets": {
     "bootstrap_max_raw_bytes": 98304,
