@@ -6,6 +6,7 @@ Haversine track length from source GPX. Route equivalence diagnostics use 50 m r
 
 | File | Points | Calculated km | Raw D+ | Raw D- |
 |---|---:|---:|---:|---:|
+| `data/source/gpx/skaneleden-sl4-e7-brosarp-verkasjon.gpx` | 524 | 12.907 | 0.0 | 0.0 |
 | `data/source/gpx/ultra60/ost-ultra60-2024-organizer.gpx` | 3258 | 60.598 | 0.0 | 0.0 |
 | `data/source/gpx/ultra60/ost-ultra60-2025-2026-organizer.gpx` | 4246 | 59.621 | 1058.0 | 942.0 |
 

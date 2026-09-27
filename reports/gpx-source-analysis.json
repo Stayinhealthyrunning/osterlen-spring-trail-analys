@@ -2,6 +2,23 @@
   "method": "Haversine track length from source GPX. Route equivalence diagnostics use 50 m resampling and symmetric nearest-route corridor coverage. Raw elevation differences are unsmoothed and are not authoritative D+.",
   "files": [
     {
+      "path": "data/source/gpx/skaneleden-sl4-e7-brosarp-verkasjon.gpx",
+      "point_count": 524,
+      "distance_km": 12.907,
+      "raw_ascent_m": 0.0,
+      "raw_descent_m": 0.0,
+      "start": [
+        55.72555424909248,
+        14.100883522343594
+      ],
+      "finish": [
+        55.71673313849309,
+        13.981457446571333
+      ],
+      "min_ele_m": 1.2564994904e-05,
+      "max_ele_m": 1.2564994904e-05
+    },
+    {
       "path": "data/source/gpx/ultra60/ost-ultra60-2024-organizer.gpx",
       "point_count": 3258,
       "distance_km": 60.598,
