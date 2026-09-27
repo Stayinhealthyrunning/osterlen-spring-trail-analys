@@ -19,6 +19,9 @@ class ShortCourseReferenceGeometry(unittest.TestCase):
         self.assertEqual(prov["replacement_reference"]["status"],"provisional_hallamolla_splice_reference")
         self.assertAlmostEqual(prov["replacement_reference"]["derived_distance_km"],13.472,places=3)
         self.assertFalse(prov["replacement_reference"]["stored_route_asset"])
+        self.assertFalse((ROOT/"routes/ost/trail14-current-reference/route.gpx").exists())
+        self.assertFalse((ROOT/"routes/ost/trail14-current-reference/route.geojson").exists())
+        self.assertFalse((ROOT/"routes/ost/trail14-current-reference/candidate-frontier.json").exists())
 
     def test_trail14_course_version_uses_recipe_not_stored_asset(self):
         versions=load("config/course-versions.json")
