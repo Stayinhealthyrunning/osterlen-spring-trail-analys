@@ -70,7 +70,7 @@ Exact age/sex are used only where published. Historical missing fields stay miss
 
 ## Route-data policy
 
-Geometry evidence for comparability and a redistributable/local route asset are different things. Replay/map requires a locally usable route asset plus real timing anchors. Current evidence makes Ultra/Duo 2024–2026 replay/map-ready; older split-capable years remain route-blocked until a suitable local asset exists.
+Geometry evidence for comparability and a redistributable/local route asset are different things. Replay/map requires a locally usable route asset plus real timing anchors. Current evidence makes Ultra/Duo 2024–2026 replay/map-ready; older split-capable years remain route-blocked until a suitable local asset exists. Trail 13/14 currently has only a **provisional 13.472 km Hallamölla-splice recipe** based on Trail 21/22 2022–2024 public geometry. It may support methodology/course discussion but must not be exposed as an official or redistributable route asset until an authentic/approved GPX is secured.
 
 ## Capability gating
 
@@ -81,7 +81,7 @@ Current evidence:
 - 34 held race-year instances with results,
 - 13 with real split analysis data,
 - 6 with splits + local route data sufficient for replay/map,
-- 19 with verified course version.
+- 21 with verified course version.
 
 ## Integration sequence
 

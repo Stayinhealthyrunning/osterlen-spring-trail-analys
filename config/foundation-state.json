@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "snapshot_date": "2026-09-10",
+  "snapshot_date": "2026-09-27",
   "status": "data_frozen_curated_and_engine_handoff_ready",
   "scope": {
     "analysis_start_year": 2018,
@@ -48,7 +48,8 @@
     "engine_readiness_report": true,
     "gotaleden_engine_handoff": true,
     "foundation_consistency_validator": true,
-    "github_pages_placeholder": true
+    "github_pages_placeholder": true,
+    "trail14_provisional_hallamolla_splice_reference": true
   },
   "curated_archive": {
     "results": 9871,
@@ -118,13 +119,23 @@
       "2025": "trail22-2025-2026",
       "2026": "trail22-2025-2026"
     },
-    "trail14": "pending_route_archive",
-    "trail5": "pending_route_archive"
+    "trail14": {
+      "2026_working_reference": "trail14-current-reference",
+      "status": "provisional_hallamolla_splice_reference",
+      "derived_distance_km": 13.472,
+      "route_asset_available": false,
+      "authentic_gpx_target": true
+    },
+    "trail5": {
+      "2026_working_reference": "trail5-current-reference",
+      "status": "verified_current_organizer_raster_reconstruction",
+      "derived_distance_km": 5.481
+    }
   },
   "engine_readiness": {
     "races_with_split_analysis": 13,
     "races_with_replay_and_map_data": 6,
-    "races_with_course_version": 19,
+    "races_with_course_version": 21,
     "rule": "Feature availability is derived from the curated database; route-dependent features require a local usable route asset."
   },
   "deferred_until_next_phase_or_new_evidence": [
@@ -138,7 +149,7 @@
     },
     {
       "key": "trail14_trail5_course_versions",
-      "reason": "No complete verified year-by-year route geometry archive has been secured yet."
+      "reason": "Trail 14 now has a provisional 13.472 km Hallamölla splice working reference and Trail 5 has a 2026 reconstructed reference, but authentic GPX/year-specific historical geometry is still needed before authoritative historical course-version grouping."
     },
     {
       "key": "trail22_2018_assignment",

@@ -102,7 +102,7 @@ Trail 21/22:
 - 2025–2026 har exakt samma publika kartgeometri och är mycket nära 2024.
 - 2018-kandidaten är geometriskt nära 2019 men dess Trace-metadata är daterad 2016, så 2018 lämnas formellt oassignad tills årsspecifik proveniens finns.
 
-Trail 13/14 och Trail 5 väntar fortfarande på tillräckligt komplett verifierad historisk geometri för course-versionering.
+Trail 13/14 har nu en **provisorisk 13.472 km arbetsreferens**: den verifierade Trail 21/22-geometrin 2022–2024 följs till Hallamölla, den östra 8.269 km-slingan mellan två praktiskt sammanfallande Hallamölla-passager tas bort, och samma verifierade geometri följs tillbaka till mål. Detta är en arbetsmodell tills äkta deltagar-/arrangörs-GPX hittas och får inte beskrivas som officiell GPX eller automatiskt redistribueras som lokal route asset. Den tidigare 14.249 km rasterrekonstruktionen är superseded. Trail 5 har en 2026-rekonstruktion på 5.481 km med oberoende rasterkontroll 5.545 km; historisk exakt identitet är fortfarande unresolved.
 
 ## Höjddata och D+
 
@@ -118,7 +118,7 @@ Nuvarande dataläge:
 
 - **13** race-instansers verkliga splits räcker för splitanalys.
 - **6** race-instansers kombination av splits + lokal route asset räcker redan för replay/kartduell: Ultra och Duo 2024–2026.
-- **19** race-instansers course version är verifierad.
+- **21** race-instansers course version är verifierad.
 - Kortare lopp utan splits får fortfarande resultat-, finish-, deltagar- och course-version-analyser där underlaget stödjer dem.
 
 ## Dataprinciper
@@ -146,6 +146,7 @@ Nuvarande dataläge:
 - `reports/route-elevation-evidence.json` – källspecifik historisk höjdevidens utan lagrade koordinatserier.
 - `config/checkpoint-normalization.json` – årsspecifik timingsemantik.
 - `research/gotaleden-engine-handoff.md` – instruktioner för nästa integrationsfas.
+- `research/final-prebuild-checklist-2026-09-27.md` – konkret startordning, acceptance cases och kända icke-blockerande källfrågor inför stora bygget.
 
 ## Validering
 

@@ -1,7 +1,8 @@
 {
   "schema_version": 2,
   "source": "data/derived/ost-analysis-2018-2026.sqlite.gz",
-  "rule": "Feature flags are derived from the curated archive. Route-dependent features require a local usable route asset; relay leg assignment remains disabled until leg ordering is source-verified. Exact age and age-category coverage are reported separately.",
+  "course_assignment_source": "config/course-versions.json",
+  "rule": "Feature flags are derived from the curated archive plus authoritative course-version assignments in config/course-versions.json. Route-dependent features require a local usable route asset; relay leg assignment remains disabled until leg ordering is source-verified. Exact age and age-category coverage are reported separately.",
   "races": [
     {
       "race_key": "ost-2018-trail14",
@@ -1448,7 +1449,7 @@
       "year": 2026,
       "race_family": "trail14",
       "race_type": "individual",
-      "course_version": null,
+      "course_version": "trail14-current-reference",
       "route_asset_available": false,
       "results": 456,
       "finished": 453,
@@ -1485,7 +1486,7 @@
         "runner_replay": false,
         "map_duel": false,
         "course_difficulty_vs_pacing": false,
-        "course_version_records": false,
+        "course_version_records": true,
         "cross_year_participation": true,
         "relay_member_display": false,
         "relay_leg_assignment": null
@@ -1544,8 +1545,8 @@
       "year": 2026,
       "race_family": "trail5",
       "race_type": "individual",
-      "course_version": null,
-      "route_asset_available": false,
+      "course_version": "trail5-current-reference",
+      "route_asset_available": true,
       "results": 295,
       "finished": 295,
       "dnf": 0,
@@ -1581,7 +1582,7 @@
         "runner_replay": false,
         "map_duel": false,
         "course_difficulty_vs_pacing": false,
-        "course_version_records": false,
+        "course_version_records": true,
         "cross_year_participation": true,
         "relay_member_display": false,
         "relay_leg_assignment": null
@@ -1642,7 +1643,7 @@
     "split_passages": 6123,
     "races_with_split_analysis": 13,
     "races_with_replay_ready_data": 6,
-    "races_with_course_version": 19,
+    "races_with_course_version": 21,
     "results_with_bib": 9871,
     "results_with_gender": 5858,
     "results_with_exact_age": 4775,

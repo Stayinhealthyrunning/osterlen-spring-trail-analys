@@ -68,6 +68,24 @@ class EngineV1ExportTests(unittest.TestCase):
         self.assertTrue(modern["capabilities"]["sex_filter"])
         self.assertTrue(modern["capabilities"]["age_analysis"])
 
+
+    def test_short_course_assignments_overlay_curated_db(self):
+        trail14=self.data["races"]["ost-2026-trail14"]
+        trail5=self.data["races"]["ost-2026-trail5"]
+        self.assertEqual(trail14["course_version"],"trail14-current-reference")
+        self.assertEqual(trail5["course_version"],"trail5-current-reference")
+        self.assertFalse(trail14["capabilities"]["segment_analysis"])
+        self.assertFalse(trail14["capabilities"]["replay"])
+        self.assertFalse(trail5["capabilities"]["segment_analysis"])
+        self.assertFalse(trail5["capabilities"]["replay"])
+
+    def test_reconstructed_trail5_asset_is_exposed_with_provenance(self):
+        course=self.data["courses"]["trail5-current-reference"]
+        self.assertEqual(course["assets"]["route_asset_status"],"derived_reconstructed_reference")
+        self.assertFalse(course["assets"]["official_gpx"])
+        self.assertTrue(course["assets"]["route_source"])
+        self.assertFalse(self.data["courses"]["trail14-current-reference"]["assets"])
+
     def test_person_history_remains_disabled_without_linkage_layer(self):
         self.assertTrue(all(not race["capabilities"]["person_history"] for race in self.data["races"].values()))
 

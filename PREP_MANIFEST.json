@@ -1,15 +1,17 @@
 {
   "schema_version": 2,
-  "generated_on": "2026-09-10",
+  "generated_on": "2026-09-27",
   "status": "handoff_ready_for_generic_engine_integration",
   "purpose": "Entry-point inventory for the prepared Österlen Spring Trail analysis foundation before integration of the generic Gotaleden analysis core.",
   "read_first": [
     "config/foundation-state.json",
     "PREP_STATUS.md",
+    "research/final-prebuild-checklist-2026-09-27.md",
     "research/gotaleden-engine-handoff.md",
+    "research/engine-module-reuse-map.md",
     "config/analysis-data-contract.json",
     "config/engine-adapter.json",
-    "reports/source-coverage.md"
+    "reports/engine-readiness.md"
   ],
   "core_configuration": [
     "config/event.json",
@@ -53,11 +55,16 @@
     "research/gotaleden-engine-handoff.md",
     "research/sources.md",
     "research/sportstiming-data.md",
-    "research/ultra60-2026-landmarks.json"
+    "research/ultra60-2026-landmarks.json",
+    "research/final-prebuild-checklist-2026-09-27.md",
+    "research/engine-module-reuse-map.md"
   ],
   "key_reports": [
+    "reports/engine-readiness.md",
+    "reports/engine-readiness.json",
+    "reports/curated-analysis-db-summary.json",
+    "reports/result-archive-audit.json",
     "reports/source-coverage.md",
-    "reports/analysis-capabilities.md",
     "reports/bengtemolla-double-timing.md",
     "reports/gpx-inventory.md",
     "reports/gpx-comparison.md",
@@ -82,10 +89,13 @@
     "tools/build_analysis_capabilities.py",
     "tools/build_race_catalog.py",
     "tools/build_enriched_race_catalog.py",
-    "tools/validate_foundation.py"
+    "tools/validate_foundation.py",
+    "tools/build_engine_readiness_report.py",
+    "tools/export_engine_v1.py",
+    "tools/validate_prebuild_readiness.py"
   ],
   "validation": {
-    "command": "python tools/validate_foundation.py",
+    "command": "python tools/validate_foundation.py && python tools/validate_prebuild_readiness.py",
     "workflow": ".github/workflows/validate-foundation.yml"
   },
   "frontend": {
@@ -93,11 +103,11 @@
     "entry": "docs/index.html"
   },
   "deferred": [
-    "Production-grade complete Sportstiming result/detail raw snapshot importer",
-    "Duo team/member adapter",
     "Redistributable/local historical route assets required for map/replay",
-    "Trail 13/14 and Trail 5 course-version archaeology",
     "2018 Trail 21/22 year-specific provenance",
-    "Generic Gotaleden core integration"
+    "Generic Gotaleden core integration",
+    "Authentic participant/organizer GPX for Trail 13/14 and historical exact short-course geometry",
+    "Duo member-to-leg assignment until explicit source evidence exists",
+    "Cross-year repeat-runner identity linkage with confidence/evidence"
   ]
 }

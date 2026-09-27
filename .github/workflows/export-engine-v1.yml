@@ -1,0 +1,39 @@
+name: Export ÖST Engine 1.0 handoff
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rebuild readiness in workspace
+        run: python tools/build_engine_readiness_report.py
+      - name: Validate source-side prebuild state
+        run: |
+          python tools/validate_foundation.py
+          python tools/validate_prebuild_readiness.py
+      - name: Export Engine 1.0 payload
+        run: |
+          mkdir -p out
+          python tools/export_engine_v1.py --output out/ost-engine-v1.json
+          gzip -9 -c out/ost-engine-v1.json > out/ost-engine-v1.json.gz
+          sha256sum out/ost-engine-v1.json out/ost-engine-v1.json.gz > out/SHA256SUMS.txt
+      - name: Upload handoff artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ost-engine-v1-handoff
+          path: |
+            out/ost-engine-v1.json.gz
+            out/SHA256SUMS.txt
+            reports/engine-readiness.json
+            reports/engine-readiness.md
+          retention-days: 30

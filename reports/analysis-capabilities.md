@@ -1,5 +1,6 @@
 # Analysis capability matrix
 
+> **Legacy discovery matrix (2026-09-27):** This file reflects source-discovery capability assumptions and is retained for audit history. The authoritative build/runtime matrix is `reports/engine-readiness.md`; do not derive current UI capability flags from this file.\n\n
 `source_ready` betyder att källdata som krävs har observerats. Det betyder inte att slutlig import eller UI redan är färdig.
 
 | År | Familj | Resultat | Profil | Splits | Replay | Kartduell | Bana+pacing | Banversionsrekord |

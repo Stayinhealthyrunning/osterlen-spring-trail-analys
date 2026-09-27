@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "status": "source_side_ready_for_engine_integration",
+  "status": "source_side_ready_prebuild_audited",
   "target": {
     "engine_contract": "loppanalys-engine-1.0",
     "canonical_contract_repository": "Stayinhealthyrunning/gotaleden-splits",
@@ -34,7 +34,8 @@
     "Bengtemölla is the canonical named checkpoint for 2022/2023. The preceding 32 km observation remains a separate approach/prewarning candidate.",
     "Feature availability is data-driven through reports/engine-readiness.json and the curated database.",
     "Exact age is never derived from an age-category interval.",
-    "Cross-year person identity must be a separate confidence-bearing linkage layer and must not overwrite source-local identity."
+    "Cross-year person identity must be a separate confidence-bearing linkage layer and must not overwrite source-local identity.",
+    "Authoritative course assignments are overlaid from config/course-versions.json at readiness/export time so the immutable curated result archive does not need rebuilding for later route-evidence decisions."
   ],
   "supporting_inputs": {
     "curated_race_catalog": "config/race-catalog.json",
@@ -48,7 +49,8 @@
     "sportstiming_split_inventory": "data/source/sportstiming/split-inventory.json",
     "route_source_manifest": "config/course-source-manifest.json",
     "public_geometry_diagnostics": "reports/tracedetrail-public-geometry-analysis.json",
-    "local_route_assets_root": "data/source/gpx"
+    "official_route_assets_root": "data/source/gpx",
+    "derived_route_assets_root": "routes/ost"
   },
   "curated_database_contract": {
     "tables": {

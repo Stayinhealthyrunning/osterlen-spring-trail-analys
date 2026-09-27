@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Build a per-race feature/readiness matrix from the curated ÖST archive.
 
-This report is the bridge to the future generalized Gotaleden engine. Feature
-availability is derived from actual stored results, splits, course versions and
-local route assets. Field coverage distinguishes exact age from source-backed age
-category so older editions are not overstated or understated.
+Feature availability is derived from observed curated data plus the authoritative
+course-version assignments in config/course-versions.json. This keeps the frozen
+curated result archive immutable while allowing later, evidence-backed route/course
+decisions to flow into the Engine 1.0 handoff.
 """
 from __future__ import annotations
 from pathlib import Path
@@ -12,6 +12,7 @@ import gzip, json, shutil, sqlite3, tempfile
 
 ROOT=Path(__file__).resolve().parents[1]
 GZ=ROOT/'data/derived/ost-analysis-2018-2026.sqlite.gz'
+COURSES=ROOT/'config/course-versions.json'
 OUT=ROOT/'reports/engine-readiness.json'
 OUTMD=ROOT/'reports/engine-readiness.md'
 
@@ -21,9 +22,13 @@ def pct(n,d):
 
 
 def main():
+ course_cfg=json.loads(COURSES.read_text(encoding='utf-8'))
+ course_assign={(int(x['year']),x['family']):x for x in course_cfg.get('assignments',[])}
+
  with tempfile.TemporaryDirectory(prefix='ost-ready-') as td:
   db=Path(td)/'a.sqlite'
-  with gzip.open(GZ,'rb') as f,db.open('wb') as o:shutil.copyfileobj(f,o)
+  with gzip.open(GZ,'rb') as f,db.open('wb') as o:
+   shutil.copyfileobj(f,o)
   con=sqlite3.connect(db);con.row_factory=sqlite3.Row
   rows=[]
   for race in con.execute('SELECT * FROM races ORDER BY year,race_family'):
@@ -45,11 +50,16 @@ def main():
    country_known=q("SELECT COUNT(*) FROM results WHERE race_key=? AND country IS NOT NULL AND TRIM(country)<>''")
    class_known=q("SELECT COUNT(*) FROM results WHERE race_key=? AND source_class IS NOT NULL AND TRIM(source_class)<>''")
    relay_members=q('SELECT COUNT(*) FROM relay_members m JOIN relay_teams t ON t.team_uid=m.team_uid WHERE t.race_key=?') if race['race_type']=='relay' else 0
-   local_route=bool(race['route_asset_available']);course=bool(race['course_version'])
+
+   assignment=course_assign.get((int(race['year']),race['race_family']))
+   course_version=assignment.get('course_version_id') if assignment is not None else race['course_version']
+   local_route=bool(assignment.get('route_asset_available')) if assignment is not None else bool(race['route_asset_available'])
+   course=bool(course_version)
    split_ready=splits>0 and split_results>0
    replay_ready=split_ready and local_route and semantic_checkpoints>=2
-   rec={
-    'race_key':rk,'year':race['year'],'race_family':race['race_family'],'race_type':race['race_type'],'course_version':race['course_version'],
+
+   rows.append({
+    'race_key':rk,'year':race['year'],'race_family':race['race_family'],'race_type':race['race_type'],'course_version':course_version,
     'route_asset_available':local_route,'results':results,'finished':finished,'dnf':dnf,'unknown':unknown,'split_passages':splits,'results_with_splits':split_results,
     'semantic_checkpoint_count':semantic_checkpoints,'source_checkpoint_count':source_checkpoints,'relay_member_rows':relay_members,
     'field_counts':{'bib':bib_known,'gender':gender_known,'age_exact':age_known,'age_category':agecat_known,'club':club_known,'country':country_known,'source_class':class_known},
@@ -70,13 +80,14 @@ def main():
       'relay_member_display':race['race_type']=='relay' and relay_members>0,
       'relay_leg_assignment':False if race['race_type']=='relay' else None,
     }
-   }
-   rows.append(rec)
+   })
   con.close()
+
  summary={
   'schema_version':2,
   'source':'data/derived/ost-analysis-2018-2026.sqlite.gz',
-  'rule':'Feature flags are derived from the curated archive. Route-dependent features require a local usable route asset; relay leg assignment remains disabled until leg ordering is source-verified. Exact age and age-category coverage are reported separately.',
+  'course_assignment_source':'config/course-versions.json',
+  'rule':'Feature flags are derived from the curated archive plus authoritative course-version assignments in config/course-versions.json. Route-dependent features require a local usable route asset; relay leg assignment remains disabled until leg ordering is source-verified. Exact age and age-category coverage are reported separately.',
   'races':rows,
   'totals':{
    'races':len(rows),'results':sum(r['results'] for r in rows),'split_passages':sum(r['split_passages'] for r in rows),
@@ -101,4 +112,5 @@ def main():
  OUTMD.write_text('\n'.join(lines)+'\n',encoding='utf-8')
  print(json.dumps(summary['totals'],indent=2))
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+ main()

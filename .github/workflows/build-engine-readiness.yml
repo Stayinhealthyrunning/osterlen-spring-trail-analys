@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'data/derived/ost-analysis-2018-2026.sqlite.gz'
+      - 'config/course-versions.json'
       - 'tools/build_engine_readiness_report.py'
       - '.github/workflows/build-engine-readiness.yml'
 
