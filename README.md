@@ -118,7 +118,7 @@ Nuvarande dataläge:
 
 - **13** race-instansers verkliga splits räcker för splitanalys.
 - **6** race-instansers kombination av splits + lokal route asset räcker redan för replay/kartduell: Ultra och Duo 2024–2026.
-- **19** race-instansers course version är verifierad.
+- **21** race-instansers course version är verifierad.
 - Kortare lopp utan splits får fortfarande resultat-, finish-, deltagar- och course-version-analyser där underlaget stödjer dem.
 
 ## Dataprinciper
