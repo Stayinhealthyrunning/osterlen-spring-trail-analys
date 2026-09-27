@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-27T10:23:49.477316+00:00",
+  "candidate": {
+    "trace_id": 7897,
+    "source_url": "https://tracedetrail.fr/fr/trace/7897",
+    "source_date_compet": "16/04/2016",
+    "source_reported_distance_km": 21.7,
+    "derived_path_distance_km": 21.688,
+    "source_dp_last": null,
+    "source_dn_last": null
+  },
+  "independent_2018_controls": {
+    "official_race_date": "2018-04-14",
+    "official_distance_km": 21.7,
+    "official_ascent_m": 490,
+    "race_day_watch_distance_km": 22.03,
+    "race_day_watch_source": "https://www.jogg.se/Traning/Pass.aspx?id=15416220",
+    "race_day_narrative_source": "https://forsbacka10487151.wordpress.com/2018/04/15/ett-perfekt-osterlen-spring-trail/",
+    "narrative": "First kilometres were easier; Vantalängan was followed by a steep climb around km 14; finish reported as roughly 22 km."
+  },
+  "landmarks": [
+    {
+      "key": "vantalangan",
+      "name": "Vantalängan",
+      "lat": 55.72328,
+      "lon": 14.05955,
+      "source": "https://mapcarta.com/N7125225402",
+      "independent_2018_evidence": "Forsbackarunner race report places the steep climb immediately after Vantalängan at about km 14; current organizer material places the Vantalängan aid station at 13 km.",
+      "projected_distance_km": 13.292,
+      "off_route_m": 53.0,
+      "remaining_km": 8.396
+    },
+    {
+      "key": "hallamolla",
+      "name": "Hallamölla",
+      "lat": 55.70819,
+      "lon": 14.0178,
+      "source": "project independent control; see research/hallamolla-independent-controls-2026-09-26.md",
+      "independent_2018_evidence": "The documented Verkeån race corridor passes Hallamölla before and after the Vantalängan section.",
+      "projected_distance_km": 16.87,
+      "off_route_m": 4.6,
+      "remaining_km": 4.818
+    }
+  ],
+  "tests": {
+    "vantalangan_consistent": true,
+    "official_metrics_consistent": true
+  },
+  "interpretation": "triangulated_2018_reference_supported",
+  "provenance_warning": "Trace dateCompet remains 2016. Passing these controls supports use as a triangulated 2018 reference geometry; it does not turn the Trace metadata into a direct 2018 source or grant redistribution rights.",
+  "coordinate_storage_policy": "Trace coordinate series decoded transiently only; no coordinate array persisted."
+}
