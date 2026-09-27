@@ -45,11 +45,11 @@ def main():
    country_known=q("SELECT COUNT(*) FROM results WHERE race_key=? AND country IS NOT NULL AND TRIM(country)<>''")
    class_known=q("SELECT COUNT(*) FROM results WHERE race_key=? AND source_class IS NOT NULL AND TRIM(source_class)<>''")
    relay_members=q('SELECT COUNT(*) FROM relay_members m JOIN relay_teams t ON t.team_uid=m.team_uid WHERE t.race_key=?') if race['race_type']=='relay' else 0
-   local_route=bool(race['route_asset_available']);course=bool(race['course_version'])
+   assignment=course_assign.get((int(race['year']),race['race_family']),{})\n   configured_course=assignment.get('course_version_id') if assignment else None\n   course_version=configured_course if configured_course is not None else race['course_version']\n   local_route=bool(assignment.get('route_asset_available')) if assignment else bool(race['route_asset_available'])\n   course=bool(course_version)
    split_ready=splits>0 and split_results>0
    replay_ready=split_ready and local_route and semantic_checkpoints>=2
    rec={
-    'race_key':rk,'year':race['year'],'race_family':race['race_family'],'race_type':race['race_type'],'course_version':race['course_version'],
+    'race_key':rk,'year':race['year'],'race_family':race['race_family'],'race_type':race['race_type'],'course_version':course_version,
     'route_asset_available':local_route,'results':results,'finished':finished,'dnf':dnf,'unknown':unknown,'split_passages':splits,'results_with_splits':split_results,
     'semantic_checkpoint_count':semantic_checkpoints,'source_checkpoint_count':source_checkpoints,'relay_member_rows':relay_members,
     'field_counts':{'bib':bib_known,'gender':gender_known,'age_exact':age_known,'age_category':agecat_known,'club':club_known,'country':country_known,'source_class':class_known},
@@ -76,7 +76,7 @@ def main():
  summary={
   'schema_version':2,
   'source':'data/derived/ost-analysis-2018-2026.sqlite.gz',
-  'rule':'Feature flags are derived from the curated archive. Route-dependent features require a local usable route asset; relay leg assignment remains disabled until leg ordering is source-verified. Exact age and age-category coverage are reported separately.',
+  'rule':'Feature flags are derived from the curated archive plus authoritative course-version assignments in config/course-versions.json. Route-dependent features require a local usable route asset; relay leg assignment remains disabled until leg ordering is source-verified. Exact age and age-category coverage are reported separately.',
   'races':rows,
   'totals':{
    'races':len(rows),'results':sum(r['results'] for r in rows),'split_passages':sum(r['split_passages'] for r in rows),
