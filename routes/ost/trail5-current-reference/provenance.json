@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "race": "Österlen Spring Trail",
+  "course": "Naturloppet / Trail 5 km",
+  "geometry_status": "validated_reconstruction",
+  "primary_geometry_basis": "georeferenced organizer raster snapped to OpenStreetMap",
+  "not_an_organizer_gpx": true,
+  "sources": [
+    {
+      "type": "organizer_georeferenced_raster",
+      "path": "data/source/maps/ost-trail5-organizer-map.jpg",
+      "role": "primary course-shape evidence"
+    },
+    {
+      "type": "open_map_snapped",
+      "path": "data/source/osm/christinehof-path-network.geojson",
+      "role": "vector path geometry"
+    },
+    {
+      "type": "text_constraint",
+      "description": "Christinehof start/finish; approximately 5 km; first ~3 km easier roads/tracks and last ~2 km narrower technical trail"
+    }
+  ],
+  "limitations": [
+    "No accessible organizer GPX or verified participant GPX has been found for this course version.",
+    "OSM snapping may differ locally where the organizer raster and mapped path network are ambiguous."
+  ],
+  "qa_path": "qa.json"
+}
