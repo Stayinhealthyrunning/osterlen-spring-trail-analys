@@ -1,11 +1,12 @@
 {
   "schema_version": 2,
-  "generated_on": "2026-09-10",
+  "generated_on": "2026-09-27",
   "status": "handoff_ready_for_generic_engine_integration",
   "purpose": "Entry-point inventory for the prepared Österlen Spring Trail analysis foundation before integration of the generic Gotaleden analysis core.",
   "read_first": [
     "config/foundation-state.json",
     "PREP_STATUS.md",
+    "research/final-prebuild-checklist-2026-09-27.md",
     "research/gotaleden-engine-handoff.md",
     "config/analysis-data-contract.json",
     "config/engine-adapter.json",
@@ -53,7 +54,8 @@
     "research/gotaleden-engine-handoff.md",
     "research/sources.md",
     "research/sportstiming-data.md",
-    "research/ultra60-2026-landmarks.json"
+    "research/ultra60-2026-landmarks.json",
+    "research/final-prebuild-checklist-2026-09-27.md"
   ],
   "key_reports": [
     "reports/source-coverage.md",
@@ -96,8 +98,8 @@
     "Production-grade complete Sportstiming result/detail raw snapshot importer",
     "Duo team/member adapter",
     "Redistributable/local historical route assets required for map/replay",
-    "Trail 13/14 and Trail 5 course-version archaeology",
     "2018 Trail 21/22 year-specific provenance",
-    "Generic Gotaleden core integration"
+    "Generic Gotaleden core integration",
+    "Authentic participant/organizer GPX for Trail 13/14 and historical exact short-course geometry"
   ]
 }
