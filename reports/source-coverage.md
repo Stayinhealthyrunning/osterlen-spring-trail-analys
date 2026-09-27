@@ -1,5 +1,6 @@
 # Source coverage
 
+> **Scope note (2026-09-27):** This is a source-discovery coverage report. It predates parts of the completed curated import/adapters and must not be used as the runtime feature gate. Use `reports/engine-readiness.md` + `config/course-versions.json` for the build.\n\n
 Observed source coverage used to decide what the future analysis UI may safely enable. A sampled split table proves the schema exists, not that every runner has every split.
 
 | Year | Family | Result class | Detail | Splits | Split labels | Tracking | Route geometry | GPX | Trace ref |
