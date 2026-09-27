@@ -8,6 +8,8 @@ These are the scripts expected to matter directly when the ÖST analysis tool is
 
 - `build_engine_readiness_report.py`
 - `export_engine_v1.py`
+- `profile_engine_payload.py` — measures the real complete Engine export and section/race sizes
+- `build_engine_delivery_shards.py` — produces bootstrap + one browser JSON shard per race and enforces the data budget
 - `validate_foundation.py`
 - `validate_prebuild_readiness.py`
 - `audit_repository_hygiene.py`
