@@ -92,8 +92,8 @@ def main():
    # while rejecting materially longer composites.
    observed_total=13670.0
    total_with_west=5481.0+east
-   distance_excess=max(0.0,abs(total_with_west-observed_total)-650.0)
-   score=A[2]+B[2]+overlap*400+far_pen-rel_bonus-complementary*18+distance_excess*250
+   distance_excess=max(0.0,abs(total_with_west-observed_total)-450.0)
+   score=A[2]+B[2]+overlap*400+far_pen-rel_bonus-complementary*18+distance_excess*1200
    pareto.append({"overlap_m":round(overlap,1),"east_km":round(east/1000,3),"raster_cost":round(A[2]+B[2],1),"far_penalty":round(far_pen,1),"relation_bonus":round(rel_bonus,1),"complementary_relation_m":round(complementary,1),"score":round(score,1)})
    if best is None or score<best[0]: best=(score,A,B,overlap,east)
  if best is None:
