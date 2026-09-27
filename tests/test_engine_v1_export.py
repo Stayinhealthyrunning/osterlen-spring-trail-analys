@@ -72,5 +72,24 @@ class EngineV1ExportTests(unittest.TestCase):
         self.assertTrue(all(not race["capabilities"]["person_history"] for race in self.data["races"].values()))
 
 
+    def test_short_courses_export_reference_geometry_without_fake_course_identity(self):
+        trail5=self.data["races"]["ost-2026-trail5"]
+        trail14=self.data["races"]["ost-2026-trail14"]
+        self.assertIsNone(trail5["course_version"])
+        self.assertIsNone(trail14["course_version"])
+        self.assertEqual(trail5["route_reference"],{"id":"trail5-current-reference","exact_year_identity":False})
+        self.assertEqual(trail14["route_reference"],{"id":"trail14-current-reference","exact_year_identity":False})
+        self.assertTrue(self.data["route_references"]["trail5-current-reference"]["route_source"])
+        self.assertTrue(self.data["route_references"]["trail14-current-reference"]["route_source"])
+        self.assertFalse(trail5["capabilities"]["replay"])
+        self.assertFalse(trail14["capabilities"]["replay"])
+
+    def test_historical_trace_geometry_stays_external_reference_not_local_asset(self):
+        race=self.data["races"]["ost-2023-ultra60"]
+        course=self.data["courses"][race["course_version"]]
+        self.assertFalse(course["assets"])
+        self.assertTrue(course["geometry_evidence"]["external_reference_url"].startswith("https://tracedetrail.fr/"))
+
+
 if __name__=="__main__":
     unittest.main()
