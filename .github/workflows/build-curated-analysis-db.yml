@@ -9,7 +9,6 @@ on:
       - 'reports/result-archive-summary.json'
       - 'reports/duo-member-evidence.json'
       - 'config/race-catalog.json'
-      - 'config/course-versions.json'
       - 'config/checkpoint-normalization.json'
       - 'tools/build_curated_analysis_db.py'
       - '.github/workflows/build-curated-analysis-db.yml'
