@@ -1,5002 +1,5002 @@
 [
   {
-    "overlap_m": 1190.9,
-    "east_km": 9.871,
-    "raster_cost": 41582.0
+    "overlap_m": 4764.6,
+    "east_km": 10.013,
+    "raster_cost": 34436.7
   },
   {
-    "overlap_m": 1190.9,
-    "east_km": 9.871,
-    "raster_cost": 41582.0
+    "overlap_m": 4764.6,
+    "east_km": 10.021,
+    "raster_cost": 34443.8
   },
   {
-    "overlap_m": 1190.9,
-    "east_km": 9.871,
-    "raster_cost": 41582.0
+    "overlap_m": 4771.7,
+    "east_km": 10.011,
+    "raster_cost": 34423.5
   },
   {
-    "overlap_m": 1190.9,
-    "east_km": 9.871,
-    "raster_cost": 41582.0
+    "overlap_m": 4771.7,
+    "east_km": 10.011,
+    "raster_cost": 34423.5
   },
   {
-    "overlap_m": 1190.9,
-    "east_km": 9.958,
-    "raster_cost": 42696.4
+    "overlap_m": 4771.7,
+    "east_km": 10.011,
+    "raster_cost": 34423.5
   },
   {
-    "overlap_m": 1190.9,
-    "east_km": 9.958,
-    "raster_cost": 42696.4
+    "overlap_m": 4771.7,
+    "east_km": 10.011,
+    "raster_cost": 34423.5
   },
   {
-    "overlap_m": 1190.9,
-    "east_km": 9.958,
-    "raster_cost": 42696.4
+    "overlap_m": 4771.7,
+    "east_km": 10.011,
+    "raster_cost": 34423.5
   },
   {
-    "overlap_m": 1203.0,
-    "east_km": 9.871,
-    "raster_cost": 41583.0
+    "overlap_m": 4771.7,
+    "east_km": 10.011,
+    "raster_cost": 34423.5
   },
   {
-    "overlap_m": 1203.0,
-    "east_km": 9.871,
-    "raster_cost": 41583.0
+    "overlap_m": 4771.7,
+    "east_km": 10.011,
+    "raster_cost": 34423.5
   },
   {
-    "overlap_m": 1203.0,
-    "east_km": 9.871,
-    "raster_cost": 41583.0
+    "overlap_m": 4771.7,
+    "east_km": 10.011,
+    "raster_cost": 34423.5
   },
   {
-    "overlap_m": 1203.0,
-    "east_km": 9.871,
-    "raster_cost": 41583.0
-  },
-  {
-    "overlap_m": 1203.0,
-    "east_km": 9.957,
-    "raster_cost": 42697.4
-  },
-  {
-    "overlap_m": 1203.0,
-    "east_km": 9.957,
-    "raster_cost": 42697.4
-  },
-  {
-    "overlap_m": 1203.0,
-    "east_km": 9.957,
-    "raster_cost": 42697.4
-  },
-  {
-    "overlap_m": 1214.6,
-    "east_km": 9.779,
-    "raster_cost": 41214.0
-  },
-  {
-    "overlap_m": 1214.6,
-    "east_km": 9.779,
-    "raster_cost": 41214.0
-  },
-  {
-    "overlap_m": 1214.6,
-    "east_km": 9.779,
-    "raster_cost": 41214.0
-  },
-  {
-    "overlap_m": 1214.6,
-    "east_km": 9.779,
-    "raster_cost": 41214.0
-  },
-  {
-    "overlap_m": 1214.6,
-    "east_km": 9.866,
-    "raster_cost": 42328.4
-  },
-  {
-    "overlap_m": 1214.6,
-    "east_km": 9.866,
-    "raster_cost": 42328.4
-  },
-  {
-    "overlap_m": 1215.2,
-    "east_km": 9.92,
-    "raster_cost": 41634.1
-  },
-  {
-    "overlap_m": 1215.2,
-    "east_km": 9.92,
-    "raster_cost": 41634.1
-  },
-  {
-    "overlap_m": 1215.2,
-    "east_km": 9.92,
-    "raster_cost": 41634.1
-  },
-  {
-    "overlap_m": 1215.2,
-    "east_km": 9.92,
-    "raster_cost": 41634.1
-  },
-  {
-    "overlap_m": 1215.2,
+    "overlap_m": 4771.7,
     "east_km": 10.007,
-    "raster_cost": 42748.5
+    "raster_cost": 34426.2
   },
   {
-    "overlap_m": 1215.2,
+    "overlap_m": 4771.7,
     "east_km": 10.007,
-    "raster_cost": 42748.5
+    "raster_cost": 34426.2
   },
   {
-    "overlap_m": 1215.2,
+    "overlap_m": 4771.7,
     "east_km": 10.007,
-    "raster_cost": 42748.5
+    "raster_cost": 34426.2
   },
   {
-    "overlap_m": 1226.8,
-    "east_km": 9.779,
-    "raster_cost": 41214.9
-  },
-  {
-    "overlap_m": 1226.8,
-    "east_km": 9.779,
-    "raster_cost": 41214.9
-  },
-  {
-    "overlap_m": 1226.8,
-    "east_km": 9.779,
-    "raster_cost": 41214.9
-  },
-  {
-    "overlap_m": 1226.8,
-    "east_km": 9.779,
-    "raster_cost": 41214.9
-  },
-  {
-    "overlap_m": 1226.8,
-    "east_km": 9.866,
-    "raster_cost": 42329.4
-  },
-  {
-    "overlap_m": 1226.8,
-    "east_km": 9.866,
-    "raster_cost": 42329.4
-  },
-  {
-    "overlap_m": 1227.7,
-    "east_km": 9.92,
-    "raster_cost": 41633.1
-  },
-  {
-    "overlap_m": 1227.7,
-    "east_km": 9.92,
-    "raster_cost": 41633.1
-  },
-  {
-    "overlap_m": 1227.7,
-    "east_km": 9.92,
-    "raster_cost": 41633.1
-  },
-  {
-    "overlap_m": 1227.7,
-    "east_km": 9.92,
-    "raster_cost": 41633.1
-  },
-  {
-    "overlap_m": 1227.7,
+    "overlap_m": 4771.7,
     "east_km": 10.007,
-    "raster_cost": 42747.6
+    "raster_cost": 34426.2
   },
   {
-    "overlap_m": 1227.7,
+    "overlap_m": 4771.7,
+    "east_km": 10.02,
+    "raster_cost": 34430.6
+  },
+  {
+    "overlap_m": 4771.7,
+    "east_km": 10.02,
+    "raster_cost": 34430.6
+  },
+  {
+    "overlap_m": 4771.7,
+    "east_km": 10.02,
+    "raster_cost": 34430.6
+  },
+  {
+    "overlap_m": 4771.7,
+    "east_km": 10.02,
+    "raster_cost": 34430.6
+  },
+  {
+    "overlap_m": 4771.7,
+    "east_km": 10.02,
+    "raster_cost": 34430.6
+  },
+  {
+    "overlap_m": 4771.7,
+    "east_km": 10.02,
+    "raster_cost": 34430.6
+  },
+  {
+    "overlap_m": 4771.7,
+    "east_km": 10.02,
+    "raster_cost": 34430.6
+  },
+  {
+    "overlap_m": 4771.7,
+    "east_km": 10.02,
+    "raster_cost": 34430.6
+  },
+  {
+    "overlap_m": 4776.9,
+    "east_km": 10.013,
+    "raster_cost": 34434.6
+  },
+  {
+    "overlap_m": 4776.9,
+    "east_km": 10.021,
+    "raster_cost": 34441.7
+  },
+  {
+    "overlap_m": 4777.0,
+    "east_km": 10.011,
+    "raster_cost": 34437.1
+  },
+  {
+    "overlap_m": 4778.9,
+    "east_km": 10.021,
+    "raster_cost": 34437.6
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.034,
+    "raster_cost": 34415.5
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.034,
+    "raster_cost": 34415.5
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.034,
+    "raster_cost": 34415.5
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.034,
+    "raster_cost": 34415.5
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.034,
+    "raster_cost": 34415.5
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.034,
+    "raster_cost": 34415.5
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.034,
+    "raster_cost": 34415.5
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.034,
+    "raster_cost": 34415.5
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.034,
+    "raster_cost": 34415.5
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.034,
+    "raster_cost": 34415.5
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.034,
+    "raster_cost": 34415.5
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.034,
+    "raster_cost": 34415.5
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.034,
+    "raster_cost": 34415.5
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.034,
+    "raster_cost": 34415.5
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.034,
+    "raster_cost": 34415.5
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.029,
+    "raster_cost": 34418.2
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.029,
+    "raster_cost": 34418.2
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.029,
+    "raster_cost": 34418.2
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.029,
+    "raster_cost": 34418.2
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.029,
+    "raster_cost": 34418.2
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.029,
+    "raster_cost": 34418.2
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.029,
+    "raster_cost": 34418.2
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.042,
+    "raster_cost": 34422.6
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.042,
+    "raster_cost": 34422.6
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.042,
+    "raster_cost": 34422.6
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.042,
+    "raster_cost": 34422.6
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.042,
+    "raster_cost": 34422.6
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.042,
+    "raster_cost": 34422.6
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.042,
+    "raster_cost": 34422.6
+  },
+  {
+    "overlap_m": 4780.6,
+    "east_km": 10.042,
+    "raster_cost": 34422.6
+  },
+  {
+    "overlap_m": 4784.0,
+    "east_km": 10.011,
+    "raster_cost": 34421.5
+  },
+  {
+    "overlap_m": 4784.0,
+    "east_km": 10.011,
+    "raster_cost": 34421.5
+  },
+  {
+    "overlap_m": 4784.0,
+    "east_km": 10.011,
+    "raster_cost": 34421.5
+  },
+  {
+    "overlap_m": 4784.0,
+    "east_km": 10.011,
+    "raster_cost": 34421.5
+  },
+  {
+    "overlap_m": 4784.0,
     "east_km": 10.007,
-    "raster_cost": 42747.6
+    "raster_cost": 34424.1
   },
   {
-    "overlap_m": 1227.7,
+    "overlap_m": 4784.0,
     "east_km": 10.007,
-    "raster_cost": 42747.6
+    "raster_cost": 34424.1
   },
   {
-    "overlap_m": 1237.5,
-    "east_km": 9.709,
-    "raster_cost": 41335.0
+    "overlap_m": 4784.0,
+    "east_km": 10.011,
+    "raster_cost": 34425.5
   },
   {
-    "overlap_m": 1237.5,
-    "east_km": 9.709,
-    "raster_cost": 41335.0
+    "overlap_m": 4784.0,
+    "east_km": 10.011,
+    "raster_cost": 34425.5
   },
   {
-    "overlap_m": 1237.5,
-    "east_km": 9.709,
-    "raster_cost": 41335.0
+    "overlap_m": 4784.0,
+    "east_km": 10.011,
+    "raster_cost": 34425.5
   },
   {
-    "overlap_m": 1237.5,
-    "east_km": 9.709,
-    "raster_cost": 41335.0
+    "overlap_m": 4784.0,
+    "east_km": 10.011,
+    "raster_cost": 34425.5
   },
   {
-    "overlap_m": 1237.5,
-    "east_km": 9.709,
-    "raster_cost": 41335.0
+    "overlap_m": 4784.0,
+    "east_km": 10.007,
+    "raster_cost": 34428.2
   },
   {
-    "overlap_m": 1237.5,
-    "east_km": 9.709,
-    "raster_cost": 41335.0
+    "overlap_m": 4784.0,
+    "east_km": 10.007,
+    "raster_cost": 34428.2
   },
   {
-    "overlap_m": 1237.5,
-    "east_km": 9.796,
-    "raster_cost": 42449.5
+    "overlap_m": 4784.0,
+    "east_km": 10.02,
+    "raster_cost": 34428.5
   },
   {
-    "overlap_m": 1237.5,
-    "east_km": 9.796,
-    "raster_cost": 42449.5
+    "overlap_m": 4784.0,
+    "east_km": 10.02,
+    "raster_cost": 34428.5
   },
   {
-    "overlap_m": 1237.5,
-    "east_km": 9.796,
-    "raster_cost": 42449.5
+    "overlap_m": 4784.0,
+    "east_km": 10.02,
+    "raster_cost": 34428.5
   },
   {
-    "overlap_m": 1237.5,
-    "east_km": 9.796,
-    "raster_cost": 42449.5
+    "overlap_m": 4784.0,
+    "east_km": 10.02,
+    "raster_cost": 34428.5
   },
   {
-    "overlap_m": 1237.5,
-    "east_km": 9.796,
-    "raster_cost": 42449.5
+    "overlap_m": 4784.0,
+    "east_km": 10.02,
+    "raster_cost": 34432.6
   },
   {
-    "overlap_m": 1237.5,
-    "east_km": 9.796,
-    "raster_cost": 42449.5
+    "overlap_m": 4784.0,
+    "east_km": 10.02,
+    "raster_cost": 34432.6
   },
   {
-    "overlap_m": 1239.0,
-    "east_km": 9.828,
-    "raster_cost": 41266.1
+    "overlap_m": 4784.0,
+    "east_km": 10.02,
+    "raster_cost": 34432.6
   },
   {
-    "overlap_m": 1239.0,
-    "east_km": 9.828,
-    "raster_cost": 41266.1
+    "overlap_m": 4784.0,
+    "east_km": 10.02,
+    "raster_cost": 34432.6
   },
   {
-    "overlap_m": 1239.0,
-    "east_km": 9.828,
-    "raster_cost": 41266.1
+    "overlap_m": 4784.1,
+    "east_km": 10.009,
+    "raster_cost": 34423.9
   },
   {
-    "overlap_m": 1239.0,
-    "east_km": 9.915,
-    "raster_cost": 42380.5
+    "overlap_m": 4784.1,
+    "east_km": 10.009,
+    "raster_cost": 34423.9
   },
   {
-    "overlap_m": 1239.0,
-    "east_km": 9.915,
-    "raster_cost": 42380.5
+    "overlap_m": 4784.1,
+    "east_km": 10.009,
+    "raster_cost": 34423.9
   },
   {
-    "overlap_m": 1248.6,
-    "east_km": 9.987,
-    "raster_cost": 41748.7
+    "overlap_m": 4784.1,
+    "east_km": 10.009,
+    "raster_cost": 34423.9
   },
   {
-    "overlap_m": 1248.6,
-    "east_km": 9.987,
-    "raster_cost": 41748.7
+    "overlap_m": 4784.2,
+    "east_km": 10.016,
+    "raster_cost": 34434.4
   },
   {
-    "overlap_m": 1248.6,
-    "east_km": 9.987,
-    "raster_cost": 41748.7
-  },
-  {
-    "overlap_m": 1248.6,
-    "east_km": 9.987,
-    "raster_cost": 41748.7
-  },
-  {
-    "overlap_m": 1248.6,
-    "east_km": 10.073,
-    "raster_cost": 42863.2
-  },
-  {
-    "overlap_m": 1248.6,
-    "east_km": 10.073,
-    "raster_cost": 42863.2
-  },
-  {
-    "overlap_m": 1248.6,
-    "east_km": 10.073,
-    "raster_cost": 42863.2
-  },
-  {
-    "overlap_m": 1248.6,
-    "east_km": 10.073,
-    "raster_cost": 42863.2
-  },
-  {
-    "overlap_m": 1249.6,
-    "east_km": 9.709,
-    "raster_cost": 41336.0
-  },
-  {
-    "overlap_m": 1249.6,
-    "east_km": 9.709,
-    "raster_cost": 41336.0
-  },
-  {
-    "overlap_m": 1249.6,
-    "east_km": 9.709,
-    "raster_cost": 41336.0
-  },
-  {
-    "overlap_m": 1249.6,
-    "east_km": 9.709,
-    "raster_cost": 41336.0
-  },
-  {
-    "overlap_m": 1249.6,
-    "east_km": 9.709,
-    "raster_cost": 41336.0
-  },
-  {
-    "overlap_m": 1249.6,
-    "east_km": 9.709,
-    "raster_cost": 41336.0
-  },
-  {
-    "overlap_m": 1249.6,
-    "east_km": 9.796,
-    "raster_cost": 42450.4
-  },
-  {
-    "overlap_m": 1249.6,
-    "east_km": 9.796,
-    "raster_cost": 42450.4
-  },
-  {
-    "overlap_m": 1249.6,
-    "east_km": 9.796,
-    "raster_cost": 42450.4
-  },
-  {
-    "overlap_m": 1249.6,
-    "east_km": 9.796,
-    "raster_cost": 42450.4
-  },
-  {
-    "overlap_m": 1249.6,
-    "east_km": 9.796,
-    "raster_cost": 42450.4
-  },
-  {
-    "overlap_m": 1249.6,
-    "east_km": 9.796,
-    "raster_cost": 42450.4
-  },
-  {
-    "overlap_m": 1251.5,
-    "east_km": 9.828,
-    "raster_cost": 41265.1
-  },
-  {
-    "overlap_m": 1251.5,
-    "east_km": 9.828,
-    "raster_cost": 41265.1
-  },
-  {
-    "overlap_m": 1251.5,
-    "east_km": 9.828,
-    "raster_cost": 41265.1
-  },
-  {
-    "overlap_m": 1251.5,
-    "east_km": 9.915,
-    "raster_cost": 42379.5
-  },
-  {
-    "overlap_m": 1251.5,
-    "east_km": 9.915,
-    "raster_cost": 42379.5
-  },
-  {
-    "overlap_m": 1255.5,
-    "east_km": 10.0,
-    "raster_cost": 41740.3
-  },
-  {
-    "overlap_m": 1255.5,
-    "east_km": 10.0,
-    "raster_cost": 41740.3
-  },
-  {
-    "overlap_m": 1255.5,
-    "east_km": 10.0,
-    "raster_cost": 41740.3
-  },
-  {
-    "overlap_m": 1255.5,
-    "east_km": 10.087,
-    "raster_cost": 42854.7
-  },
-  {
-    "overlap_m": 1255.5,
-    "east_km": 10.087,
-    "raster_cost": 42854.7
-  },
-  {
-    "overlap_m": 1255.5,
-    "east_km": 10.087,
-    "raster_cost": 42854.7
-  },
-  {
-    "overlap_m": 1260.8,
-    "east_km": 9.986,
-    "raster_cost": 41749.7
-  },
-  {
-    "overlap_m": 1260.8,
-    "east_km": 9.986,
-    "raster_cost": 41749.7
-  },
-  {
-    "overlap_m": 1260.8,
-    "east_km": 9.986,
-    "raster_cost": 41749.7
-  },
-  {
-    "overlap_m": 1260.8,
-    "east_km": 9.986,
-    "raster_cost": 41749.7
-  },
-  {
-    "overlap_m": 1260.8,
-    "east_km": 10.073,
-    "raster_cost": 42864.1
-  },
-  {
-    "overlap_m": 1260.8,
-    "east_km": 10.073,
-    "raster_cost": 42864.1
-  },
-  {
-    "overlap_m": 1260.8,
-    "east_km": 10.073,
-    "raster_cost": 42864.1
-  },
-  {
-    "overlap_m": 1260.8,
-    "east_km": 10.073,
-    "raster_cost": 42864.1
-  },
-  {
-    "overlap_m": 1261.2,
-    "east_km": 9.618,
-    "raster_cost": 40967.0
-  },
-  {
-    "overlap_m": 1261.2,
-    "east_km": 9.618,
-    "raster_cost": 40967.0
-  },
-  {
-    "overlap_m": 1261.2,
-    "east_km": 9.618,
-    "raster_cost": 40967.0
-  },
-  {
-    "overlap_m": 1261.2,
-    "east_km": 9.618,
-    "raster_cost": 40967.0
-  },
-  {
-    "overlap_m": 1261.2,
-    "east_km": 9.704,
-    "raster_cost": 42081.5
-  },
-  {
-    "overlap_m": 1261.2,
-    "east_km": 9.704,
-    "raster_cost": 42081.5
-  },
-  {
-    "overlap_m": 1261.2,
-    "east_km": 9.704,
-    "raster_cost": 42081.5
-  },
-  {
-    "overlap_m": 1261.2,
-    "east_km": 9.704,
-    "raster_cost": 42081.5
-  },
-  {
-    "overlap_m": 1261.8,
-    "east_km": 9.758,
-    "raster_cost": 41387.1
-  },
-  {
-    "overlap_m": 1261.8,
-    "east_km": 9.758,
-    "raster_cost": 41387.1
-  },
-  {
-    "overlap_m": 1261.8,
-    "east_km": 9.758,
-    "raster_cost": 41387.1
-  },
-  {
-    "overlap_m": 1261.8,
-    "east_km": 9.758,
-    "raster_cost": 41387.1
-  },
-  {
-    "overlap_m": 1261.8,
-    "east_km": 9.758,
-    "raster_cost": 41387.1
-  },
-  {
-    "overlap_m": 1261.8,
-    "east_km": 9.758,
-    "raster_cost": 41387.1
-  },
-  {
-    "overlap_m": 1261.8,
-    "east_km": 9.845,
-    "raster_cost": 42501.5
-  },
-  {
-    "overlap_m": 1261.8,
-    "east_km": 9.845,
-    "raster_cost": 42501.5
-  },
-  {
-    "overlap_m": 1261.8,
-    "east_km": 9.845,
-    "raster_cost": 42501.5
-  },
-  {
-    "overlap_m": 1261.8,
-    "east_km": 9.845,
-    "raster_cost": 42501.5
-  },
-  {
-    "overlap_m": 1267.7,
-    "east_km": 10.0,
-    "raster_cost": 41741.3
-  },
-  {
-    "overlap_m": 1267.7,
-    "east_km": 10.0,
-    "raster_cost": 41741.3
-  },
-  {
-    "overlap_m": 1267.7,
-    "east_km": 10.0,
-    "raster_cost": 41741.3
-  },
-  {
-    "overlap_m": 1267.7,
-    "east_km": 10.087,
-    "raster_cost": 42855.7
-  },
-  {
-    "overlap_m": 1267.7,
-    "east_km": 10.087,
-    "raster_cost": 42855.7
-  },
-  {
-    "overlap_m": 1267.7,
-    "east_km": 10.087,
-    "raster_cost": 42855.7
-  },
-  {
-    "overlap_m": 1270.4,
-    "east_km": 10.268,
-    "raster_cost": 42256.0
-  },
-  {
-    "overlap_m": 1270.4,
-    "east_km": 10.268,
-    "raster_cost": 42256.0
-  },
-  {
-    "overlap_m": 1270.4,
-    "east_km": 10.354,
-    "raster_cost": 43370.4
-  },
-  {
-    "overlap_m": 1270.4,
-    "east_km": 10.354,
-    "raster_cost": 43370.4
-  },
-  {
-    "overlap_m": 1272.4,
-    "east_km": 9.895,
-    "raster_cost": 41380.7
-  },
-  {
-    "overlap_m": 1272.4,
-    "east_km": 9.895,
-    "raster_cost": 41380.7
-  },
-  {
-    "overlap_m": 1272.4,
-    "east_km": 9.981,
-    "raster_cost": 42495.1
-  },
-  {
-    "overlap_m": 1272.4,
-    "east_km": 9.981,
-    "raster_cost": 42495.1
-  },
-  {
-    "overlap_m": 1273.0,
-    "east_km": 10.035,
-    "raster_cost": 41800.8
-  },
-  {
-    "overlap_m": 1273.0,
-    "east_km": 10.035,
-    "raster_cost": 41800.8
-  },
-  {
-    "overlap_m": 1273.0,
-    "east_km": 10.035,
-    "raster_cost": 41800.8
-  },
-  {
-    "overlap_m": 1273.0,
-    "east_km": 10.122,
-    "raster_cost": 42915.2
-  },
-  {
-    "overlap_m": 1273.0,
-    "east_km": 10.122,
-    "raster_cost": 42915.2
-  },
-  {
-    "overlap_m": 1273.4,
-    "east_km": 9.617,
-    "raster_cost": 40968.0
-  },
-  {
-    "overlap_m": 1273.4,
-    "east_km": 9.617,
-    "raster_cost": 40968.0
-  },
-  {
-    "overlap_m": 1273.4,
-    "east_km": 9.617,
-    "raster_cost": 40968.0
-  },
-  {
-    "overlap_m": 1273.4,
-    "east_km": 9.617,
-    "raster_cost": 40968.0
-  },
-  {
-    "overlap_m": 1273.4,
-    "east_km": 9.704,
-    "raster_cost": 42082.4
-  },
-  {
-    "overlap_m": 1273.4,
-    "east_km": 9.704,
-    "raster_cost": 42082.4
-  },
-  {
-    "overlap_m": 1273.4,
-    "east_km": 9.704,
-    "raster_cost": 42082.4
-  },
-  {
-    "overlap_m": 1273.4,
-    "east_km": 9.704,
-    "raster_cost": 42082.4
-  },
-  {
-    "overlap_m": 1274.3,
-    "east_km": 9.758,
-    "raster_cost": 41386.1
-  },
-  {
-    "overlap_m": 1274.3,
-    "east_km": 9.758,
-    "raster_cost": 41386.1
-  },
-  {
-    "overlap_m": 1274.3,
-    "east_km": 9.758,
-    "raster_cost": 41386.1
-  },
-  {
-    "overlap_m": 1274.3,
-    "east_km": 9.758,
-    "raster_cost": 41386.1
-  },
-  {
-    "overlap_m": 1274.3,
-    "east_km": 9.758,
-    "raster_cost": 41386.1
-  },
-  {
-    "overlap_m": 1274.3,
-    "east_km": 9.758,
-    "raster_cost": 41386.1
-  },
-  {
-    "overlap_m": 1274.3,
-    "east_km": 9.845,
-    "raster_cost": 42500.6
-  },
-  {
-    "overlap_m": 1274.3,
-    "east_km": 9.845,
-    "raster_cost": 42500.6
-  },
-  {
-    "overlap_m": 1274.3,
-    "east_km": 9.845,
-    "raster_cost": 42500.6
-  },
-  {
-    "overlap_m": 1274.3,
-    "east_km": 9.845,
-    "raster_cost": 42500.6
-  },
-  {
-    "overlap_m": 1279.3,
-    "east_km": 9.908,
-    "raster_cost": 41372.3
-  },
-  {
-    "overlap_m": 1279.3,
-    "east_km": 9.908,
-    "raster_cost": 41372.3
-  },
-  {
-    "overlap_m": 1279.3,
-    "east_km": 9.995,
-    "raster_cost": 42486.7
-  },
-  {
-    "overlap_m": 1279.3,
-    "east_km": 9.995,
-    "raster_cost": 42486.7
-  },
-  {
-    "overlap_m": 1279.8,
-    "east_km": 10.049,
-    "raster_cost": 41792.4
-  },
-  {
-    "overlap_m": 1279.8,
-    "east_km": 10.049,
-    "raster_cost": 41792.4
-  },
-  {
-    "overlap_m": 1279.8,
-    "east_km": 10.136,
-    "raster_cost": 42906.8
-  },
-  {
-    "overlap_m": 1284.6,
-    "east_km": 9.894,
-    "raster_cost": 41381.7
-  },
-  {
-    "overlap_m": 1284.6,
-    "east_km": 9.894,
-    "raster_cost": 41381.7
-  },
-  {
-    "overlap_m": 1284.6,
-    "east_km": 9.981,
-    "raster_cost": 42496.1
-  },
-  {
-    "overlap_m": 1284.6,
-    "east_km": 9.981,
-    "raster_cost": 42496.1
-  },
-  {
-    "overlap_m": 1285.5,
-    "east_km": 10.036,
-    "raster_cost": 41799.8
-  },
-  {
-    "overlap_m": 1285.5,
-    "east_km": 10.036,
-    "raster_cost": 41799.8
-  },
-  {
-    "overlap_m": 1285.5,
-    "east_km": 10.036,
-    "raster_cost": 41799.8
-  },
-  {
-    "overlap_m": 1285.5,
-    "east_km": 10.122,
-    "raster_cost": 42914.3
-  },
-  {
-    "overlap_m": 1285.5,
-    "east_km": 10.122,
-    "raster_cost": 42914.3
-  },
-  {
-    "overlap_m": 1285.6,
-    "east_km": 9.666,
-    "raster_cost": 41019.1
-  },
-  {
-    "overlap_m": 1285.6,
-    "east_km": 9.666,
-    "raster_cost": 41019.1
-  },
-  {
-    "overlap_m": 1285.6,
-    "east_km": 9.666,
-    "raster_cost": 41019.1
-  },
-  {
-    "overlap_m": 1285.6,
-    "east_km": 9.666,
-    "raster_cost": 41019.1
-  },
-  {
-    "overlap_m": 1285.6,
-    "east_km": 9.753,
-    "raster_cost": 42133.5
-  },
-  {
-    "overlap_m": 1285.6,
-    "east_km": 9.753,
-    "raster_cost": 42133.5
-  },
-  {
-    "overlap_m": 1285.6,
-    "east_km": 9.753,
-    "raster_cost": 42133.5
-  },
-  {
-    "overlap_m": 1285.6,
-    "east_km": 9.753,
-    "raster_cost": 42133.5
-  },
-  {
-    "overlap_m": 1291.4,
-    "east_km": 9.908,
-    "raster_cost": 41373.2
-  },
-  {
-    "overlap_m": 1291.4,
-    "east_km": 9.908,
-    "raster_cost": 41373.2
-  },
-  {
-    "overlap_m": 1291.4,
-    "east_km": 9.995,
-    "raster_cost": 42487.7
-  },
-  {
-    "overlap_m": 1291.4,
-    "east_km": 9.995,
-    "raster_cost": 42487.7
-  },
-  {
-    "overlap_m": 1292.4,
-    "east_km": 10.049,
-    "raster_cost": 41791.4
-  },
-  {
-    "overlap_m": 1292.4,
-    "east_km": 10.049,
-    "raster_cost": 41791.4
-  },
-  {
-    "overlap_m": 1292.4,
-    "east_km": 10.136,
-    "raster_cost": 42905.9
-  },
-  {
-    "overlap_m": 1292.7,
-    "east_km": 10.312,
-    "raster_cost": 42316.5
-  },
-  {
-    "overlap_m": 1292.7,
-    "east_km": 10.312,
-    "raster_cost": 42316.5
-  },
-  {
-    "overlap_m": 1294.2,
-    "east_km": 10.176,
-    "raster_cost": 41888.0
-  },
-  {
-    "overlap_m": 1294.2,
-    "east_km": 10.176,
-    "raster_cost": 41888.0
-  },
-  {
-    "overlap_m": 1294.2,
-    "east_km": 10.262,
-    "raster_cost": 43002.4
-  },
-  {
-    "overlap_m": 1294.2,
-    "east_km": 10.262,
-    "raster_cost": 43002.4
-  },
-  {
-    "overlap_m": 1296.7,
-    "east_km": 9.943,
-    "raster_cost": 41432.8
-  },
-  {
-    "overlap_m": 1296.7,
-    "east_km": 9.943,
-    "raster_cost": 41432.8
-  },
-  {
-    "overlap_m": 1296.7,
-    "east_km": 10.03,
-    "raster_cost": 42547.2
-  },
-  {
-    "overlap_m": 1296.7,
-    "east_km": 10.03,
-    "raster_cost": 42547.2
-  },
-  {
-    "overlap_m": 1298.1,
-    "east_km": 9.667,
-    "raster_cost": 41018.1
-  },
-  {
-    "overlap_m": 1298.1,
-    "east_km": 9.667,
-    "raster_cost": 41018.1
-  },
-  {
-    "overlap_m": 1298.1,
-    "east_km": 9.667,
-    "raster_cost": 41018.1
-  },
-  {
-    "overlap_m": 1298.1,
-    "east_km": 9.667,
-    "raster_cost": 41018.1
-  },
-  {
-    "overlap_m": 1298.1,
-    "east_km": 9.753,
-    "raster_cost": 42132.6
-  },
-  {
-    "overlap_m": 1298.1,
-    "east_km": 9.753,
-    "raster_cost": 42132.6
-  },
-  {
-    "overlap_m": 1298.1,
-    "east_km": 9.753,
-    "raster_cost": 42132.6
-  },
-  {
-    "overlap_m": 1298.1,
-    "east_km": 9.753,
-    "raster_cost": 42132.6
-  },
-  {
-    "overlap_m": 1302.1,
-    "east_km": 9.839,
-    "raster_cost": 41493.3
-  },
-  {
-    "overlap_m": 1302.1,
-    "east_km": 9.839,
-    "raster_cost": 41493.3
-  },
-  {
-    "overlap_m": 1302.1,
-    "east_km": 9.839,
-    "raster_cost": 41493.3
-  },
-  {
-    "overlap_m": 1302.1,
-    "east_km": 9.925,
-    "raster_cost": 42607.8
-  },
-  {
-    "overlap_m": 1302.1,
-    "east_km": 9.925,
-    "raster_cost": 42607.8
-  },
-  {
-    "overlap_m": 1302.1,
-    "east_km": 9.925,
-    "raster_cost": 42607.8
-  },
-  {
-    "overlap_m": 1303.6,
-    "east_km": 9.957,
-    "raster_cost": 41424.4
-  },
-  {
-    "overlap_m": 1303.6,
-    "east_km": 9.957,
-    "raster_cost": 41424.4
-  },
-  {
-    "overlap_m": 1303.6,
-    "east_km": 10.044,
-    "raster_cost": 42538.8
-  },
-  {
-    "overlap_m": 1303.6,
-    "east_km": 10.044,
-    "raster_cost": 42538.8
-  },
-  {
-    "overlap_m": 1304.9,
-    "east_km": 10.263,
-    "raster_cost": 42265.4
-  },
-  {
-    "overlap_m": 1306.5,
-    "east_km": 9.963,
-    "raster_cost": 41950.0
-  },
-  {
-    "overlap_m": 1306.5,
-    "east_km": 10.05,
-    "raster_cost": 43064.5
-  },
-  {
-    "overlap_m": 1306.9,
-    "east_km": 10.267,
-    "raster_cost": 42256.9
-  },
-  {
-    "overlap_m": 1306.9,
-    "east_km": 10.354,
-    "raster_cost": 43371.4
-  },
-  {
-    "overlap_m": 1307.3,
-    "east_km": 10.268,
-    "raster_cost": 42255.0
-  },
-  {
-    "overlap_m": 1307.3,
-    "east_km": 10.355,
-    "raster_cost": 43369.5
-  },
-  {
-    "overlap_m": 1309.3,
-    "east_km": 9.944,
-    "raster_cost": 41431.8
-  },
-  {
-    "overlap_m": 1309.3,
-    "east_km": 9.944,
-    "raster_cost": 41431.8
-  },
-  {
-    "overlap_m": 1309.3,
-    "east_km": 10.031,
-    "raster_cost": 42546.3
-  },
-  {
-    "overlap_m": 1309.3,
-    "east_km": 10.031,
-    "raster_cost": 42546.3
-  },
-  {
-    "overlap_m": 1313.2,
-    "east_km": 10.116,
-    "raster_cost": 41907.0
-  },
-  {
-    "overlap_m": 1314.3,
-    "east_km": 9.838,
-    "raster_cost": 41494.3
-  },
-  {
-    "overlap_m": 1314.3,
-    "east_km": 9.838,
-    "raster_cost": 41494.3
-  },
-  {
-    "overlap_m": 1314.3,
-    "east_km": 9.838,
-    "raster_cost": 41494.3
-  },
-  {
-    "overlap_m": 1314.3,
-    "east_km": 9.925,
-    "raster_cost": 42608.7
-  },
-  {
-    "overlap_m": 1314.3,
-    "east_km": 9.925,
-    "raster_cost": 42608.7
-  },
-  {
-    "overlap_m": 1314.3,
-    "east_km": 9.925,
-    "raster_cost": 42608.7
-  },
-  {
-    "overlap_m": 1316.1,
-    "east_km": 9.957,
-    "raster_cost": 41423.4
-  },
-  {
-    "overlap_m": 1316.1,
-    "east_km": 9.957,
-    "raster_cost": 41423.4
-  },
-  {
-    "overlap_m": 1316.1,
-    "east_km": 10.044,
-    "raster_cost": 42537.8
-  },
-  {
-    "overlap_m": 1316.1,
-    "east_km": 10.044,
-    "raster_cost": 42537.8
-  },
-  {
-    "overlap_m": 1316.5,
-    "east_km": 10.22,
-    "raster_cost": 41948.5
-  },
-  {
-    "overlap_m": 1316.5,
-    "east_km": 10.22,
-    "raster_cost": 41948.5
-  },
-  {
-    "overlap_m": 1317.0,
-    "east_km": 10.106,
-    "raster_cost": 42009.0
-  },
-  {
-    "overlap_m": 1317.0,
-    "east_km": 10.106,
-    "raster_cost": 42009.0
-  },
-  {
-    "overlap_m": 1317.0,
-    "east_km": 10.193,
-    "raster_cost": 43123.4
-  },
-  {
-    "overlap_m": 1317.0,
-    "east_km": 10.193,
-    "raster_cost": 43123.4
-  },
-  {
-    "overlap_m": 1318.7,
-    "east_km": 9.963,
-    "raster_cost": 41951.0
-  },
-  {
-    "overlap_m": 1318.7,
-    "east_km": 10.049,
-    "raster_cost": 43065.4
-  },
-  {
-    "overlap_m": 1325.4,
-    "east_km": 10.115,
-    "raster_cost": 41908.0
-  },
-  {
-    "overlap_m": 1325.4,
-    "east_km": 10.202,
-    "raster_cost": 43022.4
-  },
-  {
-    "overlap_m": 1325.9,
-    "east_km": 9.747,
-    "raster_cost": 41125.3
-  },
-  {
-    "overlap_m": 1325.9,
-    "east_km": 9.747,
-    "raster_cost": 41125.3
-  },
-  {
-    "overlap_m": 1325.9,
-    "east_km": 9.834,
-    "raster_cost": 42239.8
-  },
-  {
-    "overlap_m": 1325.9,
-    "east_km": 9.834,
-    "raster_cost": 42239.8
-  },
-  {
-    "overlap_m": 1326.4,
-    "east_km": 9.887,
-    "raster_cost": 41545.4
-  },
-  {
-    "overlap_m": 1326.4,
-    "east_km": 9.887,
-    "raster_cost": 41545.4
-  },
-  {
-    "overlap_m": 1326.4,
-    "east_km": 9.887,
-    "raster_cost": 41545.4
-  },
-  {
-    "overlap_m": 1326.4,
-    "east_km": 9.974,
-    "raster_cost": 42659.8
-  },
-  {
-    "overlap_m": 1326.4,
-    "east_km": 9.974,
-    "raster_cost": 42659.8
-  },
-  {
-    "overlap_m": 1328.7,
-    "east_km": 10.171,
-    "raster_cost": 41897.4
-  },
-  {
-    "overlap_m": 1330.7,
-    "east_km": 10.175,
-    "raster_cost": 41888.9
-  },
-  {
-    "overlap_m": 1330.7,
-    "east_km": 10.262,
-    "raster_cost": 43003.3
-  },
-  {
-    "overlap_m": 1330.8,
-    "east_km": 10.012,
-    "raster_cost": 42002.1
-  },
-  {
-    "overlap_m": 1330.8,
-    "east_km": 10.098,
-    "raster_cost": 43116.5
-  },
-  {
-    "overlap_m": 1331.0,
-    "east_km": 10.176,
-    "raster_cost": 41887.0
-  },
-  {
-    "overlap_m": 1331.0,
-    "east_km": 10.263,
-    "raster_cost": 43001.4
-  },
-  {
-    "overlap_m": 1337.0,
+    "overlap_m": 4784.2,
     "east_km": 10.024,
-    "raster_cost": 41539.0
+    "raster_cost": 34441.5
   },
   {
-    "overlap_m": 1337.6,
-    "east_km": 10.165,
-    "raster_cost": 41959.1
+    "overlap_m": 4787.8,
+    "east_km": 10.043,
+    "raster_cost": 34429.7
   },
   {
-    "overlap_m": 1337.6,
-    "east_km": 10.251,
-    "raster_cost": 43073.5
+    "overlap_m": 4787.8,
+    "east_km": 10.043,
+    "raster_cost": 34429.7
   },
   {
-    "overlap_m": 1338.0,
-    "east_km": 9.747,
-    "raster_cost": 41126.3
+    "overlap_m": 4787.8,
+    "east_km": 10.043,
+    "raster_cost": 34429.7
   },
   {
-    "overlap_m": 1338.0,
-    "east_km": 9.747,
-    "raster_cost": 41126.3
+    "overlap_m": 4787.8,
+    "east_km": 10.043,
+    "raster_cost": 34429.7
   },
   {
-    "overlap_m": 1338.0,
-    "east_km": 9.833,
-    "raster_cost": 42240.7
+    "overlap_m": 4788.7,
+    "east_km": 10.009,
+    "raster_cost": 34425.7
   },
   {
-    "overlap_m": 1338.0,
-    "east_km": 9.833,
-    "raster_cost": 42240.7
+    "overlap_m": 4788.7,
+    "east_km": 10.009,
+    "raster_cost": 34425.7
   },
   {
-    "overlap_m": 1338.9,
-    "east_km": 9.888,
-    "raster_cost": 41544.4
+    "overlap_m": 4788.7,
+    "east_km": 10.009,
+    "raster_cost": 34425.7
   },
   {
-    "overlap_m": 1338.9,
-    "east_km": 9.888,
-    "raster_cost": 41544.4
+    "overlap_m": 4788.7,
+    "east_km": 10.009,
+    "raster_cost": 34425.7
   },
   {
-    "overlap_m": 1338.9,
-    "east_km": 9.888,
-    "raster_cost": 41544.4
+    "overlap_m": 4788.7,
+    "east_km": 10.017,
+    "raster_cost": 34432.8
   },
   {
-    "overlap_m": 1338.9,
-    "east_km": 9.974,
-    "raster_cost": 42658.9
+    "overlap_m": 4788.7,
+    "east_km": 10.017,
+    "raster_cost": 34432.8
   },
   {
-    "overlap_m": 1338.9,
-    "east_km": 9.974,
-    "raster_cost": 42658.9
+    "overlap_m": 4788.7,
+    "east_km": 10.017,
+    "raster_cost": 34432.8
   },
   {
-    "overlap_m": 1339.3,
-    "east_km": 10.151,
-    "raster_cost": 42069.5
+    "overlap_m": 4788.7,
+    "east_km": 10.017,
+    "raster_cost": 34432.8
   },
   {
-    "overlap_m": 1339.3,
-    "east_km": 10.151,
-    "raster_cost": 42069.5
+    "overlap_m": 4788.7,
+    "east_km": 10.018,
+    "raster_cost": 34439.9
   },
   {
-    "overlap_m": 1339.3,
-    "east_km": 10.151,
-    "raster_cost": 42069.5
+    "overlap_m": 4789.3,
+    "east_km": 10.011,
+    "raster_cost": 34435.1
   },
   {
-    "overlap_m": 1339.3,
-    "east_km": 10.151,
-    "raster_cost": 42069.5
+    "overlap_m": 4789.5,
+    "east_km": 10.016,
+    "raster_cost": 34435.1
   },
   {
-    "overlap_m": 1339.3,
-    "east_km": 10.237,
-    "raster_cost": 43184.0
-  },
-  {
-    "overlap_m": 1339.3,
-    "east_km": 10.237,
-    "raster_cost": 43184.0
-  },
-  {
-    "overlap_m": 1339.3,
-    "east_km": 10.237,
-    "raster_cost": 43184.0
-  },
-  {
-    "overlap_m": 1340.8,
-    "east_km": 10.014,
-    "raster_cost": 41641.0
-  },
-  {
-    "overlap_m": 1340.8,
-    "east_km": 10.014,
-    "raster_cost": 41641.0
-  },
-  {
-    "overlap_m": 1340.8,
-    "east_km": 10.101,
-    "raster_cost": 42755.4
-  },
-  {
-    "overlap_m": 1340.8,
-    "east_km": 10.101,
-    "raster_cost": 42755.4
-  },
-  {
-    "overlap_m": 1343.4,
-    "east_km": 10.012,
-    "raster_cost": 42001.1
-  },
-  {
-    "overlap_m": 1343.4,
-    "east_km": 10.099,
-    "raster_cost": 43115.6
-  },
-  {
-    "overlap_m": 1349.2,
+    "overlap_m": 4789.5,
     "east_km": 10.024,
-    "raster_cost": 41540.0
+    "raster_cost": 34442.1
   },
   {
-    "overlap_m": 1349.2,
-    "east_km": 10.11,
-    "raster_cost": 42654.4
+    "overlap_m": 4789.6,
+    "east_km": 10.019,
+    "raster_cost": 34390.8
   },
   {
-    "overlap_m": 1350.1,
-    "east_km": 10.165,
-    "raster_cost": 41958.1
+    "overlap_m": 4789.6,
+    "east_km": 10.019,
+    "raster_cost": 34390.8
   },
   {
-    "overlap_m": 1350.2,
-    "east_km": 9.796,
-    "raster_cost": 41177.4
+    "overlap_m": 4789.6,
+    "east_km": 10.019,
+    "raster_cost": 34390.8
   },
   {
-    "overlap_m": 1350.2,
-    "east_km": 9.796,
-    "raster_cost": 41177.4
+    "overlap_m": 4789.6,
+    "east_km": 10.019,
+    "raster_cost": 34390.8
   },
   {
-    "overlap_m": 1350.2,
-    "east_km": 9.882,
-    "raster_cost": 42291.8
+    "overlap_m": 4789.6,
+    "east_km": 10.019,
+    "raster_cost": 34390.8
   },
   {
-    "overlap_m": 1350.2,
-    "east_km": 9.882,
-    "raster_cost": 42291.8
+    "overlap_m": 4789.6,
+    "east_km": 10.019,
+    "raster_cost": 34390.8
   },
   {
-    "overlap_m": 1351.5,
-    "east_km": 10.101,
-    "raster_cost": 42018.4
+    "overlap_m": 4789.6,
+    "east_km": 10.019,
+    "raster_cost": 34390.8
   },
   {
-    "overlap_m": 1351.5,
-    "east_km": 10.101,
-    "raster_cost": 42018.4
+    "overlap_m": 4789.6,
+    "east_km": 10.019,
+    "raster_cost": 34390.8
   },
   {
-    "overlap_m": 1351.5,
-    "east_km": 10.188,
-    "raster_cost": 43132.9
-  },
-  {
-    "overlap_m": 1351.5,
-    "east_km": 10.188,
-    "raster_cost": 43132.9
-  },
-  {
-    "overlap_m": 1353.1,
-    "east_km": 9.801,
-    "raster_cost": 41703.1
-  },
-  {
-    "overlap_m": 1353.1,
-    "east_km": 9.801,
-    "raster_cost": 41703.1
-  },
-  {
-    "overlap_m": 1353.1,
-    "east_km": 9.888,
-    "raster_cost": 42817.5
-  },
-  {
-    "overlap_m": 1353.1,
-    "east_km": 9.888,
-    "raster_cost": 42817.5
-  },
-  {
-    "overlap_m": 1353.5,
-    "east_km": 10.106,
-    "raster_cost": 42010.0
-  },
-  {
-    "overlap_m": 1353.5,
-    "east_km": 10.192,
-    "raster_cost": 43124.4
-  },
-  {
-    "overlap_m": 1353.9,
-    "east_km": 10.106,
-    "raster_cost": 42008.0
-  },
-  {
-    "overlap_m": 1353.9,
-    "east_km": 10.361,
-    "raster_cost": 42367.6
-  },
-  {
-    "overlap_m": 1353.9,
-    "east_km": 10.193,
-    "raster_cost": 43122.5
-  },
-  {
-    "overlap_m": 1354.7,
-    "east_km": 10.113,
-    "raster_cost": 42548.6
-  },
-  {
-    "overlap_m": 1354.7,
-    "east_km": 10.113,
-    "raster_cost": 42548.6
-  },
-  {
-    "overlap_m": 1354.7,
-    "east_km": 10.2,
-    "raster_cost": 43663.0
-  },
-  {
-    "overlap_m": 1354.7,
-    "east_km": 10.2,
-    "raster_cost": 43663.0
-  },
-  {
-    "overlap_m": 1361.4,
-    "east_km": 10.073,
-    "raster_cost": 41591.1
-  },
-  {
-    "overlap_m": 1361.4,
-    "east_km": 10.159,
-    "raster_cost": 42705.5
-  },
-  {
-    "overlap_m": 1362.7,
-    "east_km": 9.796,
-    "raster_cost": 41176.4
-  },
-  {
-    "overlap_m": 1362.7,
-    "east_km": 9.796,
-    "raster_cost": 41176.4
-  },
-  {
-    "overlap_m": 1362.7,
-    "east_km": 9.883,
-    "raster_cost": 42290.9
-  },
-  {
-    "overlap_m": 1362.7,
-    "east_km": 9.883,
-    "raster_cost": 42290.9
-  },
-  {
-    "overlap_m": 1363.1,
-    "east_km": 10.059,
-    "raster_cost": 41701.5
-  },
-  {
-    "overlap_m": 1363.1,
-    "east_km": 10.059,
-    "raster_cost": 41701.5
-  },
-  {
-    "overlap_m": 1363.1,
-    "east_km": 10.145,
-    "raster_cost": 42816.0
-  },
-  {
-    "overlap_m": 1363.1,
-    "east_km": 10.145,
-    "raster_cost": 42816.0
-  },
-  {
-    "overlap_m": 1364.2,
-    "east_km": 10.078,
-    "raster_cost": 42116.7
-  },
-  {
-    "overlap_m": 1364.2,
-    "east_km": 10.078,
-    "raster_cost": 42116.7
-  },
-  {
-    "overlap_m": 1364.2,
-    "east_km": 10.165,
-    "raster_cost": 43231.2
-  },
-  {
-    "overlap_m": 1364.2,
-    "east_km": 10.165,
-    "raster_cost": 43231.2
-  },
-  {
-    "overlap_m": 1365.3,
-    "east_km": 9.801,
-    "raster_cost": 41704.0
-  },
-  {
-    "overlap_m": 1365.3,
-    "east_km": 9.801,
-    "raster_cost": 41704.0
-  },
-  {
-    "overlap_m": 1365.3,
-    "east_km": 9.888,
-    "raster_cost": 42818.4
-  },
-  {
-    "overlap_m": 1365.3,
-    "east_km": 9.888,
-    "raster_cost": 42818.4
-  },
-  {
-    "overlap_m": 1366.9,
-    "east_km": 10.113,
-    "raster_cost": 42549.5
-  },
-  {
-    "overlap_m": 1366.9,
-    "east_km": 10.113,
-    "raster_cost": 42549.5
-  },
-  {
-    "overlap_m": 1366.9,
-    "east_km": 10.199,
-    "raster_cost": 43664.0
-  },
-  {
-    "overlap_m": 1366.9,
-    "east_km": 10.199,
-    "raster_cost": 43664.0
-  },
-  {
-    "overlap_m": 1371.1,
-    "east_km": 10.092,
-    "raster_cost": 42108.3
-  },
-  {
-    "overlap_m": 1371.1,
-    "east_km": 10.179,
-    "raster_cost": 43222.8
-  },
-  {
-    "overlap_m": 1373.9,
-    "east_km": 10.073,
-    "raster_cost": 41590.1
-  },
-  {
-    "overlap_m": 1375.3,
-    "east_km": 10.01,
-    "raster_cost": 41650.4
-  },
-  {
-    "overlap_m": 1375.3,
-    "east_km": 10.096,
-    "raster_cost": 42764.9
-  },
-  {
-    "overlap_m": 1376.4,
-    "east_km": 10.078,
-    "raster_cost": 42117.7
-  },
-  {
-    "overlap_m": 1376.4,
-    "east_km": 10.078,
-    "raster_cost": 42117.7
-  },
-  {
-    "overlap_m": 1376.4,
-    "east_km": 10.165,
-    "raster_cost": 43232.1
-  },
-  {
-    "overlap_m": 1376.4,
-    "east_km": 10.165,
-    "raster_cost": 43232.1
-  },
-  {
-    "overlap_m": 1377.3,
+    "overlap_m": 4789.6,
     "east_km": 10.014,
-    "raster_cost": 41641.9
+    "raster_cost": 34393.5
   },
   {
-    "overlap_m": 1377.3,
-    "east_km": 10.101,
-    "raster_cost": 42756.4
-  },
-  {
-    "overlap_m": 1377.4,
-    "east_km": 9.85,
-    "raster_cost": 41755.1
-  },
-  {
-    "overlap_m": 1377.4,
-    "east_km": 9.85,
-    "raster_cost": 41755.1
-  },
-  {
-    "overlap_m": 1377.4,
-    "east_km": 9.937,
-    "raster_cost": 42869.6
-  },
-  {
-    "overlap_m": 1377.6,
+    "overlap_m": 4789.6,
     "east_km": 10.014,
-    "raster_cost": 41640.0
+    "raster_cost": 34393.5
   },
   {
-    "overlap_m": 1377.6,
-    "east_km": 10.101,
-    "raster_cost": 42754.5
-  },
-  {
-    "overlap_m": 1377.7,
-    "east_km": 10.269,
-    "raster_cost": 41999.6
-  },
-  {
-    "overlap_m": 1378.5,
-    "east_km": 10.021,
-    "raster_cost": 42180.6
-  },
-  {
-    "overlap_m": 1378.5,
-    "east_km": 10.108,
-    "raster_cost": 43295.0
-  },
-  {
-    "overlap_m": 1379.1,
-    "east_km": 10.162,
-    "raster_cost": 42600.6
-  },
-  {
-    "overlap_m": 1379.1,
-    "east_km": 10.162,
-    "raster_cost": 42600.6
-  },
-  {
-    "overlap_m": 1379.1,
-    "east_km": 10.249,
-    "raster_cost": 43715.1
-  },
-  {
-    "overlap_m": 1379.1,
-    "east_km": 10.249,
-    "raster_cost": 43715.1
-  },
-  {
-    "overlap_m": 1383.3,
-    "east_km": 10.092,
-    "raster_cost": 42109.3
-  },
-  {
-    "overlap_m": 1383.3,
-    "east_km": 10.179,
-    "raster_cost": 43223.7
-  },
-  {
-    "overlap_m": 1388.6,
-    "east_km": 10.127,
-    "raster_cost": 42168.8
-  },
-  {
-    "overlap_m": 1389.9,
-    "east_km": 9.85,
-    "raster_cost": 41754.2
-  },
-  {
-    "overlap_m": 1389.9,
-    "east_km": 9.85,
-    "raster_cost": 41754.2
-  },
-  {
-    "overlap_m": 1389.9,
-    "east_km": 9.937,
-    "raster_cost": 42868.6
-  },
-  {
-    "overlap_m": 1390.7,
-    "east_km": 10.021,
-    "raster_cost": 42181.5
-  },
-  {
-    "overlap_m": 1390.7,
-    "east_km": 10.108,
-    "raster_cost": 43295.9
-  },
-  {
-    "overlap_m": 1391.6,
-    "east_km": 10.162,
-    "raster_cost": 42599.7
-  },
-  {
-    "overlap_m": 1391.6,
-    "east_km": 10.162,
-    "raster_cost": 42599.7
-  },
-  {
-    "overlap_m": 1391.6,
-    "east_km": 10.249,
-    "raster_cost": 43714.1
-  },
-  {
-    "overlap_m": 1391.6,
-    "east_km": 10.249,
-    "raster_cost": 43714.1
-  },
-  {
-    "overlap_m": 1400.5,
-    "east_km": 10.2,
-    "raster_cost": 42120.7
-  },
-  {
-    "overlap_m": 1400.5,
-    "east_km": 10.2,
-    "raster_cost": 42120.7
-  },
-  {
-    "overlap_m": 1400.5,
-    "east_km": 10.286,
-    "raster_cost": 43235.1
-  },
-  {
-    "overlap_m": 1401.1,
-    "east_km": 10.127,
-    "raster_cost": 42167.8
-  },
-  {
-    "overlap_m": 1401.3,
-    "east_km": 9.951,
-    "raster_cost": 42301.6
-  },
-  {
-    "overlap_m": 1401.3,
-    "east_km": 9.951,
-    "raster_cost": 42301.6
-  },
-  {
-    "overlap_m": 1401.3,
-    "east_km": 10.038,
-    "raster_cost": 43416.0
-  },
-  {
-    "overlap_m": 1401.3,
-    "east_km": 10.038,
-    "raster_cost": 43416.0
-  },
-  {
-    "overlap_m": 1402.9,
-    "east_km": 10.07,
-    "raster_cost": 42232.6
-  },
-  {
-    "overlap_m": 1402.9,
-    "east_km": 10.157,
-    "raster_cost": 43347.1
-  },
-  {
-    "overlap_m": 1413.5,
-    "east_km": 9.951,
-    "raster_cost": 42302.6
-  },
-  {
-    "overlap_m": 1413.5,
-    "east_km": 9.951,
-    "raster_cost": 42302.6
-  },
-  {
-    "overlap_m": 1413.5,
-    "east_km": 10.038,
-    "raster_cost": 43417.0
-  },
-  {
-    "overlap_m": 1413.5,
-    "east_km": 10.038,
-    "raster_cost": 43417.0
-  },
-  {
-    "overlap_m": 1415.4,
-    "east_km": 10.07,
-    "raster_cost": 42231.7
-  },
-  {
-    "overlap_m": 1415.4,
-    "east_km": 10.157,
-    "raster_cost": 43346.1
-  },
-  {
-    "overlap_m": 1417.7,
-    "east_km": 9.931,
-    "raster_cost": 41861.4
-  },
-  {
-    "overlap_m": 1417.7,
-    "east_km": 10.017,
-    "raster_cost": 42975.8
-  },
-  {
-    "overlap_m": 1424.3,
-    "east_km": 10.108,
-    "raster_cost": 41752.6
-  },
-  {
-    "overlap_m": 1424.3,
-    "east_km": 10.194,
-    "raster_cost": 42867.1
-  },
-  {
-    "overlap_m": 1425.1,
-    "east_km": 9.86,
-    "raster_cost": 41933.6
-  },
-  {
-    "overlap_m": 1425.1,
-    "east_km": 9.946,
-    "raster_cost": 43048.0
-  },
-  {
-    "overlap_m": 1425.7,
-    "east_km": 10.0,
-    "raster_cost": 42353.7
-  },
-  {
-    "overlap_m": 1425.7,
-    "east_km": 10.0,
-    "raster_cost": 42353.7
-  },
-  {
-    "overlap_m": 1425.7,
-    "east_km": 10.087,
-    "raster_cost": 43468.1
-  },
-  {
-    "overlap_m": 1425.7,
-    "east_km": 10.087,
-    "raster_cost": 43468.1
-  },
-  {
-    "overlap_m": 1429.9,
-    "east_km": 9.93,
-    "raster_cost": 41862.3
-  },
-  {
-    "overlap_m": 1429.9,
-    "east_km": 10.017,
-    "raster_cost": 42976.7
-  },
-  {
-    "overlap_m": 1434.3,
-    "east_km": 9.721,
-    "raster_cost": 41866.1
-  },
-  {
-    "overlap_m": 1434.3,
-    "east_km": 9.721,
-    "raster_cost": 41866.1
-  },
-  {
-    "overlap_m": 1434.3,
-    "east_km": 9.721,
-    "raster_cost": 41866.1
-  },
-  {
-    "overlap_m": 1434.3,
-    "east_km": 9.721,
-    "raster_cost": 41866.1
-  },
-  {
-    "overlap_m": 1434.3,
-    "east_km": 9.721,
-    "raster_cost": 41866.1
-  },
-  {
-    "overlap_m": 1434.3,
-    "east_km": 9.721,
-    "raster_cost": 41866.1
-  },
-  {
-    "overlap_m": 1434.3,
-    "east_km": 9.807,
-    "raster_cost": 42980.6
-  },
-  {
-    "overlap_m": 1434.3,
-    "east_km": 9.807,
-    "raster_cost": 42980.6
-  },
-  {
-    "overlap_m": 1434.3,
-    "east_km": 9.807,
-    "raster_cost": 42980.6
-  },
-  {
-    "overlap_m": 1434.3,
-    "east_km": 9.807,
-    "raster_cost": 42980.6
-  },
-  {
-    "overlap_m": 1434.3,
-    "east_km": 9.807,
-    "raster_cost": 42980.6
-  },
-  {
-    "overlap_m": 1434.3,
-    "east_km": 9.807,
-    "raster_cost": 42980.6
-  },
-  {
-    "overlap_m": 1437.3,
-    "east_km": 9.859,
-    "raster_cost": 41934.5
-  },
-  {
-    "overlap_m": 1437.3,
-    "east_km": 9.946,
-    "raster_cost": 43049.0
-  },
-  {
-    "overlap_m": 1438.2,
-    "east_km": 10.0,
-    "raster_cost": 42352.7
-  },
-  {
-    "overlap_m": 1438.2,
-    "east_km": 10.0,
-    "raster_cost": 42352.7
-  },
-  {
-    "overlap_m": 1438.2,
-    "east_km": 10.087,
-    "raster_cost": 43467.2
-  },
-  {
-    "overlap_m": 1438.2,
-    "east_km": 10.087,
-    "raster_cost": 43467.2
-  },
-  {
-    "overlap_m": 1442.1,
-    "east_km": 9.979,
-    "raster_cost": 41913.4
-  },
-  {
-    "overlap_m": 1442.1,
-    "east_km": 10.066,
-    "raster_cost": 43027.9
-  },
-  {
-    "overlap_m": 1449.5,
-    "east_km": 9.908,
-    "raster_cost": 41985.7
-  },
-  {
-    "overlap_m": 1449.5,
-    "east_km": 9.995,
-    "raster_cost": 43100.1
-  },
-  {
-    "overlap_m": 1454.6,
-    "east_km": 9.98,
-    "raster_cost": 41912.5
-  },
-  {
-    "overlap_m": 1454.6,
-    "east_km": 10.066,
-    "raster_cost": 43026.9
-  },
-  {
-    "overlap_m": 1454.9,
-    "east_km": 10.242,
-    "raster_cost": 42437.6
-  },
-  {
-    "overlap_m": 1454.9,
-    "east_km": 10.242,
-    "raster_cost": 42437.6
-  },
-  {
-    "overlap_m": 1454.9,
-    "east_km": 10.329,
-    "raster_cost": 43552.0
-  },
-  {
-    "overlap_m": 1456.8,
-    "east_km": 10.148,
-    "raster_cost": 41995.7
-  },
-  {
-    "overlap_m": 1456.8,
-    "east_km": 10.148,
-    "raster_cost": 41995.7
-  },
-  {
-    "overlap_m": 1456.8,
-    "east_km": 10.148,
-    "raster_cost": 41995.7
-  },
-  {
-    "overlap_m": 1456.8,
-    "east_km": 10.235,
-    "raster_cost": 43110.1
-  },
-  {
-    "overlap_m": 1456.8,
-    "east_km": 10.235,
-    "raster_cost": 43110.1
-  },
-  {
-    "overlap_m": 1458.1,
-    "east_km": 9.629,
-    "raster_cost": 41498.1
-  },
-  {
-    "overlap_m": 1458.1,
-    "east_km": 9.629,
-    "raster_cost": 41498.1
-  },
-  {
-    "overlap_m": 1458.1,
-    "east_km": 9.629,
-    "raster_cost": 41498.1
-  },
-  {
-    "overlap_m": 1458.1,
-    "east_km": 9.629,
-    "raster_cost": 41498.1
-  },
-  {
-    "overlap_m": 1458.1,
-    "east_km": 9.716,
-    "raster_cost": 42612.6
-  },
-  {
-    "overlap_m": 1458.1,
-    "east_km": 9.716,
-    "raster_cost": 42612.6
-  },
-  {
-    "overlap_m": 1458.1,
-    "east_km": 9.716,
-    "raster_cost": 42612.6
-  },
-  {
-    "overlap_m": 1458.1,
-    "east_km": 9.716,
-    "raster_cost": 42612.6
-  },
-  {
-    "overlap_m": 1462.0,
-    "east_km": 9.909,
-    "raster_cost": 41984.7
-  },
-  {
-    "overlap_m": 1462.0,
-    "east_km": 9.995,
-    "raster_cost": 43099.1
-  },
-  {
-    "overlap_m": 1467.1,
-    "east_km": 10.193,
-    "raster_cost": 42386.4
-  },
-  {
-    "overlap_m": 1467.1,
-    "east_km": 10.28,
-    "raster_cost": 43500.9
-  },
-  {
-    "overlap_m": 1469.0,
-    "east_km": 10.148,
-    "raster_cost": 41996.6
-  },
-  {
-    "overlap_m": 1469.0,
-    "east_km": 10.148,
-    "raster_cost": 41996.6
-  },
-  {
-    "overlap_m": 1469.0,
-    "east_km": 10.148,
-    "raster_cost": 41996.6
-  },
-  {
-    "overlap_m": 1469.0,
-    "east_km": 10.235,
-    "raster_cost": 43111.1
-  },
-  {
-    "overlap_m": 1469.0,
-    "east_km": 10.235,
-    "raster_cost": 43111.1
-  },
-  {
-    "overlap_m": 1470.4,
-    "east_km": 10.205,
-    "raster_cost": 42916.6
-  },
-  {
-    "overlap_m": 1470.4,
-    "east_km": 10.292,
-    "raster_cost": 44031.0
-  },
-  {
-    "overlap_m": 1470.8,
-    "east_km": 9.72,
-    "raster_cost": 41867.1
-  },
-  {
-    "overlap_m": 1470.8,
-    "east_km": 9.72,
-    "raster_cost": 41867.1
-  },
-  {
-    "overlap_m": 1470.8,
-    "east_km": 9.72,
-    "raster_cost": 41867.1
-  },
-  {
-    "overlap_m": 1470.8,
-    "east_km": 9.807,
-    "raster_cost": 42981.5
-  },
-  {
-    "overlap_m": 1470.8,
-    "east_km": 9.807,
-    "raster_cost": 42981.5
-  },
-  {
-    "overlap_m": 1470.8,
-    "east_km": 9.807,
-    "raster_cost": 42981.5
-  },
-  {
-    "overlap_m": 1471.1,
-    "east_km": 9.721,
-    "raster_cost": 41865.2
-  },
-  {
-    "overlap_m": 1471.1,
-    "east_km": 9.721,
-    "raster_cost": 41865.2
-  },
-  {
-    "overlap_m": 1471.1,
-    "east_km": 9.721,
-    "raster_cost": 41865.2
-  },
-  {
-    "overlap_m": 1471.1,
-    "east_km": 9.808,
-    "raster_cost": 42979.6
-  },
-  {
-    "overlap_m": 1471.1,
-    "east_km": 9.808,
-    "raster_cost": 42979.6
-  },
-  {
-    "overlap_m": 1471.1,
-    "east_km": 9.808,
-    "raster_cost": 42979.6
-  },
-  {
-    "overlap_m": 1480.6,
-    "east_km": 10.056,
-    "raster_cost": 41627.7
-  },
-  {
-    "overlap_m": 1480.6,
-    "east_km": 10.056,
-    "raster_cost": 41627.7
-  },
-  {
-    "overlap_m": 1480.6,
-    "east_km": 10.143,
-    "raster_cost": 42742.1
-  },
-  {
-    "overlap_m": 1480.9,
-    "east_km": 9.559,
-    "raster_cost": 41619.2
-  },
-  {
-    "overlap_m": 1480.9,
-    "east_km": 9.559,
-    "raster_cost": 41619.2
-  },
-  {
-    "overlap_m": 1480.9,
-    "east_km": 9.559,
-    "raster_cost": 41619.2
-  },
-  {
-    "overlap_m": 1480.9,
-    "east_km": 9.559,
-    "raster_cost": 41619.2
-  },
-  {
-    "overlap_m": 1480.9,
-    "east_km": 9.559,
-    "raster_cost": 41619.2
-  },
-  {
-    "overlap_m": 1480.9,
-    "east_km": 9.559,
-    "raster_cost": 41619.2
-  },
-  {
-    "overlap_m": 1480.9,
-    "east_km": 9.646,
-    "raster_cost": 42733.6
-  },
-  {
-    "overlap_m": 1480.9,
-    "east_km": 9.646,
-    "raster_cost": 42733.6
-  },
-  {
-    "overlap_m": 1480.9,
-    "east_km": 9.646,
-    "raster_cost": 42733.6
-  },
-  {
-    "overlap_m": 1480.9,
-    "east_km": 9.646,
-    "raster_cost": 42733.6
-  },
-  {
-    "overlap_m": 1480.9,
-    "east_km": 9.646,
-    "raster_cost": 42733.6
-  },
-  {
-    "overlap_m": 1480.9,
-    "east_km": 9.646,
-    "raster_cost": 42733.6
-  },
-  {
-    "overlap_m": 1481.2,
-    "east_km": 10.197,
-    "raster_cost": 42047.8
-  },
-  {
-    "overlap_m": 1481.2,
-    "east_km": 10.197,
-    "raster_cost": 42047.8
-  },
-  {
-    "overlap_m": 1481.2,
-    "east_km": 10.284,
-    "raster_cost": 43162.2
-  },
-  {
-    "overlap_m": 1482.5,
-    "east_km": 10.205,
-    "raster_cost": 42917.5
-  },
-  {
-    "overlap_m": 1482.5,
-    "east_km": 10.291,
-    "raster_cost": 44032.0
-  },
-  {
-    "overlap_m": 1492.0,
-    "east_km": 9.836,
-    "raster_cost": 42032.8
-  },
-  {
-    "overlap_m": 1492.0,
-    "east_km": 9.836,
-    "raster_cost": 42032.8
-  },
-  {
-    "overlap_m": 1492.0,
-    "east_km": 9.836,
-    "raster_cost": 42032.8
-  },
-  {
-    "overlap_m": 1492.0,
-    "east_km": 9.836,
-    "raster_cost": 42032.8
-  },
-  {
-    "overlap_m": 1492.0,
-    "east_km": 9.923,
-    "raster_cost": 43147.3
-  },
-  {
-    "overlap_m": 1492.0,
-    "east_km": 9.923,
-    "raster_cost": 43147.3
-  },
-  {
-    "overlap_m": 1492.0,
-    "east_km": 9.923,
-    "raster_cost": 43147.3
-  },
-  {
-    "overlap_m": 1492.0,
-    "east_km": 9.923,
-    "raster_cost": 43147.3
-  },
-  {
-    "overlap_m": 1492.8,
-    "east_km": 10.056,
-    "raster_cost": 41628.6
-  },
-  {
-    "overlap_m": 1492.8,
-    "east_km": 10.056,
-    "raster_cost": 41628.6
-  },
-  {
-    "overlap_m": 1492.8,
-    "east_km": 10.143,
-    "raster_cost": 42743.1
-  },
-  {
-    "overlap_m": 1493.7,
-    "east_km": 10.197,
-    "raster_cost": 42046.8
-  },
-  {
-    "overlap_m": 1493.7,
-    "east_km": 10.197,
-    "raster_cost": 42046.8
-  },
-  {
-    "overlap_m": 1493.7,
-    "east_km": 10.284,
-    "raster_cost": 43161.2
-  },
-  {
-    "overlap_m": 1494.6,
-    "east_km": 9.628,
-    "raster_cost": 41499.1
-  },
-  {
-    "overlap_m": 1494.6,
-    "east_km": 9.628,
-    "raster_cost": 41499.1
-  },
-  {
-    "overlap_m": 1494.6,
-    "east_km": 9.715,
-    "raster_cost": 42613.5
-  },
-  {
-    "overlap_m": 1494.6,
-    "east_km": 9.715,
-    "raster_cost": 42613.5
-  },
-  {
-    "overlap_m": 1494.7,
-    "east_km": 10.254,
-    "raster_cost": 42968.6
-  },
-  {
-    "overlap_m": 1494.7,
-    "east_km": 10.34,
-    "raster_cost": 44083.1
-  },
-  {
-    "overlap_m": 1494.9,
-    "east_km": 9.629,
-    "raster_cost": 41497.2
-  },
-  {
-    "overlap_m": 1494.9,
-    "east_km": 9.629,
-    "raster_cost": 41497.2
-  },
-  {
-    "overlap_m": 1494.9,
-    "east_km": 9.716,
-    "raster_cost": 42611.6
-  },
-  {
-    "overlap_m": 1494.9,
-    "east_km": 9.716,
-    "raster_cost": 42611.6
-  },
-  {
-    "overlap_m": 1498.9,
-    "east_km": 9.85,
-    "raster_cost": 42024.4
-  },
-  {
-    "overlap_m": 1498.9,
-    "east_km": 9.85,
-    "raster_cost": 42024.4
-  },
-  {
-    "overlap_m": 1498.9,
-    "east_km": 9.937,
-    "raster_cost": 43138.9
-  },
-  {
-    "overlap_m": 1498.9,
-    "east_km": 9.937,
-    "raster_cost": 43138.9
-  },
-  {
-    "overlap_m": 1504.7,
-    "east_km": 9.467,
-    "raster_cost": 41251.1
-  },
-  {
-    "overlap_m": 1504.7,
-    "east_km": 9.467,
-    "raster_cost": 41251.1
-  },
-  {
-    "overlap_m": 1504.7,
-    "east_km": 9.467,
-    "raster_cost": 41251.1
-  },
-  {
-    "overlap_m": 1504.7,
-    "east_km": 9.467,
-    "raster_cost": 41251.1
-  },
-  {
-    "overlap_m": 1504.7,
-    "east_km": 9.554,
-    "raster_cost": 42365.6
-  },
-  {
-    "overlap_m": 1504.7,
-    "east_km": 9.554,
-    "raster_cost": 42365.6
-  },
-  {
-    "overlap_m": 1504.7,
-    "east_km": 9.554,
-    "raster_cost": 42365.6
-  },
-  {
-    "overlap_m": 1504.7,
-    "east_km": 9.554,
-    "raster_cost": 42365.6
-  },
-  {
-    "overlap_m": 1505.0,
-    "east_km": 10.105,
-    "raster_cost": 41679.7
-  },
-  {
-    "overlap_m": 1505.0,
-    "east_km": 10.105,
-    "raster_cost": 41679.7
-  },
-  {
-    "overlap_m": 1505.0,
-    "east_km": 10.192,
-    "raster_cost": 42794.2
-  },
-  {
-    "overlap_m": 1507.2,
-    "east_km": 10.254,
-    "raster_cost": 42967.7
-  },
-  {
-    "overlap_m": 1507.2,
-    "east_km": 10.341,
-    "raster_cost": 44082.1
-  },
-  {
-    "overlap_m": 1515.8,
-    "east_km": 9.744,
-    "raster_cost": 41664.8
-  },
-  {
-    "overlap_m": 1515.8,
-    "east_km": 9.744,
-    "raster_cost": 41664.8
-  },
-  {
-    "overlap_m": 1515.8,
-    "east_km": 9.831,
-    "raster_cost": 42779.3
-  },
-  {
-    "overlap_m": 1515.8,
-    "east_km": 9.831,
-    "raster_cost": 42779.3
-  },
-  {
-    "overlap_m": 1516.1,
-    "east_km": 10.291,
-    "raster_cost": 42488.7
-  },
-  {
-    "overlap_m": 1517.0,
-    "east_km": 10.043,
-    "raster_cost": 42669.6
-  },
-  {
-    "overlap_m": 1517.0,
-    "east_km": 10.13,
-    "raster_cost": 43784.1
-  },
-  {
-    "overlap_m": 1517.4,
-    "east_km": 9.559,
-    "raster_cost": 41620.1
-  },
-  {
-    "overlap_m": 1517.4,
-    "east_km": 9.559,
-    "raster_cost": 41620.1
-  },
-  {
-    "overlap_m": 1517.4,
-    "east_km": 9.559,
-    "raster_cost": 41620.1
-  },
-  {
-    "overlap_m": 1517.4,
-    "east_km": 9.645,
-    "raster_cost": 42734.6
-  },
-  {
-    "overlap_m": 1517.4,
-    "east_km": 9.645,
-    "raster_cost": 42734.6
-  },
-  {
-    "overlap_m": 1517.4,
-    "east_km": 9.645,
-    "raster_cost": 42734.6
-  },
-  {
-    "overlap_m": 1517.5,
-    "east_km": 10.105,
-    "raster_cost": 41678.8
-  },
-  {
-    "overlap_m": 1517.5,
-    "east_km": 10.105,
-    "raster_cost": 41678.8
-  },
-  {
-    "overlap_m": 1517.5,
-    "east_km": 10.192,
-    "raster_cost": 42793.2
-  },
-  {
-    "overlap_m": 1517.7,
-    "east_km": 9.559,
-    "raster_cost": 41618.2
-  },
-  {
-    "overlap_m": 1517.7,
-    "east_km": 9.559,
-    "raster_cost": 41618.2
-  },
-  {
-    "overlap_m": 1517.7,
-    "east_km": 9.559,
-    "raster_cost": 41618.2
-  },
-  {
-    "overlap_m": 1517.7,
-    "east_km": 9.646,
-    "raster_cost": 42732.6
-  },
-  {
-    "overlap_m": 1517.7,
-    "east_km": 9.646,
-    "raster_cost": 42732.6
-  },
-  {
-    "overlap_m": 1517.7,
-    "east_km": 9.646,
-    "raster_cost": 42732.6
-  },
-  {
-    "overlap_m": 1521.4,
-    "east_km": 10.277,
-    "raster_cost": 42154.0
-  },
-  {
-    "overlap_m": 1522.7,
-    "east_km": 9.758,
-    "raster_cost": 41656.4
-  },
-  {
-    "overlap_m": 1522.7,
-    "east_km": 9.758,
-    "raster_cost": 41656.4
-  },
-  {
-    "overlap_m": 1522.7,
-    "east_km": 9.845,
-    "raster_cost": 42770.9
-  },
-  {
-    "overlap_m": 1522.7,
-    "east_km": 9.845,
-    "raster_cost": 42770.9
-  },
-  {
-    "overlap_m": 1528.6,
-    "east_km": 9.836,
-    "raster_cost": 42033.8
-  },
-  {
-    "overlap_m": 1528.6,
-    "east_km": 9.836,
-    "raster_cost": 42033.8
-  },
-  {
-    "overlap_m": 1528.6,
-    "east_km": 9.923,
-    "raster_cost": 43148.2
-  },
-  {
-    "overlap_m": 1528.6,
-    "east_km": 9.923,
-    "raster_cost": 43148.2
-  },
-  {
-    "overlap_m": 1528.9,
-    "east_km": 9.837,
-    "raster_cost": 42031.9
-  },
-  {
-    "overlap_m": 1528.9,
-    "east_km": 9.837,
-    "raster_cost": 42031.9
-  },
-  {
-    "overlap_m": 1528.9,
-    "east_km": 9.923,
-    "raster_cost": 43146.3
-  },
-  {
-    "overlap_m": 1528.9,
-    "east_km": 9.923,
-    "raster_cost": 43146.3
-  },
-  {
-    "overlap_m": 1529.1,
-    "east_km": 10.043,
-    "raster_cost": 42670.6
-  },
-  {
-    "overlap_m": 1529.1,
-    "east_km": 10.13,
-    "raster_cost": 43785.0
-  },
-  {
-    "overlap_m": 1531.0,
-    "east_km": 10.326,
-    "raster_cost": 41603.8
-  },
-  {
-    "overlap_m": 1533.6,
-    "east_km": 10.277,
-    "raster_cost": 42154.9
-  },
-  {
-    "overlap_m": 1533.6,
-    "east_km": 10.364,
-    "raster_cost": 43269.4
-  },
-  {
-    "overlap_m": 1535.4,
-    "east_km": 9.85,
-    "raster_cost": 42025.4
-  },
-  {
-    "overlap_m": 1535.4,
-    "east_km": 9.936,
-    "raster_cost": 43139.8
-  },
-  {
-    "overlap_m": 1535.8,
-    "east_km": 9.85,
-    "raster_cost": 42023.5
-  },
-  {
-    "overlap_m": 1535.8,
-    "east_km": 9.937,
-    "raster_cost": 43137.9
-  },
-  {
-    "overlap_m": 1541.2,
-    "east_km": 9.467,
-    "raster_cost": 41252.1
-  },
-  {
-    "overlap_m": 1541.2,
-    "east_km": 9.467,
-    "raster_cost": 41252.1
-  },
-  {
-    "overlap_m": 1541.2,
-    "east_km": 9.554,
-    "raster_cost": 42366.5
-  },
-  {
-    "overlap_m": 1541.2,
-    "east_km": 9.554,
-    "raster_cost": 42366.5
-  },
-  {
-    "overlap_m": 1541.3,
-    "east_km": 10.092,
-    "raster_cost": 42721.7
-  },
-  {
-    "overlap_m": 1541.3,
-    "east_km": 10.179,
-    "raster_cost": 43836.1
-  },
-  {
-    "overlap_m": 1541.5,
-    "east_km": 9.468,
-    "raster_cost": 41250.2
-  },
-  {
-    "overlap_m": 1541.5,
-    "east_km": 9.468,
-    "raster_cost": 41250.2
-  },
-  {
-    "overlap_m": 1541.5,
-    "east_km": 9.554,
-    "raster_cost": 42364.6
-  },
-  {
-    "overlap_m": 1541.5,
-    "east_km": 9.554,
-    "raster_cost": 42364.6
-  },
-  {
-    "overlap_m": 1543.2,
-    "east_km": 10.326,
-    "raster_cost": 41604.8
-  },
-  {
-    "overlap_m": 1545.2,
-    "east_km": 10.186,
-    "raster_cost": 41786.0
-  },
-  {
-    "overlap_m": 1545.5,
-    "east_km": 9.688,
-    "raster_cost": 41777.5
-  },
-  {
-    "overlap_m": 1545.5,
-    "east_km": 9.688,
-    "raster_cost": 41777.5
-  },
-  {
-    "overlap_m": 1545.5,
-    "east_km": 9.775,
-    "raster_cost": 42891.9
-  },
-  {
-    "overlap_m": 1545.5,
-    "east_km": 9.775,
-    "raster_cost": 42891.9
-  },
-  {
-    "overlap_m": 1549.9,
-    "east_km": 9.813,
-    "raster_cost": 42234.1
-  },
-  {
-    "overlap_m": 1549.9,
-    "east_km": 9.813,
-    "raster_cost": 42234.1
-  },
-  {
-    "overlap_m": 1549.9,
-    "east_km": 9.899,
-    "raster_cost": 43348.6
-  },
-  {
-    "overlap_m": 1549.9,
-    "east_km": 9.899,
-    "raster_cost": 43348.6
-  },
-  {
-    "overlap_m": 1552.3,
-    "east_km": 9.744,
-    "raster_cost": 41665.8
-  },
-  {
-    "overlap_m": 1552.3,
-    "east_km": 9.831,
-    "raster_cost": 42780.2
-  },
-  {
-    "overlap_m": 1552.7,
-    "east_km": 9.745,
-    "raster_cost": 41663.9
-  },
-  {
-    "overlap_m": 1552.7,
-    "east_km": 9.831,
-    "raster_cost": 42778.3
-  },
-  {
-    "overlap_m": 1553.8,
-    "east_km": 10.256,
-    "raster_cost": 41724.9
-  },
-  {
-    "overlap_m": 1553.8,
-    "east_km": 10.092,
-    "raster_cost": 42720.7
-  },
-  {
-    "overlap_m": 1553.8,
-    "east_km": 10.343,
-    "raster_cost": 42839.3
-  },
-  {
-    "overlap_m": 1553.8,
-    "east_km": 10.179,
-    "raster_cost": 43835.2
-  },
-  {
-    "overlap_m": 1555.3,
-    "east_km": 10.375,
-    "raster_cost": 41655.9
-  },
-  {
-    "overlap_m": 1557.4,
-    "east_km": 10.185,
-    "raster_cost": 41786.9
-  },
-  {
-    "overlap_m": 1557.4,
-    "east_km": 10.272,
-    "raster_cost": 42901.4
-  },
-  {
-    "overlap_m": 1559.2,
-    "east_km": 9.758,
-    "raster_cost": 41657.4
-  },
-  {
-    "overlap_m": 1559.2,
-    "east_km": 9.844,
-    "raster_cost": 42771.8
-  },
-  {
-    "overlap_m": 1559.5,
-    "east_km": 9.758,
-    "raster_cost": 41655.5
-  },
-  {
-    "overlap_m": 1559.5,
-    "east_km": 9.845,
-    "raster_cost": 42769.9
-  },
-  {
-    "overlap_m": 1566.0,
-    "east_km": 10.256,
-    "raster_cost": 41725.8
-  },
-  {
-    "overlap_m": 1566.0,
-    "east_km": 10.343,
-    "raster_cost": 42840.3
-  },
-  {
-    "overlap_m": 1567.8,
-    "east_km": 10.375,
-    "raster_cost": 41654.9
-  },
-  {
-    "overlap_m": 1569.3,
-    "east_km": 9.596,
-    "raster_cost": 41409.4
-  },
-  {
-    "overlap_m": 1569.3,
-    "east_km": 9.596,
-    "raster_cost": 41409.4
-  },
-  {
-    "overlap_m": 1569.3,
-    "east_km": 9.683,
-    "raster_cost": 42523.9
-  },
-  {
-    "overlap_m": 1569.3,
-    "east_km": 9.683,
-    "raster_cost": 42523.9
-  },
-  {
-    "overlap_m": 1569.6,
-    "east_km": 10.234,
-    "raster_cost": 41838.0
-  },
-  {
-    "overlap_m": 1569.6,
-    "east_km": 10.321,
-    "raster_cost": 42952.5
-  },
-  {
-    "overlap_m": 1572.4,
-    "east_km": 10.24,
-    "raster_cost": 42363.7
-  },
-  {
-    "overlap_m": 1572.4,
-    "east_km": 10.327,
-    "raster_cost": 43478.1
-  },
-  {
-    "overlap_m": 1577.6,
-    "east_km": 10.164,
-    "raster_cost": 41356.9
-  },
-  {
-    "overlap_m": 1577.6,
-    "east_km": 10.251,
-    "raster_cost": 42471.3
-  },
-  {
-    "overlap_m": 1578.1,
-    "east_km": 10.305,
-    "raster_cost": 41776.9
-  },
-  {
-    "overlap_m": 1580.4,
-    "east_km": 9.874,
-    "raster_cost": 41823.1
-  },
-  {
-    "overlap_m": 1580.4,
-    "east_km": 9.874,
-    "raster_cost": 41823.1
-  },
-  {
-    "overlap_m": 1580.4,
-    "east_km": 9.96,
-    "raster_cost": 42937.6
-  },
-  {
-    "overlap_m": 1582.0,
-    "east_km": 9.688,
-    "raster_cost": 41778.4
-  },
-  {
-    "overlap_m": 1582.0,
-    "east_km": 9.775,
-    "raster_cost": 42892.9
-  },
-  {
-    "overlap_m": 1582.1,
-    "east_km": 10.235,
-    "raster_cost": 41837.1
-  },
-  {
-    "overlap_m": 1582.4,
-    "east_km": 9.689,
-    "raster_cost": 41776.5
-  },
-  {
-    "overlap_m": 1582.4,
-    "east_km": 9.775,
-    "raster_cost": 42890.9
-  },
-  {
-    "overlap_m": 1584.6,
-    "east_km": 10.24,
-    "raster_cost": 42364.7
-  },
-  {
-    "overlap_m": 1584.6,
-    "east_km": 10.326,
-    "raster_cost": 43479.1
-  },
-  {
-    "overlap_m": 1586.4,
-    "east_km": 9.812,
-    "raster_cost": 42235.1
-  },
-  {
-    "overlap_m": 1586.4,
-    "east_km": 9.899,
-    "raster_cost": 43349.5
-  },
-  {
-    "overlap_m": 1586.8,
-    "east_km": 9.813,
-    "raster_cost": 42233.2
-  },
-  {
-    "overlap_m": 1586.8,
-    "east_km": 9.9,
-    "raster_cost": 43347.6
-  },
-  {
-    "overlap_m": 1589.8,
-    "east_km": 10.164,
-    "raster_cost": 41357.8
-  },
-  {
-    "overlap_m": 1589.8,
-    "east_km": 10.251,
-    "raster_cost": 42472.3
-  },
-  {
-    "overlap_m": 1590.7,
-    "east_km": 10.305,
-    "raster_cost": 41776.0
-  },
-  {
-    "overlap_m": 1596.5,
-    "east_km": 9.651,
-    "raster_cost": 41987.2
-  },
-  {
-    "overlap_m": 1596.5,
-    "east_km": 9.651,
-    "raster_cost": 41987.2
-  },
-  {
-    "overlap_m": 1596.5,
-    "east_km": 9.738,
-    "raster_cost": 43101.6
-  },
-  {
-    "overlap_m": 1596.5,
-    "east_km": 9.738,
-    "raster_cost": 43101.6
-  },
-  {
-    "overlap_m": 1601.9,
-    "east_km": 10.213,
-    "raster_cost": 41408.9
-  },
-  {
-    "overlap_m": 1601.9,
-    "east_km": 10.3,
-    "raster_cost": 42523.4
-  },
-  {
-    "overlap_m": 1605.8,
-    "east_km": 9.596,
-    "raster_cost": 41410.4
-  },
-  {
-    "overlap_m": 1605.8,
-    "east_km": 9.683,
-    "raster_cost": 42524.8
-  },
-  {
-    "overlap_m": 1606.1,
-    "east_km": 9.597,
-    "raster_cost": 41408.5
-  },
-  {
-    "overlap_m": 1606.1,
-    "east_km": 9.684,
-    "raster_cost": 42522.9
-  },
-  {
-    "overlap_m": 1607.7,
-    "east_km": 9.928,
-    "raster_cost": 42400.9
-  },
-  {
-    "overlap_m": 1607.7,
-    "east_km": 9.928,
-    "raster_cost": 42400.9
-  },
-  {
-    "overlap_m": 1607.7,
-    "east_km": 10.015,
-    "raster_cost": 43515.3
-  },
-  {
-    "overlap_m": 1607.7,
-    "east_km": 10.015,
-    "raster_cost": 43515.3
-  },
-  {
-    "overlap_m": 1609.0,
-    "east_km": 10.07,
-    "raster_cost": 41349.9
-  },
-  {
-    "overlap_m": 1609.0,
-    "east_km": 10.07,
-    "raster_cost": 41349.9
-  },
-  {
-    "overlap_m": 1614.4,
-    "east_km": 10.214,
-    "raster_cost": 41408.0
-  },
-  {
-    "overlap_m": 1614.4,
-    "east_km": 10.3,
-    "raster_cost": 42522.4
-  },
-  {
-    "overlap_m": 1617.0,
-    "east_km": 9.873,
-    "raster_cost": 41824.1
-  },
-  {
-    "overlap_m": 1617.0,
-    "east_km": 9.96,
-    "raster_cost": 42938.5
-  },
-  {
-    "overlap_m": 1617.3,
-    "east_km": 9.874,
-    "raster_cost": 41822.2
-  },
-  {
-    "overlap_m": 1621.2,
-    "east_km": 10.021,
-    "raster_cost": 41298.8
-  },
-  {
-    "overlap_m": 1627.2,
-    "east_km": 9.987,
-    "raster_cost": 42604.3
-  },
-  {
-    "overlap_m": 1627.2,
-    "east_km": 9.987,
-    "raster_cost": 42604.3
-  },
-  {
-    "overlap_m": 1627.2,
-    "east_km": 9.987,
-    "raster_cost": 42604.3
-  },
-  {
-    "overlap_m": 1627.2,
-    "east_km": 9.987,
-    "raster_cost": 42604.3
-  },
-  {
-    "overlap_m": 1627.2,
-    "east_km": 9.987,
-    "raster_cost": 42604.3
-  },
-  {
-    "overlap_m": 1627.2,
-    "east_km": 10.073,
-    "raster_cost": 43718.8
-  },
-  {
-    "overlap_m": 1627.2,
-    "east_km": 10.073,
-    "raster_cost": 43718.8
-  },
-  {
-    "overlap_m": 1627.2,
-    "east_km": 10.073,
-    "raster_cost": 43718.8
-  },
-  {
-    "overlap_m": 1627.2,
-    "east_km": 10.073,
-    "raster_cost": 43718.8
-  },
-  {
-    "overlap_m": 1627.2,
-    "east_km": 10.073,
-    "raster_cost": 43718.8
-  },
-  {
-    "overlap_m": 1632.8,
-    "east_km": 9.978,
-    "raster_cost": 40981.9
-  },
-  {
-    "overlap_m": 1632.8,
-    "east_km": 9.978,
-    "raster_cost": 40981.9
-  },
-  {
-    "overlap_m": 1632.8,
-    "east_km": 9.978,
-    "raster_cost": 40981.9
-  },
-  {
-    "overlap_m": 1633.0,
-    "east_km": 9.651,
-    "raster_cost": 41988.1
-  },
-  {
-    "overlap_m": 1633.0,
-    "east_km": 9.737,
-    "raster_cost": 43102.6
-  },
-  {
-    "overlap_m": 1633.4,
-    "east_km": 9.651,
-    "raster_cost": 41986.2
-  },
-  {
-    "overlap_m": 1633.4,
-    "east_km": 9.738,
-    "raster_cost": 43100.7
-  },
-  {
-    "overlap_m": 1634.1,
-    "east_km": 10.0,
-    "raster_cost": 40884.7
-  },
-  {
-    "overlap_m": 1634.1,
-    "east_km": 10.0,
-    "raster_cost": 40884.7
-  },
-  {
-    "overlap_m": 1634.1,
-    "east_km": 10.0,
-    "raster_cost": 40884.7
-  },
-  {
-    "overlap_m": 1634.1,
-    "east_km": 10.0,
-    "raster_cost": 40884.7
-  },
-  {
-    "overlap_m": 1634.1,
-    "east_km": 10.0,
-    "raster_cost": 40884.7
-  },
-  {
-    "overlap_m": 1634.1,
-    "east_km": 10.087,
-    "raster_cost": 41999.1
-  },
-  {
-    "overlap_m": 1634.1,
-    "east_km": 10.087,
-    "raster_cost": 41999.1
-  },
-  {
-    "overlap_m": 1634.1,
-    "east_km": 10.087,
-    "raster_cost": 41999.1
-  },
-  {
-    "overlap_m": 1634.1,
-    "east_km": 10.087,
-    "raster_cost": 41999.1
-  },
-  {
-    "overlap_m": 1639.4,
-    "east_km": 9.986,
-    "raster_cost": 42605.3
-  },
-  {
-    "overlap_m": 1639.4,
-    "east_km": 9.986,
-    "raster_cost": 42605.3
-  },
-  {
-    "overlap_m": 1639.4,
-    "east_km": 9.986,
-    "raster_cost": 42605.3
-  },
-  {
-    "overlap_m": 1639.4,
-    "east_km": 9.986,
-    "raster_cost": 42605.3
-  },
-  {
-    "overlap_m": 1639.4,
-    "east_km": 9.986,
-    "raster_cost": 42605.3
-  },
-  {
-    "overlap_m": 1639.4,
-    "east_km": 10.073,
-    "raster_cost": 43719.7
-  },
-  {
-    "overlap_m": 1639.4,
-    "east_km": 10.073,
-    "raster_cost": 43719.7
-  },
-  {
-    "overlap_m": 1639.4,
-    "east_km": 10.073,
-    "raster_cost": 43719.7
-  },
-  {
-    "overlap_m": 1639.4,
-    "east_km": 10.073,
-    "raster_cost": 43719.7
-  },
-  {
-    "overlap_m": 1639.4,
-    "east_km": 10.073,
-    "raster_cost": 43719.7
-  },
-  {
-    "overlap_m": 1644.2,
-    "east_km": 9.928,
-    "raster_cost": 42401.8
-  },
-  {
-    "overlap_m": 1644.2,
+    "overlap_m": 4789.6,
     "east_km": 10.014,
-    "raster_cost": 43516.3
+    "raster_cost": 34393.5
   },
   {
-    "overlap_m": 1644.5,
-    "east_km": 9.928,
-    "raster_cost": 42399.9
+    "overlap_m": 4789.6,
+    "east_km": 10.014,
+    "raster_cost": 34393.5
   },
   {
-    "overlap_m": 1644.5,
-    "east_km": 10.015,
-    "raster_cost": 43514.4
-  },
-  {
-    "overlap_m": 1645.0,
-    "east_km": 9.929,
-    "raster_cost": 40930.8
-  },
-  {
-    "overlap_m": 1645.0,
-    "east_km": 9.929,
-    "raster_cost": 40930.8
-  },
-  {
-    "overlap_m": 1646.3,
-    "east_km": 10.0,
-    "raster_cost": 40885.7
-  },
-  {
-    "overlap_m": 1646.3,
-    "east_km": 10.0,
-    "raster_cost": 40885.7
-  },
-  {
-    "overlap_m": 1646.3,
-    "east_km": 10.0,
-    "raster_cost": 40885.7
-  },
-  {
-    "overlap_m": 1646.3,
-    "east_km": 10.0,
-    "raster_cost": 40885.7
-  },
-  {
-    "overlap_m": 1646.3,
-    "east_km": 10.0,
-    "raster_cost": 40885.7
-  },
-  {
-    "overlap_m": 1646.3,
-    "east_km": 10.087,
-    "raster_cost": 42000.1
-  },
-  {
-    "overlap_m": 1646.3,
-    "east_km": 10.087,
-    "raster_cost": 42000.1
-  },
-  {
-    "overlap_m": 1646.3,
-    "east_km": 10.087,
-    "raster_cost": 42000.1
-  },
-  {
-    "overlap_m": 1646.3,
-    "east_km": 10.087,
-    "raster_cost": 42000.1
-  },
-  {
-    "overlap_m": 1646.3,
-    "east_km": 10.087,
-    "raster_cost": 42000.1
-  },
-  {
-    "overlap_m": 1651.0,
-    "east_km": 9.895,
-    "raster_cost": 42236.3
-  },
-  {
-    "overlap_m": 1651.0,
-    "east_km": 9.895,
-    "raster_cost": 42236.3
-  },
-  {
-    "overlap_m": 1651.0,
-    "east_km": 9.895,
-    "raster_cost": 42236.3
-  },
-  {
-    "overlap_m": 1651.0,
-    "east_km": 9.895,
-    "raster_cost": 42236.3
-  },
-  {
-    "overlap_m": 1651.0,
-    "east_km": 9.981,
-    "raster_cost": 43350.7
-  },
-  {
-    "overlap_m": 1651.0,
-    "east_km": 9.981,
-    "raster_cost": 43350.7
-  },
-  {
-    "overlap_m": 1651.0,
-    "east_km": 9.981,
-    "raster_cost": 43350.7
-  },
-  {
-    "overlap_m": 1651.6,
-    "east_km": 10.035,
-    "raster_cost": 42656.4
-  },
-  {
-    "overlap_m": 1651.6,
-    "east_km": 10.035,
-    "raster_cost": 42656.4
-  },
-  {
-    "overlap_m": 1651.6,
-    "east_km": 10.035,
-    "raster_cost": 42656.4
-  },
-  {
-    "overlap_m": 1651.6,
-    "east_km": 10.035,
-    "raster_cost": 42656.4
-  },
-  {
-    "overlap_m": 1651.6,
-    "east_km": 10.122,
-    "raster_cost": 43770.8
-  },
-  {
-    "overlap_m": 1651.6,
-    "east_km": 10.122,
-    "raster_cost": 43770.8
-  },
-  {
-    "overlap_m": 1651.6,
-    "east_km": 10.122,
-    "raster_cost": 43770.8
-  },
-  {
-    "overlap_m": 1655.6,
-    "east_km": 9.909,
-    "raster_cost": 41103.0
-  },
-  {
-    "overlap_m": 1655.6,
-    "east_km": 9.909,
-    "raster_cost": 41103.0
-  },
-  {
-    "overlap_m": 1655.6,
-    "east_km": 9.909,
-    "raster_cost": 41103.0
-  },
-  {
-    "overlap_m": 1655.6,
-    "east_km": 9.909,
-    "raster_cost": 41103.0
-  },
-  {
-    "overlap_m": 1655.6,
-    "east_km": 9.909,
-    "raster_cost": 41103.0
-  },
-  {
-    "overlap_m": 1655.6,
-    "east_km": 9.909,
-    "raster_cost": 41103.0
-  },
-  {
-    "overlap_m": 1655.6,
-    "east_km": 9.995,
-    "raster_cost": 42217.4
-  },
-  {
-    "overlap_m": 1655.6,
-    "east_km": 9.995,
-    "raster_cost": 42217.4
-  },
-  {
-    "overlap_m": 1655.6,
-    "east_km": 9.995,
-    "raster_cost": 42217.4
-  },
-  {
-    "overlap_m": 1655.6,
-    "east_km": 9.995,
-    "raster_cost": 42217.4
-  },
-  {
-    "overlap_m": 1657.9,
-    "east_km": 9.908,
-    "raster_cost": 40516.7
-  },
-  {
-    "overlap_m": 1657.9,
-    "east_km": 9.908,
-    "raster_cost": 40516.7
-  },
-  {
-    "overlap_m": 1657.9,
-    "east_km": 9.908,
-    "raster_cost": 40516.7
-  },
-  {
-    "overlap_m": 1657.9,
-    "east_km": 9.908,
-    "raster_cost": 40516.7
-  },
-  {
-    "overlap_m": 1657.9,
-    "east_km": 9.995,
-    "raster_cost": 41631.1
-  },
-  {
-    "overlap_m": 1657.9,
-    "east_km": 9.995,
-    "raster_cost": 41631.1
-  },
-  {
-    "overlap_m": 1658.3,
-    "east_km": 9.842,
-    "raster_cost": 42888.0
-  },
-  {
-    "overlap_m": 1658.3,
-    "east_km": 9.929,
-    "raster_cost": 44002.5
-  },
-  {
-    "overlap_m": 1658.5,
-    "east_km": 10.049,
-    "raster_cost": 40936.8
-  },
-  {
-    "overlap_m": 1658.5,
-    "east_km": 10.049,
-    "raster_cost": 40936.8
-  },
-  {
-    "overlap_m": 1658.5,
-    "east_km": 10.049,
-    "raster_cost": 40936.8
-  },
-  {
-    "overlap_m": 1658.5,
-    "east_km": 10.049,
-    "raster_cost": 40936.8
-  },
-  {
-    "overlap_m": 1658.5,
-    "east_km": 10.136,
-    "raster_cost": 42051.2
-  },
-  {
-    "overlap_m": 1658.5,
-    "east_km": 10.136,
-    "raster_cost": 42051.2
-  },
-  {
-    "overlap_m": 1658.5,
-    "east_km": 10.136,
-    "raster_cost": 42051.2
-  },
-  {
-    "overlap_m": 1663.2,
-    "east_km": 9.894,
-    "raster_cost": 42237.3
-  },
-  {
-    "overlap_m": 1663.2,
-    "east_km": 9.894,
-    "raster_cost": 42237.3
-  },
-  {
-    "overlap_m": 1663.2,
-    "east_km": 9.894,
-    "raster_cost": 42237.3
-  },
-  {
-    "overlap_m": 1663.2,
-    "east_km": 9.894,
-    "raster_cost": 42237.3
-  },
-  {
-    "overlap_m": 1663.2,
-    "east_km": 9.981,
-    "raster_cost": 43351.7
-  },
-  {
-    "overlap_m": 1663.2,
-    "east_km": 9.981,
-    "raster_cost": 43351.7
-  },
-  {
-    "overlap_m": 1663.2,
-    "east_km": 9.981,
-    "raster_cost": 43351.7
-  },
-  {
-    "overlap_m": 1664.1,
-    "east_km": 10.036,
-    "raster_cost": 42655.4
-  },
-  {
-    "overlap_m": 1664.1,
-    "east_km": 10.036,
-    "raster_cost": 42655.4
-  },
-  {
-    "overlap_m": 1664.1,
-    "east_km": 10.036,
-    "raster_cost": 42655.4
-  },
-  {
-    "overlap_m": 1664.1,
-    "east_km": 10.036,
-    "raster_cost": 42655.4
-  },
-  {
-    "overlap_m": 1664.1,
-    "east_km": 10.122,
-    "raster_cost": 43769.9
-  },
-  {
-    "overlap_m": 1664.1,
-    "east_km": 10.122,
-    "raster_cost": 43769.9
-  },
-  {
-    "overlap_m": 1664.1,
-    "east_km": 10.122,
-    "raster_cost": 43769.9
-  },
-  {
-    "overlap_m": 1666.8,
-    "east_km": 10.186,
-    "raster_cost": 41516.7
-  },
-  {
-    "overlap_m": 1666.8,
-    "east_km": 10.186,
-    "raster_cost": 41516.7
-  },
-  {
-    "overlap_m": 1666.8,
-    "east_km": 10.186,
-    "raster_cost": 41516.7
-  },
-  {
-    "overlap_m": 1666.8,
-    "east_km": 10.272,
-    "raster_cost": 42631.1
-  },
-  {
-    "overlap_m": 1666.8,
-    "east_km": 10.272,
-    "raster_cost": 42631.1
-  },
-  {
-    "overlap_m": 1667.8,
-    "east_km": 9.86,
-    "raster_cost": 41051.9
-  },
-  {
-    "overlap_m": 1667.8,
-    "east_km": 9.86,
-    "raster_cost": 41051.9
-  },
-  {
-    "overlap_m": 1667.8,
-    "east_km": 9.86,
-    "raster_cost": 41051.9
-  },
-  {
-    "overlap_m": 1667.8,
-    "east_km": 9.946,
-    "raster_cost": 42166.3
-  },
-  {
-    "overlap_m": 1667.8,
-    "east_km": 9.946,
-    "raster_cost": 42166.3
-  },
-  {
-    "overlap_m": 1667.8,
-    "east_km": 9.946,
-    "raster_cost": 42166.3
-  },
-  {
-    "overlap_m": 1670.1,
-    "east_km": 9.908,
-    "raster_cost": 40517.6
-  },
-  {
-    "overlap_m": 1670.1,
-    "east_km": 9.908,
-    "raster_cost": 40517.6
-  },
-  {
-    "overlap_m": 1670.1,
-    "east_km": 9.908,
-    "raster_cost": 40517.6
-  },
-  {
-    "overlap_m": 1670.1,
-    "east_km": 9.908,
-    "raster_cost": 40517.6
-  },
-  {
-    "overlap_m": 1670.1,
-    "east_km": 9.995,
-    "raster_cost": 41632.1
-  },
-  {
-    "overlap_m": 1670.1,
-    "east_km": 9.995,
-    "raster_cost": 41632.1
-  },
-  {
-    "overlap_m": 1670.1,
-    "east_km": 9.995,
-    "raster_cost": 41632.1
-  },
-  {
-    "overlap_m": 1670.2,
-    "east_km": 10.119,
-    "raster_cost": 41401.1
-  },
-  {
-    "overlap_m": 1670.5,
-    "east_km": 9.842,
-    "raster_cost": 42889.0
-  },
-  {
-    "overlap_m": 1670.5,
-    "east_km": 9.929,
-    "raster_cost": 44003.4
-  },
-  {
-    "overlap_m": 1671.0,
-    "east_km": 10.049,
-    "raster_cost": 40935.8
-  },
-  {
-    "overlap_m": 1671.0,
-    "east_km": 10.049,
-    "raster_cost": 40935.8
-  },
-  {
-    "overlap_m": 1671.0,
-    "east_km": 10.049,
-    "raster_cost": 40935.8
-  },
-  {
-    "overlap_m": 1671.0,
-    "east_km": 10.049,
-    "raster_cost": 40935.8
-  },
-  {
-    "overlap_m": 1671.0,
-    "east_km": 10.136,
-    "raster_cost": 42050.3
-  },
-  {
-    "overlap_m": 1671.0,
-    "east_km": 10.136,
-    "raster_cost": 42050.3
-  },
-  {
-    "overlap_m": 1673.6,
-    "east_km": 10.199,
-    "raster_cost": 41508.2
-  },
-  {
-    "overlap_m": 1673.6,
-    "east_km": 10.199,
-    "raster_cost": 41508.2
-  },
-  {
-    "overlap_m": 1673.6,
-    "east_km": 10.199,
-    "raster_cost": 41508.2
-  },
-  {
-    "overlap_m": 1673.6,
-    "east_km": 10.286,
-    "raster_cost": 42622.7
-  },
-  {
-    "overlap_m": 1673.6,
-    "east_km": 10.286,
-    "raster_cost": 42622.7
-  },
-  {
-    "overlap_m": 1675.4,
-    "east_km": 9.943,
-    "raster_cost": 42288.4
-  },
-  {
-    "overlap_m": 1675.4,
-    "east_km": 9.943,
-    "raster_cost": 42288.4
-  },
-  {
-    "overlap_m": 1675.4,
-    "east_km": 9.943,
-    "raster_cost": 42288.4
-  },
-  {
-    "overlap_m": 1675.4,
-    "east_km": 9.943,
-    "raster_cost": 42288.4
-  },
-  {
-    "overlap_m": 1675.4,
-    "east_km": 10.03,
-    "raster_cost": 43402.8
-  },
-  {
-    "overlap_m": 1675.4,
-    "east_km": 10.03,
-    "raster_cost": 43402.8
-  },
-  {
-    "overlap_m": 1675.4,
-    "east_km": 10.03,
-    "raster_cost": 43402.8
-  },
-  {
-    "overlap_m": 1679.0,
-    "east_km": 10.137,
-    "raster_cost": 41465.6
-  },
-  {
-    "overlap_m": 1679.0,
-    "east_km": 10.137,
-    "raster_cost": 41465.6
-  },
-  {
-    "overlap_m": 1679.0,
-    "east_km": 10.223,
-    "raster_cost": 42580.0
-  },
-  {
-    "overlap_m": 1679.0,
-    "east_km": 10.223,
-    "raster_cost": 42580.0
-  },
-  {
-    "overlap_m": 1679.4,
-    "east_km": 9.817,
-    "raster_cost": 40735.0
-  },
-  {
-    "overlap_m": 1679.4,
-    "east_km": 9.817,
-    "raster_cost": 40735.0
-  },
-  {
-    "overlap_m": 1679.4,
-    "east_km": 9.817,
-    "raster_cost": 40735.0
-  },
-  {
-    "overlap_m": 1679.4,
-    "east_km": 9.817,
-    "raster_cost": 40735.0
-  },
-  {
-    "overlap_m": 1679.4,
-    "east_km": 9.903,
-    "raster_cost": 41849.4
-  },
-  {
-    "overlap_m": 1679.4,
-    "east_km": 9.903,
-    "raster_cost": 41849.4
-  },
-  {
-    "overlap_m": 1679.4,
-    "east_km": 9.903,
-    "raster_cost": 41849.4
-  },
-  {
-    "overlap_m": 1679.4,
-    "east_km": 9.903,
-    "raster_cost": 41849.4
-  },
-  {
-    "overlap_m": 1680.7,
-    "east_km": 9.723,
-    "raster_cost": 40471.0
-  },
-  {
-    "overlap_m": 1680.7,
-    "east_km": 9.723,
-    "raster_cost": 40471.0
-  },
-  {
-    "overlap_m": 1680.7,
-    "east_km": 9.723,
-    "raster_cost": 40471.0
-  },
-  {
-    "overlap_m": 1680.7,
-    "east_km": 9.723,
-    "raster_cost": 40471.0
-  },
-  {
-    "overlap_m": 1680.7,
-    "east_km": 9.723,
-    "raster_cost": 40471.0
-  },
-  {
-    "overlap_m": 1680.7,
-    "east_km": 9.723,
-    "raster_cost": 40471.0
-  },
-  {
-    "overlap_m": 1680.7,
-    "east_km": 9.81,
-    "raster_cost": 41585.5
-  },
-  {
-    "overlap_m": 1680.7,
-    "east_km": 9.81,
-    "raster_cost": 41585.5
-  },
-  {
-    "overlap_m": 1680.7,
-    "east_km": 9.81,
-    "raster_cost": 41585.5
-  },
-  {
-    "overlap_m": 1680.7,
-    "east_km": 9.81,
-    "raster_cost": 41585.5
-  },
-  {
-    "overlap_m": 1680.7,
-    "east_km": 9.81,
-    "raster_cost": 41585.5
-  },
-  {
-    "overlap_m": 1680.7,
-    "east_km": 9.81,
-    "raster_cost": 41585.5
-  },
-  {
-    "overlap_m": 1682.1,
-    "east_km": 9.75,
-    "raster_cost": 42520.0
-  },
-  {
-    "overlap_m": 1682.1,
-    "east_km": 9.75,
-    "raster_cost": 42520.0
-  },
-  {
-    "overlap_m": 1682.1,
-    "east_km": 9.837,
-    "raster_cost": 43634.5
-  },
-  {
-    "overlap_m": 1682.2,
-    "east_km": 9.957,
-    "raster_cost": 40568.8
-  },
-  {
-    "overlap_m": 1682.2,
-    "east_km": 9.957,
-    "raster_cost": 40568.8
-  },
-  {
-    "overlap_m": 1682.2,
-    "east_km": 9.957,
-    "raster_cost": 40568.8
-  },
-  {
-    "overlap_m": 1682.2,
-    "east_km": 9.957,
-    "raster_cost": 40568.8
-  },
-  {
-    "overlap_m": 1682.2,
-    "east_km": 10.044,
-    "raster_cost": 41683.2
-  },
-  {
-    "overlap_m": 1682.2,
-    "east_km": 10.044,
-    "raster_cost": 41683.2
-  },
-  {
-    "overlap_m": 1682.2,
-    "east_km": 10.044,
-    "raster_cost": 41683.2
-  },
-  {
-    "overlap_m": 1682.6,
-    "east_km": 9.891,
-    "raster_cost": 42940.1
-  },
-  {
-    "overlap_m": 1682.6,
-    "east_km": 9.978,
-    "raster_cost": 44054.5
-  },
-  {
-    "overlap_m": 1685.8,
-    "east_km": 10.15,
-    "raster_cost": 41457.1
-  },
-  {
-    "overlap_m": 1685.8,
-    "east_km": 10.15,
-    "raster_cost": 41457.1
-  },
-  {
-    "overlap_m": 1685.8,
-    "east_km": 10.237,
-    "raster_cost": 42571.6
-  },
-  {
-    "overlap_m": 1685.8,
-    "east_km": 10.237,
-    "raster_cost": 42571.6
-  },
-  {
-    "overlap_m": 1687.1,
-    "east_km": 9.9,
-    "raster_cost": 40276.0
-  },
-  {
-    "overlap_m": 1687.1,
-    "east_km": 9.9,
-    "raster_cost": 40276.0
-  },
-  {
-    "overlap_m": 1687.1,
-    "east_km": 9.9,
-    "raster_cost": 40276.0
-  },
-  {
-    "overlap_m": 1687.1,
-    "east_km": 9.987,
-    "raster_cost": 41390.4
-  },
-  {
-    "overlap_m": 1687.1,
-    "east_km": 9.987,
-    "raster_cost": 41390.4
-  },
-  {
-    "overlap_m": 1687.9,
-    "east_km": 9.944,
-    "raster_cost": 42287.4
-  },
-  {
-    "overlap_m": 1687.9,
-    "east_km": 9.944,
-    "raster_cost": 42287.4
-  },
-  {
-    "overlap_m": 1687.9,
-    "east_km": 9.944,
-    "raster_cost": 42287.4
-  },
-  {
-    "overlap_m": 1687.9,
-    "east_km": 9.944,
-    "raster_cost": 42287.4
-  },
-  {
-    "overlap_m": 1687.9,
-    "east_km": 10.03,
-    "raster_cost": 43401.9
-  },
-  {
-    "overlap_m": 1687.9,
-    "east_km": 10.03,
-    "raster_cost": 43401.9
-  },
-  {
-    "overlap_m": 1687.9,
-    "east_km": 10.03,
-    "raster_cost": 43401.9
-  },
-  {
-    "overlap_m": 1690.6,
-    "east_km": 10.094,
-    "raster_cost": 41148.6
-  },
-  {
-    "overlap_m": 1690.6,
-    "east_km": 10.094,
-    "raster_cost": 41148.6
-  },
-  {
-    "overlap_m": 1690.6,
-    "east_km": 10.181,
-    "raster_cost": 42263.1
-  },
-  {
-    "overlap_m": 1690.6,
-    "east_km": 10.181,
-    "raster_cost": 42263.1
-  },
-  {
-    "overlap_m": 1691.6,
-    "east_km": 9.768,
-    "raster_cost": 40683.9
-  },
-  {
-    "overlap_m": 1691.6,
-    "east_km": 9.768,
-    "raster_cost": 40683.9
-  },
-  {
-    "overlap_m": 1691.6,
-    "east_km": 9.854,
-    "raster_cost": 41798.3
-  },
-  {
-    "overlap_m": 1691.6,
-    "east_km": 9.854,
-    "raster_cost": 41798.3
-  },
-  {
-    "overlap_m": 1692.9,
-    "east_km": 9.723,
-    "raster_cost": 40472.0
-  },
-  {
-    "overlap_m": 1692.9,
-    "east_km": 9.723,
-    "raster_cost": 40472.0
-  },
-  {
-    "overlap_m": 1692.9,
-    "east_km": 9.723,
-    "raster_cost": 40472.0
-  },
-  {
-    "overlap_m": 1692.9,
-    "east_km": 9.723,
-    "raster_cost": 40472.0
-  },
-  {
-    "overlap_m": 1692.9,
-    "east_km": 9.723,
-    "raster_cost": 40472.0
-  },
-  {
-    "overlap_m": 1692.9,
-    "east_km": 9.723,
-    "raster_cost": 40472.0
-  },
-  {
-    "overlap_m": 1692.9,
-    "east_km": 9.81,
-    "raster_cost": 41586.4
-  },
-  {
-    "overlap_m": 1692.9,
-    "east_km": 9.81,
-    "raster_cost": 41586.4
-  },
-  {
-    "overlap_m": 1692.9,
-    "east_km": 9.81,
-    "raster_cost": 41586.4
-  },
-  {
-    "overlap_m": 1692.9,
-    "east_km": 9.81,
-    "raster_cost": 41586.4
-  },
-  {
-    "overlap_m": 1692.9,
-    "east_km": 9.81,
-    "raster_cost": 41586.4
-  },
-  {
-    "overlap_m": 1692.9,
-    "east_km": 9.81,
-    "raster_cost": 41586.4
-  },
-  {
-    "overlap_m": 1694.0,
+    "overlap_m": 4789.6,
     "east_km": 10.027,
-    "raster_cost": 41033.0
+    "raster_cost": 34397.9
   },
   {
-    "overlap_m": 1694.2,
-    "east_km": 9.75,
-    "raster_cost": 42521.0
+    "overlap_m": 4789.6,
+    "east_km": 10.027,
+    "raster_cost": 34397.9
   },
   {
-    "overlap_m": 1694.2,
-    "east_km": 9.75,
-    "raster_cost": 42521.0
+    "overlap_m": 4789.6,
+    "east_km": 10.027,
+    "raster_cost": 34397.9
   },
   {
-    "overlap_m": 1694.2,
-    "east_km": 9.837,
-    "raster_cost": 43635.4
+    "overlap_m": 4789.6,
+    "east_km": 10.027,
+    "raster_cost": 34397.9
   },
   {
-    "overlap_m": 1694.8,
-    "east_km": 9.958,
-    "raster_cost": 40567.8
+    "overlap_m": 4789.6,
+    "east_km": 10.027,
+    "raster_cost": 34397.9
   },
   {
-    "overlap_m": 1694.8,
-    "east_km": 9.958,
-    "raster_cost": 40567.8
+    "overlap_m": 4789.6,
+    "east_km": 10.027,
+    "raster_cost": 34397.9
   },
   {
-    "overlap_m": 1694.8,
-    "east_km": 9.958,
-    "raster_cost": 40567.8
+    "overlap_m": 4789.6,
+    "east_km": 10.027,
+    "raster_cost": 34397.9
   },
   {
-    "overlap_m": 1694.8,
-    "east_km": 9.958,
-    "raster_cost": 40567.8
+    "overlap_m": 4789.6,
+    "east_km": 10.027,
+    "raster_cost": 34397.9
   },
   {
-    "overlap_m": 1694.8,
-    "east_km": 10.044,
-    "raster_cost": 41682.2
+    "overlap_m": 4791.2,
+    "east_km": 10.021,
+    "raster_cost": 34435.6
   },
   {
-    "overlap_m": 1694.8,
-    "east_km": 10.044,
-    "raster_cost": 41682.2
+    "overlap_m": 4791.4,
+    "east_km": 10.014,
+    "raster_cost": 34421.2
   },
   {
-    "overlap_m": 1695.1,
-    "east_km": 9.891,
-    "raster_cost": 42939.1
+    "overlap_m": 4791.4,
+    "east_km": 10.014,
+    "raster_cost": 34421.2
   },
   {
-    "overlap_m": 1695.1,
-    "east_km": 9.978,
-    "raster_cost": 44053.6
+    "overlap_m": 4791.4,
+    "east_km": 10.014,
+    "raster_cost": 34421.2
   },
   {
-    "overlap_m": 1697.4,
-    "east_km": 10.108,
-    "raster_cost": 41140.2
+    "overlap_m": 4791.4,
+    "east_km": 10.014,
+    "raster_cost": 34421.2
   },
   {
-    "overlap_m": 1697.4,
-    "east_km": 10.108,
-    "raster_cost": 41140.2
+    "overlap_m": 4791.4,
+    "east_km": 10.022,
+    "raster_cost": 34428.3
   },
   {
-    "overlap_m": 1697.4,
-    "east_km": 10.194,
-    "raster_cost": 42254.7
+    "overlap_m": 4791.4,
+    "east_km": 10.022,
+    "raster_cost": 34428.3
   },
   {
-    "overlap_m": 1697.4,
-    "east_km": 10.194,
-    "raster_cost": 42254.7
+    "overlap_m": 4791.4,
+    "east_km": 10.022,
+    "raster_cost": 34428.3
   },
   {
-    "overlap_m": 1699.3,
-    "east_km": 9.9,
-    "raster_cost": 40276.9
+    "overlap_m": 4791.4,
+    "east_km": 10.022,
+    "raster_cost": 34428.3
   },
   {
-    "overlap_m": 1699.3,
-    "east_km": 9.9,
-    "raster_cost": 40276.9
+    "overlap_m": 4792.9,
+    "east_km": 10.034,
+    "raster_cost": 34413.5
   },
   {
-    "overlap_m": 1699.3,
-    "east_km": 9.9,
-    "raster_cost": 40276.9
+    "overlap_m": 4792.9,
+    "east_km": 10.034,
+    "raster_cost": 34413.5
   },
   {
-    "overlap_m": 1699.3,
-    "east_km": 9.986,
-    "raster_cost": 41391.4
+    "overlap_m": 4792.9,
+    "east_km": 10.034,
+    "raster_cost": 34413.5
   },
   {
-    "overlap_m": 1699.3,
-    "east_km": 9.986,
-    "raster_cost": 41391.4
+    "overlap_m": 4792.9,
+    "east_km": 10.034,
+    "raster_cost": 34413.5
   },
   {
-    "overlap_m": 1700.2,
-    "east_km": 9.998,
-    "raster_cost": 42279.8
+    "overlap_m": 4792.9,
+    "east_km": 10.034,
+    "raster_cost": 34413.5
   },
   {
-    "overlap_m": 1700.2,
-    "east_km": 9.998,
-    "raster_cost": 42279.8
+    "overlap_m": 4792.9,
+    "east_km": 10.034,
+    "raster_cost": 34413.5
   },
   {
-    "overlap_m": 1700.2,
-    "east_km": 9.998,
-    "raster_cost": 42279.8
+    "overlap_m": 4792.9,
+    "east_km": 10.034,
+    "raster_cost": 34413.5
   },
   {
-    "overlap_m": 1700.2,
-    "east_km": 9.998,
-    "raster_cost": 42279.8
+    "overlap_m": 4792.9,
+    "east_km": 10.034,
+    "raster_cost": 34413.5
   },
   {
-    "overlap_m": 1700.2,
-    "east_km": 10.085,
-    "raster_cost": 43394.3
+    "overlap_m": 4792.9,
+    "east_km": 10.029,
+    "raster_cost": 34416.2
   },
   {
-    "overlap_m": 1700.2,
-    "east_km": 10.085,
-    "raster_cost": 43394.3
+    "overlap_m": 4792.9,
+    "east_km": 10.029,
+    "raster_cost": 34416.2
   },
   {
-    "overlap_m": 1700.2,
-    "east_km": 10.085,
-    "raster_cost": 43394.3
+    "overlap_m": 4792.9,
+    "east_km": 10.029,
+    "raster_cost": 34416.2
   },
   {
-    "overlap_m": 1700.2,
-    "east_km": 10.085,
-    "raster_cost": 43394.3
+    "overlap_m": 4792.9,
+    "east_km": 10.029,
+    "raster_cost": 34416.2
   },
   {
-    "overlap_m": 1702.7,
+    "overlap_m": 4792.9,
+    "east_km": 10.034,
+    "raster_cost": 34417.6
+  },
+  {
+    "overlap_m": 4792.9,
+    "east_km": 10.034,
+    "raster_cost": 34417.6
+  },
+  {
+    "overlap_m": 4792.9,
+    "east_km": 10.034,
+    "raster_cost": 34417.6
+  },
+  {
+    "overlap_m": 4792.9,
+    "east_km": 10.034,
+    "raster_cost": 34417.6
+  },
+  {
+    "overlap_m": 4792.9,
+    "east_km": 10.034,
+    "raster_cost": 34417.6
+  },
+  {
+    "overlap_m": 4792.9,
+    "east_km": 10.034,
+    "raster_cost": 34417.6
+  },
+  {
+    "overlap_m": 4792.9,
+    "east_km": 10.034,
+    "raster_cost": 34417.6
+  },
+  {
+    "overlap_m": 4792.9,
+    "east_km": 10.029,
+    "raster_cost": 34420.2
+  },
+  {
+    "overlap_m": 4792.9,
+    "east_km": 10.029,
+    "raster_cost": 34420.2
+  },
+  {
+    "overlap_m": 4792.9,
+    "east_km": 10.029,
+    "raster_cost": 34420.2
+  },
+  {
+    "overlap_m": 4792.9,
+    "east_km": 10.042,
+    "raster_cost": 34420.6
+  },
+  {
+    "overlap_m": 4792.9,
+    "east_km": 10.042,
+    "raster_cost": 34420.6
+  },
+  {
+    "overlap_m": 4792.9,
+    "east_km": 10.042,
+    "raster_cost": 34420.6
+  },
+  {
+    "overlap_m": 4792.9,
+    "east_km": 10.042,
+    "raster_cost": 34420.6
+  },
+  {
+    "overlap_m": 4792.9,
+    "east_km": 10.042,
+    "raster_cost": 34424.7
+  },
+  {
+    "overlap_m": 4792.9,
+    "east_km": 10.042,
+    "raster_cost": 34424.7
+  },
+  {
+    "overlap_m": 4792.9,
+    "east_km": 10.042,
+    "raster_cost": 34424.7
+  },
+  {
+    "overlap_m": 4792.9,
+    "east_km": 10.042,
+    "raster_cost": 34424.7
+  },
+  {
+    "overlap_m": 4793.1,
+    "east_km": 10.032,
+    "raster_cost": 34416.0
+  },
+  {
+    "overlap_m": 4793.1,
+    "east_km": 10.032,
+    "raster_cost": 34416.0
+  },
+  {
+    "overlap_m": 4793.1,
+    "east_km": 10.032,
+    "raster_cost": 34416.0
+  },
+  {
+    "overlap_m": 4793.1,
+    "east_km": 10.032,
+    "raster_cost": 34416.0
+  },
+  {
+    "overlap_m": 4793.1,
+    "east_km": 10.032,
+    "raster_cost": 34416.0
+  },
+  {
+    "overlap_m": 4793.1,
+    "east_km": 10.032,
+    "raster_cost": 34416.0
+  },
+  {
+    "overlap_m": 4793.1,
+    "east_km": 10.032,
+    "raster_cost": 34416.0
+  },
+  {
+    "overlap_m": 4793.6,
+    "east_km": 10.008,
+    "raster_cost": 34425.1
+  },
+  {
+    "overlap_m": 4793.6,
+    "east_km": 10.008,
+    "raster_cost": 34425.1
+  },
+  {
+    "overlap_m": 4793.6,
+    "east_km": 10.008,
+    "raster_cost": 34425.1
+  },
+  {
+    "overlap_m": 4793.6,
+    "east_km": 10.008,
+    "raster_cost": 34425.1
+  },
+  {
+    "overlap_m": 4793.6,
+    "east_km": 10.004,
+    "raster_cost": 34427.8
+  },
+  {
+    "overlap_m": 4793.6,
+    "east_km": 10.004,
+    "raster_cost": 34427.8
+  },
+  {
+    "overlap_m": 4793.6,
+    "east_km": 10.017,
+    "raster_cost": 34432.2
+  },
+  {
+    "overlap_m": 4793.6,
+    "east_km": 10.017,
+    "raster_cost": 34432.2
+  },
+  {
+    "overlap_m": 4793.6,
+    "east_km": 10.017,
+    "raster_cost": 34432.2
+  },
+  {
+    "overlap_m": 4793.6,
+    "east_km": 10.017,
+    "raster_cost": 34432.2
+  },
+  {
+    "overlap_m": 4796.4,
+    "east_km": 10.009,
+    "raster_cost": 34421.9
+  },
+  {
+    "overlap_m": 4796.4,
+    "east_km": 10.009,
+    "raster_cost": 34421.9
+  },
+  {
+    "overlap_m": 4796.4,
+    "east_km": 10.009,
+    "raster_cost": 34426.0
+  },
+  {
+    "overlap_m": 4796.4,
+    "east_km": 10.009,
+    "raster_cost": 34426.0
+  },
+  {
+    "overlap_m": 4796.5,
+    "east_km": 10.016,
+    "raster_cost": 34432.4
+  },
+  {
+    "overlap_m": 4796.5,
+    "east_km": 10.024,
+    "raster_cost": 34439.5
+  },
+  {
+    "overlap_m": 4796.6,
+    "east_km": 10.014,
+    "raster_cost": 34421.9
+  },
+  {
+    "overlap_m": 4796.6,
+    "east_km": 10.014,
+    "raster_cost": 34421.9
+  },
+  {
+    "overlap_m": 4796.6,
+    "east_km": 10.014,
+    "raster_cost": 34421.9
+  },
+  {
+    "overlap_m": 4796.6,
+    "east_km": 10.014,
+    "raster_cost": 34421.9
+  },
+  {
+    "overlap_m": 4796.6,
+    "east_km": 10.01,
+    "raster_cost": 34424.5
+  },
+  {
+    "overlap_m": 4796.6,
+    "east_km": 10.01,
+    "raster_cost": 34424.5
+  },
+  {
+    "overlap_m": 4796.6,
+    "east_km": 10.023,
+    "raster_cost": 34429.0
+  },
+  {
+    "overlap_m": 4796.6,
+    "east_km": 10.023,
+    "raster_cost": 34429.0
+  },
+  {
+    "overlap_m": 4796.6,
+    "east_km": 10.023,
+    "raster_cost": 34429.0
+  },
+  {
+    "overlap_m": 4796.6,
+    "east_km": 10.023,
+    "raster_cost": 34429.0
+  },
+  {
+    "overlap_m": 4796.8,
+    "east_km": 10.028,
+    "raster_cost": 34405.0
+  },
+  {
+    "overlap_m": 4796.8,
+    "east_km": 10.028,
+    "raster_cost": 34405.0
+  },
+  {
+    "overlap_m": 4796.8,
+    "east_km": 10.028,
+    "raster_cost": 34405.0
+  },
+  {
+    "overlap_m": 4796.8,
+    "east_km": 10.028,
+    "raster_cost": 34405.0
+  },
+  {
+    "overlap_m": 4797.6,
+    "east_km": 10.031,
+    "raster_cost": 34417.8
+  },
+  {
+    "overlap_m": 4797.6,
+    "east_km": 10.031,
+    "raster_cost": 34417.8
+  },
+  {
+    "overlap_m": 4797.6,
+    "east_km": 10.031,
+    "raster_cost": 34417.8
+  },
+  {
+    "overlap_m": 4797.6,
+    "east_km": 10.031,
+    "raster_cost": 34417.8
+  },
+  {
+    "overlap_m": 4797.6,
+    "east_km": 10.031,
+    "raster_cost": 34417.8
+  },
+  {
+    "overlap_m": 4797.6,
+    "east_km": 10.031,
+    "raster_cost": 34417.8
+  },
+  {
+    "overlap_m": 4797.6,
+    "east_km": 10.031,
+    "raster_cost": 34417.8
+  },
+  {
+    "overlap_m": 4797.6,
+    "east_km": 10.039,
+    "raster_cost": 34424.9
+  },
+  {
+    "overlap_m": 4797.6,
+    "east_km": 10.039,
+    "raster_cost": 34424.9
+  },
+  {
+    "overlap_m": 4797.6,
+    "east_km": 10.039,
+    "raster_cost": 34424.9
+  },
+  {
+    "overlap_m": 4797.6,
+    "east_km": 10.039,
+    "raster_cost": 34424.9
+  },
+  {
+    "overlap_m": 4797.6,
+    "east_km": 10.041,
+    "raster_cost": 34431.9
+  },
+  {
+    "overlap_m": 4797.6,
+    "east_km": 10.041,
+    "raster_cost": 34431.9
+  },
+  {
+    "overlap_m": 4797.6,
+    "east_km": 10.041,
+    "raster_cost": 34431.9
+  },
+  {
+    "overlap_m": 4797.6,
+    "east_km": 10.041,
+    "raster_cost": 34431.9
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.039,
+    "raster_cost": 34429.1
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.039,
+    "raster_cost": 34429.1
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.039,
+    "raster_cost": 34429.1
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.039,
+    "raster_cost": 34429.1
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.039,
+    "raster_cost": 34429.1
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.039,
+    "raster_cost": 34429.1
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.039,
+    "raster_cost": 34429.1
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.039,
+    "raster_cost": 34429.1
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.035,
+    "raster_cost": 34431.8
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.035,
+    "raster_cost": 34431.8
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.035,
+    "raster_cost": 34431.8
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.035,
+    "raster_cost": 34431.8
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.048,
+    "raster_cost": 34436.2
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.048,
+    "raster_cost": 34436.2
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.048,
+    "raster_cost": 34436.2
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.048,
+    "raster_cost": 34436.2
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.048,
+    "raster_cost": 34436.2
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.048,
+    "raster_cost": 34436.2
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.048,
+    "raster_cost": 34436.2
+  },
+  {
+    "overlap_m": 4798.9,
+    "east_km": 10.048,
+    "raster_cost": 34436.2
+  },
+  {
+    "overlap_m": 4799.3,
+    "east_km": 10.021,
+    "raster_cost": 34434.6
+  },
+  {
+    "overlap_m": 4799.3,
+    "east_km": 10.021,
+    "raster_cost": 34434.6
+  },
+  {
+    "overlap_m": 4799.3,
+    "east_km": 10.021,
+    "raster_cost": 34434.6
+  },
+  {
+    "overlap_m": 4799.3,
+    "east_km": 10.021,
+    "raster_cost": 34434.6
+  },
+  {
+    "overlap_m": 4799.3,
+    "east_km": 10.021,
+    "raster_cost": 34434.6
+  },
+  {
+    "overlap_m": 4799.3,
+    "east_km": 10.021,
+    "raster_cost": 34434.6
+  },
+  {
+    "overlap_m": 4799.3,
+    "east_km": 10.021,
+    "raster_cost": 34434.6
+  },
+  {
+    "overlap_m": 4799.3,
+    "east_km": 10.016,
+    "raster_cost": 34437.3
+  },
+  {
+    "overlap_m": 4799.3,
+    "east_km": 10.016,
+    "raster_cost": 34437.3
+  },
+  {
+    "overlap_m": 4799.3,
+    "east_km": 10.016,
+    "raster_cost": 34437.3
+  },
+  {
+    "overlap_m": 4800.1,
+    "east_km": 10.043,
+    "raster_cost": 34427.6
+  },
+  {
+    "overlap_m": 4800.1,
+    "east_km": 10.043,
+    "raster_cost": 34427.6
+  },
+  {
+    "overlap_m": 4800.1,
+    "east_km": 10.043,
+    "raster_cost": 34431.7
+  },
+  {
+    "overlap_m": 4800.1,
+    "east_km": 10.043,
+    "raster_cost": 34431.7
+  },
+  {
+    "overlap_m": 4800.3,
+    "east_km": 10.036,
+    "raster_cost": 34413.3
+  },
+  {
+    "overlap_m": 4800.3,
+    "east_km": 10.036,
+    "raster_cost": 34413.3
+  },
+  {
+    "overlap_m": 4800.3,
+    "east_km": 10.036,
+    "raster_cost": 34413.3
+  },
+  {
+    "overlap_m": 4800.3,
+    "east_km": 10.036,
+    "raster_cost": 34413.3
+  },
+  {
+    "overlap_m": 4800.3,
+    "east_km": 10.036,
+    "raster_cost": 34413.3
+  },
+  {
+    "overlap_m": 4800.3,
+    "east_km": 10.036,
+    "raster_cost": 34413.3
+  },
+  {
+    "overlap_m": 4800.3,
+    "east_km": 10.036,
+    "raster_cost": 34413.3
+  },
+  {
+    "overlap_m": 4800.3,
+    "east_km": 10.036,
+    "raster_cost": 34413.3
+  },
+  {
+    "overlap_m": 4800.3,
     "east_km": 10.045,
-    "raster_cost": 41097.5
+    "raster_cost": 34420.4
   },
   {
-    "overlap_m": 1702.7,
-    "east_km": 10.132,
-    "raster_cost": 42212.0
+    "overlap_m": 4800.3,
+    "east_km": 10.045,
+    "raster_cost": 34420.4
   },
   {
-    "overlap_m": 1704.5,
-    "east_km": 9.631,
-    "raster_cost": 40103.0
+    "overlap_m": 4800.3,
+    "east_km": 10.045,
+    "raster_cost": 34420.4
   },
   {
-    "overlap_m": 1704.5,
-    "east_km": 9.631,
-    "raster_cost": 40103.0
+    "overlap_m": 4800.3,
+    "east_km": 10.045,
+    "raster_cost": 34420.4
   },
   {
-    "overlap_m": 1704.5,
-    "east_km": 9.631,
-    "raster_cost": 40103.0
+    "overlap_m": 4801.0,
+    "east_km": 10.009,
+    "raster_cost": 34423.7
   },
   {
-    "overlap_m": 1704.5,
-    "east_km": 9.631,
-    "raster_cost": 40103.0
+    "overlap_m": 4801.0,
+    "east_km": 10.009,
+    "raster_cost": 34423.7
   },
   {
-    "overlap_m": 1704.5,
-    "east_km": 9.718,
-    "raster_cost": 41217.4
+    "overlap_m": 4801.0,
+    "east_km": 10.009,
+    "raster_cost": 34427.8
   },
   {
-    "overlap_m": 1704.5,
-    "east_km": 9.718,
-    "raster_cost": 41217.4
+    "overlap_m": 4801.0,
+    "east_km": 10.009,
+    "raster_cost": 34427.8
   },
   {
-    "overlap_m": 1704.5,
-    "east_km": 9.718,
-    "raster_cost": 41217.4
+    "overlap_m": 4801.0,
+    "east_km": 10.017,
+    "raster_cost": 34430.8
   },
   {
-    "overlap_m": 1704.5,
-    "east_km": 9.718,
-    "raster_cost": 41217.4
+    "overlap_m": 4801.0,
+    "east_km": 10.017,
+    "raster_cost": 34430.8
   },
   {
-    "overlap_m": 1704.9,
-    "east_km": 9.681,
-    "raster_cost": 42641.1
+    "overlap_m": 4801.0,
+    "east_km": 10.017,
+    "raster_cost": 34434.9
   },
   {
-    "overlap_m": 1704.9,
-    "east_km": 9.681,
-    "raster_cost": 42641.1
+    "overlap_m": 4801.0,
+    "east_km": 10.017,
+    "raster_cost": 34434.9
   },
   {
-    "overlap_m": 1704.9,
-    "east_km": 9.767,
-    "raster_cost": 43755.5
+    "overlap_m": 4801.0,
+    "east_km": 10.018,
+    "raster_cost": 34437.8
   },
   {
-    "overlap_m": 1704.9,
-    "east_km": 9.767,
-    "raster_cost": 43755.5
+    "overlap_m": 4801.2,
+    "east_km": 10.008,
+    "raster_cost": 34423.1
   },
   {
-    "overlap_m": 1705.1,
-    "east_km": 9.772,
-    "raster_cost": 40523.1
+    "overlap_m": 4801.2,
+    "east_km": 10.016,
+    "raster_cost": 34430.2
   },
   {
-    "overlap_m": 1705.1,
-    "east_km": 9.772,
-    "raster_cost": 40523.1
+    "overlap_m": 4801.8,
+    "east_km": 10.016,
+    "raster_cost": 34433.0
   },
   {
-    "overlap_m": 1705.1,
-    "east_km": 9.772,
-    "raster_cost": 40523.1
+    "overlap_m": 4801.8,
+    "east_km": 10.024,
+    "raster_cost": 34440.1
   },
   {
-    "overlap_m": 1705.1,
-    "east_km": 9.772,
-    "raster_cost": 40523.1
+    "overlap_m": 4801.9,
+    "east_km": 10.019,
+    "raster_cost": 34388.8
   },
   {
-    "overlap_m": 1705.1,
-    "east_km": 9.772,
-    "raster_cost": 40523.1
+    "overlap_m": 4801.9,
+    "east_km": 10.019,
+    "raster_cost": 34388.8
   },
   {
-    "overlap_m": 1705.1,
-    "east_km": 9.772,
-    "raster_cost": 40523.1
+    "overlap_m": 4801.9,
+    "east_km": 10.019,
+    "raster_cost": 34388.8
   },
   {
-    "overlap_m": 1705.1,
-    "east_km": 9.859,
-    "raster_cost": 41637.5
+    "overlap_m": 4801.9,
+    "east_km": 10.019,
+    "raster_cost": 34388.8
   },
   {
-    "overlap_m": 1705.1,
-    "east_km": 9.859,
-    "raster_cost": 41637.5
+    "overlap_m": 4801.9,
+    "east_km": 10.014,
+    "raster_cost": 34391.5
   },
   {
-    "overlap_m": 1705.1,
-    "east_km": 9.859,
-    "raster_cost": 41637.5
+    "overlap_m": 4801.9,
+    "east_km": 10.014,
+    "raster_cost": 34391.5
   },
   {
-    "overlap_m": 1705.1,
-    "east_km": 9.859,
-    "raster_cost": 41637.5
+    "overlap_m": 4801.9,
+    "east_km": 10.019,
+    "raster_cost": 34392.9
   },
   {
-    "overlap_m": 1706.4,
-    "east_km": 9.799,
-    "raster_cost": 42572.1
+    "overlap_m": 4801.9,
+    "east_km": 10.019,
+    "raster_cost": 34392.9
   },
   {
-    "overlap_m": 1706.4,
-    "east_km": 9.799,
-    "raster_cost": 42572.1
+    "overlap_m": 4801.9,
+    "east_km": 10.019,
+    "raster_cost": 34392.9
   },
   {
-    "overlap_m": 1706.4,
-    "east_km": 9.886,
-    "raster_cost": 43686.5
+    "overlap_m": 4801.9,
+    "east_km": 10.019,
+    "raster_cost": 34392.9
   },
   {
-    "overlap_m": 1709.6,
-    "east_km": 10.059,
-    "raster_cost": 41089.1
+    "overlap_m": 4801.9,
+    "east_km": 10.014,
+    "raster_cost": 34395.6
   },
   {
-    "overlap_m": 1709.6,
-    "east_km": 10.145,
-    "raster_cost": 42203.6
+    "overlap_m": 4801.9,
+    "east_km": 10.014,
+    "raster_cost": 34395.6
   },
   {
-    "overlap_m": 1710.9,
-    "east_km": 9.808,
-    "raster_cost": 39908.0
+    "overlap_m": 4801.9,
+    "east_km": 10.027,
+    "raster_cost": 34395.9
   },
   {
-    "overlap_m": 1710.9,
-    "east_km": 9.808,
-    "raster_cost": 39908.0
+    "overlap_m": 4801.9,
+    "east_km": 10.027,
+    "raster_cost": 34395.9
   },
   {
-    "overlap_m": 1710.9,
-    "east_km": 9.895,
-    "raster_cost": 41022.4
+    "overlap_m": 4801.9,
+    "east_km": 10.027,
+    "raster_cost": 34395.9
   },
   {
-    "overlap_m": 1711.5,
-    "east_km": 9.949,
-    "raster_cost": 40328.0
+    "overlap_m": 4801.9,
+    "east_km": 10.027,
+    "raster_cost": 34395.9
   },
   {
-    "overlap_m": 1711.5,
-    "east_km": 9.949,
-    "raster_cost": 40328.0
+    "overlap_m": 4801.9,
+    "east_km": 10.027,
+    "raster_cost": 34400.0
   },
   {
-    "overlap_m": 1711.5,
-    "east_km": 10.035,
-    "raster_cost": 41442.5
+    "overlap_m": 4801.9,
+    "east_km": 10.027,
+    "raster_cost": 34400.0
   },
   {
-    "overlap_m": 1711.5,
-    "east_km": 10.035,
-    "raster_cost": 41442.5
+    "overlap_m": 4801.9,
+    "east_km": 10.027,
+    "raster_cost": 34400.0
   },
   {
-    "overlap_m": 1716.7,
-    "east_km": 9.631,
-    "raster_cost": 40104.0
+    "overlap_m": 4801.9,
+    "east_km": 10.027,
+    "raster_cost": 34400.0
   },
   {
-    "overlap_m": 1716.7,
-    "east_km": 9.631,
-    "raster_cost": 40104.0
+    "overlap_m": 4802.0,
+    "east_km": 10.014,
+    "raster_cost": 34435.5
   },
   {
-    "overlap_m": 1716.7,
-    "east_km": 9.631,
-    "raster_cost": 40104.0
+    "overlap_m": 4802.1,
+    "east_km": 10.017,
+    "raster_cost": 34391.3
   },
   {
-    "overlap_m": 1716.7,
-    "east_km": 9.631,
-    "raster_cost": 40104.0
+    "overlap_m": 4802.1,
+    "east_km": 10.017,
+    "raster_cost": 34391.3
   },
   {
-    "overlap_m": 1716.7,
-    "east_km": 9.718,
-    "raster_cost": 41218.4
+    "overlap_m": 4802.1,
+    "east_km": 10.017,
+    "raster_cost": 34391.3
   },
   {
-    "overlap_m": 1716.7,
-    "east_km": 9.718,
-    "raster_cost": 41218.4
+    "overlap_m": 4802.1,
+    "east_km": 10.017,
+    "raster_cost": 34391.3
   },
   {
-    "overlap_m": 1716.7,
-    "east_km": 9.718,
-    "raster_cost": 41218.4
+    "overlap_m": 4802.5,
+    "east_km": 10.031,
+    "raster_cost": 34417.2
   },
   {
-    "overlap_m": 1716.7,
-    "east_km": 9.718,
-    "raster_cost": 41218.4
+    "overlap_m": 4802.5,
+    "east_km": 10.031,
+    "raster_cost": 34417.2
   },
   {
-    "overlap_m": 1716.8,
-    "east_km": 9.958,
-    "raster_cost": 41154.1
+    "overlap_m": 4802.5,
+    "east_km": 10.031,
+    "raster_cost": 34417.2
   },
   {
-    "overlap_m": 1716.8,
-    "east_km": 9.958,
-    "raster_cost": 41154.1
+    "overlap_m": 4802.5,
+    "east_km": 10.031,
+    "raster_cost": 34417.2
   },
   {
-    "overlap_m": 1716.8,
-    "east_km": 9.958,
-    "raster_cost": 41154.1
+    "overlap_m": 4802.5,
+    "east_km": 10.031,
+    "raster_cost": 34417.2
   },
   {
-    "overlap_m": 1716.8,
+    "overlap_m": 4802.5,
+    "east_km": 10.031,
+    "raster_cost": 34417.2
+  },
+  {
+    "overlap_m": 4802.5,
+    "east_km": 10.031,
+    "raster_cost": 34417.2
+  },
+  {
+    "overlap_m": 4802.5,
+    "east_km": 10.026,
+    "raster_cost": 34419.8
+  },
+  {
+    "overlap_m": 4802.5,
+    "east_km": 10.026,
+    "raster_cost": 34419.8
+  },
+  {
+    "overlap_m": 4802.5,
+    "east_km": 10.026,
+    "raster_cost": 34419.8
+  },
+  {
+    "overlap_m": 4802.5,
+    "east_km": 10.039,
+    "raster_cost": 34424.2
+  },
+  {
+    "overlap_m": 4802.5,
+    "east_km": 10.039,
+    "raster_cost": 34424.2
+  },
+  {
+    "overlap_m": 4802.5,
+    "east_km": 10.039,
+    "raster_cost": 34424.2
+  },
+  {
+    "overlap_m": 4802.5,
+    "east_km": 10.039,
+    "raster_cost": 34424.2
+  },
+  {
+    "overlap_m": 4803.7,
+    "east_km": 10.014,
+    "raster_cost": 34419.2
+  },
+  {
+    "overlap_m": 4803.7,
+    "east_km": 10.014,
+    "raster_cost": 34419.2
+  },
+  {
+    "overlap_m": 4803.7,
+    "east_km": 10.014,
+    "raster_cost": 34423.3
+  },
+  {
+    "overlap_m": 4803.7,
+    "east_km": 10.014,
+    "raster_cost": 34423.3
+  },
+  {
+    "overlap_m": 4803.7,
+    "east_km": 10.022,
+    "raster_cost": 34426.3
+  },
+  {
+    "overlap_m": 4803.7,
+    "east_km": 10.022,
+    "raster_cost": 34426.3
+  },
+  {
+    "overlap_m": 4803.7,
+    "east_km": 10.022,
+    "raster_cost": 34430.4
+  },
+  {
+    "overlap_m": 4803.7,
+    "east_km": 10.022,
+    "raster_cost": 34430.4
+  },
+  {
+    "overlap_m": 4803.8,
+    "east_km": 10.024,
+    "raster_cost": 34436.0
+  },
+  {
+    "overlap_m": 4804.5,
+    "east_km": 10.049,
+    "raster_cost": 34440.2
+  },
+  {
+    "overlap_m": 4804.5,
+    "east_km": 10.049,
+    "raster_cost": 34440.2
+  },
+  {
+    "overlap_m": 4804.5,
+    "east_km": 10.049,
+    "raster_cost": 34440.2
+  },
+  {
+    "overlap_m": 4804.5,
+    "east_km": 10.049,
+    "raster_cost": 34440.2
+  },
+  {
+    "overlap_m": 4804.5,
+    "east_km": 10.049,
+    "raster_cost": 34440.2
+  },
+  {
+    "overlap_m": 4804.5,
+    "east_km": 10.049,
+    "raster_cost": 34440.2
+  },
+  {
+    "overlap_m": 4804.5,
+    "east_km": 10.049,
+    "raster_cost": 34440.2
+  },
+  {
+    "overlap_m": 4804.5,
     "east_km": 10.044,
-    "raster_cost": 42268.5
+    "raster_cost": 34442.9
   },
   {
-    "overlap_m": 1717.1,
-    "east_km": 9.68,
-    "raster_cost": 42642.0
+    "overlap_m": 4804.5,
+    "east_km": 10.044,
+    "raster_cost": 34442.9
   },
   {
-    "overlap_m": 1717.1,
-    "east_km": 9.68,
-    "raster_cost": 42642.0
+    "overlap_m": 4804.5,
+    "east_km": 10.044,
+    "raster_cost": 34442.9
   },
   {
-    "overlap_m": 1717.1,
-    "east_km": 9.767,
-    "raster_cost": 43756.5
+    "overlap_m": 4804.5,
+    "east_km": 10.022,
+    "raster_cost": 34445.7
   },
   {
-    "overlap_m": 1717.1,
-    "east_km": 9.767,
-    "raster_cost": 43756.5
+    "overlap_m": 4805.4,
+    "east_km": 10.032,
+    "raster_cost": 34413.9
   },
   {
-    "overlap_m": 1717.6,
-    "east_km": 9.772,
-    "raster_cost": 40522.1
+    "overlap_m": 4805.4,
+    "east_km": 10.032,
+    "raster_cost": 34413.9
   },
   {
-    "overlap_m": 1717.6,
-    "east_km": 9.772,
-    "raster_cost": 40522.1
+    "overlap_m": 4805.4,
+    "east_km": 10.032,
+    "raster_cost": 34413.9
   },
   {
-    "overlap_m": 1717.6,
-    "east_km": 9.772,
-    "raster_cost": 40522.1
+    "overlap_m": 4805.4,
+    "east_km": 10.032,
+    "raster_cost": 34413.9
   },
   {
-    "overlap_m": 1717.6,
-    "east_km": 9.772,
-    "raster_cost": 40522.1
+    "overlap_m": 4805.4,
+    "east_km": 10.032,
+    "raster_cost": 34418.0
   },
   {
-    "overlap_m": 1717.6,
-    "east_km": 9.772,
-    "raster_cost": 40522.1
+    "overlap_m": 4805.4,
+    "east_km": 10.032,
+    "raster_cost": 34418.0
   },
   {
-    "overlap_m": 1717.6,
-    "east_km": 9.772,
-    "raster_cost": 40522.1
+    "overlap_m": 4805.4,
+    "east_km": 10.032,
+    "raster_cost": 34418.0
   },
   {
-    "overlap_m": 1717.6,
-    "east_km": 9.859,
-    "raster_cost": 41636.6
+    "overlap_m": 4805.5,
+    "east_km": 10.037,
+    "raster_cost": 34413.9
   },
   {
-    "overlap_m": 1717.6,
-    "east_km": 9.859,
-    "raster_cost": 41636.6
+    "overlap_m": 4805.5,
+    "east_km": 10.037,
+    "raster_cost": 34413.9
   },
   {
-    "overlap_m": 1717.6,
-    "east_km": 9.859,
-    "raster_cost": 41636.6
+    "overlap_m": 4805.5,
+    "east_km": 10.037,
+    "raster_cost": 34413.9
   },
   {
-    "overlap_m": 1717.6,
-    "east_km": 9.859,
-    "raster_cost": 41636.6
+    "overlap_m": 4805.5,
+    "east_km": 10.037,
+    "raster_cost": 34413.9
   },
   {
-    "overlap_m": 1718.9,
-    "east_km": 9.799,
-    "raster_cost": 42571.1
+    "overlap_m": 4805.5,
+    "east_km": 10.037,
+    "raster_cost": 34413.9
   },
   {
-    "overlap_m": 1718.9,
-    "east_km": 9.799,
-    "raster_cost": 42571.1
+    "overlap_m": 4805.5,
+    "east_km": 10.037,
+    "raster_cost": 34413.9
   },
   {
-    "overlap_m": 1718.9,
-    "east_km": 9.886,
-    "raster_cost": 43685.6
+    "overlap_m": 4805.5,
+    "east_km": 10.037,
+    "raster_cost": 34413.9
   },
   {
-    "overlap_m": 1720.2,
-    "east_km": 10.038,
-    "raster_cost": 41261.3
+    "overlap_m": 4805.5,
+    "east_km": 10.037,
+    "raster_cost": 34413.9
   },
   {
-    "overlap_m": 1720.2,
-    "east_km": 10.038,
-    "raster_cost": 41261.3
+    "overlap_m": 4805.5,
+    "east_km": 10.032,
+    "raster_cost": 34416.6
   },
   {
-    "overlap_m": 1720.2,
-    "east_km": 10.038,
-    "raster_cost": 41261.3
+    "overlap_m": 4805.5,
+    "east_km": 10.032,
+    "raster_cost": 34416.6
   },
   {
-    "overlap_m": 1720.2,
-    "east_km": 10.038,
-    "raster_cost": 41261.3
+    "overlap_m": 4805.5,
+    "east_km": 10.032,
+    "raster_cost": 34416.6
   },
   {
-    "overlap_m": 1720.2,
-    "east_km": 10.125,
-    "raster_cost": 42375.7
+    "overlap_m": 4805.5,
+    "east_km": 10.032,
+    "raster_cost": 34416.6
   },
   {
-    "overlap_m": 1720.2,
-    "east_km": 10.125,
-    "raster_cost": 42375.7
+    "overlap_m": 4805.5,
+    "east_km": 10.045,
+    "raster_cost": 34421.0
   },
   {
-    "overlap_m": 1720.2,
-    "east_km": 10.125,
-    "raster_cost": 42375.7
+    "overlap_m": 4805.5,
+    "east_km": 10.045,
+    "raster_cost": 34421.0
   },
   {
-    "overlap_m": 1723.1,
-    "east_km": 9.808,
-    "raster_cost": 39908.9
+    "overlap_m": 4805.5,
+    "east_km": 10.045,
+    "raster_cost": 34421.0
   },
   {
-    "overlap_m": 1723.1,
-    "east_km": 9.808,
-    "raster_cost": 39908.9
+    "overlap_m": 4805.5,
+    "east_km": 10.045,
+    "raster_cost": 34421.0
   },
   {
-    "overlap_m": 1723.1,
-    "east_km": 9.894,
-    "raster_cost": 41023.4
+    "overlap_m": 4805.9,
+    "east_km": 10.008,
+    "raster_cost": 34423.1
   },
   {
-    "overlap_m": 1724.0,
-    "east_km": 9.949,
-    "raster_cost": 40327.1
+    "overlap_m": 4805.9,
+    "east_km": 10.008,
+    "raster_cost": 34423.1
   },
   {
-    "overlap_m": 1724.0,
-    "east_km": 9.949,
-    "raster_cost": 40327.1
+    "overlap_m": 4805.9,
+    "east_km": 10.004,
+    "raster_cost": 34425.8
   },
   {
-    "overlap_m": 1724.0,
+    "overlap_m": 4805.9,
+    "east_km": 10.008,
+    "raster_cost": 34427.1
+  },
+  {
+    "overlap_m": 4805.9,
+    "east_km": 10.008,
+    "raster_cost": 34427.1
+  },
+  {
+    "overlap_m": 4805.9,
+    "east_km": 10.004,
+    "raster_cost": 34429.8
+  },
+  {
+    "overlap_m": 4805.9,
+    "east_km": 10.017,
+    "raster_cost": 34430.2
+  },
+  {
+    "overlap_m": 4805.9,
+    "east_km": 10.017,
+    "raster_cost": 34430.2
+  },
+  {
+    "overlap_m": 4805.9,
+    "east_km": 10.017,
+    "raster_cost": 34434.2
+  },
+  {
+    "overlap_m": 4805.9,
+    "east_km": 10.017,
+    "raster_cost": 34434.2
+  },
+  {
+    "overlap_m": 4806.1,
+    "east_km": 10.006,
+    "raster_cost": 34425.5
+  },
+  {
+    "overlap_m": 4806.1,
+    "east_km": 10.006,
+    "raster_cost": 34425.5
+  },
+  {
+    "overlap_m": 4806.1,
+    "east_km": 10.049,
+    "raster_cost": 34443.3
+  },
+  {
+    "overlap_m": 4806.6,
+    "east_km": 10.016,
+    "raster_cost": 34393.1
+  },
+  {
+    "overlap_m": 4806.6,
+    "east_km": 10.016,
+    "raster_cost": 34393.1
+  },
+  {
+    "overlap_m": 4806.6,
+    "east_km": 10.016,
+    "raster_cost": 34393.1
+  },
+  {
+    "overlap_m": 4806.6,
+    "east_km": 10.016,
+    "raster_cost": 34393.1
+  },
+  {
+    "overlap_m": 4806.6,
+    "east_km": 10.024,
+    "raster_cost": 34400.2
+  },
+  {
+    "overlap_m": 4806.6,
+    "east_km": 10.024,
+    "raster_cost": 34400.2
+  },
+  {
+    "overlap_m": 4806.6,
+    "east_km": 10.024,
+    "raster_cost": 34400.2
+  },
+  {
+    "overlap_m": 4806.6,
+    "east_km": 10.024,
+    "raster_cost": 34400.2
+  },
+  {
+    "overlap_m": 4806.6,
+    "east_km": 10.026,
+    "raster_cost": 34407.2
+  },
+  {
+    "overlap_m": 4806.6,
+    "east_km": 10.026,
+    "raster_cost": 34407.2
+  },
+  {
+    "overlap_m": 4806.6,
+    "east_km": 10.026,
+    "raster_cost": 34407.2
+  },
+  {
+    "overlap_m": 4806.6,
+    "east_km": 10.026,
+    "raster_cost": 34407.2
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.061,
+    "raster_cost": 34424.2
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.061,
+    "raster_cost": 34424.2
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.061,
+    "raster_cost": 34424.2
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.061,
+    "raster_cost": 34424.2
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.061,
+    "raster_cost": 34424.2
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.061,
+    "raster_cost": 34424.2
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.061,
+    "raster_cost": 34424.2
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.061,
+    "raster_cost": 34424.2
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.056,
+    "raster_cost": 34426.9
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.056,
+    "raster_cost": 34426.9
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.056,
+    "raster_cost": 34426.9
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.056,
+    "raster_cost": 34426.9
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.069,
+    "raster_cost": 34431.3
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.069,
+    "raster_cost": 34431.3
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.069,
+    "raster_cost": 34431.3
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.069,
+    "raster_cost": 34431.3
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.069,
+    "raster_cost": 34431.3
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.069,
+    "raster_cost": 34431.3
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.069,
+    "raster_cost": 34431.3
+  },
+  {
+    "overlap_m": 4807.8,
+    "east_km": 10.069,
+    "raster_cost": 34431.3
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.025,
+    "raster_cost": 34404.5
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.025,
+    "raster_cost": 34404.5
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.025,
+    "raster_cost": 34404.5
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.025,
+    "raster_cost": 34404.5
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.025,
+    "raster_cost": 34404.5
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.025,
+    "raster_cost": 34404.5
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.025,
+    "raster_cost": 34404.5
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.025,
+    "raster_cost": 34404.5
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.02,
+    "raster_cost": 34407.1
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.02,
+    "raster_cost": 34407.1
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.02,
+    "raster_cost": 34407.1
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.02,
+    "raster_cost": 34407.1
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.033,
+    "raster_cost": 34411.5
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.033,
+    "raster_cost": 34411.5
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.033,
+    "raster_cost": 34411.5
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.033,
+    "raster_cost": 34411.5
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.033,
+    "raster_cost": 34411.5
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.033,
+    "raster_cost": 34411.5
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.033,
+    "raster_cost": 34411.5
+  },
+  {
+    "overlap_m": 4807.9,
+    "east_km": 10.033,
+    "raster_cost": 34411.5
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.006,
+    "raster_cost": 34409.9
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.006,
+    "raster_cost": 34409.9
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.006,
+    "raster_cost": 34409.9
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.006,
+    "raster_cost": 34409.9
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.006,
+    "raster_cost": 34409.9
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.006,
+    "raster_cost": 34409.9
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.006,
+    "raster_cost": 34409.9
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.006,
+    "raster_cost": 34409.9
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.001,
+    "raster_cost": 34412.6
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.001,
+    "raster_cost": 34412.6
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.001,
+    "raster_cost": 34412.6
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.001,
+    "raster_cost": 34412.6
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.014,
+    "raster_cost": 34417.0
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.014,
+    "raster_cost": 34417.0
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.014,
+    "raster_cost": 34417.0
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.014,
+    "raster_cost": 34417.0
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.014,
+    "raster_cost": 34417.0
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.014,
+    "raster_cost": 34417.0
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.014,
+    "raster_cost": 34417.0
+  },
+  {
+    "overlap_m": 4808.3,
+    "east_km": 10.014,
+    "raster_cost": 34417.0
+  },
+  {
+    "overlap_m": 4808.4,
+    "east_km": 10.017,
+    "raster_cost": 34437.2
+  },
+  {
+    "overlap_m": 4808.9,
+    "east_km": 10.014,
+    "raster_cost": 34419.8
+  },
+  {
+    "overlap_m": 4808.9,
+    "east_km": 10.014,
+    "raster_cost": 34419.8
+  },
+  {
+    "overlap_m": 4808.9,
+    "east_km": 10.01,
+    "raster_cost": 34422.5
+  },
+  {
+    "overlap_m": 4808.9,
+    "east_km": 10.014,
+    "raster_cost": 34423.9
+  },
+  {
+    "overlap_m": 4808.9,
+    "east_km": 10.014,
+    "raster_cost": 34423.9
+  },
+  {
+    "overlap_m": 4808.9,
+    "east_km": 10.01,
+    "raster_cost": 34426.6
+  },
+  {
+    "overlap_m": 4808.9,
+    "east_km": 10.023,
+    "raster_cost": 34426.9
+  },
+  {
+    "overlap_m": 4808.9,
+    "east_km": 10.023,
+    "raster_cost": 34426.9
+  },
+  {
+    "overlap_m": 4808.9,
+    "east_km": 10.023,
+    "raster_cost": 34431.0
+  },
+  {
+    "overlap_m": 4808.9,
+    "east_km": 10.023,
+    "raster_cost": 34431.0
+  },
+  {
+    "overlap_m": 4809.0,
+    "east_km": 10.026,
+    "raster_cost": 34447.1
+  },
+  {
+    "overlap_m": 4809.1,
+    "east_km": 10.028,
+    "raster_cost": 34402.9
+  },
+  {
+    "overlap_m": 4809.1,
+    "east_km": 10.028,
+    "raster_cost": 34402.9
+  },
+  {
+    "overlap_m": 4809.1,
+    "east_km": 10.028,
+    "raster_cost": 34407.0
+  },
+  {
+    "overlap_m": 4809.1,
+    "east_km": 10.028,
+    "raster_cost": 34407.0
+  },
+  {
+    "overlap_m": 4809.1,
+    "east_km": 10.012,
+    "raster_cost": 34422.3
+  },
+  {
+    "overlap_m": 4809.1,
+    "east_km": 10.012,
+    "raster_cost": 34422.3
+  },
+  {
+    "overlap_m": 4809.2,
+    "east_km": 10.019,
+    "raster_cost": 34432.8
+  },
+  {
+    "overlap_m": 4809.2,
+    "east_km": 10.027,
+    "raster_cost": 34439.9
+  },
+  {
+    "overlap_m": 4809.3,
+    "east_km": 10.021,
+    "raster_cost": 34388.6
+  },
+  {
+    "overlap_m": 4809.3,
+    "east_km": 10.021,
+    "raster_cost": 34388.6
+  },
+  {
+    "overlap_m": 4809.3,
+    "east_km": 10.021,
+    "raster_cost": 34388.6
+  },
+  {
+    "overlap_m": 4809.3,
+    "east_km": 10.021,
+    "raster_cost": 34388.6
+  },
+  {
+    "overlap_m": 4809.3,
+    "east_km": 10.03,
+    "raster_cost": 34395.7
+  },
+  {
+    "overlap_m": 4809.3,
+    "east_km": 10.03,
+    "raster_cost": 34395.7
+  },
+  {
+    "overlap_m": 4809.3,
+    "east_km": 10.03,
+    "raster_cost": 34395.7
+  },
+  {
+    "overlap_m": 4809.3,
+    "east_km": 10.03,
+    "raster_cost": 34395.7
+  },
+  {
+    "overlap_m": 4809.8,
+    "east_km": 10.04,
+    "raster_cost": 34431.3
+  },
+  {
+    "overlap_m": 4809.8,
+    "east_km": 10.04,
+    "raster_cost": 34431.3
+  },
+  {
+    "overlap_m": 4809.9,
+    "east_km": 10.031,
+    "raster_cost": 34415.8
+  },
+  {
+    "overlap_m": 4809.9,
+    "east_km": 10.031,
+    "raster_cost": 34415.8
+  },
+  {
+    "overlap_m": 4809.9,
+    "east_km": 10.031,
+    "raster_cost": 34415.8
+  },
+  {
+    "overlap_m": 4809.9,
+    "east_km": 10.031,
+    "raster_cost": 34415.8
+  },
+  {
+    "overlap_m": 4809.9,
+    "east_km": 10.031,
+    "raster_cost": 34419.8
+  },
+  {
+    "overlap_m": 4809.9,
+    "east_km": 10.031,
+    "raster_cost": 34419.8
+  },
+  {
+    "overlap_m": 4809.9,
+    "east_km": 10.031,
+    "raster_cost": 34419.8
+  },
+  {
+    "overlap_m": 4809.9,
+    "east_km": 10.039,
+    "raster_cost": 34422.8
+  },
+  {
+    "overlap_m": 4809.9,
+    "east_km": 10.039,
+    "raster_cost": 34422.8
+  },
+  {
+    "overlap_m": 4809.9,
+    "east_km": 10.039,
+    "raster_cost": 34426.9
+  },
+  {
+    "overlap_m": 4809.9,
+    "east_km": 10.039,
+    "raster_cost": 34426.9
+  },
+  {
+    "overlap_m": 4809.9,
+    "east_km": 10.041,
+    "raster_cost": 34429.9
+  },
+  {
+    "overlap_m": 4809.9,
+    "east_km": 10.041,
+    "raster_cost": 34429.9
+  },
+  {
+    "overlap_m": 4809.9,
+    "east_km": 10.041,
+    "raster_cost": 34433.9
+  },
+  {
+    "overlap_m": 4809.9,
+    "east_km": 10.041,
+    "raster_cost": 34433.9
+  },
+  {
+    "overlap_m": 4810.6,
+    "east_km": 10.006,
+    "raster_cost": 34427.4
+  },
+  {
+    "overlap_m": 4810.6,
+    "east_km": 10.006,
+    "raster_cost": 34427.4
+  },
+  {
+    "overlap_m": 4810.6,
+    "east_km": 10.014,
+    "raster_cost": 34434.5
+  },
+  {
+    "overlap_m": 4810.6,
+    "east_km": 10.014,
+    "raster_cost": 34434.5
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.027,
+    "raster_cost": 34397.8
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.022,
+    "raster_cost": 34400.5
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.022,
+    "raster_cost": 34400.5
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.022,
+    "raster_cost": 34400.5
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.022,
+    "raster_cost": 34400.5
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.022,
+    "raster_cost": 34400.5
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.022,
+    "raster_cost": 34400.5
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.022,
+    "raster_cost": 34400.5
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.022,
+    "raster_cost": 34400.5
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.022,
+    "raster_cost": 34400.5
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.022,
+    "raster_cost": 34400.5
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.022,
+    "raster_cost": 34400.5
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.035,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.035,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.035,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.035,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.035,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.035,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.035,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.035,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.035,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.035,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.035,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.035,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.035,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.035,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.035,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4811.0,
+    "east_km": 10.035,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.039,
+    "raster_cost": 34427.1
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.039,
+    "raster_cost": 34427.1
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.039,
+    "raster_cost": 34427.1
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.039,
+    "raster_cost": 34427.1
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.035,
+    "raster_cost": 34429.8
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.035,
+    "raster_cost": 34429.8
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.039,
+    "raster_cost": 34431.2
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.039,
+    "raster_cost": 34431.2
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.039,
+    "raster_cost": 34431.2
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.039,
+    "raster_cost": 34431.2
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.035,
+    "raster_cost": 34433.9
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.035,
+    "raster_cost": 34433.9
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.048,
+    "raster_cost": 34434.2
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.048,
+    "raster_cost": 34434.2
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.048,
+    "raster_cost": 34434.2
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.048,
+    "raster_cost": 34434.2
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.048,
+    "raster_cost": 34438.3
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.048,
+    "raster_cost": 34438.3
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.048,
+    "raster_cost": 34438.3
+  },
+  {
+    "overlap_m": 4811.2,
+    "east_km": 10.048,
+    "raster_cost": 34438.3
+  },
+  {
+    "overlap_m": 4811.3,
+    "east_km": 10.037,
+    "raster_cost": 34429.6
+  },
+  {
+    "overlap_m": 4811.3,
+    "east_km": 10.037,
+    "raster_cost": 34429.6
+  },
+  {
+    "overlap_m": 4811.3,
+    "east_km": 10.037,
+    "raster_cost": 34429.6
+  },
+  {
+    "overlap_m": 4811.3,
+    "east_km": 10.037,
+    "raster_cost": 34429.6
+  },
+  {
+    "overlap_m": 4811.5,
+    "east_km": 10.016,
+    "raster_cost": 34392.5
+  },
+  {
+    "overlap_m": 4811.5,
+    "east_km": 10.016,
+    "raster_cost": 34392.5
+  },
+  {
+    "overlap_m": 4811.5,
+    "east_km": 10.016,
+    "raster_cost": 34392.5
+  },
+  {
+    "overlap_m": 4811.5,
+    "east_km": 10.016,
+    "raster_cost": 34392.5
+  },
+  {
+    "overlap_m": 4811.5,
+    "east_km": 10.011,
+    "raster_cost": 34395.1
+  },
+  {
+    "overlap_m": 4811.5,
+    "east_km": 10.011,
+    "raster_cost": 34395.1
+  },
+  {
+    "overlap_m": 4811.5,
+    "east_km": 10.024,
+    "raster_cost": 34399.6
+  },
+  {
+    "overlap_m": 4811.5,
+    "east_km": 10.024,
+    "raster_cost": 34399.6
+  },
+  {
+    "overlap_m": 4811.5,
+    "east_km": 10.024,
+    "raster_cost": 34399.6
+  },
+  {
+    "overlap_m": 4811.5,
+    "east_km": 10.024,
+    "raster_cost": 34399.6
+  },
+  {
+    "overlap_m": 4811.6,
+    "east_km": 10.021,
+    "raster_cost": 34432.5
+  },
+  {
+    "overlap_m": 4811.6,
+    "east_km": 10.021,
+    "raster_cost": 34432.5
+  },
+  {
+    "overlap_m": 4811.6,
+    "east_km": 10.021,
+    "raster_cost": 34432.5
+  },
+  {
+    "overlap_m": 4811.6,
+    "east_km": 10.021,
+    "raster_cost": 34432.5
+  },
+  {
+    "overlap_m": 4811.6,
+    "east_km": 10.016,
+    "raster_cost": 34435.2
+  },
+  {
+    "overlap_m": 4811.6,
+    "east_km": 10.016,
+    "raster_cost": 34435.2
+  },
+  {
+    "overlap_m": 4811.6,
+    "east_km": 10.021,
+    "raster_cost": 34436.6
+  },
+  {
+    "overlap_m": 4811.6,
+    "east_km": 10.021,
+    "raster_cost": 34436.6
+  },
+  {
+    "overlap_m": 4811.6,
+    "east_km": 10.021,
+    "raster_cost": 34436.6
+  },
+  {
+    "overlap_m": 4811.6,
+    "east_km": 10.016,
+    "raster_cost": 34439.3
+  },
+  {
+    "overlap_m": 4811.8,
+    "east_km": 10.019,
+    "raster_cost": 34435.0
+  },
+  {
+    "overlap_m": 4811.8,
+    "east_km": 10.019,
+    "raster_cost": 34435.0
+  },
+  {
+    "overlap_m": 4811.8,
+    "east_km": 10.019,
+    "raster_cost": 34435.0
+  },
+  {
+    "overlap_m": 4811.9,
+    "east_km": 10.025,
+    "raster_cost": 34445.5
+  },
+  {
+    "overlap_m": 4812.6,
     "east_km": 10.036,
-    "raster_cost": 41441.5
+    "raster_cost": 34411.3
   },
   {
-    "overlap_m": 1724.0,
+    "overlap_m": 4812.6,
     "east_km": 10.036,
-    "raster_cost": 41441.5
+    "raster_cost": 34411.3
   },
   {
-    "overlap_m": 1724.0,
-    "east_km": 9.906,
-    "raster_cost": 41911.8
+    "overlap_m": 4812.6,
+    "east_km": 10.036,
+    "raster_cost": 34411.3
   },
   {
-    "overlap_m": 1724.0,
-    "east_km": 9.906,
-    "raster_cost": 41911.8
+    "overlap_m": 4812.6,
+    "east_km": 10.036,
+    "raster_cost": 34411.3
   },
   {
-    "overlap_m": 1724.0,
-    "east_km": 9.993,
-    "raster_cost": 43026.2
+    "overlap_m": 4812.6,
+    "east_km": 10.036,
+    "raster_cost": 34415.3
   },
   {
-    "overlap_m": 1724.0,
-    "east_km": 9.993,
-    "raster_cost": 43026.2
+    "overlap_m": 4812.6,
+    "east_km": 10.036,
+    "raster_cost": 34415.3
   },
   {
-    "overlap_m": 1728.0,
-    "east_km": 10.235,
-    "raster_cost": 41567.8
+    "overlap_m": 4812.6,
+    "east_km": 10.036,
+    "raster_cost": 34415.3
   },
   {
-    "overlap_m": 1728.7,
-    "east_km": 9.589,
-    "raster_cost": 42273.0
+    "overlap_m": 4812.6,
+    "east_km": 10.036,
+    "raster_cost": 34415.3
   },
   {
-    "overlap_m": 1728.7,
-    "east_km": 9.589,
-    "raster_cost": 42273.0
+    "overlap_m": 4812.6,
+    "east_km": 10.045,
+    "raster_cost": 34418.3
   },
   {
-    "overlap_m": 1728.7,
-    "east_km": 9.676,
-    "raster_cost": 43387.5
+    "overlap_m": 4812.6,
+    "east_km": 10.045,
+    "raster_cost": 34418.3
   },
   {
-    "overlap_m": 1728.7,
-    "east_km": 9.676,
-    "raster_cost": 43387.5
+    "overlap_m": 4812.6,
+    "east_km": 10.045,
+    "raster_cost": 34422.4
   },
   {
-    "overlap_m": 1728.8,
-    "east_km": 9.68,
-    "raster_cost": 40155.1
+    "overlap_m": 4812.6,
+    "east_km": 10.045,
+    "raster_cost": 34422.4
   },
   {
-    "overlap_m": 1728.8,
-    "east_km": 9.68,
-    "raster_cost": 40155.1
+    "overlap_m": 4812.7,
+    "east_km": 10.046,
+    "raster_cost": 34428.0
   },
   {
-    "overlap_m": 1728.8,
-    "east_km": 9.68,
-    "raster_cost": 40155.1
+    "overlap_m": 4812.7,
+    "east_km": 10.046,
+    "raster_cost": 34428.0
   },
   {
-    "overlap_m": 1728.8,
-    "east_km": 9.68,
-    "raster_cost": 40155.1
+    "overlap_m": 4813.3,
+    "east_km": 10.011,
+    "raster_cost": 34422.9
   },
   {
-    "overlap_m": 1728.8,
-    "east_km": 9.767,
-    "raster_cost": 41269.5
+    "overlap_m": 4813.3,
+    "east_km": 10.011,
+    "raster_cost": 34422.9
   },
   {
-    "overlap_m": 1728.8,
-    "east_km": 9.767,
-    "raster_cost": 41269.5
+    "overlap_m": 4813.3,
+    "east_km": 10.019,
+    "raster_cost": 34430.0
   },
   {
-    "overlap_m": 1728.8,
-    "east_km": 9.767,
-    "raster_cost": 41269.5
+    "overlap_m": 4813.3,
+    "east_km": 10.019,
+    "raster_cost": 34430.0
   },
   {
-    "overlap_m": 1728.8,
-    "east_km": 9.767,
-    "raster_cost": 41269.5
+    "overlap_m": 4813.5,
+    "east_km": 10.008,
+    "raster_cost": 34421.0
   },
   {
-    "overlap_m": 1729.2,
-    "east_km": 9.729,
-    "raster_cost": 42693.1
+    "overlap_m": 4813.5,
+    "east_km": 10.016,
+    "raster_cost": 34428.1
   },
   {
-    "overlap_m": 1729.2,
-    "east_km": 9.729,
-    "raster_cost": 42693.1
+    "overlap_m": 4813.6,
+    "east_km": 10.012,
+    "raster_cost": 34424.1
   },
   {
-    "overlap_m": 1729.2,
-    "east_km": 9.816,
-    "raster_cost": 43807.6
+    "overlap_m": 4813.6,
+    "east_km": 10.012,
+    "raster_cost": 34424.1
   },
   {
-    "overlap_m": 1731.6,
-    "east_km": 9.825,
-    "raster_cost": 42357.4
+    "overlap_m": 4813.6,
+    "east_km": 10.02,
+    "raster_cost": 34431.2
   },
   {
-    "overlap_m": 1731.6,
-    "east_km": 9.825,
-    "raster_cost": 42357.4
+    "overlap_m": 4813.6,
+    "east_km": 10.02,
+    "raster_cost": 34431.2
   },
   {
-    "overlap_m": 1731.6,
-    "east_km": 9.825,
-    "raster_cost": 42357.4
+    "overlap_m": 4813.6,
+    "east_km": 10.021,
+    "raster_cost": 34438.2
   },
   {
-    "overlap_m": 1731.6,
-    "east_km": 9.912,
-    "raster_cost": 43471.8
+    "overlap_m": 4813.7,
+    "east_km": 10.005,
+    "raster_cost": 34423.5
   },
   {
-    "overlap_m": 1731.6,
-    "east_km": 9.912,
-    "raster_cost": 43471.8
+    "overlap_m": 4814.3,
+    "east_km": 10.014,
+    "raster_cost": 34433.4
   },
   {
-    "overlap_m": 1731.6,
-    "east_km": 9.912,
-    "raster_cost": 43471.8
+    "overlap_m": 4814.4,
+    "east_km": 10.017,
+    "raster_cost": 34389.2
   },
   {
-    "overlap_m": 1732.4,
-    "east_km": 9.989,
-    "raster_cost": 41210.2
+    "overlap_m": 4814.4,
+    "east_km": 10.017,
+    "raster_cost": 34389.2
   },
   {
-    "overlap_m": 1732.4,
-    "east_km": 9.989,
-    "raster_cost": 41210.2
+    "overlap_m": 4814.4,
+    "east_km": 10.017,
+    "raster_cost": 34393.3
+  },
+  {
+    "overlap_m": 4814.4,
+    "east_km": 10.017,
+    "raster_cost": 34393.3
+  },
+  {
+    "overlap_m": 4814.5,
+    "east_km": 10.022,
+    "raster_cost": 34389.2
+  },
+  {
+    "overlap_m": 4814.5,
+    "east_km": 10.022,
+    "raster_cost": 34389.2
+  },
+  {
+    "overlap_m": 4814.5,
+    "east_km": 10.022,
+    "raster_cost": 34389.2
+  },
+  {
+    "overlap_m": 4814.5,
+    "east_km": 10.022,
+    "raster_cost": 34389.2
+  },
+  {
+    "overlap_m": 4814.5,
+    "east_km": 10.017,
+    "raster_cost": 34391.9
+  },
+  {
+    "overlap_m": 4814.5,
+    "east_km": 10.017,
+    "raster_cost": 34391.9
+  },
+  {
+    "overlap_m": 4814.5,
+    "east_km": 10.03,
+    "raster_cost": 34396.3
+  },
+  {
+    "overlap_m": 4814.5,
+    "east_km": 10.03,
+    "raster_cost": 34396.3
+  },
+  {
+    "overlap_m": 4814.5,
+    "east_km": 10.03,
+    "raster_cost": 34396.3
+  },
+  {
+    "overlap_m": 4814.5,
+    "east_km": 10.03,
+    "raster_cost": 34396.3
+  },
+  {
+    "overlap_m": 4814.8,
+    "east_km": 10.031,
+    "raster_cost": 34415.1
+  },
+  {
+    "overlap_m": 4814.8,
+    "east_km": 10.031,
+    "raster_cost": 34415.1
+  },
+  {
+    "overlap_m": 4814.8,
+    "east_km": 10.031,
+    "raster_cost": 34415.1
+  },
+  {
+    "overlap_m": 4814.8,
+    "east_km": 10.031,
+    "raster_cost": 34415.1
+  },
+  {
+    "overlap_m": 4814.8,
+    "east_km": 10.026,
+    "raster_cost": 34417.8
+  },
+  {
+    "overlap_m": 4814.8,
+    "east_km": 10.026,
+    "raster_cost": 34417.8
+  },
+  {
+    "overlap_m": 4814.8,
+    "east_km": 10.031,
+    "raster_cost": 34419.2
+  },
+  {
+    "overlap_m": 4814.8,
+    "east_km": 10.031,
+    "raster_cost": 34419.2
+  },
+  {
+    "overlap_m": 4814.8,
+    "east_km": 10.031,
+    "raster_cost": 34419.2
+  },
+  {
+    "overlap_m": 4814.8,
+    "east_km": 10.026,
+    "raster_cost": 34421.9
+  },
+  {
+    "overlap_m": 4814.8,
+    "east_km": 10.039,
+    "raster_cost": 34422.2
+  },
+  {
+    "overlap_m": 4814.8,
+    "east_km": 10.039,
+    "raster_cost": 34422.2
+  },
+  {
+    "overlap_m": 4814.8,
+    "east_km": 10.039,
+    "raster_cost": 34426.3
+  },
+  {
+    "overlap_m": 4814.8,
+    "east_km": 10.039,
+    "raster_cost": 34426.3
+  },
+  {
+    "overlap_m": 4814.8,
+    "east_km": 10.03,
+    "raster_cost": 34445.4
+  },
+  {
+    "overlap_m": 4815.0,
+    "east_km": 10.029,
+    "raster_cost": 34417.6
+  },
+  {
+    "overlap_m": 4815.0,
+    "east_km": 10.029,
+    "raster_cost": 34417.6
+  },
+  {
+    "overlap_m": 4815.0,
+    "east_km": 10.029,
+    "raster_cost": 34417.6
+  },
+  {
+    "overlap_m": 4815.0,
+    "east_km": 10.07,
+    "raster_cost": 34438.3
+  },
+  {
+    "overlap_m": 4815.1,
+    "east_km": 10.034,
+    "raster_cost": 34418.6
+  },
+  {
+    "overlap_m": 4815.5,
+    "east_km": 10.015,
+    "raster_cost": 34424.0
+  },
+  {
+    "overlap_m": 4815.5,
+    "east_km": 10.015,
+    "raster_cost": 34424.0
+  },
+  {
+    "overlap_m": 4815.5,
+    "east_km": 10.015,
+    "raster_cost": 34424.0
+  },
+  {
+    "overlap_m": 4815.5,
+    "east_km": 10.015,
+    "raster_cost": 34424.0
+  },
+  {
+    "overlap_m": 4815.9,
+    "east_km": 10.037,
+    "raster_cost": 34431.4
+  },
+  {
+    "overlap_m": 4815.9,
+    "east_km": 10.037,
+    "raster_cost": 34431.4
+  },
+  {
+    "overlap_m": 4815.9,
+    "east_km": 10.037,
+    "raster_cost": 34431.4
+  },
+  {
+    "overlap_m": 4815.9,
+    "east_km": 10.037,
+    "raster_cost": 34431.4
+  },
+  {
+    "overlap_m": 4815.9,
+    "east_km": 10.045,
+    "raster_cost": 34438.5
+  },
+  {
+    "overlap_m": 4815.9,
+    "east_km": 10.045,
+    "raster_cost": 34438.5
+  },
+  {
+    "overlap_m": 4815.9,
+    "east_km": 10.045,
+    "raster_cost": 34438.5
+  },
+  {
+    "overlap_m": 4815.9,
+    "east_km": 10.045,
+    "raster_cost": 34438.5
+  },
+  {
+    "overlap_m": 4815.9,
+    "east_km": 10.046,
+    "raster_cost": 34445.5
+  },
+  {
+    "overlap_m": 4816.1,
+    "east_km": 10.024,
+    "raster_cost": 34434.0
+  },
+  {
+    "overlap_m": 4816.3,
+    "east_km": 10.017,
+    "raster_cost": 34419.6
+  },
+  {
+    "overlap_m": 4816.3,
+    "east_km": 10.017,
+    "raster_cost": 34419.6
+  },
+  {
+    "overlap_m": 4816.3,
+    "east_km": 10.025,
+    "raster_cost": 34426.7
+  },
+  {
+    "overlap_m": 4816.3,
+    "east_km": 10.025,
+    "raster_cost": 34426.7
+  },
+  {
+    "overlap_m": 4816.3,
+    "east_km": 10.018,
+    "raster_cost": 34436.8
+  },
+  {
+    "overlap_m": 4816.3,
+    "east_km": 10.018,
+    "raster_cost": 34436.8
+  },
+  {
+    "overlap_m": 4816.3,
+    "east_km": 10.018,
+    "raster_cost": 34436.8
+  },
+  {
+    "overlap_m": 4816.8,
+    "east_km": 10.049,
+    "raster_cost": 34438.2
+  },
+  {
+    "overlap_m": 4816.8,
+    "east_km": 10.049,
+    "raster_cost": 34438.2
+  },
+  {
+    "overlap_m": 4816.8,
+    "east_km": 10.049,
+    "raster_cost": 34438.2
+  },
+  {
+    "overlap_m": 4816.8,
+    "east_km": 10.049,
+    "raster_cost": 34438.2
+  },
+  {
+    "overlap_m": 4816.8,
+    "east_km": 10.044,
+    "raster_cost": 34440.9
+  },
+  {
+    "overlap_m": 4816.8,
+    "east_km": 10.044,
+    "raster_cost": 34440.9
+  },
+  {
+    "overlap_m": 4816.8,
+    "east_km": 10.049,
+    "raster_cost": 34442.3
+  },
+  {
+    "overlap_m": 4816.8,
+    "east_km": 10.049,
+    "raster_cost": 34442.3
+  },
+  {
+    "overlap_m": 4816.8,
+    "east_km": 10.049,
+    "raster_cost": 34442.3
+  },
+  {
+    "overlap_m": 4816.8,
+    "east_km": 10.044,
+    "raster_cost": 34444.9
+  },
+  {
+    "overlap_m": 4817.0,
+    "east_km": 10.046,
+    "raster_cost": 34440.7
+  },
+  {
+    "overlap_m": 4817.0,
+    "east_km": 10.046,
+    "raster_cost": 34440.7
+  },
+  {
+    "overlap_m": 4817.0,
+    "east_km": 10.046,
+    "raster_cost": 34440.7
+  },
+  {
+    "overlap_m": 4817.0,
+    "east_km": 10.02,
+    "raster_cost": 34446.1
+  },
+  {
+    "overlap_m": 4817.1,
+    "east_km": 10.025,
+    "raster_cost": 34446.1
+  },
+  {
+    "overlap_m": 4817.8,
+    "east_km": 10.037,
+    "raster_cost": 34411.9
+  },
+  {
+    "overlap_m": 4817.8,
+    "east_km": 10.037,
+    "raster_cost": 34411.9
+  },
+  {
+    "overlap_m": 4817.8,
+    "east_km": 10.037,
+    "raster_cost": 34411.9
+  },
+  {
+    "overlap_m": 4817.8,
+    "east_km": 10.037,
+    "raster_cost": 34411.9
+  },
+  {
+    "overlap_m": 4817.8,
+    "east_km": 10.032,
+    "raster_cost": 34414.6
+  },
+  {
+    "overlap_m": 4817.8,
+    "east_km": 10.032,
+    "raster_cost": 34414.6
+  },
+  {
+    "overlap_m": 4817.8,
+    "east_km": 10.037,
+    "raster_cost": 34416.0
+  },
+  {
+    "overlap_m": 4817.8,
+    "east_km": 10.037,
+    "raster_cost": 34416.0
+  },
+  {
+    "overlap_m": 4817.8,
+    "east_km": 10.037,
+    "raster_cost": 34416.0
+  },
+  {
+    "overlap_m": 4817.8,
+    "east_km": 10.037,
+    "raster_cost": 34416.0
+  },
+  {
+    "overlap_m": 4817.8,
+    "east_km": 10.032,
+    "raster_cost": 34418.6
+  },
+  {
+    "overlap_m": 4817.8,
+    "east_km": 10.032,
+    "raster_cost": 34418.6
+  },
+  {
+    "overlap_m": 4817.8,
+    "east_km": 10.045,
+    "raster_cost": 34419.0
+  },
+  {
+    "overlap_m": 4817.8,
+    "east_km": 10.045,
+    "raster_cost": 34419.0
+  },
+  {
+    "overlap_m": 4817.8,
+    "east_km": 10.045,
+    "raster_cost": 34423.0
+  },
+  {
+    "overlap_m": 4817.8,
+    "east_km": 10.045,
+    "raster_cost": 34423.0
+  },
+  {
+    "overlap_m": 4818.0,
+    "east_km": 10.035,
+    "raster_cost": 34414.3
+  },
+  {
+    "overlap_m": 4818.0,
+    "east_km": 10.035,
+    "raster_cost": 34414.3
+  },
+  {
+    "overlap_m": 4818.0,
+    "east_km": 10.035,
+    "raster_cost": 34414.3
+  },
+  {
+    "overlap_m": 4818.0,
+    "east_km": 10.035,
+    "raster_cost": 34414.3
+  },
+  {
+    "overlap_m": 4818.2,
+    "east_km": 10.036,
+    "raster_cost": 34411.9
+  },
+  {
+    "overlap_m": 4818.2,
+    "east_km": 10.036,
+    "raster_cost": 34411.9
+  },
+  {
+    "overlap_m": 4818.2,
+    "east_km": 10.036,
+    "raster_cost": 34411.9
+  },
+  {
+    "overlap_m": 4818.2,
+    "east_km": 10.036,
+    "raster_cost": 34411.9
+  },
+  {
+    "overlap_m": 4818.2,
+    "east_km": 10.036,
+    "raster_cost": 34411.9
+  },
+  {
+    "overlap_m": 4818.4,
+    "east_km": 10.006,
+    "raster_cost": 34423.5
+  },
+  {
+    "overlap_m": 4818.4,
+    "east_km": 10.006,
+    "raster_cost": 34427.6
+  },
+  {
+    "overlap_m": 4818.4,
+    "east_km": 10.049,
+    "raster_cost": 34441.2
+  },
+  {
+    "overlap_m": 4818.6,
+    "east_km": 10.042,
+    "raster_cost": 34426.9
+  },
+  {
+    "overlap_m": 4818.6,
+    "east_km": 10.042,
+    "raster_cost": 34426.9
+  },
+  {
+    "overlap_m": 4818.6,
+    "east_km": 10.042,
+    "raster_cost": 34426.9
+  },
+  {
+    "overlap_m": 4818.6,
+    "east_km": 10.042,
+    "raster_cost": 34426.9
+  },
+  {
+    "overlap_m": 4818.6,
+    "east_km": 10.05,
+    "raster_cost": 34434.0
+  },
+  {
+    "overlap_m": 4818.6,
+    "east_km": 10.05,
+    "raster_cost": 34434.0
+  },
+  {
+    "overlap_m": 4818.6,
+    "east_km": 10.05,
+    "raster_cost": 34434.0
+  },
+  {
+    "overlap_m": 4818.6,
+    "east_km": 10.05,
+    "raster_cost": 34434.0
+  },
+  {
+    "overlap_m": 4818.8,
+    "east_km": 10.025,
+    "raster_cost": 34406.6
+  },
+  {
+    "overlap_m": 4818.8,
+    "east_km": 10.025,
+    "raster_cost": 34406.6
+  },
+  {
+    "overlap_m": 4818.9,
+    "east_km": 10.016,
+    "raster_cost": 34391.1
+  },
+  {
+    "overlap_m": 4818.9,
+    "east_km": 10.016,
+    "raster_cost": 34391.1
+  },
+  {
+    "overlap_m": 4818.9,
+    "east_km": 10.016,
+    "raster_cost": 34395.1
+  },
+  {
+    "overlap_m": 4818.9,
+    "east_km": 10.016,
+    "raster_cost": 34395.1
+  },
+  {
+    "overlap_m": 4818.9,
+    "east_km": 10.024,
+    "raster_cost": 34398.1
+  },
+  {
+    "overlap_m": 4818.9,
+    "east_km": 10.024,
+    "raster_cost": 34398.1
+  },
+  {
+    "overlap_m": 4818.9,
+    "east_km": 10.024,
+    "raster_cost": 34402.2
+  },
+  {
+    "overlap_m": 4818.9,
+    "east_km": 10.024,
+    "raster_cost": 34402.2
+  },
+  {
+    "overlap_m": 4818.9,
+    "east_km": 10.026,
+    "raster_cost": 34405.2
+  },
+  {
+    "overlap_m": 4818.9,
+    "east_km": 10.026,
+    "raster_cost": 34405.2
+  },
+  {
+    "overlap_m": 4818.9,
+    "east_km": 10.026,
+    "raster_cost": 34409.3
+  },
+  {
+    "overlap_m": 4818.9,
+    "east_km": 10.026,
+    "raster_cost": 34409.3
+  },
+  {
+    "overlap_m": 4819.0,
+    "east_km": 10.023,
+    "raster_cost": 34432.3
+  },
+  {
+    "overlap_m": 4819.0,
+    "east_km": 10.023,
+    "raster_cost": 34432.3
+  },
+  {
+    "overlap_m": 4819.0,
+    "east_km": 10.023,
+    "raster_cost": 34432.3
+  },
+  {
+    "overlap_m": 4819.0,
+    "east_km": 10.023,
+    "raster_cost": 34432.3
+  },
+  {
+    "overlap_m": 4819.6,
+    "east_km": 10.028,
+    "raster_cost": 34419.4
+  },
+  {
+    "overlap_m": 4819.6,
+    "east_km": 10.028,
+    "raster_cost": 34419.4
+  },
+  {
+    "overlap_m": 4819.6,
+    "east_km": 10.028,
+    "raster_cost": 34419.4
+  },
+  {
+    "overlap_m": 4819.6,
+    "east_km": 10.036,
+    "raster_cost": 34426.5
+  },
+  {
+    "overlap_m": 4819.6,
+    "east_km": 10.036,
+    "raster_cost": 34426.5
+  },
+  {
+    "overlap_m": 4819.6,
+    "east_km": 10.038,
+    "raster_cost": 34433.5
+  },
+  {
+    "overlap_m": 4819.6,
+    "east_km": 10.038,
+    "raster_cost": 34433.5
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.012,
+    "raster_cost": 34373.1
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.012,
+    "raster_cost": 34373.1
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.012,
+    "raster_cost": 34373.1
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.012,
+    "raster_cost": 34373.1
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.012,
+    "raster_cost": 34373.1
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.012,
+    "raster_cost": 34373.1
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.012,
+    "raster_cost": 34373.1
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.012,
+    "raster_cost": 34373.1
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.012,
+    "raster_cost": 34373.1
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.012,
+    "raster_cost": 34373.1
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.012,
+    "raster_cost": 34373.1
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.012,
+    "raster_cost": 34373.1
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.012,
+    "raster_cost": 34373.1
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.012,
+    "raster_cost": 34373.1
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.012,
+    "raster_cost": 34373.1
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.012,
+    "raster_cost": 34373.1
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.007,
+    "raster_cost": 34375.8
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.007,
+    "raster_cost": 34375.8
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.007,
+    "raster_cost": 34375.8
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.007,
+    "raster_cost": 34375.8
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.007,
+    "raster_cost": 34375.8
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.007,
+    "raster_cost": 34375.8
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.007,
+    "raster_cost": 34375.8
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.007,
+    "raster_cost": 34375.8
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.02,
+    "raster_cost": 34380.2
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.02,
+    "raster_cost": 34380.2
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.02,
+    "raster_cost": 34380.2
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.02,
+    "raster_cost": 34380.2
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.02,
+    "raster_cost": 34380.2
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.02,
+    "raster_cost": 34380.2
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.02,
+    "raster_cost": 34380.2
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.02,
+    "raster_cost": 34380.2
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.02,
+    "raster_cost": 34380.2
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.02,
+    "raster_cost": 34380.2
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.02,
+    "raster_cost": 34380.2
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.02,
+    "raster_cost": 34380.2
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.02,
+    "raster_cost": 34380.2
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.02,
+    "raster_cost": 34380.2
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.02,
+    "raster_cost": 34380.2
+  },
+  {
+    "overlap_m": 4820.0,
+    "east_km": 10.02,
+    "raster_cost": 34380.2
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.061,
+    "raster_cost": 34422.2
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.061,
+    "raster_cost": 34422.2
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.061,
+    "raster_cost": 34422.2
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.061,
+    "raster_cost": 34422.2
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.056,
+    "raster_cost": 34424.9
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.056,
+    "raster_cost": 34424.9
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.061,
+    "raster_cost": 34426.2
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.061,
+    "raster_cost": 34426.2
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.061,
+    "raster_cost": 34426.2
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.061,
+    "raster_cost": 34426.2
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.056,
+    "raster_cost": 34428.9
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.056,
+    "raster_cost": 34428.9
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.069,
+    "raster_cost": 34429.3
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.069,
+    "raster_cost": 34429.3
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.069,
+    "raster_cost": 34429.3
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.069,
+    "raster_cost": 34429.3
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.069,
+    "raster_cost": 34433.3
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.069,
+    "raster_cost": 34433.3
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.069,
+    "raster_cost": 34433.3
+  },
+  {
+    "overlap_m": 4820.1,
+    "east_km": 10.069,
+    "raster_cost": 34433.3
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.025,
+    "raster_cost": 34402.4
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.025,
+    "raster_cost": 34402.4
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.025,
+    "raster_cost": 34402.4
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.025,
+    "raster_cost": 34402.4
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.02,
+    "raster_cost": 34405.1
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.02,
+    "raster_cost": 34405.1
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.025,
+    "raster_cost": 34406.5
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.025,
+    "raster_cost": 34406.5
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.025,
+    "raster_cost": 34406.5
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.025,
+    "raster_cost": 34406.5
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.02,
+    "raster_cost": 34409.2
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.02,
+    "raster_cost": 34409.2
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.033,
+    "raster_cost": 34409.5
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.033,
+    "raster_cost": 34409.5
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.033,
+    "raster_cost": 34409.5
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.033,
+    "raster_cost": 34409.5
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.033,
+    "raster_cost": 34413.6
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.033,
+    "raster_cost": 34413.6
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.033,
+    "raster_cost": 34413.6
+  },
+  {
+    "overlap_m": 4820.2,
+    "east_km": 10.033,
+    "raster_cost": 34413.6
+  },
+  {
+    "overlap_m": 4820.3,
+    "east_km": 10.022,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4820.3,
+    "east_km": 10.022,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4820.3,
+    "east_km": 10.022,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4820.3,
+    "east_km": 10.022,
+    "raster_cost": 34404.9
+  },
+  {
+    "overlap_m": 4820.3,
+    "east_km": 10.059,
+    "raster_cost": 34424.6
+  },
+  {
+    "overlap_m": 4820.3,
+    "east_km": 10.059,
+    "raster_cost": 34424.6
+  },
+  {
+    "overlap_m": 4820.3,
+    "east_km": 10.059,
+    "raster_cost": 34424.6
+  },
+  {
+    "overlap_m": 4820.3,
+    "east_km": 10.059,
+    "raster_cost": 34424.6
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.006,
+    "raster_cost": 34407.8
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.006,
+    "raster_cost": 34407.8
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.006,
+    "raster_cost": 34407.8
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.006,
+    "raster_cost": 34407.8
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.001,
+    "raster_cost": 34410.5
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.001,
+    "raster_cost": 34410.5
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.006,
+    "raster_cost": 34411.9
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.006,
+    "raster_cost": 34411.9
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.006,
+    "raster_cost": 34411.9
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.006,
+    "raster_cost": 34411.9
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.001,
+    "raster_cost": 34414.6
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.001,
+    "raster_cost": 34414.6
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.014,
+    "raster_cost": 34414.9
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.014,
+    "raster_cost": 34414.9
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.014,
+    "raster_cost": 34414.9
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.014,
+    "raster_cost": 34414.9
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.014,
+    "raster_cost": 34419.0
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.014,
+    "raster_cost": 34419.0
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.014,
+    "raster_cost": 34419.0
+  },
+  {
+    "overlap_m": 4820.6,
+    "east_km": 10.014,
+    "raster_cost": 34419.0
+  },
+  {
+    "overlap_m": 4820.7,
+    "east_km": 10.017,
+    "raster_cost": 34435.1
+  },
+  {
+    "overlap_m": 4820.8,
+    "east_km": 10.004,
+    "raster_cost": 34410.3
+  },
+  {
+    "overlap_m": 4820.8,
+    "east_km": 10.004,
+    "raster_cost": 34410.3
+  },
+  {
+    "overlap_m": 4820.8,
+    "east_km": 10.004,
+    "raster_cost": 34410.3
+  },
+  {
+    "overlap_m": 4820.8,
+    "east_km": 10.004,
+    "raster_cost": 34410.3
+  },
+  {
+    "overlap_m": 4820.8,
+    "east_km": 10.036,
+    "raster_cost": 34430.8
+  },
+  {
+    "overlap_m": 4820.8,
+    "east_km": 10.036,
+    "raster_cost": 34430.8
+  },
+  {
+    "overlap_m": 4820.8,
+    "east_km": 10.036,
+    "raster_cost": 34430.8
+  },
+  {
+    "overlap_m": 4820.8,
+    "east_km": 10.036,
+    "raster_cost": 34430.8
+  },
+  {
+    "overlap_m": 4820.8,
+    "east_km": 10.032,
+    "raster_cost": 34433.4
+  },
+  {
+    "overlap_m": 4820.8,
+    "east_km": 10.032,
+    "raster_cost": 34433.4
+  },
+  {
+    "overlap_m": 4820.8,
+    "east_km": 10.045,
+    "raster_cost": 34437.9
+  },
+  {
+    "overlap_m": 4820.8,
+    "east_km": 10.045,
+    "raster_cost": 34437.9
+  },
+  {
+    "overlap_m": 4820.8,
+    "east_km": 10.045,
+    "raster_cost": 34437.9
+  },
+  {
+    "overlap_m": 4820.8,
+    "east_km": 10.045,
+    "raster_cost": 34437.9
+  },
+  {
+    "overlap_m": 4820.9,
+    "east_km": 10.01,
+    "raster_cost": 34420.8
+  },
+  {
+    "overlap_m": 4820.9,
+    "east_km": 10.018,
+    "raster_cost": 34427.9
+  },
+  {
+    "overlap_m": 4821.3,
+    "east_km": 10.018,
+    "raster_cost": 34436.2
+  },
+  {
+    "overlap_m": 4821.3,
+    "east_km": 10.018,
+    "raster_cost": 34436.2
+  },
+  {
+    "overlap_m": 4821.3,
+    "east_km": 10.018,
+    "raster_cost": 34436.2
+  },
+  {
+    "overlap_m": 4821.3,
+    "east_km": 10.013,
+    "raster_cost": 34438.9
+  },
+  {
+    "overlap_m": 4821.4,
+    "east_km": 10.012,
+    "raster_cost": 34420.3
+  },
+  {
+    "overlap_m": 4821.4,
+    "east_km": 10.012,
+    "raster_cost": 34424.3
+  },
+  {
+    "overlap_m": 4821.5,
+    "east_km": 10.019,
+    "raster_cost": 34430.8
+  },
+  {
+    "overlap_m": 4821.5,
+    "east_km": 10.027,
+    "raster_cost": 34437.9
+  },
+  {
+    "overlap_m": 4821.5,
+    "east_km": 10.046,
+    "raster_cost": 34442.5
+  },
+  {
+    "overlap_m": 4821.5,
+    "east_km": 10.046,
+    "raster_cost": 34442.5
+  },
+  {
+    "overlap_m": 4821.5,
+    "east_km": 10.046,
+    "raster_cost": 34442.5
+  },
+  {
+    "overlap_m": 4821.6,
+    "east_km": 10.021,
+    "raster_cost": 34386.6
+  },
+  {
+    "overlap_m": 4821.6,
+    "east_km": 10.021,
+    "raster_cost": 34386.6
+  },
+  {
+    "overlap_m": 4821.6,
+    "east_km": 10.021,
+    "raster_cost": 34390.6
+  },
+  {
+    "overlap_m": 4821.6,
+    "east_km": 10.021,
+    "raster_cost": 34390.6
+  },
+  {
+    "overlap_m": 4821.6,
+    "east_km": 10.03,
+    "raster_cost": 34393.7
+  },
+  {
+    "overlap_m": 4821.6,
+    "east_km": 10.03,
+    "raster_cost": 34393.7
+  },
+  {
+    "overlap_m": 4821.6,
+    "east_km": 10.03,
+    "raster_cost": 34397.7
+  },
+  {
+    "overlap_m": 4821.6,
+    "east_km": 10.03,
+    "raster_cost": 34397.7
+  },
+  {
+    "overlap_m": 4821.8,
+    "east_km": 10.031,
+    "raster_cost": 34403.3
+  },
+  {
+    "overlap_m": 4821.8,
+    "east_km": 10.031,
+    "raster_cost": 34403.3
+  },
+  {
+    "overlap_m": 4821.9,
+    "east_km": 10.028,
+    "raster_cost": 34432.2
+  },
+  {
+    "overlap_m": 4821.9,
+    "east_km": 10.028,
+    "raster_cost": 34432.2
+  },
+  {
+    "overlap_m": 4821.9,
+    "east_km": 10.028,
+    "raster_cost": 34432.2
+  },
+  {
+    "overlap_m": 4821.9,
+    "east_km": 10.028,
+    "raster_cost": 34432.2
+  },
+  {
+    "overlap_m": 4821.9,
+    "east_km": 10.028,
+    "raster_cost": 34432.2
+  },
+  {
+    "overlap_m": 4821.9,
+    "east_km": 10.028,
+    "raster_cost": 34432.2
+  },
+  {
+    "overlap_m": 4821.9,
+    "east_km": 10.028,
+    "raster_cost": 34432.2
+  },
+  {
+    "overlap_m": 4821.9,
+    "east_km": 10.028,
+    "raster_cost": 34432.2
+  },
+  {
+    "overlap_m": 4822.1,
+    "east_km": 10.04,
+    "raster_cost": 34429.2
+  },
+  {
+    "overlap_m": 4822.1,
+    "east_km": 10.04,
+    "raster_cost": 34433.3
+  },
+  {
+    "overlap_m": 4822.2,
+    "east_km": 10.033,
+    "raster_cost": 34414.9
+  },
+  {
+    "overlap_m": 4822.2,
+    "east_km": 10.033,
+    "raster_cost": 34414.9
+  },
+  {
+    "overlap_m": 4822.2,
+    "east_km": 10.033,
+    "raster_cost": 34414.9
+  },
+  {
+    "overlap_m": 4822.2,
+    "east_km": 10.033,
+    "raster_cost": 34414.9
+  },
+  {
+    "overlap_m": 4822.2,
+    "east_km": 10.042,
+    "raster_cost": 34422.0
+  },
+  {
+    "overlap_m": 4822.2,
+    "east_km": 10.042,
+    "raster_cost": 34422.0
+  },
+  {
+    "overlap_m": 4822.5,
+    "east_km": 10.034,
+    "raster_cost": 34416.2
+  },
+  {
+    "overlap_m": 4822.5,
+    "east_km": 10.034,
+    "raster_cost": 34416.2
+  },
+  {
+    "overlap_m": 4822.5,
+    "east_km": 10.034,
+    "raster_cost": 34416.2
+  },
+  {
+    "overlap_m": 4822.5,
+    "east_km": 10.034,
+    "raster_cost": 34416.2
+  },
+  {
+    "overlap_m": 4822.5,
+    "east_km": 10.042,
+    "raster_cost": 34423.3
+  },
+  {
+    "overlap_m": 4822.5,
+    "east_km": 10.042,
+    "raster_cost": 34423.3
+  },
+  {
+    "overlap_m": 4822.5,
+    "east_km": 10.044,
+    "raster_cost": 34430.3
+  },
+  {
+    "overlap_m": 4822.5,
+    "east_km": 10.044,
+    "raster_cost": 34430.3
+  },
+  {
+    "overlap_m": 4822.9,
+    "east_km": 10.006,
+    "raster_cost": 34425.3
+  },
+  {
+    "overlap_m": 4822.9,
+    "east_km": 10.006,
+    "raster_cost": 34429.4
+  },
+  {
+    "overlap_m": 4822.9,
+    "east_km": 10.014,
+    "raster_cost": 34432.4
+  },
+  {
+    "overlap_m": 4822.9,
+    "east_km": 10.014,
+    "raster_cost": 34436.5
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34395.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34395.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34395.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34395.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34395.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34395.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34395.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34395.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34395.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34395.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34395.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34395.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.022,
+    "raster_cost": 34398.4
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.022,
+    "raster_cost": 34398.4
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.022,
+    "raster_cost": 34398.4
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.022,
+    "raster_cost": 34398.4
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.022,
+    "raster_cost": 34398.4
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.022,
+    "raster_cost": 34398.4
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34399.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34399.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34399.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34399.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34399.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34399.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34399.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34399.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34399.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34399.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.027,
+    "raster_cost": 34399.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.022,
+    "raster_cost": 34402.5
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.022,
+    "raster_cost": 34402.5
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.022,
+    "raster_cost": 34402.5
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.022,
+    "raster_cost": 34402.5
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.022,
+    "raster_cost": 34402.5
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.035,
+    "raster_cost": 34402.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.035,
+    "raster_cost": 34402.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.035,
+    "raster_cost": 34402.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.035,
+    "raster_cost": 34402.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.035,
+    "raster_cost": 34402.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.035,
+    "raster_cost": 34402.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.035,
+    "raster_cost": 34402.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.035,
+    "raster_cost": 34402.8
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.035,
+    "raster_cost": 34406.9
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.035,
+    "raster_cost": 34406.9
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.035,
+    "raster_cost": 34406.9
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.035,
+    "raster_cost": 34406.9
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.035,
+    "raster_cost": 34406.9
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.035,
+    "raster_cost": 34406.9
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.035,
+    "raster_cost": 34406.9
+  },
+  {
+    "overlap_m": 4823.3,
+    "east_km": 10.035,
+    "raster_cost": 34406.9
+  },
+  {
+    "overlap_m": 4823.4,
+    "east_km": 10.025,
+    "raster_cost": 34398.2
+  },
+  {
+    "overlap_m": 4823.4,
+    "east_km": 10.025,
+    "raster_cost": 34398.2
+  },
+  {
+    "overlap_m": 4823.4,
+    "east_km": 10.025,
+    "raster_cost": 34398.2
+  },
+  {
+    "overlap_m": 4823.4,
+    "east_km": 10.025,
+    "raster_cost": 34398.2
+  },
+  {
+    "overlap_m": 4823.4,
+    "east_km": 10.025,
+    "raster_cost": 34398.2
+  },
+  {
+    "overlap_m": 4823.4,
+    "east_km": 10.025,
+    "raster_cost": 34398.2
+  },
+  {
+    "overlap_m": 4823.4,
+    "east_km": 10.025,
+    "raster_cost": 34398.2
+  },
+  {
+    "overlap_m": 4823.4,
+    "east_km": 10.025,
+    "raster_cost": 34398.2
+  },
+  {
+    "overlap_m": 4823.4,
+    "east_km": 10.025,
+    "raster_cost": 34398.2
+  },
+  {
+    "overlap_m": 4823.4,
+    "east_km": 10.025,
+    "raster_cost": 34398.2
+  },
+  {
+    "overlap_m": 4823.4,
+    "east_km": 10.025,
+    "raster_cost": 34398.2
+  },
+  {
+    "overlap_m": 4823.6,
+    "east_km": 10.037,
+    "raster_cost": 34427.5
+  },
+  {
+    "overlap_m": 4823.6,
+    "east_km": 10.037,
+    "raster_cost": 34427.5
+  },
+  {
+    "overlap_m": 4823.6,
+    "east_km": 10.037,
+    "raster_cost": 34431.6
+  },
+  {
+    "overlap_m": 4823.6,
+    "east_km": 10.037,
+    "raster_cost": 34431.6
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.016,
+    "raster_cost": 34390.4
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.016,
+    "raster_cost": 34390.4
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.011,
+    "raster_cost": 34393.1
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.016,
+    "raster_cost": 34394.5
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.016,
+    "raster_cost": 34394.5
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.011,
+    "raster_cost": 34397.2
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.024,
+    "raster_cost": 34397.5
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.024,
+    "raster_cost": 34397.5
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.024,
+    "raster_cost": 34401.6
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.024,
+    "raster_cost": 34401.6
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.015,
+    "raster_cost": 34420.7
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.042,
+    "raster_cost": 34427.5
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.042,
+    "raster_cost": 34427.5
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.042,
+    "raster_cost": 34427.5
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.042,
+    "raster_cost": 34427.5
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.038,
+    "raster_cost": 34430.2
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.038,
+    "raster_cost": 34430.2
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.051,
+    "raster_cost": 34434.6
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.051,
+    "raster_cost": 34434.6
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.051,
+    "raster_cost": 34434.6
+  },
+  {
+    "overlap_m": 4823.8,
+    "east_km": 10.051,
+    "raster_cost": 34434.6
   }
 ]
