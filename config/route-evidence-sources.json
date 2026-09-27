@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-26",
+  "updated": "2026-09-27",
   "purpose": "Route evidence beyond the canonical organizer/Trace manifest. These references may support race-day geometry, historical course reconstruction and source triangulation, but do not automatically assign course versions.",
   "rules": [
     "A participant activity is evidence for a race-day recording only when the activity title/date/author can be linked to a known race participation or the activity text explicitly identifies the race.",
@@ -16,12 +16,13 @@
       "year": 2026,
       "source_type": "organizer_map_image",
       "url": "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/13km-bana-h-jdkurvan-3_orig.jpg",
-      "status": "verified_current_organizer_georeferenceable_map_legacy_13km_label",
+      "status": "verified_current_organizer_raster_legacy13km_reconstructed",
       "published_label": "ÖST 13km bana",
-      "evidence": "Current 14 km Race-PM embeds this legacy-labelled organizer map/elevation image. It shows one loop from Christinehof with an eastern out-and-back/loop to the Hallamölla/Verkeån corridor and an approximately 13 km profile. Native image inspection confirms printed SWEREF 99 TM edge coordinates, north arrow and scale. The raster also contains a 0.0–13.0 km elevation-profile axis and its western Christinehof loop provides a second organizer-map registration of much of the Trail5 corridor.",
-      "limitation": "Georeferenceable organizer raster, not organizer GPX. Legacy 13 km labelling does not prove exact identity with every modern 14 km race year. Pixel-level georeferencing and participant-GPS validation are required before canonical assignment.",
-      "local_asset": false,
-      "coordinate_access": "georeferenceable_raster"
+      "evidence": "Current 14 km Race-PM embeds the legacy organizer raster labelled ÖST 13km bana. Cross-registration to the corrected Trail5 SWEREF grid is strong (median 0.24 px, p95 1.57 px). Direct raster-topology reconstruction yields 13.084 km; Hallamölla is 9.6 m from the route and 4.634 km remains to finish, independently matching 2023 participant metadata of roughly 4.5 km remaining.",
+      "limitation": "The local route is a derived legacy-13km family/reference reconstruction, not organizer GPX and not proof that the current marketed 14 km course or every historical year is exactly identical.",
+      "local_asset": true,
+      "coordinate_access": "local_validated_organizer_raster_reference",
+      "local_route": "routes/ost/trail14-current-reference/route.gpx"
     },
     {
       "id": "organizer-trail5-current-map",
@@ -29,12 +30,13 @@
       "year": 2026,
       "source_type": "organizer_map_image",
       "url": "https://www.osterlentrail.se/uploads/4/1/8/7/41870619/st-5km-bana_orig.jpg",
-      "status": "verified_current_organizer_georeferenceable_map",
+      "status": "verified_current_organizer_georeferenceable_map_reconstructed",
       "published_label": "ÖST 5km bana",
-      "evidence": "Current Naturloppet page embeds an organizer map showing the 5 km loop west/north-west of Christinehof in the Ekopark. The image includes SWEREF 99 TM corner coordinates (SW approximately N 6173751 / E 432733; NE approximately N 6176791 / E 437965), a north arrow and scale information, so the published route line is georeferenceable rather than merely schematic.",
-      "limitation": "The route is still a raster line, not an organizer GPX. Any digitized coordinates must be labelled derived_from_georeferenced_organizer_map and validated against independent race-day GPS before promotion to canonical race-day geometry.",
-      "local_asset": false,
-      "coordinate_access": "georeferenceable_raster; digitization_pending_independent_validation"
+      "evidence": "Current Naturloppet page embeds the organizer map. Native image inspection verifies SWEREF 99 TM controls SW N6173751/E432733 and NE N6176791/E437465. The earlier E437965 transcription was 500 m too far east. Direct centreline reconstruction with the corrected control yields 5.003 km, independently matching the prior 5.002 km manual control.",
+      "limitation": "The local route is a derived reconstruction from the organizer raster, not organizer GPX. Exact year-by-year identity is not implied.",
+      "local_asset": true,
+      "coordinate_access": "local_validated_organizer_raster_reconstruction",
+      "local_route": "routes/ost/trail5-current-reference/route.gpx"
     },
     {
       "id": "jogg-2018-trail22-forsbacka",
