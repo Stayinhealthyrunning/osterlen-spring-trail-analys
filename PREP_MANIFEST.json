@@ -15,7 +15,8 @@
     "research/repository-hygiene-audit-2026-09-27.md",
     "research/frontend-data-delivery-architecture-2026-09-27.md",
     "reports/engine-payload-profile.md",
-    "config/frontend-performance-budget.json"
+    "config/frontend-performance-budget.json",
+    "research/frontend-delivery-architecture-2026-09-27.md"
   ],
   "core_configuration": [
     "config/event.json",
@@ -63,7 +64,8 @@
     "research/final-prebuild-checklist-2026-09-27.md",
     "research/engine-module-reuse-map.md",
     "research/repository-hygiene-audit-2026-09-27.md",
-    "research/frontend-data-delivery-architecture-2026-09-27.md"
+    "research/frontend-data-delivery-architecture-2026-09-27.md",
+    "research/frontend-delivery-architecture-2026-09-27.md"
   ],
   "key_reports": [
     "reports/engine-readiness.md",
@@ -102,7 +104,8 @@
     "tools/audit_repository_hygiene.py",
     "tools/profile_engine_payload.py",
     "tools/export_engine_web_bundle.py",
-    "tools/validate_frontend_performance_budget.py"
+    "tools/validate_frontend_performance_budget.py",
+    "tools/build_engine_delivery_shards.py"
   ],
   "validation": {
     "command": "python tools/validate_foundation.py && python tools/validate_prebuild_readiness.py && python tools/validate_frontend_performance_budget.py",
@@ -119,5 +122,14 @@
     "Authentic participant/organizer GPX for Trail 13/14 and historical exact short-course geometry",
     "Duo member-to-leg assignment until explicit source evidence exists",
     "Cross-year repeat-runner identity linkage with confidence/evidence"
-  ]
+  ],
+  "performance": {
+    "profile": "reports/engine-payload-profile.json",
+    "budget": "config/frontend-performance-budget.json",
+    "delivery_architecture": "research/frontend-delivery-architecture-2026-09-27.md",
+    "measured_full_engine_gzip_bytes": 450548,
+    "measured_bootstrap_gzip_bytes": 1980,
+    "measured_largest_selected_race_gzip_bytes": 29138,
+    "decision": "bootstrap_plus_per_race_bundle_with_lazy_route_elevation_assets"
+  }
 }
