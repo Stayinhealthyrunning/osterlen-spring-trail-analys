@@ -34,7 +34,10 @@
     "No accessible organizer GPX has been found for this course version.",
     "The organizer's current material embeds a legacy 13 km raster while the current course is described as 14 km.",
     "Participant 2023 raw GPX is not accessible, so its recorded distance cannot define geometry.",
-    "Route remains candidate until local raster outliers and loop topology pass QA."
+    "Route remains candidate until local raster outliers and loop topology pass QA.",
+    "Current candidate has p95 route-to-raster deviation 285.2 m and must not be published as a validated course.",
+    "The reconstruction workflow previously masked a Python failure through a shell pipeline; this has been corrected with pipefail and strict QA restored."
   ],
-  "qa_path": "qa.json"
+  "qa_path": "qa.json",
+  "qa_acceptance": "failed_strict_route_geometry_qa"
 }
