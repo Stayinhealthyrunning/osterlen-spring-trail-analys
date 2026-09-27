@@ -2,6 +2,11 @@ name: Reconstruct short-course routes
 on:
   push:
     branches: [automation/acquire-short-course-sources]
+    paths:
+      - 'tools/**'
+      - '.github/workflows/analyze-short-course-rasters.yml'
+      - 'data/source/**'
+      - 'reports/organizer-map-registration.json'
   workflow_dispatch:
 concurrency:
   group: short-course-reconstruction
