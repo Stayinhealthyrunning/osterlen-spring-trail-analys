@@ -12,7 +12,10 @@
     "config/analysis-data-contract.json",
     "config/engine-adapter.json",
     "reports/engine-readiness.md",
-    "research/repository-hygiene-audit-2026-09-27.md"
+    "research/repository-hygiene-audit-2026-09-27.md",
+    "research/frontend-data-delivery-architecture-2026-09-27.md",
+    "reports/engine-payload-profile.md",
+    "config/frontend-performance-budget.json"
   ],
   "core_configuration": [
     "config/event.json",
@@ -59,7 +62,8 @@
     "research/ultra60-2026-landmarks.json",
     "research/final-prebuild-checklist-2026-09-27.md",
     "research/engine-module-reuse-map.md",
-    "research/repository-hygiene-audit-2026-09-27.md"
+    "research/repository-hygiene-audit-2026-09-27.md",
+    "research/frontend-data-delivery-architecture-2026-09-27.md"
   ],
   "key_reports": [
     "reports/engine-readiness.md",
@@ -95,10 +99,13 @@
     "tools/build_engine_readiness_report.py",
     "tools/export_engine_v1.py",
     "tools/validate_prebuild_readiness.py",
-    "tools/audit_repository_hygiene.py"
+    "tools/audit_repository_hygiene.py",
+    "tools/profile_engine_payload.py",
+    "tools/export_engine_web_bundle.py",
+    "tools/validate_frontend_performance_budget.py"
   ],
   "validation": {
-    "command": "python tools/validate_foundation.py && python tools/validate_prebuild_readiness.py",
+    "command": "python tools/validate_foundation.py && python tools/validate_prebuild_readiness.py && python tools/validate_frontend_performance_budget.py",
     "workflow": ".github/workflows/validate-foundation.yml"
   },
   "frontend": {
