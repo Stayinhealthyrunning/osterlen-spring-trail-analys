@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "race": "Österlen Spring Trail",
   "course": "Trail 13/14 km",
-  "geometry_status": "candidate_reconstruction",
+  "geometry_status": "unresolved",
   "primary_geometry_basis": "organizer raster constrained by official/local trail geometry and OSM",
   "not_an_organizer_gpx": true,
   "sources": [
@@ -36,8 +36,11 @@
     "Participant 2023 raw GPX is not accessible, so its recorded distance cannot define geometry.",
     "Route remains candidate until local raster outliers and loop topology pass QA.",
     "Current candidate has p95 route-to-raster deviation 285.2 m and must not be published as a validated course.",
-    "The reconstruction workflow previously masked a Python failure through a shell pipeline; this has been corrected with pipefail and strict QA restored."
+    "The reconstruction workflow previously masked a Python failure through a shell pipeline; this has been corrected with pipefail and strict QA restored.",
+    "The current OSM graph cannot produce an eastern Christinehof–Hallamölla loop compatible with the 2023 observed 13.67 km total: among 7,140 path-pair combinations, the shortest diagnostic eastern loop is 9.467 km; combined with the current western reconstruction this is 14.948 km.",
+    "This conflict indicates that the current assumption that the complete Trail 5 reconstruction is the western component of the 13/14 km course, or the available OSM network itself, is not sufficiently supported.",
+    "Do not publish route.geojson/route.gpx as the race course until authentic participant/organizer geometry or stronger vector evidence resolves this conflict."
   ],
   "qa_path": "qa.json",
-  "qa_acceptance": "failed_strict_route_geometry_qa"
+  "qa_acceptance": "blocked_by_source_geometry_conflict"
 }
