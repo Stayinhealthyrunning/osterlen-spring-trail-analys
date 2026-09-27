@@ -1,0 +1,59 @@
+[
+  {
+    "name": "topogps-hallamolla-43794",
+    "requested_url": "https://api.topo-gps.com/route/fetch?format=gpx&id=43794",
+    "status": 200,
+    "final_url": "https://topo-gps-routes.s3.amazonaws.com/temp/43794.gpx?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYIPSKQJB3CCRI7Y4%2F20260927%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20260927T092441Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEFEaDGV1LWNlbnRyYWwtMSJIMEYCIQDCInzzqfi9tNEgA6HNs7oEfHY2YE0Or97rBCROdwu1dQIhANOzPSc5D1TtBaVx9RNoTQiBOtouwBl4fEQFoZusSO1AKq4ECBoQABoMNTY3OTgwNzUzNDc1IgwegM7ohTxpV%2F9H%2Fw0qiwSSPzDsxJsYnmKU1x8Vv3eVrLVAXhEV1n9eyGi2Tc6GSD3Rvf7u00t2gEzTT7goohn56wOsI6zxQ%2FdCp4tDNMX%2FsVOh%2FKRv84oh4ZlSnSoVlRabV9HvEhS1IAbamR2lgphnS1tavdpVsXqnXA0UO%2FpKpImA40ymMKrhCkpk6T%2B0P4NpoNqDTcF9SHa5AZD9AM3XRNpkCu3scAZEdSf2mly26r%2Fjn7gpmBRfy9O5seAoDZfUoU9wR0F%2BTkgb%2BNtSuFJw65wyBFfaw%2FpYpASggk0GjFT7UFx2o9Wi%2BlNkV%2BpjdYFad5w8ry2q9wo6oe%2B4vjj9Nw3RBX8rYnYq1NehW9VqmMDlO%2Fw1x5OKNC46j1j1lG36GLqHNcyWRAv49mp8mLNlC8IFUtOO9EJ%2F%2FmvcRcg7MI6k8Eo%2FC6JCCRnfGBHJLdZ%2Fr0HrJbaJY15icn99t1WZa0mARX9lcQOffF0T4cJPdX5%2BJ0zR2ajCG5zd24AV%2BkjkDYK7oGHlVwSs4xohM%2F4LOSoo1qRccs9u1YFekF2yOdlFoAF%2FBnEe0cxTAGgI%2Fy3OHy5tjwPr8lmnFdbBVaAvCTr2WZeyfjfzWyDYjWGrQrtfFpQd268e%2BiK2HageaVkHkh6fVPktqOKFwvgr%2BAjS4Bi5gmLs4mTwrbIMjY%2BYbOsKOHsFk11a5RvA%2F0jILe1RbusbiDRgz37%2BMM2%2B49UGOqEB95a%2FxULG3gW6ZgWQhg%2B4ccOTksg4mtnJgtBiO6W1EzZe9JRPCjxzBMKKAhEy%2BDc37a7aTDvH%2Fg0EqyTm2IuyhJW4MkW7H4RadrO37CxW0eiqrfcmQDQQF4S1buWYan8%2FGe3evq9sCqvuRyahk3uPVZy8BxjpCybvbzPOEbPxfVwd2XFbdGSS7Z1vCc8r237WMchW1YqHhxWLsuW5SkgBqKc%3D&X-Amz-Signature=aa26fad2755a86f902fcc1e50015884d480cf28091ad602eda72460b92c49018",
+    "content_type": "application/gpx+xml",
+    "bytes": 349549,
+    "gps_xml": true
+  },
+  {
+    "name": "strava-christian-ost60-2023",
+    "requested_url": "https://www.strava.com/activities/8895037345/export_gpx",
+    "status": 200,
+    "final_url": "https://www.strava.com/login",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 615117,
+    "gps_xml": false
+  },
+  {
+    "name": "strava-christian-ost60-2023-tcx",
+    "requested_url": "https://www.strava.com/activities/8895037345/export_tcx",
+    "status": 200,
+    "final_url": "https://www.strava.com/login",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 615117,
+    "gps_xml": false
+  },
+  {
+    "name": "wikiloc-alunbruket-hallamolla-104740116",
+    "requested_url": "https://www.wikiloc.com/wikiloc/download.do?event=file&id=104740116",
+    "status": 403,
+    "final_url": "https://www.wikiloc.com/wikiloc/download.do?event=file&id=104740116",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 5628,
+    "gps_xml": false,
+    "error": "HTTPError"
+  },
+  {
+    "name": "wikiloc-christinehof-1767530",
+    "requested_url": "https://www.wikiloc.com/wikiloc/download.do?event=file&id=1767530",
+    "status": 403,
+    "final_url": "https://www.wikiloc.com/wikiloc/download.do?event=file&id=1767530",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 5622,
+    "gps_xml": false,
+    "error": "HTTPError"
+  },
+  {
+    "name": "wikiloc-hallamollaleden-52431996",
+    "requested_url": "https://www.wikiloc.com/wikiloc/download.do?event=file&id=52431996",
+    "status": 403,
+    "final_url": "https://www.wikiloc.com/wikiloc/download.do?event=file&id=52431996",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 5625,
+    "gps_xml": false,
+    "error": "HTTPError"
+  }
+]
