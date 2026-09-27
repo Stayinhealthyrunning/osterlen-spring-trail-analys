@@ -102,7 +102,7 @@ Trail 21/22:
 - 2025–2026 har exakt samma publika kartgeometri och är mycket nära 2024.
 - 2018-kandidaten är geometriskt nära 2019 men dess Trace-metadata är daterad 2016, så 2018 lämnas formellt oassignad tills årsspecifik proveniens finns.
 
-Trail 13/14 och Trail 5 väntar fortfarande på tillräckligt komplett verifierad historisk geometri för course-versionering.
+Trail 13/14 och Trail 5 har nu lokalt användbar, provenance-märkt **referensgeometri** från arrangörens egna rasterkartor. Trail 5-rutten är 5.003 km efter korrigering av ett tidigare 500 m fel i kartans östkoordinat (rätt värde är E 437465). Den legacy-märkta 13 km-rutten är 13.084 km och passerar Hallamölla med 4.634 km kvar. Detta löser kartgeometrin, men inte automatiskt årsspecifik course-version-identitet: särskilt den nuvarande marknadsförda 14 km-banan måste hållas isär från påståendet att legacy 13 km-geometrin är exakt identisk.
 
 ## Höjddata och D+
 
@@ -117,9 +117,10 @@ Dessa värden används inte som en jämförbar D+-serie mellan år eftersom meto
 Nuvarande dataläge:
 
 - **13** race-instansers verkliga splits räcker för splitanalys.
-- **6** race-instansers kombination av splits + lokal route asset räcker redan för replay/kartduell: Ultra och Duo 2024–2026.
+- **6** race-instansers kombination av splits + exakt lokal course-version-route räcker redan för replay/kartduell: Ultra och Duo 2024–2026.
 - **19** race-instansers course version är verifierad.
-- Kortare lopp utan splits får fortfarande resultat-, finish-, deltagar- och course-version-analyser där underlaget stödjer dem.
+- Trail 5 och Trail 13/14 har dessutom lokala **family/reference routes** för kart-/terrängvisning utan att falskt tilldela ett år en course version.
+- Kortare lopp saknar publicerade mellantider och får därför inte syntetisk replay, även när en referensrutt kan visas.
 
 ## Dataprinciper
 
@@ -127,7 +128,8 @@ Nuvarande dataläge:
 - Saknade splits, placeringar, checkpointpassager, status, ålder, kön eller lagrelationer får aldrig fabriceras.
 - Duo ärver respektive års Ultra 60-bana; benlängder får inte hårdkodas som 30+30 km.
 - Cross-year-resultat ska respektera `course_version` och jämförbarhetsgrupper.
-- En verifierad historisk kartgeometri betyder inte automatiskt att en redistributerbar lokal GPX finns för frontend/replay.
+- En verifierad historisk kartgeometri betyder inte automatiskt att en redistributerbar lokal GPX finns för frontend/replay. Äldre Trace de Trail-geometrier behålls som externa verifieringsreferenser eftersom deras publicerade juridiska villkor inte ger projektet klar rätt att återpublicera koordinatserierna.
+- En family/reference route får visas med provenance även när exakt årsspecifik `course_version` är null; den får inte användas för att påstå banidentitet mellan år.
 - Cross-year personidentitet är ett separat framtida confidence-lager; namnlikhet får inte ersätta source-local identity.
 
 ## Viktiga filer
@@ -161,4 +163,4 @@ GitHub Action `Validate ÖST foundation` kör samma konsistenskontroll automatis
 
 När Gotaleden-kärnans generiska refaktorering är färdig ska arbetet börja med adapter/integration mot `data/derived/ost-analysis-2018-2026.sqlite.gz`.
 
-Det behövs **ingen ny ÖST-förstudie och ingen ny Sportstiming-import av 2018–2026** innan dess. Verkliga återstående källfrågor gäller främst historiska lokala banfiler, Trail 13/14 och 5 km-banversioner, Trail 21/22 år 2018, Duo-etappordning, historiska kön/åldersluckor och en separat metod för säker cross-year personmatchning.
+Det behövs **ingen ny ÖST-förstudie och ingen ny Sportstiming-import av 2018–2026** innan dess. Kortbanornas referensgeometri är nu löst. Verkliga återstående källfrågor gäller främst redistributionsgodkända lokala ruttfiler för äldre Ultra/Trail 21/22, exakt årsspecifik identitet för Trail 13/14 och 5 km, Trail 21/22 år 2018, Duo-etappordning, historiska kön/åldersluckor och en separat metod för säker cross-year personmatchning.
