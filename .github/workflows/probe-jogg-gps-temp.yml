@@ -10,46 +10,54 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Inspect public GPSPass HTML
+      - name: Extract public race-track geometry diagnostics
         shell: python
         run: |
-          import json,re,urllib.request
+          import json,re,urllib.request,math
           from pathlib import Path
-          from urllib.parse import urljoin
 
-          urls = [
-            "https://www.jogg.se/Traning/GPSPass.aspx?adid=10988506",
-            "https://www.jogg.se/Traning/Pass.aspx?id=23408256",
-          ]
+          url="https://www.jogg.se/Traning/GPSPass.aspx?adid=10988506"
+          req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0","Accept":"text/html,*/*"})
+          with urllib.request.urlopen(req,timeout=30) as r:
+              html=r.read().decode("utf-8","replace")
+
           out=Path("out-jogg"); out.mkdir(exist_ok=True)
-          report=[]
-          for url in urls:
-              req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0","Accept":"text/html,*/*"})
-              with urllib.request.urlopen(req,timeout=30) as r:
-                  html=r.read().decode("utf-8","replace")
-              # Do not persist the full third-party page; retain only diagnostics/hints.
-              scripts=re.findall(r'<script[^>]+src=["\']([^"\']+)',html,re.I)
-              hrefs=re.findall(r'(?:href|src)=["\']([^"\']+)',html,re.I)
-              snippets=[]
-              for term in ["leaflet","polyline","latitude","longitude","latlng","lat","lng","gpx","ajax","gps","track","route","coordinates","adid","api"]:
-                  for m in list(re.finditer(term,html,re.I))[:20]:
-                      s=re.sub(r'\s+',' ',html[max(0,m.start()-220):min(len(html),m.end()+420)])
-                      snippets.append({"term":term,"snippet":s[:700]})
-              candidates=[]
-              for x in scripts+hrefs:
-                  full=urljoin(url,x)
-                  if any(t in full.lower() for t in ["gps","map","track","route","leaflet","ajax","api","traning"]):
-                      candidates.append(full)
-              report.append({
-                 "url":url, "bytes":len(html),
-                 "scripts":[urljoin(url,x) for x in scripts],
-                 "candidate_urls":sorted(set(candidates)),
-                 "snippets":snippets[:160],
-                 "has_latlng":bool(re.search(r'lat.?lng|latitude|longitude|coordinates|polyline',html,re.I)),
-                 "numeric_coord_like_count":len(re.findall(r'5[45-6][.,]\d{3,}[^\n]{0,40}1[3-4][.,]\d{3,}',html))
-              })
-          (out/"jogg-public-gps-diagnostics.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
+
+          # Inspect coordinate-bearing script blocks. Store only narrow context and
+          # extracted numeric tuples, not the full third-party HTML.
+          blocks=[]
+          for m in re.finditer(r'<script(?:\s[^>]*)?>(.*?)</script>',html,re.I|re.S):
+              body=m.group(1)
+              hits=len(re.findall(r'55[.,]\d{3,}',body))
+              if hits:
+                  blocks.append({
+                      "length":len(body),
+                      "hits":hits,
+                      "prefix":re.sub(r'\s+',' ',body[:1000]),
+                      "context":[re.sub(r'\s+',' ',body[max(0,x.start()-180):x.start()+500])[:680]
+                                 for x in list(re.finditer(r'55[.,]\d{3,}',body))[:8]]
+                  })
+
+          # Common tuple/object forms in mapping JS.
+          patterns = {
+             "lat_lon_pair": r'(?<!\d)(5[45-6]\.[0-9]{4,})\s*[,;]\s*(1[3-4]\.[0-9]{4,})(?!\d)',
+             "lon_lat_pair": r'(?<!\d)(1[3-4]\.[0-9]{4,})\s*[,;]\s*(5[45-6]\.[0-9]{4,})(?!\d)',
+             "latlng_object": r'lat\s*[:=]\s*(5[45-6]\.[0-9]{4,}).{0,80}?(?:lng|lon)\s*[:=]\s*(1[3-4]\.[0-9]{4,})',
+             "lnglat_object": r'(?:lng|lon)\s*[:=]\s*(1[3-4]\.[0-9]{4,}).{0,80}?lat\s*[:=]\s*(5[45-6]\.[0-9]{4,})'
+          }
+          found={}
+          for key,pat in patterns.items():
+              vals=re.findall(pat,html,re.I|re.S)
+              found[key]={"count":len(vals),"first":vals[:12]}
+
+          # Locate the densest script and extract all decimal numbers in plausible
+          # Christinehof latitude/longitude ranges to understand its structure.
+          densest=max(blocks,key=lambda x:x["hits"],default=None)
+          report={"url":url,"html_bytes":len(html),"blocks":blocks[:8],"patterns":found}
+
+          (out/"jogg-public-gps-geometry-diagnostics.json").write_text(
+              json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
       - uses: actions/upload-artifact@v4
         with:
-          name: jogg-gps-diagnostics
-          path: out-jogg/jogg-public-gps-diagnostics.json
+          name: jogg-gps-geometry-diagnostics
+          path: out-jogg/jogg-public-gps-geometry-diagnostics.json
