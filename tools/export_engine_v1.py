@@ -90,7 +90,7 @@ def main():
         payload={
           "engine_contract":"loppanalys-engine-1.0",
           "event":{"event_key":"osterlen-spring-trail","name":"Österlen Spring Trail","product_title":"ÖST Analys","storage_namespace":"ost"},
-          "race_catalog":{},"courses":{},"races":{},"checkpoints":{},"splits":[],"teams":[],"team_members":[],
+          "race_catalog":{},"courses":{},"route_references":{},"races":{},"checkpoints":{},"splits":[],"teams":[],"team_members":[],
           "sources":{"curated_database":str(DB_GZ.relative_to(ROOT)),"readiness":str(READINESS.relative_to(ROOT))}
         }
         for cv,v in versions.items():
@@ -98,17 +98,26 @@ def main():
             if v.get("primary_source_path") and v.get("route_asset_status")=="archived_organizer_gpx":
                 assets["route_source"]=v["primary_source_path"]
             payload["courses"][cv]={"course_version":cv,"route_family":v["route_family"],"whole_course_comparison_group":v.get("whole_course_comparison_group"),
-                "geometry_evidence":{"status":v["status"],"geometry_hash_prefix":v.get("geometry_hash_prefix"),"derived_path_distance_km":v.get("derived_path_distance_km")},
+                "geometry_evidence":{"status":v["status"],"geometry_hash_prefix":v.get("geometry_hash_prefix"),"derived_path_distance_km":v.get("derived_path_distance_km"),
+                                     "external_reference_url":v.get("external_geometry_reference_url"),
+                                     "external_reference_role":v.get("external_geometry_reference_role")},
                 "assets":assets}
+        family_reference={}
+        for ref in course_cfg.get("reference_routes",[]):
+            rid=ref["reference_route_id"]
+            payload["route_references"][rid]=ref
+            family_reference[ref["route_family"]]=rid
         race_rows=con.execute("SELECT * FROM races ORDER BY year,race_family").fetchall()
         for rr in race_rows:
             r=dict(rr);rk=r["race_key"];rd=ready[rk];sem=competition(r["race_type"],r["race_family"]);caps=capabilities(rd)
             records=[record(x) for x in con.execute("SELECT * FROM results WHERE race_key=? ORDER BY COALESCE(overall_place,999999),name_as_published",(rk,))]
+            ref_id=family_reference.get(r["race_family"])
             item={"race_key":rk,"event_key":r["event_key"],"race_family":r["race_family"],"year":r["year"],"race_date":r["race_date"],
-                  "course_version":r["course_version"],"data_status":"available","section":r["source_race_name"] or r["race_family"],
+                  "course_version":r["course_version"],"route_reference":({"id":ref_id,"exact_year_identity":False} if ref_id else None),
+                  "data_status":"available","section":r["source_race_name"] or r["race_family"],
                   "nominal_distance_km":r["nominal_distance_km"],**sem,"capabilities":caps,"records":records}
             payload["races"][rk]=item
-            payload["race_catalog"][rk]={k:item[k] for k in ("race_key","event_key","race_family","year","race_date","course_version","data_status","section","nominal_distance_km","participant","competition","capabilities")}
+            payload["race_catalog"][rk]={k:item[k] for k in ("race_key","event_key","race_family","year","race_date","course_version","route_reference","data_status","section","nominal_distance_km","participant","competition","capabilities")}
             payload["checkpoints"][rk]=checkpoint_catalog(con,r)
         for s in con.execute("""SELECT r.race_key,r.source_result_id,r.bib,s.* FROM splits s JOIN results r USING(result_uid)
                               WHERE s.elapsed_seconds IS NOT NULL ORDER BY r.race_key,r.result_uid,s.sequence_no"""):
@@ -124,6 +133,10 @@ def main():
     assert len(payload["races"])==34
     assert sum(len(r["records"]) for r in payload["races"].values())==9871
     assert len(payload["splits"])<=6123 and len(payload["splits"])>0
+    for ref in payload["route_references"].values():
+        assert ref.get("route_source") and (ROOT/ref["route_source"]).exists(), ref
+        assert ref.get("provenance_source") and (ROOT/ref["provenance_source"]).exists(), ref
+        assert ref.get("exact_year_identity") is False, ref
     for race in payload["races"].values():
         if race["capabilities"]["replay"]:
             assert race["course_version"] and payload["courses"][race["course_version"]]["assets"].get("route_source")
