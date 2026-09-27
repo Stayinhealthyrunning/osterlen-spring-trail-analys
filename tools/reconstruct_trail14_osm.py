@@ -77,8 +77,8 @@ def main():
  for A,sa in approaches[:8]:
   for B,sb in skpaths[:25]:
    for C,sc in backpaths[:25]:
-    for D,sd in returns[:8]:
-     east_route=A+B[1:]+C[1:]+D[1:]; east=sa["length"]+sb["length"]+sc["length"]+sd["length"]
+    for P4,sd in returns[:8]:
+     east_route=A+B[1:]+C[1:]+P4[1:]; east=sa["length"]+sb["length"]+sc["length"]+sd["length"]
      if not 7000<=east<=10000 or sb["skane"]<1000 or sc["back"]<1000: continue
      edges=[frozenset((u,v)) for u,v in zip(east_route,east_route[1:])]
      overlap=sum(G[tuple(e)[0]][tuple(e)[1]]["length"] for e in set(edges) if edges.count(e)>1)
