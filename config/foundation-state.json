@@ -1,12 +1,29 @@
 {
-  "schema_version": 2,
-  "snapshot_date": "2026-09-10",
+  "schema_version": 3,
+  "snapshot_date": "2026-09-27",
   "status": "data_frozen_curated_and_engine_handoff_ready",
   "scope": {
     "analysis_start_year": 2018,
-    "held_years": [2018, 2019, 2022, 2023, 2024, 2025, 2026],
-    "cancelled_years": [2020, 2021],
-    "race_families": ["ultra60", "duo60", "trail22", "trail14", "trail5"],
+    "held_years": [
+      2018,
+      2019,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cancelled_years": [
+      2020,
+      2021
+    ],
+    "race_families": [
+      "ultra60",
+      "duo60",
+      "trail22",
+      "trail14",
+      "trail5"
+    ],
     "race_year_instances": 34
   },
   "primary_engine_input": "data/derived/ost-analysis-2018-2026.sqlite.gz",
@@ -48,7 +65,11 @@
     "engine_readiness_report": true,
     "gotaleden_engine_handoff": true,
     "foundation_consistency_validator": true,
-    "github_pages_placeholder": true
+    "github_pages_placeholder": true,
+    "short_course_raster_georeferencing": true,
+    "trail5_reference_geometry": true,
+    "trail14_reference_geometry": true,
+    "short_course_reference_route_export": true
   },
   "curated_archive": {
     "results": 9871,
@@ -80,21 +101,70 @@
   },
   "verified_timing_schema": {
     "ultra60": {
-      "2018": ["Stenshuvud km 14", "Bengtemölla km 32", "Vantalängan km 52", "Finish"],
-      "2019": ["Stenshuvud km 14", "Bengtemölla km 32", "Vantalängan km 52", "Finish Km 60+"],
-      "2022": ["32 km", "Bengtemölla", "62 km"],
-      "2023": ["32 km", "Bengtemölla", "62 km"],
-      "2024": ["34 km", "60 km"],
-      "2025": ["34 km", "60 km"],
-      "2026": ["34 km", "60 km"]
+      "2018": [
+        "Stenshuvud km 14",
+        "Bengtemölla km 32",
+        "Vantalängan km 52",
+        "Finish"
+      ],
+      "2019": [
+        "Stenshuvud km 14",
+        "Bengtemölla km 32",
+        "Vantalängan km 52",
+        "Finish Km 60+"
+      ],
+      "2022": [
+        "32 km",
+        "Bengtemölla",
+        "62 km"
+      ],
+      "2023": [
+        "32 km",
+        "Bengtemölla",
+        "62 km"
+      ],
+      "2024": [
+        "34 km",
+        "60 km"
+      ],
+      "2025": [
+        "34 km",
+        "60 km"
+      ],
+      "2026": [
+        "34 km",
+        "60 km"
+      ]
     },
     "duo60": {
-      "2019": ["Stenshuvud km 14", "Bengtemölla km 32", "Vantalängan km 52", "Finish Km 60+"],
-      "2022": ["32 km", "Bengtemölla", "62 km"],
-      "2023": ["32 km", "Bengtemölla", "62 km/Finish"],
-      "2024": ["34 km", "60 km"],
-      "2025": ["34 km", "60 km"],
-      "2026": ["34 km", "60 km"],
+      "2019": [
+        "Stenshuvud km 14",
+        "Bengtemölla km 32",
+        "Vantalängan km 52",
+        "Finish Km 60+"
+      ],
+      "2022": [
+        "32 km",
+        "Bengtemölla",
+        "62 km"
+      ],
+      "2023": [
+        "32 km",
+        "Bengtemölla",
+        "62 km/Finish"
+      ],
+      "2024": [
+        "34 km",
+        "60 km"
+      ],
+      "2025": [
+        "34 km",
+        "60 km"
+      ],
+      "2026": [
+        "34 km",
+        "60 km"
+      ],
       "member_policy": "Published member rows are retained with source_sequence. leg_no remains null until source evidence validates leg ordering."
     },
     "shorter_families": "No intermediate split table was found in the complete imported public result details; finish/result analysis remains available without synthetic splits."
@@ -118,14 +188,31 @@
       "2025": "trail22-2025-2026",
       "2026": "trail22-2025-2026"
     },
-    "trail14": "pending_route_archive",
-    "trail5": "pending_route_archive"
+    "trail14": {
+      "course_version": "unassigned_year_by_year",
+      "reference_route_id": "trail14-current-reference",
+      "reference_geometry_km": 13.084,
+      "status": "validated_organizer_raster_reference_legacy_13km",
+      "exact_current_14km_identity": false
+    },
+    "trail5": {
+      "course_version": "unassigned_year_by_year",
+      "reference_route_id": "trail5-current-reference",
+      "reference_geometry_km": 5.003,
+      "status": "validated_organizer_raster_reconstruction",
+      "exact_year_identity": false
+    }
   },
   "engine_readiness": {
     "races_with_split_analysis": 13,
     "races_with_replay_and_map_data": 6,
     "races_with_course_version": 19,
-    "rule": "Feature availability is derived from the curated database; route-dependent features require a local usable route asset."
+    "rule": "Feature availability is derived from the curated database; route-dependent features require a local usable route asset.",
+    "reference_route_maps": {
+      "trail5": "routes/ost/trail5-current-reference/route.gpx",
+      "trail14": "routes/ost/trail14-current-reference/route.gpx",
+      "semantics": "family/reference map geometry only; does not change replay readiness or create course-version assignments"
+    }
   },
   "deferred_until_next_phase_or_new_evidence": [
     {
@@ -137,8 +224,8 @@
       "reason": "Older Ultra and Trail 21/22 public geometry can establish comparability, but frontend map/replay needs a locally usable and redistribution-appropriate route asset."
     },
     {
-      "key": "trail14_trail5_course_versions",
-      "reason": "No complete verified year-by-year route geometry archive has been secured yet."
+      "key": "trail14_trail5_year_identity",
+      "reason": "Short-course geometry is now locally usable and QA-passed. What remains is exact year-by-year course-version provenance, especially legacy 13 km versus current marketed 14 km identity."
     },
     {
       "key": "trail22_2018_assignment",
@@ -169,6 +256,8 @@
     "Do not label the 32 km to Bengtemölla gap as confirmed aid-station dwell time unless physical timing-mat placement is independently verified.",
     "Do not assign Duo leg numbers from member row order without stronger source evidence.",
     "Do not infer cross-year person identity from names alone.",
-    "Do not copy the pre-refactor Gotaleden frontend wholesale into this repository."
+    "Do not copy the pre-refactor Gotaleden frontend wholesale into this repository.",
+    "Do not return to the rejected Trail 13/14 = full Trail 5 + eastern loop hypothesis; the organizer 13 km raster contains its own western loop and has a validated direct reconstruction.",
+    "Use E 437465, not E 437965, as the organizer Trail 5 raster's upper-right SWEREF 99 TM easting."
   ]
 }
