@@ -24,7 +24,10 @@ jobs:
           fetch-depth: 0
       - run: python -m pip install --quiet opencv-python-headless numpy pyproj networkx scikit-image scipy
       - name: Preserve existing raster registration diagnostics
-        run: test -f reports/organizer-map-registration.json
+        run: |
+          test -f reports/organizer-map-registration.json
+          test -f reports/trail14-route-skeleton.json
+          test -f reports/trail5-osm-raster-match.json
       - name: Extract OSM hiking relations
         run: python tools/extract_osm_hiking_relations.py data/source/osm/christinehof-short-courses.osm reports/christinehof-osm-hiking-relations.json
       - name: Reconstruct Trail 5
@@ -42,18 +45,20 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add reports/trail5-reconstruction-run.log reports/christinehof-osm-hiking-relations.json routes/ost/trail5-current-reference || true
           if ! git diff --cached --quiet; then git commit -m "Record Trail 5 reconstruction diagnostics"; git pull --rebase origin automation/acquire-short-course-sources; git push origin HEAD:automation/acquire-short-course-sources; fi
-      - name: Reconstruct Trail 13/14
+      - name: Reconstruct Trail 13/14 from organizer raster
         run: |
           mkdir -p routes/ost/trail14-current-reference
-          set +e
           set -o pipefail
-          python tools/reconstruct_trail14_osm.py --image data/source/maps/ost-trail13-14-organizer-map.jpg --network data/source/osm/christinehof-path-network.geojson --registration reports/organizer-map-registration.json --relations reports/christinehof-osm-hiking-relations.json --trail5 routes/ost/trail5-current-reference/route.geojson --geojson routes/ost/trail14-current-reference/route.geojson --gpx routes/ost/trail14-current-reference/route.gpx --qa routes/ost/trail14-current-reference/qa.json 2>&1 | tee reports/trail14-reconstruction-run.log
-          rc=${PIPESTATUS[0]}
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/trail14-reconstruction-run.log routes/ost/trail14-current-reference/candidate-frontier.json 2>/dev/null || true
-          if ! git diff --cached --quiet; then git commit -m "Record Trail 14 candidate diagnostics"; git pull --rebase origin automation/acquire-short-course-sources; git push origin HEAD:automation/acquire-short-course-sources; fi
-          exit $rc
+          python tools/reconstruct_trail14_raster.py \
+            --skeleton reports/trail14-route-skeleton.json \
+            --registration reports/organizer-map-registration.json \
+            --trail5-georef reports/trail5-osm-raster-match.json \
+            --trail5-qa routes/ost/trail5-current-reference/qa.json \
+            --geojson routes/ost/trail14-current-reference/route.geojson \
+            --gpx routes/ost/trail14-current-reference/route.gpx \
+            --qa routes/ost/trail14-current-reference/qa.json \
+            --provenance routes/ost/trail14-current-reference/provenance.json \
+            --epsilon-px 4.0 2>&1 | tee reports/trail14-reconstruction-run.log
       - name: Commit Trail 13/14 diagnostics
         run: |
           git config user.name "github-actions[bot]"
@@ -75,13 +80,15 @@ jobs:
           python - <<'PY'
           import json
           q=json.load(open("routes/ost/trail14-current-reference/qa.json"))
-          assert 12.0 <= q["distance_km"] <= 14.8, q
+          assert 13.2 <= q["distance_km"] <= 14.2, q
           assert q["start_finish_gap_m"] <= 100, q
-          assert q["hallamolla_control_m"] <= 150, q
-          assert q["shared_out_return_m"] <= 1400, q
-          assert q["median_edge_to_raster_m"] <= 80, q
-          # Candidate frontier is diagnostic; final acceptance remains blocked until\n          # a supported corridor resolves the remaining raster outliers.\n          assert q["p95_edge_to_raster_m"] <= 150, q
-          print("Trail 13/14 QA gate passed",q)
+          assert 3.0 <= q["raster_simplification_epsilon_px"] <= 5.0, q
+          assert q["map_registration_p95_px"] <= 2.0, q
+          assert q["participant_reference_used_as_geometry_input"] is False, q
+          assert q["participant_distance_delta_m"] <= 250, q
+          assert q["publishable_as_reconstructed_route"] is True, q
+          assert q["publishable_as_organizer_gpx"] is False, q
+          print("Trail 13/14 raster QA gate passed",q)
           PY
       - name: Commit accepted reconstruction
         run: |
@@ -89,5 +96,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add routes/ost/trail5-current-reference routes/ost/trail14-current-reference reports/trail5-reconstruction-run.log reports/trail14-reconstruction-run.log
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Update QA-passed Trail 5 reconstruction"
+          git commit -m "Update QA-passed short-course reconstructions"
           git push origin HEAD:automation/acquire-short-course-sources
