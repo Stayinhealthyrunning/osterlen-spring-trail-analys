@@ -1,29 +1,58 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "race": "Österlen Spring Trail",
   "course": "Naturloppet / Trail 5 km",
-  "geometry_status": "validated_reconstruction",
-  "primary_geometry_basis": "georeferenced organizer raster snapped to OpenStreetMap",
+  "geometry_status": "validated_organizer_raster_reconstruction",
+  "primary_geometry_basis": "georeferenced organizer raster centreline",
   "not_an_organizer_gpx": true,
+  "usable_as_reference_route": true,
   "sources": [
     {
       "type": "organizer_georeferenced_raster",
       "path": "data/source/maps/ost-trail5-organizer-map.jpg",
-      "role": "primary course-shape evidence"
+      "role": "primary course geometry evidence"
     },
     {
-      "type": "open_map_snapped",
+      "type": "open_map_corroboration",
       "path": "data/source/osm/christinehof-path-network.geojson",
-      "role": "vector path geometry"
+      "role": "secondary vector corroboration only; does not replace organizer centreline"
     },
     {
       "type": "text_constraint",
       "description": "Christinehof start/finish; approximately 5 km; first ~3 km easier roads/tracks and last ~2 km narrower technical trail"
+    },
+    {
+      "type": "independent_manual_control",
+      "description": "Earlier manual georeferenced raster measurement 5.002 km; generated centreline is 5.003 km."
     }
   ],
+  "calibration": {
+    "crs": "EPSG:3006",
+    "southwest": {
+      "E": 432733,
+      "N": 6173751
+    },
+    "northeast": {
+      "E": 437465,
+      "N": 6176791
+    },
+    "correction": "Earlier transcription E 437965 was wrong by +500 m; source raster visibly prints E 437465.",
+    "christinehof_translation_m": [
+      9.3,
+      111.9
+    ]
+  },
+  "qa": {
+    "distance_km": 5.003,
+    "start_finish_gap_m": 25.2,
+    "osm_vertex_median_m": 30.4,
+    "osm_vertex_p95_m": 60.2,
+    "prototype_difference_m": 0.8
+  },
   "limitations": [
-    "No accessible organizer GPX or verified participant GPX has been found for this course version.",
-    "OSM snapping may differ locally where the organizer raster and mapped path network are ambiguous."
+    "No accessible organizer GPX or verified participant raw GPX has been found for this course/version.",
+    "This is derived geometry from the organizer map and must be labelled as a reconstruction/reference, never as organizer GPX.",
+    "Year-by-year identity is not implied by the current organizer raster."
   ],
   "qa_path": "qa.json"
 }
