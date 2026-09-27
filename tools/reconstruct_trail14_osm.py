@@ -69,7 +69,7 @@ def main():
    if not 7000<=east<=9200: continue
    # A loop may share the short Christinehof/Alunbruket approach, but must not
    # collapse into an out-and-back along most of the river corridor.
-   if overlap>1400: continue
+   if overlap>2200: continue
    # Prefer two genuinely different corridors, raster fit and named hiking
    # relations. Distance is a broad plausibility term, not a target fit.
    rel_bonus=sum(G[u][v]["length"]*(0.35 if G[u][v]["skane"] or G[u][v]["back"] else 0) for P in (A[0],B[0]) for u,v in zip(P,P[1:]))
