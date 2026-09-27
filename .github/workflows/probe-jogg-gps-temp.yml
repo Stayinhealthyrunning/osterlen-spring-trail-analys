@@ -10,31 +10,65 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Inspect Mathias 2023 EkoPark pass for GPS
+      - name: Extract two public 2023 EkoPark participant GPS tracks
         shell: python
         run: |
-          import json,re,urllib.request
+          import json,re,urllib.request,math,html as htmllib
           from pathlib import Path
-          from urllib.parse import urljoin
 
-          url="https://www.jogg.se/Traning/Pass.aspx?id=23407370"
-          req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0","Accept":"text/html,*/*"})
-          with urllib.request.urlopen(req,timeout=30) as r:
-              html=r.read().decode("utf-8","replace")
-          links=[]
-          for m in re.finditer(r'(?:href|src)=["\']([^"\']+)["\']',html,re.I):
-              full=urljoin(url,m.group(1))
-              if any(t in full.lower() for t in ["gpspass","gps","map","route"]):
-                  links.append(full)
-          contexts=[]
-          for term in ["GPSPass","adid","GPS","Karta","coords","Leaflet"]:
-              for m in list(re.finditer(term,html,re.I))[:20]:
-                  contexts.append({"term":term,"context":re.sub(r'\s+',' ',html[max(0,m.start()-300):m.end()+700])[:1000]})
+          activities=[
+             {"label":"anna-karin","url":"https://www.jogg.se/Traning/GPSPass.aspx?adid=10988506"},
+             {"label":"mathias","url":"https://www.jogg.se/Traning/GPSPass.aspx?adid=10988333"}
+          ]
           out=Path("out-jogg"); out.mkdir(exist_ok=True)
-          (out/"mathias-pass-gps-links.json").write_text(json.dumps({
-             "url":url,"bytes":len(html),"links":sorted(set(links)),"contexts":contexts
-          },ensure_ascii=False,indent=2),encoding="utf-8")
+          R=6371008.8
+          def hav(a,b):
+              la1,lo1=map(math.radians,a); la2,lo2=map(math.radians,b)
+              hh=math.sin((la2-la1)/2)**2+math.cos(la1)*math.cos(la2)*math.sin((lo2-lo1)/2)**2
+              return 2*R*math.asin(min(1,math.sqrt(hh)))
+
+          summaries=[]
+          for a in activities:
+              req=urllib.request.Request(a["url"],headers={"User-Agent":"Mozilla/5.0","Accept":"text/html,*/*"})
+              with urllib.request.urlopen(req,timeout=30) as r:
+                  page=r.read().decode("utf-8","replace")
+
+              pts=None
+              m=re.search(r'id=["\']MainContent_GPSData_mapCoords["\'][^>]*value=["\']([^"\']+)["\']',page,re.I)
+              if m:
+                  val=htmllib.unescape(m.group(1))
+                  vals=re.findall(r'\[\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\]',val)
+                  pts=[(float(x),float(y)) for x,y in vals]
+              if not pts:
+                  m=re.search(r'var\s+coords\s*=\s*',page)
+                  if not m: raise RuntimeError(a["label"]+": no coords")
+                  start=page.find("[",m.end()); depth=0; end=None
+                  for i,ch in enumerate(page[start:],start):
+                      if ch=="[": depth+=1
+                      elif ch=="]":
+                          depth-=1
+                          if depth==0: end=i+1; break
+                  pts=[(float(x),float(y)) for x,y,*_ in json.loads(page[start:end])]
+
+              dist=sum(hav(x,y) for x,y in zip(pts,pts[1:]))
+              summaries.append({
+                 "label":a["label"],"source_url":a["url"],"point_count":len(pts),
+                 "path_km":round(dist/1000,3),"start":pts[0],"finish":pts[-1],
+                 "start_finish_gap_m":round(hav(pts[0],pts[-1]),1),
+                 "bounds":{"lat":[min(p[0] for p in pts),max(p[0] for p in pts)],
+                           "lon":[min(p[1] for p in pts),max(p[1] for p in pts)]}
+              })
+              gpx=['<?xml version="1.0" encoding="UTF-8"?>',
+                   '<gpx version="1.1" creator="OST analysis" xmlns="http://www.topografix.com/GPX/1/1">',
+                   f'<metadata><name>ÖST EkoPark 2023 participant GPS - {a["label"]}</name></metadata>',
+                   f'<trk><name>ÖST EkoPark 2023 participant GPS - {a["label"]}</name><trkseg>']
+              for lat,lon in pts:
+                  gpx.append(f'<trkpt lat="{lat:.9f}" lon="{lon:.9f}"/>')
+              gpx += ['</trkseg></trk></gpx>']
+              (out/f'{a["label"]}-2023-ekopark-public-gps.gpx').write_text("\n".join(gpx)+"\n",encoding="utf-8")
+
+          (out/"summary.json").write_text(json.dumps(summaries,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
       - uses: actions/upload-artifact@v4
         with:
-          name: mathias-pass-gps-links
-          path: out-jogg/mathias-pass-gps-links.json
+          name: two-2023-ekopark-public-gps
+          path: out-jogg/
