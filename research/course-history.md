@@ -27,3 +27,7 @@ Trail 5-kartan georefereras med SWEREF 99 TM. Vid visuell kontroll av originalbi
 Trail 13/14 rekonstrueras nu från sin **egen** arrangörsraster, inte som "hela Trail 5 + östslinga". Den legacy-märkta 13 km-kartan ger **13.084 km** efter borttagning av pixeltrappning. Hallamölla ligger 9.6 m från linjen och passeras med 4.634 km kvar, vilket oberoende stämmer väl med 2023 års deltagarmetadata.
 
 Det som fortfarande saknas är inte familjegeometri utan **årsspecifik identitet**: ett komplett verifierat GPX-arkiv för samtliga analysår finns inte, och den nuvarande 14 km-sidan bäddar fortfarande in en legacy-karta märkt 13 km. Referensrutterna får därför användas för kart-/terrängvisning med tydlig provenance men får inte fabricera course-version-identitet mellan år.
+
+## Trail 21/22 2018 triangulering
+
+2018 års formella banassignment bygger inte på Trace-datumfältet ensamt. Kandidat 7897 har `dateCompet=16/04/2016`, men oberoende 2018-kontroller ger en samstämmig bild: 21,688 km mot officiella 21,7 km och deltagarklocka 22,03 km; 482 m kumulativ D+ mot officiella 490 m; Vantalängan vid km 13,292 och Hallamölla 4,6 m från linjen. Kandidaten ligger dessutom 100 % inom 50 m från 2019 års verifierade korridor. Den hålls därför som en separat `trail22-2018-triangulated`-version med explicit provenance-varning, inte som en direkt 2018-Trace-källa.
