@@ -145,7 +145,8 @@ Nuvarande dataläge:
 - `config/elevation-policy.json` – gemensam metod för källhöjd och standardiserad DEM-höjd.
 - `reports/route-elevation-evidence.json` – källspecifik historisk höjdevidens utan lagrade koordinatserier.
 - `config/checkpoint-normalization.json` – årsspecifik timingsemantik.
-- `research/gotaleden-engine-handoff.md` – instruktioner för nästa integrationsfas.\n- `research/final-prebuild-checklist-2026-09-27.md` – konkret startordning, acceptance cases och kända icke-blockerande källfrågor inför stora bygget.
+- `research/gotaleden-engine-handoff.md` – instruktioner för nästa integrationsfas.
+- `research/final-prebuild-checklist-2026-09-27.md` – konkret startordning, acceptance cases och kända icke-blockerande källfrågor inför stora bygget.
 
 ## Validering
 
