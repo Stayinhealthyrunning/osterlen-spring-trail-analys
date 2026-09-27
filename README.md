@@ -97,6 +97,7 @@ Ultra 60:
 
 Trail 21/22:
 
+- 2018 har nu en separat triangulerad banversion. Trace-kandidatens `dateCompet=2016` behålls som provenance-varning, men 2018-identiteten stöds av officiell 21,7 km/490 m+-data, deltagarklocka 22,03 km, Vantalängan-kontroll och stark korridormatchning mot 2019.
 - 2019 är separat men starkt kompatibel med senare år.
 - 2022–2024 har exakt samma publika kartgeometri.
 - 2025–2026 har exakt samma publika kartgeometri och är mycket nära 2024.
@@ -118,7 +119,7 @@ Nuvarande dataläge:
 
 - **13** race-instansers verkliga splits räcker för splitanalys.
 - **6** race-instansers kombination av splits + exakt lokal course-version-route räcker redan för replay/kartduell: Ultra och Duo 2024–2026.
-- **19** race-instansers course version är verifierad.
+- **20** race-instansers course version är verifierad.
 - Trail 5 och Trail 13/14 har dessutom lokala **family/reference routes** för kart-/terrängvisning utan att falskt tilldela ett år en course version.
 - Kortare lopp saknar publicerade mellantider och får därför inte syntetisk replay, även när en referensrutt kan visas.
 
@@ -163,4 +164,4 @@ GitHub Action `Validate ÖST foundation` kör samma konsistenskontroll automatis
 
 När Gotaleden-kärnans generiska refaktorering är färdig ska arbetet börja med adapter/integration mot `data/derived/ost-analysis-2018-2026.sqlite.gz`.
 
-Det behövs **ingen ny ÖST-förstudie och ingen ny Sportstiming-import av 2018–2026** innan dess. Kortbanornas referensgeometri är nu löst. Verkliga återstående källfrågor gäller främst redistributionsgodkända lokala ruttfiler för äldre Ultra/Trail 21/22, exakt årsspecifik identitet för Trail 13/14 och 5 km, Trail 21/22 år 2018, Duo-etappordning, historiska kön/åldersluckor och en separat metod för säker cross-year personmatchning.
+Det behövs **ingen ny ÖST-förstudie och ingen ny Sportstiming-import av 2018–2026** innan dess. Kortbanornas referensgeometri är nu löst. Verkliga återstående källfrågor gäller främst redistributionsgodkända lokala ruttfiler för äldre Ultra/Trail 21/22, exakt årsspecifik identitet för Trail 13/14 och 5 km, Duo-etappordning, historiska kön/åldersluckor och en separat metod för säker cross-year personmatchning.
