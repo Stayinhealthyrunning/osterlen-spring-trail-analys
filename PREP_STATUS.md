@@ -81,3 +81,8 @@ Maskinläsbar budget finns i `config/frontend-performance-budget.json`. Reproduc
 Förberedelsefasen betraktas som avslutad när foundation-validatorn är grön på denna version av `main`. Inför det stora bygget ska även `research/final-prebuild-checklist-2026-09-27.md` läsas. Därefter ska nästa utvecklingssteg vara adapter/integration mot den färdigrefaktorerade Gotaleden-kärnan — inte ny Sportstiming-import, ny banförstudie eller parallell frontend-fork.
 
 När Gotaleden-kärnan är färdig ska arbetet alltså börja med **adapter/integration mot den redan färdiga kuraterade ÖST-datan**, inte med en ny förstudie eller ny resultatimport.
+
+
+## Frontend delivery / performance
+
+Den verkliga Engine 1.0-exporten har profilerats på hela den kuraterade datamängden. Monoliten är **5,417,501 byte rå JSON / 450,548 byte gzip**. En metadata-bootstrap är **27,041 byte rå / 1,980 byte gzip**, och största uppmätta valda race-bundle ligger kring **29 KB gzip**. Därför ska frontenden använda **bootstrap + race-edition-shards**, inte ladda hela Engine-payloaden vid start. Maskinläsbar budget finns i `config/performance-budget.json`, arkitektur i `research/frontend-delivery-architecture.md`, och CI verifierar budgeten via `tools/validate_performance_budget.py`.
