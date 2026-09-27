@@ -41,7 +41,7 @@ def graph(net,tr):
                 e=(l,pr.get('osm_way_id'),pr.get('highway'));adj[u].append((v,*e));adj[v].append((u,*e))
     return ll,xy,adj,cKDTree(np.asarray(xy,float))
 
-def candidates(tree,p,k=6,maxd=190.):
+def candidates(tree,p,k=12,maxd=230.):
     d,i=tree.query(np.asarray(p),k=min(k,tree.n));d=np.atleast_1d(d);i=np.atleast_1d(i)
     z=[(int(n),float(x)) for x,n in zip(d,i) if x<=maxd]
     return z or [(int(i[0]),float(d[0]))]
@@ -56,7 +56,7 @@ def dij(adj,xy,src,targets,P,want_prev=False):
             ek=(min(u,v),max(u,v))
             if ek not in cache:
                 m=((xy[u][0]+xy[v][0])/2,(xy[u][1]+xy[v][1])/2);cache[ek]=line_dist(m,P)
-            dv=min(cache[ek],220.); nd=du+l*(1+(dv/42.)**2)
+            dv=min(cache[ek],240.); nd=du+l*(1+(dv/65.)**2)
             if nd<cost.get(v,1e100):cost[v]=nd;phys[v]=phys[u]+l;prev[v]=u;heapq.heappush(q,(nd,v))
     return found,prev
 
@@ -72,7 +72,7 @@ def main():
     for x in ('guide','network','geojson','gpx','qa'):ap.add_argument('--'+x,required=True)
     a=ap.parse_args();guide=json.loads(Path(a.guide).read_text());net=json.loads(Path(a.network).read_text())
     tr=Transformer.from_crs(4326,3006,always_xy=True);back=Transformer.from_crs(3006,4326,always_xy=True)
-    gl=[tr.transform(*p) for p in guide['geometry']['coordinates']]; fine=resample(gl,40.); step=6
+    gl=[tr.transform(*p) for p in guide['geometry']['coordinates']]; fine=resample(gl,40.); step=7
     ai=list(range(0,len(fine),step))
     if ai[-1]!=len(fine)-1:ai.append(len(fine)-1)
     ll,xy,adj,tree=graph(net,tr); layers=[candidates(tree,fine[i]) for i in ai]
@@ -82,10 +82,10 @@ def main():
         for src,(base,_) in dp.items():
             found,_=dij(adj,xy,src,nxt,P)
             for tgt,(wc,pl) in found.items():
-                ratio=pl/max(1,rl); pen=2.2*abs(pl-rl)
-                if ratio<.45:pen+=(.45-ratio)*rl*35
-                if ratio>1.9:pen+=(ratio-1.9)*rl*35
-                score=base+wc+pen+3*snap[tgt]
+                ratio=pl/max(1,rl); pen=10.0*abs(pl-rl)
+                if ratio<.50:pen+=(.50-ratio)*rl*100
+                if ratio>1.70:pen+=(ratio-1.70)*rl*100
+                score=base+wc+pen+2*snap[tgt]
                 if score<ndp.get(tgt,(1e100,None))[0]:ndp[tgt]=(score,src);bk[tgt]=src
         if not ndp:raise RuntimeError(f'no transition {z}')
         dp=ndp;backs.append(bk)
