@@ -104,20 +104,30 @@ def fit_registration(merc, red):
     return z,q,dd,tree
 
 def snap_ordered(projected, tree, red, z):
-    # Snap each ordered transient route sample to the visible organizer-PDF line.
-    # Use every ~10th original point to avoid encoding raster aliasing.
+    # Snap every ordered transient route sample to the visible organizer-PDF line.
+    # Keeping the full ordered sampling is important: pre-subsampling cut corners
+    # on the winding trail and shortened the route by >1 km.
     sx,sy,tx,ty=z
-    out=[]
-    for i,q in enumerate(projected):
-        if i and i%8: continue
-        d,idx=tree.query(q,k=1)
+    pixel_path=[]
+    for q in projected:
+        _,idx=tree.query(q,k=1)
         px,py=red[idx]
-        mx=(px-tx)/sx
-        my=(ty-py)/sy
+        p=(float(px),float(py))
+        if not pixel_path or math.hypot(p[0]-pixel_path[-1][0],p[1]-pixel_path[-1][1])>=0.5:
+            pixel_path.append(p)
+
+    # Simplify only after snapping to the organizer line. A sub-pixel epsilon
+    # removes anti-aliasing jitter while retaining real bends in the mapped line.
+    arr=np.asarray(pixel_path,dtype=np.float32).reshape(-1,1,2)
+    simp=cv2.approxPolyDP(arr,0.65,False).reshape(-1,2)
+
+    out=[]
+    for px,py in simp:
+        mx=(float(px)-tx)/sx
+        my=(ty-float(py))/sy
         lat,lon=merc_to_wgs(mx,my)
-        if not out or hav(out[-1],(lat,lon))>2.0:
+        if not out or hav(out[-1],(lat,lon))>1.0:
             out.append((lat,lon))
-    # ensure closure from the organizer line near the finish
     if out and hav(out[0],out[-1])<100:
         out[-1]=out[0]
     return out
@@ -169,6 +179,7 @@ def main():
       "organizer_pdf_descent_m":480,
       "distance_km":round(total/1000,3),
       "point_count":len(snapped),
+      "post_snap_simplification_px":0.65,
       "trace_registration_role":"transient registration/order only; no Trace coordinate array persisted",
       "trace_registration_id":69864,
       "registration_pixel_distance":{
