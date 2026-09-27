@@ -1,11 +1,12 @@
 {
   "schema_version": 1,
-  "updated": "2026-09-26",
-  "purpose": "No-account/open-map reconstruction inputs for ÖST short-course geometry. This configuration retrieves candidate geometry; it does not declare a canonical race route.",
+  "updated": "2026-09-27",
+  "purpose": "Organizer-raster reconstruction inputs for ÖST short-course geometry. The organizer raster is primary geometry evidence; OSM is corroboration and must not override the visible race line.",
   "evidence_hierarchy": [
-    "organizer_raster_route_choice",
-    "openstreetmap_candidate_vector_geometry",
+    "organizer_raster_route_choice_and_georeferencing",
     "participant_race_day_gps_validation",
+    "openstreetmap_vector_corroboration",
+    "official_local_trail_corroboration",
     "suunto_public_heatmap_corroboration",
     "organic_maps_visual_qa",
     "satellite_visual_qa"
@@ -20,7 +21,7 @@
         "N": 6173751
       },
       "northeast": {
-        "E": 437965,
+        "E": 437465,
         "N": 6176791
       }
     },
@@ -28,9 +29,9 @@
       "epsg": 4326,
       "west": 13.929567,
       "south": 55.704858,
-      "east": 14.012122,
-      "north": 55.732867,
-      "note": "Derived from approximate organizer-raster SWEREF controls; retrieval envelope only, not course geometry."
+      "east": 14.004161,
+      "north": 55.732802,
+      "note": "Derived from organizer-raster SWEREF controls. The east frame value is E 437465 as printed on the source image; an earlier transcription of E 437965 inflated reconstructed geometry."
     },
     "external_gross_control": {
       "name": "Christinehof Castle",
@@ -54,11 +55,12 @@
       "measured_length_km": 5.002,
       "sampled_vertex_count": 62,
       "sampled_vertices_persisted": false,
-      "canonical_geometry": false
+      "canonical_geometry": false,
+      "note": "The 5.002 km manual control independently agrees with the corrected E 437465 raster calibration. Production reconstruction is generated directly from the organizer raster centreline with OSM as corroboration only."
     }
   },
   "source_roles": {
-    "openstreetmap": "candidate_vector_geometry",
+    "openstreetmap": "secondary_vector_corroboration_not_primary_geometry",
     "organic_maps": "human_visual_qa_same_osm_family",
     "suunto_heatmap": "independent_aggregate_activity_corroboration_not_race_specific",
     "google_satellite": "tertiary_visual_alignment_only"
