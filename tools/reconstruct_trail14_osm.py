@@ -66,10 +66,10 @@ def main():
  for i,A in enumerate(first):
   for B in first[i+1:]:
    overlap=sum(G[tuple(e)[0]][tuple(e)[1]]["length"] for e in A[3]&B[3]); east=A[1]+B[1]
-   if not 6500<=east<=10500: continue
+   if not 6500<=east<=8800: continue
    # A loop may share the short Christinehof/Alunbruket approach, but must not
    # collapse into an out-and-back along most of the river corridor.
-   if overlap>4000: continue
+   if overlap>1400: continue
    # Prefer two genuinely different corridors, raster fit and named hiking
    # relations. Distance is a broad plausibility term, not a target fit.
    rel_bonus=sum(G[u][v]["length"]*(0.35 if G[u][v]["skane"] or G[u][v]["back"] else 0) for P in (A[0],B[0]) for u,v in zip(P,P[1:]))
