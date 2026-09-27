@@ -8,7 +8,7 @@
   "course": {
     "race_family": "trail5",
     "target_year": 2026,
-    "advertised_distance_km": 5.0,
+    "advertised_distance_km": 5,
     "start_finish": [
       {
         "name": "Christinehof",
@@ -58,12 +58,22 @@
     }
   },
   "calibration": {
-    "georeferenced_raster_length_km": 5.002,
-    "raw_trace_vertices_persisted": false
+    "organizer_raster_skeleton_length_km": 5.545,
+    "raster_skeleton_point_count": 971,
+    "osm_snapped_reference_length_km": 5.481,
+    "difference_m": 64,
+    "interpretation": "The full-resolution organizer-raster skeleton and OSM-snapped reconstruction independently agree within 64 m. The earlier non-persisted 62-vertex 5.002 km prototype is superseded."
   },
   "output": {
     "course_version_id": "trail5-current-reference",
     "allow_candidate_gpx": true,
-    "require_provenance_sidecar": true
+    "require_provenance_sidecar": true,
+    "geometry_status": "validated_reconstruction",
+    "route_geojson": "routes/ost/trail5-current-reference/route.geojson",
+    "route_gpx": "routes/ost/trail5-current-reference/route.gpx",
+    "qa": "routes/ost/trail5-current-reference/qa.json",
+    "provenance": "routes/ost/trail5-current-reference/provenance.json",
+    "publication_label": "reconstructed from georeferenced organizer map and open-map path geometry",
+    "exact_year_identity_status": "current_organizer_reference_supported; historical_identity_unresolved"
   }
 }
