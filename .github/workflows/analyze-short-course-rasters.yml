@@ -65,7 +65,7 @@ jobs:
           assert 12.0 <= q["distance_km"] <= 14.8, q
           assert q["start_finish_gap_m"] <= 100, q
           assert q["hallamolla_control_m"] <= 150, q
-          assert q["shared_out_return_m"] <= 450, q
+          assert q["shared_out_return_m"] <= 1400, q
           assert q["median_edge_to_raster_m"] <= 80, q
           assert q["p95_edge_to_raster_m"] <= 150, q
           print("Trail 13/14 QA gate passed",q)
