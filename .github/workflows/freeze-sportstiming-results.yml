@@ -1,19 +1,10 @@
 name: Freeze Sportstiming results
 
+# The 2018-2026 source archive is intentionally frozen. Re-fetching all public
+# results is an explicit maintenance operation, never a side effect of normal
+# frontend/config development.
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - 'tools/fetch_sportstiming_snapshot.py'
-      - 'tools/normalize_sportstiming_snapshot.py'
-      - 'tools/normalize_sportstiming_team_snapshot.py'
-      - 'tools/build_frozen_results_db.py'
-      - 'tools/run_full_sportstiming_import.py'
-      - 'data/source/sportstiming/class-catalog.json'
-      - 'config/checkpoint-normalization.json'
-      - '.github/workflows/freeze-sportstiming-results.yml'
-
 concurrency:
   group: ost-frozen-results
   cancel-in-progress: false
