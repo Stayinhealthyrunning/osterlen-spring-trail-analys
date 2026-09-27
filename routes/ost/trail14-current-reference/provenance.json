@@ -2,10 +2,10 @@
   "schema_version": "1.1",
   "race": "Österlen Spring Trail",
   "course": "Trail 13/14 km",
-  "geometry_status": "validated_raster_reference",
+  "geometry_status": "superseded_raster_candidate",
   "primary_geometry_basis": "georeferenced organizer raster topology",
   "not_an_organizer_gpx": true,
-  "publishable_as_reconstructed_reference": true,
+  "publishable_as_reconstructed_reference": false,
   "sources": [
     {
       "type": "organizer_georeferenced_raster",
@@ -58,11 +58,21 @@
     "The current organizer material retains a legacy 13 km map/profile while the modern event is marketed as about 14 km; exact year-to-year course identity is therefore not asserted.",
     "The 2023 participant watch distance of 13.67 km is an independent plausibility observation, not a calibration target for route length.",
     "Participant evidence is used to choose route direction because her race note places Hallamölla 4.5 km from the finish; the selected raster topology independently yields 4.524 km.",
-    "OSM is not used as the authoritative geometry where its graph conflicts with the organizer raster topology."
+    "OSM is not used as the authoritative geometry where its graph conflicts with the organizer raster topology.",
+    "This 14.249 km raster-derived geometry is retained only as a historical reconstruction artifact and must not be selected by the engine/frontend as the current Trail 13/14 reference."
   ],
   "reproducibility": {
     "tool": "tools/reconstruct_trail14_raster_topology.py",
     "skeleton": "reports/trail14-route-skeleton.json",
     "registration": "reports/organizer-map-registration.json"
+  },
+  "superseded_on": "2026-09-27",
+  "superseded_reason": "Visual inspection against real map context showed systematic corridor displacement. The preferred working hypothesis is now a 13.472 km Hallamölla splice recipe derived from Trail 21/22 2022-2024, pending authentic participant/organizer GPX.",
+  "replacement_reference": {
+    "course_version_id": "trail14-current-reference",
+    "status": "provisional_hallamolla_splice_reference",
+    "derived_distance_km": 13.472,
+    "stored_route_asset": false,
+    "rationale": "Use the verified Trail 21/22 2022-2024 geometry to Hallamölla, remove the eastern loop between two nearly identical Hallamölla passages, then continue on the same verified geometry to finish."
   }
 }
