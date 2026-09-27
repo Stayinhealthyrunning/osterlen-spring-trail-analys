@@ -4,9 +4,9 @@
   "organizer_pdf_label_km": 21.8,
   "organizer_pdf_ascent_m": 480,
   "organizer_pdf_descent_m": 480,
-  "distance_km": 22.06,
-  "point_count": 456,
-  "post_snap_simplification_px": 0.65,
+  "distance_km": 21.697,
+  "point_count": 218,
+  "post_snap_simplification_px": 1.5,
   "trace_registration_role": "transient registration/order only; no Trace coordinate array persisted",
   "trace_registration_id": 69864,
   "registration_pixel_distance": {
