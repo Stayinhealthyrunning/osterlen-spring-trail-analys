@@ -1,0 +1,51 @@
+{
+  "schema_version": 2,
+  "status": "georeferenced_organizer_raster_reference",
+  "distance_km": 14.249,
+  "participant_2023_reference_km": 13.67,
+  "hallamolla_at_km": 9.725,
+  "hallamolla_remaining_km": 4.524,
+  "participant_hallamolla_remaining_km": 4.5,
+  "hallamolla_control_m": 99.8,
+  "start_finish_gap_m": 35.7,
+  "selected_start_tail": 0,
+  "selected_cycle_direction": "reverse",
+  "tail_lengths_km": [
+    5.552,
+    1.596
+  ],
+  "cycle_length_km": 7.1,
+  "map_registration_median_px": 0.240141823887825,
+  "map_registration_p95_px": 1.5684036016464233,
+  "variants": [
+    {
+      "start_tail": 0,
+      "direction": "forward",
+      "distance_km": 14.257,
+      "hall_remaining_km": 5.773,
+      "hall_control_m": 99.8
+    },
+    {
+      "start_tail": 0,
+      "direction": "reverse",
+      "distance_km": 14.249,
+      "hall_remaining_km": 4.524,
+      "hall_control_m": 99.8
+    },
+    {
+      "start_tail": 1,
+      "direction": "forward",
+      "distance_km": 14.257,
+      "hall_remaining_km": 9.729,
+      "hall_control_m": 99.8
+    },
+    {
+      "start_tail": 1,
+      "direction": "reverse",
+      "distance_km": 14.249,
+      "hall_remaining_km": 8.48,
+      "hall_control_m": 99.8
+    }
+  ],
+  "topology_qa_pass": true
+}
