@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "status": "blocked_by_qa",
+  "distance_km": 17.554,
+  "guide_distance_km": 14.249,
+  "hallamolla_at_km": 11.052,
+  "hallamolla_remaining_km": 6.501,
+  "hallamolla_control_m": 36.6,
+  "start_finish_gap_m": 60.2,
+  "anchor_count": 61,
+  "anchor_snap_median": 52.8,
+  "anchor_snap_p95": 111.2,
+  "edge_to_guide_median": 35.7,
+  "edge_to_guide_p95": 110.1,
+  "edge_to_guide_max": 197.3,
+  "duplicate_edge_m": 5118.6,
+  "osm_way_count": 51,
+  "highway_types": [
+    "path",
+    "residential",
+    "service",
+    "tertiary",
+    "track",
+    "unclassified"
+  ],
+  "qa_pass": false
+}
