@@ -40,3 +40,7 @@ A mostly certain course can contain one unresolved fork. Confidence is therefore
 ## Calibration
 
 ÖST Trail 5 is the first raster-to-network calibration case: its georeferenceable organizer map produced a 5.002 km manual control measurement. Trail 13/14 tests named-corridor constraints around Christinehof, Alunbruket, Verkeån and Hallamölla. The engine is intentionally race-neutral so it can later move into the shared Loppanalys codebase.
+
+## Authentic geometry precedence
+
+Route reconstruction is a fallback, never a replacement for authentic course geometry. For the relevant course/version, use organizer GPX directly when available. If organizer GPX is unavailable, prefer verified participant GPS (consensus before single trace). Official trail GPX may constrain only the race segments demonstrably sharing that trail; it must never be relabelled as race GPX. Raster/OSM reconstruction is permitted only for missing geometry or QA. Conflicts remain unresolved rather than being forced to a nominal distance.

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Dependency-free regression tests for the generic route engine."""
 import importlib.util
+import unittest
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -47,7 +48,12 @@ def test_clear_alternative_resolves():
     assert r["resolution_status"] == "resolved"
     assert r["selected_alternative_id"] == "a"
 
+class RouteEngineRegression(unittest.TestCase):
+    def test_independence_group(self): test_independence_group_not_double_counted()
+    def test_independent_sources(self): test_independent_sources_combine()
+    def test_hard_contradiction(self): test_hard_contradiction_disqualifies()
+    def test_close_alternatives(self): test_close_alternatives_remain_unresolved()
+    def test_clear_alternative(self): test_clear_alternative_resolves()
+
 if __name__=="__main__":
-    for name,value in sorted(globals().copy().items()):
-        if name.startswith("test_") and callable(value):
-            value(); print("PASS",name)
+    unittest.main()

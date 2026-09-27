@@ -1,0 +1,20 @@
+{
+  "distance_km": 5.481,
+  "nominal_km": 5.0,
+  "route_points": 141,
+  "anchors": 17,
+  "raster_translation_m": [
+    -198.3,
+    111.9
+  ],
+  "max_anchor_to_osm_m": 83.3,
+  "median_route_to_raster_m": 34.3,
+  "p95_route_to_raster_m": 84.8,
+  "start_finish_gap_m": 0.0,
+  "osm_way_count": 14,
+  "highway_types": [
+    "path",
+    "service",
+    "track"
+  ]
+}

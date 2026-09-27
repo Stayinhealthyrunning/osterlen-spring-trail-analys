@@ -8,14 +8,26 @@
   "course": {
     "race_family": "trail14",
     "target_year": 2026,
-    "advertised_distance_km": 14.0,
+    "advertised_distance_km": 14,
     "start_finish": [
-      {"name": "Christinehof", "role": "start_finish_area"}
+      {
+        "name": "Christinehof",
+        "role": "start_finish_area"
+      }
     ],
     "known_controls": [
-      {"name": "Alunbruket", "role": "corridor_control"},
-      {"name": "Verkeån", "role": "river_corridor"},
-      {"name": "Hallamölla", "role": "race_control_and_midcourse_area"}
+      {
+        "name": "Alunbruket",
+        "role": "corridor_control"
+      },
+      {
+        "name": "Verkeån",
+        "role": "river_corridor"
+      },
+      {
+        "name": "Hallamölla",
+        "role": "race_control_and_midcourse_area"
+      }
     ],
     "known_named_corridors": [
       "Christinehof to Alunbruket",
@@ -31,14 +43,22 @@
   },
   "sources": {
     "organizer_gpx": [],
-    "organizer_maps": ["organizer-trail14-current-map"],
-    "participant_gps": ["jogg-2023-trail14-anna-karin-d"],
-    "official_local_trails": ["Christinehof Ekopark Hallamöllaleden corridor"],
+    "organizer_maps": [
+      "organizer-trail14-current-map"
+    ],
+    "participant_gps": [
+      "jogg-2023-trail14-anna-karin-d"
+    ],
+    "official_local_trails": [
+      "Christinehof Ekopark Hallamöllaleden corridor"
+    ],
     "text_descriptions": [
       "current 14 km Race-PM",
       "organizer-2021-short-course-description"
     ],
-    "heatmaps": ["Suunto trail-running heatmap when visually available"],
+    "heatmaps": [
+      "Suunto trail-running heatmap when visually available"
+    ],
     "satellite_or_imagery": []
   },
   "network": {
@@ -52,7 +72,9 @@
   ],
   "output": {
     "course_version_id": "trail14-current-reference",
-    "allow_candidate_gpx": true,
-    "require_provenance_sidecar": true
+    "allow_candidate_gpx": false,
+    "require_provenance_sidecar": true,
+    "geometry_status": "unresolved",
+    "blocker": "Authentic organizer/participant geometry or stronger vector evidence required before publication."
   }
 }
