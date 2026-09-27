@@ -8,7 +8,7 @@
   "course": {
     "race_family": "trail5",
     "target_year": 2026,
-    "advertised_distance_km": 5.0,
+    "advertised_distance_km": 5,
     "start_finish": [
       {
         "name": "Christinehof",
@@ -53,17 +53,23 @@
     "bbox_wgs84": {
       "west": 13.929567,
       "south": 55.704858,
-      "east": 14.012122,
-      "north": 55.732867
+      "east": 14.004161,
+      "north": 55.732802
     }
   },
   "calibration": {
-    "georeferenced_raster_length_km": 5.002,
-    "raw_trace_vertices_persisted": false
+    "georeferenced_raster_length_km": 5.003,
+    "independent_manual_control_km": 5.002,
+    "sweref99tm_northeast_e": 437465,
+    "previous_transcription_error_e": 437965,
+    "geometry_basis": "organizer raster centreline; OSM corroboration only"
   },
   "output": {
     "course_version_id": "trail5-current-reference",
     "allow_candidate_gpx": true,
-    "require_provenance_sidecar": true
+    "require_provenance_sidecar": true,
+    "geometry_status": "validated_organizer_raster_reconstruction",
+    "route_path": "routes/ost/trail5-current-reference/route.gpx",
+    "exact_year_identity_verified": false
   }
 }
