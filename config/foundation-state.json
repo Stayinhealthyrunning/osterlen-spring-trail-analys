@@ -1,12 +1,29 @@
 {
   "schema_version": 2,
-  "snapshot_date": "2026-09-10",
+  "snapshot_date": "2026-09-27",
   "status": "data_frozen_curated_and_engine_handoff_ready",
   "scope": {
     "analysis_start_year": 2018,
-    "held_years": [2018, 2019, 2022, 2023, 2024, 2025, 2026],
-    "cancelled_years": [2020, 2021],
-    "race_families": ["ultra60", "duo60", "trail22", "trail14", "trail5"],
+    "held_years": [
+      2018,
+      2019,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "cancelled_years": [
+      2020,
+      2021
+    ],
+    "race_families": [
+      "ultra60",
+      "duo60",
+      "trail22",
+      "trail14",
+      "trail5"
+    ],
     "race_year_instances": 34
   },
   "primary_engine_input": "data/derived/ost-analysis-2018-2026.sqlite.gz",
@@ -48,7 +65,8 @@
     "engine_readiness_report": true,
     "gotaleden_engine_handoff": true,
     "foundation_consistency_validator": true,
-    "github_pages_placeholder": true
+    "github_pages_placeholder": true,
+    "trail14_provisional_hallamolla_splice_reference": true
   },
   "curated_archive": {
     "results": 9871,
@@ -80,21 +98,70 @@
   },
   "verified_timing_schema": {
     "ultra60": {
-      "2018": ["Stenshuvud km 14", "Bengtemölla km 32", "Vantalängan km 52", "Finish"],
-      "2019": ["Stenshuvud km 14", "Bengtemölla km 32", "Vantalängan km 52", "Finish Km 60+"],
-      "2022": ["32 km", "Bengtemölla", "62 km"],
-      "2023": ["32 km", "Bengtemölla", "62 km"],
-      "2024": ["34 km", "60 km"],
-      "2025": ["34 km", "60 km"],
-      "2026": ["34 km", "60 km"]
+      "2018": [
+        "Stenshuvud km 14",
+        "Bengtemölla km 32",
+        "Vantalängan km 52",
+        "Finish"
+      ],
+      "2019": [
+        "Stenshuvud km 14",
+        "Bengtemölla km 32",
+        "Vantalängan km 52",
+        "Finish Km 60+"
+      ],
+      "2022": [
+        "32 km",
+        "Bengtemölla",
+        "62 km"
+      ],
+      "2023": [
+        "32 km",
+        "Bengtemölla",
+        "62 km"
+      ],
+      "2024": [
+        "34 km",
+        "60 km"
+      ],
+      "2025": [
+        "34 km",
+        "60 km"
+      ],
+      "2026": [
+        "34 km",
+        "60 km"
+      ]
     },
     "duo60": {
-      "2019": ["Stenshuvud km 14", "Bengtemölla km 32", "Vantalängan km 52", "Finish Km 60+"],
-      "2022": ["32 km", "Bengtemölla", "62 km"],
-      "2023": ["32 km", "Bengtemölla", "62 km/Finish"],
-      "2024": ["34 km", "60 km"],
-      "2025": ["34 km", "60 km"],
-      "2026": ["34 km", "60 km"],
+      "2019": [
+        "Stenshuvud km 14",
+        "Bengtemölla km 32",
+        "Vantalängan km 52",
+        "Finish Km 60+"
+      ],
+      "2022": [
+        "32 km",
+        "Bengtemölla",
+        "62 km"
+      ],
+      "2023": [
+        "32 km",
+        "Bengtemölla",
+        "62 km/Finish"
+      ],
+      "2024": [
+        "34 km",
+        "60 km"
+      ],
+      "2025": [
+        "34 km",
+        "60 km"
+      ],
+      "2026": [
+        "34 km",
+        "60 km"
+      ],
       "member_policy": "Published member rows are retained with source_sequence. leg_no remains null until source evidence validates leg ordering."
     },
     "shorter_families": "No intermediate split table was found in the complete imported public result details; finish/result analysis remains available without synthetic splits."
@@ -118,8 +185,18 @@
       "2025": "trail22-2025-2026",
       "2026": "trail22-2025-2026"
     },
-    "trail14": "pending_route_archive",
-    "trail5": "pending_route_archive"
+    "trail14": {
+      "2026_working_reference": "trail14-current-reference",
+      "status": "provisional_hallamolla_splice_reference",
+      "derived_distance_km": 13.472,
+      "route_asset_available": false,
+      "authentic_gpx_target": true
+    },
+    "trail5": {
+      "2026_working_reference": "trail5-current-reference",
+      "status": "verified_current_organizer_raster_reconstruction",
+      "derived_distance_km": 5.481
+    }
   },
   "engine_readiness": {
     "races_with_split_analysis": 13,
@@ -138,7 +215,7 @@
     },
     {
       "key": "trail14_trail5_course_versions",
-      "reason": "No complete verified year-by-year route geometry archive has been secured yet."
+      "reason": "Trail 14 now has a provisional 13.472 km Hallamölla splice working reference and Trail 5 has a 2026 reconstructed reference, but authentic GPX/year-specific historical geometry is still needed before authoritative historical course-version grouping."
     },
     {
       "key": "trail22_2018_assignment",
