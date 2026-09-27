@@ -5,9 +5,11 @@ on:
       - fix/trail14-raster-topology-v2
     paths:
       - 'tools/reconstruct_trail14_raster_topology.py'
+      - 'tools/map_match_route_to_osm.py'
       - '.github/workflows/trail14-raster-topology-v2.yml'
       - 'reports/trail14-route-skeleton.json'
       - 'reports/organizer-map-registration.json'
+      - 'data/source/osm/christinehof-path-network.geojson'
   workflow_dispatch:
 
 permissions:
@@ -21,7 +23,7 @@ jobs:
         with:
           ref: fix/trail14-raster-topology-v2
           fetch-depth: 0
-      - run: python -m pip install --quiet numpy pyproj networkx
+      - run: python -m pip install --quiet numpy pyproj networkx scipy
       - name: Reconstruct organizer-raster topology
         run: |
           mkdir -p routes/ost/trail14-raster-topology-v2
@@ -31,13 +33,23 @@ jobs:
             --geojson routes/ost/trail14-raster-topology-v2/route.geojson \
             --gpx routes/ost/trail14-raster-topology-v2/route.gpx \
             --qa routes/ost/trail14-raster-topology-v2/qa.json | tee reports/trail14-raster-topology-v2.log
+      - name: Map-match topology to OSM
+        run: |
+          mkdir -p routes/ost/trail14-osm-v2
+          set -o pipefail
+          python tools/map_match_route_to_osm.py \
+            --guide routes/ost/trail14-raster-topology-v2/route.geojson \
+            --network data/source/osm/christinehof-path-network.geojson \
+            --geojson routes/ost/trail14-osm-v2/route.geojson \
+            --gpx routes/ost/trail14-osm-v2/route.gpx \
+            --qa routes/ost/trail14-osm-v2/qa.json | tee reports/trail14-osm-v2.log
       - name: Commit diagnostics
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add routes/ost/trail14-raster-topology-v2 reports/trail14-raster-topology-v2.log 2>/dev/null || true
+          git add routes/ost/trail14-raster-topology-v2 routes/ost/trail14-osm-v2 reports/trail14-raster-topology-v2.log reports/trail14-osm-v2.log 2>/dev/null || true
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Record Trail 13/14 raster topology v2"
+          git commit -m "Record Trail 13/14 topology and OSM map-match v2"
           git pull --rebase origin fix/trail14-raster-topology-v2
           git push origin HEAD:fix/trail14-raster-topology-v2
