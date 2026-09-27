@@ -10,7 +10,7 @@
     "research/gotaleden-engine-handoff.md",
     "config/analysis-data-contract.json",
     "config/engine-adapter.json",
-    "reports/source-coverage.md"
+    "reports/engine-readiness.md"
   ],
   "core_configuration": [
     "config/event.json",
@@ -63,7 +63,6 @@
     "reports/curated-analysis-db-summary.json",
     "reports/result-archive-audit.json",
     "reports/source-coverage.md",
-    "reports/analysis-capabilities.md",
     "reports/bengtemolla-double-timing.md",
     "reports/gpx-inventory.md",
     "reports/gpx-comparison.md",
