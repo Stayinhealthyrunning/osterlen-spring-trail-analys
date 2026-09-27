@@ -7,9 +7,9 @@ The large ÖST build shall **not** load the complete Engine 1.0 payload at start
 Measured on 2026-09-27 from the real curated dataset:
 
 - Full Engine 1.0 JSON: **5,417,501 bytes raw / 450,548 bytes gzip**.
-- Metadata-only bootstrap prototype: **27,041 bytes raw / 1,980 bytes gzip**.
+- Metadata-only bootstrap prototype: **31,084 bytes raw / 2,633 bytes gzip**.
 - Largest selected race bundle: about **29 KB gzip**.
-- Bootstrap + largest selected race: about **31 KB gzip**.
+- Bootstrap + largest selected race: about **31.8 KB gzip**.
 - The full payload contains 9,871 results, 6,123 splits, 300 teams and 599 team-member rows.
 
 Although 450 KB gzip is not an extreme network transfer, parsing and retaining about 5.2 MiB of JSON plus all derived UI state for every race/year is unnecessary. The measured sharded alternative is substantially smaller and gives a cleaner runtime model.
@@ -79,7 +79,7 @@ Images/fonts and optional map tiles are measured separately because their loadin
 
 The monolith compresses unusually well because result records are repetitive. That makes the network number look small, but the browser would still need to parse the full **5.2 MiB raw JSON** and retain thousands of records that are irrelevant to the current view.
 
-The sharded model reduces first meaningful Engine data from roughly **440 KiB gzip** to roughly **15-31 KiB gzip**, depending on selected race, while retaining exactly the same canonical Engine semantics.
+The sharded model reduces first meaningful Engine data from roughly **440 KiB gzip** to roughly **15-32 KiB gzip**, depending on selected race, while retaining exactly the same canonical Engine semantics.
 
 ## Performance work during implementation
 
