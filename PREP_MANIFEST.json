@@ -1,6 +1,6 @@
 {
-  "schema_version": 2,
-  "generated_on": "2026-09-10",
+  "schema_version": 3,
+  "generated_on": "2026-09-27",
   "status": "handoff_ready_for_generic_engine_integration",
   "purpose": "Entry-point inventory for the prepared Österlen Spring Trail analysis foundation before integration of the generic Gotaleden analysis core.",
   "read_first": [
@@ -26,7 +26,11 @@
     "config/analysis-data-contract.json",
     "config/analysis-feature-policy.json",
     "config/engine-adapter.json",
-    "config/foundation-state.json"
+    "config/foundation-state.json",
+    "config/short-course-map-reconstruction.json",
+    "config/route-evidence-sources.json",
+    "route_engine/manifests/ost-trail5-2026.json",
+    "route_engine/manifests/ost-trail14-2026.json"
   ],
   "sportstiming_source_inventory": [
     "data/source/sportstiming/events.json",
@@ -42,7 +46,10 @@
     "data/source/gpx/trail5/README.md",
     "data/source/maps/manifest.json",
     "data/source/tracedetrail/waypoints.json",
-    "data/source/tracedetrail/trace-payload-summary.json"
+    "data/source/tracedetrail/trace-payload-summary.json",
+    "routes/ost/trail5-current-reference/route.gpx",
+    "routes/ost/trail14-current-reference/route.gpx",
+    "reports/short-course-reconstruction-final-status-2026-09-27.md"
   ],
   "research": [
     "research/course-history.md",
@@ -93,11 +100,11 @@
     "entry": "docs/index.html"
   },
   "deferred": [
-    "Production-grade complete Sportstiming result/detail raw snapshot importer",
-    "Duo team/member adapter",
-    "Redistributable/local historical route assets required for map/replay",
-    "Trail 13/14 and Trail 5 course-version archaeology",
-    "2018 Trail 21/22 year-specific provenance",
-    "Generic Gotaleden core integration"
+    "Generic Gotaleden core integration",
+    "Redistribution-approved local historical route assets for older Ultra / Trail 21-22 where only Trace de Trail reference geometry is currently available",
+    "Exact year-by-year course-version provenance for Trail 13/14 and Trail 5 reference geometry",
+    "Trail 21/22 2018 year-specific provenance",
+    "Duo leg-number assignment",
+    "Cross-year person identity linkage"
   ]
 }
