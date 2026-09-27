@@ -52,61 +52,46 @@ def main():
  # than permitting arbitrary Christinehof-Hallamölla shortcuts.
  alun=tr.transform(14.0032,55.7049)
  an=nodes[int(nt.query(alun)[1])]
- # Eastern Hallamölla loop: two distinct Christinehof-Hallamölla corridors.
- first=[]
- for path in nx.shortest_simple_paths(G,s,h,weight="weight"):
-  L=sum(G[u][v]["length"] for u,v in zip(path,path[1:])); C=sum(G[u][v]["weight"] for u,v in zip(path,path[1:]))
-  if 3000<=L<=5200:
-   unsupported_far=sum(G[u][v]["length"] for u,v in zip(path,path[1:]) if G[u][v]["dev"]>150 and not (G[u][v]["skane"] or G[u][v]["back"]))
-   if unsupported_far>250: continue
-   E={frozenset((u,v)) for u,v in zip(path,path[1:])}; first.append((path,L,C,E))
-  if len(first)>=120: break
- best=None
- pareto=[]
- for i,A in enumerate(first):
-  for B in first[i+1:]:
-   overlap=sum(G[tuple(e)[0]][tuple(e)[1]]["length"] for e in A[3]&B[3]); east=A[1]+B[1]
-   if not 6500<=east<=8800: continue
-   # A loop may share the short Christinehof/Alunbruket approach, but must not
-   # collapse into an out-and-back along most of the river corridor.
-   if overlap>1400: continue
-   # Prefer two genuinely different corridors, raster fit and named hiking
-   # relations. Distance is a broad plausibility term, not a target fit.
-   rel_bonus=sum(G[u][v]["length"]*(0.35 if G[u][v]["skane"] or G[u][v]["back"] else 0) for P in (A[0],B[0]) for u,v in zip(P,P[1:]))
-   far_pen=sum(G[u][v]["length"]*max(0,G[u][v]["dev"]-140)*3 for P in (A[0],B[0]) for u,v in zip(P,P[1:]))
-   # Reward complementary named corridors (Skåneleden vs Backaleden).
-   def rel_lengths(P):
-    sk=ba=0.0
-    for u,v in zip(P,P[1:]):
-     e=G[u][v]
-     if e["skane"]: sk+=e["length"]
-     if e["back"]: ba+=e["length"]
-    return sk,ba
-   ask,aba=rel_lengths(A[0]); bsk,bba=rel_lengths(B[0])
-   complementary=max(min(ask,bba),min(aba,bsk))
-   # Strongly prefer a loop rather than a disguised out-and-back. The organizer
-   # raster is a loop, so shared geometry beyond a short approach is a topology
-   # contradiction, not merely a soft distance penalty.
-   # Distance is not a target, but a hard plausibility constraint from the
-   # independently observed 2023 activity. Allow GPS/race-version uncertainty
-   # while rejecting materially longer composites.
-   observed_total=13670.0
-   total_with_west=5481.0+east
-   distance_excess=max(0.0,abs(total_with_west-observed_total)-300.0)
-   score=A[2]+B[2]+overlap*400+far_pen-rel_bonus-complementary*18+distance_excess*5000
-   pareto.append({"overlap_m":round(overlap,1),"east_km":round(east/1000,3),"raster_cost":round(A[2]+B[2],1),"far_penalty":round(far_pen,1),"relation_bonus":round(rel_bonus,1),"complementary_relation_m":round(complementary,1),"score":round(score,1)})
-   if best is None or score<best[0]: best=(score,A,B,overlap,east)
+ # Current organizer evidence constrains the eastern loop to Skåneleden
+ # outbound and Backaleden return, through Alunbruket and Hallamölla.
+ def ep(P): return [(u,v,G[u][v]) for u,v in zip(P,P[1:])]
+ def st(P):
+  ee=ep(P); return {"length":sum(e["length"] for _,_,e in ee),"cost":sum(e["weight"] for _,_,e in ee),
+   "skane":sum(e["length"] for _,_,e in ee if e["skane"]),"back":sum(e["length"] for _,_,e in ee if e["back"]),
+   "devs":[e["dev"] for _,_,e in ee]}
+ def candidates(u,v,mode,k):
+  def w(a,b,e):
+   base=e["weight"]
+   if mode=="skane": return base*(0.18 if e["skane"] else 1.8 if e["back"] else 1.0)
+   if mode=="back": return base*(0.18 if e["back"] else 1.8 if e["skane"] else 1.0)
+   return base
+  out=[]
+  for P in nx.shortest_simple_paths(G,u,v,weight=w):
+   z=st(P); unsupported=sum(e["length"] for _,_,e in ep(P) if e["dev"]>180 and not(e["skane"] or e["back"]))
+   if unsupported<=250: out.append((P,z))
+   if len(out)>=k: break
+  return out
+ approaches=candidates(s,an,"neutral",20); skpaths=candidates(an,h,"skane",60)
+ backpaths=candidates(h,an,"back",60); returns=candidates(an,s,"neutral",20)
+ pareto=[]; best=None
+ for A,sa in approaches[:8]:
+  for B,sb in skpaths[:25]:
+   for C,sc in backpaths[:25]:
+    for D,sd in returns[:8]:
+     east_route=A+B[1:]+C[1:]+D[1:]; east=sa["length"]+sb["length"]+sc["length"]+sd["length"]
+     if not 7000<=east<=10000 or sb["skane"]<1000 or sc["back"]<1000: continue
+     edges=[frozenset((u,v)) for u,v in zip(east_route,east_route[1:])]
+     overlap=sum(G[tuple(e)[0]][tuple(e)[1]]["length"] for e in set(edges) if edges.count(e)>1)
+     devs=sa["devs"]+sb["devs"]+sc["devs"]+sd["devs"]; p95=float(np.percentile(devs,95))
+     score=sa["cost"]+sb["cost"]+sc["cost"]+sd["cost"]+overlap*250+p95*200
+     row={"east_km":round(east/1000,3),"overlap_m":round(overlap,1),"skane_out_m":round(sb["skane"],1),
+      "back_return_m":round(sc["back"],1),"p95_raster_m":round(p95,1),"score":round(score,1)}
+     pareto.append(row)
+     if best is None or score<best[0]: best=(score,east_route,overlap,east,row)
  if best is None:
-  # Diagnostic fallback: enumerate unrestricted pairs so absence of a candidate
-  # produces evidence about the graph rather than a blind parameter loop.
-  diag=[]
-  for i,A in enumerate(first):
-   for B in first[i+1:]:
-    overlap=sum(G[tuple(e)[0]][tuple(e)[1]]["length"] for e in A[3]&B[3])
-    diag.append({"overlap_m":round(overlap,1),"east_km":round((A[1]+B[1])/1000,3),"raster_cost":round(A[2]+B[2],1)})
-  Path(a.qa).with_name("candidate-frontier.json").write_text(json.dumps(sorted(diag,key=lambda x:(x["overlap_m"],x["raster_cost"]))[:1000],indent=2)+"\n")
-  raise RuntimeError(f"No eastern Hallamolla loop candidate; paths={len(first)}; unrestricted_pairs={len(diag)}")
- _,A,B,overlap,east_total=best; east_route=A[0]+list(reversed(B[0]))[1:]
+  Path(a.qa).with_name("candidate-frontier.json").write_text(json.dumps(sorted(pareto,key=lambda x:x["score"])[:1000],indent=2)+"\n")
+  raise RuntimeError("No Skaneleden-out/Backaleden-return candidate satisfies topology gates")
+ _,east_route,overlap,east_total,bestrow=best
  # Western loop comes from the independently QA-passed Trail5 reconstruction; final serialized calibration run.
  t5=json.loads(Path(a.trail5).read_text()); t5ll=t5["geometry"]["coordinates"]; t5xy=[tr.transform(*p) for p in t5ll]
  if D(t5xy[-1],s)>D(t5xy[0],s): t5xy=list(reversed(t5xy))
@@ -121,10 +106,10 @@ def main():
  Path(a.geojson).write_text(json.dumps(feat,ensure_ascii=False,indent=2)+"\n")
  pts="".join(f'<trkpt lat="{lat:.7f}" lon="{lon:.7f}"></trkpt>' for lon,lat in ll)
  Path(a.gpx).write_text('<?xml version="1.0" encoding="UTF-8"?><gpx version="1.1" creator="Loppanalys route reconstruction"><trk><name>ÖST Trail 13/14 km reconstructed</name><trkseg>'+pts+'</trkseg></trk></gpx>\n')
- qa={"distance_km":round(total/1000,3),"participant_2023_reference_km":13.67,"western_trail5_km":round(t5m/1000,3),"eastern_loop_km":round(east_total/1000,3),"route_points":len(route),"candidate_paths_considered":len(first),"shared_out_return_m":round(overlap,1),"median_edge_to_raster_m":round(float(np.median(devs)),1),"p95_edge_to_raster_m":round(float(np.percentile(devs,95)),1),"start_finish_gap_m":round(D(route[0],route[-1]),1),"western_eastern_join_m":round(join,1),"hallamolla_control_m":round(D(A[0][-1],hall),1),"osm_way_count":len(set(x for x in ways if x)),"highway_types":sorted(set(x for x in hws if x)),"far_raster_way_ids":list(dict.fromkeys(w for w,d in zip(ways[-len(devs):],devs) if w and d>150)),"max_edge_to_raster_m":round(float(np.max(devs)),1),"map_registration_median_px":reg["reprojection_px"]["median"],"map_registration_p95_px":reg["reprojection_px"]["p95"]}
+ qa={"distance_km":round(total/1000,3),"participant_2023_reference_km":13.67,"western_trail5_km":round(t5m/1000,3),"eastern_loop_km":round(east_total/1000,3),"route_points":len(route),"candidate_paths_considered":len(first),"shared_out_return_m":round(overlap,1),"median_edge_to_raster_m":round(float(np.median(devs)),1),"p95_edge_to_raster_m":round(float(np.percentile(devs,95)),1),"start_finish_gap_m":round(D(route[0],route[-1]),1),"western_eastern_join_m":round(join,1),"hallamolla_control_m":round(min(D(p,hall) for p in east_route),1),"skane_out_m":bestrow["skane_out_m"],"back_return_m":bestrow["back_return_m"],"osm_way_count":len(set(x for x in ways if x)),"highway_types":sorted(set(x for x in hws if x)),"far_raster_way_ids":list(dict.fromkeys(w for w,d in zip(ways[-len(devs):],devs) if w and d>150)),"max_edge_to_raster_m":round(float(np.max(devs)),1),"map_registration_median_px":reg["reprojection_px"]["median"],"map_registration_p95_px":reg["reprojection_px"]["p95"]}
  qa["candidate_pair_count"]=len(pareto)
  Path(a.qa).write_text(json.dumps(qa,indent=2)+"\n")
- frontier=sorted(pareto,key=lambda x:(x["overlap_m"],x["raster_cost"],x["score"]))[:500]
+ frontier=sorted(pareto,key=lambda x:x["score"])[:500]
  Path(a.qa).with_name("candidate-frontier.json").write_text(json.dumps(frontier,indent=2)+"\n")
  print(json.dumps(qa,indent=2))
 if __name__=="__main__":
