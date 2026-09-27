@@ -1,6 +1,6 @@
 # Förberedelsestatus
 
-Datum: 2026-09-10  
+Datum: 2026-09-27  
 Status: **DATA FÄRDIG / ENGINE-HANDOFF-READY**
 
 ÖST-repot är nu förberett så långt det är meningsfullt innan den generiska Gotaleden-kärnan är färdig. Full resultatinhämtning, råarkivering, datakvalitetskontroll, kuratering, Duo-normalisering och engine-readiness är genomförda. Kvarvarande punkter kräver antingen den färdigrefaktorerade analysmotorn eller nytt/verifierat källunderlag.
@@ -56,7 +56,7 @@ Läs även:
 
 - **Generisk Gotaleden-core-integration:** väntar avsiktligt tills den pågående generiska refaktoreringen är färdig.
 - **Historiska lokala route assets:** äldre Ultra och Trail 21/22 har jämförbarhetsbevis men saknar i flera fall lokalt återanvändningsmässigt lämplig GPX för karta/replay.
-- **Trail 13/14 och Trail 5 course versions:** komplett verifierad historisk geometri saknas.
+- **Trail 13/14:** den tidigare 14.249 km rasterrekonstruktionen är underkänd som aktuell referens efter visuell kontroll. Arbetsreferensen är nu en **13.472 km Hallamölla-splice** byggd som recept från verifierad Trail 21/22-geometri 2022–2024; äkta deltagar-/arrangörs-GPX är fortfarande målet och ingen redistributerbar lokal 13/14-rutt betraktas som auktoritativ.\n- **Trail 5:** 2026 har en rekonstruerad referens (5.481 km; oberoende rasterkontroll 5.545 km), men historisk exakt identitet saknas.
 - **Trail 21/22 2018:** kandidatspåret är geometriskt starkt kompatibelt med 2019 men metadata anger 2016; formell tilldelning kräver årsspecifik proveniens.
 - **Duo etappnummer:** medlemmarna är importerade men tillgänglig evidens bevisar inte att medlemsrad 1/2 alltid betyder etapp 1/2.
 - **Cross-year personidentitet:** repeat-runner-funktion ska byggas som ett separat linkage-lager med confidence/evidence; namnlikhet får inte skriva över source-local identity.
@@ -65,6 +65,6 @@ Läs även:
 
 ## Slutlig handoff-regel
 
-Förberedelsefasen betraktas som avslutad när foundation-validatorn är grön på denna version av `main`. Därefter ska nästa utvecklingssteg vara adapter/integration mot den färdigrefaktorerade Gotaleden-kärnan — inte ny Sportstiming-import, ny banförstudie eller parallell frontend-fork.
+Förberedelsefasen betraktas som avslutad när foundation-validatorn är grön på denna version av `main`. Inför det stora bygget ska även `research/final-prebuild-checklist-2026-09-27.md` läsas. Därefter ska nästa utvecklingssteg vara adapter/integration mot den färdigrefaktorerade Gotaleden-kärnan — inte ny Sportstiming-import, ny banförstudie eller parallell frontend-fork.
 
 När Gotaleden-kärnan är färdig ska arbetet alltså börja med **adapter/integration mot den redan färdiga kuraterade ÖST-datan**, inte med en ny förstudie eller ny resultatimport.
