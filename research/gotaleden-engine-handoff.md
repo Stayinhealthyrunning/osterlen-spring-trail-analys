@@ -81,7 +81,7 @@ Current evidence:
 - 34 held race-year instances with results,
 - 13 with real split analysis data,
 - 6 with splits + local route data sufficient for replay/map,
-- 19 with verified course version.
+- 21 with verified course version.
 
 ## Integration sequence
 
