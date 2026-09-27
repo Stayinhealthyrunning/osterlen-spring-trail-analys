@@ -122,10 +122,14 @@
       "source_type": "tracedetrail_reference",
       "trace_id": 7897,
       "url": "https://tracedetrail.fr/en/trace/7897",
-      "status": "candidate_needs_direct_reverification",
+      "status": "verified_as_triangulated_2018_reference_with_stale_source_date",
       "reported_distance_km": 21.7,
-      "course_version": null,
-      "redistribution": "reference_only"
+      "course_version": "trail22-2018-triangulated",
+      "redistribution": "reference_only",
+      "reported_ascent_m": 482,
+      "reported_descent_m": 482,
+      "evidence_report": "reports/trail22-2018-triangulation.json",
+      "note": "Trace dataTrace says dateCompet=16/04/2016, so this is not direct 2018 provenance. Independent 2018 controls support its use as a triangulated 2018 reference: official 21.7 km/490 m+, race-day watch 22.03 km, Vantalängan at candidate km 13.292, Hallamölla 4.6 m from line, and strong 2019 corridor compatibility. Redistribution remains reference_only."
     },
     {
       "family": "trail22",
