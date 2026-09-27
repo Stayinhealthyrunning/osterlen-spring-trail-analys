@@ -62,6 +62,7 @@ def main():
    E={frozenset((u,v)) for u,v in zip(path,path[1:])}; first.append((path,L,C,E))
   if len(first)>=120: break
  best=None
+ pareto=[]
  for i,A in enumerate(first):
   for B in first[i+1:]:
    overlap=sum(G[tuple(e)[0]][tuple(e)[1]]["length"] for e in A[3]&B[3]); east=A[1]+B[1]
@@ -87,6 +88,7 @@ def main():
    # raster is a loop, so shared geometry beyond a short approach is a topology
    # contradiction, not merely a soft distance penalty.
    score=A[2]+B[2]+overlap*400+far_pen-rel_bonus-complementary*18
+   pareto.append({"overlap_m":round(overlap,1),"east_km":round(east/1000,3),"raster_cost":round(A[2]+B[2],1),"far_penalty":round(far_pen,1),"relation_bonus":round(rel_bonus,1),"complementary_relation_m":round(complementary,1),"score":round(score,1)})
    if best is None or score<best[0]: best=(score,A,B,overlap,east)
  if best is None: raise RuntimeError(f"No eastern Hallamolla loop candidate; paths={len(first)}")
  _,A,B,overlap,east_total=best; east_route=A[0]+list(reversed(B[0]))[1:]
@@ -105,6 +107,10 @@ def main():
  pts="".join(f'<trkpt lat="{lat:.7f}" lon="{lon:.7f}"></trkpt>' for lon,lat in ll)
  Path(a.gpx).write_text('<?xml version="1.0" encoding="UTF-8"?><gpx version="1.1" creator="Loppanalys route reconstruction"><trk><name>ÖST Trail 13/14 km reconstructed</name><trkseg>'+pts+'</trkseg></trk></gpx>\n')
  qa={"distance_km":round(total/1000,3),"participant_2023_reference_km":13.67,"western_trail5_km":round(t5m/1000,3),"eastern_loop_km":round(east_total/1000,3),"route_points":len(route),"candidate_paths_considered":len(first),"shared_out_return_m":round(overlap,1),"median_edge_to_raster_m":round(float(np.median(devs)),1),"p95_edge_to_raster_m":round(float(np.percentile(devs,95)),1),"start_finish_gap_m":round(D(route[0],route[-1]),1),"western_eastern_join_m":round(join,1),"hallamolla_control_m":round(D(A[0][-1],hall),1),"osm_way_count":len(set(x for x in ways if x)),"highway_types":sorted(set(x for x in hws if x)),"far_raster_way_ids":list(dict.fromkeys(w for w,d in zip(ways[-len(devs):],devs) if w and d>150)),"max_edge_to_raster_m":round(float(np.max(devs)),1),"map_registration_median_px":reg["reprojection_px"]["median"],"map_registration_p95_px":reg["reprojection_px"]["p95"]}
- Path(a.qa).write_text(json.dumps(qa,indent=2)+"\n"); print(json.dumps(qa,indent=2))
+ qa["candidate_pair_count"]=len(pareto)
+ Path(a.qa).write_text(json.dumps(qa,indent=2)+"\n")
+ frontier=sorted(pareto,key=lambda x:(x["overlap_m"],x["raster_cost"],x["score"]))[:500]
+ Path(a.qa).with_name("candidate-frontier.json").write_text(json.dumps(frontier,indent=2)+"\n")
+ print(json.dumps(qa,indent=2))
 if __name__=="__main__":
  main()
