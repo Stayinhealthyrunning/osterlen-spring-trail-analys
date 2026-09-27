@@ -39,6 +39,8 @@ jobs:
           python-version: '3.12'
       - name: Validate foundation contracts and cross-file consistency
         run: python tools/validate_foundation.py
+      - name: Audit repository hygiene
+        run: python tools/audit_repository_hygiene.py
       - name: Compile Python tooling
         run: python -m compileall -q tools tests route_engine
       - name: Run all repository unit tests
