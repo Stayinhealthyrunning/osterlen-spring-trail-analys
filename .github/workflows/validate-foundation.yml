@@ -6,6 +6,9 @@ on:
     branches: [main]
     paths:
       - 'config/**'
+      - 'tools/export_engine_delivery.py'
+      - 'tools/profile_engine_payload.py'
+      - 'tools/validate_performance_budget.py'
       - 'data/source/sportstiming/**'
       - 'data/source/gpx/**'
       - 'research/**'
@@ -55,5 +58,7 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_*.py'
       - name: Validate final prebuild readiness
         run: python tools/validate_prebuild_readiness.py
+      - name: Validate Engine delivery performance budget
+        run: python tools/validate_performance_budget.py
       - name: Validate frontend data performance budget
         run: python tools/validate_frontend_performance_budget.py
