@@ -40,7 +40,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/trail5-reconstruction-run.log reports/christinehof-osm-hiking-relations.json routes/ost/trail5-current-reference || true
+          git add reports/trail5-reconstruction-run.log reports/christinehof-osm-hiking-relations.json reports/trail14-raster-topology.json routes/ost/trail5-current-reference || true
           if ! git diff --cached --quiet; then git commit -m "Record Trail 5 reconstruction diagnostics"; git pull --rebase origin automation/acquire-short-course-sources; git push origin HEAD:automation/acquire-short-course-sources; fi
       - name: Reconstruct Trail 13/14
         run: |
