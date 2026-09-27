@@ -1,19 +1,21 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-27T10:23:49.477316+00:00",
+  "generated_at": "2026-09-27T10:24:56.284497+00:00",
   "candidate": {
     "trace_id": 7897,
     "source_url": "https://tracedetrail.fr/fr/trace/7897",
     "source_date_compet": "16/04/2016",
     "source_reported_distance_km": 21.7,
     "derived_path_distance_km": 21.688,
-    "source_dp_last": null,
-    "source_dn_last": null
+    "source_dp_last": 482,
+    "source_dn_last": 482
   },
   "independent_2018_controls": {
     "official_race_date": "2018-04-14",
     "official_distance_km": 21.7,
     "official_ascent_m": 490,
+    "official_2016_ascent_m": 290,
+    "elevation_discrimination_note": "Trace 7897 exposes about 482 m D+, which is inconsistent with the official 2016 race's 290 m but closely matches the 2017-2018 490 m and 2019 480 m event records.",
     "race_day_watch_distance_km": 22.03,
     "race_day_watch_source": "https://www.jogg.se/Traning/Pass.aspx?id=15416220",
     "race_day_narrative_source": "https://forsbacka10487151.wordpress.com/2018/04/15/ett-perfekt-osterlen-spring-trail/",

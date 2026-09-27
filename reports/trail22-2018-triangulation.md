@@ -1,7 +1,7 @@
 # Trail 21/22 — 2018 triangulation
 
 - Trace candidate: 7897; Trace dateCompet: **16/04/2016**.
-- Transient geometry length: **21.688 km**; public Trace D+/D- endpoint: **None/None m**.
+- Transient geometry length: **21.688 km**; public Trace D+/D- endpoint: **482/482 m**.
 - Independent 2018 event record: **21.7 km / 490 m+**.
 - Jörgen Forsbacka race-day watch: **22.03 km**; his race report places the steep climb after Vantalängan around km 14.
 
