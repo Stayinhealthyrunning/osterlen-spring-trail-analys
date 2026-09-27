@@ -59,7 +59,7 @@
     "The 2023 participant watch distance of 13.67 km is an independent plausibility observation, not a calibration target for route length.",
     "Participant evidence is used to choose route direction because her race note places Hallamölla 4.5 km from the finish; the selected raster topology independently yields 4.524 km.",
     "OSM is not used as the authoritative geometry where its graph conflicts with the organizer raster topology.",
-    "This 14.249 km raster-derived geometry is retained only as a historical reconstruction artifact and must not be selected by the engine/frontend as the current Trail 13/14 reference."
+    "The 14.249 km raster-derived geometry is superseded. Its QA/provenance metadata is retained, but active route files were removed to prevent accidental runtime use."
   ],
   "reproducibility": {
     "tool": "tools/reconstruct_trail14_raster_topology.py",
@@ -74,5 +74,10 @@
     "derived_distance_km": 13.472,
     "stored_route_asset": false,
     "rationale": "Use the verified Trail 21/22 2022-2024 geometry to Hallamölla, remove the eastern loop between two nearly identical Hallamölla passages, then continue on the same verified geometry to finish."
+  },
+  "superseded_geometry_retention": {
+    "metadata_retained": true,
+    "active_geometry_files_removed": true,
+    "recovery": "Exact superseded route/candidate bytes remain recoverable from Git history if needed for audit."
   }
 }
