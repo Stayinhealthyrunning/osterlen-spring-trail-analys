@@ -1,0 +1,34 @@
+{
+  "geometry_status": "validated_organizer_pdf_reference",
+  "source_pdf": "data/source/maps/ost-trail21-2019-organizer-map.pdf",
+  "organizer_pdf_label_km": 21.8,
+  "organizer_pdf_ascent_m": 480,
+  "organizer_pdf_descent_m": 480,
+  "distance_km": 22.06,
+  "point_count": 456,
+  "post_snap_simplification_px": 0.65,
+  "trace_registration_role": "transient registration/order only; no Trace coordinate array persisted",
+  "trace_registration_id": 69864,
+  "registration_pixel_distance": {
+    "median": 0.41,
+    "p95": 1.02,
+    "max": 6.94
+  },
+  "render_size_px": [
+    1191,
+    1684
+  ],
+  "map_crop_px": [
+    17,
+    126,
+    1173,
+    1220
+  ],
+  "registration_parameters": {
+    "mercator_x_scale": 0.08117596416937417,
+    "mercator_y_scale": 0.08132673177136425,
+    "x_translation": -125973.04417908432,
+    "y_translation": 610788.7317514422
+  },
+  "source_policy": "Route positions are snapped to the organizer-hosted PDF's visible course line. Trace geometry is transient calibration evidence only."
+}
