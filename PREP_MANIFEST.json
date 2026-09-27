@@ -11,7 +11,8 @@
     "research/engine-module-reuse-map.md",
     "config/analysis-data-contract.json",
     "config/engine-adapter.json",
-    "reports/engine-readiness.md"
+    "reports/engine-readiness.md",
+    "research/repository-hygiene-audit-2026-09-27.md"
   ],
   "core_configuration": [
     "config/event.json",
@@ -57,7 +58,8 @@
     "research/sportstiming-data.md",
     "research/ultra60-2026-landmarks.json",
     "research/final-prebuild-checklist-2026-09-27.md",
-    "research/engine-module-reuse-map.md"
+    "research/engine-module-reuse-map.md",
+    "research/repository-hygiene-audit-2026-09-27.md"
   ],
   "key_reports": [
     "reports/engine-readiness.md",
@@ -92,7 +94,8 @@
     "tools/validate_foundation.py",
     "tools/build_engine_readiness_report.py",
     "tools/export_engine_v1.py",
-    "tools/validate_prebuild_readiness.py"
+    "tools/validate_prebuild_readiness.py",
+    "tools/audit_repository_hygiene.py"
   ],
   "validation": {
     "command": "python tools/validate_foundation.py && python tools/validate_prebuild_readiness.py",
