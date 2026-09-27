@@ -6,6 +6,10 @@ on:
       - prep/profile-engine-payload-2026-09-27
     paths:
       - 'tools/profile_engine_payload.py'
+      - 'tools/export_engine_delivery.py'
+      - 'tools/validate_performance_budget.py'
+      - 'config/performance-budget.json'
+      - 'research/frontend-delivery-architecture.md'
       - '.github/workflows/profile-engine-payload.yml'
   workflow_dispatch:
 
@@ -27,7 +31,11 @@ jobs:
           python-version: '3.12'
       - name: Profile real Engine 1.0 payload
         run: python tools/profile_engine_payload.py
-      - name: Commit payload profile
+      - name: Export sharded browser delivery package
+        run: python tools/export_engine_delivery.py --output-dir out/engine-delivery
+      - name: Enforce performance budget
+        run: python tools/validate_performance_budget.py
+      - name: Commit measured payload profile
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -39,3 +47,9 @@ jobs:
             git pull --rebase origin "${{ github.ref_name }}"
             git push origin "HEAD:${{ github.ref_name }}"
           fi
+      - name: Upload delivery prototype
+        uses: actions/upload-artifact@v4
+        with:
+          name: ost-engine-delivery-prototype
+          path: out/engine-delivery
+          retention-days: 14
