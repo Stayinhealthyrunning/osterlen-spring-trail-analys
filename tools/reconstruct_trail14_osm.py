@@ -87,7 +87,13 @@ def main():
    # Strongly prefer a loop rather than a disguised out-and-back. The organizer
    # raster is a loop, so shared geometry beyond a short approach is a topology
    # contradiction, not merely a soft distance penalty.
-   score=A[2]+B[2]+overlap*400+far_pen-rel_bonus-complementary*18
+   # Distance is not a target, but a hard plausibility constraint from the
+   # independently observed 2023 activity. Allow GPS/race-version uncertainty
+   # while rejecting materially longer composites.
+   observed_total=13670.0
+   total_with_west=5481.0+east
+   distance_excess=max(0.0,abs(total_with_west-observed_total)-650.0)
+   score=A[2]+B[2]+overlap*400+far_pen-rel_bonus-complementary*18+distance_excess*250
    pareto.append({"overlap_m":round(overlap,1),"east_km":round(east/1000,3),"raster_cost":round(A[2]+B[2],1),"far_penalty":round(far_pen,1),"relation_bonus":round(rel_bonus,1),"complementary_relation_m":round(complementary,1),"score":round(score,1)})
    if best is None or score<best[0]: best=(score,A,B,overlap,east)
  if best is None:
