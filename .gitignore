@@ -5,3 +5,11 @@ Thumbs.db
 .env
 data/derived/
 data/work/
+out/
+node_modules/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+dist/
