@@ -2,6 +2,7 @@
 import argparse,json,math
 from pathlib import Path
 import cv2,numpy as np,networkx as nx
+import xml.etree.ElementTree as ET
 from scipy.spatial import cKDTree
 from pyproj import Transformer
 
@@ -16,6 +17,7 @@ def component(imgpath):
 def main():
  ap=argparse.ArgumentParser()
  for x in ("image","network","registration","relations","trail5","geojson","gpx","qa"): ap.add_argument("--"+x,required=True)
+ ap.add_argument("--local-gps",default=None,help="Independent local GPS trace; secondary geometry evidence only")
  a=ap.parse_args()
  pix=component(a.image); reg=json.loads(Path(a.registration).read_text()); H=np.array(reg["trail14_to_trail5_homography"])
  q=np.c_[pix,np.ones(len(pix))]@H.T; p5=q[:,:2]/q[:,2,None]
@@ -44,7 +46,35 @@ def main():
    # a gross raster disagreement.
    relation_factor=0.72 if wid in skane else 0.82 if wid in backset else 1.0
    if dev>180: relation_factor=max(relation_factor,1.35)
-   G.add_edge(u,v,length=L,weight=fit*relation_factor,dev=dev,way=wid,highway=pr.get("highway"),skane=wid in skane,back=wid in backset)
+   G.add_edge(u,v,length=L,weight=fit*relation_factor,dev=dev,way=wid,highway=pr.get("highway"),skane=wid in skane,back=wid in backset,localgps=False,source="osm")
+ # Optional independent local GPS geometry. This is not race-day evidence and
+ # may only add edges that are also close to the organizer raster.
+ local_gps_added=0.0; local_gps_edge_count=0
+ if a.local_gps:
+  root=ET.parse(a.local_gps).getroot()
+  raw=[]
+  for e in root.iter():
+   if e.tag.endswith("trkpt") and e.get("lat") and e.get("lon"):
+    raw.append(tr.transform(float(e.get("lon")),float(e.get("lat"))))
+  gps=[]
+  for p in raw:
+   if not gps or D(gps[-1],p)>=12.0: gps.append(p)
+  if raw and (not gps or D(gps[-1],raw[-1])>1.0): gps.append(raw[-1])
+  base_nodes=list(G.nodes); bt=cKDTree(base_nodes)
+  snapped=[]
+  for p in gps:
+   d,i=bt.query(p)
+   snapped.append(base_nodes[int(i)] if d<=25.0 else p)
+  for u,v in zip(snapped,snapped[1:]):
+   if u==v or G.has_edge(u,v): continue
+   L=D(u,v)
+   if not L: continue
+   samples=[(u[0]+(v[0]-u[0])*t,u[1]+(v[1]-u[1])*t) for t in (0.0,0.25,0.5,0.75,1.0)]
+   dev=float(np.percentile([float(cloud.query(p)[0]) for p in samples],80))
+   if dev>150: continue
+   fit=L*(1+(min(dev,300)/32)**2)
+   G.add_edge(u,v,length=L,weight=fit*0.88,dev=dev,way=None,highway="local_gps_trace",skane=False,back=False,localgps=True,source="topogps_hallamolla_43794")
+   local_gps_added+=L; local_gps_edge_count+=1
  nodes=list(G.nodes); nt=cKDTree(nodes); castle=(434707.,6175169.); hall=tr.transform(14.01780,55.70819)
  s=nodes[int(nt.query(castle)[1])]; h=nodes[int(nt.query(hall)[1])]
  # Alunbruket is a mandatory named corridor in both organizer evidence and
@@ -57,7 +87,7 @@ def main():
  for path in nx.shortest_simple_paths(G,s,h,weight="weight"):
   L=sum(G[u][v]["length"] for u,v in zip(path,path[1:])); C=sum(G[u][v]["weight"] for u,v in zip(path,path[1:]))
   if 3000<=L<=5200:
-   unsupported_far=sum(G[u][v]["length"] for u,v in zip(path,path[1:]) if G[u][v]["dev"]>150 and not (G[u][v]["skane"] or G[u][v]["back"]))
+   unsupported_far=sum(G[u][v]["length"] for u,v in zip(path,path[1:]) if G[u][v]["dev"]>150 and not (G[u][v]["skane"] or G[u][v]["back"] or G[u][v].get("localgps",False)))
    if unsupported_far>250: continue
    E={frozenset((u,v)) for u,v in zip(path,path[1:])}; first.append((path,L,C,E))
   if len(first)>=120: break
@@ -112,16 +142,18 @@ def main():
  if D(t5xy[-1],s)>D(t5xy[0],s): t5xy=list(reversed(t5xy))
  join=D(t5xy[-1],s); route=t5xy + east_route[1:]
  t5m=float(t5["properties"]["distance_km"])*1000; total=t5m+east_total
- ways=list(t5.get("properties",{}).get("osm_way_ids",[])); devs=[]; hws=[]
+ ways=list(t5.get("properties",{}).get("osm_way_ids",[])); devs=[]; hws=[]; gps_used=0.0
  for u,v in zip(east_route,east_route[1:]):
-  e=G[u][v]; ways.append(e["way"]);devs.append(e["dev"]);hws.append(e["highway"])
+  e=G[u][v]; ways.append(e.get("way"));devs.append(e["dev"]);hws.append(e.get("highway"))
+  if e.get("localgps",False): gps_used+=e["length"]
  ll=[back.transform(*p) for p in route]
- props={"name":"ÖST Trail 13/14 km reconstructed","status":"validated_reconstruction_candidate","provenance":"organizer raster + QA-passed western Trail5 + OSM","distance_km":round(total/1000,3),"osm_way_ids":list(dict.fromkeys(x for x in ways if x))}
+ prov="organizer raster + QA-passed western Trail5 + OSM"+(" + independent local GPS geometry" if gps_used else "")
+ props={"name":"ÖST Trail 13/14 km reconstructed","status":"validated_reconstruction_candidate","provenance":prov,"distance_km":round(total/1000,3),"osm_way_ids":list(dict.fromkeys(x for x in ways if x))}
  feat={"type":"Feature","properties":props,"geometry":{"type":"LineString","coordinates":[list(x) for x in ll]}}
  Path(a.geojson).write_text(json.dumps(feat,ensure_ascii=False,indent=2)+"\n")
  pts="".join(f'<trkpt lat="{lat:.7f}" lon="{lon:.7f}"></trkpt>' for lon,lat in ll)
  Path(a.gpx).write_text('<?xml version="1.0" encoding="UTF-8"?><gpx version="1.1" creator="Loppanalys route reconstruction"><trk><name>ÖST Trail 13/14 km reconstructed</name><trkseg>'+pts+'</trkseg></trk></gpx>\n')
- qa={"distance_km":round(total/1000,3),"participant_2023_reference_km":13.67,"western_trail5_km":round(t5m/1000,3),"eastern_loop_km":round(east_total/1000,3),"route_points":len(route),"candidate_paths_considered":len(first),"shared_out_return_m":round(overlap,1),"median_edge_to_raster_m":round(float(np.median(devs)),1),"p95_edge_to_raster_m":round(float(np.percentile(devs,95)),1),"start_finish_gap_m":round(D(route[0],route[-1]),1),"western_eastern_join_m":round(join,1),"hallamolla_control_m":round(D(A[0][-1],hall),1),"osm_way_count":len(set(x for x in ways if x)),"highway_types":sorted(set(x for x in hws if x)),"far_raster_way_ids":list(dict.fromkeys(w for w,d in zip(ways[-len(devs):],devs) if w and d>150)),"max_edge_to_raster_m":round(float(np.max(devs)),1),"map_registration_median_px":reg["reprojection_px"]["median"],"map_registration_p95_px":reg["reprojection_px"]["p95"]}
+ qa={"distance_km":round(total/1000,3),"participant_2023_reference_km":13.67,"western_trail5_km":round(t5m/1000,3),"eastern_loop_km":round(east_total/1000,3),"route_points":len(route),"candidate_paths_considered":len(first),"shared_out_return_m":round(overlap,1),"median_edge_to_raster_m":round(float(np.median(devs)),1),"p95_edge_to_raster_m":round(float(np.percentile(devs,95)),1),"start_finish_gap_m":round(D(route[0],route[-1]),1),"western_eastern_join_m":round(join,1),"hallamolla_control_m":round(D(A[0][-1],hall),1),"osm_way_count":len(set(x for x in ways if x)),"highway_types":sorted(set(x for x in hws if x)),"far_raster_way_ids":list(dict.fromkeys(w for w,d in zip(ways[-len(devs):],devs) if w and d>150)),"max_edge_to_raster_m":round(float(np.max(devs)),1),"map_registration_median_px":reg["reprojection_px"]["median"],"map_registration_p95_px":reg["reprojection_px"]["p95"],"local_gps_available_m":round(local_gps_added,1),"local_gps_edge_count":local_gps_edge_count,"local_gps_used_m":round(gps_used,1),"local_gps_source":"Topo GPS 43794 (2020), independent local geometry, not ÖST race-day GPS"}
  qa["candidate_pair_count"]=len(pareto)
  Path(a.qa).write_text(json.dumps(qa,indent=2)+"\n")
  frontier=sorted(pareto,key=lambda x:(x["overlap_m"],x["raster_cost"],x["score"]))[:500]
