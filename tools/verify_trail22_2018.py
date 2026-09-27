@@ -45,9 +45,13 @@ LANDMARKS=[
 def main():
     html, final=fetch(TRACE_ID)
     props=top_properties(datatrace_object(html))
-    _,pts=decode_geometry(props["geometry"])
+    raw,pts=decode_geometry(props["geometry"])
     cum=cumulative(pts)
     total=cum[-1]/1000
+    source_dp_values=[p.get("dp") for p in raw if isinstance(p,dict) and isinstance(p.get("dp"),(int,float))]
+    source_dn_values=[p.get("dn") for p in raw if isinstance(p,dict) and isinstance(p.get("dn"),(int,float))]
+    source_dp=source_dp_values[-1] if source_dp_values else None
+    source_dn=source_dn_values[-1] if source_dn_values else None
 
     landmarks=[]
     for lm in LANDMARKS:
@@ -65,8 +69,6 @@ def main():
     vantalangan_consistent=(v["off_route_m"] <= 150 and 12.0 <= v["projected_distance_km"] <= 14.2)
 
     # Official ITRA/UTMB 2018 race record: 21.7 km / 490 m+.
-    source_dp=pts[-1].get("dp")
-    source_dn=pts[-1].get("dn")
     metric_consistent=(
         abs(total-21.7) <= 0.35
         and (source_dp is None or abs(float(source_dp)-490) <= 40)
@@ -88,6 +90,8 @@ def main():
         "official_race_date":"2018-04-14",
         "official_distance_km":21.7,
         "official_ascent_m":490,
+        "official_2016_ascent_m":290,
+        "elevation_discrimination_note":"Trace 7897 exposes about 482 m D+, which is inconsistent with the official 2016 race's 290 m but closely matches the 2017-2018 490 m and 2019 480 m event records.",
         "race_day_watch_distance_km":22.03,
         "race_day_watch_source":"https://www.jogg.se/Traning/Pass.aspx?id=15416220",
         "race_day_narrative_source":"https://forsbacka10487151.wordpress.com/2018/04/15/ett-perfekt-osterlen-spring-trail/",
