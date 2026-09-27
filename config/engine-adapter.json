@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "status": "source_side_ready_for_engine_integration",
   "target": {
     "engine_contract": "loppanalys-engine-1.0",
@@ -34,7 +34,8 @@
     "Bengtemölla is the canonical named checkpoint for 2022/2023. The preceding 32 km observation remains a separate approach/prewarning candidate.",
     "Feature availability is data-driven through reports/engine-readiness.json and the curated database.",
     "Exact age is never derived from an age-category interval.",
-    "Cross-year person identity must be a separate confidence-bearing linkage layer and must not overwrite source-local identity."
+    "Cross-year person identity must be a separate confidence-bearing linkage layer and must not overwrite source-local identity.",
+    "A provenance-labelled family route reference may be shown when exact year-specific course identity is unresolved, but it must never be promoted to course_version or replay geometry without additional evidence."
   ],
   "supporting_inputs": {
     "curated_race_catalog": "config/race-catalog.json",
@@ -48,7 +49,11 @@
     "sportstiming_split_inventory": "data/source/sportstiming/split-inventory.json",
     "route_source_manifest": "config/course-source-manifest.json",
     "public_geometry_diagnostics": "reports/tracedetrail-public-geometry-analysis.json",
-    "local_route_assets_root": "data/source/gpx"
+    "local_route_assets_root": "data/source/gpx",
+    "short_course_reference_routes": [
+      "routes/ost/trail5-current-reference/route.gpx",
+      "routes/ost/trail14-current-reference/route.gpx"
+    ]
   },
   "curated_database_contract": {
     "tables": {
@@ -137,7 +142,10 @@
         "individual",
         "team"
       ],
-      "rule": "course_version may be null while historical geometry remains unresolved; route-dependent capabilities must then be false. participant/competition/capabilities are explicit Engine 1.0 semantics and must not be inferred in the frontend from race names."
+      "rule": "course_version may be null while historical identity remains unresolved. route_reference may separately expose a provenance-labelled family/reference line for course-map display. Route-dependent replay capabilities still require an exact locally usable course-version asset plus observed splits.",
+      "optional_fields": [
+        "route_reference"
+      ]
     },
     "checkpoints": {
       "keyed_by": "race_key",
@@ -231,8 +239,14 @@
       "teams",
       "team_members",
       "capabilities",
-      "sources"
-    ]
+      "sources",
+      "route_references"
+    ],
+    "route_references": {
+      "key": "reference_route_id",
+      "purpose": "Locally usable provenance-labelled family/reference geometry when exact year-specific course identity is not established.",
+      "rule": "A race may point to route_reference while course_version remains null. Frontend must label it as reference geometry and must not use it to claim cross-year identity or enable replay without the normal replay prerequisites."
+    }
   },
   "route_bundle_contract": {
     "keyed_by": "course_version",
@@ -292,7 +306,7 @@
     "known_current_pattern": {
       "ultra60": "Finish/result and split analysis are ready for every held year. Replay/map additionally require local route assets; currently 2024-2026 qualify.",
       "duo60": "Team finish results and real team splits are parsed for every held Duo year. Published member rows are retained. Replay/map currently qualify for 2024-2026; leg assignment stays disabled.",
-      "trail22_trail14_trail5": "Finish/result analysis is ready. No intermediate split tables were found in the complete imported public result details, so replay/split features stay off unless stronger source evidence appears."
+      "trail22_trail14_trail5": "Finish/result analysis is ready. Trail 5 and Trail 13/14 now also have local provenance-labelled family/reference route geometry for course-map display, but no intermediate split tables were found and exact year-specific course identity is not inferred. Trail 22 has verified public geometry references but no redistribution-approved local route asset."
     }
   },
   "identity_policy": {
