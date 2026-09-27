@@ -27,5 +27,11 @@
   "max_edge_to_raster_m": 185.1,
   "map_registration_median_px": 0.240141823887825,
   "map_registration_p95_px": 1.5684036016464233,
-  "candidate_pair_count": 5027
+  "candidate_pair_count": 5027,
+  "qa_status": "blocked_by_source_geometry_conflict",
+  "publishable_as_validated_route": false,
+  "diagnostic_candidate_pairs": 7140,
+  "diagnostic_min_eastern_loop_km": 9.467,
+  "diagnostic_min_total_with_current_west_km": 14.948,
+  "blocker": "No source-supported observed-distance-compatible loop exists in current OSM candidate graph."
 }
