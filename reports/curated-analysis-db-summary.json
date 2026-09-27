@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-27T11:19:11+00:00",
+  "generated_at": "2026-09-27T16:02:56+00:00",
   "source_frozen_archive": "data/archive/ost-results-2018-2026.sqlite.gz",
   "source_frozen_archive_sha256": "32f7cc412fa1d11fbef7af6c78912c10dcad38c1fae853a6d8659d90816543f9",
   "curated_archive": "data/derived/ost-analysis-2018-2026.sqlite.gz",
-  "curated_database_sha256": "668249ecd7f0e0dea41cd5b6a287cbcacfb63194a440903b7d5e56522c8aa5cc",
-  "curated_archive_sha256": "faf9831cfca798d18031e51f811ae638dc19612dacedc7e5b9450ca6bff5695e",
+  "curated_database_sha256": "87f3556dcf2f15227f45bad2ced0bbc4decb9d8540589e3d45ed9cb7d70293bd",
+  "curated_archive_sha256": "0cc584e4896a95f1c6fc834bb3e6823d930efc4ae169aadd8b97b2db2b053882",
   "database_bytes": 68222976,
-  "compressed_bytes": 5120479,
+  "compressed_bytes": 5120476,
   "totals": {
     "races": 34,
     "results": 9871,
