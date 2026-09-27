@@ -69,7 +69,8 @@
     "short_course_raster_georeferencing": true,
     "trail5_reference_geometry": true,
     "trail14_reference_geometry": true,
-    "short_course_reference_route_export": true
+    "short_course_reference_route_export": true,
+    "trail22_2018_year_specific_triangulation": true
   },
   "curated_archive": {
     "results": 9871,
@@ -180,7 +181,7 @@
       "2026": "ultra60-2025-2026"
     },
     "trail22": {
-      "2018": null,
+      "2018": "trail22-2018-triangulated",
       "2019": "trail22-2019",
       "2022": "trail22-2022-2024",
       "2023": "trail22-2022-2024",
@@ -206,7 +207,7 @@
   "engine_readiness": {
     "races_with_split_analysis": 13,
     "races_with_replay_and_map_data": 6,
-    "races_with_course_version": 19,
+    "races_with_course_version": 20,
     "rule": "Feature availability is derived from the curated database; route-dependent features require a local usable route asset.",
     "reference_route_maps": {
       "trail5": "routes/ost/trail5-current-reference/route.gpx",
@@ -226,10 +227,6 @@
     {
       "key": "trail14_trail5_year_identity",
       "reason": "Short-course geometry is now locally usable and QA-passed. What remains is exact year-by-year course-version provenance, especially legacy 13 km versus current marketed 14 km identity."
-    },
-    {
-      "key": "trail22_2018_assignment",
-      "reason": "Candidate public geometry is strongly compatible with 2019 but its Trace metadata is dated 2016, so year-specific provenance remains unresolved."
     },
     {
       "key": "duo_leg_numbers",
@@ -258,6 +255,7 @@
     "Do not infer cross-year person identity from names alone.",
     "Do not copy the pre-refactor Gotaleden frontend wholesale into this repository.",
     "Do not return to the rejected Trail 13/14 = full Trail 5 + eastern loop hypothesis; the organizer 13 km raster contains its own western loop and has a validated direct reconstruction.",
-    "Use E 437465, not E 437965, as the organizer Trail 5 raster's upper-right SWEREF 99 TM easting."
+    "Use E 437465, not E 437965, as the organizer Trail 5 raster's upper-right SWEREF 99 TM easting.",
+    "Do not revert Trail 21/22 2018 to wholly unresolved merely because Trace 7897 carries stale dateCompet=2016; its separate triangulated 2018 assignment is backed by 2018 distance/elevation/Vantalängan/race-day controls. Preserve the stale date as a provenance warning."
   ]
 }
