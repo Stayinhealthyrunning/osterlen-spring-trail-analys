@@ -66,10 +66,10 @@ def main():
  for i,A in enumerate(first):
   for B in first[i+1:]:
    overlap=sum(G[tuple(e)[0]][tuple(e)[1]]["length"] for e in A[3]&B[3]); east=A[1]+B[1]
-   if not 7000<=east<=9200: continue
+   if not 6500<=east<=10500: continue
    # A loop may share the short Christinehof/Alunbruket approach, but must not
    # collapse into an out-and-back along most of the river corridor.
-   if overlap>2200: continue
+   if overlap>4000: continue
    # Prefer two genuinely different corridors, raster fit and named hiking
    # relations. Distance is a broad plausibility term, not a target fit.
    rel_bonus=sum(G[u][v]["length"]*(0.35 if G[u][v]["skane"] or G[u][v]["back"] else 0) for P in (A[0],B[0]) for u,v in zip(P,P[1:]))
@@ -90,7 +90,16 @@ def main():
    score=A[2]+B[2]+overlap*400+far_pen-rel_bonus-complementary*18
    pareto.append({"overlap_m":round(overlap,1),"east_km":round(east/1000,3),"raster_cost":round(A[2]+B[2],1),"far_penalty":round(far_pen,1),"relation_bonus":round(rel_bonus,1),"complementary_relation_m":round(complementary,1),"score":round(score,1)})
    if best is None or score<best[0]: best=(score,A,B,overlap,east)
- if best is None: raise RuntimeError(f"No eastern Hallamolla loop candidate; paths={len(first)}")
+ if best is None:
+  # Diagnostic fallback: enumerate unrestricted pairs so absence of a candidate
+  # produces evidence about the graph rather than a blind parameter loop.
+  diag=[]
+  for i,A in enumerate(first):
+   for B in first[i+1:]:
+    overlap=sum(G[tuple(e)[0]][tuple(e)[1]]["length"] for e in A[3]&B[3])
+    diag.append({"overlap_m":round(overlap,1),"east_km":round((A[1]+B[1])/1000,3),"raster_cost":round(A[2]+B[2],1)})
+  Path(a.qa).with_name("candidate-frontier.json").write_text(json.dumps(sorted(diag,key=lambda x:(x["overlap_m"],x["raster_cost"]))[:1000],indent=2)+"\n")
+  raise RuntimeError(f"No eastern Hallamolla loop candidate; paths={len(first)}; unrestricted_pairs={len(diag)}")
  _,A,B,overlap,east_total=best; east_route=A[0]+list(reversed(B[0]))[1:]
  # Western loop comes from the independently QA-passed Trail5 reconstruction; final serialized calibration run.
  t5=json.loads(Path(a.trail5).read_text()); t5ll=t5["geometry"]["coordinates"]; t5xy=[tr.transform(*p) for p in t5ll]
