@@ -1,7 +1,34 @@
-Traceback (most recent call last):
-  File "/home/runner/work/osterlen-spring-trail-analys/osterlen-spring-trail-analys/tools/reconstruct_trail14_osm.py", line 117, in <module>
-    main()
-  File "/home/runner/work/osterlen-spring-trail-analys/osterlen-spring-trail-analys/tools/reconstruct_trail14_osm.py", line 110, in main
-    qa={"distance_km":round(total/1000,3),"participant_2023_reference_km":13.67,"western_trail5_km":round(t5m/1000,3),"eastern_loop_km":round(east_total/1000,3),"route_points":len(route),"candidate_paths_considered":len(first),"shared_out_return_m":round(overlap,1),"median_edge_to_raster_m":round(float(np.median(devs)),1),"p95_edge_to_raster_m":round(float(np.percentile(devs,95)),1),"start_finish_gap_m":round(D(route[0],route[-1]),1),"western_eastern_join_m":round(join,1),"hallamolla_control_m":round(min(D(p,hall) for p in east_route),1),"skane_out_m":bestrow["skane_out_m"],"back_return_m":bestrow["back_return_m"],"osm_way_count":len(set(x for x in ways if x)),"highway_types":sorted(set(x for x in hws if x)),"far_raster_way_ids":list(dict.fromkeys(w for w,d in zip(ways[-len(devs):],devs) if w and d>150)),"max_edge_to_raster_m":round(float(np.max(devs)),1),"map_registration_median_px":reg["reprojection_px"]["median"],"map_registration_p95_px":reg["reprojection_px"]["p95"]}
-                                                                                                                                                                                                                            ^^^^^
-NameError: name 'first' is not defined. Did you mean: 'list'?
+{
+  "distance_km": 20.869,
+  "participant_2023_reference_km": 13.67,
+  "western_trail5_km": 5.481,
+  "eastern_loop_km": 15.388,
+  "route_points": 709,
+  "candidate_paths_considered": 120,
+  "shared_out_return_m": 5560.1,
+  "median_edge_to_raster_m": 40.0,
+  "p95_edge_to_raster_m": 144.9,
+  "start_finish_gap_m": 32.1,
+  "western_eastern_join_m": 32.1,
+  "hallamolla_control_m": 14.3,
+  "skane_out_m": 574.2,
+  "back_return_m": 127.1,
+  "osm_way_count": 47,
+  "highway_types": [
+    "path",
+    "residential",
+    "service",
+    "tertiary",
+    "track",
+    "unclassified"
+  ],
+  "far_raster_way_ids": [
+    1462376249,
+    68423848,
+    25931346
+  ],
+  "max_edge_to_raster_m": 213.1,
+  "map_registration_median_px": 0.240141823887825,
+  "map_registration_p95_px": 1.5684036016464233,
+  "candidate_pair_count": 7833
+}
