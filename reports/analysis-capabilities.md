@@ -1,6 +1,7 @@
 # Analysis capability matrix
 
-> **Legacy discovery matrix (2026-09-27):** This file reflects source-discovery capability assumptions and is retained for audit history. The authoritative build/runtime matrix is `reports/engine-readiness.md`; do not derive current UI capability flags from this file.\n\n
+> **Legacy discovery matrix:** Detta är ett källinventeringsartefakt, inte runtime-gate. Använd `reports/engine-readiness.md` för det stora bygget.
+
 `source_ready` betyder att källdata som krävs har observerats. Det betyder inte att slutlig import eller UI redan är färdig.
 
 | År | Familj | Resultat | Profil | Splits | Replay | Kartduell | Bana+pacing | Banversionsrekord |
@@ -37,5 +38,5 @@
 | 2026 | `ultra60` | ✓ source-ready | ✓ source-ready | ✓ source-ready | ✓ source-ready | ✓ source-ready | ✓ source-ready | ✓ source-ready |
 | 2026 | `duo60` | ✓ source-ready | adapter | ej observerat | saknas | saknas | saknas | ✓ source-ready |
 | 2026 | `trail22` | ✓ source-ready | ✓ source-ready | ej observerat | saknas | saknas | saknas | ✓ source-ready |
-| 2026 | `trail14` | ✓ source-ready | ✓ source-ready | ej observerat | saknas | saknas | saknas | bana? |
-| 2026 | `trail5` | ✓ source-ready | ✓ source-ready | ej observerat | saknas | saknas | saknas | bana? |
+| 2026 | `trail14` | ✓ source-ready | ✓ source-ready | ej observerat | saknas | saknas | saknas | ✓ source-ready |
+| 2026 | `trail5` | ✓ source-ready | ✓ source-ready | ej observerat | saknas | saknas | saknas | ✓ source-ready |

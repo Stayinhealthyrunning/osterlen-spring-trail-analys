@@ -36,5 +36,5 @@ Derived handoff view. `config/race-catalog.json` remains the curated source of r
 | 2026 | `ultra60` | 97077 | split_table_observed | `ultra60-2025-2026` | archived | detail |
 | 2026 | `duo60` | 97080 | no_split_table_in_sample | `ultra60-2025-2026` | via_same_year_ultra60 | relay-adapter |
 | 2026 | `trail22` | 97078 | no_split_table_in_sample | `trail22-2025-2026` | reference_only | detail |
-| 2026 | `trail14` | 97079 | no_split_table_in_sample | `—` | missing | detail |
-| 2026 | `trail5` | 97076 | no_split_table_in_sample | `—` | missing | detail |
+| 2026 | `trail14` | 97079 | no_split_table_in_sample | `trail14-current-reference` | missing | detail |
+| 2026 | `trail5` | 97076 | no_split_table_in_sample | `trail5-current-reference` | missing | detail |

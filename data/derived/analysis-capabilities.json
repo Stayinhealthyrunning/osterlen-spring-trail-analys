@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-10T13:45:44.571164+00:00",
+  "generated_at": "2026-09-27T16:05:09.807102+00:00",
   "meaning": {
     "source_ready": "Required source evidence exists; production import/UI may still be pending.",
     "adapter_needed": "Source exists but a format-specific adapter is still needed.",
@@ -22,7 +22,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -49,6 +49,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -65,7 +85,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -92,6 +112,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -108,7 +148,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -135,6 +175,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -151,7 +211,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -178,6 +238,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -194,7 +274,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -221,6 +301,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -237,7 +337,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "adapter_needed",
           "reason": "Relay/team result format needs a dedicated adapter."
         },
@@ -264,6 +364,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -280,7 +400,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -307,6 +427,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -323,7 +463,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -350,6 +490,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -366,7 +526,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -393,6 +553,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -409,7 +589,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -436,6 +616,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -452,7 +652,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "adapter_needed",
           "reason": "Relay/team result format needs a dedicated adapter."
         },
@@ -479,6 +679,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -495,7 +715,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -522,6 +742,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -538,7 +778,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -565,6 +805,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -581,7 +841,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -608,6 +868,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -624,7 +904,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -651,6 +931,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -667,7 +967,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "adapter_needed",
           "reason": "Relay/team result format needs a dedicated adapter."
         },
@@ -694,6 +994,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -710,7 +1030,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -737,6 +1057,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -753,7 +1093,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -780,6 +1120,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -796,7 +1156,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -823,6 +1183,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -839,7 +1219,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -866,6 +1246,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -882,7 +1282,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "adapter_needed",
           "reason": "Relay/team result format needs a dedicated adapter."
         },
@@ -909,6 +1309,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -925,7 +1345,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -952,6 +1372,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -968,7 +1408,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -995,6 +1435,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -1011,7 +1471,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -1038,6 +1498,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -1054,7 +1534,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -1081,6 +1561,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -1097,7 +1597,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "adapter_needed",
           "reason": "Relay/team result format needs a dedicated adapter."
         },
@@ -1124,6 +1624,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -1140,7 +1660,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -1167,6 +1687,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -1183,7 +1723,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -1210,6 +1750,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -1226,7 +1786,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -1253,6 +1813,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -1269,7 +1849,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -1296,6 +1876,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -1312,7 +1912,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "adapter_needed",
           "reason": "Relay/team result format needs a dedicated adapter."
         },
@@ -1339,6 +1939,26 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
@@ -1355,7 +1975,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -1382,13 +2002,33 @@
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
     {
       "year": 2026,
       "family": "trail14",
-      "course_version_id": null,
+      "course_version_id": "trail14-current-reference",
       "features": {
         "results_database": {
           "status": "source_ready",
@@ -1398,7 +2038,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -1419,19 +2059,39 @@
           "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
         },
         "course_version_records": {
-          "status": "blocked_pending_geometry",
-          "reason": "Course version is not yet assigned."
+          "status": "source_ready",
+          "reason": "Assigned to verified course version trail14-current-reference."
         },
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     },
     {
       "year": 2026,
       "family": "trail5",
-      "course_version_id": null,
+      "course_version_id": "trail5-current-reference",
       "features": {
         "results_database": {
           "status": "source_ready",
@@ -1441,7 +2101,7 @@
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
         },
-        "runner_profile": {
+        "runner_or_team_profile": {
           "status": "source_ready",
           "reason": "Participant detail page observed."
         },
@@ -1462,12 +2122,32 @@
           "reason": "Missing: published splits, at least two observed checkpoints, archived route geometry."
         },
         "course_version_records": {
-          "status": "blocked_pending_geometry",
-          "reason": "Course version is not yet assigned."
+          "status": "source_ready",
+          "reason": "Assigned to verified course version trail5-current-reference."
         },
         "cross_year_participation": {
           "status": "source_ready",
           "reason": "Sportstiming class discovered."
+        },
+        "gender_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "age_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_member_display": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "relay_leg_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
+        },
+        "repeat_runner_analysis": {
+          "status": "unknown",
+          "reason": "No readiness rule implemented."
         }
       }
     }
