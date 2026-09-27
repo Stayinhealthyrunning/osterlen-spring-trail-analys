@@ -31,9 +31,10 @@
     ],
     "known_named_corridors": [
       "Christinehof to Alunbruket",
-      "Verkeån corridor",
-      "Hallamölla",
-      "return corridor toward Christinehof"
+      "Skåneleden outbound along Verkeån",
+      "Hallamölla midpoint",
+      "Backaleden return toward Alunbruket",
+      "Alunbruket to Christinehof"
     ],
     "terrain_constraints": [
       "narrow trail along Verkeån",
@@ -50,7 +51,9 @@
       "jogg-2023-trail14-anna-karin-d"
     ],
     "official_local_trails": [
-      "Christinehof Ekopark Hallamöllaleden corridor"
+      "Skåneleden corridor",
+      "Backaleden corridor",
+      "Christinehof Ekopark Hallamöllaleden context"
     ],
     "text_descriptions": [
       "current 14 km Race-PM",
@@ -68,7 +71,8 @@
   "version_questions": [
     "Current organizer map filename/profile retains legacy 13 km labelling.",
     "2023 participant explicitly reports 13.67 km for the race segment.",
-    "Do not assume every historical 13 km and modern 14 km edition is identical."
+    "Do not assume every historical 13 km and modern 14 km edition is identical.",
+    "2023 participant distance is historical version evidence and must not be a hard distance target for the current 14 km course."
   ],
   "output": {
     "course_version_id": "trail14-current-reference",
