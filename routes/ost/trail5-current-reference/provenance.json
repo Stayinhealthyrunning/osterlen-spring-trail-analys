@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "race": "Österlen Spring Trail",
   "course": "Naturloppet / Trail 5 km",
   "geometry_status": "validated_reconstruction",
@@ -19,11 +19,26 @@
     {
       "type": "text_constraint",
       "description": "Christinehof start/finish; approximately 5 km; first ~3 km easier roads/tracks and last ~2 km narrower technical trail"
+    },
+    {
+      "type": "organizer_raster_skeleton_measurement",
+      "path": "reports/trail5-route-skeleton.json",
+      "role": "independent full-resolution geometry-length cross-check of the organizer line",
+      "derived_distance_km": 5.545,
+      "point_count": 971
     }
   ],
   "limitations": [
     "No accessible organizer GPX or verified participant GPX has been found for this course version.",
-    "OSM snapping may differ locally where the organizer raster and mapped path network are ambiguous."
+    "The published asset is a reconstruction: route choice comes from the georeferenced organizer raster and vector geometry is snapped to OSM where supported.",
+    "The full-resolution organizer-raster skeleton measures 5.545 km versus 5.481 km for the OSM-snapped route; the 64 m difference is retained as reconstruction uncertainty rather than forced to a nominal 5.0 km.",
+    "The older coarse 62-vertex 5.002 km prototype was an under-sampled feasibility measurement and is not used as the preferred distance estimate."
   ],
-  "qa_path": "qa.json"
+  "qa_path": "qa.json",
+  "publishable_as_reconstructed_reference": true,
+  "reproducibility": {
+    "raster_measurement_tool": "tools/measure_trail5_raster_skeleton.py",
+    "raster_skeleton": "reports/trail5-route-skeleton.json",
+    "reconstruction_tool": "tools/reconstruct_trail5_osm.py"
+  }
 }
