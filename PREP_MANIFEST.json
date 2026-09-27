@@ -15,8 +15,7 @@
     "research/repository-hygiene-audit-2026-09-27.md",
     "research/frontend-data-delivery-architecture-2026-09-27.md",
     "reports/engine-payload-profile.md",
-    "config/frontend-performance-budget.json",
-    "research/frontend-delivery-architecture-2026-09-27.md"
+    "config/frontend-performance-budget.json"
   ],
   "core_configuration": [
     "config/event.json",
@@ -33,7 +32,8 @@
     "config/analysis-data-contract.json",
     "config/analysis-feature-policy.json",
     "config/engine-adapter.json",
-    "config/foundation-state.json"
+    "config/foundation-state.json",
+    "config/frontend-performance-budget.json"
   ],
   "sportstiming_source_inventory": [
     "data/source/sportstiming/events.json",
@@ -64,10 +64,11 @@
     "research/final-prebuild-checklist-2026-09-27.md",
     "research/engine-module-reuse-map.md",
     "research/repository-hygiene-audit-2026-09-27.md",
-    "research/frontend-data-delivery-architecture-2026-09-27.md",
-    "research/frontend-delivery-architecture-2026-09-27.md"
+    "research/frontend-data-delivery-architecture-2026-09-27.md"
   ],
   "key_reports": [
+    "reports/engine-payload-profile.json",
+    "reports/engine-payload-profile.md",
     "reports/engine-readiness.md",
     "reports/engine-readiness.json",
     "reports/curated-analysis-db-summary.json",
@@ -104,8 +105,7 @@
     "tools/audit_repository_hygiene.py",
     "tools/profile_engine_payload.py",
     "tools/export_engine_web_bundle.py",
-    "tools/validate_frontend_performance_budget.py",
-    "tools/build_engine_delivery_shards.py"
+    "tools/validate_frontend_performance_budget.py"
   ],
   "validation": {
     "command": "python tools/validate_foundation.py && python tools/validate_prebuild_readiness.py && python tools/validate_frontend_performance_budget.py",
@@ -126,7 +126,7 @@
   "performance": {
     "profile": "reports/engine-payload-profile.json",
     "budget": "config/frontend-performance-budget.json",
-    "delivery_architecture": "research/frontend-delivery-architecture-2026-09-27.md",
+    "delivery_architecture": "research/frontend-data-delivery-architecture-2026-09-27.md",
     "measured_full_engine_gzip_bytes": 450548,
     "measured_bootstrap_gzip_bytes": 1980,
     "measured_largest_selected_race_gzip_bytes": 29138,
