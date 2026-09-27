@@ -50,7 +50,7 @@ def main():
  # Alunbruket is a mandatory named corridor in both organizer evidence and
  # Hallamöllaleden. Use the OSM/local-map vicinity as a topology gate rather
  # than permitting arbitrary Christinehof-Hallamölla shortcuts.
- alun=tr.transform(14.0032,55.7049)
+ alun=tr.transform(14.0010,55.7110)
  an=nodes[int(nt.query(alun)[1])]
  # Current organizer evidence constrains the eastern loop to Skåneleden
  # outbound and Backaleden return, through Alunbruket and Hallamölla.
@@ -68,7 +68,7 @@ def main():
   out=[]
   for P in nx.shortest_simple_paths(G,u,v,weight=w):
    z=st(P); unsupported=sum(e["length"] for _,_,e in ep(P) if e["dev"]>180 and not(e["skane"] or e["back"]))
-   if unsupported<=2000: out.append((P,z))
+   if unsupported<=500: out.append((P,z))
    if len(out)>=k: break
   return out
  approaches=candidates(s,an,"neutral",20); skpaths=candidates(an,h,"skane",60)
@@ -80,7 +80,7 @@ def main():
    for C,sc in backpaths[:25]:
     for P4,sd in returns[:8]:
      east_route=A+B[1:]+C[1:]+P4[1:]; east=sa["length"]+sb["length"]+sc["length"]+sd["length"]
-     if not 3000<=east<=16000: continue
+     if not 6500<=east<=10000 or sb["skane"]<500 or sc["back"]<500: continue
      edges=[frozenset((u,v)) for u,v in zip(east_route,east_route[1:])]
      overlap=sum(G[tuple(e)[0]][tuple(e)[1]]["length"] for e in set(edges) if edges.count(e)>1)
      devs=sa["devs"]+sb["devs"]+sc["devs"]+sd["devs"]; p95=float(np.percentile(devs,95))
