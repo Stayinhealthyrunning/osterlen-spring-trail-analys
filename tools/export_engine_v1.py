@@ -81,7 +81,7 @@ def main():
     if adapter["target"]["engine_contract"]!="loppanalys-engine-1.0":
         raise SystemExit("engine adapter does not target Engine 1.0")
     readiness=load_json(READINESS); ready={x["race_key"]:x for x in readiness["races"]}
-    course_cfg=load_json(COURSES); versions={x["course_version_id"]:x for x in course_cfg["versions"]}
+    course_cfg=load_json(COURSES); versions={x["course_version_id"]:x for x in course_cfg["versions"]}\n    assignments={(int(x["year"]),x["family"]):x for x in course_cfg.get("assignments",[])}
     with tempfile.TemporaryDirectory(prefix="ost-engine-v1-") as td:
         db=Path(td)/"ost.sqlite"
         with gzip.open(DB_GZ,"rb") as src,db.open("wb") as dst:
@@ -102,10 +102,10 @@ def main():
                 "assets":assets}
         race_rows=con.execute("SELECT * FROM races ORDER BY year,race_family").fetchall()
         for rr in race_rows:
-            r=dict(rr);rk=r["race_key"];rd=ready[rk];sem=competition(r["race_type"],r["race_family"]);caps=capabilities(rd)
+            r=dict(rr);rk=r["race_key"];rd=ready[rk];sem=competition(r["race_type"],r["race_family"]);caps=capabilities(rd)\n            assignment=assignments.get((int(r["year"]),r["race_family"]),{})\n            course_version=assignment.get("course_version_id") if assignment.get("course_version_id") is not None else r["course_version"]
             records=[record(x) for x in con.execute("SELECT * FROM results WHERE race_key=? ORDER BY COALESCE(overall_place,999999),name_as_published",(rk,))]
             item={"race_key":rk,"event_key":r["event_key"],"race_family":r["race_family"],"year":r["year"],"race_date":r["race_date"],
-                  "course_version":r["course_version"],"data_status":"available","section":r["source_race_name"] or r["race_family"],
+                  "course_version":course_version,"data_status":"available","section":r["source_race_name"] or r["race_family"],
                   "nominal_distance_km":r["nominal_distance_km"],**sem,"capabilities":caps,"records":records}
             payload["races"][rk]=item
             payload["race_catalog"][rk]={k:item[k] for k in ("race_key","event_key","race_family","year","race_date","course_version","data_status","section","nominal_distance_km","participant","competition","capabilities")}
