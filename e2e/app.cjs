@@ -50,8 +50,9 @@ const server=http.createServer((req,res)=>{
  await run('overview parity: gender series and club autocomplete keyboard flow',async()=>{
   assert.ok(await page.locator('.gender-story').isVisible());
   const club=page.locator('#club-filter');assert.equal(await club.inputValue(),'');assert.equal(await page.locator('#club-suggestions').isHidden(),true);
-  await club.fill('a');await page.locator('#club-suggestions [data-club-suggestion]').first().waitFor();await club.press('ArrowDown');await club.press('Enter');await page.locator('[data-filter="sex"]').selectOption('F');assert.equal(await page.locator('.gender-story').count(),0);await page.locator('#reset-filters').click();
-  assert.ok((await club.inputValue()).length>1);assert.equal(await page.locator('#club-suggestions').isHidden(),true);await page.locator('#reset-filters').click();
+  await club.fill('a');await page.locator('#club-suggestions [data-club-suggestion]').first().waitFor();await club.press('ArrowDown');await club.press('Enter');
+  assert.ok((await club.inputValue()).length>1);assert.equal(await page.locator('#club-suggestions').isHidden(),true);
+  await page.locator('[data-filter="sex"]').selectOption('F');assert.equal(await page.locator('.gender-story').count(),0);await page.locator('#reset-filters').click();
  });
  await run('result keyboard profile; replay; local vendor; source journey',async()=>{
   await nav('results');const row=page.locator('[data-result]').first();await row.focus();await page.keyboard.press('Enter');
