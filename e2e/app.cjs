@@ -64,7 +64,7 @@ const server=http.createServer((req,res)=>{
    await open('ost-2026-'+family,'segments');assert.ok((await page.locator('#view').innerText()).includes('inga publicerade mellantider'));
    await nav('course');const text=await page.locator('#view').innerText();
    if(family==='trail14'){assert.ok(text.includes('Arbetsreferens'));assert.equal(await page.locator('#load-course').count(),0);}
-   if(family==='trail5'){assert.ok(text.includes('Rekonstruerad bana'));await page.locator('#load-course').click();await page.locator('#course-map .leaflet-container').waitFor();assert.equal(await page.locator('[data-play]').count(),0);}
+   if(family==='trail5'){assert.ok(text.includes('Rekonstruerad bana'));assert.equal(await page.locator('#goal-hours').inputValue(),'0');assert.equal(await page.locator('#goal-minutes').inputValue(),'35');await page.locator('#load-course').click();await page.locator('#course-map .leaflet-container').waitFor();assert.equal(await page.locator('[data-play]').count(),0);}
   }
   await shot('trail5-course');
   await open('ost-2018-trail22','course');assert.ok((await page.locator('#view').innerText()).includes('inte verifierad'));

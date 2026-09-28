@@ -122,7 +122,8 @@ start();
 
 function renderPlan(){
  if(!a.race.capabilities.goal_pace)return;
- $('#view').insertAdjacentHTML('beforeend','<section class="card"><h3>Måltempo & loppplan</h3><p>En historisk referens, inte en individuell prognos.</p><div class="toolbar"><label>Timmar<input id="goal-hours" type="number" min="0" max="48" value="6"></label><label>Minuter<input id="goal-minutes" type="number" min="0" max="59" value="0"></label></div><div id="plan-output"></div></section>');
+ const target=boot.presentation[a.race.race_family].default_goal_seconds,h=Math.floor(target/3600),m=Math.floor(target%3600/60);
+ $('#view').insertAdjacentHTML('beforeend','<section class="card"><h3>Måltempo & loppplan</h3><p>En historisk referens, inte en individuell prognos.</p><div class="toolbar"><label>Timmar<input id="goal-hours" type="number" min="0" max="48" value="'+h+'"></label><label>Minuter<input id="goal-minutes" type="number" min="0" max="59" value="'+m+'"></label></div><div id="plan-output"></div></section>');
  renderPlanOutput();
 }
 function renderPlanOutput(){

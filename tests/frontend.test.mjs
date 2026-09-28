@@ -8,6 +8,7 @@ import {DataLoader} from '../docs/assets/data-loader.js';
 import {plan} from '../docs/assets/race-plan.js';
 const read=p=>JSON.parse(fs.readFileSync(new URL('../docs/data/'+p,import.meta.url),'utf8').replace(/^\uFEFF/,''));
 const boot=read('bootstrap.json'),doc=k=>read('races/'+k+'.json'),adapter=k=>adapt(doc(k),boot);
+test('presentation provides family-specific goal defaults',()=>{assert.deepEqual(Object.fromEntries(Object.entries(boot.presentation).map(([family,p])=>[family,p.default_goal_seconds])),{ultra60:27000,trail22:9000,trail14:5400,trail5:2100,duo60:23400});});
 test('null never becomes zero; interpolated quantiles; fixed bins',()=>{assert.equal(median([null,'',undefined,10,20]),15);assert.equal(quantile([0,10,20,30],.25),7.5);assert.equal(median([]),null);assert.deepEqual(bins([null,900,1799,1800],900).map(b=>b.count),[2,1]);assert.throws(()=>bins([1],0));});
 test('small-sample thresholds',()=>{for(let n=0;n<=20;n++){const d=distribution(Array.from({length:n},(_,i)=>i+1));assert.equal(d.median!==null,n>=5);assert.equal(d.q25!==null,n>=10);assert.equal(d.q10!==null,n>=20);}});
 test('status counts exclude DNS and unknown starts',()=>{const s=summary([{status:'DNS'},{status:'UNKNOWN'},{status:'DNF'},{status:'FINISHED',finish_seconds:4}]);assert.equal(s.starters,2);assert.equal(s.finished,1);assert.equal(s.dnf,1);});

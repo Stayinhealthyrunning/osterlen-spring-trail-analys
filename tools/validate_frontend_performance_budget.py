@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the measured Ã–ST browser-delivery performance budget."""
+"""Validate the measured ÖST browser-delivery performance budget."""
 from __future__ import annotations
 
 import json
