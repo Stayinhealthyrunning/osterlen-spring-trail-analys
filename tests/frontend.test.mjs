@@ -13,6 +13,27 @@ const read=p=>JSON.parse(fs.readFileSync(new URL('../docs/data/'+p,import.meta.u
 const boot=read('bootstrap.json'),history=read('history.json'),doc=k=>read('races/'+k+'.json'),adapter=k=>adapt(doc(k),boot);
 test('presentation provides family-specific goal defaults',()=>{assert.deepEqual(Object.fromEntries(Object.entries(boot.presentation).map(([family,p])=>[family,p.default_goal_seconds])),{ultra60:27000,trail22:9000,trail14:5400,trail5:2100,duo60:23400});});
 test('history aggregate carries structural, sex and comparable-record fields',()=>{const e=history.editions.find(x=>x.race_key==='ost-2025-ultra60');assert.ok(e.starters>=e.finished);assert.equal(e.women+e.men,e.sex_coverage);assert.equal(e.women_starters+e.men_starters,e.starter_sex_coverage);assert.ok('women_median' in e&&'men_median' in e);assert.ok(e.best_name);});
+test('history aggregate matches every generated race bundle',()=>{
+ for(const e of history.editions){
+  const d=doc(e.race_key),records=d.race.records,finish=records.filter(finished).map(r=>r.finish_seconds),starters=records.filter(r=>['FINISHED','DNF','DSQ'].includes(r.status));
+  const known=records.filter(r=>r.sex==='F'||r.sex==='M'),starterKnown=starters.filter(r=>r.sex==='F'||r.sex==='M');
+  assert.equal(e.records,records.length,e.race_key+' records');
+  assert.equal(e.starters,starters.length,e.race_key+' starters');
+  assert.equal(e.finished,finish.length,e.race_key+' finishers');
+  assert.equal(e.dnf,records.filter(r=>r.status==='DNF').length,e.race_key+' DNF');
+  assert.equal(e.dns,records.filter(r=>r.status==='DNS').length,e.race_key+' DNS');
+  assert.equal(e.dsq,records.filter(r=>r.status==='DSQ').length,e.race_key+' DSQ');
+  assert.equal(e.unknown,records.filter(r=>r.status==='UNKNOWN').length,e.race_key+' UNKNOWN');
+  assert.equal(e.median,finish.length>=5?median(finish):null,e.race_key+' median');
+  assert.equal(e.best,finish.length?Math.min(...finish):null,e.race_key+' best');
+  assert.equal(e.sex_coverage,known.length,e.race_key+' sex coverage');
+  assert.equal(e.women,known.filter(r=>r.sex==='F').length,e.race_key+' women');
+  assert.equal(e.men,known.filter(r=>r.sex==='M').length,e.race_key+' men');
+  assert.equal(e.starter_sex_coverage,starterKnown.length,e.race_key+' starter sex coverage');
+  assert.equal(e.women_starters,starterKnown.filter(r=>r.sex==='F').length,e.race_key+' women starters');
+  assert.equal(e.men_starters,starterKnown.filter(r=>r.sex==='M').length,e.race_key+' men starters');
+ }
+});
 test('terrain metrics preserve ascent/descent semantics and reject incomplete elevation',()=>{assert.deepEqual(terrainMetrics([[0,10],[1,30],[2,20],[3,50]]),{ascent:50,descent:10,min:10,max:50,distance:3,coverage:1});assert.equal(terrainMetrics([[0,null],[1,20]]),null);assert.equal(terrainMetrics([[0,10],[1,null],[2,20],[3,30]]),null);});
 test('finish histogram exposes total, women and men with text legends',()=>{const html=sexHistogram([{sex:'F',finish_seconds:100},{sex:'M',finish_seconds:110},{sex:'F',finish_seconds:120}],60);assert.match(html,/Totalt/);assert.match(html,/Kvinnor/);assert.match(html,/Män/);assert.match(html,/bar-female/);assert.match(html,/bar-male/);});
 test('null never becomes zero; interpolated quantiles; fixed bins',()=>{assert.equal(median([null,'',undefined,10,20]),15);assert.equal(quantile([0,10,20,30],.25),7.5);assert.equal(median([]),null);assert.deepEqual(bins([null,900,1799,1800],900).map(b=>b.count),[2,1]);assert.throws(()=>bins([1],0));});
