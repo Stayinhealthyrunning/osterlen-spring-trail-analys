@@ -17,9 +17,12 @@ export function pointAtDistance(points,d){
 }
 export function terrainMetrics(profile,range=null){
  const from=range&&finite(range[0])?Math.min(range[0],range[1]):-Infinity,to=range&&finite(range[1])?Math.max(range[0],range[1]):Infinity;
- const pts=(profile||[]).filter(p=>finite(p[0])&&finite(p[1])&&p[0]>=from&&p[0]<=to).map(p=>[Number(p[0]),Number(p[1])]);
- if(pts.length<2)return null;let ascent=0,descent=0;for(let i=1;i<pts.length;i++){const d=pts[i][1]-pts[i-1][1];if(d>0)ascent+=d;else descent-=d;}
- return {ascent,descent,min:Math.min(...pts.map(p=>p[1])),max:Math.max(...pts.map(p=>p[1])),distance:pts.at(-1)[0]-pts[0][0]};
+ const window=(profile||[]).filter(p=>finite(p[0])&&p[0]>=from&&p[0]<=to),pts=window.filter(p=>finite(p[1])).map(p=>[Number(p[0]),Number(p[1])]),coverage=window.length?pts.length/window.length:0;
+ // Do not bridge large gaps in partial GPX elevation. Descriptive D+/D− is shown
+ // only for a near-complete profile; incomplete sources remain explicitly unavailable.
+ if(pts.length<2||coverage<.9)return null;
+ let ascent=0,descent=0;for(let i=1;i<pts.length;i++){const d=pts[i][1]-pts[i-1][1];if(d>0)ascent+=d;else descent-=d;}
+ return {ascent,descent,min:Math.min(...pts.map(p=>p[1])),max:Math.max(...pts.map(p=>p[1])),distance:pts.at(-1)[0]-pts[0][0],coverage};
 }
 export async function mountMap(root,{route,adapter,records=[],segment=0,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches}){
  let destroyed=false,map=null,timer=null,markers=[],high=null,t=0;const models=records.map(r=>({r,anchors:adapter.anchors(r,route)})).filter(m=>m.anchors.length>=2),duration=Math.max(1,...models.flatMap(m=>m.anchors.map(a=>a.time)));
@@ -27,7 +30,7 @@ export async function mountMap(root,{route,adapter,records=[],segment=0,reduced=
  const box=root.querySelector('.map'),status=root.querySelector('.map-status'),colors=['#1677a8','#b51d60','#497b35','#92691a','#7651a0'];
  const b=adapter.boundary;function selectedRange(index){return [route.anchors[b[index]?.key],route.anchors[b[index+1]?.key]];}
  function drawElevation(index){root.querySelector('.map-elevation').innerHTML=elevation(route.elevation,route.anchors,selectedRange(index));}
- function drawTerrain(index){const el=root.querySelector('.route-metrics');if(!el)return;const total=terrainMetrics(route.elevation),selected=terrainMetrics(route.elevation,selectedRange(index));if(!total){el.innerHTML=empty('GPX-filen saknar tillräckliga höjdvärden för terrängmått.');return;}el.innerHTML='<div><span>Hela rutten · D+</span><strong>'+Math.round(total.ascent)+' m</strong></div><div><span>Hela rutten · D−</span><strong>'+Math.round(total.descent)+' m</strong></div><div><span>Vald delsträcka · D+</span><strong>'+(selected?Math.round(selected.ascent)+' m':'–')+'</strong></div><div><span>Vald delsträcka · D−</span><strong>'+(selected?Math.round(selected.descent)+' m':'–')+'</strong></div><p>Beskrivande mått från den utjämnade GPX-höjdprofilen; inte officiell D+/D−.</p>';}
+ function drawTerrain(index){const el=root.querySelector('.route-metrics');if(!el)return;const total=terrainMetrics(route.elevation),selected=terrainMetrics(route.elevation,selectedRange(index));if(!total){el.innerHTML=empty('GPX-filen saknar en tillräckligt komplett höjdprofil för tillförlitliga terrängmått. D+/D− visas därför inte.');return;}el.innerHTML='<div><span>Hela rutten · D+</span><strong>'+Math.round(total.ascent)+' m</strong></div><div><span>Hela rutten · D−</span><strong>'+Math.round(total.descent)+' m</strong></div><div><span>Vald delsträcka · D+</span><strong>'+(selected?Math.round(selected.ascent)+' m':'–')+'</strong></div><div><span>Vald delsträcka · D−</span><strong>'+(selected?Math.round(selected.descent)+' m':'–')+'</strong></div><p>Beskrivande mått från den utjämnade GPX-höjdprofilen; inte officiell D+/D−.</p>';}
  drawElevation(segment);drawTerrain(segment);
  function fallback(){
   const lats=route.points.map(p=>p[0]),lons=route.points.map(p=>p[1]),minLat=Math.min(...lats),maxLat=Math.max(...lats),minLon=Math.min(...lons),maxLon=Math.max(...lons);
