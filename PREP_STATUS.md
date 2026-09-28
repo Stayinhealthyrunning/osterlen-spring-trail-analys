@@ -1,9 +1,11 @@
 # Förberedelsestatus
 
 Datum: 2026-09-27  
-Status: **DATA FÄRDIG / ENGINE-HANDOFF-READY**
+Status: **PREBUILD AVSLUTAD / ÖST SPLITS FRONTEND BYGGD OCH INTEGRERAD**
 
-ÖST-repot är nu förberett så långt det är meningsfullt innan den generiska Gotaleden-kärnan är färdig. Full resultatinhämtning, råarkivering, datakvalitetskontroll, kuratering, Duo-normalisering och engine-readiness är genomförda. Kvarvarande punkter kräver antingen den färdigrefaktorerade analysmotorn eller nytt/verifierat källunderlag.
+ÖST-repots förberedelsefas är avslutad. Full resultatinhämtning, råarkivering, datakvalitetskontroll, kuratering, Duo-normalisering och engine-readiness är bevarade. ÖST Splits-frontenden är byggd mot det frysta semantiska Engine 1.0-kontraktet med progressiv browserleverans, capability-driven rendering, individuell och Duo-baserad analys, karta/Replay där underlaget tillåter det samt korrekta empty states där källan sätter gränsen.
+
+Bygg- och QA-bevis finns i `reports/OST_SPLITS_BUILD_REPORT.md` och `reports/OST_SPLITS_VISUAL_QA.md`. Visuell source of truth finns i `research/visual-design-brief.md`.
 
 ## Klart
 
@@ -33,11 +35,11 @@ Status: **DATA FÄRDIG / ENGINE-HANDOFF-READY**
 - Source registry, source coverage, capability policy, analysis-data-contract och engine-adapter finns.
 - `reports/engine-readiness.json` byggs från den kuraterade databasen. Nuvarande läge: 13 race-instansers splitanalys är dataklar, 6 har även den lokala ruttgeometri som krävs för replay/kartduell, och 21 har verifierad course version.
 - GitHub Actions finns för import/audit, kuraterad databas, semantik/status/identitetsprofilering, geometri, source coverage, readiness och foundation validation.
-- GitHub Pages-placeholder finns i `docs/`.
+- Produktionsfrontenden ÖST Splits finns i `docs/` med offlinebyggd Engine 1.0-browserdata, lokalt vendrad Leaflet och automatiserad Chromium-QA.
 
-## Primär handoff till analysmotorn
+## Primär Engine 1.0-input
 
-Den framtida Gotaleden-baserade motorn ska i första hand läsa:
+ÖST Splits-adaptern läser:
 
 `data/derived/ost-analysis-2018-2026.sqlite.gz`
 
@@ -54,7 +56,6 @@ Läs även:
 
 ## Verkligt kvarvarande / medvetet uppskjutet
 
-- **Generisk Gotaleden-core-integration:** väntar avsiktligt tills den pågående generiska refaktoreringen är färdig.
 - **Historiska lokala route assets:** äldre Ultra och Trail 21/22 har jämförbarhetsbevis men saknar i flera fall lokalt återanvändningsmässigt lämplig GPX för karta/replay.
 - **Trail 13/14:** den tidigare 14.249 km rasterrekonstruktionen är underkänd som aktuell referens efter visuell kontroll. Arbetsreferensen är nu en **13.472 km Hallamölla-splice** byggd som recept från verifierad Trail 21/22-geometri 2022–2024; äkta deltagar-/arrangörs-GPX är fortfarande målet och ingen redistributerbar lokal 13/14-rutt betraktas som auktoritativ.
 - **Trail 5:** 2026 har en rekonstruerad referens (5.481 km; oberoende rasterkontroll 5.545 km), men historisk exakt identitet saknas.
@@ -64,8 +65,6 @@ Läs även:
 - **Historiska kön/ålder:** 2018, 2019 och 2023 saknar tillräckligt explicit publicerad information i den frysta källan.
 - **Fysisk Bengtemölla-tolkning:** approach/utpassage-hypotesen är plausibel men inte officiellt verifierad.
 
-## Slutlig handoff-regel
+## Fortsatt förvaltning
 
-Förberedelsefasen betraktas som avslutad när foundation-validatorn är grön på denna version av `main`. Inför det stora bygget ska även `research/final-prebuild-checklist-2026-09-27.md` läsas. Därefter ska nästa utvecklingssteg vara adapter/integration mot den färdigrefaktorerade Gotaleden-kärnan — inte ny Sportstiming-import, ny banförstudie eller parallell frontend-fork.
-
-När Gotaleden-kärnan är färdig ska arbetet alltså börja med **adapter/integration mot den redan färdiga kuraterade ÖST-datan**, inte med en ny förstudie eller ny resultatimport.
+Foundation- och prebuild-validatorerna förblir obligatoriska regressionstester. Nya funktioner ska fortsätta gå genom Engine 1.0-adaptern, capability-matrisen och den redan färdiga kuraterade ÖST-datan. Ny Sportstiming-import, ny personkoppling eller ny route-publicering kräver separat källevidens och får inte införas som frontendgissning.
