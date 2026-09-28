@@ -23,17 +23,23 @@ const server=http.createServer((req,res)=>{
  const ready=()=>page.waitForFunction(()=>document.querySelector('#load-status').textContent.includes('upplaga klar'));
  async function open(race,section='overview'){await page.goto(base+'/?race='+race+'&section='+section);await ready();}
  async function nav(section){await page.locator('#analysis-nav [data-section="'+section+'"]').click();}
- async function shot(name){const file=path.join(out,name+'.png');await page.screenshot({path:file,fullPage:true});report.screenshots.push(name+'.png');}
+ async function shot(name){const file=path.join(out,name+'.png');for(let attempt=0;;attempt++){try{await page.screenshot({path:file,fullPage:true});break;}catch(error){if(attempt||!String(error.message).includes('Unable to capture screenshot'))throw error;await page.waitForTimeout(150);}}report.screenshots.push(name+'.png');}
  async function run(name,fn){await fn();report.cases.push(name);console.log('PASS '+name);}
  try{
  await run('startup: bootstrap plus selected race only',async()=>{
   await open('ost-2025-ultra60');
   assert.equal(await page.locator('h1').count(),1);assert.equal(await page.locator('main').count(),1);
-  assert.ok(await page.locator('#view').innerText().then(t=>t.includes('Målgångarna')));
+  assert.ok(await page.locator('#view').innerText().then(t=>t.includes('Sluttidsfördelning')));
   const loaded=report.requests.filter(p=>p.includes('/data/'));
   assert.deepEqual(loaded,['/data/bootstrap.json','/data/races/ost-2025-ultra60.json']);
   report.metrics.firstUsefulMs=await page.evaluate(()=>performance.now());
   await shot('desktop-overview');
+ });
+ await run('overview parity: gender series and club autocomplete keyboard flow',async()=>{
+  assert.ok(await page.locator('.gender-story').isVisible());
+  const club=page.locator('#club-filter');assert.equal(await club.inputValue(),'');assert.equal(await page.locator('#club-suggestions').isHidden(),true);
+  await club.fill('a');await page.locator('#club-suggestions [data-club-suggestion]').first().waitFor();await club.press('ArrowDown');await club.press('Enter');
+  assert.ok((await club.inputValue()).length>1);assert.equal(await page.locator('#club-suggestions').isHidden(),true);await page.locator('#reset-filters').click();
  });
  await run('result keyboard profile; replay; local vendor; source journey',async()=>{
   await nav('results');const row=page.locator('[data-result]').first();await row.focus();await page.keyboard.press('Enter');
@@ -80,8 +86,12 @@ const server=http.createServer((req,res)=>{
  });
  await run('compare 2, Kartduell, tile failure fallback',async()=>{
   await open('ost-2025-ultra60','compare');
-  await page.locator('#compare-options [data-add-compare]').first().click();await page.locator('#compare-options [data-add-compare]').first().click();
+  assert.equal(await page.locator('#compare-options').isHidden(),true);assert.ok((await page.locator('.selection-empty').innerText()).includes('Inga löpare'));
+  await page.locator('#compare-search').fill('a');await page.locator('#compare-options [data-add-compare]').first().click();
+  await page.locator('#compare-search').fill('a');await page.locator('#compare-options [data-add-compare]').first().click();
   assert.ok((await page.locator('#view').innerText()).includes('Direktjämförelse'));
+  assert.equal(await page.locator('.versus article').count(),2);
+  await shot('direct-comparison');
   await page.locator('#open-duel').click();await page.locator('#duel .leaflet-container').waitFor();
   expectedTiles=true;await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
   await page.locator('#duel [data-tiles]').click();await page.locator('#duel .route-only').waitFor();
