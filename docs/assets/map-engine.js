@@ -17,11 +17,18 @@ export function pointAtDistance(points,d){
 }
 export function terrainMetrics(profile,range=null){
  const from=range&&finite(range[0])?Math.min(range[0],range[1]):-Infinity,to=range&&finite(range[1])?Math.max(range[0],range[1]):Infinity;
- const window=(profile||[]).filter(p=>finite(p[0])&&p[0]>=from&&p[0]<=to),pts=window.filter(p=>finite(p[1])).map(p=>[Number(p[0]),Number(p[1])]),coverage=window.length?pts.length/window.length:0;
- // Do not bridge large gaps in partial GPX elevation. Descriptive D+/D− is shown
- // only for a near-complete profile; incomplete sources remain explicitly unavailable.
- if(pts.length<2||coverage<.9)return null;
- let ascent=0,descent=0;for(let i=1;i<pts.length;i++){const d=pts[i][1]-pts[i-1][1];if(d>0)ascent+=d;else descent-=d;}
+ const window=(profile||[]).filter(p=>finite(p[0])&&p[0]>=from&&p[0]<=to),valid=window.filter(p=>finite(p[1])),coverage=window.length?valid.length/window.length:0;
+ // Descriptive D+/D− requires a near-complete profile. Missing samples also
+ // break the accumulation chain so elevation gaps are never bridged implicitly.
+ if(valid.length<2||coverage<.9)return null;
+ let ascent=0,descent=0,previous=null;
+ for(const p of window){
+  if(!finite(p[1])){previous=null;continue;}
+  const current=[Number(p[0]),Number(p[1])];
+  if(previous){const d=current[1]-previous[1];if(d>0)ascent+=d;else descent-=d;}
+  previous=current;
+ }
+ const pts=valid.map(p=>[Number(p[0]),Number(p[1])]);
  return {ascent,descent,min:Math.min(...pts.map(p=>p[1])),max:Math.max(...pts.map(p=>p[1])),distance:pts.at(-1)[0]-pts[0][0],coverage};
 }
 export async function mountMap(root,{route,adapter,records=[],segment=0,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches}){
