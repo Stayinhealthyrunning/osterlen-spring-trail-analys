@@ -5,6 +5,7 @@ const path=require('node:path');
 const http=require('node:http');
 const root=path.resolve(__dirname,'../docs'),out=path.resolve(__dirname,'../artifacts');
 fs.mkdirSync(out,{recursive:true});
+const generatedBootstrap=JSON.parse(fs.readFileSync(path.join(root,'data/bootstrap.json'),'utf8').replace(/^\uFEFF/,''));
 const server=http.createServer((req,res)=>{
  const file=path.resolve(root,'.'+decodeURIComponent(req.url.split('?')[0]==='/'?'/index.html':req.url.split('?')[0]));
  if(!file.startsWith(root+path.sep)){res.writeHead(403);res.end();return;}
@@ -34,7 +35,7 @@ const server=http.createServer((req,res)=>{
   assert.equal(await page.locator('.route-journey li').count(),7);assert.match(await page.locator('.landscape').evaluate(el=>getComputedStyle(el).backgroundImage),/ost-coast-hero/);assert.ok(await page.locator('.method-context').isVisible());assert.ok((await page.locator('#dynamics').innerText()).includes('Så långt når startfältet'));assert.ok((await page.locator('#dynamics').innerText()).includes('Starkast avslutning'));assert.ok(await page.locator('.group-segment').first().isVisible());
   const contextContrast=await page.locator('.method-context strong').first().evaluate(el=>({color:getComputedStyle(el).color,bg:getComputedStyle(el.parentElement).backgroundColor}));assert.notEqual(contextContrast.color,contextContrast.bg);
   const pairedHeights=await page.locator('#overview .analysis-flow>.card').evaluateAll(cards=>cards.slice(0,2).map(x=>x.getBoundingClientRect().height));assert.ok(Math.abs(pairedHeights[0]-pairedHeights[1])<=2,'overview pair heights '+pairedHeights);
-  assert.equal(await page.locator('.club-analysis > .table-scroll tbody tr').count(),12);assert.ok(await page.locator('.club-analysis .group-details').isVisible());assert.ok(await page.locator('.club-analysis .group-details tbody tr').count()>20);assert.ok(await page.locator('.age-analysis.wide').isVisible());
+  assert.equal(await page.locator('.club-analysis > .table-scroll tbody tr').count(),12);assert.ok(await page.locator('.club-analysis .group-details').isVisible());assert.ok(await page.locator('.club-analysis .group-details tbody tr').count()>20);assert.ok(await page.locator('.age-analysis.wide').isVisible());assert.equal(await page.locator('#dynamics .finish-sex-grid>div').count(),2);
   const familyImages=await page.locator('.family-card').evaluateAll(cards=>Object.fromEntries(cards.map(card=>[card.dataset.family,getComputedStyle(card,'::after').backgroundImage])));assert.match(familyImages.ultra60,/ost-coast-hero/);assert.match(familyImages.duo60,/family-duo60/);assert.match(familyImages.trail22,/family-trail22/);assert.match(familyImages.trail14,/family-trail14/);assert.match(familyImages.trail5,/family-trail5/);assert.equal(new Set(Object.values(familyImages)).size,5);
   const loaded=report.requests.filter(p=>p.includes('/data/'));
   assert.deepEqual(loaded,['/data/bootstrap.json','/data/races/ost-2025-ultra60.json','/data/history.json']);
@@ -121,10 +122,22 @@ const server=http.createServer((req,res)=>{
   await shot('duel-tile-fallback');await page.locator('#close-duel').click();
  });
  await run('history cancellation, methodology relationships, plan',async()=>{
-  await nav('history');await page.waitForFunction(()=>document.querySelector('#view').textContent.includes('Inställt'));assert.ok(await page.locator('#history .history-fingerprint').isVisible());assert.ok((await page.locator('#history').innerText()).toLocaleLowerCase('sv').includes('jämförbar toppnotering'));
+  await nav('history');await page.waitForFunction(()=>document.querySelector('#view').textContent.includes('Inställt'));assert.ok(await page.locator('#history .history-fingerprint').isVisible());assert.ok((await page.locator('#history').innerText()).toLocaleLowerCase('sv').includes('jämförbar toppnotering'));const oldSexRow=page.locator('#history table tbody tr').filter({has:page.locator('td:first-child', {hasText:'2018'})}).first();if(await oldSexRow.count()){assert.equal((await oldSexRow.locator('td').nth(5).innerText()).trim(),'–');assert.equal((await oldSexRow.locator('td').nth(6).innerText()).trim(),'–');}
   assert.ok(report.requests.some(p=>p==='/data/history.json'));
   const methodToggle=page.locator('[data-info]').first();await methodToggle.click();assert.equal(await methodToggle.getAttribute('aria-expanded'),'true');await page.keyboard.press('Escape');assert.equal(await methodToggle.getAttribute('aria-expanded'),'false');
   await nav('course');await page.locator('#goal-hours').fill('7');assert.ok((await page.locator('#plan-output').innerText()).includes('Kalibrerat'));await page.locator('#load-course').click();await page.waitForFunction(()=>document.querySelector('#course .route-metrics')?.textContent.includes('Hela rutten · D+'));const segmentButton=page.locator('#segments [data-segment]').nth(1);if(await segmentButton.count()){await segmentButton.click();await page.locator('#course .route-metrics').waitFor();assert.ok(await page.locator('#course-map .map').isVisible());}
+ });
+ await run('all 34 race editions render with correct capability gating',async()=>{
+  for(const meta of Object.values(generatedBootstrap.race_catalog)){
+   await open(meta.race_key,'results');
+   const heading=await page.locator('#race-heading').innerText();assert.ok(heading.includes(String(meta.year)),meta.race_key+' heading');
+   assert.ok(await page.locator('#result-table [data-result]').count()>0,meta.race_key+' results');
+   assert.equal(await page.locator('#analysis-nav [data-section="segments"]').count(),meta.capabilities.segment_analysis?1:0,meta.race_key+' segments');
+   const hasCourse=Boolean(meta.course_version&&generatedBootstrap.courses[meta.course_version]);assert.equal(await page.locator('#analysis-nav [data-section="course"]').count(),hasCourse?1:0,meta.race_key+' course');
+   const sexExpected=Boolean(meta.capabilities.sex_filter&&meta.participant.entity==='person');assert.equal(await page.locator('[data-filter="sex"]').count(),sexExpected?1:0,meta.race_key+' sex filter');
+   const text=await page.locator('#analysis').innerText();assert.ok(!/\bNaN\b|\bundefined\b/.test(text),meta.race_key+' invalid rendered value');
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=2),meta.race_key+' overflow');
+  }
  });
  await run('responsive all required sizes; no document overflow',async()=>{
   for(const [w,h] of [[1536,1024],[1366,768],[900,900],[390,844]]){
