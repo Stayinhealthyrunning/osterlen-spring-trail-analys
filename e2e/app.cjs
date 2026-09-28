@@ -30,11 +30,22 @@ const server=http.createServer((req,res)=>{
   await open('ost-2025-ultra60');
   assert.equal(await page.locator('h1').count(),1);assert.equal(await page.locator('main').count(),1);
   assert.ok(await page.locator('#view').innerText().then(t=>t.includes('Sluttidsfördelning')));
+  assert.equal(await page.locator('.long-analysis>.flow-section').count(),6);assert.ok(await page.locator('#overview').isVisible());assert.ok(await page.locator('#dynamics').isVisible());assert.ok(await page.locator('#segments').isVisible());assert.ok(await page.locator('#course').isVisible());assert.ok(await page.locator('#history').isVisible());assert.ok(await page.locator('#method').isVisible());
   assert.equal(await page.locator('.route-journey li').count(),7);assert.match(await page.locator('.landscape').evaluate(el=>getComputedStyle(el).backgroundImage),/ost-coast-hero/);
+  const familyImages=await page.locator('.family-card').evaluateAll(cards=>Object.fromEntries(cards.map(card=>[card.dataset.family,getComputedStyle(card,'::after').backgroundImage])));assert.match(familyImages.ultra60,/ost-coast-hero/);assert.match(familyImages.duo60,/family-duo60/);assert.match(familyImages.trail22,/family-trail22/);assert.match(familyImages.trail14,/family-trail14/);assert.match(familyImages.trail5,/family-trail5/);assert.equal(new Set(Object.values(familyImages)).size,5);
   const loaded=report.requests.filter(p=>p.includes('/data/'));
-  assert.deepEqual(loaded,['/data/bootstrap.json','/data/races/ost-2025-ultra60.json']);
+  assert.deepEqual(loaded,['/data/bootstrap.json','/data/races/ost-2025-ultra60.json','/data/history.json']);
   report.metrics.firstUsefulMs=await page.evaluate(()=>performance.now());
   await shot('desktop-overview');
+ });
+ await run('analysis navigation uses anchors, deep links and browser history',async()=>{
+  await nav('dynamics');assert.equal(new URL(page.url()).hash,'#dynamics');assert.equal(await page.evaluate(()=>document.activeElement.id),'dynamics');assert.ok(await page.locator('#overview').isVisible());
+  await nav('segments');assert.equal(new URL(page.url()).hash,'#segments');assert.equal(await page.evaluate(()=>document.activeElement.id),'segments');assert.ok(await page.locator('#method').isVisible());
+  await page.goBack();assert.equal(new URL(page.url()).hash,'#dynamics');assert.equal(await page.evaluate(()=>document.activeElement.id),'dynamics');
+  await page.goForward();assert.equal(new URL(page.url()).hash,'#segments');assert.equal(await page.evaluate(()=>document.activeElement.id),'segments');
+  await page.goto(base+'/?race=ost-2025-ultra60#course');await ready();assert.equal(new URL(page.url()).hash,'#course');assert.equal(await page.evaluate(()=>document.activeElement.id),'course');assert.ok(await page.locator('#overview').isVisible());
+  await nav('results');assert.equal(await page.locator('.long-analysis').count(),0);assert.ok(await page.locator('#result-table').isVisible());
+  await nav('overview');assert.ok(await page.locator('.long-analysis').isVisible());
  });
  await run('overview parity: gender series and club autocomplete keyboard flow',async()=>{
   assert.ok(await page.locator('.gender-story').isVisible());
@@ -68,7 +79,7 @@ const server=http.createServer((req,res)=>{
  });
  await run('finish-only families and provisional/reconstructed labels',async()=>{
   for(const family of ['trail22','trail14','trail5']){
-   await open('ost-2026-'+family,'segments');assert.ok((await page.locator('#view').innerText()).includes('inga publicerade mellantider'));
+   await open('ost-2026-'+family,'segments');assert.equal(await page.locator('#analysis-nav [data-section="segments"]').count(),0);assert.equal(await page.locator('#segments').count(),0);assert.equal(new URL(page.url()).hash,'#overview');
    await nav('course');const text=await page.locator('#view').innerText();
    if(family==='trail14'){assert.ok(text.includes('Arbetsreferens'));assert.equal(await page.locator('#load-course').count(),0);}
    if(family==='trail5'){assert.ok(text.includes('Rekonstruerad bana'));assert.equal(await page.locator('#goal-hours').inputValue(),'0');assert.equal(await page.locator('#goal-minutes').inputValue(),'35');await page.locator('#load-course').click();await page.locator('#course-map .leaflet-container').waitFor();assert.equal(await page.locator('[data-play]').count(),0);}
@@ -103,7 +114,7 @@ const server=http.createServer((req,res)=>{
  await run('history cancellation, methodology relationships, plan',async()=>{
   await nav('history');await page.waitForFunction(()=>document.querySelector('#view').textContent.includes('Inställt'));
   assert.ok(report.requests.some(p=>p==='/data/history.json'));
-  await page.locator('[data-info]').click();assert.equal(await page.locator('[data-info]').getAttribute('aria-expanded'),'true');await page.keyboard.press('Escape');assert.equal(await page.locator('[data-info]').getAttribute('aria-expanded'),'false');
+  const methodToggle=page.locator('[data-info]').first();await methodToggle.click();assert.equal(await methodToggle.getAttribute('aria-expanded'),'true');await page.keyboard.press('Escape');assert.equal(await methodToggle.getAttribute('aria-expanded'),'false');
   await nav('course');await page.locator('#goal-hours').fill('7');assert.ok((await page.locator('#plan-output').innerText()).includes('Kalibrerat'));
  });
  await run('responsive all required sizes; no document overflow',async()=>{

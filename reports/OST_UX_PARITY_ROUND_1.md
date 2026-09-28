@@ -14,7 +14,7 @@ Rundan höjer presentation, interaktion och analytisk läsbarhet utan att ändra
 |---|---|---|
 | Hero och identitet | Ren men tunn, generisk tvåkolumnsyta | Rik kust–vår–slott-komposition, tydligare ruttberättelse, blomning, lager, destination, premium-CTA och starkare typografisk hierarki |
 | Produktsystem | Kort och filter saknade sammanhållen identitet | ÖST-färger, redaktionella ingresser, accentlinjer, mjukare ytor, tydligare aktiva tillstånd och konsekventa badges genom analysen |
-| Översikt och scrollflöde | Nyckeltal följdes av få kompakta paneler | Längre läsflöde med ingresser, könsdelad målgångsfördelning, percentilserier, könsperspektiv, klassdata och synlig metodguide |
+| Analys- och scrollarkitektur | Varje navigationsval ersatte hela analysytan via `state.section` | Översikt, Loppets dynamik, Delsträckor, Bana / Course Intelligence, Historisk översikt och Metod renderas capability-styrt i samma långscrollade dokument. Sticky navigation använder fokuserbara ankare och hashbaserade deep links; Back/Forward återställer rätt sektion. Resultat och Jämför är fortsatt separata specialvyer. |
 | Klubb och ort | Fritextfilter utan förslag | Datadriven combobox med tomt startläge, etiketterade förslag, tangentbordsnavigering, aktivt alternativ och tydligt tomläge |
 | Könsuppdelning | En tabell i fältdynamik | Total, kvinnor och män i målgångsdiagram och percentiler; separata KPI:er och status; segmentmedianer per kön; kvinnor, män och täckning i historiken |
 | Löpar-/lagval | Första åtta resultat visades före sökning | Neutralt startläge; förslag visas först efter aktiv sökning och förklarar namn, nummer och klass |
@@ -24,18 +24,22 @@ Rundan höjer presentation, interaktion och analytisk läsbarhet utan att ändra
 
 ## Slutrunda mot den faktiska profilbilden
 
-`research/OSt grafisk profil.png` inspekterades i originalupplösning före denna designpassning. Referensens tydligaste egenskaper är den fotografiska strandstigen med löpare, blommande förgrund, hav och kusthöjd, det redaktionella blå/guld-språket, bildbärande loppkort och en sammanhängande resa från kust mot inland.
+`research/ost-grafisk-profil.png` inspekterades i originalupplösning före denna designpassning. Referensens tydligaste egenskaper är den fotografiska strandstigen med löpare, blommande förgrund, hav och kusthöjd, det redaktionella blå/guld-språket, bildbärande loppkort och en sammanhängande resa från kust mot inland.
 
 Detta omsattes i produkten genom:
 
 - en separat textfri kustbild med löpare, hav, sandstig och vårblomning,
-- bildbärande toppar på loppfamiljernas kort,
+- fem skilda bildmiljöer på loppfamiljernas kort: kust för Ultra, två löpare och kust/inland för Duo, bäck och bokskog för Trail 22 samt egna inlandsskogar för Trail 14 och Trail 5,
 - en redaktionell miljöresa från hav via fiskeläge, kusthöjd, strand, ådal och backar till slott,
 - tydlig märkning att miljöresan inte är tidtagningspunkter eller exakt banmodell,
 - ett rikare profilhuvud för löpare och lag,
 - fortsatt återhållsamma data- och diagramytor under den identitetsbärande toppen.
 
-Referensbildens inbakade resultat, porträtt, exakta kartlinje och byggnadsmotiv har inte återanvänts som data eller verklighetsanspråk. Den två byte stora fil som råkade skapas vid namnbytet på `main` ersätts i denna branch med den verkliga 3,48 MB-referensbilden från den föregående upload-committen.
+Referensbildens inbakade resultat, porträtt, exakta kartlinje och byggnadsmotiv har inte återanvänts som data eller verklighetsanspråk. Familjebilderna gör inga anspråk på att visa Bengtemölla, Hallamölla eller Christinehof exakt. Den två byte stora fil som råkade skapas vid namnbytet på `main` ersätts i denna branch med den verkliga 3,48 MB-referensbilden och normaliseras till `research/ost-grafisk-profil.png`.
+
+## Verklig scrollarkitektur
+
+Analysnavigationens sex huvudval är nu ankare i ett gemensamt dokument. Alla tillgängliga huvudsektioner finns samtidigt i DOM:en och filter eller enhetsbyte uppdaterar hela analysberättelsen. Delsträckor utelämnas för finish-only-upplagor och Bana / Course Intelligence utelämnas när banunderlag saknas. Ett ankare som `#segments` återställer sektionen, flyttar scrollpositionen och sätter tangentbordsfokus. Browser Back/Forward går mellan ankarhistoriken. Resultatdatabasen och Direktjämförelse/Kartduell renderas fortfarande som egna arbetsvyer eftersom de har annan uppgiftsstruktur.
 
 ## Analytisk hantering av kön
 
