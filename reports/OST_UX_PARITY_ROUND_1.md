@@ -59,7 +59,7 @@ Dessa punkter är datagränser, inte återstående UX-skuld.
 
 Regressionen täcker könslegend, klubb/ort-comboboxens tangentbordsflöde, neutralt jämförelseval och den uppgraderade Direktjämförelsen. Slutversionen passerar 22 Python-tester, 17 JavaScript-tester och samtliga browserflöden utan konsol-, sid- eller oväntade nätverksfel.
 
-Den kritiska kod- och dataöverföringen mäts till 67 770 byte gzip. Hero-bilden är 287 096 byte och de fyra separata familjebilderna cirka 203 KB tillsammans. Eftersom familjekorten ligger i den initiala vyn räknas de in i en konservativ visuell första laddning på cirka 558 KB inklusive kritisk kod/data. Den formella 512 KiB-budgeten gäller enligt kontraktet kod/data och exkluderar bilder. Bootstrap plus största valda racepaket är 32 383 byte gzip. Progressiv dataladdning, lokala vendor-filer och lazy route/replay ligger kvar.
+Den kritiska kod- och dataöverföringen mäts i slutrevisionen till 72 573 byte gzip. Hero-bilden är 287 096 byte och de fyra separata familjebilderna 203 126 byte tillsammans. Eftersom familjekorten ligger i den initiala vyn räknas de in i en konservativ visuell första laddning på cirka 563 kB inklusive kritisk kod/data. Den formella 512 KiB-budgeten gäller enligt kontraktet kod/data och exkluderar bilder. Bootstrap plus största valda racepaket är 32 375 byte gzip. Progressiv dataladdning, lokala vendor-filer och lazy route/replay ligger kvar.
 
 
 ## Referensparitet efter slutrevision
