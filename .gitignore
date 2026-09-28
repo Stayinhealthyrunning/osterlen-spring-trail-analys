@@ -13,3 +13,8 @@ node_modules/
 .coverage
 coverage.xml
 dist/
+
+docs/data/
+artifacts/
+playwright-report/
+test-results/

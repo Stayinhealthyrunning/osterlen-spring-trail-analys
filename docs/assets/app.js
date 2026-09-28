@@ -1,0 +1,133 @@
+import {DataLoader} from './data-loader.js';
+import {adapt} from './data-adapter.js';
+import {urlState,stateURL,switched,storage,sections} from './app-state.js';
+import {filterRows,finite,finished} from './analytics.js';
+import {esc,time,empty} from './charts.js';
+import * as views from './views.js';
+import {plan} from './race-plan.js';
+import {pace,table,tr} from './charts.js';
+const $=s=>document.querySelector(s),loader=new DataLoader(),labels={overview:'Översikt',results:'Resultat',dynamics:'Loppets dynamik',segments:'Delsträckor',course:'Bana',compare:'Jämför',history:'Historik',method:'Metod'};
+let boot,a,state,store,favorites=[],generation=0,renderVersion=0,mapView=null,profileMap=null,duelMap=null,profileTrigger=null;
+function safeStorage(){try{return localStorage;}catch{return null;}}
+function status(text){$('#load-status').textContent=text;}
+function syncURL(replace=false){history[replace?'replaceState':'pushState'](null,'',stateURL(location.href,state));}
+function closeMaps(){mapView?.destroy();mapView=null;profileMap?.destroy();profileMap=null;duelMap?.destroy();duelMap=null;}
+function saveFavorites(){store.write('favorites',favorites.slice(-40));}
+function isFavorite(r){return favorites.some(f=>f.race===a.race.race_key&&f.id===String(r.source_result_id));}
+async function loadRace(key,{restore=null,replace=false}={}){
+ const token=++generation;closeMaps();$('#profile').close();$('#duel').close();state=switched(state,key);if(restore)Object.assign(state,restore);
+ $('#view').setAttribute('aria-busy','true');$('#view').innerHTML=empty('Laddar vald upplaga…');status('Katalog klar → laddar valt lopp/år');$('#year').disabled=true;
+ try{const doc=await loader.race(key);if(token!==generation)return;a=adapt(doc,boot);state.compare=state.compare.filter(id=>a.byId.has(id));controls();filters();await render();syncURL(replace);status('Katalog → vald upplaga klar · '+a.records.length+' resultat · rutt och historik på begäran');if(state.profile)openProfile(state.profile,false);}
+ catch(e){if(token===generation){$('#view').innerHTML=empty(e.message)+'<button id="retry">Försök igen</button>';$('#retry').onclick=()=>loadRace(key,{restore:state,replace:true});}}
+ finally{if(token===generation){$('#view').setAttribute('aria-busy','false');$('#year').disabled=false;}}
+}
+function controls(){
+ const family=a.race.race_family;
+ $('#race-heading').textContent=boot.presentation[family].label+' · '+a.race.year;
+ $('#family-cards').innerHTML=Object.entries(boot.presentation).map(([key,p])=>'<button class="family-card" data-family="'+esc(key)+'" aria-pressed="'+(family===key)+'"><strong>'+esc(p.label)+'</strong><span>'+esc(p.distance)+'</span><small>'+esc(p.description)+'</small></button>').join('');
+ const catalog=Object.values(boot.race_catalog).filter(r=>r.race_family===family);
+ const years=[...catalog.map(r=>r.year),...boot.cancelled_years].sort((x,y)=>y-x);
+ $('#year').innerHTML=years.map(y=>'<option value="'+y+'" '+(y===a.race.year?'selected':'')+' '+(boot.cancelled_years.includes(y)?'disabled':'')+'>'+y+(boot.cancelled_years.includes(y)?' · Inställt':'')+'</option>').join('');
+ $('#analysis-nav').innerHTML=sections.map(key=>'<button data-section="'+key+'" '+(state.section===key?'aria-current="page"':'')+'>'+labels[key]+'</button>').join('');
+ $('#unit').value=state.unit;
+}
+function filters(){
+ const options=(key,label)=>'<label>'+label+'<select data-filter="'+key+'"><option value="">Alla</option>'+[...new Set(a.records.map(r=>r[key]).filter(Boolean))].sort().map(v=>'<option value="'+esc(v)+'">'+esc(v)+'</option>').join('')+'</select></label>';
+ $('#filters').innerHTML=(a.race.capabilities.sex_filter&&a.race.participant.entity==='person'?'<label>Kön<select data-filter="sex"><option value="">Alla</option><option value="F">Kvinnor</option><option value="M">Män</option></select></label>':'')+options('class_name',a.race.participant.entity==='team'?'Lagklass':'Klass')+options('status','Status')+(a.race.capabilities.club_analysis?'<label>Klubb & ort<input data-filter="club" type="search"></label>':'')+'<button id="reset-filters">Återställ</button>';
+}
+function selected(){return filterRows(a.records,state.filters);}
+async function render(){
+ const token=++renderVersion,rows=selected();mapView?.destroy();mapView=null;
+ $('#selection-count').textContent='Visar '+rows.length+' av '+a.records.length+' resultat · '+(Object.entries(state.filters).filter(([,v])=>v).map(([k,v])=>k+': '+v).join(' · ')||'Inga fältfilter');
+ document.querySelectorAll('#analysis-nav button').forEach(b=>{if(b.dataset.section===state.section)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});
+ const v=$('#view');v.setAttribute('aria-busy','false');
+ if(state.section==='overview')v.innerHTML=views.overview(a,rows,state,boot);
+ if(state.section==='dynamics')v.innerHTML=views.dynamics(a,rows,state);
+ if(state.section==='segments')v.innerHTML=views.segments(a,rows,state);
+ if(state.section==='course'){v.innerHTML=views.course(a);renderPlan();}
+ if(state.section==='method')v.innerHTML=views.methodology(a,boot,state);
+ if(state.section==='compare'){v.innerHTML=views.compare(a,state);compareOptions('');}
+ if(state.section==='results'){renderResults();}
+ if(state.section==='history'){v.innerHTML=empty('Laddar liten historiksammanställning…');try{const d=await loader.history();if(token===renderVersion)v.innerHTML=views.historyView(a,d,boot);}catch(e){if(token===renderVersion)v.innerHTML=empty(e.message);}}
+}
+function resultMatches(r,q){return (r.name+' '+r.bib+' '+(r.club||'')).toLocaleLowerCase('sv').includes(q.toLocaleLowerCase('sv'));}
+function renderResults(){
+ $('#view').innerHTML='<section class="card"><h3>Resultatdatabas</h3><p class="muted">'+(state.globalQuery!==null?'Global sökning i hela upplagan. Fältfiltren begränsar inte sökningen.':'Tabellen följer aktuella fältfilter.')+'</p><div class="toolbar"><label>Sök i filtrerade resultat<input id="table-search" type="search" value="'+esc(state.query||'')+'" placeholder="Namn, startnummer, klubb"></label></div><div id="result-table"></div><div class="toolbar"><button id="prev-page">Föregående</button><span id="page-label"></span><button id="next-page">Nästa</button></div></section><section class="card"><h3>Sparade lopp</h3><div id="favorites">'+(favorites.length?favorites.map(f=>'<button data-open-favorite="'+esc(f.race)+'" data-id="'+esc(f.id)+'">'+esc(f.name)+' · '+esc(f.year)+'</button>').join(' '):'<p class="muted">Spara ett resultat från profilen. Favoriter stannar på din enhet.</p>')+'</div></section>';resultTable();
+}
+function resultTable(){
+ let rows=(state.globalQuery!==null?a.records:selected()).filter(r=>resultMatches(r,state.query||''));const key=state.sort||'overall_place',dir=state.dir||1;
+ rows=rows.slice().sort((x,y)=>{const p=x[key],q=y[key];if(p==null)return q==null?0:1;if(q==null)return -1;return (typeof p==='number'&&typeof q==='number'?p-q:String(p).localeCompare(String(q),'sv',{numeric:true}))*dir;});
+ const pages=Math.max(1,Math.ceil(rows.length/40));state.page=Math.min(state.page,pages);const current=rows.slice((state.page-1)*40,state.page*40);
+ const heads=[['overall_place','Plats'],['bib','Nr'],['name',a.race.participant.entity==='team'?'Lag':'Namn'],['class_name','Klass'],['club','Klubb / ort'],['country','Land'],['finish_seconds','Sluttid'],['status','Status']];
+ $('#result-table').innerHTML='<div class="table-scroll"><table><thead><tr>'+heads.map(([k,label])=>'<th scope="col" aria-sort="'+(key===k?(dir===1?'ascending':'descending'):'none')+'"><button data-sort="'+k+'">'+label+(key===k?(dir===1?' ↑':' ↓'):'')+'</button></th>').join('')+'</tr></thead><tbody>'+current.map(r=>'<tr tabindex="0" data-result="'+esc(r.source_result_id)+'" aria-label="Öppna '+esc(r.name)+'">'+heads.map(([k])=>'<td '+(k==='name'?'class="name"':'')+'>'+(k==='finish_seconds'?(finished(r)?time(r[k]):'–'):esc(r[k]??'–'))+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>'+(rows.length?'':empty('Inga resultat matchar sökningen och filtren.'));
+ $('#page-label').textContent=state.page+' / '+pages+' · '+rows.length+' resultat';$('#prev-page').disabled=state.page<=1;$('#next-page').disabled=state.page>=pages;
+}
+function compareOptions(q){
+ const root=$('#compare-options');if(!root)return;
+ root.innerHTML='<div class="toolbar">'+a.records.filter(r=>resultMatches(r,q)&&!state.compare.includes(String(r.source_result_id))).slice(0,8).map(r=>'<button data-add-compare="'+esc(r.source_result_id)+'">'+esc(r.name)+' · #'+esc(r.bib)+'</button>').join('')+'</div>';
+}
+async function showMap(root,records,kind){
+ const token=generation;root.innerHTML=empty('Laddar aktuell rutt…');
+ try{const [route,module]=await Promise.all([loader.route(a.race),import('./map-engine.js')]);if(token!==generation||!root.isConnected||(kind==='profile'&&!$('#profile').open)||(kind==='duel'&&!$('#duel').open))return;const mounted=await module.mountMap(root,{route,adapter:a,records,segment:state.segment});if(token!==generation||!root.isConnected||(kind==='profile'&&!$('#profile').open)||(kind==='duel'&&!$('#duel').open)){mounted.destroy();return;}if(kind==='profile')profileMap=mounted;else if(kind==='duel')duelMap=mounted;else mapView=mounted;}
+ catch(e){if(root.isConnected)root.innerHTML=empty(e.message);}
+}
+function openProfile(id,update=true){
+ const r=a.byId.get(String(id));if(!r)return;profileMap?.destroy();profileMap=null;profileTrigger=document.activeElement;state.profile=String(id);
+ $('#profile-body').innerHTML=views.profile(a,r,state,isFavorite(r));if(!$('#profile').open)$('#profile').showModal();if(update)syncURL();
+}
+async function navigate(section,update=true){if(!sections.includes(section))return;state.section=section;await render();if(update)syncURL();}
+document.addEventListener('click',async e=>{
+ const b=e.target.closest('button,a');if(!b||!state)return;
+ if(b.dataset.family){const family=b.dataset.family,editions=Object.values(boot.race_catalog).filter(r=>r.race_family===family),race=editions.find(r=>r.year===a.race.year)||editions.sort((x,y)=>y.year-x.year)[0];await loadRace(race.race_key);$('#analysis').scrollIntoView();return;}
+ if(b.dataset.section){e.preventDefault();await navigate(b.dataset.section);$('#analysis').scrollIntoView();return;}
+ if(b.dataset.info){const t=document.getElementById(b.dataset.info);t.hidden=!t.hidden;b.setAttribute('aria-expanded',!t.hidden);return;}
+ if(b.dataset.segment){state.segment=+b.dataset.segment;mapView?.select(state.segment);document.querySelectorAll('button[data-segment]').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.segment===state.segment));if(state.section==='segments')await render();return;}
+ if(b.dataset.sort){state.dir=state.sort===b.dataset.sort?-(state.dir||1):1;state.sort=b.dataset.sort;resultTable();return;}
+ if(b.dataset.addCompare){const id=b.dataset.addCompare;if(!state.compare.includes(id)&&state.compare.length<5)state.compare.push(id);status(state.compare.length+' resultat valda för jämförelse');if(state.section==='compare')await render();syncURL();return;}
+ if(b.dataset.removeCompare){state.compare=state.compare.filter(id=>id!==b.dataset.removeCompare);await render();syncURL();return;}
+ if(b.dataset.favorite){const r=a.byId.get(b.dataset.favorite);if(isFavorite(r))favorites=favorites.filter(f=>!(f.race===a.race.race_key&&f.id===b.dataset.favorite));else favorites.push({race:a.race.race_key,id:String(r.source_result_id),name:r.name,year:a.race.year});saveFavorites();b.textContent=isFavorite(r)?'Sparad':'Spara lopp';b.setAttribute('aria-pressed',isFavorite(r));return;}
+ if(b.dataset.openFavorite){await loadRace(b.dataset.openFavorite,{restore:{profile:b.dataset.id}});return;}
+ if(b.id==='reset-filters'){state.filters={};filters();await render();}
+ if(b.id==='prev-page'){state.page--;resultTable();}
+ if(b.id==='next-page'){state.page++;resultTable();}
+ if(b.id==='load-course')await showMap($('#course-map'),[],'course');
+ if(b.id==='load-profile-replay')await showMap($('#profile-replay'),[a.byId.get(state.profile)],'profile');
+ if(b.id==='open-duel'){const dialog=$('#duel');dialog.showModal();await showMap($('#duel-body'),state.compare.map(id=>a.byId.get(id)),'duel');}
+ if(b.id==='close-profile')$('#profile').close();
+ if(b.id==='close-duel')$('#duel').close();
+});
+document.addEventListener('click',e=>{const row=e.target.closest('[data-result]');if(row)openProfile(row.dataset.result);});
+document.addEventListener('keydown',e=>{
+ if(e.key==='Escape'){document.querySelectorAll('[data-info][aria-expanded=true]').forEach(b=>{document.getElementById(b.dataset.info).hidden=true;b.setAttribute('aria-expanded','false');});}
+ if(e.key==='Enter'||e.key===' '){const row=e.target.closest('[data-result]');if(row){e.preventDefault();openProfile(row.dataset.result);}const hit=e.target.closest('svg [data-segment]');if(hit){e.preventDefault();state.segment=+hit.dataset.segment;render();}}
+});
+document.addEventListener('input',e=>{
+ if(!state)return;if(e.target.dataset.filter){state.globalQuery=null;state.filters[e.target.dataset.filter]=e.target.value;state.page=1;render();}
+ if(e.target.id==='table-search'){state.query=e.target.value;state.page=1;resultTable();}
+ if(e.target.id==='compare-search')compareOptions(e.target.value);
+ if(e.target.id==='goal-hours'||e.target.id==='goal-minutes')renderPlanOutput();
+});
+$('#year').onchange=()=>{const r=Object.values(boot.race_catalog).find(r=>r.race_family===a.race.race_family&&r.year===+$('#year').value);if(r)loadRace(r.race_key);};
+$('#unit').onchange=()=>{state.unit=$('#unit').value;store.write('unit',state.unit);render();if(state.profile)openProfile(state.profile,false);};
+$('#global-search').onsubmit=async e=>{e.preventDefault();if(!a)return;const q=$('#lookup').value.trim(),matches=a.records.filter(r=>resultMatches(r,q));if(matches.length===1)openProfile(matches[0].source_result_id);else{state.query=q;state.globalQuery=q;state.page=1;await navigate('results');$('#analysis').scrollIntoView();}};
+$('#profile').addEventListener('close',()=>{profileMap?.destroy();profileMap=null;if(state?.profile){state.profile=null;syncURL(true);}profileTrigger?.focus?.();});
+$('#duel').addEventListener('close',()=>{duelMap?.destroy();duelMap=null;});
+addEventListener('popstate',async()=>{if(!boot)return;const restored=urlState(location.href,boot.race_catalog,boot.default_race);if(restored.raceKey!==state.raceKey)await loadRace(restored.raceKey,{restore:restored,replace:true});else{Object.assign(state,restored);await render();if(restored.profile)openProfile(restored.profile,false);else $('#profile').close();}});
+async function start(){
+ try{boot=await loader.bootstrap();store=storage(boot.event.storage_namespace,safeStorage());const saved=store.read('favorites',[]);favorites=Array.isArray(saved)?saved.filter(f=>f&&typeof f.id==='string'&&boot.race_catalog[f.race]).slice(-40):[];const unit=store.read('unit','pace');state={...urlState(location.href,boot.race_catalog,boot.default_race),unit:unit==='speed'?'speed':'pace',filters:{},segment:0,page:1};await loadRace(state.raceKey,{restore:{...state},replace:true});}
+ catch(e){$('#view').innerHTML=empty(e.message);status('Katalogen kunde inte laddas. Ladda om sidan för att försöka igen.');}
+}
+start();
+
+
+function renderPlan(){
+ if(!a.race.capabilities.goal_pace)return;
+ $('#view').insertAdjacentHTML('beforeend','<section class="card"><h3>Måltempo & loppplan</h3><p>En historisk referens, inte en individuell prognos.</p><div class="toolbar"><label>Timmar<input id="goal-hours" type="number" min="0" max="48" value="6"></label><label>Minuter<input id="goal-minutes" type="number" min="0" max="59" value="0"></label></div><div id="plan-output"></div></section>');
+ renderPlanOutput();
+}
+function renderPlanOutput(){
+ const h=Number($('#goal-hours')?.value),m=Number($('#goal-minutes')?.value),target=h*3600+m*60,root=$('#plan-output');if(!root)return;
+ if(h<0||h>48||m<0||m>59||target<=0){root.innerHTML=empty('Ange en positiv måltid och minuter mellan 0 och 59.');return;}
+ const p=plan(a,target);
+ root.innerHTML='<p>Måltempo: <strong>'+pace(p.pace,state.unit)+'</strong> · nominell distans</p>'+(p.segments.length?table(['Till kontroll','Delsträcketid'],p.segments.map(s=>tr([esc(s.name),time(s.seconds)]))):'')+'<p class="muted">'+(p.method==='observed'?'Kalibrerat på kompletta publicerade passager i just denna upplaga, n='+p.n+'. Medianandelar av varje deltagares sluttid normaliseras till måltiden. Fältfiltren påverkar inte referensen.':p.method==='distance'?'Distansfallback: fördelat enbart på explicita rapporterade segmentdistanser. Saknad distans lämnas oallokerad.':'Enkel beräkning från måltid och nominell distans. Inget segmentunderlag finns.')+'</p>';
+}

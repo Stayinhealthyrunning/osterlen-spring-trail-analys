@@ -1,20 +1,17 @@
 <!doctype html>
-<html lang="sv">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Österlen Spring Trail Analys</title>
-  <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;max-width:860px;margin:8vh auto;padding:0 24px;line-height:1.55;color:#1d2a22}
-    h1{font-size:clamp(2rem,5vw,4rem);margin-bottom:.25rem}
-    .tag{font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}
-    .box{margin-top:2rem;padding:1.2rem 1.4rem;border:1px solid #cbd6cf;border-radius:16px;background:#f7faf8}
-  </style>
-</head>
-<body>
-  <div class="tag">Förberedelsefas</div>
-  <h1>Österlen Spring Trail Analys</h1>
-  <p>Interaktiv analys av resultat, banor, pacing och loppets utveckling från 2018 och framåt.</p>
-  <div class="box">Datainsamling, banversionsanalys och anpassning av den gemensamma analysmotorn pågår.</div>
-</body>
-</html>
+<html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#1677A8"><meta name="description" content="Utforska verkliga resultat, mellantider och banor från Österlen Spring Trail 2018–2026."><link rel="icon" href="data:,"><title>ÖST Splits – Österlen Spring Trail Analys</title><link rel="stylesheet" href="assets/style.css"><script type="module" src="assets/app.js"></script></head>
+<body><a class="skip" href="#main">Hoppa till analysen</a>
+<header><a class="brand" href="./" aria-label="ÖST Splits, startsida"><span class="brand-mark">ÖST</span><span>Splits<small>ÖSTERLEN SPRING TRAIL</small></span></a><nav aria-label="Huvudnavigation"><a href="#analysis">Utforska loppet</a><a href="#method" data-section="method">Så fungerar det</a></nav><form id="global-search" role="search"><label for="lookup">Hitta löpare eller lag i valt lopp</label><div class="search-box"><input id="lookup" type="search" placeholder="Namn eller startnummer" autocomplete="off"><button aria-label="Sök löpare eller lag">Sök</button></div></form></header>
+<main id="main" tabindex="-1">
+<section class="hero"><div class="hero-copy"><p class="eyebrow">ÖSTERLEN SPRING TRAIL · 2018–2026</p><h1>Från kust<br>till <em>slott.</em></h1><p>Löp genom fiskelägen, längs stränder, vidare genom skogar och blommande landskap – till Christinehof.</p><a class="primary" href="#analysis">Upptäck ditt lopp <span aria-hidden="true">↗</span></a><p class="hero-note">Dina passager. Din resa. Ett nytt perspektiv.</p></div>
+<div class="landscape" aria-label="Abstrakt illustration av vår, kust och löpstig" role="img"><svg viewBox="0 0 700 480" aria-hidden="true"><defs><pattern id="waves" width="75" height="30" patternUnits="userSpaceOnUse"><path d="M0 15 Q20 5 40 15 T80 15" fill="none" stroke="currentColor" stroke-width="1"/></pattern></defs><path class="sky" d="M0 0H700V480H0Z"/><circle class="sun" cx="530" cy="95" r="44"/><path class="sea" d="M0 185Q170 120 360 210T700 230V480H0Z"/><path class="wave-fill" d="M0 185Q170 120 360 210T700 230V480H0Z"/><path class="sand" d="M700 120Q250 230 460 330T370 480H700Z"/><path class="land" d="M700 165Q350 250 530 345T465 480H700Z"/><path class="trail" d="M670 195Q455 269 587 356T550 480"/><g class="trees"><path d="M617 220l-25 44h50zM650 240l-23 42h46zM659 303l-27 46h54z"/></g><g class="blossom"><circle cx="658" cy="123" r="18"/><circle cx="637" cy="139" r="17"/><circle cx="670" cy="145" r="17"/></g><g class="runner"><circle cx="575" cy="317" r="7"/><path d="m573 328-10 17 13 8 3 20m-16-28-16 9m21-18 18 4 8-10m-18 23-12 16"/></g></svg><span class="landscape-caption">HAV · STIG · VÅR</span></div></section>
+<div id="family-cards" class="family-cards" role="group" aria-label="Välj loppfamilj"></div>
+<section id="analysis" class="analysis"><div class="context"><div><p class="eyebrow">DITT LOPP I PERSPEKTIV</p><h2 id="race-heading">Laddar loppkatalog…</h2></div><div class="context-controls"><label>Upplaga<select id="year" disabled></select></label><label>Fartenhet<select id="unit"><option value="pace">min/km</option><option value="speed">km/h</option></select></label></div></div>
+<p id="load-status" role="status" aria-live="polite">Laddar katalog…</p>
+<nav id="analysis-nav" class="analysis-nav" aria-label="Analysnavigation"></nav>
+<div id="filters" class="filters"></div><p id="selection-count" class="muted"></p>
+<div id="view" aria-busy="true"></div></section>
+</main><footer><strong>ÖST Splits</strong><p>En del av Loppanalys · Oberoende analys av publicerade tävlingsresultat.</p><a href="https://www.osterlentrail.se/">Österlen Spring Trail</a> · <a href="#method" data-section="method">Källor & metod</a></footer>
+<dialog id="profile" aria-labelledby="profile-title"><div class="dialog-toolbar"><span class="eyebrow">DITT LOPP</span><button id="close-profile" autofocus aria-label="Stäng profil">Stäng ×</button></div><div id="profile-body"></div></dialog>
+<dialog id="duel" aria-labelledby="duel-title"><div class="dialog-toolbar"><h2 id="duel-title">Kartduell</h2><button id="close-duel">Stäng ×</button></div><div id="duel-body"></div></dialog>
+<noscript>ÖST Splits behöver JavaScript för att läsa och analysera resultaten.</noscript></body></html>

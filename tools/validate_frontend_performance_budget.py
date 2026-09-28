@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the measured ÖST browser-delivery performance budget."""
+"""Validate the measured Ã–ST browser-delivery performance budget."""
 from __future__ import annotations
 
 import json
@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 BUDGET=ROOT/"config/frontend-performance-budget.json"
-EXPORTER=ROOT/"tools/export_engine_web_bundle.py"
+EXPORTER=ROOT/"tools/build_frontend.py"
 
 
 def main():
@@ -59,6 +59,10 @@ def main():
             if doc.get("race_key")!=race_key:
                 errors.append(f"{race_key}: race_key mismatch")
 
+    from frontend_asset_budget import measure, violations
+    assets=measure()
+    errors.extend(violations(assets,combined))
+
     if errors:
         print("Frontend data performance budget FAILED")
         for e in errors: print(" -",e)
@@ -74,6 +78,7 @@ def main():
         "largest_selected_race_raw_bytes":largest_raw,
         "bootstrap_plus_largest_gzip_bytes":combined,
         "budget":limits,
+        "frontend_assets":assets,
     },ensure_ascii=False,indent=2))
     return 0
 

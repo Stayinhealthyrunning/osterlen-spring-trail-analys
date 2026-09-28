@@ -1,0 +1,12 @@
+{
+  "name": "ost-splits",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/frontend.test.mjs",
+    "test:browser": "node e2e/app.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
