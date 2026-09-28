@@ -30,6 +30,7 @@ const server=http.createServer((req,res)=>{
   await open('ost-2025-ultra60');
   assert.equal(await page.locator('h1').count(),1);assert.equal(await page.locator('main').count(),1);
   assert.ok(await page.locator('#view').innerText().then(t=>t.includes('Sluttidsfördelning')));
+  assert.equal(await page.locator('.route-journey li').count(),7);assert.match(await page.locator('.landscape').evaluate(el=>getComputedStyle(el).backgroundImage),/ost-coast-hero/);
   const loaded=report.requests.filter(p=>p.includes('/data/'));
   assert.deepEqual(loaded,['/data/bootstrap.json','/data/races/ost-2025-ultra60.json']);
   report.metrics.firstUsefulMs=await page.evaluate(()=>performance.now());
@@ -43,7 +44,7 @@ const server=http.createServer((req,res)=>{
  });
  await run('result keyboard profile; replay; local vendor; source journey',async()=>{
   await nav('results');const row=page.locator('[data-result]').first();await row.focus();await page.keyboard.press('Enter');
-  await page.locator('#profile[open]').waitFor();assert.ok((await page.locator('#profile-body').innerText()).includes('Johan Lantz'));
+  await page.locator('#profile[open]').waitFor();assert.ok((await page.locator('#profile-body').innerText()).includes('Johan Lantz'));assert.ok(await page.locator('#profile .profile-hero').isVisible());
   await page.locator('#load-profile-replay').click();await page.locator('#profile .leaflet-container').waitFor();
   await page.locator('#profile [data-seek]').fill('10000');await page.locator('#profile [data-seek]').dispatchEvent('input');
   assert.ok((await page.locator('#profile output').innerText()).includes('2:46:40'));
@@ -109,6 +110,7 @@ const server=http.createServer((req,res)=>{
   for(const [w,h] of [[1536,1024],[1366,768],[900,900],[390,844]]){
    await page.setViewportSize({width:w,height:h});await open('ost-2025-ultra60');
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=2));
+   if(w===390)assert.equal(await page.locator('.hero').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length),1);
    await shot('overview-'+w+'x'+h);
    for(const section of ['results','dynamics','segments','course','compare','history','method']){
     await nav(section);if(section==='history')await page.waitForFunction(()=>document.querySelector('#view').textContent.includes('Inställt'));

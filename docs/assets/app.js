@@ -24,7 +24,7 @@ async function loadRace(key,{restore=null,replace=false}={}){
 function controls(){
  const family=a.race.race_family;
  $('#race-heading').textContent=boot.presentation[family].label+' · '+a.race.year;
- $('#family-cards').innerHTML=Object.entries(boot.presentation).map(([key,p])=>'<button class="family-card" data-family="'+esc(key)+'" aria-pressed="'+(family===key)+'"><strong>'+esc(p.label)+'</strong><span>'+esc(p.distance)+'</span><small>'+esc(p.description)+'</small></button>').join('');
+ $('#family-cards').innerHTML=Object.entries(boot.presentation).map(([key,p])=>'<button class="family-card family-'+esc(key)+'" data-family="'+esc(key)+'" aria-pressed="'+(family===key)+'"><strong>'+esc(p.label)+'</strong><span>'+esc(p.distance)+'</span><small>'+esc(p.description)+'</small></button>').join('');
  const catalog=Object.values(boot.race_catalog).filter(r=>r.race_family===family);
  const years=[...catalog.map(r=>r.year),...boot.cancelled_years].sort((x,y)=>y-x);
  $('#year').innerHTML=years.map(y=>'<option value="'+y+'" '+(y===a.race.year?'selected':'')+' '+(boot.cancelled_years.includes(y)?'disabled':'')+'>'+y+(boot.cancelled_years.includes(y)?' · Inställt':'')+'</option>').join('');
@@ -126,7 +126,7 @@ $('#profile').addEventListener('close',()=>{profileMap?.destroy();profileMap=nul
 $('#duel').addEventListener('close',()=>{duelMap?.destroy();duelMap=null;});
 addEventListener('popstate',async()=>{if(!boot)return;const restored=urlState(location.href,boot.race_catalog,boot.default_race);if(restored.raceKey!==state.raceKey)await loadRace(restored.raceKey,{restore:restored,replace:true});else{Object.assign(state,restored);await render();if(restored.profile)openProfile(restored.profile,false);else $('#profile').close();}});
 async function start(){
- try{boot=await loader.bootstrap();store=storage(boot.event.storage_namespace,safeStorage());const saved=store.read('favorites',[]);favorites=Array.isArray(saved)?saved.filter(f=>f&&typeof f.id==='string'&&boot.race_catalog[f.race]).slice(-40):[];const unit=store.read('unit','pace');state={...urlState(location.href,boot.race_catalog,boot.default_race),unit:unit==='speed'?'speed':'pace',filters:{},segment:0,page:1};await loadRace(state.raceKey,{restore:{...state},replace:true});}
+ try{$('.landscape')?.setAttribute('aria-label','Löpare på en blommande strandstig längs Österlensk kust');boot=await loader.bootstrap();store=storage(boot.event.storage_namespace,safeStorage());const saved=store.read('favorites',[]);favorites=Array.isArray(saved)?saved.filter(f=>f&&typeof f.id==='string'&&boot.race_catalog[f.race]).slice(-40):[];const unit=store.read('unit','pace');state={...urlState(location.href,boot.race_catalog,boot.default_race),unit:unit==='speed'?'speed':'pace',filters:{},segment:0,page:1};await loadRace(state.raceKey,{restore:{...state},replace:true});}
  catch(e){$('#view').innerHTML=empty(e.message);status('Katalogen kunde inte laddas. Ladda om sidan för att försöka igen.');}
 }
 start();

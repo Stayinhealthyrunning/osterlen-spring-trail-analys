@@ -3,9 +3,15 @@
 Datum: 2026-09-28  
 Status: source of truth för produktens visuella uttryck
 
+## Primär visuell referens
+
+`research/OSt grafisk profil.png` ska inspekteras visuellt vid större designändringar. Bilden är primär referens för atmosfär, komposition, kust- och vårkänsla, redaktionell rikedom och resan från hav till slott. Den är ett koncept, inte en datakälla: inbakade exempelresultat, porträtt, kartlinjer och byggnadsbilder får inte kopieras som sakuppgifter.
+
+Produktens heroasset `docs/assets/ost-coast-hero.webp` är en separat, textfri och icke platsidentifierande landskapsbild framtagen med referensen som stämnings- och kompositionsunderlag. Namngivna platser presenteras endast som text eller med verifierade visuella källor. Den redaktionella miljöresan skiljs uttryckligen från tidtagningspunkter och banversioner.
+
 ## Identitet
 
-ÖST Splits ska kännas som en varm, professionell analysprodukt för resan från Österlensk kust till Christinehof. Landningsytan får bära vår, hav, sand och löpning. Analysytorna ska vara lugnare och prioritera läsbar data. Namngivna verkliga platser illustreras bara när formen bygger på verifierade referenser; den nuvarande heroillustrationen är därför avsiktligt abstrakt och gör inget anspråk på att avbilda en viss byggnad.
+ÖST Splits ska kännas som en varm, professionell analysprodukt för resan från Österlensk kust till Christinehof. Landningsytan får bära vår, hav, sand och löpning. Analysytorna ska vara lugnare och prioritera läsbar data. Namngivna verkliga platser illustreras bara när formen bygger på verifierade referenser; hero-fotot skapar kustkänsla utan att göra anspråk på att avbilda en viss byggnad eller exakt plats.
 
 ## Design tokens
 
