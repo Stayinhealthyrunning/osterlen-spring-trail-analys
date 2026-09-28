@@ -86,6 +86,24 @@ class EngineV1ExportTests(unittest.TestCase):
         self.assertTrue(course["assets"]["route_source"])
         self.assertFalse(self.data["courses"]["trail14-current-reference"]["assets"])
 
+    def test_historical_checkpoint_order_follows_semantic_policy(self):
+        expected=["start","stenshuvud","bengtemolla","vantalangan","finish"]
+        for key in ("ost-2019-ultra60","ost-2019-duo60"):
+            self.assertEqual([x["key"] for x in self.data["checkpoints"][key]],expected)
+
+    def test_observed_splits_are_chronological_in_exported_checkpoint_order(self):
+        for race_key,checkpoints in self.data["checkpoints"].items():
+            rank={cp["key"]:i for i,cp in enumerate(checkpoints)}
+            by_result={}
+            for split in self.data["splits"]:
+                if split["race_key"]!=race_key or split["checkpoint"] not in rank:
+                    continue
+                by_result.setdefault(str(split["source_result_id"]),[]).append(split)
+            for source_result_id,splits in by_result.items():
+                ordered=sorted(splits,key=lambda s:rank[s["checkpoint"]])
+                times=[s["elapsed_seconds"] for s in ordered]
+                self.assertEqual(times,sorted(times),f"{race_key} {source_result_id} has non-chronological semantic checkpoints")
+
     def test_person_history_remains_disabled_without_linkage_layer(self):
         self.assertTrue(all(not race["capabilities"]["person_history"] for race in self.data["races"].values()))
 
