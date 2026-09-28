@@ -7,7 +7,7 @@ import * as views from './views.js';
 import {plan} from './race-plan.js';
 import {pace,table,tr} from './charts.js';
 const $=s=>document.querySelector(s),loader=new DataLoader(),labels={overview:'Översikt',results:'Resultat',dynamics:'Loppets dynamik',segments:'Delsträckor',course:'Bana / Course Intelligence',compare:'Jämför',history:'Historisk översikt',method:'Metod'};
-let boot,a,state,store,favorites=[],generation=0,renderVersion=0,mapView=null,profileMap=null,duelMap=null,profileTrigger=null,clubSuggestionIndex=-1;
+let boot,a,state,store,favorites=[],generation=0,renderVersion=0,mapView=null,profileMap=null,duelMap=null,profileTrigger=null,clubSuggestionIndex=-1,sectionObserver=null;
 function safeStorage(){try{return localStorage;}catch{return null;}}
 function status(text){$('#load-status').textContent=text;}
 function syncURL(replace=false){history[replace?'replaceState':'pushState'](null,'',stateURL(location.href,state));}
@@ -45,6 +45,11 @@ function updateNav(){document.querySelectorAll('#analysis-nav button').forEach(b
 function flowHeading(key,title,copy){return '<header class="flow-heading"><p class="eyebrow">'+key+'</p><h2>'+title+'</h2><p>'+copy+'</p></header>';}
 function flowSection(key,html){return '<section id="'+key+'" class="flow-section" tabindex="-1" aria-label="'+labels[key]+'">'+html+'</section>';}
 function scrollToSection(section,{focus=true,behavior='smooth'}={}){const target=document.getElementById(section);if(!target)return;target.scrollIntoView({block:'start',behavior});if(focus)target.focus({preventScroll:true});}
+function observeFlowSections(){
+ sectionObserver?.disconnect();sectionObserver=null;if(!('IntersectionObserver' in globalThis))return;
+ sectionObserver=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((x,y)=>y.intersectionRatio-x.intersectionRatio)[0],key=visible?.target?.id;if(key&&isFlowSection(key)&&state.section!==key){state.section=key;updateNav();}},{rootMargin:'-18% 0px -62% 0px',threshold:[0,.15,.35,.6]});
+ document.querySelectorAll('.flow-section').forEach(el=>sectionObserver.observe(el));
+}
 async function renderAnalysisFlow(v,rows,token){
  const available=availableFlowSections(),parts=[];
  if(available.includes('overview'))parts.push(flowSection('overview',views.overview(a,rows,state,boot)));
@@ -53,12 +58,12 @@ async function renderAnalysisFlow(v,rows,token){
  if(available.includes('course'))parts.push(flowSection('course',flowHeading('COURSE INTELLIGENCE','Banan och dess underlag','Banversion, geometri och lokalt tillgängliga ruttlager med tydliga proveniensgränser.')+views.course(a)));
  if(available.includes('history'))parts.push(flowSection('history',flowHeading('HISTORISK ÖVERSIKT','Loppet över tid','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+empty('Laddar liten historiksammanställning…')));
  if(available.includes('method'))parts.push(flowSection('method',flowHeading('METOD','Så är analysen byggd','Källvärden, beräkningar, jämförbarhet och begränsningar samlade på ett ställe.')+views.methodology(a,boot,state)));
- v.innerHTML='<div class="long-analysis">'+parts.join('')+'</div>';
+ v.innerHTML='<div class="long-analysis">'+parts.join('')+'</div>';observeFlowSections();
  if(available.includes('course'))renderPlan($('#course'));
  if(available.includes('history')){try{const d=await loader.history();const root=$('#history');if(token===renderVersion&&root)root.innerHTML=flowHeading('HISTORISK ÖVERSIKT','Loppet över tid','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+views.historyView(a,d,boot,state);}catch(e){const root=$('#history');if(token===renderVersion&&root)root.innerHTML=flowHeading('HISTORISK ÖVERSIKT','Loppet över tid','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+empty(e.message);}}
 }
 async function render(){
- const token=++renderVersion,rows=selected();mapView?.destroy();mapView=null;
+ const token=++renderVersion,rows=selected();sectionObserver?.disconnect();sectionObserver=null;mapView?.destroy();mapView=null;
  state.section=normalizeSection(state.section);
  $('#selection-count').textContent='Visar '+rows.length+' av '+a.records.length+' resultat · '+(Object.entries(state.filters).filter(([,v])=>v).map(([k,v])=>k+': '+v).join(' · ')||'Inga fältfilter');
  updateNav();
@@ -107,7 +112,7 @@ document.addEventListener('click',async e=>{
  if(b.dataset.clubSuggestion){chooseClub(b.dataset.clubSuggestion);return;}
  if(b.dataset.section){e.preventDefault();await navigate(b.dataset.section);return;}
  if(b.dataset.info){const t=document.getElementById(b.dataset.info);t.hidden=!t.hidden;b.setAttribute('aria-expanded',!t.hidden);return;}
- if(b.dataset.segment){state.segment=+b.dataset.segment;mapView?.select(state.segment);document.querySelectorAll('button[data-segment]').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.segment===state.segment));if(isFlowSection(state.section))await render();return;}
+ if(b.dataset.segment){const keepCourse=Boolean(mapView&&$('#course-map')?.querySelector('.map'));state.segment=+b.dataset.segment;mapView?.select(state.segment);document.querySelectorAll('button[data-segment]').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.segment===state.segment));if(isFlowSection(state.section)){await render();if(keepCourse&&$('#load-course'))await showMap($('#course-map'),[],'course');}return;}
  if(b.dataset.sort){state.dir=state.sort===b.dataset.sort?-(state.dir||1):1;state.sort=b.dataset.sort;resultTable();return;}
  if(b.dataset.addCompare){const id=b.dataset.addCompare;if(!state.compare.includes(id)&&state.compare.length<5)state.compare.push(id);status(state.compare.length+' resultat valda för jämförelse');if(state.section==='compare')await render();syncURL();return;}
  if(b.dataset.removeCompare){state.compare=state.compare.filter(id=>id!==b.dataset.removeCompare);await render();syncURL();return;}
