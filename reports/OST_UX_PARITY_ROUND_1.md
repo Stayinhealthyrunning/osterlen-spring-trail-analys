@@ -55,4 +55,4 @@ Dessa punkter är datagränser, inte återstående UX-skuld.
 
 Regressionen täcker könslegend, klubb/ort-comboboxens tangentbordsflöde, neutralt jämförelseval och den uppgraderade Direktjämförelsen. Slutversionen passerar 22 Python-tester, 17 JavaScript-tester och samtliga browserflöden utan konsol-, sid- eller oväntade nätverksfel.
 
-Den kritiska kod- och dataöverföringen mäts till 67 767 byte gzip. Den nya WebP-bilden är 287 096 byte; även om den räknas in blir första visuella laddningen cirka 355 KB. Bootstrap plus största valda racepaket är 32 383 byte gzip. Progressiv laddning, lokala vendor-filer och lazy route/replay ligger kvar.
+Den kritiska kod- och dataöverföringen mäts till 67 770 byte gzip. Den nya WebP-bilden är 287 096 byte; även om den räknas in blir första visuella laddningen cirka 355 KB. Bootstrap plus största valda racepaket är 32 383 byte gzip. Progressiv laddning, lokala vendor-filer och lazy route/replay ligger kvar.
