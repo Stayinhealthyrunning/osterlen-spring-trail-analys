@@ -7,6 +7,7 @@ import {adapt} from '../docs/assets/data-adapter.js';
 import {urlState,switched,storage,stateURL} from '../docs/assets/app-state.js';
 import {DataLoader} from '../docs/assets/data-loader.js';
 import {terrainMetrics} from '../docs/assets/map-engine.js';
+import {progression} from '../docs/assets/views.js';
 import {plan} from '../docs/assets/race-plan.js';
 const read=p=>JSON.parse(fs.readFileSync(new URL('../docs/data/'+p,import.meta.url),'utf8').replace(/^\uFEFF/,''));
 const boot=read('bootstrap.json'),history=read('history.json'),doc=k=>read('races/'+k+'.json'),adapter=k=>adapt(doc(k),boot);
@@ -15,6 +16,7 @@ test('history aggregate carries structural, sex and comparable-record fields',()
 test('terrain metrics preserve ascent/descent semantics and reject incomplete elevation',()=>{assert.deepEqual(terrainMetrics([[0,10],[1,30],[2,20],[3,50]]),{ascent:50,descent:10,min:10,max:50,distance:3,coverage:1});assert.equal(terrainMetrics([[0,null],[1,20]]),null);assert.equal(terrainMetrics([[0,10],[1,null],[2,20],[3,30]]),null);});
 test('finish histogram exposes total, women and men with text legends',()=>{const html=sexHistogram([{sex:'F',finish_seconds:100},{sex:'M',finish_seconds:110},{sex:'F',finish_seconds:120}],60);assert.match(html,/Totalt/);assert.match(html,/Kvinnor/);assert.match(html,/Män/);assert.match(html,/bar-female/);assert.match(html,/bar-male/);});
 test('null never becomes zero; interpolated quantiles; fixed bins',()=>{assert.equal(median([null,'',undefined,10,20]),15);assert.equal(quantile([0,10,20,30],.25),7.5);assert.equal(median([]),null);assert.deepEqual(bins([null,900,1799,1800],900).map(b=>b.count),[2,1]);assert.throws(()=>bins([1],0));});
+test('percentile ladder respects small-sample publication thresholds',()=>{const rows=n=>Array.from({length:n},(_,i)=>({finish_seconds:1000+i*10}));assert.equal((progression(rows(5)).match(/<strong>–<\/strong>/g)||[]).length,4);assert.equal((progression(rows(10)).match(/<strong>–<\/strong>/g)||[]).length,2);assert.equal((progression(rows(20)).match(/<strong>–<\/strong>/g)||[]).length,0);});
 test('small-sample thresholds',()=>{for(let n=0;n<=20;n++){const d=distribution(Array.from({length:n},(_,i)=>i+1));assert.equal(d.median!==null,n>=5);assert.equal(d.q25!==null,n>=10);assert.equal(d.q10!==null,n>=20);}});
 test('status counts exclude DNS and unknown starts',()=>{const s=summary([{status:'DNS'},{status:'UNKNOWN'},{status:'DNF'},{status:'FINISHED',finish_seconds:4}]);assert.equal(s.starters,2);assert.equal(s.finished,1);assert.equal(s.dnf,1);});
 test('source totals and capability matrix',()=>{let count=0,splits=0,teams=0,members=0,replay=0;for(const key of Object.keys(boot.race_catalog)){const d=doc(key);count+=d.race.records.length;splits+=d.splits.length;teams+=d.teams.length;members+=d.team_members.length;replay+=Number(d.race.capabilities.replay);assert.equal(d.payload_sha256,boot.payload_sha256);assert.ok(d.race.records.every(r=>r.person_key===null));}assert.deepEqual([count,splits,teams,members,replay],[9871,6123,300,599,6]);});
