@@ -32,6 +32,9 @@ const server=http.createServer((req,res)=>{
   assert.ok(await page.locator('#view').innerText().then(t=>t.includes('Sluttidsfördelning')));
   assert.equal(await page.locator('.long-analysis>.flow-section').count(),6);assert.ok(await page.locator('#overview').isVisible());assert.ok(await page.locator('#dynamics').isVisible());assert.ok(await page.locator('#segments').isVisible());assert.ok(await page.locator('#course').isVisible());assert.ok(await page.locator('#history').isVisible());assert.ok(await page.locator('#method').isVisible());
   assert.equal(await page.locator('.route-journey li').count(),7);assert.match(await page.locator('.landscape').evaluate(el=>getComputedStyle(el).backgroundImage),/ost-coast-hero/);assert.ok(await page.locator('.method-context').isVisible());assert.ok((await page.locator('#dynamics').innerText()).includes('Så långt når startfältet'));assert.ok((await page.locator('#dynamics').innerText()).includes('Starkast avslutning'));assert.ok(await page.locator('.group-segment').first().isVisible());
+  const contextContrast=await page.locator('.method-context strong').first().evaluate(el=>({color:getComputedStyle(el).color,bg:getComputedStyle(el.parentElement).backgroundColor}));assert.notEqual(contextContrast.color,contextContrast.bg);
+  const pairedHeights=await page.locator('#overview .analysis-flow>.card').evaluateAll(cards=>cards.slice(0,2).map(x=>x.getBoundingClientRect().height));assert.ok(Math.abs(pairedHeights[0]-pairedHeights[1])<=2,'overview pair heights '+pairedHeights);
+  assert.equal(await page.locator('.club-analysis > .table-scroll tbody tr').count(),12);assert.ok(await page.locator('.club-analysis .group-details').isVisible());assert.ok(await page.locator('.club-analysis .group-details tbody tr').count()>20);assert.ok(await page.locator('.age-analysis.wide').isVisible());
   const familyImages=await page.locator('.family-card').evaluateAll(cards=>Object.fromEntries(cards.map(card=>[card.dataset.family,getComputedStyle(card,'::after').backgroundImage])));assert.match(familyImages.ultra60,/ost-coast-hero/);assert.match(familyImages.duo60,/family-duo60/);assert.match(familyImages.trail22,/family-trail22/);assert.match(familyImages.trail14,/family-trail14/);assert.match(familyImages.trail5,/family-trail5/);assert.equal(new Set(Object.values(familyImages)).size,5);
   const loaded=report.requests.filter(p=>p.includes('/data/'));
   assert.deepEqual(loaded,['/data/bootstrap.json','/data/races/ost-2025-ultra60.json','/data/history.json']);
@@ -74,6 +77,9 @@ const server=http.createServer((req,res)=>{
   await nav('course');assert.equal(await page.locator('#load-course').count(),0);
   assert.ok(!report.requests.slice(mark).some(x=>x.includes('/courses/')));
  });
+ await run('Ultra and Duo 2019 use chronological semantic checkpoint order',async()=>{
+  for(const race of ['ost-2019-ultra60','ost-2019-duo60']){await open(race,'segments');const labels=await page.locator('#segments .segment-buttons button').allTextContents();assert.deepEqual(labels.map(x=>x.replace(/^\d+\.\s*/,'')),['Stenshuvud km 14','Bengtemölla km 32','Vantalängan km 52','Mål']);}
+ });
  await run('Ultra 2023 preserves distinct observations and time-only segment stats',async()=>{
   await open('ost-2023-ultra60','segments');assert.ok((await page.locator('#view').innerText()).includes('distans saknas'));
   await nav('results');await page.locator('[data-result]').first().click();const text=await page.locator('#profile-body').innerText();assert.ok(text.includes('32 km'));assert.ok(text.includes('Bengtemölla'));await page.keyboard.press('Escape');
@@ -104,6 +110,8 @@ const server=http.createServer((req,res)=>{
   await page.locator('#compare-search').fill('a');await page.locator('#compare-options [data-add-compare]').first().click();
   assert.ok((await page.locator('#view').innerText()).includes('Direktjämförelse'));
   assert.equal(await page.locator('.versus article').count(),2);
+  assert.deepEqual(await page.locator('.compare-tables table').evaluateAll(tables=>tables.map(t=>t.querySelectorAll('thead th').length)),[4,4]);assert.ok(await page.locator('.compare-tables .comparison-metric').count()>0);
+  assert.ok(await page.locator('.compare-tables>div').evaluateAll(nodes=>nodes.every(n=>n.scrollWidth-n.clientWidth<=2)));
   await shot('direct-comparison');
   await page.locator('#open-duel').click();await page.locator('#duel .leaflet-container').waitFor();
   expectedTiles=true;await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
