@@ -14,6 +14,21 @@ export function histogram(values,step){
  b.forEach((x,i)=>{const h=x.count/peak*192,xp=left+i*w+w*.12;s+='<rect tabindex="0" class="bar" x="'+xp+'" y="'+(bottom-h)+'" width="'+(w*.76)+'" height="'+h+'" rx="2" aria-label="'+x.count+' resultat, '+time(x.from)+' till '+time(x.to)+'"><title>'+x.count+' resultat · '+time(x.from)+'–'+time(x.to)+'</title></rect>';if(i%Math.max(1,Math.ceil(b.length/6))===0)s+='<text x="'+(left+(i+.5)*w)+'" y="263" text-anchor="middle">'+time(x.from).slice(0,-3)+'</text>';});
  return svg(s,'Fördelning av måltider');
 }
+export function sexHistogram(rows,step){
+ const finished=rows.filter(r=>finite(r.finish_seconds)&&r.finish_seconds>0),values=finished.map(r=>r.finish_seconds),b=bins(values,step);
+ if(!b.length)return empty('Inga publicerade måltider i urvalet.');
+ const sexes=[...new Set(finished.map(r=>r.sex).filter(s=>s==='F'||s==='M'))],split=sexes.length===2;
+ const count=(from,to,sex=null)=>finished.filter(r=>r.finish_seconds>=from&&r.finish_seconds<to&&(!sex||r.sex===sex)).length;
+ const peak=Math.max(...b.map(x=>count(x.from,x.to)),1),left=55,right=705,bottom=235,w=(right-left)/b.length;
+ let s='';for(let i=0;i<=4;i++){const y=bottom-i*48;s+='<line class="axis" x1="'+left+'" x2="'+right+'" y1="'+y+'" y2="'+y+'"/><text x="43" y="'+(y+4)+'" text-anchor="end">'+Math.round(peak*i/4)+'</text>';}
+ b.forEach((x,i)=>{const total=count(x.from,x.to),xp=left+i*w+w*.1,totalH=total/peak*192;
+  if(split){const fw=w*.31,mw=w*.31,fh=count(x.from,x.to,'F')/peak*192,mh=count(x.from,x.to,'M')/peak*192;s+='<rect class="bar-total" x="'+xp+'" y="'+(bottom-totalH)+'" width="'+(w*.8)+'" height="'+totalH+'" rx="3"><title>Totalt '+total+' · '+time(x.from)+'–'+time(x.to)+'</title></rect><rect tabindex="0" class="bar-female" x="'+(xp+w*.08)+'" y="'+(bottom-fh)+'" width="'+fw+'" height="'+fh+'" rx="2"><title>Kvinnor '+count(x.from,x.to,'F')+' · '+time(x.from)+'–'+time(x.to)+'</title></rect><rect tabindex="0" class="bar-male" x="'+(xp+w*.43)+'" y="'+(bottom-mh)+'" width="'+mw+'" height="'+mh+'" rx="2"><title>Män '+count(x.from,x.to,'M')+' · '+time(x.from)+'–'+time(x.to)+'</title></rect>';}
+  else {const sex=sexes[0],cls=sex==='F'?'bar-female':sex==='M'?'bar-male':'bar';s+='<rect tabindex="0" class="'+cls+'" x="'+xp+'" y="'+(bottom-totalH)+'" width="'+(w*.8)+'" height="'+totalH+'" rx="2"><title>'+total+' resultat · '+time(x.from)+'–'+time(x.to)+'</title></rect>';}
+  if(i%Math.max(1,Math.ceil(b.length/6))===0)s+='<text x="'+(left+(i+.5)*w)+'" y="263" text-anchor="middle">'+time(x.from).slice(0,-3)+'</text>';
+ });
+ const legend=split?'<div class="legend" aria-label="Diagramförklaring"><span><i class="total"></i>Totalt</span><span><i class="female"></i>Kvinnor</span><span><i class="male"></i>Män</span></div>':'';
+ return legend+svg(s,split?'Fördelning av måltider totalt, kvinnor och män':'Fördelning av måltider');
+}
 export function bands(stats,unit){
  const format=v=>unit==='time'?time(v):pace(v,unit);
  const values=stats.flatMap(s=>[s.q10,s.q25,s.median,s.q75,s.q90]).filter(finite);if(!values.length)return empty('För få kompletta passager för segmentmedian. Minst fem krävs.');

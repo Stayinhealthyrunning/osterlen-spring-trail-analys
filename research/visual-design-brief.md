@@ -3,9 +3,15 @@
 Datum: 2026-09-28  
 Status: source of truth för produktens visuella uttryck
 
+## Primär visuell referens
+
+`research/ost-grafisk-profil.png` ska inspekteras visuellt vid större designändringar. Bilden är primär referens för atmosfär, komposition, kust- och vårkänsla, redaktionell rikedom och resan från hav till slott. Den är ett koncept, inte en datakälla: inbakade exempelresultat, porträtt, kartlinjer och byggnadsbilder får inte kopieras som sakuppgifter.
+
+Produktens heroasset `docs/assets/ost-coast-hero.webp` är en separat, textfri och icke platsidentifierande landskapsbild framtagen med referensen som stämnings- och kompositionsunderlag. Familjekorten använder egna optimerade WebP-miljöer: kust och löpare för Ultra 60, kust/inland och två löpare för Duo 60, bäck och bokskog för Trail 22 samt två skilda intima inlandsskogar för Trail 14 och Trail 5. Bilderna uttrycker miljökaraktär utan att påstå att en viss kvarn, byggnad eller exakt namngiven plats avbildas. Namngivna platser presenteras endast som text eller med verifierade visuella källor. Den redaktionella miljöresan skiljs uttryckligen från tidtagningspunkter och banversioner.
+
 ## Identitet
 
-ÖST Splits ska kännas som en varm, professionell analysprodukt för resan från Österlensk kust till Christinehof. Landningsytan får bära vår, hav, sand och löpning. Analysytorna ska vara lugnare och prioritera läsbar data. Namngivna verkliga platser illustreras bara när formen bygger på verifierade referenser; den nuvarande heroillustrationen är därför avsiktligt abstrakt och gör inget anspråk på att avbilda en viss byggnad.
+ÖST Splits ska kännas som en varm, professionell analysprodukt för resan från Österlensk kust till Christinehof. Landningsytan får bära vår, hav, sand och löpning. Analysytorna ska vara lugnare och prioritera läsbar data. Namngivna verkliga platser illustreras bara när formen bygger på verifierade referenser; hero-fotot skapar kustkänsla utan att göra anspråk på att avbilda en viss byggnad eller exakt plats.
 
 ## Design tokens
 
@@ -27,6 +33,8 @@ Diagram använder blått och grönt som primära analysfärger. Källstödda kvi
 UI, tabeller och diagram använder en Manrope-liknande systemstack. Hero och redaktionella rubriker använder en Fraunces-liknande serifstack. Inga webbfonter laddas vid runtime. Analyskort har varmvit bakgrund, diskret kant, 15 px hörnradie och mycket återhållsam skugga.
 
 Desktop använder högst två analyskolumner. Metodguiden använder fyra, två respektive en kolumn vid desktop, tablet och mobil. Komplexa tabeller och SVG-diagram får egen horisontell scroll; dokumentet får inte överskrida viewporten med mer än 2 px. Mobilens familjekort och analysnavigation är horisontellt bläddringsbara för att bevara läsbar storlek.
+
+Den centrala analysen är ett sammanhängande scrollbart dokument. Sticky navigation länkar till Översikt, Loppets dynamik, Delsträckor, Bana / Course Intelligence, Historisk översikt och Metod när respektive underlag finns. Resultatdatabas och individuell jämförelse är separata arbetsvyer. Hashankare ska kunna återställa och fokusera en analyssektion via deep link och browserhistorik.
 
 ## Komponentprinciper
 

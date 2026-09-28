@@ -57,9 +57,22 @@ def build(out):
         doc=read(out/meta["path"]); race=doc["race"]; records=race["records"]
         finish=[r["finish_seconds"] for r in records if r["status"]=="FINISHED" and r["finish_seconds"] and r["finish_seconds"]>0]
         row={k:race[k] for k in ("race_key","race_family","year","course_version","capabilities")}
-        row.update(records=len(records),finished=len(finish),dnf=sum(r["status"]=="DNF" for r in records),
+        starters=[r for r in records if r["status"] in ("FINISHED","DNF","DSQ")]
+        women_finish=[r["finish_seconds"] for r in records if r["status"]=="FINISHED" and r.get("sex")=="F" and r.get("finish_seconds") and r["finish_seconds"]>0]
+        men_finish=[r["finish_seconds"] for r in records if r["status"]=="FINISHED" and r.get("sex")=="M" and r.get("finish_seconds") and r["finish_seconds"]>0]
+        best_record=min((r for r in records if r["status"]=="FINISHED" and r.get("finish_seconds") and r["finish_seconds"]>0),key=lambda r:r["finish_seconds"],default=None)
+        women_starters=sum(r.get("sex")=="F" for r in starters)
+        men_starters=sum(r.get("sex")=="M" for r in starters)
+        row.update(records=len(records),starters=len(starters),finished=len(finish),dnf=sum(r["status"]=="DNF" for r in records),
+           dns=sum(r["status"]=="DNS" for r in records),dsq=sum(r["status"]=="DSQ" for r in records),unknown=sum(r["status"]=="UNKNOWN" for r in records),
            median=statistics.median(finish) if len(finish)>=5 else None,best=min(finish) if finish else None,
-           sex_coverage=sum(r["sex"] is not None for r in records),women=sum(r["sex"]=="F" for r in records))
+           best_name=best_record.get("name") if best_record else None,best_bib=best_record.get("bib") if best_record else None,
+           nominal_distance_km=race.get("nominal_distance_km"),
+           sex_coverage=sum(r["sex"] is not None for r in records),women=sum(r["sex"]=="F" for r in records),men=sum(r["sex"]=="M" for r in records),
+           starter_sex_coverage=women_starters+men_starters,women_starters=women_starters,men_starters=men_starters,
+           women_finished=len(women_finish),men_finished=len(men_finish),
+           women_median=statistics.median(women_finish) if len(women_finish)>=5 else None,
+           men_median=statistics.median(men_finish) if len(men_finish)>=5 else None)
         history.append(row)
     manifest["history"]={**dump(out/"history.json",{"payload_sha256":sha,"editions":history}),"path":"history.json"}
     manifest["bootstrap"]={**dump(out/"bootstrap.json",boot),"path":"bootstrap.json"}
