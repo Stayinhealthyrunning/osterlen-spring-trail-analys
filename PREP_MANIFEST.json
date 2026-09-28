@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "generated_on": "2026-09-27",
-  "status": "handoff_ready_for_generic_engine_integration",
-  "purpose": "Entry-point inventory for the prepared Österlen Spring Trail analysis foundation before integration of the generic Gotaleden analysis core.",
+  "status": "ost_splits_frontend_built_and_integrated",
+  "purpose": "Entry-point inventory for the frozen Österlen Spring Trail foundation and the integrated ÖST Splits Engine 1.0 frontend.",
   "read_first": [
     "config/foundation-state.json",
     "PREP_STATUS.md",
@@ -112,8 +112,13 @@
     "workflow": ".github/workflows/validate-foundation.yml"
   },
   "frontend": {
-    "status": "placeholder_only_until_generic_gotaleden_core_is_ready",
-    "entry": "docs/index.html"
+    "status": "built_integrated_and_browser_qa_verified",
+    "entry": "docs/index.html",
+    "build": "tools/build_frontend.py",
+    "browser_test": "e2e/app.cjs",
+    "build_report": "reports/OST_SPLITS_BUILD_REPORT.md",
+    "visual_qa": "reports/OST_SPLITS_VISUAL_QA.md",
+    "design_brief": "research/visual-design-brief.md"
   },
   "deferred": [
     "Redistributable/local historical route assets required for map/replay",

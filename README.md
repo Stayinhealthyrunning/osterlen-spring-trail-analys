@@ -4,13 +4,13 @@ Interaktiv analys av Österlen Spring Trail – resultat, banor, pacing och lopp
 
 ## Projektstatus
 
-**Datagrunden är färdig och redo för integration mot den generiska Gotaleden-motorn.**
+**ÖST Splits-frontenden är byggd och integrerad mot Loppanalys Engine 1.0.**
 
 Repot innehåller inte bara förstudie/kataloger utan en komplett fryst Sportstiming-import för alla genomförda analysår 2018–2026, en separat auditerad och kuraterad analysdatabas, Duo-team/splits/medlemsrader, checkpointsemantik, banversionsmodell och en maskinläsbar readiness-matris.
 
-Den generiska Gotaleden-frontenden är fortfarande **medvetet inte kopierad**. När Gotaleden-refaktoreringen är färdig ska ÖST anslutas via konfiguration/adaptrar till den färdiga kärnan, inte bli en parallell hårdkodad fork.
+Frontendens generella adapter, state, analysmatematik, presentation och karta/replay använder det frysta Engine 1.0-kontraktet. ÖST-specifik data, capability-policy, copy och design ligger i eventlagret. Browsern laddar bootstrap, därefter vald RaceEdition och vid behov historik eller route/elevation; hela Engine-payloaden initialladdas inte.
 
-Primär framtida engine-input:
+Primär Engine 1.0-input:
 
 `data/derived/ost-analysis-2018-2026.sqlite.gz`
 

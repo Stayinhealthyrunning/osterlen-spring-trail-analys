@@ -1,0 +1,58 @@
+{
+  "default_race": "ost-2026-ultra60",
+  "families": {
+    "ultra60": {
+      "label": "ULTRA 60",
+      "distance": "~60 km",
+      "description": "Simrishamn → Christinehof",
+      "default_goal_seconds": 27000,
+      "bin_seconds": 900
+    },
+    "trail22": {
+      "label": "TRAIL 22",
+      "distance": "22 km",
+      "description": "Verkeån · bokskog · Hallamölla",
+      "default_goal_seconds": 9000,
+      "bin_seconds": 300
+    },
+    "trail14": {
+      "label": "TRAIL 14",
+      "distance": "14 km",
+      "description": "Ekopark · skog · Hallamölla",
+      "default_goal_seconds": 5400,
+      "bin_seconds": 300
+    },
+    "trail5": {
+      "label": "TRAIL 5",
+      "distance": "5 km",
+      "description": "Ett varv i Ekoparken",
+      "default_goal_seconds": 2100,
+      "bin_seconds": 120
+    },
+    "duo60": {
+      "label": "DUO 60",
+      "distance": "60 km · 2 löpare",
+      "description": "Tillsammans till Christinehof",
+      "default_goal_seconds": 23400,
+      "bin_seconds": 900
+    }
+  },
+  "route_anchors": {
+    "ultra60-2024": {
+      "bengtemolla": {
+        "lat": 55.7282079,
+        "lon": 14.1198768,
+        "source": "data/source/tracedetrail/waypoints.json · 272846/822859; fixed named location, projected independently onto 2024 organizer GPX",
+        "max_offset_m": 150
+      }
+    },
+    "ultra60-2025-2026": {
+      "bengtemolla": {
+        "lat": 55.7282079,
+        "lon": 14.1198768,
+        "source": "data/source/tracedetrail/waypoints.json · 272846/822859 and 322315/971298",
+        "max_offset_m": 150
+      }
+    }
+  }
+}
