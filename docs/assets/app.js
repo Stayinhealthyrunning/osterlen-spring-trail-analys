@@ -55,7 +55,7 @@ async function renderAnalysisFlow(v,rows,token){
  if(available.includes('method'))parts.push(flowSection('method',flowHeading('METOD','Så är analysen byggd','Källvärden, beräkningar, jämförbarhet och begränsningar samlade på ett ställe.')+views.methodology(a,boot,state)));
  v.innerHTML='<div class="long-analysis">'+parts.join('')+'</div>';
  if(available.includes('course'))renderPlan($('#course'));
- if(available.includes('history')){try{const d=await loader.history();const root=$('#history');if(token===renderVersion&&root)root.innerHTML=flowHeading('HISTORISK ÖVERSIKT','Loppet över tid','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+views.historyView(a,d,boot);}catch(e){const root=$('#history');if(token===renderVersion&&root)root.innerHTML=flowHeading('HISTORISK ÖVERSIKT','Loppet över tid','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+empty(e.message);}}
+ if(available.includes('history')){try{const d=await loader.history();const root=$('#history');if(token===renderVersion&&root)root.innerHTML=flowHeading('HISTORISK ÖVERSIKT','Loppet över tid','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+views.historyView(a,d,boot,state);}catch(e){const root=$('#history');if(token===renderVersion&&root)root.innerHTML=flowHeading('HISTORISK ÖVERSIKT','Loppet över tid','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+empty(e.message);}}
 }
 async function render(){
  const token=++renderVersion,rows=selected();mapView?.destroy();mapView=null;
