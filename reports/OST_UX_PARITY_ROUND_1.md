@@ -59,4 +59,9 @@ Dessa punkter är datagränser, inte återstående UX-skuld.
 
 Regressionen täcker könslegend, klubb/ort-comboboxens tangentbordsflöde, neutralt jämförelseval och den uppgraderade Direktjämförelsen. Slutversionen passerar 22 Python-tester, 17 JavaScript-tester och samtliga browserflöden utan konsol-, sid- eller oväntade nätverksfel.
 
-Den kritiska kod- och dataöverföringen mäts till 67 770 byte gzip. Den nya WebP-bilden är 287 096 byte; även om den räknas in blir första visuella laddningen cirka 355 KB. Bootstrap plus största valda racepaket är 32 383 byte gzip. Progressiv laddning, lokala vendor-filer och lazy route/replay ligger kvar.
+Den kritiska kod- och dataöverföringen mäts till 67 770 byte gzip. Hero-bilden är 287 096 byte och de fyra separata familjebilderna cirka 203 KB tillsammans. Eftersom familjekorten ligger i den initiala vyn räknas de in i en konservativ visuell första laddning på cirka 558 KB inklusive kritisk kod/data. Den formella 512 KiB-budgeten gäller enligt kontraktet kod/data och exkluderar bilder. Bootstrap plus största valda racepaket är 32 383 byte gzip. Progressiv dataladdning, lokala vendor-filer och lazy route/replay ligger kvar.
+
+
+## Referensparitet efter slutrevision
+
+En separat slutrevision mot Gotaleden och Ultravasan finns i `reports/OST_REFERENCE_PARITY_AUDIT.md`. I denna runda kompletterades ÖST med checkpointbaserat fältflöde, källstödd stark avslutning, dynamisk metodkontext nära toppen, historiskt fingeravtryck/index 100, jämförbar toppnotering, könstrend över år och GPX-baserade terrängmått i Course Intelligence. Dessa funktioner återanvänder endast befintliga källvärden och kontrakt.
