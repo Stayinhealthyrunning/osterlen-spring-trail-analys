@@ -113,7 +113,7 @@ const server=http.createServer((req,res)=>{
   await shot('duel-tile-fallback');await page.locator('#close-duel').click();
  });
  await run('history cancellation, methodology relationships, plan',async()=>{
-  await nav('history');await page.waitForFunction(()=>document.querySelector('#view').textContent.includes('Inställt'));assert.ok(await page.locator('#history .history-fingerprint').isVisible());assert.ok((await page.locator('#history').innerText()).includes('Jämförbar toppnotering'));
+  await nav('history');await page.waitForFunction(()=>document.querySelector('#view').textContent.includes('Inställt'));assert.ok(await page.locator('#history .history-fingerprint').isVisible());assert.ok((await page.locator('#history').innerText()).toLocaleLowerCase('sv').includes('jämförbar toppnotering'));
   assert.ok(report.requests.some(p=>p==='/data/history.json'));
   const methodToggle=page.locator('[data-info]').first();await methodToggle.click();assert.equal(await methodToggle.getAttribute('aria-expanded'),'true');await page.keyboard.press('Escape');assert.equal(await methodToggle.getAttribute('aria-expanded'),'false');
   await nav('course');await page.locator('#goal-hours').fill('7');assert.ok((await page.locator('#plan-output').innerText()).includes('Kalibrerat'));await page.locator('#load-course').click();await page.locator('#course .route-metrics').waitFor();assert.ok((await page.locator('#course .route-metrics').innerText()).includes('Hela rutten · D+'));const segmentButton=page.locator('#segments [data-segment]').nth(1);if(await segmentButton.count()){await segmentButton.click();await page.locator('#course .route-metrics').waitFor();assert.ok(await page.locator('#course-map .map').isVisible());}
