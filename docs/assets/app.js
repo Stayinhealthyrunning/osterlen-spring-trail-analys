@@ -2,11 +2,11 @@ import {DataLoader} from './data-loader.js';
 import {adapt} from './data-adapter.js';
 import {urlState,stateURL,switched,storage,sections,flowSections} from './app-state.js';
 import {filterRows,finite,finished} from './analytics.js';
-import {esc,time,empty,statusLabel} from './charts.js';
+import {esc,time,empty,statusLabel,info} from './charts.js';
 import * as views from './views.js';
 import {plan} from './race-plan.js';
 import {pace,table,tr} from './charts.js';
-const $=s=>document.querySelector(s),loader=new DataLoader(),labels={overview:'Översikt',results:'Resultat',dynamics:'Loppets dynamik',segments:'Delsträckor',course:'Bana / Course Intelligence',compare:'Jämför',history:'Historisk översikt',method:'Metod'};
+const $=s=>document.querySelector(s),loader=new DataLoader(),labels={overview:'Översikt',results:'Resultat',dynamics:'Loppets dynamik',segments:'Delsträckor',course:'Bana',compare:'Jämför',history:'Historisk översikt',method:'Metod'};
 let boot,a,state,store,favorites=[],generation=0,renderVersion=0,mapView=null,profileMap=null,duelMap=null,profileTrigger=null,clubSuggestionIndex=-1,lookupSuggestionIndex=-1,sectionObserver=null;
 function safeStorage(){try{return localStorage;}catch{return null;}}
 function status(text){$('#load-status').textContent=text;}
@@ -14,10 +14,10 @@ function syncURL(replace=false){history[replace?'replaceState':'pushState'](null
 function closeMaps(){mapView?.destroy();mapView=null;profileMap?.destroy();profileMap=null;duelMap?.destroy();duelMap=null;}
 function saveFavorites(){store.write('favorites',favorites.slice(-40));}
 function isFavorite(r){return favorites.some(f=>f.race===a.race.race_key&&f.id===String(r.source_result_id));}
-async function loadRace(key,{restore=null,replace=false}={}){
+async function loadRace(key,{restore=null,replace=false,scroll=true}={}){
  const token=++generation;closeMaps();$('#profile').close();$('#duel').close();state=switched(state,key);if(restore)Object.assign(state,restore);
  $('#view').setAttribute('aria-busy','true');$('#view').innerHTML=empty('Laddar vald upplaga…');status('Katalog klar → laddar valt lopp/år');$('#year').disabled=true;
- try{const doc=await loader.race(key);if(token!==generation)return;a=adapt(doc,boot);state.compare=state.compare.filter(id=>a.byId.has(id)).slice(0,a.race.capabilities.replay?5:2);state.section=normalizeSection(state.section);controls();filters();await render();syncURL(replace);status('Katalog → vald upplaga klar · '+a.records.length+' resultat · historik i analysflödet · rutt/replay efter behov');if(isFlowSection(state.section))scrollToSection(state.section,{focus:state.section!=='overview',behavior:'auto'});if(state.profile)openProfile(state.profile,false);}
+ try{const doc=await loader.race(key);if(token!==generation)return;a=adapt(doc,boot);state.compare=state.compare.filter(id=>a.byId.has(id)).slice(0,a.race.capabilities.replay?5:2);state.section=normalizeSection(state.section);controls();filters();await render();syncURL(replace);status('Katalog → vald upplaga klar · '+a.records.length+' resultat · historik i analysflödet · rutt/replay efter behov');if(scroll&&isFlowSection(state.section))scrollToSection(state.section,{focus:state.section!=='overview',behavior:'auto'});if(state.profile)openProfile(state.profile,false);}
  catch(e){if(token===generation){$('#view').innerHTML=empty(e.message)+'<button id="retry">Försök igen</button>';$('#retry').onclick=()=>loadRace(key,{restore:state,replace:true});}}
  finally{if(token===generation){$('#view').setAttribute('aria-busy','false');$('#year').disabled=false;}}
 }
@@ -28,7 +28,7 @@ function controls(){
  const catalog=Object.values(boot.race_catalog).filter(r=>r.race_family===family);
  const years=[...catalog.map(r=>r.year),...boot.cancelled_years].sort((x,y)=>y-x);
  $('#year').innerHTML=years.map(y=>'<option value="'+y+'" '+(y===a.race.year?'selected':'')+' '+(boot.cancelled_years.includes(y)?'disabled':'')+'>'+y+(boot.cancelled_years.includes(y)?' · Inställt':'')+'</option>').join('');
- $('#analysis-nav').innerHTML=availableSections().map(key=>'<button data-section="'+key+'" class="'+(isFlowSection(key)?'anchor-nav':'special-nav')+'" '+(state.section===key?'aria-current="location"':'')+'>'+labels[key]+'</button>').join('');
+ $('#analysis-nav').innerHTML=availableSections().filter(key=>key!=='compare').map(key=>'<button data-section="'+key+'" class="'+(isFlowSection(key)?'anchor-nav':'special-nav')+'" '+(state.section===key?'aria-current="location"':'')+'>'+labels[key]+'</button>').join('');
  $('#unit').value=state.unit;
 }
 function filters(){
@@ -101,6 +101,14 @@ function compareOptions(q){
  root.hidden=false;input?.setAttribute('aria-expanded','true');const limit=compareLimit();if(state.compare.length>=limit){root.innerHTML='<p class="picker-empty">'+(limit===5?'Max fem resultat kan väljas till Kartduell.':'Den här upplagan saknar rutt/replay; Direktjämförelse använder exakt två resultat.')+' Ta bort ett val för att lägga till ett annat.</p>';return;}
  const matches=a.records.filter(r=>resultMatches(r,q)&&!state.compare.includes(String(r.source_result_id))).slice(0,8);root.innerHTML=matches.length?matches.map(r=>'<button role="option" data-add-compare="'+esc(r.source_result_id)+'"><span><strong>'+esc(r.name)+'</strong><small>#'+esc(r.bib)+' · '+esc(r.class_name||'Klass saknas')+'</small></span><b>Lägg till</b></button>').join(''):'<p class="picker-empty">Inga resultat matchar sökningen.</p>';
 }
+function renderCompareDialog(){
+ const dialog=$('#compare-dialog'),body=$('#compare-dialog-body');if(!dialog||!body||!a)return;
+ body.innerHTML=views.compare(a,state);compareOptions('');
+}
+function openCompareDialog(){
+ const dialog=$('#compare-dialog');if(!dialog||!a)return;renderCompareDialog();if(!dialog.open)dialog.showModal();$('#compare-search')?.focus();
+}
+
 function clubValues(){const seen=new Map();for(const r of a.records){const value=String(r.club||'').trim(),key=value.toLocaleLowerCase('sv');if(value&&!seen.has(key))seen.set(key,value);}return [...seen.values()].sort((x,y)=>x.localeCompare(y,'sv'));}
 function renderClubSuggestions(q){
  const root=$('#club-suggestions'),input=$('#club-filter');if(!root||!input)return;q=q.trim();clubSuggestionIndex=-1;if(!q){root.hidden=true;root.innerHTML='';input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');return;}
@@ -117,18 +125,21 @@ function openProfile(id,update=true){
  const r=a.byId.get(String(id));if(!r)return;profileMap?.destroy();profileMap=null;profileTrigger=document.activeElement;state.profile=String(id);
  $('#profile-body').innerHTML=views.profile(a,r,state,isFavorite(r));if(!$('#profile').open)$('#profile').showModal();if(update)syncURL();
 }
-async function navigate(section,update=true,{behavior='smooth',focus=true}={}){section=normalizeSection(section);const previous=state.section;state.section=section;if(isFlowSection(section)){if(!isFlowSection(previous)||!document.getElementById(section))await render();else updateNav();if(update)syncURL();scrollToSection(section,{focus,behavior});return;}await render();if(update)syncURL();$('#analysis').scrollIntoView({block:'start',behavior:motionBehavior(behavior)});}
+async function navigate(section,update=true,{behavior='smooth',focus=true}={}){if(section==='compare'){openCompareDialog();return;}section=normalizeSection(section);const previous=state.section;state.section=section;if(isFlowSection(section)){if(!isFlowSection(previous)||!document.getElementById(section))await render();else updateNav();if(update)syncURL();scrollToSection(section,{focus,behavior});return;}await render();if(update)syncURL();$('#analysis').scrollIntoView({block:'start',behavior:motionBehavior(behavior)});}
 document.addEventListener('click',async e=>{
  const b=e.target.closest('button,a');if(!b||!state)return;
  if(b.dataset.family){const family=b.dataset.family,editions=Object.values(boot.race_catalog).filter(r=>r.race_family===family),race=editions.find(r=>r.year===a.race.year)||editions.sort((x,y)=>y.year-x.year)[0];await loadRace(race.race_key);$('#analysis').scrollIntoView();return;}
  if(b.dataset.clubSuggestion){chooseClub(b.dataset.clubSuggestion);return;}
  if(b.dataset.lookupResult){chooseLookup(b.dataset.lookupResult);return;}
+ if(b.id==='focus-runner-search'){const input=$('#lookup');input?.focus();input?.scrollIntoView({block:'center',behavior:motionBehavior('smooth')});return;}
+ if(b.id==='open-compare-dialog'){openCompareDialog();return;}
  if(b.dataset.section){e.preventDefault();await navigate(b.dataset.section);return;}
  if(b.dataset.info){const t=document.getElementById(b.dataset.info);t.hidden=!t.hidden;b.setAttribute('aria-expanded',!t.hidden);return;}
  if(b.dataset.segment){const keepCourse=Boolean(mapView&&$('#course-map')?.querySelector('.map'));state.segment=+b.dataset.segment;mapView?.select(state.segment);document.querySelectorAll('button[data-segment]').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.segment===state.segment));if(isFlowSection(state.section)){await render();if(keepCourse&&$('#load-course'))await showMap($('#course-map'),[],'course');}return;}
  if(b.dataset.sort){state.dir=state.sort===b.dataset.sort?-(state.dir||1):1;state.sort=b.dataset.sort;resultTable();return;}
- if(b.dataset.addCompare){const id=b.dataset.addCompare,limit=compareLimit();if(!state.compare.includes(id)&&state.compare.length<limit)state.compare.push(id);else if(!state.compare.includes(id)){status(limit===5?'Max fem resultat kan väljas till Kartduell':'Direktjämförelse använder högst två resultat för den här upplagan');return;}status(state.compare.length+' resultat valda för jämförelse');if(state.section==='compare')await render();syncURL();return;}
- if(b.dataset.removeCompare){state.compare=state.compare.filter(id=>id!==b.dataset.removeCompare);await render();syncURL();return;}
+ if(b.dataset.addCompare){const id=b.dataset.addCompare,limit=compareLimit();if(!state.compare.includes(id)&&state.compare.length<limit)state.compare.push(id);else if(!state.compare.includes(id)){status(limit===5?'Max fem resultat kan väljas till Kartduell':'Direktjämförelse använder högst två resultat för den här upplagan');return;}status(state.compare.length+' resultat valda för jämförelse');if($('#compare-dialog')?.open)renderCompareDialog();else if(state.section==='compare')await render();syncURL();return;}
+ if(b.dataset.removeCompare){state.compare=state.compare.filter(id=>id!==b.dataset.removeCompare);if($('#compare-dialog')?.open)renderCompareDialog();else await render();syncURL();return;}
+ if(b.dataset.quickFilter){state.globalQuery=null;state.filters[b.dataset.quickFilter]=b.dataset.quickValue||'';const input=document.querySelector('[data-filter="'+b.dataset.quickFilter+'"]');if(input)input.value=b.dataset.quickValue||'';await render();return;}
  if(b.dataset.favorite){const r=a.byId.get(b.dataset.favorite);if(isFavorite(r))favorites=favorites.filter(f=>!(f.race===a.race.race_key&&f.id===b.dataset.favorite));else favorites.push({race:a.race.race_key,id:String(r.source_result_id),name:r.name,year:a.race.year});saveFavorites();b.textContent=isFavorite(r)?'Sparad':'Spara lopp';b.setAttribute('aria-pressed',isFavorite(r));return;}
  if(b.dataset.openFavorite){await loadRace(b.dataset.openFavorite,{restore:{profile:b.dataset.id}});return;}
  if(b.id==='reset-filters'){state.filters={};filters();await render();}
@@ -138,6 +149,7 @@ document.addEventListener('click',async e=>{
  if(b.id==='load-profile-replay')await showMap($('#profile-replay'),[a.byId.get(state.profile)],'profile');
  if(b.id==='open-duel'){const dialog=$('#duel');dialog.showModal();await showMap($('#duel-body'),state.compare.map(id=>a.byId.get(id)),'duel');}
  if(b.id==='close-profile')$('#profile').close();
+ if(b.id==='close-compare-dialog')$('#compare-dialog').close();
  if(b.id==='close-duel')$('#duel').close();
 });
 document.addEventListener('click',e=>{const row=e.target.closest('[data-result]');if(row)openProfile(row.dataset.result);});
@@ -160,10 +172,11 @@ $('#year').onchange=()=>{const r=Object.values(boot.race_catalog).find(r=>r.race
 $('#unit').onchange=()=>{state.unit=$('#unit').value;store.write('unit',state.unit);render();if(state.profile)openProfile(state.profile,false);};
 $('#global-search').onsubmit=async e=>{e.preventDefault();if(!a)return;const q=$('#lookup').value.trim(),matches=a.records.filter(r=>resultMatches(r,q));if(lookupSuggestionIndex>=0){const item=document.querySelectorAll('#lookup-suggestions [data-lookup-result]')[lookupSuggestionIndex];if(item){chooseLookup(item.dataset.lookupResult);return;}}if(matches.length===1)chooseLookup(matches[0].source_result_id);else{lookupOptions('');state.query=q;state.globalQuery=q;state.page=1;await navigate('results');$('#analysis').scrollIntoView();}};
 $('#profile').addEventListener('close',()=>{profileMap?.destroy();profileMap=null;if(state?.profile){state.profile=null;syncURL(true);}profileTrigger?.focus?.();});
+$('#compare-dialog').addEventListener('close',()=>{const root=$('#compare-dialog-body');if(root)root.innerHTML='';});
 $('#duel').addEventListener('close',()=>{duelMap?.destroy();duelMap=null;});
 addEventListener('popstate',async()=>{if(!boot)return;const restored=urlState(location.href,boot.race_catalog,boot.default_race);if(restored.raceKey!==state.raceKey)await loadRace(restored.raceKey,{restore:restored,replace:true});else{Object.assign(state,restored);state.section=normalizeSection(state.section);await render();if(isFlowSection(state.section))scrollToSection(state.section,{focus:true,behavior:'auto'});if(restored.profile)openProfile(restored.profile,false);else $('#profile').close();}});
 async function start(){
- try{history.scrollRestoration='manual';if(!location.hash&&!new URLSearchParams(location.search).has('section'))window.scrollTo(0,0);boot=await loader.bootstrap();store=storage(boot.event.storage_namespace,safeStorage());const saved=store.read('favorites',[]);favorites=Array.isArray(saved)?saved.filter(f=>f&&typeof f.id==='string'&&boot.race_catalog[f.race]).slice(-40):[];const unit=store.read('unit','pace');state={...urlState(location.href,boot.race_catalog,boot.default_race),unit:unit==='speed'?'speed':'pace',filters:{},segment:0,page:1};await loadRace(state.raceKey,{restore:{...state},replace:true});}
+ try{history.scrollRestoration='manual';const params=new URLSearchParams(location.search),explicitSection=Boolean(location.hash||params.has('section')),openCompare=location.hash==='#compare'||params.get('section')==='compare';if(!explicitSection)window.scrollTo(0,0);boot=await loader.bootstrap();store=storage(boot.event.storage_namespace,safeStorage());const saved=store.read('favorites',[]);favorites=Array.isArray(saved)?saved.filter(f=>f&&typeof f.id==='string'&&boot.race_catalog[f.race]).slice(-40):[];const unit=store.read('unit','pace');state={...urlState(location.href,boot.race_catalog,boot.default_race),unit:unit==='speed'?'speed':'pace',filters:{},segment:0,page:1};if(openCompare)state.section='overview';await loadRace(state.raceKey,{restore:{...state},replace:true,scroll:explicitSection&&!openCompare});if(!explicitSection)window.scrollTo(0,0);if(openCompare)openCompareDialog();}
  catch(e){$('#view').innerHTML=empty(e.message);status('Katalogen kunde inte laddas. Ladda om sidan för att försöka igen.');}
 }
 start();
@@ -172,7 +185,7 @@ start();
 function renderPlan(root=$('#view')){
  if(!a.race.capabilities.goal_pace)return;
  const target=boot.presentation[a.race.race_family].default_goal_seconds,h=Math.floor(target/3600),m=Math.floor(target%3600/60);
- root.insertAdjacentHTML('beforeend','<section class="card"><h3>Måltempo & loppplan</h3><p>En historisk referens, inte en individuell prognos.</p><div class="toolbar"><label>Timmar<input id="goal-hours" type="number" min="0" max="48" value="'+h+'"></label><label>Minuter<input id="goal-minutes" type="number" min="0" max="59" value="'+m+'"></label></div><div id="plan-output"></div></section>');
+ root.insertAdjacentHTML('beforeend','<section class="card"><div class="card-heading"><div><h3>Måltempo & loppplan</h3><p>En historisk referens, inte en individuell prognos.</p></div>'+info('plan-method','Måltiden fördelas på publicerade kompletta passager i vald upplaga när sådant underlag finns. Resultatet är en planeringsreferens, inte en individuell prognos.')+'</div><div class="toolbar"><label>Timmar<input id="goal-hours" type="number" min="0" max="48" value="'+h+'"></label><label>Minuter<input id="goal-minutes" type="number" min="0" max="59" value="'+m+'"></label></div><div id="plan-output"></div></section>');
  renderPlanOutput();
 }
 function renderPlanOutput(){
