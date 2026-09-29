@@ -351,8 +351,12 @@ function renderPlan(root=$('#view')){
  renderPlanOutput();
 }
 function renderPlanOutput(){
- const h=Number($('#goal-hours')?.value),m=Number($('#goal-minutes')?.value),target=h*3600+m*60,root=$('#plan-output');if(!root)return;
- if(h<0||h>48||m<0||m>59||target<=0){root.innerHTML=empty('Ange en positiv måltid och minuter mellan 0 och 59.');return;}
- const p=plan(a,target);
- root.innerHTML='<p>Måltempo: <strong>'+pace(p.pace,state.unit)+'</strong> · nominell distans</p>'+(p.segments.length?table(['Till kontroll','Delsträcketid'],p.segments.map(s=>tr([esc(s.name),time(s.seconds)]))):'')+'<p class="muted">'+(p.method==='observed'?'Kalibrerat på kompletta publicerade passager i just denna upplaga, n='+p.n+'. Medianandelar av varje deltagares sluttid normaliseras till måltiden. Fältfiltren påverkar inte referensen.':p.method==='distance'?'Distansfallback: fördelat enbart på explicita rapporterade segmentdistanser. Saknad distans lämnas oallokerad.':'Enkel beräkning från måltid och nominell distans. Inget segmentunderlag finns.')+'</p>';
+ const hours=$('#goal-hours')?.value,minutes=$('#goal-minutes')?.value,h=Number(hours),m=Number(minutes),root=$('#plan-output');if(!root)return;
+ if(hours===''||minutes===''||!Number.isInteger(h)||!Number.isInteger(m)||h<0||h>48||m<0||m>59){root.innerHTML='<div class="goal-pace-error" role="alert">Ange hela, giltiga timmar och minuter mellan 0 och 59.</div>';return;}
+ const target=h*3600+m*60;if(target<=0){root.innerHTML='<div class="goal-pace-error" role="alert">Ange en positiv måltid.</div>';return;}
+ const p=plan(a,target);if(!p){root.innerHTML='<div class="goal-pace-error" role="alert">Loppplanen kunde inte beräknas.</div>';return;}
+ const method=p.method==='observed'?'Bananpassad':p.method==='distance'?'Distansbaserad':'Jämnt snitt',explanation=p.method==='observed'?'Segmentmålen varierar utifrån hur kompletta fullföljare i just denna upplaga fördelade sin verkliga tid över publicerade analyssegment. Fältfiltren påverkar inte referensen.':p.method==='distance'?'Historisk komplett segmentviktning saknas. Reservplanen fördelar tiden efter explicita segmentdistanser och fabricerar inte saknade avstånd.':'Loppet saknar tillräckligt segmentunderlag; endast måltid och nominellt snitt kan visas.';
+ const summary='<div class="goal-pace-summary"><article><span>Lopp</span><strong>'+esc(a.race.section||boot.presentation[a.race.race_family].label)+'</strong></article><article><span>Måltid</span><strong>'+time(target)+'</strong></article><article><span>Snittfart</span><strong>'+pace(p.pace,state.unit)+'</strong></article><article><span>Metod</span><strong>'+method+'</strong></article></div>';
+ const planRows=p.segments.length?p.segments.map(s=>tr([esc(s.name),finite(s.distanceKm)?Number(s.distanceKm).toFixed(1).replace('.',',')+' km':'–',finite(s.cumulativeDistanceKm)?Number(s.cumulativeDistanceKm).toFixed(1).replace('.',',')+' km':'–',time(s.seconds),time(s.cumulativeSeconds),pace(s.paceSecondsKm,state.unit)])):[];
+ root.innerHTML=summary+'<p class="goal-pace-explanation">'+esc(explanation)+(p.method==='observed'?' Komplett kohort n='+p.n+'.':'')+'</p>'+(planRows.length?'<div class="goal-pace-table">'+table(['Kontroll','Segment','Totalt','Segmenttid','Måltid','Tempo'],planRows)+'</div>':'');
 }
