@@ -45,8 +45,8 @@ export async function mountCourseContext(root,{route,adapter,segment=0}){
  selectSegment(segment);
  return {selectSegment,destroy(){destroyed=true;try{courseTiles?.off?.();courseTiles?.remove?.();highlight?.remove?.();if(map){map.stop?.();map.off?.();map.remove();map=null;}}catch{map=null;}}};
 }
-export async function mountMap(root,{route,adapter,records=[],segment=0,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches,referenceSeries=[],insights=[],profile=false,musicSrc='assets/kustlinjens-steg.mp3'}){
- let destroyed=false,map=null,timer=null,markers=[],referenceMarkers=new Map(),high=null,t=0,audio=null,tiles=null;
+export async function mountMap(root,{route,adapter,records=[],segment=0,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches,referenceSeries=[],insights=[],profile=false,musicSrc='assets/kustlinjens-steg.mp3',initialTime=0,onTimeChange=null}){
+ let destroyed=false,map=null,timer=null,markers=[],referenceMarkers=new Map(),high=null,t=Math.max(0,Number(initialTime)||0),audio=null,tiles=null;
  const models=records.map((r,index)=>({r,label:r.name,color:['#1677a8','#b51d60','#497b35','#92691a','#7651a0'][index%5],anchors:adapter.anchors(r,route)})).filter(m=>m.anchors.length>=2);
  const refs=(referenceSeries||[]).filter(x=>Array.isArray(x.anchors)&&x.anchors.length>=2).map((x,index)=>({...x,color:x.color||['#596761','#138a78','#2563eb'][index%3],active:x.id==='class'}));
  const primary=models[0]||null,duration=Math.max(1,...models.flatMap(m=>m.anchors.map(a=>a.time))),duel=!profile&&models.length>1;
@@ -101,12 +101,12 @@ export async function mountMap(root,{route,adapter,records=[],segment=0,reduced=
   refs.forEach(ref=>{const node=root.querySelector('[data-reference-gap="'+ref.id+'"]');if(!node||!ref.active||!primary)return;const refDistance=distanceAtTime(ref.anchors,timeValue),gap=refDistance-distance;node.textContent=(gap>=0?'+':'−')+Math.abs(gap).toFixed(1).replace('.',',')+' km';});
   updateDuelBoard(timeValue);
  }
- function seek(value){t=Math.max(0,Math.min(duration,value));models.forEach((m,i)=>markers[i]?.update(distanceAtTime(m.anchors,t)));refs.forEach(ref=>{const marker=referenceMarkers.get(ref.id);if(ref.active&&marker)marker.update(distanceAtTime(ref.anchors,t));});const range=root.querySelector('[data-seek]');if(range)range.value=t;const d=primary?distanceAtTime(primary.anchors,t):0;updateSidebars(finite(d)?d:0,t);}
+ function seek(value){t=Math.max(0,Math.min(duration,Number(value)||0));models.forEach((m,i)=>markers[i]?.update(distanceAtTime(m.anchors,t)));refs.forEach(ref=>{const marker=referenceMarkers.get(ref.id);if(ref.active&&marker)marker.update(distanceAtTime(ref.anchors,t));});const range=root.querySelector('[data-seek]');if(range)range.value=t;const d=primary?distanceAtTime(primary.anchors,t):0;updateSidebars(finite(d)?d:0,t);if(typeof onTimeChange==='function')onTimeChange(t,duration);}
  if(models.length){
   root.querySelector('[data-seek]').oninput=e=>{stopReplay();seek(+e.target.value);};
   root.querySelector('[data-reset]').onclick=()=>{stopReplay();seek(0);};
   root.querySelector('[data-play]').onclick=()=>{if(timer){stopReplay();return;}if(reduced)return;if(t>=duration)seek(0);let last=performance.now(),seconds=Number(root.querySelector('[data-speed]')?.value||120);root.querySelector('[data-play]').innerHTML='❚❚ <span>Pausa</span>';if(audio&&audio.paused)audio.play().catch(()=>{});function tick(now){if(destroyed)return;seek(t+(now-last)/(seconds*1000)*duration);last=now;if(t<duration)timer=requestAnimationFrame(tick);else stopReplay();}timer=requestAnimationFrame(tick);};
-  seek(0);
+  seek(t);
  }
  root.querySelectorAll('[data-reference-toggle]').forEach(input=>input.onchange=()=>{const marker=referenceMarkers.get(input.dataset.referenceToggle);marker?.setActive(input.checked);seek(t);});
  root.querySelectorAll('[data-replay-tab]').forEach(button=>button.onclick=()=>{root.querySelectorAll('[data-replay-tab]').forEach(x=>x.setAttribute('aria-selected',String(x===button)));root.querySelectorAll('[data-replay-panel]').forEach(panel=>panel.hidden=panel.dataset.replayPanel!==button.dataset.replayTab);});
@@ -115,6 +115,6 @@ export async function mountMap(root,{route,adapter,records=[],segment=0,reduced=
  if(profile){
   audio=root.querySelector('[data-replay-audio]');const mute=root.querySelector('[data-mute]'),volume=root.querySelector('[data-volume]');let enabled=true;try{enabled=localStorage.getItem('ost-replay-music-enabled')!=='false';const saved=Number(localStorage.getItem('ost-replay-music-volume'));if(finite(saved)&&saved>=0&&saved<=1)volume.value=String(saved);}catch{}audio.volume=Number(volume?.value||.28);audio.muted=!enabled;if(mute){mute.setAttribute('aria-pressed',String(enabled));mute.textContent=enabled?'♫':'♪';mute.onclick=()=>{enabled=!enabled;audio.muted=!enabled;mute.setAttribute('aria-pressed',String(enabled));mute.textContent=enabled?'♫':'♪';try{localStorage.setItem('ost-replay-music-enabled',String(enabled));}catch{}if(enabled&&audio.paused)audio.play().catch(()=>{});};}if(volume)volume.oninput=()=>{audio.volume=Number(volume.value);try{localStorage.setItem('ost-replay-music-volume',volume.value);}catch{}};audio.addEventListener('error',()=>{status.textContent='Kartreplay fungerar. Musikfilen kunde inte laddas.';});audio.play().catch(()=>{status.textContent='OpenStreetMap · klicka Spela loppet för att starta musik om webbläsaren blockerar autostart.';});
  }
- return {destroy(){if(destroyed)return;destroyed=true;stopReplay();if(audio){audio.pause();audio.currentTime=0;audio.removeAttribute('src');audio.load?.();}try{tiles?.off?.();tiles?.remove?.();high?.remove?.();markers.forEach(marker=>marker?.remove?.());referenceMarkers.forEach(marker=>marker?.dot?.remove?.());referenceMarkers.clear();if(map){map.stop?.();map.off?.();map.remove();map=null;}}catch{map=null;}},select:highlight,seek};
+ return {destroy(){if(destroyed)return;destroyed=true;stopReplay();if(audio){audio.pause();audio.currentTime=0;audio.removeAttribute('src');audio.load?.();}try{tiles?.off?.();tiles?.remove?.();high?.remove?.();markers.forEach(marker=>marker?.remove?.());referenceMarkers.forEach(marker=>marker?.dot?.remove?.());referenceMarkers.clear();if(map){map.stop?.();map.off?.();map.remove();map=null;}}catch{map=null;}},select:highlight,seek,getTime:()=>t,getMaxTime:()=>duration};
 }
 
