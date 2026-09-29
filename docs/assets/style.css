@@ -310,3 +310,30 @@ div.chart{box-sizing:border-box;min-width:0!important;width:100%;max-width:100%;
 /* Gotaleden sprint-winner component: only rendered when a genuine final timing control exists. */
 .sprint-winners{margin-top:18px}.sprint-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:14px}.sprint-column{min-width:0}.sprint-column-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:9px}.sprint-column-head h4{margin:0;font-size:1rem}.sprint-column-head label{display:grid;gap:3px;min-width:150px;color:var(--muted);font-size:.63rem;font-weight:800}.sprint-column-head select{padding:7px 9px}.sprint-row:nth-child(1)>b{background:#c79b31}.sprint-row:nth-child(2)>b{background:#7f8b88}.sprint-row:nth-child(3)>b{background:#a96f45}.sprint-row em{font-variant-numeric:tabular-nums}
 @media(max-width:800px){.sprint-grid{grid-template-columns:1fr}.sprint-column-head{align-items:flex-start;flex-direction:column}.sprint-column-head label{width:100%}}
+
+/* Gotaleden parity: local series toggles, DNF funnels and segment-group rows. */
+.chart-toggles{display:flex;justify-content:flex-end;gap:5px;flex-wrap:wrap;margin-top:7px}
+.chart-toggles button{display:inline-flex;align-items:center;gap:4px;min-height:30px;padding:4px 7px;border:1px solid var(--line);border-radius:99px;background:#fff;color:var(--muted);font-size:.6rem;font-weight:800;box-shadow:none}
+.chart-toggles button i{width:8px;height:8px;border:2px solid var(--toggle-color);border-radius:50%}
+.chart-toggles button[aria-pressed="true"]{border-color:var(--toggle-color);color:var(--ink)}
+.chart-toggles button[aria-pressed="true"] i{background:var(--toggle-color)}
+.gender-funnel-group{display:grid;gap:5px;padding:8px 0;border-bottom:1px solid var(--line)}
+.gender-funnel-group>span{font-size:.72rem;font-weight:800;color:var(--ink)}
+.gender-funnel-row{display:grid;grid-template-columns:minmax(65px,110px) minmax(60px,1fr) 32px;align-items:center;gap:7px;font-size:.68rem}
+.gender-funnel-row i{display:block;height:11px;border-radius:4px;background:var(--sex-color)}
+.gender-funnel-row strong{text-align:right;font-variant-numeric:tabular-nums}
+.segment-character{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.segment-character article{min-width:0;padding:12px;border-radius:12px;background:#f4f4ed}
+.segment-character>article>span,.segment-character small{display:block;color:var(--muted);font-size:.66rem}
+.segment-character>article>span{font-weight:800;color:var(--ink)}
+.segment-sex-row{display:grid;grid-template-columns:minmax(62px,110px) 8px auto;align-items:center;gap:6px;margin-top:7px}
+.segment-sex-row i{width:8px;height:8px;border-radius:50%;background:var(--sex-color)}
+.segment-sex-row strong{margin:0;font-size:.76rem;font-variant-numeric:tabular-nums}
+.segment-sex-row small{grid-column:1/-1;padding-left:76px}
+.series-bar{fill:var(--series-color);opacity:.78}
+.series-bar:hover,.series-bar:focus{opacity:1;stroke:var(--ink);stroke-width:1}
+@media(max-width:700px){
+ .chart-toggles{justify-content:flex-start}
+ .segment-character{grid-template-columns:1fr}
+ .gender-funnel-row{grid-template-columns:minmax(70px,100px) minmax(50px,1fr) 28px}
+}
