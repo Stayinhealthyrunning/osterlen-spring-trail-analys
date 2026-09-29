@@ -15,6 +15,14 @@ export function histogram(values,step){
  b.forEach((x,i)=>{const h=x.count/peak*192,xp=left+i*w+w*.12;s+='<rect tabindex="0" class="bar" x="'+xp+'" y="'+(bottom-h)+'" width="'+(w*.76)+'" height="'+h+'" rx="2" aria-label="'+x.count+' resultat, '+time(x.from)+' till '+time(x.to)+'"><title>'+x.count+' resultat · '+time(x.from)+'–'+time(x.to)+'</title></rect>';if(i%Math.max(1,Math.ceil(b.length/6))===0)s+='<text x="'+(left+(i+.5)*w)+'" y="263" text-anchor="middle">'+time(x.from).slice(0,-3)+'</text>';});
  return svg(s,'Fördelning av måltider');
 }
+export function histogramSeries(series,step=900){
+ const all=(series||[]).flatMap(item=>(item.values||[]).filter(finite).map(Number));const b=bins(all,step);if(!b.length)return empty('Inga publicerade måltider i urvalet.');
+ const counts=(series||[]).map(item=>b.map(bin=>(item.values||[]).filter(v=>finite(v)&&Number(v)>=bin.from&&Number(v)<bin.to).length)),peak=Math.max(1,...b.map((_,i)=>counts.reduce((sum,row)=>sum+row[i],0))),left=55,right=705,bottom=235,w=(right-left)/b.length,barW=Math.max(3,w*.72),offset=(w-barW)/2;let s='';
+ for(let i=0;i<=4;i++){const y=bottom-i*48;s+='<line class="axis" x1="'+left+'" x2="'+right+'" y1="'+y+'" y2="'+y+'"/><text x="43" y="'+(y+4)+'" text-anchor="end">'+Math.round(peak*i/4)+'</text>';}
+ b.forEach((bin,i)=>{let base=bottom;series.forEach((item,si)=>{const n=counts[si][i];if(!n)return;const h=n/peak*192,x=left+i*w+offset;base-=h;s+='<rect tabindex="0" class="bar series-bar" data-series="'+esc(item.id||item.name)+'" x="'+x+'" y="'+base+'" width="'+barW+'" height="'+h+'" rx="2" style="--series-color:'+esc(item.color||palette[si%palette.length])+'"><title>'+esc(item.name)+' · '+time(bin.from)+'–'+time(bin.to)+': '+n+'</title></rect>';});if(i%Math.max(1,Math.ceil(b.length/6))===0||i===b.length-1)s+='<text x="'+(left+(i+.5)*w)+'" y="263" text-anchor="middle">'+time(bin.from).slice(0,-3)+'</text>';});
+ const legend='<div class="legend">'+series.map((item,i)=>'<span data-series="'+esc(item.id||item.name)+'"><i style="background:'+(item.color||palette[i%palette.length])+'"></i>'+esc(item.name)+'</span>').join('')+'</div>';return '<div class="interactive-chart finish-interactive">'+legend+svg(s,'Fördelning av måltider per grupp')+'</div>';
+}
+
 export function sexHistogram(rows,step){
  const finished=rows.filter(r=>finite(r.finish_seconds)&&r.finish_seconds>0),values=finished.map(r=>r.finish_seconds),b=bins(values,step);
  if(!b.length)return empty('Inga publicerade måltider i urvalet.');
