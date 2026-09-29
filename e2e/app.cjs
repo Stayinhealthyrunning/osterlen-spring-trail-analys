@@ -157,7 +157,7 @@ const server=http.createServer((req,res)=>{
     });
 
     await run('sprint winner appears only with a genuine final timing control',async()=>{
-      await open('ost-2019-ultra60');await nav('segments');let text=await page.locator('#segments').innerText();assert.ok(text.includes('SPURTVINNAREN'));assert.ok(text.includes('Årets snabbaste löpare på målspurten'));assert.ok(text.includes('Vantalängan'));assert.ok(await page.locator('#segments [data-sprint-sex="F"]').count()>=0);
+      await open('ost-2019-ultra60');await nav('segments');let text=await page.locator('#segments').innerText();assert.ok(text.includes('SPURTVINNAREN'));assert.ok(text.includes('Årets snabbaste löpare på målspurten'));assert.ok(text.includes('Loppets spurtdrottning'));assert.ok(text.includes('Loppets spurtkung'));assert.ok(text.includes('Vantalängan'));assert.ok(await page.locator('#segments [data-sprint-sex="F"]').count()>=0);
       await open('ost-2025-ultra60');await nav('segments');text=await page.locator('#segments').innerText();assert.equal(text.includes('SPURTVINNAREN'),false);
     });
 
