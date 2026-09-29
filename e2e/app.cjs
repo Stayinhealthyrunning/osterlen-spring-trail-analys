@@ -50,7 +50,7 @@ const server=http.createServer((req,res)=>{
   const search=page.locator('#lookup');await search.fill('Johan Lantz');await page.locator('#lookup-suggestions [data-lookup-result]').first().waitFor();await search.press('ArrowDown');await search.press('Enter');await page.locator('#profile[open]').waitFor();assert.ok((await page.locator('#profile-body').innerText()).includes('Johan Lantz'));await page.locator('#close-profile').click();
   const female=page.locator('.finish-interactive [data-series-toggle="female"]');await female.uncheck();assert.equal(await page.locator('.finish-interactive [data-series="female"]').first().isHidden(),true);assert.equal(await page.locator('.finish-interactive [data-series="male"]').first().isVisible(),true);
   const percentile=page.locator('.percentile-interactive [data-series-toggle="male"]');await percentile.uncheck();assert.equal(await page.locator('.percentile-interactive [data-series="male"]').first().isHidden(),true);assert.ok(await page.locator('.percentile-interactive .percentile-sex-track').count()>0);
-  await openCompare();assert.ok(await page.locator('#compare-dialog .compare-picker').isVisible());assert.equal(await page.locator('#analysis-nav [data-section="compare"]').count(),0);await page.locator('#close-compare-dialog').click();
+  await openCompare();assert.ok(await page.locator('#compare-dialog .compare-picker').isVisible());assert.equal(await page.locator('#analysis-nav [data-section="compare"]').count(),0);const compareSearch=page.locator('#compare-search');await compareSearch.fill('Johan');await page.locator('#compare-options [data-add-compare]').first().waitFor();await compareSearch.press('ArrowDown');assert.ok((await compareSearch.getAttribute('aria-activedescendant'))?.startsWith('compare-option-'));await compareSearch.press('Enter');assert.equal(await page.locator('#compare-dialog .comparison-list button').count(),1);await page.locator('#compare-dialog [data-remove-compare]').click();await page.locator('#close-compare-dialog').click();
   await open('ost-2025-ultra60','overview');await nav('dynamics');const flowStops=await page.locator('#dynamics .field-flow-list article strong').allTextContents();assert.ok(flowStops.length>0);assert.ok(flowStops.every(name=>name!=='Start'));assert.equal((await page.locator('#dynamics').innerText()).includes('Bröt'),false);
  });
  await run('analysis navigation uses anchors, deep links and browser history',async()=>{
@@ -83,6 +83,9 @@ const server=http.createServer((req,res)=>{
   assert.ok((await page.locator('#profile output').innerText()).includes('2:46:40'));
   await shot('desktop-profile-replay');
   await page.keyboard.press('Escape');assert.equal(await page.locator('#profile[open]').count(),0);
+ });
+ await run('runner profile enters the shared comparison modal',async()=>{
+  await open('ost-2025-ultra60','results');await page.locator('[data-result]').first().click();await page.locator('#profile[open]').waitFor();await page.locator('#profile [data-open-compare-after]').click();await page.locator('#compare-dialog[open]').waitFor();assert.equal(await page.locator('#profile[open]').count(),0);assert.equal(await page.locator('#compare-dialog .comparison-list button').count(),1);await page.locator('#close-compare-dialog').click();
  });
  await run('Duo 2025 uses team observations and published members',async()=>{
   await open('ost-2025-duo60','results');await page.locator('[data-result]').first().press('Space');
