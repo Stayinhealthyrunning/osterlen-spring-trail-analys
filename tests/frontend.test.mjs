@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {median,quantile,bins,distribution,summary,comparable,distanceAtTime,groups,finished} from '../docs/assets/analytics.js';
-import {sexHistogram,finishPlaceScatter,statusLabel} from '../docs/assets/charts.js';
+import {sexHistogram,histogramSeries,finishPlaceScatter,statusLabel} from '../docs/assets/charts.js';
 import {adapt} from '../docs/assets/data-adapter.js';
 import {urlState,switched,storage,stateURL} from '../docs/assets/app-state.js';
 import {DataLoader} from '../docs/assets/data-loader.js';
@@ -14,6 +14,7 @@ const boot=read('bootstrap.json'),history=read('history.json'),doc=k=>read('race
 test('presentation provides family-specific goal defaults',()=>{assert.deepEqual(Object.fromEntries(Object.entries(boot.presentation).map(([family,p])=>[family,p.default_goal_seconds])),{ultra60:27000,trail22:9000,trail14:5400,trail5:2100,duo60:23400});});
 test('history aggregate carries structural, sex and comparable-record fields',()=>{const e=history.editions.find(x=>x.race_key==='ost-2025-ultra60');assert.ok(e.starters>=e.finished);assert.equal(e.women+e.men,e.sex_coverage);assert.equal(e.women_starters+e.men_starters,e.starter_sex_coverage);assert.ok('women_median' in e&&'men_median' in e);assert.ok(e.best_name);});
 test('terrain metrics preserve ascent/descent semantics and reject incomplete elevation',()=>{assert.deepEqual(terrainMetrics([[0,10],[1,30],[2,20],[3,50]]),{ascent:50,descent:10,min:10,max:50,distance:3,coverage:1});assert.equal(terrainMetrics([[0,null],[1,20]]),null);assert.equal(terrainMetrics([[0,10],[1,null],[2,20],[3,30]]),null);});
+test('team-class finish histogram preserves source-backed series',()=>{const html=histogramSeries([{id:'A',name:'Duo klass A',color:'#1677a8',values:[100,130]},{id:'B',name:'Duo klass B',color:'#8fbe63',values:[120]}],60);assert.match(html,/Duo klass A/);assert.match(html,/Duo klass B/);assert.match(html,/series-bar/);assert.match(html,/data-series="A"/);});
 test('finish histogram exposes total, women and men with text legends',()=>{const html=sexHistogram([{sex:'F',finish_seconds:100},{sex:'M',finish_seconds:110},{sex:'F',finish_seconds:120}],60);assert.match(html,/Totalt/);assert.match(html,/Kvinnor/);assert.match(html,/Män/);assert.match(html,/bar-female/);assert.match(html,/bar-male/);assert.match(html,/data-series-toggle="female"/);assert.match(html,/data-series="female"/);});
 test('percentile view exposes cumulative sex bars and accessible series toggles',()=>{const html=progressionBySex([{sex:'F',status:'FINISHED',finish_seconds:100},{sex:'F',status:'FINISHED',finish_seconds:200},{sex:'M',status:'FINISHED',finish_seconds:150}],true);assert.match(html,/data-series-toggle="female"/);assert.match(html,/data-series-toggle="male"/);assert.match(html,/percentile-sex-track/);assert.match(html,/Kvinnor/);assert.match(html,/Män/);assert.match(html,/Egen P50/);});
 test('history aggregate matches every generated race bundle',()=>{
