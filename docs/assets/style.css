@@ -160,3 +160,9 @@ tbody tr[data-result]{transition:background .15s ease,transform .15s ease}tbody 
 @media(max-width:700px){.hero{padding-top:15px;padding-bottom:14px}.hero h1{font-size:clamp(2.45rem,11.5vw,3.2rem)}}
 
 .hero .hero-lead{color:#f4faf7!important;text-shadow:0 1px 10px #062b36b5}
+
+@media(max-width:700px){
+ .hero-tools{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hero-tools>a{display:none}
+ .hero-tools>*{min-height:48px}
+}
