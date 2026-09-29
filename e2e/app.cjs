@@ -29,7 +29,7 @@ const server=http.createServer((req,res)=>{
  async function run(name,fn){await fn();report.cases.push(name);console.log('PASS '+name);}
  try{
  await run('startup: bootstrap plus selected race only',async()=>{
-  await page.goto(base+'/?race=ost-2025-ultra60');await ready();assert.ok((await page.evaluate(()=>scrollY))<=2,'ordinary startup should remain at page top');
+  await page.goto(base+'/?race=ost-2025-ultra60');await ready();assert.ok((await page.evaluate(()=>scrollY))<=2,'ordinary startup should remain at page top');assert.equal(new URL(page.url()).hash,'');assert.equal(new URL(page.url()).searchParams.has('section'),false);await page.reload();await ready();assert.ok((await page.evaluate(()=>scrollY))<=2,'overview reload should remain at page top');
   assert.equal(await page.locator('h1').count(),1);assert.equal(await page.locator('main').count(),1);
   assert.ok(await page.locator('#view').innerText().then(t=>t.includes('Sluttidsfördelning')));
   assert.equal(await page.locator('.long-analysis>.flow-section').count(),6);assert.ok(await page.locator('#overview').isVisible());assert.ok(await page.locator('#dynamics').isVisible());assert.ok(await page.locator('#segments').isVisible());assert.ok(await page.locator('#course').isVisible());assert.ok(await page.locator('#history').isVisible());assert.ok(await page.locator('#method').isVisible());
