@@ -63,11 +63,43 @@ def build(out):
         best_record=min((r for r in records if r["status"]=="FINISHED" and r.get("finish_seconds") and r["finish_seconds"]>0),key=lambda r:r["finish_seconds"],default=None)
         women_starters=sum(r.get("sex")=="F" for r in starters)
         men_starters=sum(r.get("sex")=="M" for r in starters)
+        checkpoints=sorted(doc["checkpoints"],key=lambda cp:(cp.get("sequence_no",0),cp.get("key","")))
+        boundary=[cp for cp in checkpoints if cp.get("analysis_boundary")]
+        split_lookup={}
+        for split in doc["splits"]:
+            split_lookup[(str(split.get("source_result_id")),split.get("checkpoint"))]=split
+        def obs(record,cp):
+            key=cp.get("key")
+            if key=="start":
+                return None if record.get("status") in ("DNS","UNKNOWN") else {"elapsed_seconds":0}
+            split=split_lookup.get((str(record.get("source_result_id")),key))
+            if split:return split
+            if key=="finish" and record.get("status")=="FINISHED" and record.get("finish_seconds"):
+                return {"elapsed_seconds":record["finish_seconds"],"place_overall":record.get("overall_place"),"from_result":True}
+            return None
+        complete=[record for record in records if record.get("status")=="FINISHED" and all(obs(record,cp) for cp in boundary[1:])]
+        segment_history=[]
+        for i,to_cp in enumerate(boundary[1:]):
+            from_cp=boundary[i]
+            from_km,to_km=from_cp.get("race_distance_km"),to_cp.get("race_distance_km")
+            distance=(float(to_km)-float(from_km)) if from_km is not None and to_km is not None else None
+            paces=[];times=[]
+            for record in complete:
+                before,after=obs(record,from_cp),obs(record,to_cp)
+                if not before or not after:continue
+                seconds=float(after["elapsed_seconds"])-float(before["elapsed_seconds"])
+                if seconds<=0:continue
+                times.append(seconds)
+                if distance is not None and distance>0:paces.append(seconds/distance)
+            segment_history.append({"key":f'{from_cp.get("key")}__{to_cp.get("key")}',"from_key":from_cp.get("key"),"to_key":to_cp.get("key"),
+                "name":f'{from_cp.get("name")} → {to_cp.get("name")}',"distance_km":distance,"n":len(times),
+                "median_seconds":statistics.median(times) if len(times)>=5 else None,
+                "median_pace":statistics.median(paces) if len(paces)>=5 else None})
         row.update(records=len(records),starters=len(starters),finished=len(finish),dnf=sum(r["status"]=="DNF" for r in records),
            dns=sum(r["status"]=="DNS" for r in records),dsq=sum(r["status"]=="DSQ" for r in records),unknown=sum(r["status"]=="UNKNOWN" for r in records),
            median=statistics.median(finish) if len(finish)>=5 else None,best=min(finish) if finish else None,
            best_name=best_record.get("name") if best_record else None,best_bib=best_record.get("bib") if best_record else None,
-           nominal_distance_km=race.get("nominal_distance_km"),
+           nominal_distance_km=race.get("nominal_distance_km"),segments=segment_history,
            sex_coverage=sum(r["sex"] is not None for r in records),women=sum(r["sex"]=="F" for r in records),men=sum(r["sex"]=="M" for r in records),
            starter_sex_coverage=women_starters+men_starters,women_starters=women_starters,men_starters=men_starters,
            women_finished=len(women_finish),men_finished=len(men_finish),
