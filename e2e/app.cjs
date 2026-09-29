@@ -37,7 +37,7 @@ const server=http.createServer((req,res)=>{
 
   const ready=()=>page.waitForFunction(()=>document.querySelector('#load-status')?.textContent.includes('upplaga klar'));
   async function open(race,section='overview'){await page.goto(base+'/?race='+race+(section&&section!=='overview'?'&section='+section:''));await ready();}
-  async function nav(section){await page.locator('#analysis-nav [data-section="'+section+'"]').click();}
+  async function nav(section){const selector=section==='overview'?'#analysis-nav [data-set-section="overview"]':'#analysis-nav [data-section="'+section+'"]';await page.locator(selector).click();}
   async function shot(name){const file=path.join(out,name+'.png');await page.screenshot({path:file,fullPage:true});report.screenshots.push(name+'.png');}
   async function run(name,fn){await fn();report.cases.push(name);console.log('PASS '+name);}
   async function chooseDuel(query){const input=page.locator('#duel-search');await input.fill(query);const option=page.locator('#duel-suggestions [data-duel-add]').first();await option.waitFor();await option.click();}
