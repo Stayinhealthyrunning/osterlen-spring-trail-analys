@@ -251,7 +251,7 @@ document.addEventListener('click',async e=>{
  if(b.dataset.quickFilter){state.globalQuery=null;state.filters[b.dataset.quickFilter]=b.dataset.quickValue||'';const input=document.querySelector('[data-filter="'+b.dataset.quickFilter+'"]');if(input)input.value=b.dataset.quickValue||'';await render();return;}
  if(b.dataset.favorite){e.stopPropagation();const r=a.byId.get(b.dataset.favorite);if(isFavorite(r))favorites=favorites.filter(f=>!(f.race===a.race.race_key&&f.id===b.dataset.favorite));else favorites.push({race:a.race.race_key,id:String(r.source_result_id),name:r.name,year:a.race.year});saveFavorites();b.textContent=isFavorite(r)?'Sparad':'Spara lopp';b.setAttribute('aria-pressed',isFavorite(r));renderTopTools();return;}
  if(b.dataset.openFavorite){await loadRace(b.dataset.openFavorite,{restore:{profile:b.dataset.id}});return;}
- if(b.id==='reset-filters'){state.filters={};filters();await render();}
+ if(b.id==='reset-filters'){state.filters={};filters();$('#unit').value=state.unit;await render();}
  if(b.id==='prev-page'){state.page--;resultTable();}
  if(b.id==='next-page'){state.page++;resultTable();}
  if(b.id==='load-course')await showMap($('#course-map'),[],'course');
