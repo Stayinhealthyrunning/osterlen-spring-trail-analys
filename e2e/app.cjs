@@ -191,7 +191,7 @@ const server=http.createServer((req,res)=>{
 
     await run('responsive layouts have no document overflow',async()=>{
       for(const [w,h] of [[1536,1024],[1366,768],[900,900],[390,844]]){
-        await page.setViewportSize({width:w,height:h});await open('ost-2025-ultra60');assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=2),w+' overview overflow');
+        await page.setViewportSize({width:w,height:h});await open('ost-2025-ultra60');const overviewOverflow=await page.evaluate(()=>({delta:document.documentElement.scrollWidth-innerWidth,culprits:[...document.querySelectorAll('body *')].map(el=>{const r=el.getBoundingClientRect();return {tag:el.tagName.toLowerCase(),id:el.id||'',cls:String(el.className||'').slice(0,120),left:Math.round(r.left),right:Math.round(r.right),width:Math.round(r.width),scrollWidth:el.scrollWidth,clientWidth:el.clientWidth};}).filter(x=>x.right>innerWidth+2||x.left<-2||x.scrollWidth>x.clientWidth+2).sort((a,b)=>(b.right-innerWidth)-(a.right-innerWidth)).slice(0,20)}));assert.ok(overviewOverflow.delta<=2,w+' overview overflow '+JSON.stringify(overviewOverflow));
         await nav('gender');assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=2),w+' gender overflow');
         await nav('age-analysis');assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=2),w+' age overflow');
         await nav('segments');assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=2),w+' segments overflow');
