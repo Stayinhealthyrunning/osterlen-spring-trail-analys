@@ -24,11 +24,12 @@ const server=http.createServer((req,res)=>{
  const ready=()=>page.waitForFunction(()=>document.querySelector('#load-status').textContent.includes('upplaga klar'));
  async function open(race,section='overview'){await page.goto(base+'/?race='+race+'&section='+section);await ready();}
  async function nav(section){await page.locator('#analysis-nav [data-section="'+section+'"]').click();}
+ async function openCompare(){if(!(await page.locator('#compare-dialog[open]').count())){await page.locator('#open-compare-dialog').click();await page.locator('#compare-dialog[open]').waitFor();}}
  async function shot(name){const file=path.join(out,name+'.png');for(let attempt=0;;attempt++){try{await page.screenshot({path:file,fullPage:true});break;}catch(error){if(attempt||!String(error.message).includes('Unable to capture screenshot'))throw error;await page.waitForTimeout(150);}}report.screenshots.push(name+'.png');}
  async function run(name,fn){await fn();report.cases.push(name);console.log('PASS '+name);}
  try{
  await run('startup: bootstrap plus selected race only',async()=>{
-  await open('ost-2025-ultra60');
+  await page.goto(base+'/?race=ost-2025-ultra60');await ready();assert.ok((await page.evaluate(()=>scrollY))<=2,'ordinary startup should remain at page top');
   assert.equal(await page.locator('h1').count(),1);assert.equal(await page.locator('main').count(),1);
   assert.ok(await page.locator('#view').innerText().then(t=>t.includes('Sluttidsfördelning')));
   assert.equal(await page.locator('.long-analysis>.flow-section').count(),6);assert.ok(await page.locator('#overview').isVisible());assert.ok(await page.locator('#dynamics').isVisible());assert.ok(await page.locator('#segments').isVisible());assert.ok(await page.locator('#course').isVisible());assert.ok(await page.locator('#history').isVisible());assert.ok(await page.locator('#method').isVisible());
@@ -44,12 +45,13 @@ const server=http.createServer((req,res)=>{
   await shot('desktop-overview');
  });
  await run('hero lookup, quick kartduell and interactive comparison series',async()=>{
-  const bounds=await page.locator('.hero').boundingBox();assert.ok(Math.abs(bounds.x)<=1);assert.ok(Math.abs(bounds.width-1536)<=2);
+  const bounds=await page.locator('.hero').boundingBox();assert.ok(Math.abs(bounds.x)<=1);assert.ok(Math.abs(bounds.width-1536)<=2);assert.ok(bounds.height<410,'desktop hero should be compact: '+bounds.height);
+  await page.locator('#focus-runner-search').click();assert.equal(await page.evaluate(()=>document.activeElement.id),'lookup');
   const search=page.locator('#lookup');await search.fill('Johan Lantz');await page.locator('#lookup-suggestions [data-lookup-result]').first().waitFor();await search.press('ArrowDown');await search.press('Enter');await page.locator('#profile[open]').waitFor();assert.ok((await page.locator('#profile-body').innerText()).includes('Johan Lantz'));await page.locator('#close-profile').click();
   const female=page.locator('.finish-interactive [data-series-toggle="female"]');await female.uncheck();assert.equal(await page.locator('.finish-interactive [data-series="female"]').first().isHidden(),true);assert.equal(await page.locator('.finish-interactive [data-series="male"]').first().isVisible(),true);
-  const percentile=page.locator('.percentile-interactive [data-series-toggle="male"]');await percentile.uncheck();assert.equal(await page.locator('.percentile-interactive [data-series="male"]').first().isHidden(),true);
-  await page.locator('.hero [data-section="compare"]').click();assert.equal(new URL(page.url()).hash,'#compare');assert.ok(await page.locator('.compare-picker').isVisible());
-  await open('ost-2025-ultra60','overview');await nav('dynamics');const flowStops=await page.locator('#dynamics .field-flow-list article strong').allTextContents();assert.ok(flowStops.length>0);assert.ok(flowStops.every(name=>name!=='Start'));
+  const percentile=page.locator('.percentile-interactive [data-series-toggle="male"]');await percentile.uncheck();assert.equal(await page.locator('.percentile-interactive [data-series="male"]').first().isHidden(),true);assert.ok(await page.locator('.percentile-interactive .percentile-sex-track').count()>0);
+  await openCompare();assert.ok(await page.locator('#compare-dialog .compare-picker').isVisible());assert.equal(await page.locator('#analysis-nav [data-section="compare"]').count(),0);await page.locator('#close-compare-dialog').click();
+  await open('ost-2025-ultra60','overview');await nav('dynamics');const flowStops=await page.locator('#dynamics .field-flow-list article strong').allTextContents();assert.ok(flowStops.length>0);assert.ok(flowStops.every(name=>name!=='Start'));assert.equal((await page.locator('#dynamics').innerText()).includes('Bröt'),false);
  });
  await run('analysis navigation uses anchors, deep links and browser history',async()=>{
   await nav('dynamics');assert.equal(new URL(page.url()).hash,'#dynamics');assert.equal(await page.evaluate(()=>document.activeElement.id),'dynamics');assert.equal(await page.locator('#analysis-nav [data-section="dynamics"]').getAttribute('aria-current'),'location');assert.ok(await page.locator('#overview').isVisible());
@@ -66,7 +68,9 @@ const server=http.createServer((req,res)=>{
   const club=page.locator('#club-filter');assert.equal(await club.inputValue(),'');assert.equal(await page.locator('#club-suggestions').isHidden(),true);
   await club.fill('a');await page.locator('#club-suggestions [data-club-suggestion]').first().waitFor();await club.press('ArrowDown');await club.press('Enter');
   assert.ok((await club.inputValue()).length>1);assert.equal(await page.locator('#club-suggestions').isHidden(),true);
+  const classButton=page.locator('#overview [data-quick-filter="class_name"]').first();assert.ok(await classButton.count()>0);const quickClass=await classButton.getAttribute('data-quick-value');await classButton.click();assert.equal(await page.locator('[data-filter="class_name"]').inputValue(),quickClass);await page.locator('#reset-filters').click();
   await page.locator('[data-filter="sex"]').selectOption('F');assert.equal(await page.locator('.gender-story').count(),0);await page.locator('#reset-filters').click();
+  await nav('segments');const segmentFemale=page.locator('#segments [data-series-toggle="female"]');if(await segmentFemale.count()){await segmentFemale.uncheck();assert.equal(await page.locator('#segments [data-series="female"]').isHidden(),true);await segmentFemale.check();}
  });
  await run('placement scatter opens the same source-backed profile by keyboard',async()=>{
   await open('ost-2025-ultra60','dynamics');const point=page.locator('#dynamics .finish-place-scatter [data-result]').first();assert.equal(await point.getAttribute('tabindex'),'0');await point.focus();await page.keyboard.press('Enter');await page.locator('#profile[open]').waitFor();assert.ok((await page.locator('#profile-body').innerText()).includes('LÖPARPROFIL'));await page.locator('#close-profile').click();
@@ -101,7 +105,7 @@ const server=http.createServer((req,res)=>{
  await run('finish-only families and provisional/reconstructed labels',async()=>{
   for(const family of ['trail22','trail14','trail5']){
    await open('ost-2026-'+family,'segments');assert.equal(await page.locator('#analysis-nav [data-section="segments"]').count(),0);assert.equal(await page.locator('#segments').count(),0);assert.equal(new URL(page.url()).hash,'#overview');
-   await nav('compare');assert.ok((await page.locator('.compare-picker').innerText()).includes('exakt 2'));assert.ok((await page.locator('.compare-picker').innerText()).includes('Kartduell kräver'));
+   await openCompare();assert.ok((await page.locator('#compare-dialog .compare-picker').innerText()).includes('exakt 2'));assert.ok((await page.locator('#compare-dialog .compare-picker').innerText()).includes('Kartduell kräver'));await page.locator('#close-compare-dialog').click();
    await nav('course');const text=await page.locator('#view').innerText();
    if(family==='trail14'){assert.ok(text.includes('Arbetsreferens'));assert.equal(await page.locator('#load-course').count(),0);}
    if(family==='trail5'){assert.ok(text.includes('Rekonstruerad bana'));assert.equal(await page.locator('#goal-hours').inputValue(),'0');assert.equal(await page.locator('#goal-minutes').inputValue(),'35');await page.locator('#load-course').click();await page.locator('#course-map .leaflet-container').waitFor();assert.equal(await page.locator('[data-play]').count(),0);}
@@ -119,21 +123,21 @@ const server=http.createServer((req,res)=>{
   await page.goBack();await ready();assert.ok((await page.locator('#race-heading').innerText()).includes('2025'));
  });
  await run('compare 2, Kartduell, tile failure fallback',async()=>{
-  await open('ost-2025-ultra60','compare');
-  assert.equal(await page.locator('#compare-options').isHidden(),true);assert.ok((await page.locator('.selection-empty').innerText()).includes('Inga löpare'));
+  await open('ost-2025-ultra60','overview');await openCompare();
+  assert.equal(await page.locator('#compare-options').isHidden(),true);assert.ok((await page.locator('#compare-dialog .selection-empty').innerText()).includes('Inga löpare'));
   await page.locator('#compare-search').fill('a');await page.locator('#compare-options [data-add-compare]').first().click();
   await page.locator('#compare-search').fill('a');await page.locator('#compare-options [data-add-compare]').first().click();
-  assert.ok((await page.locator('#view').innerText()).includes('Direktjämförelse'));
-  assert.equal(await page.locator('.versus article').count(),2);
-  assert.deepEqual(await page.locator('.compare-tables table').evaluateAll(tables=>tables.map(t=>t.querySelectorAll('thead th').length)),[4,4]);assert.ok(await page.locator('.compare-tables .comparison-metric').count()>0);
-  assert.ok(await page.locator('.compare-tables>div').evaluateAll(nodes=>nodes.every(n=>n.scrollWidth-n.clientWidth<=2)));
+  assert.ok((await page.locator('#compare-dialog-body').innerText()).includes('Direktjämförelse'));
+  assert.equal(await page.locator('#compare-dialog .versus article').count(),2);
+  assert.deepEqual(await page.locator('#compare-dialog .compare-tables table').evaluateAll(tables=>tables.map(t=>t.querySelectorAll('thead th').length)),[4,4]);assert.ok(await page.locator('#compare-dialog .compare-tables .comparison-metric').count()>0);
+  assert.ok(await page.locator('#compare-dialog .compare-tables>div').evaluateAll(nodes=>nodes.every(n=>n.scrollWidth-n.clientWidth<=2)));
   await shot('direct-comparison');
-  await page.locator('#open-duel').click();await page.locator('#duel .leaflet-container').waitFor();
+  await page.locator('#compare-dialog #open-duel').click();await page.locator('#duel .leaflet-container').waitFor();
   expectedTiles=true;await page.route('https://tile.openstreetmap.org/**',route=>route.abort());
   await page.locator('#duel [data-tiles]').click();await page.locator('#duel .route-only').waitFor();
   assert.ok((await page.locator('#duel .map-status').innerText()).includes('Neutral banvy'));
   assert.equal(await page.locator('#duel .leaflet-tile-pane img').count(),0);
-  await shot('duel-tile-fallback');await page.locator('#close-duel').click();
+  await shot('duel-tile-fallback');await page.locator('#close-duel').click();await page.locator('#close-compare-dialog').click();
  });
  await run('history cancellation, methodology relationships, plan',async()=>{
   await nav('history');await page.waitForFunction(()=>document.querySelector('#view').textContent.includes('Inställt'));assert.ok(await page.locator('#history .history-fingerprint').isVisible());assert.ok((await page.locator('#history').innerText()).toLocaleLowerCase('sv').includes('jämförbar toppnotering'));const oldSexRow=page.locator('#history table tbody tr').filter({has:page.locator('td:first-child', {hasText:'2018'})}).first();if(await oldSexRow.count()){assert.equal((await oldSexRow.locator('td').nth(5).innerText()).trim(),'–');assert.equal((await oldSexRow.locator('td').nth(6).innerText()).trim(),'–');}
@@ -155,7 +159,7 @@ const server=http.createServer((req,res)=>{
  });
  await run('mobile profile and direct comparison stay within the viewport',async()=>{
   await page.setViewportSize({width:390,height:844});await open('ost-2025-ultra60','results');await page.locator('[data-result]').first().click();await page.locator('#profile[open]').waitFor();assert.ok(await page.locator('#profile').evaluate(el=>el.getBoundingClientRect().right<=innerWidth+2&&el.getBoundingClientRect().left>=-2));assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=2));await page.locator('#close-profile').click();
-  await nav('compare');const search=page.locator('#compare-search');for(const q of ['Johan Lantz','Christian Malmström']){await search.fill(q);await page.locator('#compare-options [data-add-compare]').first().click();}assert.ok(await page.locator('.head-to-head').isVisible());assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=2));const cards=await page.locator('.versus article').evaluateAll(nodes=>nodes.map(n=>({left:n.getBoundingClientRect().left,right:n.getBoundingClientRect().right}))),viewportWidth=page.viewportSize().width;assert.ok(cards.every(x=>x.left>=-2&&x.right<=viewportWidth+2));await page.setViewportSize({width:1536,height:1024});
+  await openCompare();const search=page.locator('#compare-search');for(const q of ['Johan Lantz','Christian Malmström']){await search.fill(q);await page.locator('#compare-options [data-add-compare]').first().click();}assert.ok(await page.locator('#compare-dialog .head-to-head').isVisible());assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=2));const cards=await page.locator('#compare-dialog .versus article').evaluateAll(nodes=>nodes.map(n=>({left:n.getBoundingClientRect().left,right:n.getBoundingClientRect().right}))),viewportWidth=page.viewportSize().width;assert.ok(cards.every(x=>x.left>=-2&&x.right<=viewportWidth+2));assert.ok(await page.locator('#compare-dialog').evaluate(el=>el.getBoundingClientRect().left>=-2&&el.getBoundingClientRect().right<=innerWidth+2));await page.locator('#close-compare-dialog').click();await page.setViewportSize({width:1536,height:1024});
  });
  await run('responsive all required sizes; no document overflow',async()=>{
   for(const [w,h] of [[1536,1024],[1366,768],[900,900],[390,844]]){
@@ -163,7 +167,7 @@ const server=http.createServer((req,res)=>{
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=2));
    if(w===390)assert.equal(await page.locator('.hero').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length),1);
    await shot('overview-'+w+'x'+h);
-   for(const section of ['results','dynamics','segments','course','compare','history','method']){
+   for(const section of ['results','dynamics','segments','course','history','method']){
     await nav(section);if(section==='history')await page.waitForFunction(()=>document.querySelector('#view').textContent.includes('Inställt'));
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=2),w+' '+section);
    }
