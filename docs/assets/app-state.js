@@ -1,5 +1,5 @@
-export const flowSections=['overview','statistics','gender','age-analysis','segments','history','clubs','method'];
-export const sections=[...flowSections,'results','compare'];
+export const flowSections=['overview','statistics','gender','age-analysis','segments','history','clubs','results','method'];
+export const sections=[...flowSections,'compare'];
 export function urlState(url,catalog,defaultRace){
  const u=new URL(url),p=u.searchParams,key=p.get('race'),hash=decodeURIComponent(u.hash.slice(1)),requested=sections.includes(hash)?hash:p.get('section');
  return {raceKey:catalog[key]?key:defaultRace,section:sections.includes(requested)?requested:'overview',profile:p.get('result'),compare:[...new Set((p.get('compare')||'').split(',').filter(Boolean))].slice(0,5)};
