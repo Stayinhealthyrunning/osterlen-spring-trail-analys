@@ -158,7 +158,7 @@ const server=http.createServer((req,res)=>{
     });
 
     await run('history keeps cancellations and course-comparability guardrails',async()=>{
-      await nav('history');await page.waitForFunction(()=>document.querySelector('#history')?.textContent.includes('Inställt'));const text=await page.locator('#history').innerText();assert.ok(text.includes('Inställt'));assert.ok(text.toLocaleLowerCase('sv').includes('jämförbar toppnotering'));assert.ok(!/\bNaN\b|\bundefined\b/.test(text));
+      await nav('history');await page.waitForFunction(()=>document.querySelector('#history')?.textContent.includes('Inställt'));const text=await page.locator('#history').innerText();assert.ok(text.includes('Inställt'));for(const label of ['FLERÅRIG ANALYS','AKTUELL REFERENS','DELTAGANDE','RESULTATUTVECKLING','UPPLAGEÖVERSIKT','DELSTRÄCKEHISTORIK','VERIFIERADE ÅTERKOMSTER'])assert.ok(text.includes(label),label);assert.ok(text.includes('Median sluttid'));assert.ok(!/\bNaN\b|\bundefined\b/.test(text));
     });
 
     await run('results database follows Gotaleden columns and opens profiles',async()=>{
