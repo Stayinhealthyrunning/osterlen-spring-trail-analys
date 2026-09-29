@@ -117,7 +117,7 @@ Profilmodalen ska innehålla:
   - eget kön
   när respektive källstöd och minsta underlag finns
 - musik startar med replay och fortsätter inom modalens livslängd; stannar/fadas ut först när profilmodalen stängs
-- musikfil: `Kustlinjens steg (1).mp3`, ska lagras i ÖST assets med stabilt filnamn
+- musikfil: `docs/assets/kustlinjens-steg.mp3` (committad ÖST-asset med stabilt filnamn)
 - inga markörer skapas från infererade kön, klass eller saknade splits
 
 ## Förbjuden genväg
