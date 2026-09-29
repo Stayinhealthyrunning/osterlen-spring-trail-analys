@@ -145,6 +145,7 @@ const server=http.createServer((req,res)=>{
       await nav('segments');const text=await page.locator('#segments').innerText();
       for(const label of ['DELSTRÄCKELABBET','Var avgjordes loppet?','Från','Till','Sortera','FÄLTETS MÅLGÅNG','När hade fältet gått i mål?','FÄLTETS FLÖDE','Så sprids startfältet','PRESTATIONER SOM STICKER UT','Fem sätt att hitta ovanliga lopp'])assert.ok(text.includes(label),label);
       assert.equal(await page.locator('#segment-from').count(),1);assert.equal(await page.locator('#segment-to').count(),1);assert.equal(await page.locator('#segment-metric').count(),1);
+      const segmentChildren=await page.locator('#segments').evaluate(el=>[...el.children].map(x=>x.id||x.className));assert.ok(await page.locator('#segments #course-difficulty').isVisible());assert.ok(await page.locator('#segments #course-difficulty .head-to-head-course-map').count()===1);assert.ok(await page.locator('#segments #course-difficulty .course-elevation svg').count()===1);assert.ok((await page.locator('#segments').innerText()).includes('RACE INTELLIGENCE LAB · ETT ÅR'));assert.ok(await page.locator('#segments #course-difficulty').evaluate((node,lab)=>node.compareDocumentPosition(lab)&Node.DOCUMENT_POSITION_FOLLOWING,page.locator('#segments .segment-lab')));
       assert.ok(await page.locator('#segments .podium article').count()>0);
       const to=page.locator('#segment-to'),opts=await to.locator('option').count();if(opts>1){await to.selectOption({index:1});assert.ok(await page.locator('#segments .podium article').count()>0);}
       await page.locator('#segments [data-standout-tab="fastest"]').click();assert.equal(await page.locator('#segments [data-standout-tab="fastest"]').getAttribute('aria-selected'),'true');assert.ok(await page.locator('#segments .standout-row').count()>0);
@@ -168,6 +169,7 @@ const server=http.createServer((req,res)=>{
     await run('Duo uses source-backed classes instead of invented demographics',async()=>{
       await open('ost-2025-duo60');await nav('gender');assert.equal((await page.locator('#gender').innerText()).includes('Kvinnor'),false);assert.ok((await page.locator('#gender').innerText()).includes('klass')||(await page.locator('#gender').innerText()).includes('Klass'));
       await nav('age-analysis');assert.ok((await page.locator('#age-analysis').innerText()).includes('OFFICIELLA KLASSER'));assert.equal((await page.locator('#age-analysis').innerText()).includes('<30'),false);
+      await nav('segments');assert.equal(await page.locator('#segment-comparison').count(),1);assert.deepEqual(await page.locator('#segment-comparison option').allTextContents(),['Egen klass','Hela fältet']);await page.locator('#segment-comparison').selectOption('field');assert.equal(await page.locator('#segment-comparison').inputValue(),'field');
       await nav('results');await page.locator('[data-result]').first().click();assert.ok((await page.locator('#profile-body').innerText()).includes('Publicerade lagmedlemmar'));await page.locator('#close-profile').click();
     });
 
