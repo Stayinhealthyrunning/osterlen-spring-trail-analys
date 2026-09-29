@@ -17,7 +17,7 @@ function isFavorite(r){return favorites.some(f=>f.race===a.race.race_key&&f.id==
 async function loadRace(key,{restore=null,replace=false}={}){
  const token=++generation;closeMaps();$('#profile').close();$('#duel').close();state=switched(state,key);if(restore)Object.assign(state,restore);
  $('#view').setAttribute('aria-busy','true');$('#view').innerHTML=empty('Laddar vald upplaga…');status('Katalog klar → laddar valt lopp/år');$('#year').disabled=true;
- try{const doc=await loader.race(key);if(token!==generation)return;a=adapt(doc,boot);state.compare=state.compare.filter(id=>a.byId.has(id));state.section=normalizeSection(state.section);controls();filters();await render();syncURL(replace);status('Katalog → vald upplaga klar · '+a.records.length+' resultat · rutt och historik efter behov');if(isFlowSection(state.section))scrollToSection(state.section,{focus:state.section!=='overview',behavior:'auto'});if(state.profile)openProfile(state.profile,false);}
+ try{const doc=await loader.race(key);if(token!==generation)return;a=adapt(doc,boot);state.compare=state.compare.filter(id=>a.byId.has(id));state.section=normalizeSection(state.section);controls();filters();await render();syncURL(replace);status('Katalog → vald upplaga klar · '+a.records.length+' resultat · historik i analysflödet · rutt/replay efter behov');if(isFlowSection(state.section))scrollToSection(state.section,{focus:state.section!=='overview',behavior:'auto'});if(state.profile)openProfile(state.profile,false);}
  catch(e){if(token===generation){$('#view').innerHTML=empty(e.message)+'<button id="retry">Försök igen</button>';$('#retry').onclick=()=>loadRace(key,{restore:state,replace:true});}}
  finally{if(token===generation){$('#view').setAttribute('aria-busy','false');$('#year').disabled=false;}}
 }
@@ -28,7 +28,7 @@ function controls(){
  const catalog=Object.values(boot.race_catalog).filter(r=>r.race_family===family);
  const years=[...catalog.map(r=>r.year),...boot.cancelled_years].sort((x,y)=>y-x);
  $('#year').innerHTML=years.map(y=>'<option value="'+y+'" '+(y===a.race.year?'selected':'')+' '+(boot.cancelled_years.includes(y)?'disabled':'')+'>'+y+(boot.cancelled_years.includes(y)?' · Inställt':'')+'</option>').join('');
- $('#analysis-nav').innerHTML=availableSections().map(key=>'<button data-section="'+key+'" class="'+(isFlowSection(key)?'anchor-nav':'special-nav')+'" '+(state.section===key?'aria-current="page"':'')+'>'+labels[key]+'</button>').join('');
+ $('#analysis-nav').innerHTML=availableSections().map(key=>'<button data-section="'+key+'" class="'+(isFlowSection(key)?'anchor-nav':'special-nav')+'" '+(state.section===key?'aria-current="location"':'')+'>'+labels[key]+'</button>').join('');
  $('#unit').value=state.unit;
 }
 function filters(){
@@ -45,10 +45,11 @@ function availableFlowSections(){return flowSections.filter(key=>key!=='segments
 function availableSections(){return [...availableFlowSections(),'results','compare'];}
 function isFlowSection(section){return flowSections.includes(section);}
 function normalizeSection(section){return availableSections().includes(section)?section:'overview';}
-function updateNav(){document.querySelectorAll('#analysis-nav button').forEach(b=>{if(b.dataset.section===state.section)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});}
+function updateNav(){document.querySelectorAll('#analysis-nav button').forEach(b=>{if(b.dataset.section===state.section)b.setAttribute('aria-current','location');else b.removeAttribute('aria-current');});}
 function flowHeading(key,title,copy){return '<header class="flow-heading"><p class="eyebrow">'+key+'</p><h2>'+title+'</h2><p>'+copy+'</p></header>';}
 function flowSection(key,html){return '<section id="'+key+'" class="flow-section" tabindex="-1" aria-label="'+labels[key]+'">'+html+'</section>';}
-function scrollToSection(section,{focus=true,behavior='smooth'}={}){const target=document.getElementById(section);if(!target)return;target.scrollIntoView({block:'start',behavior});if(focus)target.focus({preventScroll:true});}
+function motionBehavior(behavior='smooth'){return behavior==='smooth'&&globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches?'auto':behavior;}
+function scrollToSection(section,{focus=true,behavior='smooth'}={}){const target=document.getElementById(section);if(!target)return;target.scrollIntoView({block:'start',behavior:motionBehavior(behavior)});if(focus)target.focus({preventScroll:true});}
 function observeFlowSections(){
  sectionObserver?.disconnect();sectionObserver=null;if(!('IntersectionObserver' in globalThis))return;
  sectionObserver=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((x,y)=>y.intersectionRatio-x.intersectionRatio)[0],key=visible?.target?.id;if(key&&isFlowSection(key)&&state.section!==key){state.section=key;updateNav();}},{rootMargin:'-18% 0px -62% 0px',threshold:[0,.15,.35,.6]});
@@ -110,7 +111,7 @@ function openProfile(id,update=true){
  const r=a.byId.get(String(id));if(!r)return;profileMap?.destroy();profileMap=null;profileTrigger=document.activeElement;state.profile=String(id);
  $('#profile-body').innerHTML=views.profile(a,r,state,isFavorite(r));if(!$('#profile').open)$('#profile').showModal();if(update)syncURL();
 }
-async function navigate(section,update=true,{behavior='smooth',focus=true}={}){section=normalizeSection(section);const previous=state.section;state.section=section;if(isFlowSection(section)){if(!isFlowSection(previous)||!document.getElementById(section))await render();else updateNav();if(update)syncURL();scrollToSection(section,{focus,behavior});return;}await render();if(update)syncURL();$('#analysis').scrollIntoView({block:'start',behavior});}
+async function navigate(section,update=true,{behavior='smooth',focus=true}={}){section=normalizeSection(section);const previous=state.section;state.section=section;if(isFlowSection(section)){if(!isFlowSection(previous)||!document.getElementById(section))await render();else updateNav();if(update)syncURL();scrollToSection(section,{focus,behavior});return;}await render();if(update)syncURL();$('#analysis').scrollIntoView({block:'start',behavior:motionBehavior(behavior)});}
 document.addEventListener('click',async e=>{
  const b=e.target.closest('button,a');if(!b||!state)return;
  if(b.dataset.family){const family=b.dataset.family,editions=Object.values(boot.race_catalog).filter(r=>r.race_family===family),race=editions.find(r=>r.year===a.race.year)||editions.sort((x,y)=>y.year-x.year)[0];await loadRace(race.race_key);$('#analysis').scrollIntoView();return;}
