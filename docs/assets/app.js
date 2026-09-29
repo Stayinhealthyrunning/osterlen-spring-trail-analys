@@ -281,6 +281,7 @@ document.addEventListener('click',async e=>{
  if(b.id==='focus-runner-search'){const input=$('#lookup');input?.focus();input?.scrollIntoView({block:'center',behavior:motionBehavior('smooth')});return;}
  if(b.id==='open-compare-dialog'){openCompareDialog();return;}
  if(b.id==='share-view'){await shareView();return;}
+ if(b.id==='goal-create'){renderPlanOutput();return;}
  if(b.dataset.scrollTarget){e.preventDefault();if(b.dataset.setSection){state.section=b.dataset.setSection;updateNav();syncURL();}document.getElementById(b.dataset.scrollTarget)?.scrollIntoView({behavior:motionBehavior('smooth'),block:'start'});return;}
  if(b.dataset.section){e.preventDefault();await navigate(b.dataset.section);return;}
  if(b.dataset.duelAdd){const id=b.dataset.duelAdd;if(!state.compare.includes(id)&&state.compare.length<compareLimit())state.compare.push(id);duelOptions('');if($('#duel-search'))$('#duel-search').value='';renderTopTools();syncURL();return;}
