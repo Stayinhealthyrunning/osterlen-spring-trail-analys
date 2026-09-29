@@ -41,25 +41,25 @@ Efter bygget är de frysta invariants oförändrade: 34 genomförda RaceEditions
 
 | Resurs | Raw | Gzip | Budget gzip |
 |---|---:|---:|---:|
-| HTML | 4 362 B | 2 038 B | 32 KiB |
-| CSS | 11 685 B | 3 572 B | 75 KiB |
-| JavaScript, konservativt alla egna moduler | 56 813 B | 21 767 B | 256 KiB |
-| Bootstrap | 31 429 B | 3 124 B | 10 KiB |
+| HTML | 3 540 B | 1 559 B | 32 KiB |
+| CSS | 41 294 B | 9 840 B | 75 KiB |
+| JavaScript, konservativt alla egna moduler | 101 668 B | 33 921 B | 256 KiB |
+| Bootstrap | 29 950 B | 3 151 B | 10 KiB |
 | Största valda RaceEdition | 329 247 B | 29 233 B | 600 KiB raw / 75 KiB gzip |
-| Bootstrap + största RaceEdition | – | 32 357 B | 100 KiB |
-| Kritisk initial väg | – | 59 734 B | 512 KiB |
-| Full Engine regression guard | 5 417 505 B | 450 553 B | 750 KiB |
+| Bootstrap + största RaceEdition | – | 32 384 B | 100 KiB |
+| Kritisk initial väg | – | 77 704 B | 512 KiB |
+| Full Engine regression guard | 5 417 505 B | 450 547 B | 750 KiB |
 | Leaflet, lazy vendor | 162 363 B | 45 966 B | utanför initial väg |
 
-Rutt/elevation är lazy. 2025–2026 Ultra-route är cirka 59,62 km med 4 246 GPX-punkter; 2024-rutten är cirka 60,60 km med 3 258 punkter. Trail 5-rutten är en separat rekonstruerad referens. Initial browserlogg visar endast bootstrap och vald RaceEdition innan användaren efterfrågar historik eller karta. Första användbara vy observerades kring 0,5 s i lokal headless Chromium; detta är en QA-observation, inte ett nätverks-SLA.
+Rutt/elevation är lazy. 2025–2026 Ultra-route är cirka 59,62 km med 4 246 GPX-punkter; 2024-rutten är cirka 60,60 km med 3 258 punkter. Trail 5-rutten är en separat rekonstruerad referens. Initial browserlogg visar endast bootstrap och vald RaceEdition innan användaren efterfrågar historik eller karta. Första användbara vy observerades kring 477 ms i lokal headless Chromium; detta är en QA-observation, inte ett nätverks-SLA.
 
 Lazy route/elevation-bundles mäter 129 053 B raw / 41 687 B gzip för Ultra 2024, 163 249 B raw / 50 567 B gzip för Ultra 2025–2026 och 6 988 B raw / 2 428 B gzip för Trail 5-referensen. Varje bundle innehåller aktuell rutt och eventuell höjdprofil och hämtas bara för vald CourseVersion.
 
 ## Test och QA
 
-- 22 Python/unittest-fall: gröna.
-- 15 Node-fall för diagrammatematik, null, capability, Duo, identitet, jämförbarhet, DNF, state, loading och loppplan: gröna.
-- 11 Chromium-flöden över 1536×1024, 1366×768, 900×900 och 390×844: gröna.
+- 25 Python/unittest-fall: gröna.
+- 26 Node-fall för diagrammatematik, null, capability, Duo, identitet, jämförbarhet, DNF, state, loading och loppplan: gröna.
+- 14 Chromium-flöden över 1536×1024, 1366×768, 900×900 och 390×844: gröna.
 - 0 console errors, 0 page errors och 0 oväntade nätverksfel.
 - Foundation, prebuild och frontend performance-grind ingår i CI.
 
@@ -79,4 +79,4 @@ Historiska Ultra-rutter utan lokalt redistributerbart underlag får ingen karta/
 
 Före implementationen dokumenterades en konkret jämförelse av ÖST, Ultravasan och Gotaleden i `reports/OST_UX_PARITY_GAP_ANALYSIS.md`. Rundan behöll ÖST:s befintliga capability-styrda långscroll och specialvyer, men flyttade upp de individuella verktygen och förbättrade deras interaktion: hero-sök/autocomplete till profil, tidig Kartduell, serieval för könsserier, antal och skannbara percentilmarkörer, stapelöversikt med expanderbara gruppdetaljer samt ett komprimerat fältflöde utan Start=100 %. Metodguiden flyttades till Metod och varje relevant analyskort fick en kort förklaring. Den dekorativa route-journey-sektionen togs bort. DNF-etiketter och Österlens bildidentitet behölls konsekvent.
 
-Slutlig visuell och funktionell verifiering finns i `reports/OST_SPLITS_VISUAL_QA.md`. Slutbudgeten uppmättes till 73 832 B gzip för kritisk kod/dataöverföring och första användbar vy omkring 356 ms i lokal headless Chromium. Engine 1.0 och dataproveniens lämnades orörda.
+Slutlig visuell och funktionell verifiering finns i `reports/OST_SPLITS_VISUAL_QA.md`. Slutbudgeten uppmättes till 77 704 B gzip för kritisk kod/dataöverföring och första användbar vy omkring 477 ms i lokal headless Chromium. Engine 1.0 och dataproveniens lämnades orörda.

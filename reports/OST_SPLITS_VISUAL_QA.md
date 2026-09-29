@@ -30,14 +30,14 @@ Geometriassertionen fann högst 2 px dokumentoverflow i samtliga storlekar och a
 
 - Foundation: godkänd.
 - Prebuild readiness: godkänd.
-- Python: 22 tester godkända.
-- JavaScript: 20 tester godkända.
+- Python: 25 tester godkända.
+- JavaScript: 26 tester godkända.
 - Chromium: 14 browserflöden godkända över samtliga fyra storlekar.
-- Frontend budget: godkänd. HTML 1 559 B gzip, CSS 9 300 B gzip, JavaScript 30 590 B gzip. Kritisk kod/dataöverföring är 73 832 B gzip mot budgeten 524 288 B. Bootstrap + största valda lopp är 32 383 B gzip; full Engine-regressionstoken är 450 553 B gzip.
-- Lokal, headless Chromium rapporterade första användbara vy efter cirka 356 ms. Det är en okonditionerad lokal observation, inte ett nätverks-SLA.
+- Frontend budget: godkänd. HTML 1 559 B gzip, CSS 9 840 B gzip, JavaScript 33 921 B gzip. Kritisk kod/dataöverföring är 77 704 B gzip mot budgeten 524 288 B. Bootstrap + största valda lopp är 32 384 B gzip; full Engine-regressionstoken är 450 547 B gzip.
+- Lokal, headless Chromium rapporterade första användbara vy efter cirka 477 ms. Det är en okonditionerad lokal observation, inte ett nätverks-SLA.
 - Hero-WebP är 287 096 B. De fyra familje-WebP-bilderna är tillsammans 203 126 B (490 222 B visuella bilder totalt). Performance-budgetens kritiska kod/data-mått exkluderar bilder. Route, elevation och replay förblir lazy-loaded.
 
-Datagenerationens SHA-256 var `6822e5701660213957d85b57c8c0ec7a2c3d2a3fc4899c16bb3d59013715139e`; totals var fortsatt 34 lopp, 9 871 resultat, 6 123 observerade splits, 300 Duo-lag och 599 medlemsrader. Source data, Engine 1.0-kontrakt, frysta totaler, provenance och capability-regler ändrades inte.
+Datagenerationens SHA-256 var `b55f8774887ca80586e1e40e5f8dd7c02a0de83c165b02b6d8c9500eea9a3693`; totals var fortsatt 34 lopp, 9 871 resultat, 6 123 observerade splits, 300 Duo-lag och 599 medlemsrader. Source data, Engine 1.0-kontrakt, frysta totaler, provenance och capability-regler ändrades inte.
 
 ## Kvarstående begränsningar
 
