@@ -100,7 +100,7 @@ function renderTopTools(){
  const favRoot=$('#favorites-top'),current=favorites.filter(f=>f.race===a.race.race_key&&a.byId.has(f.id));
  if(favRoot)favRoot.innerHTML=current.length?'<div class="favorites-list">'+current.map(f=>'<button type="button" data-open-favorite="'+esc(f.race)+'" data-id="'+esc(f.id)+'"><strong>'+esc(f.name)+'</strong><small>'+a.race.year+' · öppna analys</small></button>').join('')+'</div>':'<p class="favorites-empty">Inga sparade '+(a.race.participant.entity==='team'?'lag':'löpare')+' i den här upplagan ännu.</p>';
  const picked=state.compare.map(id=>a.byId.get(id)).filter(Boolean),chips=$('#duel-selected');if(chips)chips.innerHTML=picked.map((r,i)=>'<button type="button" data-duel-remove="'+esc(r.source_result_id)+'"><i>'+(i+1)+'</i>'+esc(r.name)+' <span>×</span></button>').join('');
- const head=$('#open-head-to-head'),map=$('#open-map-duel');if(head){head.disabled=picked.length!==2;head.textContent=picked.length===2?'Öppna Direktjämförelse':'Välj två resultat';}if(map){map.hidden=!a.race.capabilities.replay;map.disabled=picked.length<2||picked.length>5;map.textContent=picked.length>=2?'Öppna Kartduell':'Välj minst två resultat';}
+ const head=$('#open-head-to-head'),map=$('#open-map-duel'),entity=a.race.participant.entity==='team'?'lag':'deltagare';if(head){head.disabled=picked.length!==2;head.textContent=picked.length===2?'Öppna Direktjämförelse':'Välj två '+entity;}if(map){map.hidden=!a.race.capabilities.replay;map.disabled=picked.length<2||picked.length>5;map.textContent=picked.length>=2?'Öppna Kartduell':'Välj minst två '+entity;}
 }
 function duelOptions(query){
  const root=$('#duel-suggestions'),input=$('#duel-search');if(!root||!input)return;const q=query.trim();duelSuggestionIndex=-1;
@@ -222,16 +222,29 @@ function renderClubSuggestions(q){
 }
 function chooseClub(value){const input=$('#club-filter');if(!input)return;input.value=value;state.filters.club=value;renderClubSuggestions('');render();}
 function moveClubSuggestion(direction){const input=$('#club-filter'),items=[...document.querySelectorAll('#club-suggestions [data-club-suggestion]')];if(!items.length)return;clubSuggestionIndex=(clubSuggestionIndex+direction+items.length)%items.length;items.forEach((item,i)=>item.setAttribute('aria-selected',i===clubSuggestionIndex));input.setAttribute('aria-activedescendant',items[clubSuggestionIndex].id);items[clubSuggestionIndex].scrollIntoView({block:'nearest'});}
-async function showMap(root,records,kind){
+async function showMap(root,records,kind,options={}){
  const token=generation;root.innerHTML=empty('Laddar aktuell rutt…');
  try{
   const [route,module]=await Promise.all([loader.route(a.race),import('./map-engine.js')]);
   if(token!==generation||!root.isConnected||(kind==='profile'&&!$('#profile').open)||(kind==='duel'&&!$('#duel').open))return;
   const record=kind==='profile'?records[0]:null,referenceSeries=record?buildReplayReferences(record,route):[],insights=record?replayInsights(record):[];
-  const mounted=await module.mountMap(root,{route,adapter:a,records,segment:state.segment,referenceSeries,insights,profile:kind==='profile',musicSrc:'assets/kustlinjens-steg.mp3'});
+  const mounted=await module.mountMap(root,{route,adapter:a,records,segment:state.segment,referenceSeries,insights,profile:kind==='profile',musicSrc:'assets/kustlinjens-steg.mp3',initialTime:options.initialTime||0,onTimeChange:options.onTimeChange||null});
   if(token!==generation||!root.isConnected||(kind==='profile'&&!$('#profile').open)||(kind==='duel'&&!$('#duel').open)){mounted.destroy();return;}
   if(kind==='profile')profileMap=mounted;else if(kind==='duel')duelMap=mounted;else mapView=mounted;
  }catch(e){if(root.isConnected)root.innerHTML=empty(e.message);}
+}
+function syncDuelClock(current=0,max=0){
+ const clock=$('#duel-dialog-clock'),end=$('#duel-dialog-clock-max');if(clock)clock.textContent=time(Math.max(0,Number(current)||0));if(end)end.textContent=time(Math.max(0,Number(max)||0));
+}
+async function openMapDuel(initialTime=0){
+ if(!a?.race?.capabilities?.replay)return;const records=state.compare.map(id=>a.byId.get(id)).filter(Boolean).slice(0,5);if(records.length<2)return;
+ duelMap?.destroy();duelMap=null;const dialog=$('#duel'),entity=a.race.participant.entity==='team'?'lag':'deltagare',raceLabel=boot.presentation?.[a.race.race_family]?.label||a.race.section||a.race.race_family;
+ $('#duel-dialog-race').textContent=raceLabel+' · '+a.race.year;$('#duel-dialog-count').textContent=records.length+' '+entity;const share=$('#duel-dialog-share');if(share)share.innerHTML='↗ <span>Dela</span>';syncDuelClock(0,Math.max(...records.map(r=>Number(r.finish_seconds)||0),0));if(!dialog.open)dialog.showModal();
+ await showMap($('#duel-body'),records,'duel',{initialTime,onTimeChange:syncDuelClock});if(duelMap)syncDuelClock(duelMap.getTime?.()||0,duelMap.getMaxTime?.()||0);
+}
+async function shareDuel(){
+ if(!duelMap)return;const u=new URL(location.href);u.search='';u.hash='';u.searchParams.set('race',state.raceKey);u.searchParams.set('compare',state.compare.slice(0,5).join(','));u.searchParams.set('duel','1');u.searchParams.set('t',String(Math.max(0,Math.round(duelMap.getTime?.()||0))));const button=$('#duel-dialog-share');
+ try{await navigator.clipboard.writeText(u.href);if(button){button.textContent='✓ Länk kopierad';setTimeout(()=>{if(button?.isConnected)button.innerHTML='↗ <span>Dela</span>';},1800);}}catch{prompt('Kopiera länken:',u.href);}
 }
 async function openProfile(id,update=true){
  const r=a.byId.get(String(id));if(!r)return;profileMap?.destroy();profileMap=null;profileTrigger=document.activeElement;state.profile=String(id);
@@ -265,9 +278,9 @@ document.addEventListener('click',async e=>{
  if(b.dataset.duelAdd){const id=b.dataset.duelAdd;if(!state.compare.includes(id)&&state.compare.length<compareLimit())state.compare.push(id);duelOptions('');if($('#duel-search'))$('#duel-search').value='';renderTopTools();syncURL();return;}
  if(b.dataset.duelRemove){state.compare=state.compare.filter(id=>id!==b.dataset.duelRemove);renderTopTools();syncURL();return;}
  if(b.id==='open-head-to-head'&&state.compare.length===2){openCompareDialog();return;}
- if(b.id==='head-to-head-duel'&&state.compare.length===2&&a.race.capabilities.replay){const dialog=$('#duel');dialog.showModal();await showMap($('#duel-body'),state.compare.map(id=>a.byId.get(id)).filter(Boolean),'duel');return;}
+ if(b.id==='head-to-head-duel'&&state.compare.length===2&&a.race.capabilities.replay){await openMapDuel();return;}
  if(b.dataset.headSegment!==undefined){const index=Number(b.dataset.headSegment)||0;document.querySelectorAll('#compare-dialog [data-head-segment]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));headToHeadCourse?.selectSegment(index);return;}
- if(b.id==='open-map-duel'){const dialog=$('#duel');dialog.showModal();await showMap($('#duel-body'),state.compare.map(id=>a.byId.get(id)).filter(Boolean),'duel');return;}
+ if(b.id==='open-map-duel'){await openMapDuel();return;}
  if(b.dataset.info){const t=document.getElementById(b.dataset.info);t.hidden=!t.hidden;b.setAttribute('aria-expanded',!t.hidden);return;}
  if(b.dataset.segment){const keepCourse=Boolean(mapView&&$('#course-map')?.querySelector('.map'));state.segment=+b.dataset.segment;mapView?.select(state.segment);document.querySelectorAll('button[data-segment]').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.segment===state.segment));if(isFlowSection(state.section)){await render();if(keepCourse&&$('#load-course'))await showMap($('#course-map'),[],'course');}return;}
  if(b.dataset.sort){state.dir=state.sort===b.dataset.sort?-(state.dir||1):1;state.sort=b.dataset.sort;resultTable();return;}
@@ -281,10 +294,11 @@ document.addEventListener('click',async e=>{
  if(b.id==='prev-page'){state.page--;resultTable();}
  if(b.id==='next-page'){state.page++;resultTable();}
  if(b.id==='load-course')await showMap($('#course-map'),[],'course');
- if(b.id==='open-duel'){const dialog=$('#duel');dialog.showModal();await showMap($('#duel-body'),state.compare.map(id=>a.byId.get(id)),'duel');}
+ if(b.id==='open-duel'){await openMapDuel();}
  if(b.id==='close-profile')$('#profile').close();
  if(b.id==='close-compare-dialog')$('#compare-dialog').close();
- if(b.id==='close-duel')$('#duel').close();
+ if(b.id==='duel-dialog-share'){await shareDuel();return;}
+  if(b.id==='close-duel')$('#duel').close();
 });
 document.addEventListener('click',e=>{const row=e.target.closest('[data-result]');if(row)openProfile(row.dataset.result);});
 document.addEventListener('change',e=>{const input=e.target.closest('[data-series-toggle]');if(!input)return;const key=input.dataset.seriesToggle,chart=input.closest('.interactive-chart');chart?.querySelectorAll('[data-series="'+key+'"]').forEach(item=>{item.hidden=!input.checked;if(item.namespaceURI==='http://www.w3.org/2000/svg')item.style.display=input.checked?'':'none';});});
@@ -316,7 +330,7 @@ $('#compare-dialog').addEventListener('close',()=>{headToHeadCourse?.destroy();h
 $('#duel').addEventListener('close',()=>{duelMap?.destroy();duelMap=null;});
 addEventListener('popstate',async()=>{if(!boot)return;const restored=urlState(location.href,boot.race_catalog,boot.default_race),openCompare=restored.section==='compare';if(openCompare)restored.section='overview';if(restored.raceKey!==state.raceKey)await loadRace(restored.raceKey,{restore:restored,replace:true});else{Object.assign(state,restored);state.section=normalizeSection(state.section);await render();if(isFlowSection(state.section))scrollToSection(state.section,{focus:true,behavior:'auto'});if(restored.profile)openProfile(restored.profile,false);else $('#profile').close();}if(openCompare)openCompareDialog();});
 async function start(){
- try{history.scrollRestoration='manual';const params=new URLSearchParams(location.search),explicitSection=Boolean(location.hash||params.has('section')),openCompare=location.hash==='#compare'||params.get('section')==='compare';if(!explicitSection)window.scrollTo(0,0);boot=await loader.bootstrap();store=storage(boot.event.storage_namespace,safeStorage());const saved=store.read('favorites',[]);favorites=Array.isArray(saved)?saved.filter(f=>f&&typeof f.id==='string'&&boot.race_catalog[f.race]).slice(-40):[];const unit=store.read('unit','pace');state={...urlState(location.href,boot.race_catalog,boot.default_race),unit:unit==='speed'?'speed':'pace',filters:{},segment:0,page:1};if(openCompare)state.section='overview';await loadRace(state.raceKey,{restore:{...state},replace:true,scroll:explicitSection&&!openCompare});if(!explicitSection)window.scrollTo(0,0);if(openCompare)openCompareDialog();}
+ try{history.scrollRestoration='manual';const params=new URLSearchParams(location.search),explicitSection=Boolean(location.hash||params.has('section')),openCompare=location.hash==='#compare'||params.get('section')==='compare',openDuel=params.get('duel')==='1',duelTime=Math.max(0,Number(params.get('t'))||0);if(!explicitSection)window.scrollTo(0,0);boot=await loader.bootstrap();store=storage(boot.event.storage_namespace,safeStorage());const saved=store.read('favorites',[]);favorites=Array.isArray(saved)?saved.filter(f=>f&&typeof f.id==='string'&&boot.race_catalog[f.race]).slice(-40):[];const unit=store.read('unit','pace');state={...urlState(location.href,boot.race_catalog,boot.default_race),unit:unit==='speed'?'speed':'pace',filters:{},segment:0,page:1};if(openCompare)state.section='overview';await loadRace(state.raceKey,{restore:{...state},replace:true,scroll:explicitSection&&!openCompare});if(!explicitSection)window.scrollTo(0,0);if(openCompare)openCompareDialog();else if(openDuel&&state.compare.length>=2&&a.race.capabilities.replay)await openMapDuel(duelTime);}
  catch(e){$('#view').innerHTML=empty(e.message);status('Katalogen kunde inte laddas. Ladda om sidan för att försöka igen.');}
 }
 start();
