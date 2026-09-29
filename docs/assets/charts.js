@@ -2,7 +2,7 @@ import {bins,finite} from './analytics.js';
 export const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function time(v){if(!finite(v))return '–';const n=Math.round(Math.abs(v));return (v<0?'−':'')+Math.floor(n/3600)+':'+String(Math.floor(n%3600/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');}
 export function pace(v,unit='pace'){if(!finite(v)||v<=0)return '–';if(unit==='speed')return (3600/v).toFixed(1).replace('.',',')+' km/h';const n=Math.round(v);return Math.floor(n/60)+':'+String(n%60).padStart(2,'0')+' min/km';}
-export const statusLabel=s=>({FINISHED:'Fullföljde',DNF:'Bröt',DNS:'Startade inte',DSQ:'Diskvalificerad',UNKNOWN:'Okänd status'}[s]||String(s??'–'));
+export const statusLabel=s=>({FINISHED:'Fullföljt',DNF:'Bröt',DNS:'Startade inte',DSQ:'Diskvalificerad',UNKNOWN:'Okänd status'}[s]||String(s??'–'));
 export const empty=t=>'<p class="empty">'+esc(t)+'</p>';
 export const table=(heads,rows)=>'<div class="table-scroll"><table><thead><tr>'+heads.map(h=>'<th scope="col">'+h+'</th>').join('')+'</tr></thead><tbody>'+rows.join('')+'</tbody></table></div>';
 export const tr=values=>'<tr>'+values.map(v=>'<td>'+v+'</td>').join('')+'</tr>';
