@@ -63,7 +63,7 @@ const server=http.createServer((req,res)=>{
  });
  await run('result keyboard profile; replay; local vendor; source journey',async()=>{
   await nav('results');const row=page.locator('[data-result]').first();await row.focus();await page.keyboard.press('Enter');
-  await page.locator('#profile[open]').waitFor();const profileText=await page.locator('#profile-body').innerText();assert.ok(profileText.includes('Johan Lantz'));assert.ok(profileText.includes('Fullföljde'));assert.ok(!profileText.includes('FINISHED'));assert.ok(profileText.includes('Mot fältmedian'));assert.ok(profileText.includes('Fältmedian tid'));assert.ok(await page.locator('#profile .profile-hero').isVisible());
+  await page.locator('#profile[open]').waitFor();const profileText=await page.locator('#profile-body').innerText();assert.ok(profileText.includes('Johan Lantz'));assert.ok(profileText.includes('Fullföljt'));assert.ok(!profileText.includes('FINISHED'));assert.ok(profileText.includes('Mot fältmedian'));assert.ok(profileText.includes('Fältmedian tid'));assert.ok(await page.locator('#profile .profile-hero').isVisible());
   await page.locator('#load-profile-replay').click();await page.locator('#profile .leaflet-container').waitFor();
   await page.locator('#profile [data-seek]').fill('10000');await page.locator('#profile [data-seek]').dispatchEvent('input');
   assert.ok((await page.locator('#profile output').innerText()).includes('2:46:40'));
