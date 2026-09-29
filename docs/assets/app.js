@@ -242,6 +242,8 @@ document.addEventListener('click',async e=>{
  if(b.dataset.standoutTab){state.standoutTab=b.dataset.standoutTab;refreshSegmentSection();return;}
  if(b.dataset.courseKpi!==undefined||b.dataset.courseRow!==undefined){const raw=b.dataset.courseKpi!==undefined?b.dataset.courseKpi:b.dataset.courseRow,index=Number(raw);if(Number.isInteger(index)&&index>=0){state.segment=index;refreshSegmentSection();}return;}
  if(b.dataset.profileJump){document.getElementById(b.dataset.profileJump)?.scrollIntoView({behavior:motionBehavior('smooth'),block:'start'});return;}
+ if(b.dataset.profileShare!==undefined){syncURL(true);const feedback=document.querySelector('[data-profile-feedback]');try{await navigator.clipboard.writeText(location.href);if(feedback)feedback.textContent='Länk kopierad';}catch{prompt('Kopiera länken:',location.href);if(feedback)feedback.textContent='Länk klar att kopiera';}return;}
+ if(b.dataset.profilePlan){const r=a.byId.get(String(b.dataset.profilePlan));if($('#profile')?.open)$('#profile').close();document.getElementById('goal-pace')?.scrollIntoView({behavior:motionBehavior('smooth'),block:'start'});if(r&&finished(r)){const h=Math.floor(r.finish_seconds/3600),m=Math.floor(r.finish_seconds%3600/60);if($('#goal-hours'))$('#goal-hours').value=h;if($('#goal-minutes'))$('#goal-minutes').value=m;renderPlanOutput();}return;}
  if(b.dataset.lookupResult){chooseLookup(b.dataset.lookupResult);return;}
  if(b.id==='focus-runner-search'){const input=$('#lookup');input?.focus();input?.scrollIntoView({block:'center',behavior:motionBehavior('smooth')});return;}
  if(b.id==='open-compare-dialog'){openCompareDialog();return;}
