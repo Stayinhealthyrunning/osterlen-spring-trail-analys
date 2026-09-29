@@ -39,7 +39,7 @@ export function finishPlaceScatter(rows){
  for(let i=0;i<=4;i++){const value=min+(max-min)*i/4,xx=left+(right-left)*i/4;s+='<line class="axis" x1="'+xx+'" x2="'+xx+'" y1="'+top+'" y2="'+bottom+'"/><text x="'+xx+'" y="264" text-anchor="middle">'+time(value).slice(0,-3)+'</text>';}
  for(let i=0;i<=4;i++){const place=Math.max(1,Math.round(1+(maxPlace-1)*i/4)),yy=y(place);s+='<line class="axis" x1="'+left+'" x2="'+right+'" y1="'+yy+'" y2="'+yy+'"/><text x="58" y="'+(yy+4)+'" text-anchor="end">'+place+'</text>';}
  for(const r of points){const cls=r.sex==='F'?'point-female':r.sex==='M'?'point-male':'point-total',label=esc((r.name||'Resultat')+' · '+time(r.finish_seconds)+' · plats '+r.overall_place);s+='<circle tabindex="0" role="button" data-result="'+esc(r.source_result_id)+'" class="scatter-point '+cls+'" cx="'+x(r.finish_seconds).toFixed(2)+'" cy="'+y(r.overall_place).toFixed(2)+'" r="4.2" aria-label="Öppna '+label+'"><title>'+label+'</title></circle>';}
- const sexes=new Set(points.map(r=>r.sex).filter(s=>s==='F'||s==='M')),legend=sexes.size===2?'<div class="legend" aria-label="Diagramförklaring"><span><i class="female"></i>Kvinnor</span><span><i class="male"></i>Män</span><span><i class="total"></i>Okänt kön</span></div>':'';
+ const hasF=points.some(r=>r.sex==='F'),hasM=points.some(r=>r.sex==='M'),hasUnknown=points.some(r=>r.sex!=='F'&&r.sex!=='M'),legendItems=[hasF?'<span><i class="female"></i>Kvinnor</span>':'',hasM?'<span><i class="male"></i>Män</span>':'',hasUnknown?'<span><i class="total"></i>Okänt kön</span>':''].filter(Boolean),legend=legendItems.length>1?'<div class="legend" aria-label="Diagramförklaring">'+legendItems.join('')+'</div>':'';
  return legend+svg(s,'Sluttid mot totalplacering');
 }
 export function bands(stats,unit){
