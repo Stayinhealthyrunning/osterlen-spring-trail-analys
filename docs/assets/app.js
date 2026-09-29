@@ -167,6 +167,10 @@ function refreshAgeSection(){
 function refreshClubSection(){
  const root=$('#clubs');if(!root)return;root.innerHTML=flowHeading('KLUBB- OCH ORTSARENAN','Gemenskap i siffror','Sök en klubb eller välj upp till fyra för att jämföra deltagare, målgång och fart i det valda loppet.')+views.clubs(a,selected(),state);
 }
+function refreshSegmentSection(){
+ const root=$('#segments');if(!root)return;root.innerHTML=flowHeading('DELSTRÄCKELABBET','Var avgjordes loppet?','Jämför segment, relativa prestationer och placeringar utan att fabricera saknade passager.')+views.segments(a,selected(),state)+views.course(a);
+}
+
 function clubValues(){const seen=new Map();for(const r of a.records){const value=String(r.club||'').trim(),key=value.toLocaleLowerCase('sv');if(value&&!seen.has(key))seen.set(key,value);}return [...seen.values()].sort((x,y)=>x.localeCompare(y,'sv'));}
 function renderClubSuggestions(q){
  const root=$('#club-suggestions'),input=$('#club-filter');if(!root||!input)return;q=q.trim();clubSuggestionIndex=-1;if(!q){root.hidden=true;root.innerHTML='';input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');return;}
@@ -199,6 +203,7 @@ document.addEventListener('click',async e=>{
  if(b.dataset.clubRemove){state.clubNames=(state.clubNames||[]).filter(name=>name!==b.dataset.clubRemove);refreshClubSection();return;}
  if(b.dataset.ageGroup){const id=b.dataset.ageGroup,current=new Set(state.ageGroups||[]);if(current.has(id)){if(current.size>1)current.delete(id);}else if(current.size<5)current.add(id);state.ageGroups=[...current];refreshAgeSection();return;}
  if(b.dataset.ageHeatStat){state.ageHeatStat=b.dataset.ageHeatStat==='fastest10'?'fastest10':'median';refreshAgeSection();return;}
+ if(b.dataset.standoutTab){state.standoutTab=b.dataset.standoutTab;refreshSegmentSection();return;}
  if(b.dataset.profileJump){document.getElementById(b.dataset.profileJump)?.scrollIntoView({behavior:motionBehavior('smooth'),block:'start'});return;}
  if(b.dataset.lookupResult){chooseLookup(b.dataset.lookupResult);return;}
  if(b.id==='focus-runner-search'){const input=$('#lookup');input?.focus();input?.scrollIntoView({block:'center',behavior:motionBehavior('smooth')});return;}
@@ -229,6 +234,7 @@ document.addEventListener('click',async e=>{
 });
 document.addEventListener('click',e=>{const row=e.target.closest('[data-result]');if(row)openProfile(row.dataset.result);});
 document.addEventListener('change',e=>{const input=e.target.closest('[data-series-toggle]');if(!input)return;const key=input.dataset.seriesToggle,chart=input.closest('.interactive-chart');chart?.querySelectorAll('[data-series="'+key+'"]').forEach(item=>{item.hidden=!input.checked;if(item.namespaceURI==='http://www.w3.org/2000/svg')item.style.display=input.checked?'':'none';});});
+document.addEventListener('change',e=>{if(!state)return;if(e.target.id==='segment-from'){state.segmentFrom=e.target.value;const keys=a.boundary.map(cp=>cp.key),from=keys.indexOf(state.segmentFrom),to=keys.indexOf(state.segmentTo);if(to<=from)state.segmentTo=keys[Math.min(keys.length-1,from+1)];refreshSegmentSection();}else if(e.target.id==='segment-to'){state.segmentTo=e.target.value;const keys=a.boundary.map(cp=>cp.key),from=keys.indexOf(state.segmentFrom),to=keys.indexOf(state.segmentTo);if(to<=from)state.segmentFrom=keys[Math.max(0,to-1)];refreshSegmentSection();}else if(e.target.id==='segment-metric'){state.segmentMetric=e.target.value;refreshSegmentSection();}});
 document.addEventListener('keydown',e=>{
  if(e.target.id==='lookup'&&['ArrowDown','ArrowUp','Enter','Escape'].includes(e.key)){if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();moveLookupSuggestion(e.key==='ArrowDown'?1:-1);}else if(e.key==='Enter'&&lookupSuggestionIndex>=0){e.preventDefault();const item=document.querySelectorAll('#lookup-suggestions [data-lookup-result]')[lookupSuggestionIndex];if(item)chooseLookup(item.dataset.lookupResult);}else if(e.key==='Escape')lookupOptions('');return;}
  if(e.target.id==='duel-search'&&['ArrowDown','ArrowUp','Enter','Escape'].includes(e.key)){if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();moveDuelSuggestion(e.key==='ArrowDown'?1:-1);}else if(e.key==='Enter'&&duelSuggestionIndex>=0){e.preventDefault();document.querySelectorAll('#duel-suggestions [data-duel-add]')[duelSuggestionIndex]?.click();}else if(e.key==='Escape')duelOptions('');return;}
