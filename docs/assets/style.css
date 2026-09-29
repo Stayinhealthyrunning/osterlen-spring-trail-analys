@@ -365,3 +365,41 @@ div.chart{box-sizing:border-box;min-width:0!important;width:100%;max-width:100%;
  .duel-dialog-actions{gap:4px}.duel-dialog-actions button,.duel-dialog-actions .duel-dialog-close{width:40px;min-height:40px;padding:0}
  .duel-modal-stage{height:calc(100% - 60px);padding:7px}
 }
+
+/* Gotaleden Course Intelligence layout, expressed with ÖST visual tokens. */
+.course-difficulty{padding:30px;background:linear-gradient(155deg,#fffffc,#eff8f2)}
+.course-difficulty-head{display:flex;align-items:flex-start;justify-content:space-between;gap:28px}
+.course-difficulty-head>div{max-width:760px}.course-difficulty-head p:not(.eyebrow){color:var(--muted);line-height:1.55}
+.course-standouts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:22px 0}
+.course-standouts button{display:grid;min-width:0;min-height:132px;padding:17px;border:1px solid var(--line);border-radius:15px;background:#fff;color:var(--ink);text-align:left;box-shadow:0 8px 24px rgba(19,68,73,.07);transition:border-color .18s,transform .18s,box-shadow .18s}
+.course-standouts button:hover,.course-standouts button:focus-visible{border-color:var(--sea);transform:translateY(-2px);box-shadow:0 12px 28px rgba(19,68,73,.11)}
+.course-standouts button:disabled{opacity:.62;cursor:default;transform:none}
+.course-standouts span{color:var(--sea-dark);font-size:.63rem;font-weight:900;letter-spacing:.08em;line-height:1.35}
+.course-standouts strong{margin:.45rem 0;color:var(--ink);font-size:.92rem;line-height:1.25;overflow-wrap:anywhere}
+.course-standouts small{display:block;margin-top:auto;color:var(--muted);font-size:.68rem;line-height:1.4;overflow-wrap:anywhere}
+.course-main{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(260px,.65fr);gap:14px}
+.course-map,.course-selected,.course-chart-panel{min-width:0;border:1px solid var(--line);border-radius:17px;background:#fff;overflow:hidden}
+.course-map{position:relative;padding:0}.course-map .head-to-head-course-map,.course-map .map{height:440px;min-height:440px;border:0;border-radius:0}.course-map .head-to-head-course-elevation{display:none}.course-map .map-status{position:absolute;z-index:500;left:10px;bottom:8px;margin:0;padding:4px 7px;border-radius:7px;background:#fffdf9df;box-shadow:0 3px 12px #24374618;font-size:.62rem}
+.course-selected{padding:22px}.course-selected>p{color:var(--muted);line-height:1.5}.course-selected h3{margin:.2rem 0 .45rem;color:var(--sea-dark);font-size:1.25rem}.course-selected dl{display:grid;gap:0;margin:18px 0 0}
+.course-selected dl div{display:flex;justify-content:space-between;gap:15px;padding:10px 0;border-top:1px solid var(--line)}
+.course-selected dt{color:var(--muted);font-size:.72rem}.course-selected dd{margin:0;text-align:right;color:var(--sea-dark);font-size:.78rem;font-weight:850;font-variant-numeric:tabular-nums}
+.course-chart-panel{margin-top:14px;padding:20px}.course-chart-panel .chart{min-height:220px}.course-chart-panel>.card-heading{margin-bottom:8px}
+.course-distribution .distribution-band{fill-opacity:.16}.course-distribution .distribution-point{cursor:pointer}
+.race-intelligence{margin-top:14px!important;background:linear-gradient(145deg,#fff,#f7fbf6)}
+.race-intelligence .story-strip button{display:grid;gap:4px;min-width:0;padding:14px;border:1px solid var(--line);border-radius:13px;background:#fff;color:var(--ink);text-align:left}
+.race-intelligence .story-strip button:hover,.race-intelligence .story-strip button:focus-visible{border-color:var(--sea);background:#f0f8f5}.race-intelligence .story-strip span,.race-intelligence .story-strip small{color:var(--muted);font-size:.67rem}.race-intelligence .story-strip strong{font-size:.82rem;color:var(--sea-dark);overflow-wrap:anywhere}
+.course-segments{display:grid;gap:5px;margin-top:14px;overflow-x:auto;overscroll-behavior-inline:contain}
+.course-segments>button{display:grid;grid-template-columns:minmax(210px,1.45fr) repeat(7,minmax(94px,.72fr));align-items:center;gap:10px;width:100%;min-width:980px;padding:11px 13px;border:1px solid transparent;border-radius:11px;background:rgba(255,255,255,.86);color:var(--ink);text-align:left;transition:border-color .15s,background-color .15s,box-shadow .15s}
+.course-segments>button:hover,.course-segments>button.preview{background:#eaf6f2;border-color:#1677a838}.course-segments>button[aria-pressed=true],.course-segments>button.selected{border-color:var(--sea-dark);background:#e3f2ed;box-shadow:inset 4px 0 var(--sea-dark)}
+.course-segments>button>span{display:grid;gap:2px}.course-segments small{color:var(--muted);font-size:.61rem}.course-segments strong{font-size:.72rem;font-variant-numeric:tabular-nums}
+.course-segment-name{grid-template-columns:28px 1fr!important;align-items:center}.course-segment-name b{grid-row:1/3;display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:var(--sea-dark);color:#fff;font-size:.67rem}.course-segment-name small{grid-column:2}
+.course-trust{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:13px;background:#fff}.course-trust summary{cursor:pointer;color:var(--sea-dark);font-weight:850}.course-trust p{margin:12px 0 0;color:var(--muted);font-size:.76rem;line-height:1.55}
+@media(max-width:920px){
+ .course-standouts{grid-template-columns:repeat(2,minmax(0,1fr))}.course-main{grid-template-columns:1fr}.course-map .head-to-head-course-map,.course-map .map{height:390px;min-height:390px}.course-selected dl{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}
+}
+@media(max-width:620px){
+ .course-difficulty{padding:16px 12px}.course-difficulty-head{flex-direction:column;gap:8px}.course-difficulty-head .badge{white-space:normal}
+ .course-standouts{grid-auto-columns:210px;grid-auto-flow:column;grid-template-columns:none;overflow-x:auto;padding:2px 2px 8px}.course-standouts button{min-height:118px}
+ .course-map .head-to-head-course-map,.course-map .map{height:330px;min-height:330px}.course-selected{padding:16px}.course-selected dl{grid-template-columns:1fr}
+ .course-chart-panel{padding:14px 10px;overflow:hidden}.course-chart-panel .card-heading{align-items:flex-start;flex-direction:column}.course-distribution svg{min-width:720px}.course-elevation svg{min-width:680px}.course-segments>button{min-width:930px}.course-trust{font-size:.75rem}
+}
