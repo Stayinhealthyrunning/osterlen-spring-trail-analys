@@ -70,7 +70,7 @@ async function renderAnalysisFlow(v,rows,token){
  if(available.includes('history'))parts.push(flowSection('history',flowHeading('HISTORIK','År för år','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+empty('Laddar liten historiksammanställning…')));
  if(available.includes('clubs'))parts.push(flowSection('clubs',flowHeading('KLUBB- OCH ORTSARENAN','Gemenskap i siffror','Utforska publicerade klubb- och ortsgrupper i det valda loppet.')+views.clubs(a,rows,state)));
  if(available.includes('method'))parts.push(flowSection('method',flowHeading('METOD','Så är analysen byggd','Källvärden, beräkningar, jämförbarhet och begränsningar samlade på ett ställe.')+views.methodology(a,boot,state,rows)));
- v.innerHTML='<div class="long-analysis">'+parts.join('')+'</div>';observeFlowSections();
+ v.innerHTML='<div class="long-analysis">'+parts.join('')+'</div>';observeFlowSections();renderTargetSimulator(rows);
  if(available.includes('history')){try{const d=await loader.history();const root=$('#history');if(token===renderVersion&&root)root.innerHTML=flowHeading('HISTORIK','År för år','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+views.historyView(a,d,boot,state);}catch(e){const root=$('#history');if(token===renderVersion&&root)root.innerHTML=flowHeading('HISTORIK','År för år','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+empty(e.message);}}
 }
 async function render(){
@@ -82,6 +82,12 @@ async function render(){
  if(isFlowSection(state.section))await renderAnalysisFlow(v,rows,token);
  if(state.section==='compare'){v.innerHTML=views.compare(a,state);compareOptions('');}
  if(state.section==='results'){renderResults();}
+}
+function renderTargetSimulator(rows){
+ const root=$('#target-time-simulator');if(!root)return;const values=rows.filter(finished).map(r=>Number(r.finish_seconds)).sort((x,y)=>x-y);if(values.length<5){root.innerHTML=empty('Minst fem fullföljare krävs.');return;}const min=Math.floor(values[0]/60)*60,max=Math.ceil(values.at(-1)/60)*60,mid=Math.round(median(values)/60)*60;root.innerHTML='<label>Välj måltid<input id="target-time" type="range" min="'+min+'" max="'+max+'" step="60" value="'+mid+'"></label><strong id="target-time-label">'+time(mid)+'</strong><div id="target-time-result"></div>';updateTargetSimulator(values,mid);
+}
+function updateTargetSimulator(values,target){
+ const label=$('#target-time-label'),out=$('#target-time-result');if(!label||!out)return;label.textContent=time(target);const faster=values.filter(v=>v<target).length,share=100*faster/values.length,place=Math.min(values.length,faster+1);out.innerHTML='<p><strong>Cirka plats '+place+'</strong> av '+values.length+' fullföljare</p><p>Snabbare än '+share.toFixed(1).replace('.',',')+' % av aktuellt urval.</p>';
 }
 function renderTopTools(){
  const favRoot=$('#favorites-top'),current=favorites.filter(f=>f.race===a.race.race_key&&a.byId.has(f.id));
@@ -98,6 +104,17 @@ function duelOptions(query){
  root.innerHTML=matches.length?matches.map((r,i)=>'<button id="duel-option-'+i+'" type="button" role="option" aria-selected="false" data-duel-add="'+esc(r.source_result_id)+'"><span><strong>'+esc(r.name)+'</strong><small>#'+esc(r.bib)+' · '+esc(r.class_name||'Klass saknas')+'</small></span><b>Lägg till</b></button>').join(''):'<p class="picker-empty">Inga resultat matchar.</p>';
 }
 function moveDuelSuggestion(direction){const input=$('#duel-search'),items=[...document.querySelectorAll('#duel-suggestions [data-duel-add]')];if(!items.length)return;duelSuggestionIndex=(duelSuggestionIndex+direction+items.length)%items.length;items.forEach((item,i)=>item.setAttribute('aria-selected',i===duelSuggestionIndex));input.setAttribute('aria-activedescendant',items[duelSuggestionIndex].id);items[duelSuggestionIndex].scrollIntoView({block:'nearest'});}
+function buildReplayReferences(record,route){
+ const cps=a.checkpoints.filter(cp=>cp.replay_anchor&&finite(route.anchors?.[cp.key])).map(cp=>({cp,distance:Number(route.anchors[cp.key])}));
+ const build=(id,label,color,rows)=>{const anchors=[];for(const {cp,distance} of cps){const values=rows.map(r=>a.observation(r,cp.key)?.elapsed_seconds).filter(finite);if(values.length<5)continue;const value=median(values);if(!finite(value)||(anchors.length&&value<=anchors.at(-1).time))continue;anchors.push({time:value,distance});}return anchors.length>=2?{id,label,color,anchors,count:rows.length}:null;};
+ const finishers=a.records.filter(finished),out=[build('field','Hela fältet','#596761',finishers)];
+ if(record.class_name)out.push(build('class','Min klass','#138a78',finishers.filter(r=>r.class_name===record.class_name)));
+ if(record.sex==='F'||record.sex==='M')out.push(build('sex',record.sex==='F'?'Kvinnor':'Män',record.sex==='F'?'#b51d60':'#2563eb',finishers.filter(r=>r.sex===record.sex)));
+ return out.filter(Boolean);
+}
+function replayInsights(record){
+ if(!a.race.capabilities.segment_analysis)return [];const field=a.segmentStats(a.records),items=a.boundary.slice(1).map((cp,i)=>{const s=a.segment(record,i),m=field[i]?.time?.median;return s&&finite(m)?{name:a.boundary[i].name+' → '+cp.name,delta:s.seconds-m}:null;}).filter(Boolean);if(!items.length)return [];const strongest=items.slice().sort((x,y)=>x.delta-y.delta)[0],toughest=items.slice().sort((x,y)=>y.delta-x.delta)[0];return [{title:'Starkaste del',primary:strongest.name,detail:(strongest.delta<=0?'−':'+')+time(Math.abs(strongest.delta))+' mot fältmedian'},{title:'Tuffaste del',primary:toughest.name,detail:(toughest.delta<=0?'−':'+')+time(Math.abs(toughest.delta))+' mot fältmedian'}];
+}
 function renderGoalPace(){
  const root=$('#goal-pace-content'),panel=$('#goal-pace');if(!root||!panel)return;panel.hidden=!a.race.capabilities.goal_pace;if(panel.hidden){root.innerHTML='';return;}
  $('#goal-pace-race').textContent=boot.presentation[a.race.race_family].label+' · '+a.race.year;const target=boot.presentation[a.race.race_family].default_goal_seconds,h=Math.floor(target/3600),m=Math.floor(target%3600/60);
@@ -147,12 +164,19 @@ function chooseClub(value){const input=$('#club-filter');if(!input)return;input.
 function moveClubSuggestion(direction){const input=$('#club-filter'),items=[...document.querySelectorAll('#club-suggestions [data-club-suggestion]')];if(!items.length)return;clubSuggestionIndex=(clubSuggestionIndex+direction+items.length)%items.length;items.forEach((item,i)=>item.setAttribute('aria-selected',i===clubSuggestionIndex));input.setAttribute('aria-activedescendant',items[clubSuggestionIndex].id);items[clubSuggestionIndex].scrollIntoView({block:'nearest'});}
 async function showMap(root,records,kind){
  const token=generation;root.innerHTML=empty('Laddar aktuell rutt…');
- try{const [route,module]=await Promise.all([loader.route(a.race),import('./map-engine.js')]);if(token!==generation||!root.isConnected||(kind==='profile'&&!$('#profile').open)||(kind==='duel'&&!$('#duel').open))return;const mounted=await module.mountMap(root,{route,adapter:a,records,segment:state.segment});if(token!==generation||!root.isConnected||(kind==='profile'&&!$('#profile').open)||(kind==='duel'&&!$('#duel').open)){mounted.destroy();return;}if(kind==='profile')profileMap=mounted;else if(kind==='duel')duelMap=mounted;else mapView=mounted;}
- catch(e){if(root.isConnected)root.innerHTML=empty(e.message);}
+ try{
+  const [route,module]=await Promise.all([loader.route(a.race),import('./map-engine.js')]);
+  if(token!==generation||!root.isConnected||(kind==='profile'&&!$('#profile').open)||(kind==='duel'&&!$('#duel').open))return;
+  const record=kind==='profile'?records[0]:null,referenceSeries=record?buildReplayReferences(record,route):[],insights=record?replayInsights(record):[];
+  const mounted=await module.mountMap(root,{route,adapter:a,records,segment:state.segment,referenceSeries,insights,profile:kind==='profile',musicSrc:'assets/kustlinjens-steg.mp3'});
+  if(token!==generation||!root.isConnected||(kind==='profile'&&!$('#profile').open)||(kind==='duel'&&!$('#duel').open)){mounted.destroy();return;}
+  if(kind==='profile')profileMap=mounted;else if(kind==='duel')duelMap=mounted;else mapView=mounted;
+ }catch(e){if(root.isConnected)root.innerHTML=empty(e.message);}
 }
-function openProfile(id,update=true){
+async function openProfile(id,update=true){
  const r=a.byId.get(String(id));if(!r)return;profileMap?.destroy();profileMap=null;profileTrigger=document.activeElement;state.profile=String(id);
  $('#profile-body').innerHTML=views.profile(a,r,state,isFavorite(r));if(!$('#profile').open)$('#profile').showModal();if(update)syncURL();
+ if(a.race.capabilities.replay&&$('#profile-replay'))await showMap($('#profile-replay'),[r],'profile');
 }
 async function navigate(section,update=true,{behavior='smooth',focus=true}={}){if(section==='compare'){openCompareDialog();return;}section=normalizeSection(section);const previous=state.section;state.section=section;if(isFlowSection(section)){if(!isFlowSection(previous)||!document.getElementById(section))await render();else updateNav();if(update)syncURL();scrollToSection(section,{focus,behavior});return;}await render();if(update)syncURL();$('#analysis').scrollIntoView({block:'start',behavior:motionBehavior(behavior)});}
 document.addEventListener('click',async e=>{
@@ -162,7 +186,12 @@ document.addEventListener('click',async e=>{
  if(b.dataset.lookupResult){chooseLookup(b.dataset.lookupResult);return;}
  if(b.id==='focus-runner-search'){const input=$('#lookup');input?.focus();input?.scrollIntoView({block:'center',behavior:motionBehavior('smooth')});return;}
  if(b.id==='open-compare-dialog'){openCompareDialog();return;}
+ if(b.dataset.scrollTarget){e.preventDefault();document.getElementById(b.dataset.scrollTarget)?.scrollIntoView({behavior:motionBehavior('smooth'),block:'start'});return;}
  if(b.dataset.section){e.preventDefault();await navigate(b.dataset.section);return;}
+ if(b.dataset.duelAdd){const id=b.dataset.duelAdd;if(!state.compare.includes(id)&&state.compare.length<compareLimit())state.compare.push(id);duelOptions('');if($('#duel-search'))$('#duel-search').value='';renderTopTools();syncURL();return;}
+ if(b.dataset.duelRemove){state.compare=state.compare.filter(id=>id!==b.dataset.duelRemove);renderTopTools();syncURL();return;}
+ if(b.id==='open-head-to-head'&&state.compare.length===2){openCompareDialog();return;}
+ if(b.id==='open-map-duel'){const dialog=$('#duel');dialog.showModal();await showMap($('#duel-body'),state.compare.map(id=>a.byId.get(id)).filter(Boolean),'duel');return;}
  if(b.dataset.info){const t=document.getElementById(b.dataset.info);t.hidden=!t.hidden;b.setAttribute('aria-expanded',!t.hidden);return;}
  if(b.dataset.segment){const keepCourse=Boolean(mapView&&$('#course-map')?.querySelector('.map'));state.segment=+b.dataset.segment;mapView?.select(state.segment);document.querySelectorAll('button[data-segment]').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.segment===state.segment));if(isFlowSection(state.section)){await render();if(keepCourse&&$('#load-course'))await showMap($('#course-map'),[],'course');}return;}
  if(b.dataset.sort){state.dir=state.sort===b.dataset.sort?-(state.dir||1):1;state.sort=b.dataset.sort;resultTable();return;}
@@ -170,13 +199,12 @@ document.addEventListener('click',async e=>{
  if(b.dataset.removeCompare){state.compare=state.compare.filter(id=>id!==b.dataset.removeCompare);if($('#compare-dialog')?.open)renderCompareDialog();else await render();syncURL();return;}
  if(b.dataset.clearCompare!==undefined){state.compare=[];if($('#compare-dialog')?.open){renderCompareDialog();requestAnimationFrame(()=>$('#compare-search')?.focus());}else await render();syncURL();return;}
  if(b.dataset.quickFilter){state.globalQuery=null;state.filters[b.dataset.quickFilter]=b.dataset.quickValue||'';const input=document.querySelector('[data-filter="'+b.dataset.quickFilter+'"]');if(input)input.value=b.dataset.quickValue||'';await render();return;}
- if(b.dataset.favorite){const r=a.byId.get(b.dataset.favorite);if(isFavorite(r))favorites=favorites.filter(f=>!(f.race===a.race.race_key&&f.id===b.dataset.favorite));else favorites.push({race:a.race.race_key,id:String(r.source_result_id),name:r.name,year:a.race.year});saveFavorites();b.textContent=isFavorite(r)?'Sparad':'Spara lopp';b.setAttribute('aria-pressed',isFavorite(r));return;}
+ if(b.dataset.favorite){const r=a.byId.get(b.dataset.favorite);if(isFavorite(r))favorites=favorites.filter(f=>!(f.race===a.race.race_key&&f.id===b.dataset.favorite));else favorites.push({race:a.race.race_key,id:String(r.source_result_id),name:r.name,year:a.race.year});saveFavorites();b.textContent=isFavorite(r)?'Sparad':'Spara lopp';b.setAttribute('aria-pressed',isFavorite(r));renderTopTools();return;}
  if(b.dataset.openFavorite){await loadRace(b.dataset.openFavorite,{restore:{profile:b.dataset.id}});return;}
  if(b.id==='reset-filters'){state.filters={};filters();await render();}
  if(b.id==='prev-page'){state.page--;resultTable();}
  if(b.id==='next-page'){state.page++;resultTable();}
  if(b.id==='load-course')await showMap($('#course-map'),[],'course');
- if(b.id==='load-profile-replay')await showMap($('#profile-replay'),[a.byId.get(state.profile)],'profile');
  if(b.id==='open-duel'){const dialog=$('#duel');dialog.showModal();await showMap($('#duel-body'),state.compare.map(id=>a.byId.get(id)),'duel');}
  if(b.id==='close-profile')$('#profile').close();
  if(b.id==='close-compare-dialog')$('#compare-dialog').close();
@@ -186,6 +214,7 @@ document.addEventListener('click',e=>{const row=e.target.closest('[data-result]'
 document.addEventListener('change',e=>{const input=e.target.closest('[data-series-toggle]');if(!input)return;const key=input.dataset.seriesToggle,chart=input.closest('.interactive-chart');chart?.querySelectorAll('[data-series="'+key+'"]').forEach(item=>{item.hidden=!input.checked;if(item.namespaceURI==='http://www.w3.org/2000/svg')item.style.display=input.checked?'':'none';});});
 document.addEventListener('keydown',e=>{
  if(e.target.id==='lookup'&&['ArrowDown','ArrowUp','Enter','Escape'].includes(e.key)){if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();moveLookupSuggestion(e.key==='ArrowDown'?1:-1);}else if(e.key==='Enter'&&lookupSuggestionIndex>=0){e.preventDefault();const item=document.querySelectorAll('#lookup-suggestions [data-lookup-result]')[lookupSuggestionIndex];if(item)chooseLookup(item.dataset.lookupResult);}else if(e.key==='Escape')lookupOptions('');return;}
+ if(e.target.id==='duel-search'&&['ArrowDown','ArrowUp','Enter','Escape'].includes(e.key)){if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();moveDuelSuggestion(e.key==='ArrowDown'?1:-1);}else if(e.key==='Enter'&&duelSuggestionIndex>=0){e.preventDefault();document.querySelectorAll('#duel-suggestions [data-duel-add]')[duelSuggestionIndex]?.click();}else if(e.key==='Escape')duelOptions('');return;}
  if(e.target.id==='compare-search'&&['ArrowDown','ArrowUp','Enter','Escape'].includes(e.key)){if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();moveCompareSuggestion(e.key==='ArrowDown'?1:-1);}else if(e.key==='Enter'&&compareSuggestionIndex>=0){e.preventDefault();document.querySelectorAll('#compare-options [data-add-compare]')[compareSuggestionIndex]?.click();}else if(e.key==='Escape')compareOptions('');return;}
  if(e.target.id==='club-filter'&&['ArrowDown','ArrowUp','Enter','Escape'].includes(e.key)){if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();moveClubSuggestion(e.key==='ArrowDown'?1:-1);}else if(e.key==='Enter'&&clubSuggestionIndex>=0){e.preventDefault();const item=document.querySelectorAll('#club-suggestions [data-club-suggestion]')[clubSuggestionIndex];if(item)chooseClub(item.dataset.clubSuggestion);}else if(e.key==='Escape')renderClubSuggestions('');return;}
  if(e.key==='Escape'){document.querySelectorAll('[data-info][aria-expanded=true]').forEach(b=>{document.getElementById(b.dataset.info).hidden=true;b.setAttribute('aria-expanded','false');});}
@@ -194,11 +223,13 @@ document.addEventListener('keydown',e=>{
 document.addEventListener('input',e=>{
  if(!state)return;if(e.target.dataset.filter){state.globalQuery=null;state.filters[e.target.dataset.filter]=e.target.value;state.page=1;render();if(e.target.id==='club-filter')renderClubSuggestions(e.target.value);}
  if(e.target.id==='lookup'){lookupOptions(e.target.value);}
+ if(e.target.id==='duel-search'){duelOptions(e.target.value);}
+ if(e.target.id==='target-time'){const values=selected().filter(finished).map(r=>Number(r.finish_seconds)).sort((x,y)=>x-y);updateTargetSimulator(values,Number(e.target.value));}
  if(e.target.id==='table-search'){state.query=e.target.value;state.page=1;resultTable();}
  if(e.target.id==='compare-search')compareOptions(e.target.value);
  if(e.target.id==='goal-hours'||e.target.id==='goal-minutes')renderPlanOutput();
 });
-document.addEventListener('click',e=>{if(!e.target.closest('#global-search'))lookupOptions('');if(!e.target.closest('.filter-autocomplete'))renderClubSuggestions('');if(!e.target.closest('.compare-search-wrap')){const root=$('#compare-options');if(root){root.hidden=true;$('#compare-search')?.setAttribute('aria-expanded','false');}}});
+document.addEventListener('click',e=>{if(!e.target.closest('#global-search'))lookupOptions('');if(!e.target.closest('#map-duel-panel'))duelOptions('');if(!e.target.closest('.filter-autocomplete'))renderClubSuggestions('');if(!e.target.closest('.compare-search-wrap')){const root=$('#compare-options');if(root){root.hidden=true;$('#compare-search')?.setAttribute('aria-expanded','false');}}});
 $('#year').onchange=()=>{const r=Object.values(boot.race_catalog).find(r=>r.race_family===a.race.race_family&&r.year===+$('#year').value);if(r)loadRace(r.race_key);};
 $('#unit').onchange=()=>{state.unit=$('#unit').value;store.write('unit',state.unit);render();if(state.profile)openProfile(state.profile,false);};
 $('#global-search').onsubmit=async e=>{e.preventDefault();if(!a)return;const q=$('#lookup').value.trim(),matches=a.records.filter(r=>resultMatches(r,q));if(lookupSuggestionIndex>=0){const item=document.querySelectorAll('#lookup-suggestions [data-lookup-result]')[lookupSuggestionIndex];if(item){chooseLookup(item.dataset.lookupResult);return;}}if(matches.length===1)chooseLookup(matches[0].source_result_id);else{lookupOptions('');state.query=q;state.globalQuery=q;state.page=1;await navigate('results');$('#analysis').scrollIntoView();}};
