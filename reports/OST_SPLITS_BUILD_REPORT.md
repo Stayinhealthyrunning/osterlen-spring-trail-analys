@@ -2,7 +2,7 @@
 
 Datum: 2026-09-29  
 PR: #48 `improve/ost-ux-parity`  
-Runtime-QA: `e944809c73b40e90aa7129a3315d566433e0b2e9`
+Runtime-QA: `d9a3c32b90b27ab4519b913323f7c977ea404b5c`
 
 ## Referenser
 
@@ -61,20 +61,20 @@ Samma adapter/vylogik hanterar:
 
 | Resurs | Raw | Gzip | Budget |
 |---|---:|---:|---:|
-| HTML | 4 086 B | 1 693 B | 32 KiB gzip |
-| CSS | 48 566 B | 11 240 B | 75 KiB gzip |
-| JavaScript | 110 075 B | 35 650 B | 256 KiB gzip |
-| Bootstrap | – | 3 143 B | 10 KiB gzip |
+| HTML | 4 091 B | 1 693 B | 32 KiB gzip |
+| CSS | 50 141 B | 11 563 B | 75 KiB gzip |
+| JavaScript | 110 462 B | 35 709 B | 256 KiB gzip |
+| Bootstrap | – | 2 049 B | 10 KiB gzip |
 | Största valda RaceEdition | 329 247 B | 29 234 B | 600 KiB raw / 75 KiB gzip |
-| Bootstrap + största RaceEdition | – | 32 377 B | 100 KiB gzip |
+| Bootstrap + största RaceEdition | – | 31 283 B | 100 KiB gzip |
 | Full Engine | 5 417 501 B | 450 542 B | 750 KiB gzip |
-| Kritisk initial kod/data | – | 80 960 B | 512 KiB gzip |
+| Kritisk initial kod/data | – | 81 342 B | 512 KiB gzip |
 
 Route, elevation, replay och Leaflet är fortsatt lazy. Historiken levereras som purpose-built aggregate och alla 9 871 resultat hydreras aldrig vid initial start.
 
 ## Test och QA
 
-På runtime-QA-commit `e944809c73b40e90aa7129a3315d566433e0b2e9`:
+På runtime-QA-commit `d9a3c32b90b27ab4519b913323f7c977ea404b5c`:
 
 - Foundation: grön
 - Prebuild: grön
@@ -84,7 +84,7 @@ På runtime-QA-commit `e944809c73b40e90aa7129a3315d566433e0b2e9`:
 - alla 34 upplagor capability-testade
 - 1536×1024, 1366×768, 900×900, 390×844 utan document overflow
 - 0 console/page/unexpected-network errors
-- lokal first useful view cirka 452 ms
+- lokal first useful view cirka 326 ms
 
 ## Viktiga regressionsgrindar
 
@@ -107,3 +107,8 @@ På runtime-QA-commit `e944809c73b40e90aa7129a3315d566433e0b2e9`:
 Ingen cross-year personidentitet, Duo member→leg, syntetisk split, lånad historisk bana eller syntetisk difficulty score skapas. Historisk prestation kräver explicit whole-course-jämförbarhet.
 
 **ÖST SPLITS READY FOR HUMAN REVIEW: YES**
+
+
+## Slutlig informationsarkitektur
+
+Översikten prioriterar nu målgång + percentiler, följt av könsperspektiv + klassvisualisering i samma rad. Loppets dynamik innehåller inte längre en redundant andra percentilvy: Status + Fältflöde inleder avsnittet, följt av placering, könsstatus + DNF-lokalisering, Stark avslutning och demografi/grupper. Historiken har en enda ingress från långscrollens sektionsrubrik. Jämförelseverktyget visar vald-kapacitet och kan rensas direkt i modalflödet.
