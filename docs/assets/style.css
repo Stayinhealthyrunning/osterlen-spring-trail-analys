@@ -173,3 +173,7 @@ tbody tr[data-result]{transition:background .15s ease,transform .15s ease}tbody 
 
 /* Let secondary cards size to their content; only the two lead charts share row height. */
 .analysis-flow{align-items:start}.analysis-flow>.card{height:auto}.analysis-flow>.chart-card,.analysis-flow>.percentile-card{align-self:stretch;height:100%}.gender-story,.overview-class-card{min-height:0}.dnf-location-card{align-self:start}
+
+/* Final visual rhythm from manual QA. */
+.card-heading{align-items:flex-start}.heading-tools{align-items:flex-start}.family-cards{margin-bottom:34px}
+@media(max-width:700px){.family-cards{margin-bottom:22px}.card-heading{gap:8px}}
