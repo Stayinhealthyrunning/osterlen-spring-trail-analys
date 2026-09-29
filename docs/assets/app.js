@@ -2,7 +2,7 @@ import {DataLoader} from './data-loader.js';
 import {adapt} from './data-adapter.js';
 import {urlState,stateURL,switched,storage,sections,flowSections} from './app-state.js';
 import {filterRows,finite,finished,median} from './analytics.js';
-import {esc,time,empty,statusLabel,info} from './charts.js';
+import {esc,time,empty,statusLabel,info,elevation} from './charts.js';
 import * as views from './views.js';
 import {plan} from './race-plan.js';
 import {pace,table,tr} from './charts.js';
@@ -60,6 +60,12 @@ function observeFlowSections(){
  sectionObserver=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((x,y)=>y.intersectionRatio-x.intersectionRatio)[0],key=visible?.target?.id;if(key&&isFlowSection(key)&&state.section!==key){state.section=key;updateNav();}},{rootMargin:'-18% 0px -62% 0px',threshold:[0,.15,.35,.6]});
  document.querySelectorAll('.flow-section').forEach(el=>sectionObserver.observe(el));
 }
+async function loadOverviewElevation(token){
+ const root=$('#overview-elevation'),badge=$('#overview-elevation-source');if(!root)return;
+ if(!a.course?.assets?.route){root.innerHTML=empty('Lokalt användbar rutt saknas för den här upplagan. Ingen annan upplagas höjdprofil lånas.');if(badge)badge.textContent='Rutt saknas';return;}
+ try{const route=await loader.route(a.race);if(token!==renderVersion||!root.isConnected)return;root.innerHTML=elevation(route.elevation,route.anchors);if(badge)badge.textContent=route.provenance_label||'Ruttbaserad höjd';}
+ catch(e){if(token===renderVersion&&root.isConnected){root.innerHTML=empty(e.message);if(badge)badge.textContent='Höjdprofil saknas';}}
+}
 async function renderAnalysisFlow(v,rows,token){
  const available=availableFlowSections(),parts=[];
  if(available.includes('overview'))parts.push(flowSection('overview',views.overview(a,rows,state,boot)));
@@ -70,7 +76,7 @@ async function renderAnalysisFlow(v,rows,token){
  if(available.includes('history'))parts.push(flowSection('history',flowHeading('HISTORIK','År för år','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+empty('Laddar liten historiksammanställning…')));
  if(available.includes('clubs'))parts.push(flowSection('clubs',flowHeading('KLUBB- OCH ORTSARENAN','Gemenskap i siffror','Sök en klubb eller välj upp till fyra för att jämföra deltagare, målgång och fart i det valda loppet.')+views.clubs(a,rows,state)));
  if(available.includes('method'))parts.push(flowSection('method',flowHeading('METOD','Så är analysen byggd','Källvärden, beräkningar, jämförbarhet och begränsningar samlade på ett ställe.')+views.methodology(a,boot,state,rows)));
- v.innerHTML='<div class="long-analysis">'+parts.join('')+'</div>';observeFlowSections();renderTargetSimulator(rows);
+ v.innerHTML='<div class="long-analysis">'+parts.join('')+'</div>';observeFlowSections();renderTargetSimulator(rows);if(available.includes('overview'))loadOverviewElevation(token);
  if(available.includes('history')){try{const d=await loader.history();const root=$('#history');if(token===renderVersion&&root)root.innerHTML=flowHeading('HISTORIK','År för år','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+views.historyView(a,d,boot,state);}catch(e){const root=$('#history');if(token===renderVersion&&root)root.innerHTML=flowHeading('HISTORIK','År för år','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+empty(e.message);}}
 }
 async function render(){
