@@ -1,35 +1,57 @@
-# ÖST, Ultravasan och Gotaleden – UX-gap-analys
+# ÖST, Ultravasan och Gotaleden – slutlig UX-paritetsanalys
 
-Jämförelsen nedan beskriver den aktuella ÖST-implementationen på `improve/ost-ux-parity` (`c1b0797`) mot referensernas faktiska struktur och kontroller. ÖST har redan en capability-styrd, sammanhängande scrollanalys med ankarnavigation och separata resultat-/jämförelsevyer. Gapet är därför främst interaktion, prioritering och informationshierarki – inte en ny grundarkitektur.
+Datum: 2026-09-29  
+PR: #48 `improve/ost-ux-parity`  
+ÖST-bas för rundan: `main@42c165f4bcead9f371348fcc0837ab96f9a2fda5`  
+Referenser: `gotaleden-splits@bd9f2aaf0466f2ad65b50d35e25981e4597350f1`, `ultravasan-analys@8d1ef31c7a820a594adf89783453154ccab4751e`  
+Senaste runtime-QA före denna dokumentuppdatering: `e944809c73b40e90aa7129a3315d566433e0b2e9`
 
-| Område | ÖST nu | Ultravasan | Gotaleden | Konkret mönster att föra över till ÖST |
-|---|---|---|---|---|
-| Hero/toppen | Illustrerad tvåspaltshero och global sökrad i sidhuvudet; stor redaktionell route-journey efter familjekorten | Bred, låg panoramahero med läsbar overlay, loppval och synlig verktygsorientering | Kompakt analysorienterad topp och tydlig global navigation | Behåll Österlens kust-/våridentitet men ge toppen tydlig produktorientering; ta bort route-journey utan analysfunktion och prioritera sök/verktygsingångar tidigt. |
-| Sök | Resultatsök finns i headern; jämförelsesök finns längre ned; kontroll av autocomplete och tangentbord behöver stärkas | Egen löparpanel med årval, namn/startnummer, förslag och favoriter | Tidig löparpanel med förslag, historiksök och favoriter | Samla sök i en tydlig tidig individuell analysmodul; autocomplete ska stödja namn, lag/startnummer, piltangenter/Enter/Escape och öppna profil. |
-| Individuell analys | Riktig profilmodal med passager och delsträckor, men ingången är inte tillräckligt framträdande | Dedikerat sökflöde öppnar en fokuserad detaljvy | Dedikerad löparingång och detaljerad modal med snabbfakta, insikter och historik | Behåll ÖST:s provenance och capability-gating; lyft upp sökingång och ge profilen tydlig sammanfattning, favorit/jämförelse och kontext. |
-| Profilmodal | Modal finns, inklusive Duo-källordning och villkorad replay | Resultat-/löparinsikter samlade i detaljflöde | Profilmodal med stark identitet, KPI:er, replay, historik och snabbnavigering | Portera den skannbara profilhierarkin och tydliga handlingar; uppgifter visas bara där ÖST-underlaget stöder dem. |
-| Kartduell | Jämförelseväljare och direktjämförelse finns som specialvy; replay öppnas separat | Egen kartduellbyggare, vald-löpare-chips och fokuserat duel-overlay | Egen panel för 2–5 löpare, valda deltagare och separata H2H-/kartvyer | Gör jämförelsebyggaren lätt att hitta, gör valda resultat och antal tydliga och behåll fokuserat overlay; replay endast när ÖST capability medger det. |
-| Resultat | Resultatdatabas som separat specialvy | Sökbar/fokuserad resultatyta med detaljöppning | Resultatvy integrerad med filtrerat analysurval | Behåll specialvyn men håll filterurval, antal träffar, sortering och profilöppning konsekventa. |
-| Filter | Kön, klass/status och klubb kan filtrera fältanalys; individ/duell separata | Globalt filterverktygsfält med år, kön, klass, klubb/ort, status och enhet | Filterkontext för vald upplaga med synlig scope | Behåll separata individval; visa aktivt urval och återställning konsekvent och låt fältfilter gälla samma analyser. |
-| Könsanalys | Källstödd statistik finns; diagrammen har svagare seriehantering | Könstoggles återanvänds per histogram, scatter, funnel och segmentdiagram | Könsväljare i relevanta vyer, med legender | Lägg till tillgängliga kvinnor/män-toggles där båda serierna visas, synlig legend och tydlig tom-/litet-underlagstext; aldrig inferera kön. |
-| Percentiler | Percentilnivåer visas, men ytan och jämförelsen är sparsam | Måltempo-/percentilvy i kompakt verktygslayout | Percentilstegar med urvalskontext | Visa jämförbara percentilnivåer som staplar/markörer och källstödda könsantal; bevara urvalsdefinition och varna vid litet n. |
-| Fältflöde | Flöde finns men startankaret 100% får oproportionerlig vikt | DNF-funnel gör bortfall lätt att läsa | Status-/fullföljandekontext i översikt | Komprimera/utelämna självklar start=100%, framhäv registrerat bortfall och kombinera kort med annan fältöversikt. |
-| Klass/ålder/klubb | Klass- och åldersperspektiv domineras av tabeller; klubb/ort dyker för tidigt upp | Klasslab med valbara klasser, utveckling och historik; klubb/ort egen arena | Ålder/klass och klubbfilter kompletterar analysen | Visa översikt först med horisontella staplar/små multiplar och expandera detaljtabell; klubbar djupare i flödet; åldersklass är inte exakt ålder. |
-| Segment | Capability-styrd delsträcksvy med tider, spridning och platsrörelse | Segmentheatmap med serie- och könstoggles | Segmentperspektiv kopplat till löpar-/kartanalys | Gör segmentjämförelser visuellt skannbara och interaktiva där n räcker; lämna saknade passager tomma. |
-| Bana/course | Separat capability-styrd kursvy med ruttunderlag | Kurs-/segmentinsikter kopplade till statistik och replay | Ban-/höjdkontext kopplas till karta och delsträckor | Knyt geometri, version och segment till varandra utan att antyda jämförbarhet mellan olika banversioner. |
-| Historik | Historik laddas separat och skiljer deltagande från jämförbar prestation | Historik-/klassutveckling med år- och serieinteraktion | Deltagarhistorik och sparade individfavoriter | Behåll explicit jämförbarhetskontrakt; tydliggör inställda år, separata banserier och individens verifierade historik. |
-| Metodik | Metodik visas i översikten och tar mycket visuell plats | Datakvalitetsförklaring finns men är kompakt/fällbar | Kort data-/metodkontext med förklaringar i vyerna | Samla full metod i Metod-sektionen och ge kort, tangentbordstillgänglig kontext via info-knapp per analys. |
-| Navigation | Sticky ankarnavigation över en långscroll; resultat och jämförelse är specialvyer; hash stöds | Sticky nav med analysområden och snabbhandlingar | Sticky nav följer synlig sektion och uppdaterar aktiv markering | Behåll ÖST:s scrollflöde; gör aktiv sektion, hash/deep link och Back/Forward konsekventa, medan resultat/duell förblir specialvyer. |
-| Diagraminteraktion | Blandning av SVG och tabeller; en del diagram saknar serieval och synlig legend | Tooltips, könstoggles, scatter-zoom/reset och interaktiva segment | Tooltips, valbar serie, zoom/val och legend | Portera toggles, fokus/hover-tooltip och förklarande legend; lägg bara till klickhandlingar när de har meningsfull källstödd destination. |
-| Mobil | Responsiva stilar finns; täta tabeller och filter kan bli långa eller breda | Kompakta kontroller och kortbaserade detaljer | Paneler och val fungerar i smala vyer | Prioritera sök och val, stapla kontroller, undvik sidledsoverflow i dokumentet och behåll lokal horisontell scroll endast för tabeller/kartor. |
-| Visuell hierarki | Egen varm kustidentitet och familjespecifika bilder; metod, route-journey och tabeller konkurrerar om fokus | Tydlig verktygshierarki och täta insiktskort | Analysorienterad struktur med återkommande paneler och tydliga handlingar | Behåll ÖST-paletten, kust/skog-bilderna och typografin; använd referensernas konsekventa kort, KPI-hierarki, luft och primära handlingar. |
+## Syfte
 
-## Designbeslut för implementationen
+Målet är inte att göra tre identiska webbplatser utan att ge ÖST samma produktlogik, mognad och interaktionsmönster som Gotaleden och Ultravasan, samtidigt som ÖST behåller sin egen Österlen-identitet och strikt capability-/proveniensstyrning.
 
-1. Behåll ÖST:s befintliga capability-styrda långscroll och specialvyer; förbättra dess innehåll och navigation i stället för att byta arkitektur.
-2. Prioritera individuell sökning och kartduell tidigt och förbättra autocomplete samt modalernas handlingar.
-3. Lägg till serieinteraktion, förklaringar och bättre översiktsvisualiseringar för percentiler, klass/ålder, fältflöde och segment utan att skapa data.
-4. Flytta metodtyngd till Metod, flytta klubbfördjupning nedåt och stryk innehåll som bara är dekorativt.
-5. Behåll Österlens egen visuella identitet och alla Engine 1.0-, data-, provenance- och capability-gränser.
+## De 13 manuella granskningspunkterna
 
-Gapen ovan är underlag för den här polishrundan; de innebär inte att referensernas datamodeller eller analysregler ska kopieras.
+| # | Krav | Slutläge i PR #48 |
+|---|---|---|
+| 1 | Lägre fullbreddshero med vänstertoning | **Löst.** Fullbreddsbild, mörk vänstergradient, kompakt hero och förbättrad textkontrast. Desktop-QA låser kompakt höjd. |
+| 2 | Vanlig sidladdning ska börja längst upp | **Löst.** Första laddning utan explicit deep link stannar vid `scrollY <= 2`. Explicit hash/section får fortfarande navigera till vald analys. |
+| 3 | Individuell analys och Kartduell högt upp, som fokuserade popupverktyg | **Löst.** Individuell analys öppnas i profilmodal. Direktjämförelse/Kartduell öppnas i en gemensam modal från hero eller profil; Kartduellen ligger som fokuserad kartdialog. Den gamla separata Jämför-navsidan är pensionerad. |
+| 4 | Personsök direkt under rubriken med autocomplete | **Löst.** Namn/lag/startnummer, sorterade förslag, Arrow Up/Down, Enter och Escape. Samma tangentbordskvalitet finns nu i jämförelseverktyget. |
+| 5 | Ta bort innehållssvag “Från kust till slott”-sektion | **Löst.** Dekorativ route-journey är borttagen; Österlenberättelsen bärs av hero och familjebilder. |
+| 6 | “Ditt lopp i perspektiv” ska inte vara klubb-labb | **Löst.** Kontexten heter nu **Välj lopp & upplaga**. Individverktygen ligger i hero; klubb/ort ligger längre ned i dynamiken. |
+| 7 | Metod ska inte dominera; analyskort ska ha (i) | **Löst i relevant analysyta.** Full metodguide ligger i Metod. Sluttid, percentiler, klass, fältflöde, stark avslutning, status, placering, ålder, klubb, gruppsegment, delsträckor, könssegment, vald delsträcka, bana, loppplan, historik, profil/replay och direktjämförelse har lokal metodhjälp. |
+| 8 | Mer interaktivitet i diagram | **Löst där interaktion är meningsfull.** Kvinna/man kan tändas/släckas i sluttid, percentiler, könskort, placering och segment. Klass/klubb-staplar kan filtrera hela analysen. Placeringens punkter öppnar profil. |
+| 9 | Percentiler ska använda rutan bättre och visa kvinnor/män med staplar | **Löst.** Gemensam P10–P90-tröskel, kumulativa kvinna/man-staplar, antal/n och respektive köns egen percentiltid. |
+| 10 | “Bröt” ska vara DNF | **Löst.** Publika analysytor använder DNF. DNS och övriga statusar har tydliga svenska etiketter där det är lämpligt. |
+| 11 | Klass/ålder ska inte vara jättetabeller | **Löst.** Klasser och klubb/ort har stapelöversikt med detaljer på begäran. Ålder har femårsdiagram, median/Q25–Q75 och kompakt åldersklassöversikt med expanderbar detalj. |
+| 12 | Fältflöde utan trivial Start=100%; färre onödiga fullbreddskort | **Löst.** Startpunkten utelämnas. Fältflöde, könsstatus, ålder och klubb/ort använder tätare tvåkolumnslayout; fullbredd reserveras för analyser som behöver den. |
+| 13 | Samma familj som Gotaleden/Ultravasan | **Löst på produktmönsternivå.** Topplacerade individverktyg, modal profil/jämförelse/kartduell, autocomplete, favoriter, interaktiva serier, gruppanalys, segment, bana, historik, lokal metodhjälp, keyboard/reduced-motion och gemensam informationshierarki är nu samstämda. ÖST behåller egen färg, bildvärld och typografi. |
+
+## Funktionell referensparitet
+
+| Referensmönster | ÖST |
+|---|---|
+| Tidig löpar-/resultatsökning | Hero-sök med direkt profilmodal |
+| Individuell Runner Analysis | Profil, KPI, Journey, passager, relativ delsträcka, Replay där capability finns, favoriter och direkt väg till jämförelse |
+| Head-to-head / Direktjämförelse | Gemensam jämförelsemodal med två resultat, passage-/segmentgap och observerade duellinsikter |
+| Kartduell | 2–5 resultat där lokal rutt + verkliga passager medger Replay; annars exakt två för direktjämförelse |
+| Kvinna/man-serier | Interaktiva toggles i relevanta diagram och segment; saknat kön infereras aldrig |
+| Percentiler / finish progression | Gemensamma trösklar, könsstaplar, n och källtäckning |
+| Fält-/DNF-flöde | Verkliga passager och sista observerade DNF-kontroll |
+| Klass-/klubbgrupper | Visuell översikt, snabbfilter, expanderbar detalj och delsträcksjämförelse |
+| Course Intelligence-principer | Banversion/proveniens, höjd/rutt när tillåtet, D+/D− bara vid komplett höjdprofil, måltempo/loppplan |
+| Historik | Explicit whole-course-jämförbarhet, inställda år som luckor, könstäckning, fingeravtryck och toppnotering |
+| Metod / accessibility | (i)-hjälp, samlad metod, `aria-current`, keyboard, fokusåterställning, reduced motion och tile-fallback |
+
+## Medvetna skillnader – inte kvarvarande UX-gap
+
+- Ingen cross-year personhistorik/Hall of Fame utan verifierad identitetskoppling.
+- Ingen Duo member→leg-inferens.
+- Ingen Replay för splitlösa Trail 22/14/5.
+- Ingen lånad historisk rutt.
+- Ingen syntetisk sammanvägd difficulty score.
+- Ingen prestationslinje över år utan uttrycklig whole-course-jämförbarhet.
+- ÖST:s fotografiska kust-/våridentitet är medvetet rikare än referensernas branding.
+
+Dessa skillnader är evidens- och produktbeslut. De ska inte fyllas med heuristik för att uppnå kosmetisk paritet.
