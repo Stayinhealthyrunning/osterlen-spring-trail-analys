@@ -158,3 +158,5 @@ tbody tr[data-result]{transition:background .15s ease,transform .15s ease}tbody 
 .hero-tools>*{min-height:46px;padding:7px 10px}
 @media(max-width:900px){.hero{padding-top:18px;padding-bottom:17px}.hero h1{font-size:clamp(2.6rem,6.6vw,3.5rem)}}
 @media(max-width:700px){.hero{padding-top:15px;padding-bottom:14px}.hero h1{font-size:clamp(2.45rem,11.5vw,3.2rem)}}
+
+.hero .hero-lead{color:#f4faf7!important;text-shadow:0 1px 10px #062b36b5}
