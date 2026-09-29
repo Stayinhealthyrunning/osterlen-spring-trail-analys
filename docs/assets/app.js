@@ -63,14 +63,15 @@ function observeFlowSections(){
 async function renderAnalysisFlow(v,rows,token){
  const available=availableFlowSections(),parts=[];
  if(available.includes('overview'))parts.push(flowSection('overview',views.overview(a,rows,state,boot)));
- if(available.includes('dynamics'))parts.push(flowSection('dynamics',flowHeading('LOPPETS DYNAMIK','Så rör sig fältet','Percentiler, status och de källstödda perspektiv som finns för den valda upplagan.')+views.dynamics(a,rows,state)));
- if(available.includes('segments'))parts.push(flowSection('segments',flowHeading('DELSTRÄCKOR','Loppet mellan kontrollerna','Tempo, spridning och placeringsrörelser från publicerade passager.')+views.segments(a,rows,state)));
- if(available.includes('course'))parts.push(flowSection('course',flowHeading('BANANALYS','Banan och dess underlag','Banversion, geometri och lokalt tillgängliga ruttlager med tydliga proveniensgränser.')+views.course(a)));
- if(available.includes('history'))parts.push(flowSection('history',flowHeading('HISTORISK ÖVERSIKT','Loppet över tid','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+empty('Laddar liten historiksammanställning…')));
+ if(available.includes('statistics'))parts.push(flowSection('statistics',flowHeading('STATISTIKVERKSTAD','Vad hände i loppet?','Fördjupa dig i placeringar, avhopp, fartmönster och vad en viss sluttid brukar räcka till.')+views.statistics(a,rows,state)));
+ if(available.includes('gender'))parts.push(flowSection('gender',flowHeading('GENUSPERSPEKTIV','Fältet ur flera perspektiv','Deltagande, fullföljande och pacing för hela urvalet, kvinnor och män – när källstödet räcker.')+views.gender(a,rows,state)));
+ if(available.includes('age-analysis'))parts.push(flowSection('age-analysis',flowHeading('KLASS & ÅLDER','Ålderslabbet','Analytiska åldersgrupper i samma fasta ordning som Gotaleden. Duo använder publicerade lagklasser.')+views.ageAnalysis(a,rows,state)));
+ if(available.includes('segments'))parts.push(flowSection('segments',flowHeading('DELSTRÄCKELABBET','Var avgjordes loppet?','Jämför segment, relativa prestationer och placeringar utan att fabricera saknade passager.')+views.segments(a,rows,state)+views.course(a)));
+ if(available.includes('history'))parts.push(flowSection('history',flowHeading('HISTORIK','År för år','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+empty('Laddar liten historiksammanställning…')));
+ if(available.includes('clubs'))parts.push(flowSection('clubs',flowHeading('KLUBB- OCH ORTSARENAN','Gemenskap i siffror','Utforska publicerade klubb- och ortsgrupper i det valda loppet.')+views.clubs(a,rows,state)));
  if(available.includes('method'))parts.push(flowSection('method',flowHeading('METOD','Så är analysen byggd','Källvärden, beräkningar, jämförbarhet och begränsningar samlade på ett ställe.')+views.methodology(a,boot,state,rows)));
  v.innerHTML='<div class="long-analysis">'+parts.join('')+'</div>';observeFlowSections();
- if(available.includes('course'))renderPlan($('#course'));
- if(available.includes('history')){try{const d=await loader.history();const root=$('#history');if(token===renderVersion&&root)root.innerHTML=flowHeading('HISTORISK ÖVERSIKT','Loppet över tid','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+views.historyView(a,d,boot,state);}catch(e){const root=$('#history');if(token===renderVersion&&root)root.innerHTML=flowHeading('HISTORISK ÖVERSIKT','Loppet över tid','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+empty(e.message);}}
+ if(available.includes('history')){try{const d=await loader.history();const root=$('#history');if(token===renderVersion&&root)root.innerHTML=flowHeading('HISTORIK','År för år','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+views.historyView(a,d,boot,state);}catch(e){const root=$('#history');if(token===renderVersion&&root)root.innerHTML=flowHeading('HISTORIK','År för år','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+empty(e.message);}}
 }
 async function render(){
  const token=++renderVersion,rows=selected();sectionObserver?.disconnect();sectionObserver=null;mapView?.destroy();mapView=null;
