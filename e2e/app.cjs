@@ -102,7 +102,7 @@ const server=http.createServer((req,res)=>{
       assert.equal(await page.locator('#open-head-to-head').isEnabled(),true);
       assert.equal(await page.locator('#open-map-duel').isEnabled(),true);
       await page.locator('#open-head-to-head').click();await page.locator('#compare-dialog[open]').waitFor();assert.ok((await page.locator('#compare-dialog-body').innerText()).includes('DIREKTJÄMFÖRELSE'));await page.locator('#close-compare-dialog').click();
-      await page.locator('#open-map-duel').click();await page.locator('#duel[open]').waitFor();await page.locator('#duel .leaflet-container').waitFor();assert.equal(await page.locator('#duel [data-tiles]').count(),0);assert.ok(await page.locator('#duel .leaflet-tile-pane').count()>0);await page.locator('#close-duel').click();
+      await page.locator('#open-map-duel').click();await page.locator('#duel[open]').waitFor();await page.locator('#duel .leaflet-container').waitFor();assert.equal(await page.locator('#duel [data-tiles]').count(),0);assert.ok(await page.locator('#duel .leaflet-tile-pane').count()>0);assert.ok(await page.locator('#duel .duel-replay').isVisible());assert.ok(await page.locator('#duel .replay-duel-board').isVisible());assert.equal(await page.locator('#duel .duel-runner-card').count(),2);const duelSeek=page.locator('#duel [data-seek]');await duelSeek.fill('8000');await duelSeek.dispatchEvent('input');assert.notEqual(await page.locator('#duel [data-duel-clock]').innerText(),'0:00:00');assert.match(await page.locator('#duel [data-duel-distance]').first().innerText(),/km/);await shot('parity-map-duel');await page.locator('#close-duel').click();
     });
 
     await run('overview mirrors Gotaleden KPI distribution and course profile hierarchy',async()=>{
