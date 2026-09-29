@@ -51,7 +51,7 @@ function availableSections(){return [...availableFlowSections(),'results'];}
 function isFlowSection(section){return flowSections.includes(section);}
 function normalizeSection(section){return availableSections().includes(section)?section:'overview';}
 function updateNav(){document.querySelectorAll('#analysis-nav button').forEach(b=>{if(b.dataset.section===state.section)b.setAttribute('aria-current','location');else b.removeAttribute('aria-current');});}
-function flowHeading(key,title,copy){return '<header class="flow-heading"><p class="eyebrow">'+key+'</p><h2>'+title+'</h2><p>'+copy+'</p></header>';}
+function flowHeading(key,title,copy){return '<div class="flow-heading section-intro"><p class="eyebrow">'+key+'</p><h2>'+title+'</h2><p>'+copy+'</p></div>';}
 function flowSection(key,html){return '<section id="'+key+'" class="flow-section" tabindex="-1" aria-label="'+labels[key]+'">'+html+'</section>';}
 function motionBehavior(behavior='smooth'){return behavior==='smooth'&&globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches?'auto':behavior;}
 function scrollToSection(section,{focus=true,behavior='smooth'}={}){const target=document.getElementById(section);if(!target)return;target.scrollIntoView({block:'start',behavior:motionBehavior(behavior)});if(focus)target.focus({preventScroll:true});}
