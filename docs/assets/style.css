@@ -170,3 +170,6 @@ tbody tr[data-result]{transition:background .15s ease,transform .15s ease}tbody 
 /* Final family-parity polish */
 .card-heading{flex-wrap:wrap}.card-heading>.tip{flex:1 0 100%;width:100%;margin:0}.analysis-flow{align-items:stretch}.analysis-flow>.card{height:100%}.gender-story,.overview-class-card{min-height:100%}.overview-class-card .group-bars,.gender-story .gender-kpis{margin-top:10px}.compare-selection-meta{display:flex;align-items:center;gap:7px;margin-top:12px;color:var(--muted);font-size:.72rem}.compare-selection-meta strong{font-size:1rem;color:var(--sea-dark);font-variant-numeric:tabular-nums}.compare-selection-meta button{min-height:32px;padding:4px 9px;margin-left:4px;font-size:.72rem;background:#f7f4ec}.compare-picker .comparison-list{align-items:center}.field-flow-card,.gender-status-card,.age-analysis,.club-analysis{align-self:stretch}
 @media(max-width:900px){.gender-story,.overview-class-card{min-height:auto}}
+
+/* Let secondary cards size to their content; only the two lead charts share row height. */
+.analysis-flow{align-items:start}.analysis-flow>.card{height:auto}.analysis-flow>.chart-card,.analysis-flow>.percentile-card{align-self:stretch;height:100%}.gender-story,.overview-class-card{min-height:0}.dnf-location-card{align-self:start}
