@@ -150,13 +150,13 @@ function segmentCharacter(a,rows,state){
  const palette=['#1677a8','#8fbe63','#d9a441','#b51d60','#7651a0','#497b35'],labels=a.boundary.slice(1).map(cp=>cp.name);
  if(a.race.participant.entity==='team'){
   const classes=groups(rows,'class_name').filter(g=>g.total>=3).slice(0,6),stats=classes.map(g=>a.segmentStats(g.rows));
-  return labels.map((name,index)=>'<article><span>'+esc(name)+'</span>'+classes.map((g,i)=>{const item=stats[i][index];return '<div class="segment-sex-row" style="--sex-color:'+palette[i]+'"><span>'+esc(g.name)+'</span><i></i><strong>'+pace(item?.median,state.unit)+'</strong><small>'+(item?.complete||0)+' verkliga segment</small></div>';}).join('')+'</article>').join('');
+  return '<div class="segment-character">'+labels.map((name,index)=>'<article><span>'+esc(name)+'</span>'+classes.map((g,i)=>{const item=stats[i][index];return '<div class="segment-sex-row" style="--sex-color:'+palette[i]+'"><span>'+esc(g.name)+'</span><i></i><strong>'+pace(item?.median,state.unit)+'</strong><small>'+(item?.complete||0)+' verkliga segment</small></div>';}).join('')+'</article>').join('')+'</div>';
  }
  if(rows.some(r=>r.sex==='F')&&rows.some(r=>r.sex==='M')){
   const active=sexView(state,'segments'),sexes=[['F','Kvinnor','#b51d60'],['M','Män','#2563eb']].filter(([id])=>active[id]),stats=Object.fromEntries(sexes.map(([id])=>[id,a.segmentStats(rows.filter(r=>r.sex===id))]));
-  return labels.map((name,index)=>'<article><span>'+esc(name)+'</span>'+sexes.map(([id,label,color])=>{const item=stats[id][index];return '<div class="segment-sex-row" data-segment-sex="'+id+'" style="--sex-color:'+color+'"><span>'+label+'</span><i></i><strong>'+pace(item?.median,state.unit)+'</strong><small>'+(item?.complete||0)+' verkliga segment</small></div>';}).join('')+'</article>').join('');
+  return '<div class="segment-character">'+labels.map((name,index)=>'<article><span>'+esc(name)+'</span>'+sexes.map(([id,label,color])=>{const item=stats[id][index];return '<div class="segment-sex-row" data-segment-sex="'+id+'" style="--sex-color:'+color+'"><span>'+label+'</span><i></i><strong>'+pace(item?.median,state.unit)+'</strong><small>'+(item?.complete||0)+' verkliga segment</small></div>';}).join('')+'</article>').join('')+'</div>';
  }
- const stats=a.segmentStats(rows),valid=stats.filter(s=>finite(s.median));return valid.length?horizontalBars(valid.map(s=>({label:s.from.name+' → '+s.to.name,value:s.median})),{valueFormat:v=>pace(v,state.unit),maxRows:20}):empty('För få kompletta segment för stabil medianfart.');
+ const stats=a.segmentStats(rows),valid=stats.filter(s=>finite(s.median));return valid.length?'<div class="segment-character compact">'+horizontalBars(valid.map(s=>({label:s.from.name+' → '+s.to.name,value:s.median})),{valueFormat:v=>pace(v,state.unit),maxRows:20})+'</div>':empty('För få kompletta segment för stabil medianfart.');
 }
 function advancementRanking(a,rows){
  if(!a.race.capabilities.segment_analysis)return empty('Placeringsförändringar saknas.');
