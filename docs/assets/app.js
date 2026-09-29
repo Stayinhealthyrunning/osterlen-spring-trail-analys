@@ -1,13 +1,13 @@
 import {DataLoader} from './data-loader.js';
 import {adapt} from './data-adapter.js';
 import {urlState,stateURL,switched,storage,sections,flowSections} from './app-state.js';
-import {filterRows,finite,finished} from './analytics.js';
+import {filterRows,finite,finished,median} from './analytics.js';
 import {esc,time,empty,statusLabel,info} from './charts.js';
 import * as views from './views.js';
 import {plan} from './race-plan.js';
 import {pace,table,tr} from './charts.js';
-const $=s=>document.querySelector(s),loader=new DataLoader(),labels={overview:'Översikt',results:'Resultat',dynamics:'Loppets dynamik',segments:'Delsträckor',course:'Bana',compare:'Jämför',history:'Historisk översikt',method:'Metod'};
-let boot,a,state,store,favorites=[],generation=0,renderVersion=0,mapView=null,profileMap=null,duelMap=null,profileTrigger=null,compareTrigger=null,clubSuggestionIndex=-1,lookupSuggestionIndex=-1,compareSuggestionIndex=-1,sectionObserver=null;
+const $=s=>document.querySelector(s),loader=new DataLoader(),labels={overview:'Översikt',statistics:'Statistik',gender:'Genusperspektiv','age-analysis':'Klass & ålder',segments:'Delsträckor',history:'Historik',clubs:'Klubb & ort',method:'Metod',results:'Resultat',compare:'Jämför'};
+let boot,a,state,store,favorites=[],generation=0,renderVersion=0,mapView=null,profileMap=null,duelMap=null,profileTrigger=null,compareTrigger=null,clubSuggestionIndex=-1,lookupSuggestionIndex=-1,compareSuggestionIndex=-1,duelSuggestionIndex=-1,sectionObserver=null;
 function safeStorage(){try{return localStorage;}catch{return null;}}
 function status(text){$('#load-status').textContent=text;}
 function syncURL(replace=false){history[replace?'replaceState':'pushState'](null,'',stateURL(location.href,state));}
