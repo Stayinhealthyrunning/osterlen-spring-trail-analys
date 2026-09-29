@@ -2,7 +2,7 @@ import {bins,finite} from './analytics.js';
 export const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function time(v){if(!finite(v))return '–';const n=Math.round(Math.abs(v));return (v<0?'−':'')+Math.floor(n/3600)+':'+String(Math.floor(n%3600/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');}
 export function pace(v,unit='pace'){if(!finite(v)||v<=0)return '–';if(unit==='speed')return (3600/v).toFixed(1).replace('.',',')+' km/h';const n=Math.round(v);return Math.floor(n/60)+':'+String(n%60).padStart(2,'0')+' min/km';}
-export const statusLabel=s=>({FINISHED:'Fullföljt',DNF:'Bröt',DNS:'Startade inte',DSQ:'Diskvalificerad',UNKNOWN:'Okänd status'}[s]||String(s??'–'));
+export const statusLabel=s=>({FINISHED:'Fullföljt',DNF:'DNF',DNS:'Startade inte',DSQ:'Diskvalificerad',UNKNOWN:'Okänd status'}[s]||String(s??'–'));
 export const empty=t=>'<p class="empty">'+esc(t)+'</p>';
 export const table=(heads,rows)=>'<div class="table-scroll"><table><thead><tr>'+heads.map(h=>'<th scope="col">'+h+'</th>').join('')+'</tr></thead><tbody>'+rows.join('')+'</tbody></table></div>';
 export const tr=values=>'<tr>'+values.map(v=>'<td>'+v+'</td>').join('')+'</tr>';
@@ -39,9 +39,9 @@ export function finishPlaceScatter(rows){
  let s='';
  for(let i=0;i<=4;i++){const value=min+(max-min)*i/4,xx=left+(right-left)*i/4;s+='<line class="axis" x1="'+xx+'" x2="'+xx+'" y1="'+top+'" y2="'+bottom+'"/><text x="'+xx+'" y="264" text-anchor="middle">'+time(value).slice(0,-3)+'</text>';}
  for(let i=0;i<=4;i++){const place=Math.max(1,Math.round(1+(maxPlace-1)*i/4)),yy=y(place);s+='<line class="axis" x1="'+left+'" x2="'+right+'" y1="'+yy+'" y2="'+yy+'"/><text x="58" y="'+(yy+4)+'" text-anchor="end">'+place+'</text>';}
- for(const r of points){const cls=r.sex==='F'?'point-female':r.sex==='M'?'point-male':'point-total',label=esc((r.name||'Resultat')+' · '+time(r.finish_seconds)+' · plats '+r.overall_place);s+='<circle tabindex="0" role="button" data-result="'+esc(r.source_result_id)+'" class="scatter-point '+cls+'" cx="'+x(r.finish_seconds).toFixed(2)+'" cy="'+y(r.overall_place).toFixed(2)+'" r="4.2" aria-label="Öppna '+label+'"><title>'+label+'</title></circle>';}
- const hasF=points.some(r=>r.sex==='F'),hasM=points.some(r=>r.sex==='M'),hasUnknown=points.some(r=>r.sex!=='F'&&r.sex!=='M'),legendItems=[hasF?'<span><i class="female"></i>Kvinnor</span>':'',hasM?'<span><i class="male"></i>Män</span>':'',hasUnknown?'<span><i class="total"></i>Okänt kön</span>':''].filter(Boolean),legend=legendItems.length>1?'<div class="legend" aria-label="Diagramförklaring">'+legendItems.join('')+'</div>':'';
- return legend+svg(s,'Sluttid mot totalplacering');
+ for(const r of points){const key=r.sex==='F'?'female':r.sex==='M'?'male':'unknown',cls=r.sex==='F'?'point-female':r.sex==='M'?'point-male':'point-total',label=esc((r.name||'Resultat')+' · '+time(r.finish_seconds)+' · plats '+r.overall_place);s+='<circle tabindex="0" role="button" data-result="'+esc(r.source_result_id)+'" data-series="'+key+'" class="scatter-point '+cls+'" cx="'+x(r.finish_seconds).toFixed(2)+'" cy="'+y(r.overall_place).toFixed(2)+'" r="4.2" aria-label="Öppna '+label+'"><title>'+label+'</title></circle>';}
+ const hasF=points.some(r=>r.sex==='F'),hasM=points.some(r=>r.sex==='M'),hasUnknown=points.some(r=>r.sex!=='F'&&r.sex!=='M'),controls=[hasF?'<label><input type="checkbox" data-series-toggle="female" checked> <i class="female"></i>Kvinnor</label>':'',hasM?'<label><input type="checkbox" data-series-toggle="male" checked> <i class="male"></i>Män</label>':'',hasUnknown?'<label><input type="checkbox" data-series-toggle="unknown" checked> <i class="total"></i>Okänt kön</label>':''].filter(Boolean).join('');
+ return '<div class="interactive-chart scatter-interactive">'+(controls?'<div class="series-controls" aria-label="Visa placeringsserier">'+controls+'</div>':'')+svg(s,'Sluttid mot totalplacering')+'</div>';
 }
 export function bands(stats,unit){
  const format=v=>unit==='time'?time(v):pace(v,unit);
