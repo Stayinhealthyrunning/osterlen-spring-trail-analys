@@ -39,8 +39,8 @@ const server=http.createServer((req,res)=>{
   assert.ok(await page.locator('.club-analysis .group-bars .group-bar-row').count()>0);assert.ok(await page.locator('.club-analysis .group-details').isVisible());assert.ok(await page.locator('.club-analysis .group-details tbody tr').count()>20);assert.ok(await page.locator('.age-analysis .age-bars .age-bar').count()>0);assert.ok(await page.locator('.age-analysis .group-bars .group-bar-row').count()>0);
   assert.equal(await page.locator('#dynamics .finish-sex-grid>div').count(),2);assert.ok(await page.locator('#dynamics .gender-dnf').isVisible());assert.ok(await page.locator('#dynamics .finish-place-scatter .scatter-point').count()>100);assert.ok(await page.locator('#dynamics .finish-place-scatter .point-female').count()>0);assert.ok(await page.locator('#dynamics .finish-place-scatter .point-male').count()>0);
   const familyImages=await page.locator('.family-card').evaluateAll(cards=>Object.fromEntries(cards.map(card=>[card.dataset.family,getComputedStyle(card,'::after').backgroundImage])));assert.match(familyImages.ultra60,/ost-coast-hero/);assert.match(familyImages.duo60,/family-duo60/);assert.match(familyImages.trail22,/family-trail22/);assert.match(familyImages.trail14,/family-trail14/);assert.match(familyImages.trail5,/family-trail5/);assert.equal(new Set(Object.values(familyImages)).size,5);
-  const loaded=report.requests.filter(p=>p.includes('/data/'));
-  assert.deepEqual(loaded,['/data/bootstrap.json','/data/races/ost-2025-ultra60.json','/data/history.json']);
+  const loaded=report.requests.filter(p=>p.includes('/data/')),expectedInitial=['/data/bootstrap.json','/data/races/ost-2025-ultra60.json','/data/history.json'];
+  assert.deepEqual([...new Set(loaded)],expectedInitial);assert.equal(loaded.length,expectedInitial.length*2,'startup + explicit reload should request only the same three data resources');
   report.metrics.firstUsefulMs=await page.evaluate(()=>performance.now());
   await shot('desktop-overview');
  });
