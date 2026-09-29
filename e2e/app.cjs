@@ -43,7 +43,7 @@ const server=http.createServer((req,res)=>{
   await shot('desktop-overview');
  });
  await run('analysis navigation uses anchors, deep links and browser history',async()=>{
-  await nav('dynamics');assert.equal(new URL(page.url()).hash,'#dynamics');assert.equal(await page.evaluate(()=>document.activeElement.id),'dynamics');assert.ok(await page.locator('#overview').isVisible());
+  await nav('dynamics');assert.equal(new URL(page.url()).hash,'#dynamics');assert.equal(await page.evaluate(()=>document.activeElement.id),'dynamics');assert.equal(await page.locator('#analysis-nav [data-section="dynamics"]').getAttribute('aria-current'),'location');assert.ok(await page.locator('#overview').isVisible());
   await nav('segments');assert.equal(new URL(page.url()).hash,'#segments');assert.equal(await page.evaluate(()=>document.activeElement.id),'segments');assert.ok(await page.locator('#method').isVisible());
   await page.goBack();assert.equal(new URL(page.url()).hash,'#dynamics');assert.equal(await page.evaluate(()=>document.activeElement.id),'dynamics');
   await page.goForward();assert.equal(new URL(page.url()).hash,'#segments');assert.equal(await page.evaluate(()=>document.activeElement.id),'segments');
@@ -82,7 +82,7 @@ const server=http.createServer((req,res)=>{
   for(const race of ['ost-2019-ultra60','ost-2019-duo60']){await open(race,'segments');const labels=await page.locator('#segments .segment-buttons button').allTextContents();assert.deepEqual(labels.map(x=>x.replace(/^\d+\.\s*/,'')),['Stenshuvud km 14','Bengtemölla km 32','Vantalängan km 52','Mål']);}
  });
  await run('Ultra 2023 preserves distinct observations and time-only segment stats',async()=>{
-  await open('ost-2023-ultra60','segments');assert.ok((await page.locator('#view').innerText()).includes('distans saknas'));
+  await open('ost-2023-ultra60','segments');const segmentText=await page.locator('#segments').innerText();assert.ok(segmentText.includes('distans saknas'));const group=page.locator('#segments .group-segment').first();if(await group.count())assert.ok((await group.innerText()).includes('Mediantid'));
   await nav('results');await page.locator('[data-result]').first().click();const text=await page.locator('#profile-body').innerText();assert.ok(text.includes('32 km'));assert.ok(text.includes('Bengtemölla'));await page.keyboard.press('Escape');
  });
  await run('finish-only families and provisional/reconstructed labels',async()=>{
@@ -150,6 +150,9 @@ const server=http.createServer((req,res)=>{
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=2),w+' '+section);
    }
   }
+ });
+ await run('reduced motion disables smooth analysis scrolling',async()=>{
+  await page.emulateMedia({reducedMotion:'reduce'});await open('ost-2025-ultra60','overview');await page.evaluate(()=>{window.__scrollBehaviors=[];const original=Element.prototype.scrollIntoView;Element.prototype.__originalScrollIntoView=original;Element.prototype.scrollIntoView=function(options){window.__scrollBehaviors.push(options?.behavior||'auto');};});await page.locator('#analysis-nav [data-section="dynamics"]').click();assert.equal(await page.evaluate(()=>window.__scrollBehaviors.at(-1)),'auto');await page.evaluate(()=>{if(Element.prototype.__originalScrollIntoView){Element.prototype.scrollIntoView=Element.prototype.__originalScrollIntoView;delete Element.prototype.__originalScrollIntoView;}});await page.emulateMedia({reducedMotion:'no-preference'});
  });
  await run('reduced motion retains manual replay',async()=>{
   await page.emulateMedia({reducedMotion:'reduce'});await open('ost-2025-ultra60','results');await page.locator('[data-result]').first().click();await page.locator('#load-profile-replay').click();await page.locator('#profile .leaflet-container').waitFor();assert.equal(await page.locator('#profile [data-play]').isDisabled(),true);assert.equal(await page.locator('#profile [data-seek]').isEnabled(),true);
