@@ -16,7 +16,7 @@ const server=http.createServer((req,res)=>{
     if(err){
       // The user supplied soundtrack is intentionally kept outside the repo until
       // the binary asset is committed. Keep browser QA focused on lifecycle/UI.
-      if(pathname==='/assets/kustlinjens-steg.mp3'){res.writeHead(204,{'Content-Type':'audio/mpeg'});res.end();return;}
+      if(pathname==='/assets/kustlinjens-steg.mp3'){const audio=Buffer.from('SUQzBAAAAAAAIlRTU0UAAAAOAAADTGF2ZjYxLjcuMTAzAAAAAAAAAAAAAAD/4zjAAAAAAAAAAAAASW5mbwAAAA8AAAAGAAACiABxcXFxcXFxcXFxcXFxcXFxjo6Ojo6Ojo6Ojo6Ojo6Ojo6qqqqqqqqqqqqqqqqqqqqqx8fHx8fHx8fHx8fHx8fHx8fj4+Pj4+Pj4+Pj4+Pj4+Pj4/////////////////////8AAAAATGF2YzYxLjE5AAAAAAAAAAAAAAAAJANwAAAAAAAAAoif1QtqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/4xjEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVX/4xjEOwAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVX/4xjEdgAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/4xjEsQAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/4xjExAAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/4xjExAAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVU=','base64');res.writeHead(200,{'Content-Type':'audio/mpeg','Content-Length':audio.length,'Accept-Ranges':'bytes'});res.end(audio);return;}
       res.writeHead(404);res.end();return;
     }
     res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json','.css':'text/css','.png':'image/png','.webp':'image/webp','.mp3':'audio/mpeg'})[path.extname(file)]||'application/octet-stream');
@@ -54,11 +54,11 @@ const server=http.createServer((req,res)=>{
       assert.ok(await page.locator('#map-duel-panel').isVisible());
       assert.ok(await page.locator('#overview-context').isVisible());
       assert.ok(await page.locator('#goal-pace').isVisible());
-      assert.deepEqual(await page.locator('.long-analysis>.flow-section').evaluateAll(nodes=>nodes.map(n=>n.id)),['overview','statistics','gender','age-analysis','segments','history','clubs','method']);
+      assert.deepEqual(await page.locator('.long-analysis>.flow-section').evaluateAll(nodes=>nodes.map(n=>n.id)),['overview','statistics','gender','age-analysis','segments','history','clubs','results','method']);
       const text=await page.locator('#view').innerText();
-      for(const label of ['FÖRDELNING','Måltider','BANPROFIL','STATISTIKVERKSTAD','GENUSPERSPEKTIV','KLASS & ÅLDER','DELSTRÄCKELABBET','HISTORIK','KLUBB- OCH ORTSARENAN','METOD'])assert.ok(text.includes(label),label);
+      for(const label of ['FÖRDELNING','Måltider','BANPROFIL','STATISTIKVERKSTAD','GENUSPERSPEKTIV','KLASS & ÅLDER','DELSTRÄCKELABBET','HISTORIK','KLUBB- OCH ORTSARENAN','RESULTATDATABAS','Sök, sortera och utforska','Dataprincip'])assert.ok(text.includes(label),label);
       const navText=await page.locator('#analysis-nav').innerText();
-      for(const label of ['Löpare','Karta & Kartduell','Måltempo','Översikt','Statistik','Genusperspektiv','Klass & ålder','Delsträckor','Historik','Klubb & ort','Resultat'])assert.ok(navText.includes(label),label);
+      for(const label of ['Löpare','Karta & Kartduell','Måltempo','Översikt','Statistik','Genusperspektiv','Klass & ålder','Delsträckor','Historik','Klubb & ort','Resultat','Dela'])assert.ok(navText.includes(label),label);assert.equal(navText.includes('Metod'),false);
       await page.reload();await ready();assert.ok((await page.evaluate(()=>scrollY))<=2);
       await shot('parity-desktop-top');
     });
@@ -162,7 +162,7 @@ const server=http.createServer((req,res)=>{
     });
 
     await run('results database follows Gotaleden columns and opens profiles',async()=>{
-      await nav('results');const text=await page.locator('#view').innerText();assert.ok(text.includes('Resultatdatabas'));const row=page.locator('#result-table [data-result]').first();assert.ok(await row.count());await row.focus();await page.keyboard.press('Enter');await page.locator('#profile[open]').waitFor();assert.ok(await page.locator('#profile .profile-quick-nav').isVisible());await page.locator('#close-profile').click();
+      await nav('results');const text=await page.locator('#results').innerText();assert.ok(text.includes('RESULTATDATABAS'));assert.ok(text.includes('Sök, sortera och utforska'));const headers=await page.locator('#results thead th').allTextContents();assert.deepEqual(headers.map(x=>x.replace(/[↑↓]/g,'').trim()),['Plats','Namn','Kön','Klass','Klubb','Tid','Status']);const row=page.locator('#result-table [data-result]').first();assert.ok(await row.count());await row.focus();await page.keyboard.press('Enter');await page.locator('#profile[open]').waitFor();assert.ok(await page.locator('#profile .profile-quick-nav').isVisible());await page.locator('#close-profile').click();
     });
 
     await run('Duo uses source-backed classes instead of invented demographics',async()=>{
