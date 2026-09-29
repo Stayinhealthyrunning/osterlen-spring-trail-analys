@@ -26,11 +26,18 @@ function percentileValue(values,p){
  const n=values.length,required=p===50?5:(p===25||p===75?10:20);
  return n>=required?quantile(values,p/100):null;
 }
-function groupVisual(rows,field,unit,race,label){
+function groupVisual(rows,field,unit,race,label,{filterable=false,limit=8}={}){
  const all=groups(rows,field);if(!all.length)return empty('Publicerade uppgifter saknas för detta urval.');
- const top=all.slice(0,8),max=Math.max(1,...top.map(g=>g.total));
- const bars=top.map(g=>'<div class="group-bar-row"><span title="'+esc(g.name)+'">'+esc(g.name)+'</span><div class="group-bar-track"><i style="width:'+Math.max(2,100*g.total/max).toFixed(1)+'%"></i></div><strong>'+g.total+'</strong><small>'+g.finished+' i mål · median '+time(g.median)+'</small></div>').join('');
- return '<div class="group-bars" role="list" aria-label="'+esc(label||'Grupper')+'">'+bars+'</div><details class="group-details"><summary>Visa detaljerad gruppstatistik ('+all.length+')</summary>'+groupTable(rows,field,unit,race)+'</details><p class="chart-caption">Staplar visar publicerade resultat. Median visas endast när gruppen har minst fem fullföljare.</p>';
+ const top=all.slice(0,limit),max=Math.max(1,...top.map(g=>g.total));
+ const bars=top.map(g=>{const inner='<span title="'+esc(g.name)+'">'+esc(g.name)+'</span><div class="group-bar-track"><i style="width:'+Math.max(2,100*g.total/max).toFixed(1)+'%"></i></div><strong>'+g.total+'</strong><small>'+g.finished+' i mål · median '+time(g.median)+'</small>';return filterable?'<button type="button" class="group-bar-row group-bar-button" data-quick-filter="'+esc(field)+'" data-quick-value="'+esc(g.name)+'" title="Filtrera analysen på '+esc(g.name)+'">'+inner+'</button>':'<div class="group-bar-row">'+inner+'</div>';}).join('');
+ return '<div class="group-bars" role="list" aria-label="'+esc(label||'Grupper')+'">'+bars+'</div><details class="group-details"><summary>Visa detaljerad gruppstatistik ('+all.length+')</summary>'+groupTable(rows,field,unit,race)+'</details><p class="chart-caption">Staplar visar publicerade resultat. Median visas endast när gruppen har minst fem fullföljare.'+(filterable?' Klicka en stapel för att filtrera hela analysen.':'')+'</p>';
+}
+function ageDistribution(rows){
+ const values=rows.filter(r=>finite(r.age)).map(r=>Number(r.age));if(values.length<5)return empty('För få publicerade exakta åldrar för en fördelning.');
+ const min=Math.floor(Math.min(...values)/5)*5,max=Math.ceil((Math.max(...values)+1)/5)*5,bins=[];
+ for(let from=min;from<max;from+=5){const to=from+4,count=values.filter(v=>v>=from&&v<from+5).length;bins.push({from,to,count});}
+ const peak=Math.max(1,...bins.map(b=>b.count));
+ return '<div class="age-bars" aria-label="Åldersfördelning">'+bins.map(b=>'<div class="age-bar"><span>'+b.from+'–'+b.to+'</span><div><i style="height:'+Math.max(4,100*b.count/peak).toFixed(1)+'%"></i></div><strong>'+b.count+'</strong></div>').join('')+'</div>';
 }
 function groupSegmentComparison(a,rows,field,label,state){
  if(!a.race.capabilities.segment_analysis)return '';
@@ -44,13 +51,11 @@ function genderCards(rows){
  const both=known.some(r=>r.sex==='F')&&known.some(r=>r.sex==='M'),controls=both?'<div class="series-controls" aria-label="Visa könsperspektiv"><label><input type="checkbox" data-series-toggle="female" checked> <i class="female"></i>Kvinnor</label><label><input type="checkbox" data-series-toggle="male" checked> <i class="male"></i>Män</label></div>':'';return '<div class="interactive-chart gender-interactive">'+controls+'<div class="gender-kpis">'+['F','M'].map(s=>{const group=known.filter(r=>r.sex===s),starters=group.filter(r=>['FINISHED','DNF','DSQ'].includes(r.status)),finish=group.filter(finished),rate=starters.length?finish.length/starters.length*100:null,key=s==='F'?'female':'male';return '<article data-series="'+key+'" class="'+(s==='F'?'female':'male')+'"><span>'+sexName(s)+'</span><strong>'+starters.length+'</strong><small>startande · '+finish.length+' fullföljde · median '+time(finish.length>=5?quantile(finish.map(r=>r.finish_seconds),.5):null)+(rate===null?'':' · '+rate.toFixed(0)+' % i mål')+'</small></article>';}).join('')+'</div><p class="coverage-note">Könstäckning '+known.length+' av '+rows.length+' publicerade resultat. Startantal exkluderar DNS och okänd status; saknade uppgifter ingår inte i könsserierna.</p></div>';
 }
 export function progressionBySex(rows,split){
- const finishedRows=rows.filter(finished),series=[['Totalt',finishedRows,'total'],...(split?[['Kvinnor',finishedRows.filter(r=>r.sex==='F'),'female'],['Män',finishedRows.filter(r=>r.sex==='M'),'male']]:[])];
+ const finishedRows=rows.filter(finished),women=finishedRows.filter(r=>r.sex==='F'),men=finishedRows.filter(r=>r.sex==='M');
  if(!finishedRows.length)return empty('Inga fullföljare i urvalet.');
- const levels=[10,25,50,75,90].map(p=>({p,values:series.map(([label,g,key])=>({label,key,n:g.length,value:percentileValue(g.map(r=>r.finish_seconds),p)}))}));
- const values=levels.flatMap(x=>x.values.map(v=>v.value).filter(finite)),lo=values.length?Math.min(...values):0,hi=values.length?Math.max(...values):1,span=hi-lo||1;
- const controls=split?'<div class="series-controls" aria-label="Visa percentilserier"><label><input type="checkbox" data-series-toggle="female" checked> Kvinnor</label><label><input type="checkbox" data-series-toggle="male" checked> Män</label></div>':'';
- const rowsHtml=levels.map(({p,values})=>'<article class="percentile-level"><header><strong>'+p+' %</strong><small>'+(p===50?'Median':'')+'</small></header><div class="percentile-marks">'+values.map(v=>'<div class="percentile-mark" data-series="'+v.key+'"><span>'+v.label+' · n='+v.n+'</span><div class="percentile-track"><i style="left:'+(v.value===null?0:(v.value-lo)/span*100).toFixed(1)+'%"></i></div><strong>'+time(v.value)+'</strong></div>').join('')+'</div></article>').join('');
- return '<div class="interactive-chart percentile-interactive">'+controls+'<div class="percentile-board">'+rowsHtml+'</div></div><p class="chart-caption">Beskrivande trösklar från '+finishedRows.length+' publicerade måltider. Positionen visar relativ tid inom just dessa percentilvärden; n visas per serie. Ingen prognos.</p>';
+ const controls=split?'<div class="series-controls" aria-label="Visa percentilserier"><label><input type="checkbox" data-series-toggle="female" checked> <i class="female"></i>Kvinnor</label><label><input type="checkbox" data-series-toggle="male" checked> <i class="male"></i>Män</label></div>':'';
+ const levels=[10,25,50,75,90].map(p=>{const threshold=percentileValue(finishedRows.map(r=>r.finish_seconds),p),count=g=>finite(threshold)?g.filter(r=>r.finish_seconds<=threshold).length:0,bar=(label,key,g)=>{const n=count(g),share=g.length?100*n/g.length:0,own=percentileValue(g.map(r=>r.finish_seconds),p);return '<div class="percentile-sex-row" data-series="'+key+'"><span>'+label+'</span><div class="percentile-sex-track"><i style="width:'+share.toFixed(1)+'%"></i></div><strong>'+n+' / '+g.length+'</strong><small>Egen P'+p+': '+time(own)+'</small></div>';};return '<article class="percentile-level"><header><strong>P'+p+'</strong><small>'+(p===50?'Median':'Fältgräns')+'</small><b>'+time(threshold)+'</b></header><div class="percentile-sex-bars">'+(split?bar('Kvinnor','female',women)+bar('Män','male',men):'<div class="percentile-total-row"><span>Fullföljare vid eller före gränsen</span><strong>'+count(finishedRows)+' / '+finishedRows.length+'</strong></div>')+'</div></article>';}).join('');
+ return '<div class="interactive-chart percentile-interactive">'+controls+'<div class="percentile-board">'+levels+'</div></div><p class="chart-caption">P10–P90 är sluttidströsklar för hela urvalet. Staplarna visar hur många kvinnor respektive män som gått i mål senast vid den gemensamma tröskeln; egen percentiltid visas som jämförelse. Median kräver n ≥ 5, P25/P75 n ≥ 10 och P10/P90 n ≥ 20.</p>';
 }
 
 function fieldFlow(a,rows,state){
