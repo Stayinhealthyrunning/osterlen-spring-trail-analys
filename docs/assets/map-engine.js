@@ -31,6 +31,20 @@ export function terrainMetrics(profile,range=null){
  const pts=valid.map(p=>[Number(p[0]),Number(p[1])]);
  return {ascent,descent,min:Math.min(...pts.map(p=>p[1])),max:Math.max(...pts.map(p=>p[1])),distance:pts.at(-1)[0]-pts[0][0],coverage};
 }
+export async function mountCourseContext(root,{route,adapter,segment=0}){
+ let map=null,highlight=null,destroyed=false;
+ const boundary=adapter.boundary||[],selectedRange=index=>[route.anchors?.[boundary[index]?.key],route.anchors?.[boundary[index+1]?.key]];
+ root.innerHTML='<div class="head-to-head-course-map"></div><div class="head-to-head-course-elevation"></div><p class="map-status">Laddar OpenStreetMap…</p>';
+ const mapRoot=root.querySelector('.head-to-head-course-map'),elev=root.querySelector('.head-to-head-course-elevation'),status=root.querySelector('.map-status');
+ function drawElevation(index){const range=selectedRange(index),valid=range.every(finite);elev.innerHTML=elevation(route.elevation,route.anchors,valid?range:null);}
+ function fallback(){const lats=route.points.map(p=>p[0]),lons=route.points.map(p=>p[1]),minLat=Math.min(...lats),maxLat=Math.max(...lats),minLon=Math.min(...lons),maxLon=Math.max(...lons),cos=Math.cos((minLat+maxLat)/2*Math.PI/180),scale=Math.min(560/((maxLon-minLon)*cos||1),320/(maxLat-minLat||1)),project=p=>[320+(p[1]-(minLon+maxLon)/2)*cos*scale,190-(p[0]-(minLat+maxLat)/2)*scale],line=route.points.map((p,i)=>(i?'L':'M')+project(p).join(',')).join(' ');mapRoot.innerHTML='<svg class="route-fallback" viewBox="0 0 640 380" role="img" aria-label="Aktuell bana"><path d="'+line+'" fill="none" stroke="#1677a8" stroke-width="4"/></svg>';status.textContent='OpenStreetMap kunde inte laddas. Den lokala rutten visas utan kartbakgrund.';}
+ const L=await leaflet();if(destroyed||!root.isConnected)return {destroy(){}};
+ if(L){map=L.map(mapRoot,{zoomControl:true,attributionControl:true,scrollWheelZoom:false});const full=L.polyline(route.points.map(p=>[p[0],p[1]]),{color:'#1677a8',weight:4}).addTo(map);map.fitBounds(full.getBounds(),{padding:[20,20]});const tiles=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap contributors'});let failed=false;tiles.on('tileerror',()=>{if(failed)return;failed=true;tiles.remove();status.textContent='OpenStreetMap kunde inte laddas. Rutten och höjdprofilen finns kvar.';});tiles.on('load',()=>{if(!failed)status.textContent='OpenStreetMap · aktuell upplagas rutt';});tiles.addTo(map);}
+ else fallback();
+ function selectSegment(index){segment=Math.max(0,Math.min(Math.max(0,boundary.length-2),Number(index)||0));drawElevation(segment);if(!map||!L)return;if(highlight)highlight.remove();const range=selectedRange(segment);if(!range.every(finite))return;const [from,to]=range,pts=[pointAtDistance(route.points,from),...route.points.filter(p=>p[3]>from&&p[3]<to).map(p=>[p[0],p[1]]),pointAtDistance(route.points,to)].filter(Boolean);highlight=L.polyline(pts,{color:'#8fbe63',weight:7,opacity:.8}).addTo(map);map.fitBounds(highlight.getBounds(),{padding:[35,35]});}
+ selectSegment(segment);
+ return {selectSegment,destroy(){destroyed=true;map?.remove();}};
+}
 export async function mountMap(root,{route,adapter,records=[],segment=0,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches,referenceSeries=[],insights=[],profile=false,musicSrc='assets/kustlinjens-steg.mp3'}){
  let destroyed=false,map=null,timer=null,markers=[],referenceMarkers=new Map(),high=null,t=0,audio=null,tiles=null;
  const models=records.map((r,index)=>({r,label:r.name,color:['#1677a8','#b51d60','#497b35','#92691a','#7651a0'][index%5],anchors:adapter.anchors(r,route)})).filter(m=>m.anchors.length>=2);
