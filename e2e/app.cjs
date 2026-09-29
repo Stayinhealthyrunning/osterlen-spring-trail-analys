@@ -29,7 +29,7 @@ const server=http.createServer((req,res)=>{
   const page=await browser.newPage({viewport:{width:1536,height:1024}});
   page.on('pageerror',e=>report.errors.push('page: '+e.message));
   page.on('console',m=>{if(m.type()==='error'&&!m.text().includes('tile.openstreetmap.org'))report.errors.push('console: '+m.text());});
-  page.on('requestfailed',req=>{if(!req.url().includes('tile.openstreetmap.org'))report.errors.push('network: '+req.url());});
+  page.on('requestfailed',req=>{const url=req.url();if(!url.includes('tile.openstreetmap.org')&&!url.endsWith('/assets/kustlinjens-steg.mp3'))report.errors.push('network: '+url);});
   page.on('request',r=>report.requests.push(r.url().replace(base,'')));
 
   const ready=()=>page.waitForFunction(()=>document.querySelector('#load-status')?.textContent.includes('upplaga klar'));
@@ -74,6 +74,7 @@ const server=http.createServer((req,res)=>{
     });
 
     await run('individual analysis auto-loads Ultravasan-style OSM Replay with side panels and references',async()=>{
+      const soundtrack=fs.statSync(path.join(root,'assets','kustlinjens-steg.mp3'));assert.ok(soundtrack.size>1000000,'committed Replay soundtrack must be a real audio asset');
       await open('ost-2025-ultra60');await openProfileBySearch('Johan Lantz');
       assert.equal(await page.locator('#load-profile-replay').count(),0);
       await page.locator('#profile .runner-replay').waitFor();
