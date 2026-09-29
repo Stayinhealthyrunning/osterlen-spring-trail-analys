@@ -7,11 +7,11 @@ import * as views from './views.js';
 import {plan} from './race-plan.js';
 import {pace,table,tr} from './charts.js';
 const $=s=>document.querySelector(s),loader=new DataLoader(),labels={overview:'Översikt',statistics:'Statistik',gender:'Genusperspektiv','age-analysis':'Klass & ålder',segments:'Delsträckor',history:'Historik',clubs:'Klubb & ort',method:'Metod',results:'Resultat',compare:'Jämför'};
-let boot,a,state,store,favorites=[],generation=0,renderVersion=0,mapView=null,profileMap=null,duelMap=null,profileTrigger=null,compareTrigger=null,clubSuggestionIndex=-1,lookupSuggestionIndex=-1,compareSuggestionIndex=-1,duelSuggestionIndex=-1,clubArenaSuggestionIndex=-1,sectionObserver=null;
+let boot,a,state,store,favorites=[],generation=0,renderVersion=0,mapView=null,profileMap=null,duelMap=null,headToHeadCourse=null,profileTrigger=null,compareTrigger=null,clubSuggestionIndex=-1,lookupSuggestionIndex=-1,compareSuggestionIndex=-1,duelSuggestionIndex=-1,clubArenaSuggestionIndex=-1,sectionObserver=null;
 function safeStorage(){try{return localStorage;}catch{return null;}}
 function status(text){$('#load-status').textContent=text;}
 function syncURL(replace=false){history[replace?'replaceState':'pushState'](null,'',stateURL(location.href,state));}
-function closeMaps(){mapView?.destroy();mapView=null;profileMap?.destroy();profileMap=null;duelMap?.destroy();duelMap=null;}
+function closeMaps(){mapView?.destroy();mapView=null;profileMap?.destroy();profileMap=null;duelMap?.destroy();duelMap=null;headToHeadCourse?.destroy();headToHeadCourse=null;}
 function saveFavorites(){store.write('favorites',favorites.slice(-40));}
 function isFavorite(r){return favorites.some(f=>f.race===a.race.race_key&&f.id===String(r.source_result_id));}
 async function loadRace(key,{restore=null,replace=false,scroll=true}={}){
@@ -153,9 +153,15 @@ function moveCompareSuggestion(direction){
  const input=$('#compare-search'),items=[...document.querySelectorAll('#compare-options [data-add-compare]')];if(!items.length)return;
  compareSuggestionIndex=(compareSuggestionIndex+direction+items.length)%items.length;items.forEach((item,i)=>item.setAttribute('aria-selected',i===compareSuggestionIndex));input?.setAttribute('aria-activedescendant',items[compareSuggestionIndex].id);items[compareSuggestionIndex].scrollIntoView({block:'nearest'});
 }
+async function loadHeadToHeadCourse(){
+ const root=$('#head-to-head-course');headToHeadCourse?.destroy();headToHeadCourse=null;if(!root||state.compare.length!==2)return;
+ if(!a.course?.assets?.route){root.innerHTML=empty('Lokalt användbar rutt saknas för den här upplagan. Ingen annan upplagas bana lånas.');return;}
+ try{const [route,module]=await Promise.all([loader.route(a.race),import('./map-engine.js')]);if(!root.isConnected||!$('#compare-dialog')?.open)return;headToHeadCourse=await module.mountCourseContext(root,{route,adapter:a,segment:0});}
+ catch(e){if(root.isConnected)root.innerHTML=empty(e.message);}
+}
 function renderCompareDialog(){
  const dialog=$('#compare-dialog'),body=$('#compare-dialog-body');if(!dialog||!body||!a)return;
- body.innerHTML=views.compare(a,state);compareOptions('');
+ headToHeadCourse?.destroy();headToHeadCourse=null;body.innerHTML=views.compare(a,state);compareOptions('');if(state.compare.length===2)requestAnimationFrame(()=>loadHeadToHeadCourse());
 }
 function openCompareDialog(){
  const dialog=$('#compare-dialog');if(!dialog||!a)return;compareTrigger=document.activeElement;renderCompareDialog();if(!dialog.open)dialog.showModal();$('#compare-search')?.focus();
@@ -219,6 +225,8 @@ document.addEventListener('click',async e=>{
  if(b.dataset.duelAdd){const id=b.dataset.duelAdd;if(!state.compare.includes(id)&&state.compare.length<compareLimit())state.compare.push(id);duelOptions('');if($('#duel-search'))$('#duel-search').value='';renderTopTools();syncURL();return;}
  if(b.dataset.duelRemove){state.compare=state.compare.filter(id=>id!==b.dataset.duelRemove);renderTopTools();syncURL();return;}
  if(b.id==='open-head-to-head'&&state.compare.length===2){openCompareDialog();return;}
+ if(b.id==='head-to-head-duel'&&state.compare.length===2&&a.race.capabilities.replay){const dialog=$('#duel');dialog.showModal();await showMap($('#duel-body'),state.compare.map(id=>a.byId.get(id)).filter(Boolean),'duel');return;}
+ if(b.dataset.headSegment!==undefined){const index=Number(b.dataset.headSegment)||0;document.querySelectorAll('#compare-dialog [data-head-segment]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));headToHeadCourse?.selectSegment(index);return;}
  if(b.id==='open-map-duel'){const dialog=$('#duel');dialog.showModal();await showMap($('#duel-body'),state.compare.map(id=>a.byId.get(id)).filter(Boolean),'duel');return;}
  if(b.dataset.info){const t=document.getElementById(b.dataset.info);t.hidden=!t.hidden;b.setAttribute('aria-expanded',!t.hidden);return;}
  if(b.dataset.segment){const keepCourse=Boolean(mapView&&$('#course-map')?.querySelector('.map'));state.segment=+b.dataset.segment;mapView?.select(state.segment);document.querySelectorAll('button[data-segment]').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.segment===state.segment));if(isFlowSection(state.section)){await render();if(keepCourse&&$('#load-course'))await showMap($('#course-map'),[],'course');}return;}
@@ -265,7 +273,7 @@ $('#year').onchange=()=>{const r=Object.values(boot.race_catalog).find(r=>r.race
 $('#unit').onchange=()=>{state.unit=$('#unit').value;store.write('unit',state.unit);render();if(state.profile)openProfile(state.profile,false);};
 $('#global-search').onsubmit=async e=>{e.preventDefault();if(!a)return;const q=$('#lookup').value.trim(),matches=a.records.filter(r=>resultMatches(r,q));if(lookupSuggestionIndex>=0){const item=document.querySelectorAll('#lookup-suggestions [data-lookup-result]')[lookupSuggestionIndex];if(item){chooseLookup(item.dataset.lookupResult);return;}}if(matches.length===1)chooseLookup(matches[0].source_result_id);else{lookupOptions('');state.query=q;state.globalQuery=q;state.page=1;await navigate('results');$('#analysis').scrollIntoView();}};
 $('#profile').addEventListener('close',()=>{profileMap?.destroy();profileMap=null;if(state?.profile){state.profile=null;syncURL(true);}profileTrigger?.focus?.();});
-$('#compare-dialog').addEventListener('close',()=>{const root=$('#compare-dialog-body');if(root)root.innerHTML='';compareTrigger?.focus?.();compareTrigger=null;});
+$('#compare-dialog').addEventListener('close',()=>{headToHeadCourse?.destroy();headToHeadCourse=null;const root=$('#compare-dialog-body');if(root)root.innerHTML='';compareTrigger?.focus?.();compareTrigger=null;});
 $('#duel').addEventListener('close',()=>{duelMap?.destroy();duelMap=null;});
 addEventListener('popstate',async()=>{if(!boot)return;const restored=urlState(location.href,boot.race_catalog,boot.default_race),openCompare=restored.section==='compare';if(openCompare)restored.section='overview';if(restored.raceKey!==state.raceKey)await loadRace(restored.raceKey,{restore:restored,replace:true});else{Object.assign(state,restored);state.section=normalizeSection(state.section);await render();if(isFlowSection(state.section))scrollToSection(state.section,{focus:true,behavior:'auto'});if(restored.profile)openProfile(restored.profile,false);else $('#profile').close();}if(openCompare)openCompareDialog();});
 async function start(){
