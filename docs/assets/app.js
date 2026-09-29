@@ -2,11 +2,11 @@ import {DataLoader} from './data-loader.js';
 import {adapt} from './data-adapter.js';
 import {urlState,stateURL,switched,storage,sections,flowSections} from './app-state.js';
 import {filterRows,finite,finished} from './analytics.js';
-import {esc,time,empty} from './charts.js';
+import {esc,time,empty,statusLabel} from './charts.js';
 import * as views from './views.js';
 import {plan} from './race-plan.js';
 import {pace,table,tr} from './charts.js';
-const $=s=>document.querySelector(s),loader=new DataLoader(),labels={overview:'Översikt',results:'Resultat',dynamics:'Loppets dynamik',segments:'Delsträckor',course:'Bana / Course Intelligence',compare:'Jämför',history:'Historisk översikt',method:'Metod'};
+const $=s=>document.querySelector(s),loader=new DataLoader(),labels={overview:'Översikt',results:'Resultat',dynamics:'Loppets dynamik',segments:'Delsträckor',course:'Bana',compare:'Jämför',history:'Historisk översikt',method:'Metod'};
 let boot,a,state,store,favorites=[],generation=0,renderVersion=0,mapView=null,profileMap=null,duelMap=null,profileTrigger=null,clubSuggestionIndex=-1,sectionObserver=null;
 function safeStorage(){try{return localStorage;}catch{return null;}}
 function status(text){$('#load-status').textContent=text;}
@@ -34,7 +34,8 @@ function controls(){
 function filters(){
  const options=(key,label)=>'<label>'+label+'<select data-filter="'+key+'"><option value="">Alla</option>'+[...new Set(a.records.map(r=>r[key]).filter(Boolean))].sort((x,y)=>String(x).localeCompare(String(y),'sv',{numeric:true})).map(v=>'<option value="'+esc(v)+'">'+esc(v)+'</option>').join('')+'</select></label>';
  const club=a.race.capabilities.club_analysis?'<div class="filter-autocomplete"><label>Klubb & ort<input id="club-filter" data-filter="club" type="search" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="club-suggestions" aria-expanded="false" placeholder="Börja skriva klubb eller ort"></label><div id="club-suggestions" class="suggestions" role="listbox" hidden></div></div>':'';
- $('#filters').innerHTML=(a.race.capabilities.sex_filter&&a.race.participant.entity==='person'?'<label>Kön<select data-filter="sex"><option value="">Alla</option><option value="F">Kvinnor</option><option value="M">Män</option></select></label>':'')+options('class_name',a.race.participant.entity==='team'?'Lagklass':'Klass')+options('status','Status')+club+'<button id="reset-filters">Återställ</button>';
+ const statuses=[...new Set(a.records.map(r=>r.status).filter(Boolean))],statusFilter='<label>Status<select data-filter="status"><option value="">Alla</option>'+statuses.map(v=>'<option value="'+esc(v)+'">'+esc(statusLabel(v))+'</option>').join('')+'</select></label>';
+ $('#filters').innerHTML=(a.race.capabilities.sex_filter&&a.race.participant.entity==='person'?'<label>Kön<select data-filter="sex"><option value="">Alla</option><option value="F">Kvinnor</option><option value="M">Män</option></select></label>':'')+options('class_name',a.race.participant.entity==='team'?'Lagklass':'Klass')+statusFilter+club+'<button id="reset-filters">Återställ</button>';
 }
 function selected(){return filterRows(a.records,state.filters);}
 function compareLimit(){return a?.race?.capabilities?.replay?5:2;}
@@ -61,7 +62,7 @@ async function renderAnalysisFlow(v,rows,token){
  if(available.includes('overview'))parts.push(flowSection('overview',views.overview(a,rows,state,boot)));
  if(available.includes('dynamics'))parts.push(flowSection('dynamics',flowHeading('LOPPETS DYNAMIK','Så rör sig fältet','Percentiler, status och de källstödda perspektiv som finns för den valda upplagan.')+views.dynamics(a,rows,state)));
  if(available.includes('segments'))parts.push(flowSection('segments',flowHeading('DELSTRÄCKOR','Loppet mellan kontrollerna','Tempo, spridning och placeringsrörelser från publicerade passager.')+views.segments(a,rows,state)));
- if(available.includes('course'))parts.push(flowSection('course',flowHeading('COURSE INTELLIGENCE','Banan och dess underlag','Banversion, geometri och lokalt tillgängliga ruttlager med tydliga proveniensgränser.')+views.course(a)));
+ if(available.includes('course'))parts.push(flowSection('course',flowHeading('BANANALYS','Banan och dess underlag','Banversion, geometri och lokalt tillgängliga ruttlager med tydliga proveniensgränser.')+views.course(a)));
  if(available.includes('history'))parts.push(flowSection('history',flowHeading('HISTORISK ÖVERSIKT','Loppet över tid','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+empty('Laddar liten historiksammanställning…')));
  if(available.includes('method'))parts.push(flowSection('method',flowHeading('METOD','Så är analysen byggd','Källvärden, beräkningar, jämförbarhet och begränsningar samlade på ett ställe.')+views.methodology(a,boot,state)));
  v.innerHTML='<div class="long-analysis">'+parts.join('')+'</div>';observeFlowSections();
@@ -87,7 +88,7 @@ function resultTable(){
  rows=rows.slice().sort((x,y)=>{const p=x[key],q=y[key];if(p==null)return q==null?0:1;if(q==null)return -1;return (typeof p==='number'&&typeof q==='number'?p-q:String(p).localeCompare(String(q),'sv',{numeric:true}))*dir;});
  const pages=Math.max(1,Math.ceil(rows.length/40));state.page=Math.min(state.page,pages);const current=rows.slice((state.page-1)*40,state.page*40);
  const heads=[['overall_place','Plats'],['bib','Nr'],['name',a.race.participant.entity==='team'?'Lag':'Namn'],['class_name','Klass'],['club','Klubb / ort'],['country','Land'],['finish_seconds','Sluttid'],['status','Status']];
- $('#result-table').innerHTML='<div class="table-scroll"><table><thead><tr>'+heads.map(([k,label])=>'<th scope="col" aria-sort="'+(key===k?(dir===1?'ascending':'descending'):'none')+'"><button data-sort="'+k+'">'+label+(key===k?(dir===1?' ↑':' ↓'):'')+'</button></th>').join('')+'</tr></thead><tbody>'+current.map(r=>'<tr tabindex="0" data-result="'+esc(r.source_result_id)+'" aria-label="Öppna '+esc(r.name)+'">'+heads.map(([k])=>'<td '+(k==='name'?'class="name"':'')+'>'+(k==='finish_seconds'?(finished(r)?time(r[k]):'–'):esc(r[k]??'–'))+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>'+(rows.length?'':empty('Inga resultat matchar sökningen och filtren.'));
+ $('#result-table').innerHTML='<div class="table-scroll"><table><thead><tr>'+heads.map(([k,label])=>'<th scope="col" aria-sort="'+(key===k?(dir===1?'ascending':'descending'):'none')+'"><button data-sort="'+k+'">'+label+(key===k?(dir===1?' ↑':' ↓'):'')+'</button></th>').join('')+'</tr></thead><tbody>'+current.map(r=>'<tr tabindex="0" data-result="'+esc(r.source_result_id)+'" aria-label="Öppna '+esc(r.name)+'">'+heads.map(([k])=>'<td '+(k==='name'?'class="name"':'')+'>'+(k==='finish_seconds'?(finished(r)?time(r[k]):'–'):k==='status'?esc(statusLabel(r[k])):esc(r[k]??'–'))+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>'+(rows.length?'':empty('Inga resultat matchar sökningen och filtren.'));
  $('#page-label').textContent=state.page+' / '+pages+' · '+rows.length+' resultat';$('#prev-page').disabled=state.page<=1;$('#next-page').disabled=state.page>=pages;
 }
 function compareOptions(q){
