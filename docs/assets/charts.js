@@ -15,6 +15,14 @@ export function histogram(values,step){
  b.forEach((x,i)=>{const h=x.count/peak*192,xp=left+i*w+w*.12;s+='<rect tabindex="0" class="bar" x="'+xp+'" y="'+(bottom-h)+'" width="'+(w*.76)+'" height="'+h+'" rx="2" aria-label="'+x.count+' resultat, '+time(x.from)+' till '+time(x.to)+'"><title>'+x.count+' resultat · '+time(x.from)+'–'+time(x.to)+'</title></rect>';if(i%Math.max(1,Math.ceil(b.length/6))===0)s+='<text x="'+(left+(i+.5)*w)+'" y="263" text-anchor="middle">'+time(x.from).slice(0,-3)+'</text>';});
  return svg(s,'Fördelning av måltider');
 }
+export function histogramSeries(series,step=900){
+ const all=(series||[]).flatMap(item=>(item.values||[]).filter(finite).map(Number));const b=bins(all,step);if(!b.length)return empty('Inga publicerade måltider i urvalet.');
+ const counts=(series||[]).map(item=>b.map(bin=>(item.values||[]).filter(v=>finite(v)&&Number(v)>=bin.from&&Number(v)<bin.to).length)),peak=Math.max(1,...b.map((_,i)=>counts.reduce((sum,row)=>sum+row[i],0))),left=55,right=705,bottom=235,w=(right-left)/b.length,barW=Math.max(3,w*.72),offset=(w-barW)/2;let s='';
+ for(let i=0;i<=4;i++){const y=bottom-i*48;s+='<line class="axis" x1="'+left+'" x2="'+right+'" y1="'+y+'" y2="'+y+'"/><text x="43" y="'+(y+4)+'" text-anchor="end">'+Math.round(peak*i/4)+'</text>';}
+ b.forEach((bin,i)=>{let base=bottom;series.forEach((item,si)=>{const n=counts[si][i];if(!n)return;const h=n/peak*192,x=left+i*w+offset;base-=h;s+='<rect tabindex="0" class="bar series-bar" data-series="'+esc(item.id||item.name)+'" x="'+x+'" y="'+base+'" width="'+barW+'" height="'+h+'" rx="2" style="--series-color:'+esc(item.color||palette[si%palette.length])+'"><title>'+esc(item.name)+' · '+time(bin.from)+'–'+time(bin.to)+': '+n+'</title></rect>';});if(i%Math.max(1,Math.ceil(b.length/6))===0||i===b.length-1)s+='<text x="'+(left+(i+.5)*w)+'" y="263" text-anchor="middle">'+time(bin.from).slice(0,-3)+'</text>';});
+ const controls='<div class="series-controls chart-toggles" aria-label="Visa grupper">'+series.map((item,i)=>'<label><input type="checkbox" data-series-toggle="'+esc(item.id||item.name)+'" checked><i style="background:'+(item.color||palette[i%palette.length])+'"></i>'+esc(item.name)+'</label>').join('')+'</div>',legend='<div class="legend">'+series.map((item,i)=>'<span data-series="'+esc(item.id||item.name)+'"><i style="background:'+(item.color||palette[i%palette.length])+'"></i>'+esc(item.name)+'</span>').join('')+'</div>';return '<div class="interactive-chart finish-interactive">'+controls+legend+svg(s,'Fördelning av måltider per grupp')+'</div>';
+}
+
 export function sexHistogram(rows,step){
  const finished=rows.filter(r=>finite(r.finish_seconds)&&r.finish_seconds>0),values=finished.map(r=>r.finish_seconds),b=bins(values,step);
  if(!b.length)return empty('Inga publicerade måltider i urvalet.');
@@ -35,14 +43,14 @@ export function finishPlaceScatter(rows){
  const points=rows.filter(r=>finite(r.finish_seconds)&&r.finish_seconds>0&&finite(r.overall_place)&&r.overall_place>0);
  if(points.length<2)return empty('För få fullföljare med publicerad totalplacering.');
  const min=Math.min(...points.map(r=>Number(r.finish_seconds))),max=Math.max(...points.map(r=>Number(r.finish_seconds))),maxPlace=Math.max(...points.map(r=>Number(r.overall_place))),left=70,right=700,top=28,bottom=235;
- const x=v=>left+(Number(v)-min)/(max-min||1)*(right-left),y=v=>top+(Number(v)-1)/(Math.max(1,maxPlace-1))*(bottom-top);
- let s='';
+ const x=v=>left+(Number(v)-min)/(max-min||1)*(right-left),y=v=>top+(Number(v)-1)/(Math.max(1,maxPlace-1))*(bottom-top);let s='';
  for(let i=0;i<=4;i++){const value=min+(max-min)*i/4,xx=left+(right-left)*i/4;s+='<line class="axis" x1="'+xx+'" x2="'+xx+'" y1="'+top+'" y2="'+bottom+'"/><text x="'+xx+'" y="264" text-anchor="middle">'+time(value).slice(0,-3)+'</text>';}
  for(let i=0;i<=4;i++){const place=Math.max(1,Math.round(1+(maxPlace-1)*i/4)),yy=y(place);s+='<line class="axis" x1="'+left+'" x2="'+right+'" y1="'+yy+'" y2="'+yy+'"/><text x="58" y="'+(yy+4)+'" text-anchor="end">'+place+'</text>';}
  for(const r of points){const key=r.sex==='F'?'female':r.sex==='M'?'male':'unknown',cls=r.sex==='F'?'point-female':r.sex==='M'?'point-male':'point-total',label=esc((r.name||'Resultat')+' · '+time(r.finish_seconds)+' · plats '+r.overall_place);s+='<circle tabindex="0" role="button" data-result="'+esc(r.source_result_id)+'" data-series="'+key+'" class="scatter-point '+cls+'" cx="'+x(r.finish_seconds).toFixed(2)+'" cy="'+y(r.overall_place).toFixed(2)+'" r="4.2" aria-label="Öppna '+label+'"><title>'+label+'</title></circle>';}
  const hasF=points.some(r=>r.sex==='F'),hasM=points.some(r=>r.sex==='M'),hasUnknown=points.some(r=>r.sex!=='F'&&r.sex!=='M'),controls=[hasF?'<label><input type="checkbox" data-series-toggle="female" checked> <i class="female"></i>Kvinnor</label>':'',hasM?'<label><input type="checkbox" data-series-toggle="male" checked> <i class="male"></i>Män</label>':'',hasUnknown?'<label><input type="checkbox" data-series-toggle="unknown" checked> <i class="total"></i>Okänt kön</label>':''].filter(Boolean).join('');
- return '<div class="interactive-chart scatter-interactive">'+(controls?'<div class="series-controls" aria-label="Visa placeringsserier">'+controls+'</div>':'')+svg(s,'Sluttid mot totalplacering')+'</div>';
+ return '<div class="interactive-chart scatter-interactive zoomable-scatter">'+(controls?'<div class="series-controls" aria-label="Visa placeringsserier">'+controls+'</div>':'')+'<button type="button" class="chart-reset" data-scatter-reset hidden>Återställ zoom</button><div class="chart-scroll"><svg class="chart placement-scatter-svg" viewBox="0 0 740 280" data-data-left="'+left+'" data-data-top="'+top+'" data-data-right="'+right+'" data-data-bottom="'+bottom+'" role="img" aria-label="Sluttid mot totalplacering">'+s+'</svg></div></div>';
 }
+
 export function bands(stats,unit){
  const format=v=>unit==='time'?time(v):pace(v,unit);
  const values=stats.flatMap(s=>[s.q10,s.q25,s.median,s.q75,s.q90]).filter(finite);if(!values.length)return empty('För få kompletta passager för segmentmedian. Minst fem krävs.');
@@ -62,3 +70,59 @@ export function elevation(profile,anchors,selected=null){
  return svg(s,'Höjdprofil längs aktuell rutt',250);
 }
 
+
+export const palette=['#1677A8','#8FBE63','#D9A441','#E7A6B7','#596761'];
+
+export function lines(series,labels,{format=value=>String(Math.round(value)),zero=false,height=300,referenceValue=null}={}){
+ const values=series.flatMap(item=>(item.values||[]).filter(finite).map(Number));if(!values.length)return empty('Underlag saknas.');
+ const reference=finite(referenceValue)?Number(referenceValue):null,domain=reference===null?values:[...values,reference],width=740,pad={l:68,r:18,t:22,b:64},minimum=zero?0:Math.min(...domain)*.96,maximum=Math.max(...domain)*1.04,x=i=>pad.l+(width-pad.l-pad.r)*(labels.length<=1?0:i/(labels.length-1)),y=v=>height-pad.b-(Number(v)-minimum)/(maximum-minimum||1)*(height-pad.t-pad.b);
+ let body='';for(let i=0;i<5;i++){const value=minimum+(maximum-minimum)*(4-i)/4,yy=y(value);body+='<line class="axis" x1="'+pad.l+'" x2="'+(width-pad.r)+'" y1="'+yy+'" y2="'+yy+'"/><text x="'+(pad.l-8)+'" y="'+(yy+4)+'" text-anchor="end">'+esc(format(value))+'</text>';}
+ if(reference!==null){const yy=y(reference);body+='<line class="reference-line" x1="'+pad.l+'" x2="'+(width-pad.r)+'" y1="'+yy+'" y2="'+yy+'"/>';}
+ labels.forEach((label,i)=>{const xx=x(i);body+='<text x="'+xx+'" y="'+(height-20)+'" text-anchor="middle" transform="rotate(-18 '+xx+' '+(height-20)+')">'+esc(label)+'</text>';});
+ series.forEach((item,si)=>{let path='',open=false;const color=item.color||palette[si%palette.length];(item.values||[]).forEach((value,i)=>{if(!finite(value)){open=false;return;}path+=(open?'L':'M')+x(i).toFixed(1)+','+y(value).toFixed(1)+' ';open=true;});body+='<path class="plot-line" stroke="'+esc(color)+'" d="'+path+'"/>';(item.values||[]).forEach((value,i)=>{if(finite(value))body+='<circle class="point" data-series="'+esc(item.id||item.name)+'" fill="'+esc(color)+'" cx="'+x(i)+'" cy="'+y(value)+'" r="4"><title>'+esc(item.name)+' · '+esc(labels[i])+': '+esc(format(value))+'</title></circle>';});});
+ const legend='<div class="legend">'+series.map((item,i)=>'<span data-series="'+esc(item.id||item.name)+'"><i style="background:'+esc(item.color||palette[i%palette.length])+'"></i>'+esc(item.name)+'</span>').join('')+'</div>';
+ return legend+svg(body,'Linjediagram',height);
+}
+
+export function distributionBand(series,labels,{format=value=>String(Math.round(value)),height=300,interactiveSegments=false}={}){
+ const prepared=(series||[]).map((item,index)=>({...item,color:item.color||palette[index%palette.length],segments:(item.segments||[]).map(d=>({...d,bandAvailable:finite(d?.q25)&&finite(d?.q75),outerAvailable:finite(d?.q10)&&finite(d?.q90)}))})),values=prepared.flatMap(item=>item.segments.flatMap(d=>[d?.median,d?.q25,d?.q75]).filter(finite).map(Number));if(!values.length)return empty('Underlag saknas.');
+ const width=740,rawMin=Math.min(...values),rawMax=Math.max(...values),span=Math.max(1,rawMax-rawMin),minimum=rawMin-span*.08,maximum=rawMax+span*.08,pad={l:64,r:18,t:20,b:62},x=i=>pad.l+(width-pad.l-pad.r)*(labels.length<=1?.5:i/(labels.length-1)),y=v=>pad.t+(maximum-Number(v))/(maximum-minimum||1)*(height-pad.t-pad.b),ticks=Array.from({length:5},(_,i)=>maximum-(maximum-minimum)*i/4),attrs=i=>interactiveSegments?' data-course-segment="'+i+'" tabindex="0" role="button"':'';let body='';
+ ticks.forEach(v=>{const yy=y(v);body+='<line class="axis" x1="'+pad.l+'" x2="'+(width-pad.r)+'" y1="'+yy+'" y2="'+yy+'"/><text x="'+(pad.l-8)+'" y="'+(yy+4)+'" text-anchor="end">'+esc(format(v))+'</text>';});
+ labels.forEach((label,i)=>{const xx=x(i);body+='<text class="distribution-label"'+attrs(i)+' x="'+xx+'" y="'+(height-18)+'" text-anchor="middle" transform="rotate(-18 '+xx+' '+(height-18)+')">'+esc(label)+'</text>';});
+ prepared.forEach((item,seriesIndex)=>{const id=item.id||item.name,color=item.color||palette[seriesIndex%palette.length],segments=item.segments,runs=[];let run=[];segments.forEach((d,i)=>{if(d?.bandAvailable)run.push({d,i});else if(run.length){runs.push(run);run=[];}});if(run.length)runs.push(run);for(const points of runs){let path;if(points.length===1){const p=points[0],half=Math.max(5,(width-pad.l-pad.r)/Math.max(2,labels.length)*.15);path='M'+(x(p.i)-half)+','+y(p.d.q25)+' L'+(x(p.i)+half)+','+y(p.d.q25)+' L'+(x(p.i)+half)+','+y(p.d.q75)+' L'+(x(p.i)-half)+','+y(p.d.q75)+' Z';}else path=points.map((p,k)=>(k?'L':'M')+x(p.i)+','+y(p.d.q25)).join(' ')+points.slice().reverse().map(p=>' L'+x(p.i)+','+y(p.d.q75)).join('')+' Z';body+='<path class="distribution-band" data-series="'+esc(id)+'" style="--series-color:'+esc(color)+'" d="'+path+'"/>';}
+  let path='',open=false;segments.forEach((d,i)=>{if(!finite(d?.median)){open=false;return;}path+=(open?'L':'M')+x(i).toFixed(1)+','+y(d.median).toFixed(1)+' ';open=true;});body+='<path class="plot-line distribution-median" data-series="'+esc(id)+'" stroke="'+esc(color)+'" d="'+path+'"/>';segments.forEach((d,i)=>{if(!finite(d?.median))return;const title=item.name+' · '+labels[i]+' · median '+format(d.median)+(d.bandAvailable?' · Q25–Q75 '+format(d.q25)+'–'+format(d.q75):'')+' · n='+(d.n??'–');body+='<circle class="point distribution-point" data-series="'+esc(id)+'"'+attrs(i)+' fill="'+esc(color)+'" cx="'+x(i)+'" cy="'+y(d.median)+'" r="4.5" aria-label="'+esc(title)+'"><title>'+esc(title)+'</title></circle>';});
+ });
+ if(interactiveSegments){const step=(width-pad.l-pad.r)/Math.max(1,labels.length-1);labels.forEach((label,i)=>{const left=Math.max(pad.l,x(i)-step/2),right=Math.min(width-pad.r,x(i)+step/2);body+='<rect class="distribution-segment-hit" data-course-segment="'+i+'" x="'+left+'" y="'+pad.t+'" width="'+Math.max(1,right-left)+'" height="'+(height-pad.t-pad.b)+'" fill="transparent" pointer-events="all" tabindex="0" role="button" aria-label="Välj delsträcka '+esc(label)+'"/>';});}
+ const legend='<div class="legend distribution-legend">'+prepared.map(item=>'<span data-series="'+esc(item.id||item.name)+'"><i style="background:'+esc(item.color)+'"></i>'+esc(item.name)+(finite(item.n)?' · n='+item.n:'')+'</span>').join('')+'</div>';
+ return legend+svg(body,'Median och fördelningsband per delsträcka',height);
+}
+
+export function signedJourney(points,{format=time,height=290}={}){
+ const values=(points||[]).map(p=>p.value).filter(finite).map(Number);if(!values.length)return empty('Inga gemensamma verkliga passager finns.');
+ const width=740,rawMin=Math.min(0,...values),rawMax=Math.max(0,...values),span=Math.max(60,rawMax-rawMin),minimum=rawMin-span*.1,maximum=rawMax+span*.1,pad={l:76,r:18,t:20,b:58},x=i=>pad.l+(width-pad.l-pad.r)*(points.length<=1?.5:i/(points.length-1)),y=v=>pad.t+(maximum-Number(v))/(maximum-minimum||1)*(height-pad.t-pad.b),zero=y(0);let body='<line class="reference-line" x1="'+pad.l+'" x2="'+(width-pad.r)+'" y1="'+zero+'" y2="'+zero+'"/><text x="'+(pad.l-8)+'" y="'+(zero+4)+'" text-anchor="end">0:00</text>';
+ const ticks=Array.from({length:5},(_,i)=>maximum-(maximum-minimum)*i/4);ticks.forEach(v=>{if(Math.abs(v)<span/50)return;const yy=y(v);body+='<line class="axis" x1="'+pad.l+'" x2="'+(width-pad.r)+'" y1="'+yy+'" y2="'+yy+'"/><text x="'+(pad.l-8)+'" y="'+(yy+4)+'" text-anchor="end">'+esc(format(v))+'</text>';});
+ points.forEach((p,i)=>{const xx=x(i);body+='<text x="'+xx+'" y="'+(height-18)+'" text-anchor="middle" transform="rotate(-18 '+xx+' '+(height-18)+')">'+esc(p.label)+'</text>';});
+ let path='',open=false;points.forEach((p,i)=>{if(!finite(p.value)){open=false;return;}path+=(open?'L':'M')+x(i).toFixed(1)+','+y(p.value).toFixed(1)+' ';open=true;});body+='<path class="plot-line journey-gap-line" d="'+path+'"/>';
+ points.forEach((p,i)=>{if(!finite(p.value))return;const title=p.title||p.label+' · '+format(p.value);body+='<circle class="point journey-point" data-head-point="'+i+'" cx="'+x(i)+'" cy="'+y(p.value)+'" r="5" tabindex="0" role="button" aria-label="'+esc(title)+'"><title>'+esc(title)+'</title></circle>';});
+ return svg(body,'Tidslucka genom loppet',height);
+}
+export function rankJourney(series,labels,{height=290}={}){
+ const values=(series||[]).flatMap(s=>(s.values||[]).filter(finite).map(Number));if(!values.length)return empty('Officiella passageplaceringar saknas.');
+ const width=740,minimum=Math.max(1,Math.floor(Math.min(...values)-Math.max(1,(Math.max(...values)-Math.min(...values))*.08))),maximum=Math.ceil(Math.max(...values)+Math.max(1,(Math.max(...values)-Math.min(...values))*.08)),pad={l:58,r:18,t:20,b:58},x=i=>pad.l+(width-pad.l-pad.r)*(labels.length<=1?.5:i/(labels.length-1)),y=v=>pad.t+(Number(v)-minimum)/(maximum-minimum||1)*(height-pad.t-pad.b);let body='';
+ Array.from({length:5},(_,i)=>minimum+(maximum-minimum)*i/4).forEach(v=>{const yy=y(v);body+='<line class="axis" x1="'+pad.l+'" x2="'+(width-pad.r)+'" y1="'+yy+'" y2="'+yy+'"/><text x="'+(pad.l-8)+'" y="'+(yy+4)+'" text-anchor="end">#'+Math.round(v)+'</text>';});
+ labels.forEach((label,i)=>{const xx=x(i);body+='<text x="'+xx+'" y="'+(height-18)+'" text-anchor="middle" transform="rotate(-18 '+xx+' '+(height-18)+')">'+esc(label)+'</text>';});
+ series.forEach((item,si)=>{let path='',open=false;(item.values||[]).forEach((v,i)=>{if(!finite(v)){open=false;return;}path+=(open?'L':'M')+x(i).toFixed(1)+','+y(v).toFixed(1)+' ';open=true;});body+='<path class="plot-line" data-series="'+esc(item.id||item.name)+'" stroke="'+esc(item.color||['#1677a8','#d9a441'][si%2])+'" d="'+path+'"/>';(item.values||[]).forEach((v,i)=>{if(!finite(v))return;const title=item.name+' · '+labels[i]+' · #'+Math.round(v);body+='<circle class="point journey-point" data-series="'+esc(item.id||item.name)+'" fill="'+esc(item.color||['#1677a8','#d9a441'][si%2])+'" cx="'+x(i)+'" cy="'+y(v)+'" r="5"><title>'+esc(title)+'</title></circle>';});});
+ const legend='<div class="legend">'+series.map((item,i)=>'<span><i style="background:'+(item.color||['#1677a8','#d9a441'][i%2])+'"></i>'+esc(item.name)+'</span>').join('')+'</div>';
+ return legend+svg(body,'Officiell placeringsresa',height);
+}
+
+export function finishProgression(groups,quantileFn){
+ const levels=[{share:.1,label:'10 % i mål'},{share:.25,label:'25 % i mål'},{share:.5,label:'50 % i mål · median',median:true},{share:.75,label:'75 % i mål'},{share:.9,label:'90 % i mål'}],prepared=(groups||[]).map((group,index)=>{const values=(group.values||[]).filter(finite).map(Number);return{...group,color:group.color||palette[index%palette.length],values,times:values.length?levels.map(level=>quantileFn(values,level.share)):[]}}).filter(group=>group.times.length);if(!prepared.length)return empty('Underlag saknas.');
+ return '<div class="finish-progression" role="list" aria-label="Tidpunkter då olika andelar hade gått i mål">'+levels.map((level,index)=>'<article class="finish-threshold'+(level.median?' is-median':'')+'" role="listitem"><div class="finish-threshold-level"><strong>'+level.label+'</strong><span class="finish-threshold-progress" aria-hidden="true"><i style="width:'+(level.share*100)+'%"></i></span></div><dl class="finish-threshold-times">'+prepared.map(group=>'<div class="finish-threshold-group" style="--series-color:'+esc(group.color)+'"><dt><i aria-hidden="true"></i>'+esc(group.name)+'</dt><dd>'+time(group.times[index])+'</dd></div>').join('')+'</dl></article>').join('')+'</div>';
+}
+
+export function horizontalBars(items,{valueFormat=value=>String(Math.round(value)),maxRows=10}={}){
+ const rows=items.filter(item=>finite(item.value)).slice(0,maxRows);if(!rows.length)return empty('Underlag saknas.');
+ const maximum=Math.max(...rows.map(item=>Math.abs(Number(item.value))),1),width=740,rowHeight=40,height=rows.length*rowHeight+12;
+ return svg(rows.map((item,index)=>{const barWidth=Math.abs(Number(item.value))/maximum*340,y=index*rowHeight+8;return '<text x="0" y="'+(y+17)+'">'+esc(String(item.label).length>29?String(item.label).slice(0,28)+'…':item.label)+'</text><rect class="bar '+(index%2?'alt':'')+'" x="245" y="'+y+'" width="'+barWidth+'" height="23" rx="6"/><text x="'+(253+barWidth)+'" y="'+(y+17)+'">'+esc(valueFormat(item.value))+'</text>';}).join(''),'Horisontella staplar',height);
+}

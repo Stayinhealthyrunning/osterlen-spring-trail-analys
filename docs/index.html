@@ -3,16 +3,61 @@
 <body><a class="skip" href="#main">Hoppa till analysen</a>
 <header><a class="brand" href="./" aria-label="ÖST Splits, startsida"><span class="brand-mark">ÖST</span><span>Splits<small>ÖSTERLEN SPRING TRAIL</small></span></a><nav aria-label="Huvudnavigation"><a href="#analysis">Utforska loppet</a><a href="#method" data-section="method">Så fungerar det</a></nav></header>
 <main id="main" tabindex="-1">
-<section class="hero"><div class="hero-copy"><p class="eyebrow">ÖSTERLEN SPRING TRAIL · 2018–2026</p><h1>Österlen<br><em>Spring Trail.</em></h1><p class="hero-lead">Verkliga resultat, passager och banor – från Österlens kust mot inlandet.</p><form id="global-search" role="search"><label for="lookup">Sök löpare, lag eller startnummer</label><div class="search-box"><input id="lookup" type="search" placeholder="Börja skriva ett namn eller nummer" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="lookup-suggestions" aria-expanded="false"><button aria-label="Sök löpare eller lag">Sök</button></div><div id="lookup-suggestions" class="suggestions" role="listbox" hidden></div></form><div class="hero-tools" aria-label="Snabbverktyg"><button id="focus-runner-search" type="button"><span>Individuell analys</span><small>Sök löpare, lag eller startnummer</small></button><button id="open-compare-dialog" type="button"><span>Kartduell & jämför</span><small>Jämför två resultat eller upp till fem på kartan</small></button><a href="#analysis"><span>Utforska loppet</span><small>Öppna hela analysflödet</small></a></div><span class="hero-proof"><b>34</b> upplagor i analysmotorn</span></div></section>
-<div id="family-cards" class="family-cards" role="group" aria-label="Välj loppfamilj"></div>
+<section class="hero"><div class="hero-copy"><p class="eyebrow">ÖSTERLEN SPRING TRAIL · 2018–2026</p><h1>Österlen<br><em>Spring Trail.</em></h1><p class="hero-lead">Verkliga resultat, passager och banor – från Österlens kust mot inlandet.</p></div></section>
 
-<section id="analysis" class="analysis"><div class="context"><div><p class="eyebrow">VÄLJ LOPP & UPPLAGA</p><h2 id="race-heading">Laddar loppkatalog…</h2></div><div class="context-controls"><label>Upplaga<select id="year" disabled></select></label><label>Fartenhet<select id="unit"><option value="pace">min/km</option><option value="speed">km/h</option></select></label></div></div>
-<p id="load-status" role="status" aria-live="polite">Laddar katalog…</p>
-<nav id="analysis-nav" class="analysis-nav" aria-label="Analysnavigation"></nav>
-<div id="filters" class="filters"></div><p id="selection-count" class="muted"></p>
-<div id="view" aria-busy="true"></div></section>
+<section id="analysis" class="analysis">
+  <div class="race-selection">
+    <div id="family-cards" class="family-cards" role="tablist" aria-label="Välj loppfamilj"></div>
+    <label class="race-year-select" for="year">År / upplaga<select id="year" disabled aria-label="Välj år eller upplaga"></select></label>
+  </div>
+
+  <nav id="analysis-nav" class="analysis-nav" aria-label="Analysnavigation"></nav>
+
+  <section class="panel runner-lookup" id="runner-lookup">
+    <div><p class="eyebrow ink" id="lookup-eyebrow">DELTAGARANALYS</p><h2 id="lookup-title">Analysera en löpares lopp</h2><p id="lookup-copy">Sök på namn eller startnummer och öppna en komplett profil med mellantider, placering, tempo, jämförelser och Replay.</p></div>
+    <form id="global-search" class="picker" role="search">
+      <label for="lookup">Hitta löpare eller lag</label>
+      <input id="lookup" type="search" placeholder="Namn eller startnummer" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="lookup-suggestions" aria-expanded="false">
+      <div id="lookup-suggestions" class="suggestions" role="listbox" hidden></div>
+    </form>
+  </section>
+
+  <section class="panel favorites-panel" id="favorites-panel">
+    <div class="favorites-heading"><p class="eyebrow ink">FAVORITER</p><h2 id="favorites-title">Sparade löpare</h2><p>Favoriter sparas endast i den här webbläsaren.</p></div>
+    <div id="favorites-top"></div>
+    <p id="favorites-feedback" class="favorites-feedback" aria-live="polite"></p>
+  </section>
+
+  <section class="panel duel-picker-panel" id="map-duel-panel">
+    <div><p class="eyebrow ink">KARTA &amp; KARTDUELL</p><h2>Jämför loppet på kartan</h2><p id="duel-copy">Kartduell jämför två till fem deltagare på banan. För analys av en enda deltagare använder du deltagaranalysen och Replay.</p></div>
+    <div>
+      <div class="picker compare-inline-picker">
+        <label for="duel-search">Välj deltagare</label>
+        <input id="duel-search" type="search" autocomplete="off" placeholder="Namn eller startnummer" role="combobox" aria-autocomplete="list" aria-controls="duel-suggestions" aria-expanded="false">
+        <div id="duel-suggestions" class="suggestions" role="listbox" hidden></div>
+      </div>
+      <div class="selected-chips" id="duel-selected"></div>
+      <div class="duel-launchers">
+        <button id="open-head-to-head" type="button" disabled>Välj två resultat</button>
+        <button id="open-map-duel" type="button" disabled>Välj minst två resultat</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="scope panel" id="overview-context">
+    <div><p class="eyebrow ink">LOPP- OCH FÄLTSTATISTIK</p><h2 id="race-heading">Laddar loppkatalog…</h2><p id="load-status" role="status" aria-live="polite">Laddar katalog…</p></div>
+  </section>
+
+  <div id="filters" class="filters toolbar"></div>
+  <section class="panel goal-pace" id="goal-pace">
+    <div class="goal-pace-head"><div><p class="eyebrow ink">PERSONLIG LOPPPLAN</p><h2>Måltempo</h2><p>Gör en önskad sluttid till en segmenterad plan för det valda loppet.</p></div><span class="pill" id="goal-pace-race">Valt lopp</span></div>
+    <div id="goal-pace-content"></div>
+  </section>
+  <p id="selection-count" class="active-filter-summary muted"></p>
+  <div id="view" aria-busy="true"></div>
+</section>
 </main><footer><strong>ÖST Splits</strong><p>En del av Loppanalys · Oberoende analys av publicerade tävlingsresultat.</p><a href="https://www.osterlentrail.se/">Österlen Spring Trail</a> · <a href="#method" data-section="method">Källor & metod</a></footer>
 <dialog id="profile" aria-labelledby="profile-title"><div class="dialog-toolbar"><span class="eyebrow">INDIVIDUELL ANALYS</span><button id="close-profile" autofocus aria-label="Stäng profil">Stäng ×</button></div><div id="profile-body"></div></dialog>
 <dialog id="compare-dialog" aria-labelledby="compare-dialog-title"><div class="dialog-toolbar"><div><span class="eyebrow">JÄMFÖRELSEVERKTYG</span><h2 id="compare-dialog-title">Direktjämförelse & Kartduell</h2></div><button id="close-compare-dialog" aria-label="Stäng jämförelse">Stäng ×</button></div><div id="compare-dialog-body"></div></dialog>
-<dialog id="duel" aria-labelledby="duel-title"><div class="dialog-toolbar"><h2 id="duel-title">Kartduell</h2><button id="close-duel">Stäng ×</button></div><div id="duel-body"></div></dialog>
+<dialog id="duel" class="duel-dialog" aria-labelledby="duel-dialog-race"><header class="duel-dialog-header"><div class="duel-dialog-heading"><span>KARTDUELL</span><strong id="duel-dialog-race">Valt lopp</strong><small id="duel-dialog-count">2 deltagare</small></div><div class="duel-dialog-clock" aria-label="Tävlingsklocka"><span>TÄVLINGSKLOCKA</span><strong id="duel-dialog-clock">0:00:00</strong><small>av <span id="duel-dialog-clock-max">0:00:00</span></small></div><div class="duel-dialog-actions"><button class="secondary" id="duel-dialog-share" type="button">↗ <span>Dela</span></button><button id="close-duel" class="duel-dialog-close" type="button" aria-label="Stäng Kartduell">×</button></div></header><div id="duel-body" class="duel-modal-stage"></div></dialog>
 <noscript>ÖST Splits behöver JavaScript för att läsa och analysera resultaten.</noscript></body></html>
