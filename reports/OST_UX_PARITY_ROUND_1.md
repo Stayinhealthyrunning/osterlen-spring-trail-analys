@@ -65,3 +65,10 @@ Den kritiska kod- och dataöverföringen mäts i slutrevisionen till 72 573 byte
 ## Referensparitet efter slutrevision
 
 En separat slutrevision mot Gotaleden och Ultravasan finns i `reports/OST_REFERENCE_PARITY_AUDIT.md`. I denna runda kompletterades ÖST med checkpointbaserat fältflöde, källstödd stark avslutning, dynamisk metodkontext nära toppen, historiskt fingeravtryck/index 100, jämförbar toppnotering, könstrend över år och GPX-baserade terrängmått i Course Intelligence. Dessa funktioner återanvänder endast befintliga källvärden och kontrakt.
+
+
+## Fortsättning: UX-gap och faktisk produktionspolish
+
+`reports/OST_UX_PARITY_GAP_ANALYSIS.md` dokumenterar den sida- och funktionsvisa jämförelsen mot båda referensverktygen före implementationen. Denna uppföljning omsätter identifierade gap i verkliga interaktioner: fullbreddshero med direkt sök/autocomplete och profilöppning, tidig Kartduell-ingång, metodik flyttad ur Översikt, klickbara könsserier i sluttids-, percentil- och segmentvyer, n per percentil, stapelöversikt med expanderbar detaljtabell för klass/ålder/klubb samt ett tätare fältflöde utan startankare. Dekorativa route-journey-sektionen har tagits bort. ÖST:s egna bilder, färger, språk och källgränser är kvar.
+
+Den faktiska scrollarkitekturen från föregående runda är bevarad: huvudanalysen är ett gemensamt capability-styrt dokument med sektionerna samtidigt i DOM, ankarnavigation uppdaterar URL och fokus, och Back/Forward återställer vald sektion. Resultat och direktjämförelse/Kartduell är separata vyer. Se `reports/OST_UX_PARITY_GAP_ANALYSIS.md` och `reports/OST_SPLITS_VISUAL_QA.md` för jämförelse och verifiering.
