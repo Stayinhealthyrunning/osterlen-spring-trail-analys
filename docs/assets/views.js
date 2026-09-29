@@ -249,10 +249,10 @@ function standoutPanel(a,rows,state){
  return '<section class="card standout-world"><div class="card-heading"><div><p class="eyebrow">PRESTATIONER SOM STICKER UT</p><h3>Fem sätt att hitta ovanliga lopp</h3></div>'+info('standout-method','Varje flik använder källstödda passager. Saknade delsträckor fylls inte ut. Relativa mått jämförs med aktuellt filtrerat fält.')+'</div><div class="standout-tabs">'+tabs.map(([id,label])=>'<button type="button" data-standout-tab="'+id+'" aria-selected="'+(id===active)+'">'+esc(label)+'</button>').join('')+'</div><div class="ranking">'+(items.length?items.map((item,index)=>'<button type="button" class="ranking-row standout-row" data-result="'+esc(item.r.source_result_id)+'"><b>'+(index+1)+'</b><span><strong>'+esc(item.r.name)+'</strong><small>#'+esc(item.r.bib)+' · '+esc(item.r.class_name||'')+'</small></span><em>'+esc(item.label)+'</em></button>').join(''):empty('Underlag saknas.'))+'</div></section>';
 }
 function finalSprintControl(a){
- if(a.race.participant.entity==='team'||a.boundary.length<3)return null;
- const cp=a.boundary.at(-2),finish=a.boundary.at(-1),label=String(cp.source_label||cp.name||''),match=label.match(/(\d+(?:[.,]\d+)?)\s*km/i),distance=match?Number(match[1].replace(',','.')):finite(cp.race_distance_km)?Number(cp.race_distance_km):null,finishDistance=finite(finish.race_distance_km)?Number(finish.race_distance_km):finite(a.race.nominal_distance_km)?Number(a.race.nominal_distance_km):null;
- if(!finite(distance)||!finite(finishDistance))return null;const remaining=finishDistance-distance;if(remaining<=0||remaining>15)return null;
- return {cp,finish,distance,remaining};
+ if(a.race.participant.entity==='team')return null;
+ const finish=a.checkpoints.find(cp=>cp.key==='finish')||a.boundary.at(-1),finishDistance=finite(finish?.race_distance_km)?Number(finish.race_distance_km):finite(a.race.nominal_distance_km)?Number(a.race.nominal_distance_km):null;if(!finish||!finite(finishDistance))return null;
+ const candidates=a.checkpoints.filter(cp=>cp.key!=='start'&&cp.key!=='finish').map(cp=>{const label=String(cp.source_label||cp.name||''),match=label.match(/(\d+(?:[.,]\d+)?)\s*km/i),distance=match?Number(match[1].replace(',','.')):finite(cp.race_distance_km)?Number(cp.race_distance_km):null,remaining=finite(distance)?finishDistance-distance:null;return {cp,distance,remaining};}).filter(x=>finite(x.remaining)&&x.remaining>0&&x.remaining<=15).sort((x,y)=>x.remaining-y.remaining);
+ const best=candidates[0];return best?{...best,finish}:null;
 }
 function sprintWinnerRanking(a,rows,state){
  const control=finalSprintControl(a);if(!control)return '';
