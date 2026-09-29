@@ -17,7 +17,7 @@ function isFavorite(r){return favorites.some(f=>f.race===a.race.race_key&&f.id==
 async function loadRace(key,{restore=null,replace=false}={}){
  const token=++generation;closeMaps();$('#profile').close();$('#duel').close();state=switched(state,key);if(restore)Object.assign(state,restore);
  $('#view').setAttribute('aria-busy','true');$('#view').innerHTML=empty('Laddar vald upplaga…');status('Katalog klar → laddar valt lopp/år');$('#year').disabled=true;
- try{const doc=await loader.race(key);if(token!==generation)return;a=adapt(doc,boot);state.compare=state.compare.filter(id=>a.byId.has(id));state.section=normalizeSection(state.section);controls();filters();await render();syncURL(replace);status('Katalog → vald upplaga klar · '+a.records.length+' resultat · historik i analysflödet · rutt/replay efter behov');if(isFlowSection(state.section))scrollToSection(state.section,{focus:state.section!=='overview',behavior:'auto'});if(state.profile)openProfile(state.profile,false);}
+ try{const doc=await loader.race(key);if(token!==generation)return;a=adapt(doc,boot);state.compare=state.compare.filter(id=>a.byId.has(id)).slice(0,a.race.capabilities.replay?5:2);state.section=normalizeSection(state.section);controls();filters();await render();syncURL(replace);status('Katalog → vald upplaga klar · '+a.records.length+' resultat · historik i analysflödet · rutt/replay efter behov');if(isFlowSection(state.section))scrollToSection(state.section,{focus:state.section!=='overview',behavior:'auto'});if(state.profile)openProfile(state.profile,false);}
  catch(e){if(token===generation){$('#view').innerHTML=empty(e.message)+'<button id="retry">Försök igen</button>';$('#retry').onclick=()=>loadRace(key,{restore:state,replace:true});}}
  finally{if(token===generation){$('#view').setAttribute('aria-busy','false');$('#year').disabled=false;}}
 }
@@ -37,6 +37,7 @@ function filters(){
  $('#filters').innerHTML=(a.race.capabilities.sex_filter&&a.race.participant.entity==='person'?'<label>Kön<select data-filter="sex"><option value="">Alla</option><option value="F">Kvinnor</option><option value="M">Män</option></select></label>':'')+options('class_name',a.race.participant.entity==='team'?'Lagklass':'Klass')+options('status','Status')+club+'<button id="reset-filters">Återställ</button>';
 }
 function selected(){return filterRows(a.records,state.filters);}
+function compareLimit(){return a?.race?.capabilities?.replay?5:2;}
 function filterSummary(){
  const names={sex:'Kön',class_name:a.race.participant.entity==='team'?'Lagklass':'Klass',status:'Status',club:'Klubb / ort'},value=(key,v)=>key==='sex'?(v==='F'?'Kvinnor':v==='M'?'Män':v):v;
  const active=Object.entries(state.filters).filter(([,v])=>v);return active.map(([key,v])=>(names[key]||key)+': '+value(key,v)).join(' · ')||'Inga fältfilter';
@@ -92,7 +93,7 @@ function resultTable(){
 function compareOptions(q){
  const root=$('#compare-options');if(!root)return;
  q=q.trim();const input=$('#compare-search');if(!q){root.hidden=true;root.innerHTML='';input?.setAttribute('aria-expanded','false');return;}
- root.hidden=false;input?.setAttribute('aria-expanded','true');if(state.compare.length>=5){root.innerHTML='<p class="picker-empty">Max fem resultat kan väljas till Kartduell. Ta bort ett val för att lägga till ett annat.</p>';return;}
+ root.hidden=false;input?.setAttribute('aria-expanded','true');const limit=compareLimit();if(state.compare.length>=limit){root.innerHTML='<p class="picker-empty">'+(limit===5?'Max fem resultat kan väljas till Kartduell.':'Den här upplagan saknar rutt/replay; Direktjämförelse använder exakt två resultat.')+' Ta bort ett val för att lägga till ett annat.</p>';return;}
  const matches=a.records.filter(r=>resultMatches(r,q)&&!state.compare.includes(String(r.source_result_id))).slice(0,8);root.innerHTML=matches.length?matches.map(r=>'<button role="option" data-add-compare="'+esc(r.source_result_id)+'"><span><strong>'+esc(r.name)+'</strong><small>#'+esc(r.bib)+' · '+esc(r.class_name||'Klass saknas')+'</small></span><b>Lägg till</b></button>').join(''):'<p class="picker-empty">Inga resultat matchar sökningen.</p>';
 }
 function clubValues(){const seen=new Map();for(const r of a.records){const value=String(r.club||'').trim(),key=value.toLocaleLowerCase('sv');if(value&&!seen.has(key))seen.set(key,value);}return [...seen.values()].sort((x,y)=>x.localeCompare(y,'sv'));}
@@ -120,7 +121,7 @@ document.addEventListener('click',async e=>{
  if(b.dataset.info){const t=document.getElementById(b.dataset.info);t.hidden=!t.hidden;b.setAttribute('aria-expanded',!t.hidden);return;}
  if(b.dataset.segment){const keepCourse=Boolean(mapView&&$('#course-map')?.querySelector('.map'));state.segment=+b.dataset.segment;mapView?.select(state.segment);document.querySelectorAll('button[data-segment]').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.segment===state.segment));if(isFlowSection(state.section)){await render();if(keepCourse&&$('#load-course'))await showMap($('#course-map'),[],'course');}return;}
  if(b.dataset.sort){state.dir=state.sort===b.dataset.sort?-(state.dir||1):1;state.sort=b.dataset.sort;resultTable();return;}
- if(b.dataset.addCompare){const id=b.dataset.addCompare;if(!state.compare.includes(id)&&state.compare.length<5)state.compare.push(id);else if(!state.compare.includes(id)){status('Max fem resultat kan väljas till Kartduell');return;}status(state.compare.length+' resultat valda för jämförelse');if(state.section==='compare')await render();syncURL();return;}
+ if(b.dataset.addCompare){const id=b.dataset.addCompare,limit=compareLimit();if(!state.compare.includes(id)&&state.compare.length<limit)state.compare.push(id);else if(!state.compare.includes(id)){status(limit===5?'Max fem resultat kan väljas till Kartduell':'Direktjämförelse använder högst två resultat för den här upplagan');return;}status(state.compare.length+' resultat valda för jämförelse');if(state.section==='compare')await render();syncURL();return;}
  if(b.dataset.removeCompare){state.compare=state.compare.filter(id=>id!==b.dataset.removeCompare);await render();syncURL();return;}
  if(b.dataset.favorite){const r=a.byId.get(b.dataset.favorite);if(isFavorite(r))favorites=favorites.filter(f=>!(f.race===a.race.race_key&&f.id===b.dataset.favorite));else favorites.push({race:a.race.race_key,id:String(r.source_result_id),name:r.name,year:a.race.year});saveFavorites();b.textContent=isFavorite(r)?'Sparad':'Spara lopp';b.setAttribute('aria-pressed',isFavorite(r));return;}
  if(b.dataset.openFavorite){await loadRace(b.dataset.openFavorite,{restore:{profile:b.dataset.id}});return;}
