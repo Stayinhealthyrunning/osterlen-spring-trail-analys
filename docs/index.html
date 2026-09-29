@@ -14,7 +14,7 @@
   <nav id="analysis-nav" class="analysis-nav" aria-label="Analysnavigation"></nav>
 
   <section class="panel runner-lookup" id="runner-lookup">
-    <div><p class="eyebrow ink">DELTAGARANALYS</p><h2>Analysera en löpares lopp</h2><p>Sök på namn, lag eller startnummer och öppna en komplett profil med mellantider, placering, tempo, jämförelser och Replay när underlaget medger det.</p></div>
+    <div><p class="eyebrow ink" id="lookup-eyebrow">DELTAGARANALYS</p><h2 id="lookup-title">Analysera en löpares lopp</h2><p id="lookup-copy">Sök på namn eller startnummer och öppna en komplett profil med mellantider, placering, tempo, jämförelser och Replay.</p></div>
     <form id="global-search" class="picker" role="search">
       <label for="lookup">Hitta löpare eller lag</label>
       <input id="lookup" type="search" placeholder="Namn eller startnummer" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="lookup-suggestions" aria-expanded="false">
@@ -23,13 +23,13 @@
   </section>
 
   <section class="panel favorites-panel" id="favorites-panel">
-    <div class="favorites-heading"><p class="eyebrow ink">FAVORITER</p><h2>Sparade löpare och lag</h2><p>Favoriter sparas endast i den här webbläsaren.</p></div>
+    <div class="favorites-heading"><p class="eyebrow ink">FAVORITER</p><h2 id="favorites-title">Sparade löpare</h2><p>Favoriter sparas endast i den här webbläsaren.</p></div>
     <div id="favorites-top"></div>
     <p id="favorites-feedback" class="favorites-feedback" aria-live="polite"></p>
   </section>
 
   <section class="panel duel-picker-panel" id="map-duel-panel">
-    <div><p class="eyebrow ink">KARTA &amp; KARTDUELL</p><h2>Jämför loppet på kartan</h2><p>Välj två resultat för Direktjämförelse. Där Replay stöds kan två till fem resultat spelas upp tillsammans på banan.</p></div>
+    <div><p class="eyebrow ink">KARTA &amp; KARTDUELL</p><h2>Jämför loppet på kartan</h2><p id="duel-copy">Kartduell jämför två till fem deltagare på banan. För analys av en enda deltagare använder du deltagaranalysen och Replay.</p></div>
     <div>
       <div class="picker compare-inline-picker">
         <label for="duel-search">Välj deltagare</label>
