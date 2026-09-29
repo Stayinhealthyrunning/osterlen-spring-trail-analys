@@ -1,82 +1,109 @@
 # ÖST Splits – build report
 
-Datum: 2026-09-28  
-Branch: `build/ost-splits-engine1`
+Datum: 2026-09-29  
+PR: #48 `improve/ost-ux-parity`  
+Runtime-QA: `e944809c73b40e90aa7129a3315d566433e0b2e9`
 
-## Referenser och baseline
+## Referenser
 
-- ÖST baseline: `e72405a13dbcd775ac20123da2bd08bc79e964f6`.
-- Gotaleden implementationsreferens: `bd9f2aaf0466f2ad65b50d35e25981e4597350f1`.
-- Ultravasan analys-/UX-referens: `8d1ef31c7a820a594adf89783453154ccab4751e`.
-- Fryst semantiskt kontrakt: `loppanalys-engine-1.0`.
+- ÖST Engine-/systembas: `main@42c165f4bcead9f371348fcc0837ab96f9a2fda5`
+- Gotaleden Engine-/UX-referens: `bd9f2aaf0466f2ad65b50d35e25981e4597350f1`
+- Ultravasan UX-/analysreferens: `8d1ef31c7a820a594adf89783453154ccab4751e`
+- Semantiskt kontrakt: `loppanalys-engine-1.0`
 
-Gotaleden bidrog med den explicita modellen för individ/team, capability-driven rendering, resultattabell, profil, jämförelse och karta/replay. Ultravasan bidrog med progressiv laddning, null-säker diagrammatematik, evidensstyrd historik, CourseVersion-gränser, metodguide, responsivitet och reducerad rörelse. ÖST:s källa, adapter, branding, copy och capability-matris ligger kvar i ÖST-repot.
+PR #48 är en produkt-/UX-runda ovanpå den auditerade Engine 1.0-implementationen. Frysta source data och provenance-kontrakt ändras inte.
 
 ## Levererad produkt
 
-Den statiska GitHub Pages-frontenden laddar `bootstrap.json`, därefter exakt en vald RaceEdition. Historiksammanställning och lokal route/elevation laddas först när användaren öppnar funktionerna. Den kompletta Engine-exporten laddas aldrig av browsern.
+ÖST använder nu samma centrala produktmönster som referensverktygen:
 
-Frontend omfattar landningssida, global lopp-/årskontext, resultatdatabas, person-/lagprofil, favoriter, fältfilter, finishfördelning, percentiler, demografi där källan räcker, gruppanalys, split-/segmentanalys, DNF-flöde, placeringsrörelse, måltempo/loppplan, Direktjämförelse, Kartduell, flerårshistorik, metodguide samt karta/Replay där aktuell upplaga har både verkliga passager och lokal rutt.
+- kompakt fullbreddshero med primär löparsök,
+- topplacerad individuell analys,
+- topplacerad Direktjämförelse/Kartduell i modal,
+- autocomplete och keyboard-flöde,
+- capability-driven långscroll,
+- sticky ankarnavigation,
+- resultatdatabas,
+- profil/favoriter,
+- interaktiva kvinna/man-serier,
+- sluttid och percentiler,
+- klass/ålder/klubb som visualisering först och tabell på begäran,
+- DNF-/fältflöde,
+- segment/spridning/placeringsrörelse,
+- relativ deltagarprestation mot fältmedian,
+- bana/proveniens/höjd,
+- måltempo/loppplan,
+- historisk jämförbarhet och fingeravtryck,
+- lokal (i)-metodik + full Metod-sektion,
+- Replay/Kartduell endast där capability medger det.
 
-## Portabilitetsbevis och capability-matris
+ÖST:s visuella uttryck är fortfarande eget: Österlenkust, vår, blomning, skog och fem familjespecifika miljöbilder.
 
-| Fall | Resultat |
-|---|---|
-| Ultra 2018 | Resultat och verkliga splits; ingen karta/replay och ingen lånad rutt. |
-| Ultra 2023 | `32 km` och `Bengtemölla` bevaras separat; primär analys använder Bengtemölla och inga depåanspråk görs. |
-| Ultra 2025 | Resultat, splits, profil, lokal arrangörsrutt, höjd, Replay och Kartduell. |
-| Duo 2025 | Lagsemantik, team-splits och 599-katalogens publicerade medlemsrader; `source_sequence` bevaras och `leg_no` förblir null. |
-| Trail 22 2026 | Finish/resultat, demografi/klass och CourseVersion; splits/replay avstängda. |
-| Trail 14 2026 | Provisorisk 13,472 km arbetsreferens beskrivs utan officiell GPX eller Replay. |
-| Trail 5 2026 | Lokal rekonstruerad referens märks som rekonstruerad; inga splits eller Replay. |
-| Trail 22 2018 | Resultat fungerar; course provenance förblir olöst och prestationshistorik kopplas inte. |
+## Data och capability
 
-Samma adapter och vykomponenter hanterar alla fallen. Frontend innehåller inga regler baserade på eventnamn, ordet Ultra, ordet Duo eller platsnamn för att slå på funktioner.
+Oförändrade totals:
 
-## Dataintegritet
+- 34 genomförda RaceEditions
+- 9 871 resultat
+- 6 123 observerade splits/mellantider
+- 300 Duo-lag
+- 599 lagmedlemsrader
 
-Efter bygget är de frysta invariants oförändrade: 34 genomförda RaceEditions, 9 871 resultat, 9 571 individuella deltagarrader, 300 Duo-lag, 599 medlemsrader, 6 123 observerade splitpassager och 699 derived metrics. Status är fortsatt 9 518 FINISHED, 332 DNF och 21 UNKNOWN. Källarkivet och den kuraterade databasen skyddas av versionsstyrda SHA-256-lås och testas oförändrade. Ingen Sportstiming-crawl körs i frontendbygget.
+Samma adapter/vylogik hanterar:
 
-## Slutlig prestanda
+- modern Ultra med splits + lokal rutt + Replay,
+- äldre Ultra med splits men utan lånad rutt,
+- Duo som team utan fabricerad member→leg,
+- Trail 22/14/5 med finish-only-analys där splits saknas,
+- provisorisk/rekonstruerad geometri med tydlig provenance.
 
-| Resurs | Raw | Gzip | Budget gzip |
+## Slutlig performance
+
+| Resurs | Raw | Gzip | Budget |
 |---|---:|---:|---:|
-| HTML | 3 540 B | 1 559 B | 32 KiB |
-| CSS | 41 294 B | 9 840 B | 75 KiB |
-| JavaScript, konservativt alla egna moduler | 101 668 B | 33 921 B | 256 KiB |
-| Bootstrap | 29 950 B | 3 151 B | 10 KiB |
-| Största valda RaceEdition | 329 247 B | 29 233 B | 600 KiB raw / 75 KiB gzip |
-| Bootstrap + största RaceEdition | – | 32 384 B | 100 KiB |
-| Kritisk initial väg | – | 77 704 B | 512 KiB |
-| Full Engine regression guard | 5 417 505 B | 450 547 B | 750 KiB |
-| Leaflet, lazy vendor | 162 363 B | 45 966 B | utanför initial väg |
+| HTML | 4 086 B | 1 693 B | 32 KiB gzip |
+| CSS | 48 566 B | 11 240 B | 75 KiB gzip |
+| JavaScript | 110 075 B | 35 650 B | 256 KiB gzip |
+| Bootstrap | – | 3 143 B | 10 KiB gzip |
+| Största valda RaceEdition | 329 247 B | 29 234 B | 600 KiB raw / 75 KiB gzip |
+| Bootstrap + största RaceEdition | – | 32 377 B | 100 KiB gzip |
+| Full Engine | 5 417 501 B | 450 542 B | 750 KiB gzip |
+| Kritisk initial kod/data | – | 80 960 B | 512 KiB gzip |
 
-Rutt/elevation är lazy. 2025–2026 Ultra-route är cirka 59,62 km med 4 246 GPX-punkter; 2024-rutten är cirka 60,60 km med 3 258 punkter. Trail 5-rutten är en separat rekonstruerad referens. Initial browserlogg visar endast bootstrap och vald RaceEdition innan användaren efterfrågar historik eller karta. Första användbara vy observerades kring 477 ms i lokal headless Chromium; detta är en QA-observation, inte ett nätverks-SLA.
-
-Lazy route/elevation-bundles mäter 129 053 B raw / 41 687 B gzip för Ultra 2024, 163 249 B raw / 50 567 B gzip för Ultra 2025–2026 och 6 988 B raw / 2 428 B gzip för Trail 5-referensen. Varje bundle innehåller aktuell rutt och eventuell höjdprofil och hämtas bara för vald CourseVersion.
+Route, elevation, replay och Leaflet är fortsatt lazy. Historiken levereras som purpose-built aggregate och alla 9 871 resultat hydreras aldrig vid initial start.
 
 ## Test och QA
 
-- 25 Python/unittest-fall: gröna.
-- 26 Node-fall för diagrammatematik, null, capability, Duo, identitet, jämförbarhet, DNF, state, loading och loppplan: gröna.
-- 14 Chromium-flöden över 1536×1024, 1366×768, 900×900 och 390×844: gröna.
-- 0 console errors, 0 page errors och 0 oväntade nätverksfel.
-- Foundation, prebuild och frontend performance-grind ingår i CI.
+På runtime-QA-commit `e944809c73b40e90aa7129a3315d566433e0b2e9`:
 
-## Tillgänglighet
+- Foundation: grön
+- Prebuild: grön
+- 25 Python-tester: gröna
+- 27 JavaScript-tester: gröna
+- 20 Chromium-flöden: gröna
+- alla 34 upplagor capability-testade
+- 1536×1024, 1366×768, 900×900, 390×844 utan document overflow
+- 0 console/page/unexpected-network errors
+- lokal first useful view cirka 452 ms
 
-Leveransen har en H1, skip link, fokuserbart main, riktiga labels, `aria-current`, `aria-pressed`, `aria-sort`, tangentbordsöppningsbara resultatrader, Escape-stängning, metodrelationer och reduced-motion-läge. Diagrammens betydelse anges i text och färg används inte ensam.
+## Viktiga regressionsgrindar
 
-## Källstyrda begränsningar
+- sida utan explicit deep link öppnar högst upp,
+- hero är fullbredd och kompakt,
+- individuell sök/autocomplete öppnar profilmodal,
+- profil kan gå direkt till jämförelsemodal,
+- jämförelsesök har keyboard autocomplete,
+- Direktjämförelse och Kartduell är fokuserade dialogflöden,
+- DNF används som publik term,
+- kvinnor/män kan tändas/släckas där parallella diagramserier finns,
+- Fältflöde utelämnar trivial Start=100 %,
+- ålder/klass/klubb har visuella översikter,
+- gamla Ultra/Duo-checkpoints är kronologiska,
+- finish-only-familjer får inga syntetiska splits/replay,
+- reduced motion och tile-failure fallback fungerar.
 
-Historiska Ultra-rutter utan lokalt redistributerbart underlag får ingen karta/replay. Kortloppen saknar publicerade mellantider. Trail 14 är en arbetsreferens, Trail 5 en rekonstruktion och Trail 22 2018 har olöst årsspecifik route provenance. Historisk demografi förblir saknad där källan saknar fälten. Ingen flerårig personidentitet eller Duo member-to-leg-koppling skapas.
+## Medvetna evidensgränser
 
-ÖST SPLITS READY FOR HUMAN REVIEW: YES
+Ingen cross-year personidentitet, Duo member→leg, syntetisk split, lånad historisk bana eller syntetisk difficulty score skapas. Historisk prestation kräver explicit whole-course-jämförbarhet.
 
-
-
-## UX-paritetsrunda – 2026-09-29
-
-Före implementationen dokumenterades en konkret jämförelse av ÖST, Ultravasan och Gotaleden i `reports/OST_UX_PARITY_GAP_ANALYSIS.md`. Rundan behöll ÖST:s befintliga capability-styrda långscroll och specialvyer, men flyttade upp de individuella verktygen och förbättrade deras interaktion: hero-sök/autocomplete till profil, tidig Kartduell, serieval för könsserier, antal och skannbara percentilmarkörer, stapelöversikt med expanderbara gruppdetaljer samt ett komprimerat fältflöde utan Start=100 %. Metodguiden flyttades till Metod och varje relevant analyskort fick en kort förklaring. Den dekorativa route-journey-sektionen togs bort. DNF-etiketter och Österlens bildidentitet behölls konsekvent.
-
-Slutlig visuell och funktionell verifiering finns i `reports/OST_SPLITS_VISUAL_QA.md`. Slutbudgeten uppmättes till 77 704 B gzip för kritisk kod/dataöverföring och första användbar vy omkring 477 ms i lokal headless Chromium. Engine 1.0 och dataproveniens lämnades orörda.
+**ÖST SPLITS READY FOR HUMAN REVIEW: YES**
