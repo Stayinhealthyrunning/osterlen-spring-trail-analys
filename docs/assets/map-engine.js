@@ -70,9 +70,10 @@ export async function mountMap(root,{route,adapter,records=[],segment=0,reduced=
  }
  const L=await leaflet();if(destroyed||!root.isConnected)return {destroy(){}};
  if(L){
-  map=L.map(box,{zoomControl:true,attributionControl:true,scrollWheelZoom:false,zoomAnimation:!reduced,fadeAnimation:!reduced});
-  const line=L.polyline(route.points.map(p=>[p[0],p[1]]),{color:colors[0],weight:4}).addTo(map);map.fitBounds(line.getBounds(),{padding:[30,30]});
-  tiles=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap contributors'});
+  map=L.map(box,{zoomControl:true,attributionControl:true,scrollWheelZoom:false,preferCanvas:true,zoomAnimation:false,fadeAnimation:false,markerZoomAnimation:false});
+  const coords=route.points.map(p=>[p[0],p[1]]),bounds=L.latLngBounds(coords);if(bounds.isValid())map.fitBounds(bounds,{padding:[30,30],animate:false});else map.setView(coords[0],10);
+  const line=L.polyline(coords,{color:colors[0],weight:4}).addTo(map);
+  tiles=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap contributors'});
   let tileFailed=false;tiles.on('tileerror',()=>{if(tileFailed)return;tileFailed=true;box.classList.add('route-only');tiles.remove();status.textContent='OpenStreetMap kunde inte laddas. Rutt, kontroller och deltagare visas fortfarande.';});tiles.on('load',()=>{if(!tileFailed)status.textContent='OpenStreetMap · aktuell upplagas rutt';});tiles.addTo(map);
   Object.entries(route.anchors).forEach(([key,d])=>{const p=pointAtDistance(route.points,d);if(!p)return;const cp=adapter.checkpoints.find(c=>c.key===key);L.circleMarker(p,{radius:5,color:colors[0],fillOpacity:1}).bindTooltip(esc(cp?.name||key),{direction:'top'}).addTo(map);});
   markers=models.map((m,i)=>{const dot=L.circleMarker(pointAtDistance(route.points,m.anchors[0].distance),{radius:9,color:m.color,fillColor:m.color,fillOpacity:1}).bindTooltip((i+1)+'. '+esc(m.label),{permanent:true,direction:'right',className:'runner-label'}).addTo(map);return {update:d=>{const p=pointAtDistance(route.points,d);if(p)dot.setLatLng(p);},remove:()=>dot.remove()};});
@@ -114,6 +115,6 @@ export async function mountMap(root,{route,adapter,records=[],segment=0,reduced=
  if(profile){
   audio=root.querySelector('[data-replay-audio]');const mute=root.querySelector('[data-mute]'),volume=root.querySelector('[data-volume]');let enabled=true;try{enabled=localStorage.getItem('ost-replay-music-enabled')!=='false';const saved=Number(localStorage.getItem('ost-replay-music-volume'));if(finite(saved)&&saved>=0&&saved<=1)volume.value=String(saved);}catch{}audio.volume=Number(volume?.value||.28);audio.muted=!enabled;if(mute){mute.setAttribute('aria-pressed',String(enabled));mute.textContent=enabled?'♫':'♪';mute.onclick=()=>{enabled=!enabled;audio.muted=!enabled;mute.setAttribute('aria-pressed',String(enabled));mute.textContent=enabled?'♫':'♪';try{localStorage.setItem('ost-replay-music-enabled',String(enabled));}catch{}if(enabled&&audio.paused)audio.play().catch(()=>{});};}if(volume)volume.oninput=()=>{audio.volume=Number(volume.value);try{localStorage.setItem('ost-replay-music-volume',volume.value);}catch{}};audio.addEventListener('error',()=>{status.textContent='Kartreplay fungerar. Musikfilen kunde inte laddas.';});audio.play().catch(()=>{status.textContent='OpenStreetMap · klicka Spela loppet för att starta musik om webbläsaren blockerar autostart.';});
  }
- return {destroy(){destroyed=true;stopReplay();if(audio){audio.pause();audio.currentTime=0;}map?.remove();},select:highlight,seek};
+ return {destroy(){destroyed=true;stopReplay();if(audio){audio.pause();audio.currentTime=0;}try{markers.forEach(marker=>marker?.remove?.());referenceMarkers.forEach(marker=>marker?.dot?.remove?.());if(map){map.stop?.();map.off?.();map.remove();map=null;}}catch{}},select:highlight,seek};
 }
 
