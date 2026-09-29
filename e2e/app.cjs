@@ -14,9 +14,6 @@ const server=http.createServer((req,res)=>{
   if(!file.startsWith(root+path.sep)){res.writeHead(403);res.end();return;}
   fs.readFile(file,(err,data)=>{
     if(err){
-      // The user supplied soundtrack is intentionally kept outside the repo until
-      // the binary asset is committed. Keep browser QA focused on lifecycle/UI.
-      if(pathname==='/assets/kustlinjens-steg.mp3'){const audio=Buffer.from('SUQzBAAAAAAAIlRTU0UAAAAOAAADTGF2ZjYxLjcuMTAzAAAAAAAAAAAAAAD/4zjAAAAAAAAAAAAASW5mbwAAAA8AAAAGAAACiABxcXFxcXFxcXFxcXFxcXFxjo6Ojo6Ojo6Ojo6Ojo6Ojo6qqqqqqqqqqqqqqqqqqqqqx8fHx8fHx8fHx8fHx8fHx8fj4+Pj4+Pj4+Pj4+Pj4+Pj4/////////////////////8AAAAATGF2YzYxLjE5AAAAAAAAAAAAAAAAJANwAAAAAAAAAoif1QtqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/4xjEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVX/4xjEOwAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVX/4xjEdgAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/4xjEsQAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/4xjExAAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/4xjExAAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVU=','base64');res.writeHead(200,{'Content-Type':'audio/mpeg','Content-Length':audio.length,'Accept-Ranges':'bytes'});res.end(audio);return;}
       res.writeHead(404);res.end();return;
     }
     res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json','.css':'text/css','.png':'image/png','.webp':'image/webp','.mp3':'audio/mpeg'})[path.extname(file)]||'application/octet-stream');
@@ -88,7 +85,8 @@ const server=http.createServer((req,res)=>{
       const refs=await page.locator('#profile [data-reference-toggle]').count();assert.ok(refs>=2,'expected source-backed replay references');
       assert.ok(await page.locator('#profile [data-reference-toggle="class"]').count()===1);
       assert.ok(await page.locator('#profile [data-reference-toggle="sex"]').count()===1);
-      const audio=page.locator('#profile [data-replay-audio]');assert.equal(await audio.count(),1);assert.equal(await audio.evaluate(a=>a.loop),true);assert.match(await audio.getAttribute('src'),/kustlinjens-steg\.mp3$/);
+      const audio=page.locator('#profile [data-replay-audio]');assert.equal(await audio.count(),1);assert.equal(await audio.evaluate(a=>a.loop),true);assert.match(await audio.getAttribute('src'),/kustlinjens-steg\.mp3$/);assert.equal(await audio.evaluate(a=>a.paused),true,'music must wait for an explicit Replay start');
+      await page.locator('#profile [data-play]').click();await page.waitForTimeout(120);assert.equal(await audio.evaluate(a=>a.paused),false,'music should start with Replay');await page.locator('#profile [data-play]').click();assert.equal(await audio.evaluate(a=>a.paused),false,'pausing Replay must not stop the soundtrack inside the open profile');
       const seek=page.locator('#profile [data-seek]');await seek.fill('10000');await seek.dispatchEvent('input');assert.ok((await page.locator('#profile [data-now-distance]').innerText()).includes('km'));
       await page.locator('#profile [data-replay-tab="insights"]').click();assert.equal(await page.locator('#profile [data-replay-panel="insights"]').isVisible(),true);
       await shot('parity-profile-replay');
