@@ -107,14 +107,14 @@ const server=http.createServer((req,res)=>{
  });
  await run('finish-only families and provisional/reconstructed labels',async()=>{
   for(const family of ['trail22','trail14','trail5']){
-   await open('ost-2026-'+family,'segments');assert.equal(await page.locator('#analysis-nav [data-section="segments"]').count(),0);assert.equal(await page.locator('#segments').count(),0);assert.equal(new URL(page.url()).hash,'#overview');
+   await open('ost-2026-'+family,'segments');assert.equal(await page.locator('#analysis-nav [data-section="segments"]').count(),0);assert.equal(await page.locator('#segments').count(),0);assert.equal(new URL(page.url()).hash,'');
    await openCompare();assert.ok((await page.locator('#compare-dialog .compare-picker').innerText()).includes('exakt 2'));assert.ok((await page.locator('#compare-dialog .compare-picker').innerText()).includes('Kartduell kräver'));await page.locator('#close-compare-dialog').click();
    await nav('course');const text=await page.locator('#view').innerText();
    if(family==='trail14'){assert.ok(text.includes('Arbetsreferens'));assert.equal(await page.locator('#load-course').count(),0);}
    if(family==='trail5'){assert.ok(text.includes('Rekonstruerad bana'));assert.equal(await page.locator('#goal-hours').inputValue(),'0');assert.equal(await page.locator('#goal-minutes').inputValue(),'35');await page.locator('#load-course').click();await page.locator('#course-map .leaflet-container').waitFor();assert.equal(await page.locator('[data-play]').count(),0);}
   }
   await shot('trail5-course');
-  await open('ost-2018-trail22','course');assert.equal(await page.locator('#analysis-nav [data-section="course"]').count(),0);assert.equal(new URL(page.url()).hash,'#overview');assert.equal(await page.locator('#course').count(),0);
+  await open('ost-2018-trail22','course');assert.equal(await page.locator('#analysis-nav [data-section="course"]').count(),0);assert.equal(new URL(page.url()).hash,'');assert.equal(await page.locator('#course').count(),0);
  });
  await run('race/year switching, global search independent of filters',async()=>{
   await open('ost-2025-ultra60');await page.locator('[data-filter="sex"]').selectOption('F');
