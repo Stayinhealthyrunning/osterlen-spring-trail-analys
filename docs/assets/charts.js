@@ -43,14 +43,14 @@ export function finishPlaceScatter(rows){
  const points=rows.filter(r=>finite(r.finish_seconds)&&r.finish_seconds>0&&finite(r.overall_place)&&r.overall_place>0);
  if(points.length<2)return empty('För få fullföljare med publicerad totalplacering.');
  const min=Math.min(...points.map(r=>Number(r.finish_seconds))),max=Math.max(...points.map(r=>Number(r.finish_seconds))),maxPlace=Math.max(...points.map(r=>Number(r.overall_place))),left=70,right=700,top=28,bottom=235;
- const x=v=>left+(Number(v)-min)/(max-min||1)*(right-left),y=v=>top+(Number(v)-1)/(Math.max(1,maxPlace-1))*(bottom-top);
- let s='';
+ const x=v=>left+(Number(v)-min)/(max-min||1)*(right-left),y=v=>top+(Number(v)-1)/(Math.max(1,maxPlace-1))*(bottom-top);let s='';
  for(let i=0;i<=4;i++){const value=min+(max-min)*i/4,xx=left+(right-left)*i/4;s+='<line class="axis" x1="'+xx+'" x2="'+xx+'" y1="'+top+'" y2="'+bottom+'"/><text x="'+xx+'" y="264" text-anchor="middle">'+time(value).slice(0,-3)+'</text>';}
  for(let i=0;i<=4;i++){const place=Math.max(1,Math.round(1+(maxPlace-1)*i/4)),yy=y(place);s+='<line class="axis" x1="'+left+'" x2="'+right+'" y1="'+yy+'" y2="'+yy+'"/><text x="58" y="'+(yy+4)+'" text-anchor="end">'+place+'</text>';}
  for(const r of points){const key=r.sex==='F'?'female':r.sex==='M'?'male':'unknown',cls=r.sex==='F'?'point-female':r.sex==='M'?'point-male':'point-total',label=esc((r.name||'Resultat')+' · '+time(r.finish_seconds)+' · plats '+r.overall_place);s+='<circle tabindex="0" role="button" data-result="'+esc(r.source_result_id)+'" data-series="'+key+'" class="scatter-point '+cls+'" cx="'+x(r.finish_seconds).toFixed(2)+'" cy="'+y(r.overall_place).toFixed(2)+'" r="4.2" aria-label="Öppna '+label+'"><title>'+label+'</title></circle>';}
  const hasF=points.some(r=>r.sex==='F'),hasM=points.some(r=>r.sex==='M'),hasUnknown=points.some(r=>r.sex!=='F'&&r.sex!=='M'),controls=[hasF?'<label><input type="checkbox" data-series-toggle="female" checked> <i class="female"></i>Kvinnor</label>':'',hasM?'<label><input type="checkbox" data-series-toggle="male" checked> <i class="male"></i>Män</label>':'',hasUnknown?'<label><input type="checkbox" data-series-toggle="unknown" checked> <i class="total"></i>Okänt kön</label>':''].filter(Boolean).join('');
- return '<div class="interactive-chart scatter-interactive">'+(controls?'<div class="series-controls" aria-label="Visa placeringsserier">'+controls+'</div>':'')+svg(s,'Sluttid mot totalplacering')+'</div>';
+ return '<div class="interactive-chart scatter-interactive zoomable-scatter">'+(controls?'<div class="series-controls" aria-label="Visa placeringsserier">'+controls+'</div>':'')+'<button type="button" class="chart-reset" data-scatter-reset hidden>Återställ zoom</button><div class="chart-scroll"><svg class="chart placement-scatter-svg" viewBox="0 0 740 280" data-data-left="'+left+'" data-data-top="'+top+'" data-data-right="'+right+'" data-data-bottom="'+bottom+'" role="img" aria-label="Sluttid mot totalplacering">'+s+'</svg></div></div>';
 }
+
 export function bands(stats,unit){
  const format=v=>unit==='time'?time(v):pace(v,unit);
  const values=stats.flatMap(s=>[s.q10,s.q25,s.median,s.q75,s.q90]).filter(finite);if(!values.length)return empty('För få kompletta passager för segmentmedian. Minst fem krävs.');
