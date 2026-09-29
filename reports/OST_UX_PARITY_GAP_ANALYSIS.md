@@ -4,7 +4,7 @@ Datum: 2026-09-29
 PR: #48 `improve/ost-ux-parity`  
 ÖST-bas för rundan: `main@42c165f4bcead9f371348fcc0837ab96f9a2fda5`  
 Referenser: `gotaleden-splits@bd9f2aaf0466f2ad65b50d35e25981e4597350f1`, `ultravasan-analys@8d1ef31c7a820a594adf89783453154ccab4751e`  
-Senaste runtime-QA före denna dokumentuppdatering: `e944809c73b40e90aa7129a3315d566433e0b2e9`
+Senaste fulla runtime-QA: `d9a3c32b90b27ab4519b913323f7c977ea404b5c`
 
 ## Syfte
 
@@ -25,7 +25,7 @@ Målet är inte att göra tre identiska webbplatser utan att ge ÖST samma produ
 | 9 | Percentiler ska använda rutan bättre och visa kvinnor/män med staplar | **Löst.** Gemensam P10–P90-tröskel, kumulativa kvinna/man-staplar, antal/n och respektive köns egen percentiltid. |
 | 10 | “Bröt” ska vara DNF | **Löst.** Publika analysytor använder DNF. DNS och övriga statusar har tydliga svenska etiketter där det är lämpligt. |
 | 11 | Klass/ålder ska inte vara jättetabeller | **Löst.** Klasser och klubb/ort har stapelöversikt med detaljer på begäran. Ålder har femårsdiagram, median/Q25–Q75 och kompakt åldersklassöversikt med expanderbar detalj. |
-| 12 | Fältflöde utan trivial Start=100%; färre onödiga fullbreddskort | **Löst.** Startpunkten utelämnas. Fältflöde, könsstatus, ålder och klubb/ort använder tätare tvåkolumnslayout; fullbredd reserveras för analyser som behöver den. |
+| 12 | Fältflöde utan trivial Start=100%; färre onödiga fullbreddskort | **Löst.** Startpunkten utelämnas. Status och Fältflöde ligger sida vid sida; könsstatus och DNF:s sista observerade kontroll ligger sida vid sida; ålder och klubb/ort använder tät tvåkolumnslayout. Fullbredd reserveras för analyser som behöver den. |
 | 13 | Samma familj som Gotaleden/Ultravasan | **Löst på produktmönsternivå.** Topplacerade individverktyg, modal profil/jämförelse/kartduell, autocomplete, favoriter, interaktiva serier, gruppanalys, segment, bana, historik, lokal metodhjälp, keyboard/reduced-motion och gemensam informationshierarki är nu samstämda. ÖST behåller egen färg, bildvärld och typografi. |
 
 ## Funktionell referensparitet
@@ -55,3 +55,8 @@ Målet är inte att göra tre identiska webbplatser utan att ge ÖST samma produ
 - ÖST:s fotografiska kust-/våridentitet är medvetet rikare än referensernas branding.
 
 Dessa skillnader är evidens- och produktbeslut. De ska inte fyllas med heuristik för att uppnå kosmetisk paritet.
+
+
+## Slutlig manuellt styrd polish efter paritetsrundan
+
+Efter den ursprungliga gap-stängningen gjordes en sista produktgenomgång direkt i PR #48. Dubbletten **Percentiltrappa** togs bort ur Loppets dynamik eftersom samma statistik redan finns rikare i Översikt. Könsöversikt och klassfördelning balanserades sida vid sida, klassvyn visar sex prioriterade staplar före valfri detalj, historikens dubbla ingress togs bort, DNF-lokalisering separerades till ett eget kompakt kort, och jämförelsemodalen fick tydlig vald-räknare samt **Rensa val**. Lokala (i)-paneler bryter nu korrekt under kortets rubrikrad och hero-/kortavstånd polerades efter screenshotgranskning.
