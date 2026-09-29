@@ -403,3 +403,5 @@ div.chart{box-sizing:border-box;min-width:0!important;width:100%;max-width:100%;
  .course-map .head-to-head-course-map,.course-map .map{height:330px;min-height:330px}.course-selected{padding:16px}.course-selected dl{grid-template-columns:1fr}
  .course-chart-panel{padding:14px 10px;overflow:hidden}.course-chart-panel .card-heading{align-items:flex-start;flex-direction:column}.course-distribution svg{min-width:720px}.course-elevation svg{min-width:680px}.course-segments>button{min-width:930px}.course-trust{font-size:.75rem}
 }
+
+.distribution-segment-hit{fill:#fff;fill-opacity:.001;stroke:none;pointer-events:all;cursor:pointer}.distribution-segment-hit.selected{fill:var(--sea);fill-opacity:.11;stroke:var(--sea-dark);stroke-width:2}.distribution-label{font-size:10px!important;font-weight:650;transform-box:fill-box;transform-origin:center}.distribution-label.selected{fill:var(--sea-dark)!important;font-weight:850}.distribution-point.selected{stroke:#fff;stroke-width:3;filter:drop-shadow(0 0 3px var(--sea))}.course-distribution [data-course-segment]:focus{outline:none;filter:drop-shadow(0 0 4px #fff) drop-shadow(0 0 3px var(--sea))}
