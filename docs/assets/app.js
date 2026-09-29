@@ -7,7 +7,7 @@ import * as views from './views.js';
 import {plan} from './race-plan.js';
 import {pace,table,tr} from './charts.js';
 const $=s=>document.querySelector(s),loader=new DataLoader(),labels={overview:'Översikt',results:'Resultat',dynamics:'Loppets dynamik',segments:'Delsträckor',course:'Bana',compare:'Jämför',history:'Historisk översikt',method:'Metod'};
-let boot,a,state,store,favorites=[],generation=0,renderVersion=0,mapView=null,profileMap=null,duelMap=null,profileTrigger=null,clubSuggestionIndex=-1,lookupSuggestionIndex=-1,sectionObserver=null;
+let boot,a,state,store,favorites=[],generation=0,renderVersion=0,mapView=null,profileMap=null,duelMap=null,profileTrigger=null,compareTrigger=null,clubSuggestionIndex=-1,lookupSuggestionIndex=-1,sectionObserver=null;
 function safeStorage(){try{return localStorage;}catch{return null;}}
 function status(text){$('#load-status').textContent=text;}
 function syncURL(replace=false){history[replace?'replaceState':'pushState'](null,'',stateURL(location.href,state));}
@@ -15,7 +15,7 @@ function closeMaps(){mapView?.destroy();mapView=null;profileMap?.destroy();profi
 function saveFavorites(){store.write('favorites',favorites.slice(-40));}
 function isFavorite(r){return favorites.some(f=>f.race===a.race.race_key&&f.id===String(r.source_result_id));}
 async function loadRace(key,{restore=null,replace=false,scroll=true}={}){
- const token=++generation;closeMaps();$('#profile').close();$('#duel').close();state=switched(state,key);if(restore)Object.assign(state,restore);
+ const token=++generation;closeMaps();$('#profile').close();if($('#compare-dialog')?.open)$('#compare-dialog').close();$('#duel').close();state=switched(state,key);if(restore)Object.assign(state,restore);
  $('#view').setAttribute('aria-busy','true');$('#view').innerHTML=empty('Laddar vald upplaga…');status('Katalog klar → laddar valt lopp/år');$('#year').disabled=true;
  try{const doc=await loader.race(key);if(token!==generation)return;a=adapt(doc,boot);state.compare=state.compare.filter(id=>a.byId.has(id)).slice(0,a.race.capabilities.replay?5:2);state.section=normalizeSection(state.section);controls();filters();await render();syncURL(replace);status('Katalog → vald upplaga klar · '+a.records.length+' resultat · historik i analysflödet · rutt/replay efter behov');if(scroll&&isFlowSection(state.section))scrollToSection(state.section,{focus:state.section!=='overview',behavior:'auto'});if(state.profile)openProfile(state.profile,false);}
  catch(e){if(token===generation){$('#view').innerHTML=empty(e.message)+'<button id="retry">Försök igen</button>';$('#retry').onclick=()=>loadRace(key,{restore:state,replace:true});}}
@@ -106,7 +106,7 @@ function renderCompareDialog(){
  body.innerHTML=views.compare(a,state);compareOptions('');
 }
 function openCompareDialog(){
- const dialog=$('#compare-dialog');if(!dialog||!a)return;renderCompareDialog();if(!dialog.open)dialog.showModal();$('#compare-search')?.focus();
+ const dialog=$('#compare-dialog');if(!dialog||!a)return;compareTrigger=document.activeElement;renderCompareDialog();if(!dialog.open)dialog.showModal();$('#compare-search')?.focus();
 }
 
 function clubValues(){const seen=new Map();for(const r of a.records){const value=String(r.club||'').trim(),key=value.toLocaleLowerCase('sv');if(value&&!seen.has(key))seen.set(key,value);}return [...seen.values()].sort((x,y)=>x.localeCompare(y,'sv'));}
@@ -172,7 +172,7 @@ $('#year').onchange=()=>{const r=Object.values(boot.race_catalog).find(r=>r.race
 $('#unit').onchange=()=>{state.unit=$('#unit').value;store.write('unit',state.unit);render();if(state.profile)openProfile(state.profile,false);};
 $('#global-search').onsubmit=async e=>{e.preventDefault();if(!a)return;const q=$('#lookup').value.trim(),matches=a.records.filter(r=>resultMatches(r,q));if(lookupSuggestionIndex>=0){const item=document.querySelectorAll('#lookup-suggestions [data-lookup-result]')[lookupSuggestionIndex];if(item){chooseLookup(item.dataset.lookupResult);return;}}if(matches.length===1)chooseLookup(matches[0].source_result_id);else{lookupOptions('');state.query=q;state.globalQuery=q;state.page=1;await navigate('results');$('#analysis').scrollIntoView();}};
 $('#profile').addEventListener('close',()=>{profileMap?.destroy();profileMap=null;if(state?.profile){state.profile=null;syncURL(true);}profileTrigger?.focus?.();});
-$('#compare-dialog').addEventListener('close',()=>{const root=$('#compare-dialog-body');if(root)root.innerHTML='';});
+$('#compare-dialog').addEventListener('close',()=>{const root=$('#compare-dialog-body');if(root)root.innerHTML='';compareTrigger?.focus?.();compareTrigger=null;});
 $('#duel').addEventListener('close',()=>{duelMap?.destroy();duelMap=null;});
 addEventListener('popstate',async()=>{if(!boot)return;const restored=urlState(location.href,boot.race_catalog,boot.default_race);if(restored.raceKey!==state.raceKey)await loadRace(restored.raceKey,{restore:restored,replace:true});else{Object.assign(state,restored);state.section=normalizeSection(state.section);await render();if(isFlowSection(state.section))scrollToSection(state.section,{focus:true,behavior:'auto'});if(restored.profile)openProfile(restored.profile,false);else $('#profile').close();}});
 async function start(){
