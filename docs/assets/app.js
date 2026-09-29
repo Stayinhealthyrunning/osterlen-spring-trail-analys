@@ -28,8 +28,11 @@ function controls(){
  const catalog=Object.values(boot.race_catalog).filter(r=>r.race_family===family);
  const years=[...catalog.map(r=>r.year),...boot.cancelled_years].sort((x,y)=>y-x);
  $('#year').innerHTML=years.map(y=>'<option value="'+y+'" '+(y===a.race.year?'selected':'')+' '+(boot.cancelled_years.includes(y)?'disabled':'')+'>'+y+(boot.cancelled_years.includes(y)?' · Inställt':'')+'</option>').join('');
- $('#analysis-nav').innerHTML=availableSections().filter(key=>key!=='compare').map(key=>'<button data-section="'+key+'" class="'+(isFlowSection(key)?'anchor-nav':'special-nav')+'" '+(state.section===key?'aria-current="location"':'')+'>'+labels[key]+'</button>').join('');
+ const nav=[['runner-lookup','Löpare'],['map-duel-panel','Karta & Kartduell'],['goal-pace','Måltempo'],...availableSections().filter(key=>key!=='compare').map(key=>[key,labels[key]])];
+ $('#analysis-nav').innerHTML=nav.map(([key,label])=>'<button '+(key==='runner-lookup'||key==='map-duel-panel'||key==='goal-pace'?'data-scroll-target="'+key+'"':'data-section="'+key+'"')+' class="'+(isFlowSection(key)?'anchor-nav':'special-nav')+'" '+(state.section===key?'aria-current="location"':'')+'>'+label+'</button>').join('');
  $('#unit').value=state.unit;
+ renderTopTools();
+ renderGoalPace();
 }
 function filters(){
  const options=(key,label)=>'<label>'+label+'<select data-filter="'+key+'"><option value="">Alla</option>'+[...new Set(a.records.map(r=>r[key]).filter(Boolean))].sort((x,y)=>String(x).localeCompare(String(y),'sv',{numeric:true})).map(v=>'<option value="'+esc(v)+'">'+esc(v)+'</option>').join('')+'</select></label>';
@@ -43,7 +46,7 @@ function filterSummary(){
  const names={sex:'Kön',class_name:a.race.participant.entity==='team'?'Lagklass':'Klass',status:'Status',club:'Klubb / ort'},value=(key,v)=>key==='sex'?(v==='F'?'Kvinnor':v==='M'?'Män':v):key==='status'?statusLabel(v):v;
  const active=Object.entries(state.filters).filter(([,v])=>v);return active.map(([key,v])=>(names[key]||key)+': '+value(key,v)).join(' · ')||'Inga fältfilter';
 }
-function availableFlowSections(){return flowSections.filter(key=>key!=='segments'||a.race.capabilities.segment_analysis).filter(key=>key!=='course'||a.course);}
+function availableFlowSections(){return flowSections.filter(key=>key!=='segments'||a.race.capabilities.segment_analysis).filter(key=>key!=='gender'||a.race.participant.entity==='person'||a.race.participant.entity==='team').filter(key=>key!=='age-analysis'||a.race.capabilities.age_analysis||a.race.participant.entity==='team').filter(key=>key!=='clubs'||a.race.capabilities.club_analysis);}
 function availableSections(){return [...availableFlowSections(),'results'];}
 function isFlowSection(section){return flowSections.includes(section);}
 function normalizeSection(section){return availableSections().includes(section)?section:'overview';}
