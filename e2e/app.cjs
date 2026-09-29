@@ -174,7 +174,7 @@ const server=http.createServer((req,res)=>{
     await run('finish-only families never acquire segments or replay',async()=>{
       for(const family of ['trail22','trail14','trail5']){
         await open('ost-2026-'+family);assert.equal(await page.locator('#analysis-nav [data-section="segments"]').count(),0);assert.equal(await page.locator('#segments').count(),0);
-        await nav('results');await page.locator('[data-result]').first().click();assert.equal(await page.locator('#profile .runner-replay').count(),0);await page.locator('#close-profile').click();
+        await nav('results');const result=page.locator('#result-table [data-result]').first();assert.ok(await result.count());await result.focus();await page.keyboard.press('Enter');await page.locator('#profile[open]').waitFor();assert.equal(await page.locator('#profile .runner-replay').count(),0);await page.locator('#close-profile').click();
       }
       await open('ost-2018-trail22');assert.equal(await page.locator('#analysis-nav [data-section="segments"]').count(),0);
     });
