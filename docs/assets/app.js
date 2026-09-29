@@ -29,7 +29,8 @@ function controls(){
  const years=[...catalog.map(r=>r.year),...boot.cancelled_years].sort((x,y)=>y-x);
  $('#year').innerHTML=years.map(y=>'<option value="'+y+'" '+(y===a.race.year?'selected':'')+' '+(boot.cancelled_years.includes(y)?'disabled':'')+'>'+y+(boot.cancelled_years.includes(y)?' · Inställt':'')+'</option>').join('');
  const nav=[['runner-lookup','Löpare'],['map-duel-panel','Karta & Kartduell'],['goal-pace','Måltempo'],...availableSections().filter(key=>key!=='method').map(key=>[key,labels[key]])];
- $('#analysis-nav').innerHTML=nav.map(([key,label])=>'<button '+(key==='runner-lookup'||key==='map-duel-panel'||key==='goal-pace'?'data-scroll-target="'+key+'"':'data-section="'+key+'"')+' class="'+(isFlowSection(key)?'anchor-nav':'special-nav')+'" '+(state.section===key?'aria-current="location"':'')+'>'+label+'</button>').join('');
+ $('#analysis-nav').innerHTML='<div class="analysis-nav__scroll">'+nav.map(([key,label])=>'<button '+(key==='runner-lookup'||key==='map-duel-panel'||key==='goal-pace'?'data-scroll-target="'+key+'"':'data-section="'+key+'"')+' class="'+(isFlowSection(key)?'anchor-nav':'special-nav')+'" '+(state.section===key?'aria-current="location"':'')+'>'+label+'</button>').join('')+'</div><button class="share-view" id="share-view" type="button" aria-label="Dela aktuell vy">Dela</button>';
+ const team=a.race.participant.entity==='team';$('#lookup-title').textContent=team?'Analysera ett lags lopp':'Analysera en löpares lopp';$('#lookup-copy').textContent=team?'Sök på lagnamn eller startnummer och öppna en komplett lagprofil med passager, placering, tempo, jämförelser och Replay när underlaget medger det.':'Sök på namn eller startnummer och öppna en komplett profil med mellantider, placering, tempo, jämförelser och Replay.';$('#favorites-title').textContent=team?'Sparade lag':'Sparade löpare';$('#duel-copy').textContent=a.race.capabilities.replay?(team?'Kartduell jämför två till fem lag på banan. För analys av ett enda lag använder du deltagaranalysen och Replay.':'Kartduell jämför två till fem deltagare på banan. För analys av en enda deltagare använder du deltagaranalysen och Replay.'):'Den här upplagan saknar källstöd för Replay. Välj exakt två resultat för Direktjämförelse.';
  $('#unit').value=state.unit;
  renderTopTools();
  renderGoalPace();
@@ -215,6 +216,9 @@ async function openProfile(id,update=true){
  $('#profile-body').innerHTML=views.profile(a,r,state,isFavorite(r));if(!$('#profile').open)$('#profile').showModal();if(update)syncURL();
  if(a.race.capabilities.replay&&$('#profile-replay'))await showMap($('#profile-replay'),[r],'profile');
 }
+async function shareView(){
+ syncURL(true);const button=$('#share-view');try{await navigator.clipboard.writeText(location.href);if(button){button.textContent='Länk kopierad';setTimeout(()=>{if(button?.isConnected)button.textContent='Dela';},1800);}}catch{prompt('Kopiera länken:',location.href);}
+}
 async function navigate(section,update=true,{behavior='smooth',focus=true}={}){if(section==='compare'){openCompareDialog();return;}section=normalizeSection(section);const previous=state.section;state.section=section;if(isFlowSection(section)){if(!isFlowSection(previous)||!document.getElementById(section))await render();else updateNav();if(update)syncURL();scrollToSection(section,{focus,behavior});return;}await render();if(update)syncURL();$('#analysis').scrollIntoView({block:'start',behavior:motionBehavior(behavior)});}
 document.addEventListener('click',async e=>{
  const b=e.target.closest('button,a');if(!b||!state)return;
@@ -229,6 +233,7 @@ document.addEventListener('click',async e=>{
  if(b.dataset.lookupResult){chooseLookup(b.dataset.lookupResult);return;}
  if(b.id==='focus-runner-search'){const input=$('#lookup');input?.focus();input?.scrollIntoView({block:'center',behavior:motionBehavior('smooth')});return;}
  if(b.id==='open-compare-dialog'){openCompareDialog();return;}
+ if(b.id==='share-view'){await shareView();return;}
  if(b.dataset.scrollTarget){e.preventDefault();document.getElementById(b.dataset.scrollTarget)?.scrollIntoView({behavior:motionBehavior('smooth'),block:'start'});return;}
  if(b.dataset.section){e.preventDefault();await navigate(b.dataset.section);return;}
  if(b.dataset.duelAdd){const id=b.dataset.duelAdd;if(!state.compare.includes(id)&&state.compare.length<compareLimit())state.compare.push(id);duelOptions('');if($('#duel-search'))$('#duel-search').value='';renderTopTools();syncURL();return;}
