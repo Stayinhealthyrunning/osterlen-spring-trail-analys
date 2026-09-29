@@ -85,7 +85,7 @@ const server=http.createServer((req,res)=>{
   for(const race of ['ost-2019-ultra60','ost-2019-duo60']){await open(race,'segments');const labels=await page.locator('#segments .segment-buttons button').allTextContents();assert.deepEqual(labels.map(x=>x.replace(/^\d+\.\s*/,'')),['Stenshuvud km 14','Bengtemölla km 32','Vantalängan km 52','Mål']);}
  });
  await run('Ultra 2023 preserves distinct observations and time-only segment stats',async()=>{
-  await open('ost-2023-ultra60','segments');const segmentText=await page.locator('#segments').innerText();assert.ok(segmentText.includes('distans saknas'));const group=page.locator('#segments .group-segment').first();if(await group.count())assert.ok((await group.innerText()).includes('Mediantid'));
+  await open('ost-2023-ultra60','segments');const segmentText=await page.locator('#segments').innerText();assert.ok(segmentText.includes('distans saknas'));const firstSegmentCells=await page.locator('#segments>.card').first().locator('tbody tr').first().locator('td').allInnerTexts();assert.match(firstSegmentCells[4],/\d+:\d{2}:\d{2}/);assert.match(firstSegmentCells[5],/\d+:\d{2}:\d{2}/);const group=page.locator('#segments .group-segment').first();if(await group.count())assert.ok((await group.innerText()).includes('Mediantid'));
   await nav('results');await page.locator('[data-result]').first().click();const text=await page.locator('#profile-body').innerText();assert.ok(text.includes('32 km'));assert.ok(text.includes('Bengtemölla'));await page.keyboard.press('Escape');
  });
  await run('finish-only families and provisional/reconstructed labels',async()=>{
