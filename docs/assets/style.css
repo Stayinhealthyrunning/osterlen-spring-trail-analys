@@ -141,3 +141,13 @@ tbody tr[data-result]{transition:background .15s ease,transform .15s ease}tbody 
  .compare-picker{grid-template-columns:1fr}
  .compare-picker .comparison-list{grid-column:auto}
 }
+
+/* Compact editorial hero: keep the image dominant without consuming the first viewport. */
+.hero{min-height:0;padding-top:26px;padding-bottom:24px}
+.hero h1{font-size:clamp(2.8rem,4.5vw,4.25rem);line-height:.92}
+.hero-lead{max-width:520px!important;font-size:.96rem;line-height:1.4}
+.hero #global-search{margin:12px 0 9px;padding:10px}
+.hero-tools>*{min-height:50px;padding:8px 11px}
+.hero-proof{display:none}
+@media(max-width:900px){.hero{min-height:0;padding-top:24px;padding-bottom:22px}.hero h1{font-size:clamp(2.7rem,7vw,3.8rem)}}
+@media(max-width:700px){.hero{padding-top:18px;padding-bottom:17px}.hero h1{font-size:clamp(2.55rem,12vw,3.45rem)}.hero-lead{font-size:.88rem}.hero #global-search{margin:10px 0 8px}}
