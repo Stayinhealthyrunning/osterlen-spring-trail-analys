@@ -250,9 +250,17 @@ function standoutPanel(a,rows,state){
 }
 function finalSprintControl(a){
  if(a.race.participant.entity==='team')return null;
- const finish=a.checkpoints.find(cp=>cp.key==='finish')||a.boundary.at(-1),finishDistance=finite(finish?.race_distance_km)?Number(finish.race_distance_km):finite(a.race.nominal_distance_km)?Number(a.race.nominal_distance_km):null;if(!finish||!finite(finishDistance))return null;
- const candidates=a.checkpoints.filter(cp=>cp.key!=='start'&&cp.key!=='finish').map(cp=>{const label=String(cp.source_label||cp.name||''),match=label.match(/(\d+(?:[.,]\d+)?)\s*km/i),distance=match?Number(match[1].replace(',','.')):finite(cp.race_distance_km)?Number(cp.race_distance_km):null,remaining=finite(distance)?finishDistance-distance:null;return {cp,distance,remaining};}).filter(x=>finite(x.remaining)&&x.remaining>0&&x.remaining<=15).sort((x,y)=>x.remaining-y.remaining);
- const best=candidates[0];return best?{...best,finish}:null;
+ const finish=a.checkpoints.find(cp=>cp.key==='finish')||a.boundary.at(-1);if(!finish)return null;
+ const finishDistance=finite(finish.race_distance_km)?Number(finish.race_distance_km):finite(a.race.nominal_distance_km)?Number(a.race.nominal_distance_km):null;
+ const sourceBacked=a.checkpoints.filter(cp=>cp.key!=='start'&&cp.key!=='finish'&&cp.replay_anchor);
+ const candidates=sourceBacked.map(cp=>{const label=String(cp.source_label||cp.name||''),match=label.match(/(\d+(?:[.,]\d+)?)\s*km/i),distance=match?Number(match[1].replace(',','.')):finite(cp.race_distance_km)?Number(cp.race_distance_km):null,remaining=finite(distance)&&finite(finishDistance)?finishDistance-distance:null;return {cp,distance,remaining};});
+ const nearFinish=candidates.filter(x=>finite(x.remaining)&&x.remaining>0&&x.remaining<=15).sort((x,y)=>x.remaining-y.remaining)[0];
+ if(nearFinish)return {...nearFinish,finish};
+ // 2018–2019 have the source-named Vantalängan timing checkpoint as the final
+ // genuine control before finish. Keep it eligible even if the web bundle lacks
+ // a numeric distance; no distance is invented in the UI.
+ const vantalangan=candidates.find(x=>x.cp.semantic_key==='vantalangan'||x.cp.key==='vantalangan'||/vantalängan/i.test(String(x.cp.source_label||x.cp.name||'')));
+ return Number(a.race.year)<=2019&&vantalangan?{...vantalangan,finish}:null;
 }
 function sprintWinnerRanking(a,rows,state){
  const control=finalSprintControl(a);if(!control)return '';
