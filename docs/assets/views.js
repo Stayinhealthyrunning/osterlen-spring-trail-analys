@@ -1,5 +1,5 @@
 import {summary,finished,finite,quantile,groups,comparable} from './analytics.js';
-import {esc,time,pace,empty,table,tr,info,sexHistogram,finishPlaceScatter,bands,statusLabel} from './charts.js';
+import {esc,time,pace,empty,table,tr,info,sexHistogram,finishPlaceScatter,bands,statusLabel,lines,horizontalBars,finishProgression} from './charts.js';
 export const methodText={
  finish:'Publicerade positiva sluttider för fullföljare (FINISHED) i aktuellt filtrerat urval. Median är mittenvärdet (medelvärdet av de två mittersta vid jämnt antal). Histogrammets fasta intervall anges per loppfamilj. Saknad tid räknas inte som noll. Ingen prestationsjämförelse över banbyten görs här.',
  segment:'Beräknat från verkliga passager vid explicita analysgränser. Samma kompletta fullföljarkohort används genom samtliga delsträckor. Startens tid 0 är beräknad. Median kräver n ≥ 5, Q25–Q75 n ≥ 10 och Q10–Q90 n ≥ 20. Fart använder källans rapporterade distanser; dessa är inte GPX-mätningar. Saknad passage fylls inte. Plats ± använder publicerade placeringar; positivt är vunna platser. Brutet lopp (DNF) avser sista observerade gräns, inte verifierad brytplats.',
@@ -121,6 +121,62 @@ export function dynamics(a,rows,state){
  if(a.race.capabilities.club_analysis)html+='<section class="card club-analysis"><div class="card-heading"><div><p class="eyebrow">KLUBB & ORT</p><h3>Största grupperna</h3></div>'+info('club-method','Grupper baseras på publicerad klubb/ort. Skiftlägesvarianter samlas. Klicka en stapel för att filtrera hela analysen på gruppen.')+'</div>'+groupVisual(rows,'club',state.unit,a.race,'Klubb / ort',{filterable:true,limit:8})+'</section>'+groupSegmentComparison(a,rows,'club','Klubb / ort',state);
  return html+'</div>';
 }
+
+function dnfFunnel(a,rows,state){
+ if(!a.race.capabilities.segment_analysis)return empty('Den här upplagan saknar publicerade mellantider för DNF-förlopp.');
+ const dnf=rows.filter(r=>r.status==='DNF');if(!dnf.length)return empty('Inga DNF i aktuellt urval.');
+ const groups=a.boundary.filter(cp=>cp.key!=='finish').map(cp=>({name:cp.name,count:dnf.filter(r=>a.passages(r).at(-1)?.checkpoint===cp.key).length})).filter(x=>x.count);
+ const max=Math.max(1,...groups.map(x=>x.count));return '<div class="dnf-funnel">'+groups.map(x=>'<article><span>'+esc(x.name)+'</span><div><i style="width:'+(100*x.count/max).toFixed(1)+'%"></i></div><strong>'+x.count+'</strong></article>').join('')+'</div><p class="chart-caption">DNF grupperas efter senast observerade analyskontroll. Exakt brytplats infereras inte.</p>';
+}
+function segmentCharacter(a,rows,state){
+ if(!a.race.capabilities.segment_analysis)return empty('Delsträckor saknas.');
+ const stats=a.segmentStats(rows),valid=stats.filter(s=>finite(s.median));
+ return valid.length?horizontalBars(valid.map(s=>({label:s.from.name+' → '+s.to.name,value:s.median})),{valueFormat:v=>pace(v,state.unit),maxRows:20}):empty('För få kompletta segment för stabil medianfart.');
+}
+function advancementRanking(a,rows){
+ if(!a.race.capabilities.segment_analysis)return empty('Placeringsförändringar saknas.');
+ const candidates=rows.filter(finished).map(r=>{const gains=a.boundary.slice(1).map((_,i)=>a.segment(r,i)?.gain).filter(finite),total=gains.reduce((sum,v)=>sum+v,0);return gains.length?{r,total}:null;}).filter(Boolean).filter(x=>x.total>0).sort((x,y)=>y.total-x.total).slice(0,10);
+ return candidates.length?'<div class="ranking">'+candidates.map((x,i)=>'<button type="button" class="ranking-row" data-result="'+esc(x.r.source_result_id)+'"><b>'+(i+1)+'</b><span><strong>'+esc(x.r.name)+'</strong><small>#'+esc(x.r.bib)+' · '+esc(x.r.class_name||'')+'</small></span><em>+'+Math.round(x.total)+'</em></button>').join('')+'</div>':empty('Ingen källstödd positiv nettoförändring i urvalet.');
+}
+export function statistics(a,rows,state){
+ return '<div class="analysis-grid gotaleden-statistics">'+
+ '<section class="card wide finish-place-scatter"><div class="card-heading"><div><p class="eyebrow">PLACERINGSMOTOR</p><h3>Tid mot placering</h3></div>'+info('placement-method','Varje punkt är ett fullföljt resultat med publicerad totalplacering. Klick eller tangentbord öppnar individuell analys. Kön färgkodas endast från källstödda uppgifter.')+'</div>'+finishPlaceScatter(rows.filter(finished))+'</section>'+
+ '<section class="card simulator"><div class="card-heading"><div><p class="eyebrow">MÅLTIDSSIMULATOR</p><h3>Vad krävs?</h3></div>'+info('target-time-method','Reglaget jämför vald sluttid med fullföljare i aktuellt filtrerat urval. Det är deskriptiv statistik, inte en prognos.')+'</div><div id="target-time-simulator" class="target-simulator"></div></section>'+
+ '<section class="card"><div class="card-heading"><div><p class="eyebrow">REPET DRAS</p><h3>Avhopp genom loppet</h3></div>'+info('dnf-method','DNF placeras vid sista observerade analyskontroll. Saknad passage flyttas aldrig framåt.')+'</div>'+dnfFunnel(a,rows,state)+'</section>'+
+ '<section class="card"><div class="card-heading"><div><p class="eyebrow">FARTSIGNATUR</p><h3>Delsträckornas karaktär</h3></div>'+info('segment-character-method','Medianfart per delsträcka beräknas från den kompletta, källstödda segmentkohorten.')+'</div>'+segmentCharacter(a,rows,state)+'</section>'+
+ '<section class="card"><div class="card-heading"><div><p class="eyebrow">PLACERINGSEXPRESS</p><h3>Största avancemang</h3></div>'+info('advancement-method','Summerar endast publicerade placeringsförändringar mellan observerade analysgränser. Startplacering fabriceras inte.')+'</div>'+advancementRanking(a,rows)+'</section>'+
+ '</div>';
+}
+function sexSeries(a,rows,state){
+ const sexes=[['F','Kvinnor','#b51d60'],['M','Män','#2563eb']],labels=a.boundary.slice(1).map(cp=>cp.name);
+ return {labels,series:sexes.map(([id,name,color])=>({id,name,color,stats:a.segmentStats(rows.filter(r=>r.sex===id))})).filter(s=>s.stats.some(x=>finite(x.median)))};
+}
+export function gender(a,rows,state){
+ if(a.race.participant.entity==='team')return '<div class="card">'+groupVisual(rows,'class_name',state.unit,a.race,'Lagklasser',{limit:8})+'</div>'+groupSegmentComparison(a,rows,'class_name','Lagklasser',state);
+ const known=rows.filter(r=>r.sex==='F'||r.sex==='M');if(!known.length)return empty('Källstödda könsuppgifter saknas för den här upplagan.');
+ const ss=sexSeries(a,rows,state),paceChart=a.race.capabilities.segment_analysis&&ss.series.length?lines(ss.series.map(s=>({id:s.id,name:s.name,color:s.color,values:s.stats.map(x=>x.median)})),ss.labels,{format:v=>pace(v,state.unit)}):empty('Publicerade delsträckor saknas.');
+ const retention=a.race.capabilities.segment_analysis&&ss.series.length?lines(ss.series.map(s=>({id:s.id,name:s.name,color:s.color,values:s.stats.map(x=>x.retention)})),ss.labels,{format:v=>Math.round(v),referenceValue:100}):empty('Fartretention saknas.');
+ const doneF=known.filter(r=>r.sex==='F'&&finished(r)),doneM=known.filter(r=>r.sex==='M'&&finished(r)),medF=doneF.length>=5?quantile(doneF.map(r=>r.finish_seconds),.5):null,medM=doneM.length>=5?quantile(doneM.map(r=>r.finish_seconds),.5):null,items=[];
+ if(finite(medF)&&finite(medM))items.push('<article><span>Median sluttid</span><strong>'+time(medF)+' / '+time(medM)+'</strong><small>Kvinnor / män · samma urval</small></article>');
+ const startersF=known.filter(r=>r.sex==='F'&&['FINISHED','DNF','DSQ'].includes(r.status)),startersM=known.filter(r=>r.sex==='M'&&['FINISHED','DNF','DSQ'].includes(r.status));
+ if(startersF.length&&startersM.length)items.push('<article><span>Fullföljande</span><strong>'+(100*doneF.length/startersF.length).toFixed(0)+' % / '+(100*doneM.length/startersM.length).toFixed(0)+' %</strong><small>Kvinnor / män</small></article>');
+ return genderCards(rows)+'<div class="feature-grid equal-panels group-pace-comparison"><section class="card wide"><div class="card-heading"><div><p class="eyebrow">FART GENOM LOPPET</p><h3>Median & spridning per delsträcka</h3></div>'+info('gender-pace-method','Serierna använder endast källstödda könsuppgifter. Median kräver minst fem kompletta observationer; saknad passage blir lucka.')+'</div><div class="interactive-chart"><div class="series-controls"><label><input type="checkbox" data-series-toggle="F" checked><i class="female"></i>Kvinnor</label><label><input type="checkbox" data-series-toggle="M" checked><i class="male"></i>Män</label></div>'+paceChart+'</div></section><section class="card"><div class="card-heading"><div><p class="eyebrow">PACING</p><h3>Fartretention</h3></div>'+info('gender-retention-method','100 = respektive grupps egen hel-loppsbaslinje. Värdena beskriver gruppmedianen, inte individuell prestation.')+'</div>'+retention+'</section></div><section class="card automatic-insights"><div class="card-heading"><div><p class="eyebrow">AUTOMATISKA INSIKTER</p><h3>Vad skiljer grupperna?</h3></div></div><div class="story-strip">'+(items.length?items.join(''):empty('För litet källstött underlag för gruppinsikter.'))+'</div></section>';
+}
+const AGE_GROUPS=[{id:'under30',label:'<30',from:-Infinity,to:30},{id:'30-39',label:'30–39',from:30,to:40},{id:'40-49',label:'40–49',from:40,to:50},{id:'50-59',label:'50–59',from:50,to:60},{id:'60plus',label:'60+',from:60,to:Infinity}];
+export function ageAnalysis(a,rows,state){
+ if(a.race.participant.entity==='team')return '<section class="card"><div class="card-heading"><div><p class="eyebrow">OFFICIELLA KLASSER</p><h3>Klassanalys</h3></div>'+info('team-age-method','Duo analyseras på källans publicerade lagklass. Individuell ålder eller medlem→etapp härleds inte.')+'</div>'+groupVisual(rows,'class_name',state.unit,a.race,'Lagklasser',{limit:12})+'</section>'+groupSegmentComparison(a,rows,'class_name','Lagklasser',state);
+ const groupsAge=AGE_GROUPS.map((g,index)=>{const all=rows.filter(r=>finite(r.age)&&Number(r.age)>=g.from&&Number(r.age)<g.to),starters=all.filter(r=>['FINISHED','DNF','DSQ'].includes(r.status)),finishers=all.filter(finished);return {...g,index,all,starters,finishers,stats:a.race.capabilities.segment_analysis?a.segmentStats(all):[]};}).filter(g=>g.all.length>=5);
+ if(!groupsAge.length)return empty('För få resultat med exakt publicerad ålder för Gotaledens åldersgrupper.');
+ const selected=groupsAge.slice(0,5),labels=a.boundary.slice(1).map(cp=>cp.name),colors=['#1677a8','#8fbe63','#d9a441','#b51d60','#7651a0'];
+ const paceChart=a.race.capabilities.segment_analysis?lines(selected.map((g,i)=>({id:g.id,name:g.label,color:colors[i],values:g.stats.map(x=>x.median)})),labels,{format:v=>pace(v,state.unit)}):empty('Delsträckor saknas.');
+ const summaryHtml='<div class="age-summary-list">'+selected.map((g,i)=>'<article style="--age-color:'+colors[i]+'"><span>'+g.label+'</span><strong>'+g.all.length+'</strong><small>'+(g.starters.length?Math.round(100*g.finishers.length/g.starters.length):0)+' % fullföljde · median '+time(g.finishers.length>=5?quantile(g.finishers.map(r=>r.finish_seconds),.5):null)+'</small></article>').join('')+'</div>';
+ return '<div class="age-group-controls">'+groupsAge.map((g,i)=>'<button type="button" aria-pressed="true" style="--age-color:'+colors[i]+'">'+g.label+' <small>'+g.all.length+'</small></button>').join('')+'</div><div class="feature-grid"><section class="card wide"><div class="card-heading"><div><p class="eyebrow">ÅLDERSGRUPPER</p><h3>Medianfart genom loppet</h3></div>'+info('age-pace-method','Åldersgrupperna är fasta och sorteras i åldersordning: <30, 30–39, 40–49, 50–59, 60+. De sorteras aldrig efter deltagarantal.')+'</div>'+paceChart+'</section><section class="card"><div class="card-heading"><div><p class="eyebrow">UNDERLAG</p><h3>Deltagande och målgång</h3></div></div>'+summaryHtml+'</section></div><section class="card"><div class="card-heading"><div><p class="eyebrow">FARTKARTA</p><h3>Analysgrupp × delsträcka</h3></div>'+info('age-heat-method','Fartkartan använder samma fasta åldersordning. Celler lämnas tomma när medianunderlag saknas.')+'</div><div class="age-heatmap-simple">'+table(['Åldersgrupp',...labels],selected.map(g=>tr([g.label,...g.stats.map(x=>pace(x.median,state.unit))])))+'</div></section>';
+}
+export function clubs(a,rows,state){
+ if(!a.race.capabilities.club_analysis)return empty('Klubb- eller ortsuppgifter saknas.');
+ return '<section class="card club-arena"><div class="card-heading"><div><p class="eyebrow">KLUBB- OCH ORTSARENAN</p><h3>Gemenskap i siffror</h3></div>'+info('club-arena-method','Grupper baseras på publicerad klubb/ort. Klick på en stapel filtrerar den aktuella analysen; personprofilen påverkas inte av fältfiltret.')+'</div>'+groupVisual(rows,'club',state.unit,a.race,'Klubb / ort',{filterable:true,limit:12})+'</section>'+groupSegmentComparison(a,rows,'club','Klubb / ort',state);
+}
+
 export function segments(a,rows,state){
  if(!a.race.capabilities.segment_analysis)return empty('Detta lopp hade inga publicerade mellantider. Resultat- och målgångsanalys finns fortfarande.');
  const stats=a.segmentStats(rows),chosen=stats[state.segment]||stats[0],hasPace=stats.length>0&&stats.every(s=>finite(s.median));
