@@ -234,3 +234,8 @@ tbody tr[data-result]{transition:background .15s ease,transform .15s ease}tbody 
  .card,.panel{box-sizing:border-box;width:100%}
  .table-scroll{max-width:100%}
 }
+
+/* Container charts must be fluid; only SVG plots may keep an internal scroll width. */
+div.chart{box-sizing:border-box;min-width:0!important;width:100%;max-width:100%;overflow:hidden}
+.chart-scroll svg.chart{min-width:500px}
+@media(max-width:700px){div.chart{min-width:0!important}}
