@@ -342,3 +342,10 @@ div.chart{box-sizing:border-box;min-width:0!important;width:100%;max-width:100%;
 .zoomable-scatter .scatter-point{cursor:pointer}
 .scatter-zoom-selection{fill:rgba(22,119,168,.13);stroke:var(--sea);stroke-width:2;stroke-dasharray:5 3}
 .chart-reset{margin:5px 0 7px;padding:4px 7px;min-height:31px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--sea-dark);font-size:.6rem;font-weight:800}
+
+/* Relay-class overview parity with Gotaleden. */
+.relay-class-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:0 0 18px}
+.relay-class-kpis article{position:relative;min-width:0;padding:16px 17px 16px 21px;border:1px solid var(--line);border-radius:15px;background:#fff}
+.relay-class-kpis article:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;border-radius:15px 0 0 15px;background:var(--relay-color,var(--sea))}
+.relay-class-kpis span,.relay-class-kpis small{display:block}.relay-class-kpis span{font-size:.72rem;font-weight:800;color:var(--muted)}.relay-class-kpis strong{display:block;margin:4px 0 6px;font-size:1.12rem;color:var(--ink)}.relay-class-kpis small{font-size:.68rem;line-height:1.45;color:var(--muted)}
+@media(max-width:700px){.relay-class-kpis{grid-template-columns:1fr 1fr}.relay-class-kpis article{padding:13px 12px 13px 17px}.relay-class-kpis small{font-size:.63rem}}
