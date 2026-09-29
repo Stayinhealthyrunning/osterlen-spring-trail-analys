@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {median,quantile,bins,distribution,summary,comparable,distanceAtTime,groups,finished} from '../docs/assets/analytics.js';
-import {sexHistogram} from '../docs/assets/charts.js';
+import {sexHistogram,finishPlaceScatter} from '../docs/assets/charts.js';
 import {adapt} from '../docs/assets/data-adapter.js';
 import {urlState,switched,storage,stateURL} from '../docs/assets/app-state.js';
 import {DataLoader} from '../docs/assets/data-loader.js';
@@ -35,6 +35,7 @@ test('history aggregate matches every generated race bundle',()=>{
  }
 });
 test('terrain metrics preserve ascent/descent semantics and reject incomplete elevation',()=>{assert.deepEqual(terrainMetrics([[0,10],[1,30],[2,20],[3,50]]),{ascent:50,descent:10,min:10,max:50,distance:3,coverage:1});assert.equal(terrainMetrics([[0,null],[1,20]]),null);assert.equal(terrainMetrics([[0,10],[1,null],[2,20],[3,30]]),null);});
+test('finish-place scatter is interactive and preserves sex labels',()=>{const html=finishPlaceScatter([{source_result_id:'1',name:'A',status:'FINISHED',finish_seconds:3600,overall_place:1,sex:'F'},{source_result_id:'2',name:'B',status:'FINISHED',finish_seconds:3900,overall_place:2,sex:'M'},{source_result_id:'3',name:'C',status:'FINISHED',finish_seconds:4200,overall_place:3,sex:null}]);assert.match(html,/data-result="1"/);assert.match(html,/point-female/);assert.match(html,/point-male/);assert.match(html,/point-total/);assert.match(html,/Kvinnor/);assert.match(html,/Män/);});
 test('finish histogram exposes total, women and men with text legends',()=>{const html=sexHistogram([{sex:'F',finish_seconds:100},{sex:'M',finish_seconds:110},{sex:'F',finish_seconds:120}],60);assert.match(html,/Totalt/);assert.match(html,/Kvinnor/);assert.match(html,/Män/);assert.match(html,/bar-female/);assert.match(html,/bar-male/);});
 test('null never becomes zero; interpolated quantiles; fixed bins',()=>{assert.equal(median([null,'',undefined,10,20]),15);assert.equal(quantile([0,10,20,30],.25),7.5);assert.equal(median([]),null);assert.deepEqual(bins([null,900,1799,1800],900).map(b=>b.count),[2,1]);assert.throws(()=>bins([1],0));});
 test('percentile ladder respects small-sample publication thresholds',()=>{const rows=n=>Array.from({length:n},(_,i)=>({finish_seconds:1000+i*10}));assert.equal((progression(rows(5)).match(/<strong>–<\/strong>/g)||[]).length,4);assert.equal((progression(rows(10)).match(/<strong>–<\/strong>/g)||[]).length,2);assert.equal((progression(rows(20)).match(/<strong>–<\/strong>/g)||[]).length,0);});
