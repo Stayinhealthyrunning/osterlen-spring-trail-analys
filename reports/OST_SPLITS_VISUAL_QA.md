@@ -1,46 +1,85 @@
 # ÖST Splits – visuell och funktionell QA
 
-Datum: 2026-09-29
-Branch: `improve/ost-ux-parity`
-QA-underlag: Chromium-artefakter i `artifacts/` (lokala, ignorerade körningsfiler)
+Datum: 2026-09-29  
+Branch: `improve/ost-ux-parity`  
+Runtime-QA: `e944809c73b40e90aa7129a3315d566433e0b2e9`
 
-## Resultat
+## Slutresultat
 
-Slutversionen godkändes i 14 automatiserade browserflöden, inklusive den nya hero-sökningen, tangentbordsautocompleten, könstoggles och den direkta Kartduell-ingången. Alla tillgängliga scrollsektioner renderas samtidigt; deep links fokuserar rätt sektion och browser Back/Forward återställer ankarpositionen. Resultatdatabasen och Kartduell förblir separata arbetsvyer.
+Den fulla PR #48-polishen är browserverifierad och manuellt screenshotgranskad. Hero, individverktyg, analysflöde, interaktiva serier, kompakta gruppvyer, profil, jämförelsemodal, Kartduell, historia och metodik håller ihop som samma verktygsfamilj som Gotaleden/Ultravasan, men med ÖST:s egen grafiska profil.
 
-| Viewport | Resultat |
+### Automatiserad regression
+
+- Foundation validation: **success**
+- Prebuild readiness: **success**
+- Python: **25/25**
+- JavaScript: **27/27**
+- Chromium: **20/20 flöden**
+- Alla **34 RaceEditions** renderade med capability-gating
+- 1536×1024, 1366×768, 900×900 och 390×844 utan document overflow
+- 0 console errors
+- 0 page errors
+- 0 oväntade nätverksfel
+- första användbara vy i lokal headless Chromium: cirka **452 ms** (QA-observation, inte SLA)
+
+## Visuell granskning
+
+| Yta | Resultat |
 |---|---|
-| 1536 × 1024 | Godkänd. Fullbreddshero och familjekort går över i tydlig analysnavigation, KPI:er och tvåkolumnskort. |
-| 1366 × 768 | Godkänd. Hero, lopp-/årsval och analyskontroller ryms utan dokumentoverflow. |
-| 900 × 900 | Godkänd. Analyskort och diagram behåller läsbar bredd. |
-| 390 × 844 | Godkänd. Hero, kort, verktyg och dialoger fungerar i mobilbredd; tabeller och diagram använder egna scrollområden. |
+| Hero | Fullbreddsbild med vänstergradient, tydlig vit text, kompakt höjd och sök/verktyg inom samma visuella zon. |
+| Familjekort | Fem egna miljöbilder och balanserad kortstorlek; Trail 22/14/5 använder inland/skog snarare än falsk kustidentitet. |
+| Lopp/upplaga | Neutral **Välj lopp & upplaga**-kontext; klubb/ort ligger inte längre i toppens individperspektiv. |
+| Översikt | KPI-rad, histogram och percentilstaplar i balanserat tvåkolumnspar; könsöversikt och klassvisualisering följer logiskt. |
+| Dynamik | Percentil/status, interaktiv placering, könsstatus/fältflöde, stark avslutning och ålder/klubb är tätare komponerade; onödiga fullbreddskort borttagna. |
+| Ålder | Exakt ålder visualiseras i femårsintervall; åldersklasser har stapelöversikt och valfri detalj. |
+| Klass/klubb | Skannbara horisontella staplar; klass/klubb kan filtrera analysen direkt; full tabell finns på begäran. |
+| Segment | Huvuddiagram och tabell följt av interaktiv kvinna/man-jämförelse och vald delsträcka. |
+| Bana | Proveniens först, karta/höjd lazy, måltempo/loppplan separat med lokal metodhjälp. |
+| Historik | Fingeravtryck, toppnotering och kön över tid ligger före den fullständiga årstabellen; jämförbarhet syns. |
+| Metod | Full guide ligger sist i analysflödet; metodiken är inte längre en stor barriär nära toppen. |
+| Profil | Fokuserad dialog med KPI, favoriter, Journey, relativ delsträcka, metodhjälp och Replay där capability finns. |
+| Jämförelse | Fokuserad modal med sökning, valda deltagare, två balanserade resultatkort, tidsskillnad, passager/delsträckor och Kartduell. |
+| Mobil | Hero, profil och jämförelsemodal ligger inom viewport; bred data scrollar lokalt i komponent i stället för att spräcka dokumentet. |
 
-Geometriassertionen fann högst 2 px dokumentoverflow i samtliga storlekar och analyserade huvudsektioner. Den mobila profil-/replay-dialogen och `prefers-reduced-motion` verifierades. Browserkörningen rapporterade noll console errors, noll page errors och noll oväntade nätverksfel.
+## Interaktioner som är verifierade
 
-## UX- och designkrav som verifierades
+- vanlig sidladdning utan deep link stannar längst upp,
+- hero-sök: namn/lag/startnummer, tangentbordsautocomplete och direkt profil,
+- jämförelsesök: autocomplete med Arrow Up/Down, Enter/Escape,
+- profil → **Jämför detta resultat** → samma jämförelsemodal,
+- kvinna/man-toggle i sluttid, percentiler, könsöversikt, placement scatter och segment,
+- klass- och klubb/ort-staplar som snabbfilter,
+- placement scatter → profil via mus eller tangentbord,
+- ankarnavigation + deep links + browser Back/Forward,
+- Resultatdatabas, sortering, pagination och keyboard-profile,
+- måltempo/loppplan,
+- route/elevation + Runner Replay,
+- Kartduell inklusive avsiktligt tile-failure-test,
+- reduced-motion,
+- Duo-teamflöde,
+- äldre Ultra med splits men utan lånad rutt,
+- finish-only-familjer utan fabricerade segment/replay.
 
-- Hero är en bred, låg Österlen-kustbild med vänstergradient. Sökning efter namn/startnummer visar tangentbordsnavigerbara förslag och öppnar källstödd profilmodal. Kartduell har en tidig, fungerande ingång.
-- Fem familjekort använder fem separata WebP-miljöer. Trailbilderna visar skog/inland; inget motiv utger sig för att exakt avbilda ett namngivet landmärke. Den innehållssvaga route-journey-sektionen är borttagen.
-- Översiktens könskort, sluttidshistogram, percentiler och segmenttabell kan fokusera/dölja källstödda könsserier. Legend, antal och percentilvärden redovisas. Gruppkort för klass, åldersklass och klubb/ort visar stapelöversikt först och full tabell på begäran.
-- Fältflödet visar inte startankaret 100 %. Status använder DNF. Metodguiden finns i Metod; analyskort har korta tillgängliga infoförklaringar.
-- Capability-gränser höll: äldre Ultra behåller splits utan lånad rutt, finish-only-lopp saknar segmentsektion, Duo visas som lag utan härledda etapper och saknad CourseVersion utelämnar bansektionen.
-- Browserflöden täckte tile-failure fallback, race-/årsbyte, global sökning, profil/replay, direktjämförelse, kartduell, historik, metodik, målplan, deep links samt Back/Forward.
+## Terminologi och data
 
-## Regression och performance
+Publik status använder **DNF** i stället för “Bröt”. Kvinna/man visas bara från källstödda uppgifter. Start=100 % visas inte i Fältflöde. Metodinfo finns lokalt på relevanta analyskort och den fullständiga metoden ligger i Metod.
 
-- Foundation: godkänd.
-- Prebuild readiness: godkänd.
-- Python: 25 tester godkända.
-- JavaScript: 26 tester godkända.
-- Chromium: 14 browserflöden godkända över samtliga fyra storlekar.
-- Frontend budget: godkänd. HTML 1 559 B gzip, CSS 9 840 B gzip, JavaScript 33 921 B gzip. Kritisk kod/dataöverföring är 77 704 B gzip mot budgeten 524 288 B. Bootstrap + största valda lopp är 32 384 B gzip; full Engine-regressionstoken är 450 547 B gzip.
-- Lokal, headless Chromium rapporterade första användbara vy efter cirka 477 ms. Det är en okonditionerad lokal observation, inte ett nätverks-SLA.
-- Hero-WebP är 287 096 B. De fyra familje-WebP-bilderna är tillsammans 203 126 B (490 222 B visuella bilder totalt). Performance-budgetens kritiska kod/data-mått exkluderar bilder. Route, elevation och replay förblir lazy-loaded.
+Datatotalerna är oförändrade: 34 lopp, 9 871 resultat, 6 123 observerade mellantidspassager, 300 Duo-lag och 599 lagmedlemsrader. Source data, Engine 1.0, provenance och capability-regler är oförändrade.
 
-Datagenerationens SHA-256 var `b55f8774887ca80586e1e40e5f8dd7c02a0de83c165b02b6d8c9500eea9a3693`; totals var fortsatt 34 lopp, 9 871 resultat, 6 123 observerade splits, 300 Duo-lag och 599 medlemsrader. Source data, Engine 1.0-kontrakt, frysta totaler, provenance och capability-regler ändrades inte.
+## Prestanda
 
-## Kvarstående begränsningar
+Senaste fulla runtime-QA:
 
-Ingen flerårig personidentitet eller Duo-etappkoppling skapades. Finish-only-upplagor saknar segmentdata. Kurs- och replayvyer fortsätter att följa lokal CourseVersion och provenance; kartor eller splits från andra upplagor lånas inte.
+- HTML: **1 693 B gzip**
+- CSS: **11 240 B gzip**
+- JavaScript: **35 650 B gzip**
+- bootstrap: **3 143 B gzip**
+- största valda racebundle: **29 234 B gzip**
+- bootstrap + största racebundle: **32 377 B gzip**
+- full Engine: **450 542 B gzip**
+- kritisk initial kod/data: **80 960 B gzip** av 524 288 B budget
+- route/elevation/replay och Leaflet förblir lazy-loadade
+
+Bilder ingår inte i performance-kontraktets kritiska kod/data-budget.
 
 **VISUAL QA READY FOR HUMAN REVIEW: YES**
