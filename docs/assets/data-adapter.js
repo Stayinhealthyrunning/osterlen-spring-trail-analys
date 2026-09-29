@@ -1,6 +1,12 @@
 import {finite,finished,distribution,median} from './analytics.js';
+function presentationName(record,race){
+ const raw=String(record?.name??'').trim(),missing=!raw||['undefined','null','none','nan'].includes(raw.toLocaleLowerCase('sv'));
+ if(!missing)return raw;
+ const bib=String(record?.bib??'').trim(),entity=race?.participant?.entity==='team'?'Lag':'Deltagare';
+ return bib?entity+' #'+bib:entity+' utan publicerat namn';
+}
 export function adapt(doc,boot){
- const race=doc.race,records=race.records,byId=new Map(records.map(r=>[String(r.source_result_id),r]));
+ const race=doc.race,records=race.records.map(r=>({...r,source_name:r.name,name:presentationName(r,race)})),byId=new Map(records.map(r=>[String(r.source_result_id),r]));
  const checkpoints=doc.checkpoints.slice().sort((a,b)=>a.sequence_no-b.sequence_no),boundary=checkpoints.filter(c=>c.analysis_boundary);
  const splits=new Map();for(const s of doc.splits){const key=String(s.source_result_id);if(!splits.has(key))splits.set(key,[]);splits.get(key).push(s);}
  const passages=r=>(splits.get(String(r.source_result_id))||[]).slice().sort((a,b)=>checkpoints.findIndex(c=>c.key===a.checkpoint)-checkpoints.findIndex(c=>c.key===b.checkpoint));

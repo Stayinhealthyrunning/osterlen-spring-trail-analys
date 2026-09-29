@@ -2,11 +2,11 @@ import {DataLoader} from './data-loader.js';
 import {adapt} from './data-adapter.js';
 import {urlState,stateURL,switched,storage,sections,flowSections} from './app-state.js';
 import {filterRows,finite,finished} from './analytics.js';
-import {esc,time,empty} from './charts.js';
+import {esc,time,empty,statusLabel} from './charts.js';
 import * as views from './views.js';
 import {plan} from './race-plan.js';
 import {pace,table,tr} from './charts.js';
-const $=s=>document.querySelector(s),loader=new DataLoader(),labels={overview:'Översikt',results:'Resultat',dynamics:'Loppets dynamik',segments:'Delsträckor',course:'Bana / Course Intelligence',compare:'Jämför',history:'Historisk översikt',method:'Metod'};
+const $=s=>document.querySelector(s),loader=new DataLoader(),labels={overview:'Översikt',results:'Resultat',dynamics:'Loppets dynamik',segments:'Delsträckor',course:'Bana',compare:'Jämför',history:'Historisk översikt',method:'Metod'};
 let boot,a,state,store,favorites=[],generation=0,renderVersion=0,mapView=null,profileMap=null,duelMap=null,profileTrigger=null,clubSuggestionIndex=-1,sectionObserver=null;
 function safeStorage(){try{return localStorage;}catch{return null;}}
 function status(text){$('#load-status').textContent=text;}
@@ -17,7 +17,7 @@ function isFavorite(r){return favorites.some(f=>f.race===a.race.race_key&&f.id==
 async function loadRace(key,{restore=null,replace=false}={}){
  const token=++generation;closeMaps();$('#profile').close();$('#duel').close();state=switched(state,key);if(restore)Object.assign(state,restore);
  $('#view').setAttribute('aria-busy','true');$('#view').innerHTML=empty('Laddar vald upplaga…');status('Katalog klar → laddar valt lopp/år');$('#year').disabled=true;
- try{const doc=await loader.race(key);if(token!==generation)return;a=adapt(doc,boot);state.compare=state.compare.filter(id=>a.byId.has(id));state.section=normalizeSection(state.section);controls();filters();await render();syncURL(replace);status('Katalog → vald upplaga klar · '+a.records.length+' resultat · rutt och historik efter behov');if(isFlowSection(state.section))scrollToSection(state.section,{focus:state.section!=='overview',behavior:'auto'});if(state.profile)openProfile(state.profile,false);}
+ try{const doc=await loader.race(key);if(token!==generation)return;a=adapt(doc,boot);state.compare=state.compare.filter(id=>a.byId.has(id)).slice(0,a.race.capabilities.replay?5:2);state.section=normalizeSection(state.section);controls();filters();await render();syncURL(replace);status('Katalog → vald upplaga klar · '+a.records.length+' resultat · historik i analysflödet · rutt/replay efter behov');if(isFlowSection(state.section))scrollToSection(state.section,{focus:state.section!=='overview',behavior:'auto'});if(state.profile)openProfile(state.profile,false);}
  catch(e){if(token===generation){$('#view').innerHTML=empty(e.message)+'<button id="retry">Försök igen</button>';$('#retry').onclick=()=>loadRace(key,{restore:state,replace:true});}}
  finally{if(token===generation){$('#view').setAttribute('aria-busy','false');$('#year').disabled=false;}}
 }
@@ -28,23 +28,30 @@ function controls(){
  const catalog=Object.values(boot.race_catalog).filter(r=>r.race_family===family);
  const years=[...catalog.map(r=>r.year),...boot.cancelled_years].sort((x,y)=>y-x);
  $('#year').innerHTML=years.map(y=>'<option value="'+y+'" '+(y===a.race.year?'selected':'')+' '+(boot.cancelled_years.includes(y)?'disabled':'')+'>'+y+(boot.cancelled_years.includes(y)?' · Inställt':'')+'</option>').join('');
- $('#analysis-nav').innerHTML=availableSections().map(key=>'<button data-section="'+key+'" class="'+(isFlowSection(key)?'anchor-nav':'special-nav')+'" '+(state.section===key?'aria-current="page"':'')+'>'+labels[key]+'</button>').join('');
+ $('#analysis-nav').innerHTML=availableSections().map(key=>'<button data-section="'+key+'" class="'+(isFlowSection(key)?'anchor-nav':'special-nav')+'" '+(state.section===key?'aria-current="location"':'')+'>'+labels[key]+'</button>').join('');
  $('#unit').value=state.unit;
 }
 function filters(){
- const options=(key,label)=>'<label>'+label+'<select data-filter="'+key+'"><option value="">Alla</option>'+[...new Set(a.records.map(r=>r[key]).filter(Boolean))].sort().map(v=>'<option value="'+esc(v)+'">'+esc(v)+'</option>').join('')+'</select></label>';
+ const options=(key,label)=>'<label>'+label+'<select data-filter="'+key+'"><option value="">Alla</option>'+[...new Set(a.records.map(r=>r[key]).filter(Boolean))].sort((x,y)=>String(x).localeCompare(String(y),'sv',{numeric:true})).map(v=>'<option value="'+esc(v)+'">'+esc(v)+'</option>').join('')+'</select></label>';
  const club=a.race.capabilities.club_analysis?'<div class="filter-autocomplete"><label>Klubb & ort<input id="club-filter" data-filter="club" type="search" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="club-suggestions" aria-expanded="false" placeholder="Börja skriva klubb eller ort"></label><div id="club-suggestions" class="suggestions" role="listbox" hidden></div></div>':'';
- $('#filters').innerHTML=(a.race.capabilities.sex_filter&&a.race.participant.entity==='person'?'<label>Kön<select data-filter="sex"><option value="">Alla</option><option value="F">Kvinnor</option><option value="M">Män</option></select></label>':'')+options('class_name',a.race.participant.entity==='team'?'Lagklass':'Klass')+options('status','Status')+club+'<button id="reset-filters">Återställ</button>';
+ const statusOrder=['FINISHED','DNF','DNS','DSQ','UNKNOWN'],present=new Set(a.records.map(r=>r.status).filter(Boolean)),statuses=statusOrder.filter(v=>present.has(v)),statusFilter='<label>Status<select data-filter="status"><option value="">Alla</option>'+statuses.map(v=>'<option value="'+esc(v)+'">'+esc(statusLabel(v))+'</option>').join('')+'</select></label>';
+ $('#filters').innerHTML=(a.race.capabilities.sex_filter&&a.race.participant.entity==='person'?'<label>Kön<select data-filter="sex"><option value="">Alla</option><option value="F">Kvinnor</option><option value="M">Män</option></select></label>':'')+options('class_name',a.race.participant.entity==='team'?'Lagklass':'Klass')+statusFilter+club+'<button id="reset-filters">Återställ</button>';
 }
 function selected(){return filterRows(a.records,state.filters);}
+function compareLimit(){return a?.race?.capabilities?.replay?5:2;}
+function filterSummary(){
+ const names={sex:'Kön',class_name:a.race.participant.entity==='team'?'Lagklass':'Klass',status:'Status',club:'Klubb / ort'},value=(key,v)=>key==='sex'?(v==='F'?'Kvinnor':v==='M'?'Män':v):key==='status'?statusLabel(v):v;
+ const active=Object.entries(state.filters).filter(([,v])=>v);return active.map(([key,v])=>(names[key]||key)+': '+value(key,v)).join(' · ')||'Inga fältfilter';
+}
 function availableFlowSections(){return flowSections.filter(key=>key!=='segments'||a.race.capabilities.segment_analysis).filter(key=>key!=='course'||a.course);}
 function availableSections(){return [...availableFlowSections(),'results','compare'];}
 function isFlowSection(section){return flowSections.includes(section);}
 function normalizeSection(section){return availableSections().includes(section)?section:'overview';}
-function updateNav(){document.querySelectorAll('#analysis-nav button').forEach(b=>{if(b.dataset.section===state.section)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});}
+function updateNav(){document.querySelectorAll('#analysis-nav button').forEach(b=>{if(b.dataset.section===state.section)b.setAttribute('aria-current','location');else b.removeAttribute('aria-current');});}
 function flowHeading(key,title,copy){return '<header class="flow-heading"><p class="eyebrow">'+key+'</p><h2>'+title+'</h2><p>'+copy+'</p></header>';}
 function flowSection(key,html){return '<section id="'+key+'" class="flow-section" tabindex="-1" aria-label="'+labels[key]+'">'+html+'</section>';}
-function scrollToSection(section,{focus=true,behavior='smooth'}={}){const target=document.getElementById(section);if(!target)return;target.scrollIntoView({block:'start',behavior});if(focus)target.focus({preventScroll:true});}
+function motionBehavior(behavior='smooth'){return behavior==='smooth'&&globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches?'auto':behavior;}
+function scrollToSection(section,{focus=true,behavior='smooth'}={}){const target=document.getElementById(section);if(!target)return;target.scrollIntoView({block:'start',behavior:motionBehavior(behavior)});if(focus)target.focus({preventScroll:true});}
 function observeFlowSections(){
  sectionObserver?.disconnect();sectionObserver=null;if(!('IntersectionObserver' in globalThis))return;
  sectionObserver=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((x,y)=>y.intersectionRatio-x.intersectionRatio)[0],key=visible?.target?.id;if(key&&isFlowSection(key)&&state.section!==key){state.section=key;updateNav();}},{rootMargin:'-18% 0px -62% 0px',threshold:[0,.15,.35,.6]});
@@ -55,7 +62,7 @@ async function renderAnalysisFlow(v,rows,token){
  if(available.includes('overview'))parts.push(flowSection('overview',views.overview(a,rows,state,boot)));
  if(available.includes('dynamics'))parts.push(flowSection('dynamics',flowHeading('LOPPETS DYNAMIK','Så rör sig fältet','Percentiler, status och de källstödda perspektiv som finns för den valda upplagan.')+views.dynamics(a,rows,state)));
  if(available.includes('segments'))parts.push(flowSection('segments',flowHeading('DELSTRÄCKOR','Loppet mellan kontrollerna','Tempo, spridning och placeringsrörelser från publicerade passager.')+views.segments(a,rows,state)));
- if(available.includes('course'))parts.push(flowSection('course',flowHeading('COURSE INTELLIGENCE','Banan och dess underlag','Banversion, geometri och lokalt tillgängliga ruttlager med tydliga proveniensgränser.')+views.course(a)));
+ if(available.includes('course'))parts.push(flowSection('course',flowHeading('BANANALYS','Banan och dess underlag','Banversion, geometri och lokalt tillgängliga ruttlager med tydliga proveniensgränser.')+views.course(a)));
  if(available.includes('history'))parts.push(flowSection('history',flowHeading('HISTORISK ÖVERSIKT','Loppet över tid','Deltagande visas brett; prestation jämförs endast när banunderlaget uttryckligen tillåter det.')+empty('Laddar liten historiksammanställning…')));
  if(available.includes('method'))parts.push(flowSection('method',flowHeading('METOD','Så är analysen byggd','Källvärden, beräkningar, jämförbarhet och begränsningar samlade på ett ställe.')+views.methodology(a,boot,state)));
  v.innerHTML='<div class="long-analysis">'+parts.join('')+'</div>';observeFlowSections();
@@ -65,7 +72,7 @@ async function renderAnalysisFlow(v,rows,token){
 async function render(){
  const token=++renderVersion,rows=selected();sectionObserver?.disconnect();sectionObserver=null;mapView?.destroy();mapView=null;
  state.section=normalizeSection(state.section);
- $('#selection-count').textContent='Visar '+rows.length+' av '+a.records.length+' resultat · '+(Object.entries(state.filters).filter(([,v])=>v).map(([k,v])=>k+': '+v).join(' · ')||'Inga fältfilter');
+ $('#selection-count').textContent='Visar '+rows.length+' av '+a.records.length+' resultat · '+filterSummary();
  updateNav();
  const v=$('#view');v.setAttribute('aria-busy','false');
  if(isFlowSection(state.section))await renderAnalysisFlow(v,rows,token);
@@ -81,13 +88,14 @@ function resultTable(){
  rows=rows.slice().sort((x,y)=>{const p=x[key],q=y[key];if(p==null)return q==null?0:1;if(q==null)return -1;return (typeof p==='number'&&typeof q==='number'?p-q:String(p).localeCompare(String(q),'sv',{numeric:true}))*dir;});
  const pages=Math.max(1,Math.ceil(rows.length/40));state.page=Math.min(state.page,pages);const current=rows.slice((state.page-1)*40,state.page*40);
  const heads=[['overall_place','Plats'],['bib','Nr'],['name',a.race.participant.entity==='team'?'Lag':'Namn'],['class_name','Klass'],['club','Klubb / ort'],['country','Land'],['finish_seconds','Sluttid'],['status','Status']];
- $('#result-table').innerHTML='<div class="table-scroll"><table><thead><tr>'+heads.map(([k,label])=>'<th scope="col" aria-sort="'+(key===k?(dir===1?'ascending':'descending'):'none')+'"><button data-sort="'+k+'">'+label+(key===k?(dir===1?' ↑':' ↓'):'')+'</button></th>').join('')+'</tr></thead><tbody>'+current.map(r=>'<tr tabindex="0" data-result="'+esc(r.source_result_id)+'" aria-label="Öppna '+esc(r.name)+'">'+heads.map(([k])=>'<td '+(k==='name'?'class="name"':'')+'>'+(k==='finish_seconds'?(finished(r)?time(r[k]):'–'):esc(r[k]??'–'))+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>'+(rows.length?'':empty('Inga resultat matchar sökningen och filtren.'));
+ $('#result-table').innerHTML='<div class="table-scroll"><table><thead><tr>'+heads.map(([k,label])=>'<th scope="col" aria-sort="'+(key===k?(dir===1?'ascending':'descending'):'none')+'"><button data-sort="'+k+'">'+label+(key===k?(dir===1?' ↑':' ↓'):'')+'</button></th>').join('')+'</tr></thead><tbody>'+current.map(r=>'<tr tabindex="0" data-result="'+esc(r.source_result_id)+'" aria-label="Öppna '+esc(r.name)+'">'+heads.map(([k])=>'<td '+(k==='name'?'class="name"':'')+'>'+(k==='finish_seconds'?(finished(r)?time(r[k]):'–'):k==='status'?esc(statusLabel(r[k])):esc(r[k]??'–'))+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>'+(rows.length?'':empty('Inga resultat matchar sökningen och filtren.'));
  $('#page-label').textContent=state.page+' / '+pages+' · '+rows.length+' resultat';$('#prev-page').disabled=state.page<=1;$('#next-page').disabled=state.page>=pages;
 }
 function compareOptions(q){
  const root=$('#compare-options');if(!root)return;
  q=q.trim();const input=$('#compare-search');if(!q){root.hidden=true;root.innerHTML='';input?.setAttribute('aria-expanded','false');return;}
- const matches=a.records.filter(r=>resultMatches(r,q)&&!state.compare.includes(String(r.source_result_id))).slice(0,8);root.hidden=false;input?.setAttribute('aria-expanded','true');root.innerHTML=matches.length?matches.map(r=>'<button role="option" data-add-compare="'+esc(r.source_result_id)+'"><span><strong>'+esc(r.name)+'</strong><small>#'+esc(r.bib)+' · '+esc(r.class_name||'Klass saknas')+'</small></span><b>Lägg till</b></button>').join(''):'<p class="picker-empty">Inga resultat matchar sökningen.</p>';
+ root.hidden=false;input?.setAttribute('aria-expanded','true');const limit=compareLimit();if(state.compare.length>=limit){root.innerHTML='<p class="picker-empty">'+(limit===5?'Max fem resultat kan väljas till Kartduell.':'Den här upplagan saknar rutt/replay; Direktjämförelse använder exakt två resultat.')+' Ta bort ett val för att lägga till ett annat.</p>';return;}
+ const matches=a.records.filter(r=>resultMatches(r,q)&&!state.compare.includes(String(r.source_result_id))).slice(0,8);root.innerHTML=matches.length?matches.map(r=>'<button role="option" data-add-compare="'+esc(r.source_result_id)+'"><span><strong>'+esc(r.name)+'</strong><small>#'+esc(r.bib)+' · '+esc(r.class_name||'Klass saknas')+'</small></span><b>Lägg till</b></button>').join(''):'<p class="picker-empty">Inga resultat matchar sökningen.</p>';
 }
 function clubValues(){const seen=new Map();for(const r of a.records){const value=String(r.club||'').trim(),key=value.toLocaleLowerCase('sv');if(value&&!seen.has(key))seen.set(key,value);}return [...seen.values()].sort((x,y)=>x.localeCompare(y,'sv'));}
 function renderClubSuggestions(q){
@@ -105,7 +113,7 @@ function openProfile(id,update=true){
  const r=a.byId.get(String(id));if(!r)return;profileMap?.destroy();profileMap=null;profileTrigger=document.activeElement;state.profile=String(id);
  $('#profile-body').innerHTML=views.profile(a,r,state,isFavorite(r));if(!$('#profile').open)$('#profile').showModal();if(update)syncURL();
 }
-async function navigate(section,update=true,{behavior='smooth',focus=true}={}){section=normalizeSection(section);const previous=state.section;state.section=section;if(isFlowSection(section)){if(!isFlowSection(previous)||!document.getElementById(section))await render();else updateNav();if(update)syncURL();scrollToSection(section,{focus,behavior});return;}await render();if(update)syncURL();$('#analysis').scrollIntoView({block:'start',behavior});}
+async function navigate(section,update=true,{behavior='smooth',focus=true}={}){section=normalizeSection(section);const previous=state.section;state.section=section;if(isFlowSection(section)){if(!isFlowSection(previous)||!document.getElementById(section))await render();else updateNav();if(update)syncURL();scrollToSection(section,{focus,behavior});return;}await render();if(update)syncURL();$('#analysis').scrollIntoView({block:'start',behavior:motionBehavior(behavior)});}
 document.addEventListener('click',async e=>{
  const b=e.target.closest('button,a');if(!b||!state)return;
  if(b.dataset.family){const family=b.dataset.family,editions=Object.values(boot.race_catalog).filter(r=>r.race_family===family),race=editions.find(r=>r.year===a.race.year)||editions.sort((x,y)=>y.year-x.year)[0];await loadRace(race.race_key);$('#analysis').scrollIntoView();return;}
@@ -114,7 +122,7 @@ document.addEventListener('click',async e=>{
  if(b.dataset.info){const t=document.getElementById(b.dataset.info);t.hidden=!t.hidden;b.setAttribute('aria-expanded',!t.hidden);return;}
  if(b.dataset.segment){const keepCourse=Boolean(mapView&&$('#course-map')?.querySelector('.map'));state.segment=+b.dataset.segment;mapView?.select(state.segment);document.querySelectorAll('button[data-segment]').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.segment===state.segment));if(isFlowSection(state.section)){await render();if(keepCourse&&$('#load-course'))await showMap($('#course-map'),[],'course');}return;}
  if(b.dataset.sort){state.dir=state.sort===b.dataset.sort?-(state.dir||1):1;state.sort=b.dataset.sort;resultTable();return;}
- if(b.dataset.addCompare){const id=b.dataset.addCompare;if(!state.compare.includes(id)&&state.compare.length<5)state.compare.push(id);status(state.compare.length+' resultat valda för jämförelse');if(state.section==='compare')await render();syncURL();return;}
+ if(b.dataset.addCompare){const id=b.dataset.addCompare,limit=compareLimit();if(!state.compare.includes(id)&&state.compare.length<limit)state.compare.push(id);else if(!state.compare.includes(id)){status(limit===5?'Max fem resultat kan väljas till Kartduell':'Direktjämförelse använder högst två resultat för den här upplagan');return;}status(state.compare.length+' resultat valda för jämförelse');if(state.section==='compare')await render();syncURL();return;}
  if(b.dataset.removeCompare){state.compare=state.compare.filter(id=>id!==b.dataset.removeCompare);await render();syncURL();return;}
  if(b.dataset.favorite){const r=a.byId.get(b.dataset.favorite);if(isFavorite(r))favorites=favorites.filter(f=>!(f.race===a.race.race_key&&f.id===b.dataset.favorite));else favorites.push({race:a.race.race_key,id:String(r.source_result_id),name:r.name,year:a.race.year});saveFavorites();b.textContent=isFavorite(r)?'Sparad':'Spara lopp';b.setAttribute('aria-pressed',isFavorite(r));return;}
  if(b.dataset.openFavorite){await loadRace(b.dataset.openFavorite,{restore:{profile:b.dataset.id}});return;}

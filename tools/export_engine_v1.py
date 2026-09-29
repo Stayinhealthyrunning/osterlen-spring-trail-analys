@@ -50,13 +50,37 @@ def record(row):
         "class_place":row["class_place"],"person_key":None,"identity_status":"source_local","identity_scope":"race_result"
     }
 
-def checkpoint_catalog(con,race):
+def checkpoint_order(adapter,race):
+    """Return the explicit semantic timing order when the Engine adapter defines one.
+
+    Source table sequence is retained as provenance, but semantic analysis order must
+    follow the documented race/year checkpoint policy. Duo inherits the same-year
+    Ultra timing geography; member-to-leg assignment remains unknown.
+    """
+    family=race["race_family"]
+    if family not in {"ultra60","duo60"}:
+        return None
+    year=int(race["year"])
+    policy=adapter.get("checkpoint_policy",{}).get("ultra60",{})
+    if year in {2018,2019}:
+        return policy.get("2018_2019")
+    if year in {2022,2023}:
+        return policy.get("2022_2023_source_order")
+    if year in {2024,2025,2026}:
+        return policy.get("2024_2026")
+    return None
+
+def checkpoint_catalog(con,race,adapter):
     key=race["race_key"]; nominal=race["nominal_distance_km"]
-    rows=con.execute("""SELECT checkpoint_semantic_key,checkpoint_key,checkpoint_source_label,
+    rows=list(con.execute("""SELECT checkpoint_semantic_key,checkpoint_key,checkpoint_source_label,
         MIN(sequence_no) sequence_no,MAX(COALESCE(analysis_primary,0)) analysis_primary,
         MAX(reported_checkpoint_distance_km) distance_km,COUNT(CASE WHEN elapsed_seconds IS NOT NULL THEN 1 END) observed
         FROM splits s JOIN results r USING(result_uid) WHERE r.race_key=?
-        GROUP BY checkpoint_semantic_key,checkpoint_key,checkpoint_source_label ORDER BY MIN(sequence_no)""",(key,)).fetchall()
+        GROUP BY checkpoint_semantic_key,checkpoint_key,checkpoint_source_label ORDER BY MIN(sequence_no)""",(key,)).fetchall())
+    explicit=checkpoint_order(adapter,race)
+    if explicit:
+        rank={name:i for i,name in enumerate(explicit)}
+        rows.sort(key=lambda row:(rank.get(row["checkpoint_semantic_key"] or row["checkpoint_key"],len(rank)),row["sequence_no"]))
     out=[{"key":"start","name":"Start","semantic_key":"start","sequence_no":0,"race_distance_km":0.0,"route_distance_km":0.0,"analysis_boundary":True,"replay_anchor":True,"source_label":None}]
     seen={"start"}
     seq=1
@@ -140,7 +164,7 @@ def main():
                 "race_key","event_key","race_family","year","race_date","course_version","data_status","section",
                 "nominal_distance_km","participant","competition","capabilities"
             )}
-            payload["checkpoints"][rk]=checkpoint_catalog(con,r)
+            payload["checkpoints"][rk]=checkpoint_catalog(con,r,adapter)
 
         for s in con.execute("""SELECT r.race_key,r.source_result_id,r.bib,s.* FROM splits s JOIN results r USING(result_uid)
                               WHERE s.elapsed_seconds IS NOT NULL ORDER BY r.race_key,r.result_uid,s.sequence_no"""):

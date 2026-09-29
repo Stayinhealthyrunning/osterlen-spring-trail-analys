@@ -86,6 +86,62 @@ class EngineV1ExportTests(unittest.TestCase):
         self.assertTrue(course["assets"]["route_source"])
         self.assertFalse(self.data["courses"]["trail14-current-reference"]["assets"])
 
+    def test_all_exported_results_and_splits_are_internally_consistent(self):
+        valid_status={"FINISHED","DNF","DNS","DSQ","UNKNOWN"}
+        results_by_race={}
+        for race_key,race in self.data["races"].items():
+            records=race["records"]
+            ids=[str(record["source_result_id"]) for record in records]
+            self.assertEqual(len(ids),len(set(ids)),f"{race_key}: duplicate source_result_id")
+            results_by_race[race_key]={str(record["source_result_id"]):record for record in records}
+            for record in records:
+                self.assertIn(record["status"],valid_status)
+                if record["status"]=="FINISHED":
+                    self.assertIsNotNone(record["finish_seconds"],f"{race_key}: FINISHED without time")
+                    self.assertGreater(record["finish_seconds"],0)
+                if record["finish_seconds"] is not None:
+                    self.assertGreater(record["finish_seconds"],0)
+                self.assertIn(record["sex"],(None,"F","M"))
+                if record["age"] is not None:
+                    self.assertGreater(record["age"],0)
+                    self.assertLess(record["age"],100)
+                for field in ("overall_place","class_place","gender_place"):
+                    if record[field] is not None:
+                        self.assertGreater(record[field],0)
+
+        checkpoint_keys={key:{cp["key"] for cp in value} for key,value in self.data["checkpoints"].items()}
+        for split in self.data["splits"]:
+            race_key=split["race_key"]
+            result=results_by_race[race_key].get(str(split["source_result_id"]))
+            self.assertIsNotNone(result,f"{race_key}: orphan split {split['source_result_id']}")
+            self.assertIn(split["checkpoint"],checkpoint_keys[race_key])
+            self.assertGreater(split["elapsed_seconds"],0)
+            if result["status"]=="FINISHED" and result["finish_seconds"] is not None:
+                self.assertLessEqual(split["elapsed_seconds"],result["finish_seconds"])
+
+        teams={(team["race_key"],str(team["source_result_id"])) for team in self.data["teams"]}
+        for member in self.data["team_members"]:
+            self.assertIn((member["race_key"],str(member["team_source_result_id"])),teams)
+            self.assertIsNone(member["leg_no"])
+
+    def test_historical_checkpoint_order_follows_semantic_policy(self):
+        expected=["start","stenshuvud","bengtemolla","vantalangan","finish"]
+        for key in ("ost-2019-ultra60","ost-2019-duo60"):
+            self.assertEqual([x["key"] for x in self.data["checkpoints"][key]],expected)
+
+    def test_observed_splits_are_chronological_in_exported_checkpoint_order(self):
+        for race_key,checkpoints in self.data["checkpoints"].items():
+            rank={cp["key"]:i for i,cp in enumerate(checkpoints)}
+            by_result={}
+            for split in self.data["splits"]:
+                if split["race_key"]!=race_key or split["checkpoint"] not in rank:
+                    continue
+                by_result.setdefault(str(split["source_result_id"]),[]).append(split)
+            for source_result_id,splits in by_result.items():
+                ordered=sorted(splits,key=lambda s:rank[s["checkpoint"]])
+                times=[s["elapsed_seconds"] for s in ordered]
+                self.assertEqual(times,sorted(times),f"{race_key} {source_result_id} has non-chronological semantic checkpoints")
+
     def test_person_history_remains_disabled_without_linkage_layer(self):
         self.assertTrue(all(not race["capabilities"]["person_history"] for race in self.data["races"].values()))
 
