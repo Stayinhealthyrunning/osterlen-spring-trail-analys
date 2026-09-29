@@ -152,6 +152,15 @@ const server=http.createServer((req,res)=>{
       assert.equal((await page.locator('#segments').innerText()).includes('SPURTVINNAREN'),false,'no unsupported speaker-control sprint analysis');
     });
 
+    await run('individual profile mirrors Gotaleden summary pacing and split hierarchy',async()=>{
+      await open('ost-2025-ultra60');await nav('results');await page.locator('#result-table [data-result]').first().click();await page.locator('#profile[open]').waitFor();const text=await page.locator('#profile-body').innerText();for(const label of ['DITT LOPP','PACINGPROFIL','MELLANTIDER · ANALYTISKA DELSTRÄCKOR','Från analysgräns till analysgräns'])assert.ok(text.includes(label),label);assert.ok(await page.locator('#profile #personal-summary').isVisible());assert.ok(await page.locator('#profile #profile-replay .runner-replay').isVisible());await page.locator('#close-profile').click();
+    });
+
+    await run('sprint winner appears only with a genuine final timing control',async()=>{
+      await open('ost-2019-ultra60');await nav('segments');let text=await page.locator('#segments').innerText();assert.ok(text.includes('SPURTVINNAREN'));assert.ok(text.includes('Årets snabbaste löpare på målspurten'));assert.ok(text.includes('Vantalängan'));assert.ok(await page.locator('#segments [data-sprint-sex="F"]').count()>=0);
+      await open('ost-2025-ultra60');await nav('segments');text=await page.locator('#segments').innerText();assert.equal(text.includes('SPURTVINNAREN'),false);
+    });
+
     await run('club arena selects up to four clubs and renders pace and standouts',async()=>{
       await nav('clubs');const input=page.locator('#club-arena-search');await input.fill('a');const option=page.locator('#club-arena-suggestions [data-club-arena-add]').first();await option.waitFor();await option.click();
       assert.equal(await page.locator('#clubs .selected-chips button').count(),1);assert.equal(await page.locator('#clubs .club-comparison article').count(),1);assert.ok((await page.locator('#clubs').innerText()).includes('Pacing'));assert.ok((await page.locator('#clubs').innerText()).includes('Snabbaste målgångare'));
