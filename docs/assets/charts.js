@@ -62,3 +62,27 @@ export function elevation(profile,anchors,selected=null){
  return svg(s,'Höjdprofil längs aktuell rutt',250);
 }
 
+
+export const palette=['#1677A8','#8FBE63','#D9A441','#E7A6B7','#596761'];
+
+export function lines(series,labels,{format=value=>String(Math.round(value)),zero=false,height=300,referenceValue=null}={}){
+ const values=series.flatMap(item=>(item.values||[]).filter(finite).map(Number));if(!values.length)return empty('Underlag saknas.');
+ const reference=finite(referenceValue)?Number(referenceValue):null,domain=reference===null?values:[...values,reference],width=740,pad={l:68,r:18,t:22,b:64},minimum=zero?0:Math.min(...domain)*.96,maximum=Math.max(...domain)*1.04,x=i=>pad.l+(width-pad.l-pad.r)*(labels.length<=1?0:i/(labels.length-1)),y=v=>height-pad.b-(Number(v)-minimum)/(maximum-minimum||1)*(height-pad.t-pad.b);
+ let body='';for(let i=0;i<5;i++){const value=minimum+(maximum-minimum)*(4-i)/4,yy=y(value);body+='<line class="axis" x1="'+pad.l+'" x2="'+(width-pad.r)+'" y1="'+yy+'" y2="'+yy+'"/><text x="'+(pad.l-8)+'" y="'+(yy+4)+'" text-anchor="end">'+esc(format(value))+'</text>';}
+ if(reference!==null){const yy=y(reference);body+='<line class="reference-line" x1="'+pad.l+'" x2="'+(width-pad.r)+'" y1="'+yy+'" y2="'+yy+'"/>';}
+ labels.forEach((label,i)=>{const xx=x(i);body+='<text x="'+xx+'" y="'+(height-20)+'" text-anchor="middle" transform="rotate(-18 '+xx+' '+(height-20)+')">'+esc(label)+'</text>';});
+ series.forEach((item,si)=>{let path='',open=false;const color=item.color||palette[si%palette.length];(item.values||[]).forEach((value,i)=>{if(!finite(value)){open=false;return;}path+=(open?'L':'M')+x(i).toFixed(1)+','+y(value).toFixed(1)+' ';open=true;});body+='<path class="plot-line" stroke="'+esc(color)+'" d="'+path+'"/>';(item.values||[]).forEach((value,i)=>{if(finite(value))body+='<circle class="point" data-series="'+esc(item.id||item.name)+'" fill="'+esc(color)+'" cx="'+x(i)+'" cy="'+y(value)+'" r="4"><title>'+esc(item.name)+' · '+esc(labels[i])+': '+esc(format(value))+'</title></circle>';});});
+ const legend='<div class="legend">'+series.map((item,i)=>'<span data-series="'+esc(item.id||item.name)+'"><i style="background:'+esc(item.color||palette[i%palette.length])+'"></i>'+esc(item.name)+'</span>').join('')+'</div>';
+ return legend+svg(body,'Linjediagram',height);
+}
+
+export function finishProgression(groups,quantileFn){
+ const levels=[{share:.1,label:'10 % i mål'},{share:.25,label:'25 % i mål'},{share:.5,label:'50 % i mål · median',median:true},{share:.75,label:'75 % i mål'},{share:.9,label:'90 % i mål'}],prepared=(groups||[]).map((group,index)=>{const values=(group.values||[]).filter(finite).map(Number);return{...group,color:group.color||palette[index%palette.length],values,times:values.length?levels.map(level=>quantileFn(values,level.share)):[]}}).filter(group=>group.times.length);if(!prepared.length)return empty('Underlag saknas.');
+ return '<div class="finish-progression" role="list" aria-label="Tidpunkter då olika andelar hade gått i mål">'+levels.map((level,index)=>'<article class="finish-threshold'+(level.median?' is-median':'')+'" role="listitem"><div class="finish-threshold-level"><strong>'+level.label+'</strong><span class="finish-threshold-progress" aria-hidden="true"><i style="width:'+(level.share*100)+'%"></i></span></div><dl class="finish-threshold-times">'+prepared.map(group=>'<div class="finish-threshold-group" style="--series-color:'+esc(group.color)+'"><dt><i aria-hidden="true"></i>'+esc(group.name)+'</dt><dd>'+time(group.times[index])+'</dd></div>').join('')+'</dl></article>').join('')+'</div>';
+}
+
+export function horizontalBars(items,{valueFormat=value=>String(Math.round(value)),maxRows=10}={}){
+ const rows=items.filter(item=>finite(item.value)).slice(0,maxRows);if(!rows.length)return empty('Underlag saknas.');
+ const maximum=Math.max(...rows.map(item=>Math.abs(Number(item.value))),1),width=740,rowHeight=40,height=rows.length*rowHeight+12;
+ return svg(rows.map((item,index)=>{const barWidth=Math.abs(Number(item.value))/maximum*340,y=index*rowHeight+8;return '<text x="0" y="'+(y+17)+'">'+esc(String(item.label).length>29?String(item.label).slice(0,28)+'…':item.label)+'</text><rect class="bar '+(index%2?'alt':'')+'" x="245" y="'+y+'" width="'+barWidth+'" height="23" rx="6"/><text x="'+(253+barWidth)+'" y="'+(y+17)+'">'+esc(valueFormat(item.value))+'</text>';}).join(''),'Horisontella staplar',height);
+}
