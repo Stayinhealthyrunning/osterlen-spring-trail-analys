@@ -337,3 +337,8 @@ div.chart{box-sizing:border-box;min-width:0!important;width:100%;max-width:100%;
  .segment-character{grid-template-columns:1fr}
  .gender-funnel-row{grid-template-columns:minmax(70px,100px) minmax(50px,1fr) 28px}
 }
+
+.zoomable-scatter svg{cursor:crosshair;touch-action:none}
+.zoomable-scatter .scatter-point{cursor:pointer}
+.scatter-zoom-selection{fill:rgba(22,119,168,.13);stroke:var(--sea);stroke-width:2;stroke-dasharray:5 3}
+.chart-reset{margin:5px 0 7px;padding:4px 7px;min-height:31px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--sea-dark);font-size:.6rem;font-weight:800}
