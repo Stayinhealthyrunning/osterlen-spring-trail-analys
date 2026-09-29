@@ -91,6 +91,7 @@ const server=http.createServer((req,res)=>{
  await run('finish-only families and provisional/reconstructed labels',async()=>{
   for(const family of ['trail22','trail14','trail5']){
    await open('ost-2026-'+family,'segments');assert.equal(await page.locator('#analysis-nav [data-section="segments"]').count(),0);assert.equal(await page.locator('#segments').count(),0);assert.equal(new URL(page.url()).hash,'#overview');
+   await nav('compare');assert.ok((await page.locator('.compare-picker').innerText()).includes('exakt 2'));assert.ok((await page.locator('.compare-picker').innerText()).includes('Kartduell kräver'));
    await nav('course');const text=await page.locator('#view').innerText();
    if(family==='trail14'){assert.ok(text.includes('Arbetsreferens'));assert.equal(await page.locator('#load-course').count(),0);}
    if(family==='trail5'){assert.ok(text.includes('Rekonstruerad bana'));assert.equal(await page.locator('#goal-hours').inputValue(),'0');assert.equal(await page.locator('#goal-minutes').inputValue(),'35');await page.locator('#load-course').click();await page.locator('#course-map .leaflet-container').waitFor();assert.equal(await page.locator('[data-play]').count(),0);}
@@ -141,6 +142,10 @@ const server=http.createServer((req,res)=>{
    const text=await page.locator('#analysis').innerText();assert.ok(!/\bNaN\b|\bundefined\b/.test(text),meta.race_key+' invalid rendered value');
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=2),meta.race_key+' overflow');
   }
+ });
+ await run('mobile profile and direct comparison stay within the viewport',async()=>{
+  await page.setViewportSize({width:390,height:844});await open('ost-2025-ultra60','results');await page.locator('[data-result]').first().click();await page.locator('#profile[open]').waitFor();assert.ok(await page.locator('#profile').evaluate(el=>el.getBoundingClientRect().right<=innerWidth+2&&el.getBoundingClientRect().left>=-2));assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=2));await page.locator('#close-profile').click();
+  await nav('compare');const search=page.locator('#compare-search');for(const q of ['Johan Lantz','Christian Malmström']){await search.fill(q);await page.locator('#compare-options [data-add-compare]').first().click();}assert.ok(await page.locator('.head-to-head').isVisible());assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=2));const cards=await page.locator('.versus article').evaluateAll(nodes=>nodes.map(n=>({left:n.getBoundingClientRect().left,right:n.getBoundingClientRect().right})));assert.ok(cards.every(x=>x.left>=-2&&x.right<=innerWidth+2));await page.setViewportSize({width:1536,height:1024});
  });
  await run('responsive all required sizes; no document overflow',async()=>{
   for(const [w,h] of [[1536,1024],[1366,768],[900,900],[390,844]]){
