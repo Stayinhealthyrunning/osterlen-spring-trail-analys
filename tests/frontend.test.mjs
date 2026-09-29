@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {median,quantile,bins,distribution,summary,comparable,distanceAtTime,groups,finished} from '../docs/assets/analytics.js';
-import {sexHistogram,histogramSeries,finishPlaceScatter,statusLabel} from '../docs/assets/charts.js';
+import {sexHistogram,histogramSeries,finishPlaceScatter,statusLabel,distributionBand} from '../docs/assets/charts.js';
 import {adapt} from '../docs/assets/data-adapter.js';
 import {urlState,switched,storage,stateURL} from '../docs/assets/app-state.js';
 import {DataLoader} from '../docs/assets/data-loader.js';
@@ -38,6 +38,7 @@ test('history aggregate matches every generated race bundle',()=>{
   assert.equal(e.men_starters,starterKnown.filter(r=>r.sex==='M').length,e.race_key+' men starters');
  }
 });
+test('interactive distribution hit zones are layered above rendered series',()=>{const html=distributionBand([{id:'field',name:'Fältet',segments:[{median:300,q25:280,q75:320,n:20},{median:330,q25:300,q75:360,n:20}]}],['A','B'],{interactiveSegments:true});assert.ok(html.indexOf('distribution-band')>=0);assert.ok(html.lastIndexOf('distribution-segment-hit')>html.lastIndexOf('distribution-band'));assert.ok(html.lastIndexOf('distribution-segment-hit')>html.lastIndexOf('distribution-median'));});
 test('finish-place scatter is interactive and preserves sex labels',()=>{const html=finishPlaceScatter([{source_result_id:'1',name:'A',status:'FINISHED',finish_seconds:3600,overall_place:1,sex:'F'},{source_result_id:'2',name:'B',status:'FINISHED',finish_seconds:3900,overall_place:2,sex:'M'},{source_result_id:'3',name:'C',status:'FINISHED',finish_seconds:4200,overall_place:3,sex:null}]);assert.match(html,/data-result="1"/);assert.match(html,/point-female/);assert.match(html,/point-male/);assert.match(html,/point-total/);assert.match(html,/Kvinnor/);assert.match(html,/Män/);});
 test('null never becomes zero; interpolated quantiles; fixed bins',()=>{assert.equal(median([null,'',undefined,10,20]),15);assert.equal(quantile([0,10,20,30],.25),7.5);assert.equal(median([]),null);assert.deepEqual(bins([null,900,1799,1800],900).map(b=>b.count),[2,1]);assert.throws(()=>bins([1],0));});
 test('percentile ladder respects small-sample publication thresholds',()=>{const rows=n=>Array.from({length:n},(_,i)=>({finish_seconds:1000+i*10}));assert.equal((progression(rows(5)).match(/<strong>–<\/strong>/g)||[]).length,4);assert.equal((progression(rows(10)).match(/<strong>–<\/strong>/g)||[]).length,2);assert.equal((progression(rows(20)).match(/<strong>–<\/strong>/g)||[]).length,0);});
