@@ -1,41 +1,46 @@
-# ÖST Splits – visuell QA
+# ÖST Splits – visuell och funktionell QA
 
-Datum: 2026-09-28  
-Underlag: automatiserade Chromium-skärmbilder i `artifacts/` (lokala QA-artefakter, ej deploy)
+Datum: 2026-09-29
+Branch: `improve/ost-ux-parity`
+QA-underlag: Chromium-artefakter i `artifacts/` (lokala, ignorerade körningsfiler)
 
-## Granskade storlekar
+## Resultat
+
+Slutversionen godkändes i 14 automatiserade browserflöden, inklusive den nya hero-sökningen, tangentbordsautocompleten, könstoggles och den direkta Kartduell-ingången. Alla tillgängliga scrollsektioner renderas samtidigt; deep links fokuserar rätt sektion och browser Back/Forward återställer ankarpositionen. Resultatdatabasen och Kartduell förblir separata arbetsvyer.
 
 | Viewport | Resultat |
 |---|---|
-| 1536 × 1024 | Godkänd. Hero, fem familjekort, tvåkolumnsanalys och tabeller håller tydlig hierarki. |
-| 1366 × 768 | Godkänd. Kontroller och analysnavigation är synliga och användbara. |
-| 900 × 900 | Godkänd. Tvåkolumnslayouten behåller läsbar diagramyta. |
-| 390 × 844 | Godkänd. Kort stackas, metodguide blir en kolumn och tabeller/diagram scrollar internt. |
+| 1536 × 1024 | Godkänd. Fullbreddshero och familjekort går över i tydlig analysnavigation, KPI:er och tvåkolumnskort. |
+| 1366 × 768 | Godkänd. Hero, lopp-/årsval och analyskontroller ryms utan dokumentoverflow. |
+| 900 × 900 | Godkänd. Analyskort och diagram behåller läsbar bredd. |
+| 390 × 844 | Godkänd. Hero, kort, verktyg och dialoger fungerar i mobilbredd; tabeller och diagram använder egna scrollområden. |
 
-Automatisk geometriassertion verifierade högst 2 px dokumentoverflow i samtliga storlekar och i varje huvudsektion.
+Geometriassertionen fann högst 2 px dokumentoverflow i samtliga storlekar och analyserade huvudsektioner. Den mobila profil-/replay-dialogen och `prefers-reduced-motion` verifierades. Browserkörningen rapporterade noll console errors, noll page errors och noll oväntade nätverksfel.
 
-## Granskade vyer
+## UX- och designkrav som verifierades
 
-- Landningssida och analysöversikt: tydlig ÖST-identitet, korrekt färgpalett och riktiga 2025-data.
-- Individprofil med Replay: karta ligger högt, neutral kartbakgrund är begriplig och kontrollfältet är läsbart.
-- Duo-profil: laget är analysobjekt; publicerade medlemmar visas utan etappanspråk.
-- Kartduell: två deltagare, rutt, tidsreglage och höjdprofil fungerar i fokuserad dialog.
-- Tile-failure: trasiga tilebilder tas bort; polerad neutral ruttvy behålls.
-- Trail 5: rekonstruerad bana märks uttryckligt och får ingen Replay.
-- Empty states: split- och ruttbegränsningar förklaras i text.
+- Hero är en bred, låg Österlen-kustbild med vänstergradient. Sökning efter namn/startnummer visar tangentbordsnavigerbara förslag och öppnar källstödd profilmodal. Kartduell har en tidig, fungerande ingång.
+- Fem familjekort använder fem separata WebP-miljöer. Trailbilderna visar skog/inland; inget motiv utger sig för att exakt avbilda ett namngivet landmärke. Den innehållssvaga route-journey-sektionen är borttagen.
+- Översiktens könskort, sluttidshistogram, percentiler och segmenttabell kan fokusera/dölja källstödda könsserier. Legend, antal och percentilvärden redovisas. Gruppkort för klass, åldersklass och klubb/ort visar stapelöversikt först och full tabell på begäran.
+- Fältflödet visar inte startankaret 100 %. Status använder DNF. Metodguiden finns i Metod; analyskort har korta tillgängliga infoförklaringar.
+- Capability-gränser höll: äldre Ultra behåller splits utan lånad rutt, finish-only-lopp saknar segmentsektion, Duo visas som lag utan härledda etapper och saknad CourseVersion utelämnar bansektionen.
+- Browserflöden täckte tile-failure fallback, race-/årsbyte, global sökning, profil/replay, direktjämförelse, kartduell, historik, metodik, målplan, deep links samt Back/Forward.
 
-## Konkreta fynd och rättningar
+## Regression och performance
 
-1. Browserns `fetch` tappade sin bindning när den skickades till loadern. Loadern använder nu en omslutande funktionsanropare och startvyn laddar korrekt.
-2. Några UI-tecken hade felaktig teckenkodning efter den första filskrivningen. Filerna normaliserades till UTF-8 och svenska tecken verifierades i Chromium.
-3. Replaytestet sökte utanför vinnarens verkliga sluttid. Testet använder nu ett giltigt värde inom resultatradens publicerade tid.
-4. 2024 års GPX har delvis saknade höjdpunkter. Höjdprofilen bryter kurvan vid saknad observation i stället för att omvandla saknad höjd till noll.
+- Foundation: godkänd.
+- Prebuild readiness: godkänd.
+- Python: 22 tester godkända.
+- JavaScript: 20 tester godkända.
+- Chromium: 14 browserflöden godkända över samtliga fyra storlekar.
+- Frontend budget: godkänd. HTML 1 559 B gzip, CSS 9 300 B gzip, JavaScript 30 590 B gzip. Kritisk kod/dataöverföring är 73 832 B gzip mot budgeten 524 288 B. Bootstrap + största valda lopp är 32 383 B gzip; full Engine-regressionstoken är 450 553 B gzip.
+- Lokal, headless Chromium rapporterade första användbara vy efter cirka 356 ms. Det är en okonditionerad lokal observation, inte ett nätverks-SLA.
+- Hero-WebP är 287 096 B. De fyra familje-WebP-bilderna är tillsammans 203 126 B (490 222 B visuella bilder totalt). Performance-budgetens kritiska kod/data-mått exkluderar bilder. Route, elevation och replay förblir lazy-loaded.
 
-Inga ytterligare visuella fel mot releasekraven hittades. Den långa mobilsidan beror på den kompletta klassöversikten; tabellen håller sig inom sin egen scrollarea och orsakar inte dokumentoverflow.
+Datagenerationens SHA-256 var `6822e5701660213957d85b57c8c0ec7a2c3d2a3fc4899c16bb3d59013715139e`; totals var fortsatt 34 lopp, 9 871 resultat, 6 123 observerade splits, 300 Duo-lag och 599 medlemsrader. Source data, Engine 1.0-kontrakt, frysta totaler, provenance och capability-regler ändrades inte.
 
-## Automatiserad browser-QA
+## Kvarstående begränsningar
 
-11 produktflöden passerade: progressiv laddning, tangentbordsprofil, Ultra Replay, Duo, historisk Ultra utan lånad rutt, 2023 års dubbla observationer, finish-only-familjer, lopp-/årsbyte, global sökning, Direktjämförelse/Kartduell, tile-failure, historik, metodik, loppplan, responsivitet och reduced motion. Rapporten hade 0 console errors, 0 page errors och 0 oväntade nätverksfel.
+Ingen flerårig personidentitet eller Duo-etappkoppling skapades. Finish-only-upplagor saknar segmentdata. Kurs- och replayvyer fortsätter att följa lokal CourseVersion och provenance; kartor eller splits från andra upplagor lånas inte.
 
-VISUAL QA READY FOR HUMAN REVIEW: YES
-
+**VISUAL QA READY FOR HUMAN REVIEW: YES**

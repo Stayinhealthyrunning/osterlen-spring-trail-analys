@@ -73,3 +73,10 @@ Historiska Ultra-rutter utan lokalt redistributerbart underlag får ingen karta/
 
 ÖST SPLITS READY FOR HUMAN REVIEW: YES
 
+
+
+## UX-paritetsrunda – 2026-09-29
+
+Före implementationen dokumenterades en konkret jämförelse av ÖST, Ultravasan och Gotaleden i `reports/OST_UX_PARITY_GAP_ANALYSIS.md`. Rundan behöll ÖST:s befintliga capability-styrda långscroll och specialvyer, men flyttade upp de individuella verktygen och förbättrade deras interaktion: hero-sök/autocomplete till profil, tidig Kartduell, serieval för könsserier, antal och skannbara percentilmarkörer, stapelöversikt med expanderbara gruppdetaljer samt ett komprimerat fältflöde utan Start=100 %. Metodguiden flyttades till Metod och varje relevant analyskort fick en kort förklaring. Den dekorativa route-journey-sektionen togs bort. DNF-etiketter och Österlens bildidentitet behölls konsekvent.
+
+Slutlig visuell och funktionell verifiering finns i `reports/OST_SPLITS_VISUAL_QA.md`. Slutbudgeten uppmättes till 73 832 B gzip för kritisk kod/dataöverföring och första användbar vy omkring 356 ms i lokal headless Chromium. Engine 1.0 och dataproveniens lämnades orörda.

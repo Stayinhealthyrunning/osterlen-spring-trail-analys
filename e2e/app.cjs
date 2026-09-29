@@ -31,12 +31,20 @@ const server=http.createServer((req,res)=>{
   assert.equal(await page.locator('h1').count(),1);assert.equal(await page.locator('main').count(),1);
   assert.ok(await page.locator('#view').innerText().then(t=>t.includes('Sluttidsfördelning')));
   assert.equal(await page.locator('.long-analysis>.flow-section').count(),6);assert.ok(await page.locator('#overview').isVisible());assert.ok(await page.locator('#dynamics').isVisible());assert.ok(await page.locator('#segments').isVisible());assert.ok(await page.locator('#course').isVisible());assert.ok(await page.locator('#history').isVisible());assert.ok(await page.locator('#method').isVisible());
-  assert.equal(await page.locator('.route-journey li').count(),7);assert.match(await page.locator('.landscape').evaluate(el=>getComputedStyle(el).backgroundImage),/ost-coast-hero/);assert.ok(await page.locator('.method-context').isVisible());assert.ok((await page.locator('#dynamics').innerText()).includes('Så långt når startfältet'));assert.ok((await page.locator('#dynamics').innerText()).includes('Starkast avslutning'));assert.ok(await page.locator('.group-segment').first().isVisible());
+  assert.equal(await page.locator('.route-journey').count(),0);assert.equal(await page.locator('.landscape').count(),0);assert.ok(await page.locator('#global-search').isVisible());assert.ok(await page.locator('#method .method-context').isVisible());assert.ok((await page.locator('#dynamics').innerText()).includes('Så långt når startfältet'));assert.ok((await page.locator('#dynamics').innerText()).includes('Starkast avslutning'));assert.ok(await page.locator('.group-segment').first().isVisible());
   const familyImages=await page.locator('.family-card').evaluateAll(cards=>Object.fromEntries(cards.map(card=>[card.dataset.family,getComputedStyle(card,'::after').backgroundImage])));assert.match(familyImages.ultra60,/ost-coast-hero/);assert.match(familyImages.duo60,/family-duo60/);assert.match(familyImages.trail22,/family-trail22/);assert.match(familyImages.trail14,/family-trail14/);assert.match(familyImages.trail5,/family-trail5/);assert.equal(new Set(Object.values(familyImages)).size,5);
   const loaded=report.requests.filter(p=>p.includes('/data/'));
   assert.deepEqual(loaded,['/data/bootstrap.json','/data/races/ost-2025-ultra60.json','/data/history.json']);
   report.metrics.firstUsefulMs=await page.evaluate(()=>performance.now());
   await shot('desktop-overview');
+ });
+ await run('hero lookup, quick kartduell and interactive comparison series',async()=>{
+  const bounds=await page.locator('.hero').boundingBox();assert.ok(Math.abs(bounds.x)<=1);assert.ok(Math.abs(bounds.width-1536)<=2);
+  const search=page.locator('#lookup');await search.fill('Johan Lantz');await page.locator('#lookup-suggestions [data-lookup-result]').first().waitFor();await search.press('ArrowDown');await search.press('Enter');await page.locator('#profile[open]').waitFor();assert.ok((await page.locator('#profile-body').innerText()).includes('Johan Lantz'));await page.locator('#close-profile').click();
+  const female=page.locator('.finish-interactive [data-series-toggle="female"]');await female.uncheck();assert.equal(await page.locator('.finish-interactive [data-series="female"]').first().isHidden(),true);assert.equal(await page.locator('.finish-interactive [data-series="male"]').first().isVisible(),true);
+  const percentile=page.locator('.percentile-interactive [data-series-toggle="male"]');await percentile.uncheck();assert.equal(await page.locator('.percentile-interactive [data-series="male"]').first().isHidden(),true);
+  await page.locator('.hero [data-section="compare"]').click();assert.equal(new URL(page.url()).hash,'#compare');assert.ok(await page.locator('.compare-picker').isVisible());
+  await open('ost-2025-ultra60','overview');await nav('dynamics');const flowStops=await page.locator('#dynamics .field-flow-list article strong').allTextContents();assert.ok(flowStops.length>0);assert.ok(flowStops.every(name=>name!=='Start'));
  });
  await run('analysis navigation uses anchors, deep links and browser history',async()=>{
   await nav('dynamics');assert.equal(new URL(page.url()).hash,'#dynamics');assert.equal(await page.evaluate(()=>document.activeElement.id),'dynamics');assert.ok(await page.locator('#overview').isVisible());
@@ -49,6 +57,7 @@ const server=http.createServer((req,res)=>{
  });
  await run('overview parity: gender series and club autocomplete keyboard flow',async()=>{
   assert.ok(await page.locator('.gender-story').isVisible());
+  const genderSeries=page.locator('.gender-story [data-series-toggle="female"]');await genderSeries.uncheck();assert.equal(await page.locator('.gender-story [data-series=female]').isHidden(),true);await genderSeries.check();
   const club=page.locator('#club-filter');assert.equal(await club.inputValue(),'');assert.equal(await page.locator('#club-suggestions').isHidden(),true);
   await club.fill('a');await page.locator('#club-suggestions [data-club-suggestion]').first().waitFor();await club.press('ArrowDown');await club.press('Enter');
   assert.ok((await club.inputValue()).length>1);assert.equal(await page.locator('#club-suggestions').isHidden(),true);
@@ -86,7 +95,7 @@ const server=http.createServer((req,res)=>{
    if(family==='trail5'){assert.ok(text.includes('Rekonstruerad bana'));assert.equal(await page.locator('#goal-hours').inputValue(),'0');assert.equal(await page.locator('#goal-minutes').inputValue(),'35');await page.locator('#load-course').click();await page.locator('#course-map .leaflet-container').waitFor();assert.equal(await page.locator('[data-play]').count(),0);}
   }
   await shot('trail5-course');
-  await open('ost-2018-trail22','course');assert.ok((await page.locator('#view').innerText()).includes('inte verifierad'));
+  await open('ost-2018-trail22','course');assert.equal(await page.locator('#analysis-nav [data-section="course"]').count(),0);assert.equal(new URL(page.url()).hash,'#overview');assert.equal(await page.locator('#course').count(),0);
  });
  await run('race/year switching, global search independent of filters',async()=>{
   await open('ost-2025-ultra60');await page.locator('[data-filter="sex"]').selectOption('F');

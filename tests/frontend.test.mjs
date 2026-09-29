@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {median,quantile,bins,distribution,summary,comparable,distanceAtTime,groups} from '../docs/assets/analytics.js';
 import {sexHistogram} from '../docs/assets/charts.js';
+import {progressionBySex} from '../docs/assets/views.js';
 import {adapt} from '../docs/assets/data-adapter.js';
 import {urlState,switched,storage,stateURL} from '../docs/assets/app-state.js';
 import {DataLoader} from '../docs/assets/data-loader.js';
@@ -13,7 +14,8 @@ const boot=read('bootstrap.json'),history=read('history.json'),doc=k=>read('race
 test('presentation provides family-specific goal defaults',()=>{assert.deepEqual(Object.fromEntries(Object.entries(boot.presentation).map(([family,p])=>[family,p.default_goal_seconds])),{ultra60:27000,trail22:9000,trail14:5400,trail5:2100,duo60:23400});});
 test('history aggregate carries structural, sex and comparable-record fields',()=>{const e=history.editions.find(x=>x.race_key==='ost-2025-ultra60');assert.ok(e.starters>=e.finished);assert.equal(e.women+e.men,e.sex_coverage);assert.equal(e.women_starters+e.men_starters,e.starter_sex_coverage);assert.ok('women_median' in e&&'men_median' in e);assert.ok(e.best_name);});
 test('terrain metrics preserve ascent/descent semantics',()=>{assert.deepEqual(terrainMetrics([[0,10],[1,30],[2,20],[3,50]]),{ascent:50,descent:10,min:10,max:50,distance:3});assert.equal(terrainMetrics([[0,null],[1,20]]),null);});
-test('finish histogram exposes total, women and men with text legends',()=>{const html=sexHistogram([{sex:'F',finish_seconds:100},{sex:'M',finish_seconds:110},{sex:'F',finish_seconds:120}],60);assert.match(html,/Totalt/);assert.match(html,/Kvinnor/);assert.match(html,/Män/);assert.match(html,/bar-female/);assert.match(html,/bar-male/);});
+test('finish histogram exposes total, women and men with text legends',()=>{const html=sexHistogram([{sex:'F',finish_seconds:100},{sex:'M',finish_seconds:110},{sex:'F',finish_seconds:120}],60);assert.match(html,/Totalt/);assert.match(html,/Kvinnor/);assert.match(html,/Män/);assert.match(html,/bar-female/);assert.match(html,/bar-male/);assert.match(html,/data-series-toggle="female"/);assert.match(html,/data-series="female"/);});
+test('percentile view exposes per-series sample counts and accessible series toggles',()=>{const html=progressionBySex([{sex:'F',status:'FINISHED',finish_seconds:100},{sex:'F',status:'FINISHED',finish_seconds:200},{sex:'M',status:'FINISHED',finish_seconds:150}],true);assert.match(html,/data-series-toggle="female"/);assert.match(html,/data-series-toggle="male"/);assert.match(html,/Kvinnor · n=2/);assert.match(html,/Män · n=1/);});
 test('null never becomes zero; interpolated quantiles; fixed bins',()=>{assert.equal(median([null,'',undefined,10,20]),15);assert.equal(quantile([0,10,20,30],.25),7.5);assert.equal(median([]),null);assert.deepEqual(bins([null,900,1799,1800],900).map(b=>b.count),[2,1]);assert.throws(()=>bins([1],0));});
 test('small-sample thresholds',()=>{for(let n=0;n<=20;n++){const d=distribution(Array.from({length:n},(_,i)=>i+1));assert.equal(d.median!==null,n>=5);assert.equal(d.q25!==null,n>=10);assert.equal(d.q10!==null,n>=20);}});
 test('status counts exclude DNS and unknown starts',()=>{const s=summary([{status:'DNS'},{status:'UNKNOWN'},{status:'DNF'},{status:'FINISHED',finish_seconds:4}]);assert.equal(s.starters,2);assert.equal(s.finished,1);assert.equal(s.dnf,1);});

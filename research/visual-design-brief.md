@@ -53,3 +53,12 @@ Diskreta badges och metodtexter använder: **Källvärde**, **Beräknat**, **Jä
 
 Kartan startar som en neutral vektorvy med den lokala rutten. Kartbakgrund hämtas först efter användarens val. Om tiles fallerar tas de bort och rutten, kontrollerna och deltagarna ligger kvar. Det gör vyn begriplig utan ett externt tilelager.
 
+
+
+## UX-paritet: ÖST som del av Loppanalys-familjen
+
+ÖST behåller sin varma kust-, vår- och skogsidentitet, men använder samma arbetsmönster som Ultravasan och Gotaleden: en panoramisk, låg hero med tydlig individuell sökning; separata individ- och kartduellingångar; sammanhängande capability-styrd analys med sticky ankarnavigation; skannbara KPI-/analyskort; valbara könsserier; översikt före detaljer; och metodförklaring nära analysen utan att dominera den. Den aktuella hero-bilden ligger som fullbreddsbild med mörk vänstergradient och sökpanelen direkt under rubriken.
+
+Familjekorten behåller fem distinkta bildmiljöer: kust för Ultra/Duo och inlandets bokskog/Verkeåmiljö för Trail 22/14/5. Ingen bild presenteras som en exakt vy av ett namngivet landmärke. Sökförslag ska kunna väljas med mus eller piltangenter/Enter och öppnar den källbaserade profilmodalen. Percentil- och sluttidsserier har synliga toggles, legend, antal och värden. Gruppfördelningar visar stapelöversikt först och full tabell vid behov.
+
+Analysen fortsätter vara en scrollbar helhet: Översikt, Loppets dynamik, Delsträckor, Bana/Course Intelligence, Historisk översikt och Metod visas samtidigt när respektive capability finns. Resultatdatabas och Kartduell är avsiktliga arbetsvyer. Metodförklaringar och dataregler samlas i Metod; enskilda analyskort ger kort kontext via info-kontroll.

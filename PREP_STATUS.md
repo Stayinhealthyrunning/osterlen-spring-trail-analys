@@ -68,3 +68,8 @@ Läs även:
 ## Fortsatt förvaltning
 
 Foundation- och prebuild-validatorerna förblir obligatoriska regressionstester. Nya funktioner ska fortsätta gå genom Engine 1.0-adaptern, capability-matrisen och den redan färdiga kuraterade ÖST-datan. Ny Sportstiming-import, ny personkoppling eller ny route-publicering kräver separat källevidens och får inte införas som frontendgissning.
+
+
+### UX-paritet och produktionspolish (2026-09-29)
+
+ÖST Splits är byggd frontend och denna polishrunda har dokumenterat gap mot Ultravasan och Gotaleden, förbättrat den individuella sökingången, analysdiagrammens interaktion, gruppöversikter, fältflöde och metodikens informationshierarki. Capability-styrning, Engine 1.0, fryst source data och provenance-regler är oförändrade. Verifiering och kvarstående begränsningar redovisas i `reports/OST_SPLITS_VISUAL_QA.md`.
