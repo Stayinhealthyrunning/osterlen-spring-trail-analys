@@ -51,3 +51,93 @@ tbody tr[data-result]{transition:background .15s ease,transform .15s ease}tbody 
 @media(max-width:700px){.finish-sex-grid,.duel-insights{grid-template-columns:1fr}}
 
 .scatter-point{stroke:#fff;stroke-width:1.5;opacity:.78;cursor:pointer}.scatter-point:hover,.scatter-point:focus{opacity:1;stroke:var(--ink);stroke-width:2.4}.point-female{fill:var(--female)}.point-male{fill:var(--male)}.point-total{fill:#7d8885}.finish-place-scatter .chart{min-width:560px}
+
+
+/* PR48 final family-parity polish */
+.hero{min-height:360px;padding-top:34px;padding-bottom:32px;background-position:center 54%}
+.hero h1{font-size:clamp(3.1rem,5.4vw,5.05rem);margin-bottom:10px}
+.hero-lead{font-size:1rem;line-height:1.48}
+.hero #global-search{margin:18px 0 12px;padding:12px}
+.hero-tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:min(100%,700px);margin-top:8px}
+.hero-tools>*{display:grid;gap:2px;min-height:58px;padding:10px 13px;border:1px solid #ffffff7d;border-radius:13px;background:#fffef2;color:var(--ink);text-align:left;text-decoration:none;box-shadow:0 8px 22px #102f3820}
+.hero-tools>*:hover,.hero-tools>*:focus-visible{transform:translateY(-1px);border-color:#fff;background:#fff}
+.hero-tools span{font-size:.78rem;font-weight:800;color:var(--sea-dark)}
+.hero-tools small{font-size:.65rem;line-height:1.3;color:var(--muted)}
+.hero-proof{margin-top:10px;max-width:none}
+.context{padding:22px 26px}
+.context .eyebrow{letter-spacing:.14em}
+.heading-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.info{flex:0 0 auto}
+.analysis-flow>.gender-story{height:auto}
+.gender-status-card,.field-flow-card,.age-analysis,.club-analysis{height:100%}
+.age-analysis,.club-analysis{overflow:hidden}
+.age-bars{display:flex;align-items:flex-end;gap:5px;height:150px;margin:14px 0 20px;padding:12px 10px 0;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,#fbfcf8,#f5f0e6)}
+.age-bar{display:grid;grid-template-rows:1fr auto auto;gap:4px;align-items:end;flex:1;min-width:0;height:100%;text-align:center}
+.age-bar>div{display:flex;align-items:flex-end;justify-content:center;height:100%;min-height:50px}
+.age-bar i{display:block;width:min(24px,70%);min-height:4px;border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,var(--sea),var(--spring))}
+.age-bar span,.age-bar strong{font-size:.61rem;font-variant-numeric:tabular-nums}
+.age-bar span{color:var(--muted);white-space:nowrap}
+.group-bar-button{width:100%;border:0;color:inherit;text-align:left;font:inherit;cursor:pointer}
+.group-bar-button:hover,.group-bar-button:focus-visible{background:#eef6f2;box-shadow:inset 3px 0 var(--sea)}
+.group-bar-button:focus-visible{outline:2px solid var(--sea-dark);outline-offset:2px}
+.percentile-board{gap:8px}
+.percentile-level{grid-template-columns:78px 1fr;padding:12px 0}
+.percentile-level>header b{font-size:.72rem;font-variant-numeric:tabular-nums;color:var(--ink)}
+.percentile-sex-bars{display:grid;gap:7px}
+.percentile-sex-row{display:grid;grid-template-columns:74px minmax(90px,1fr) 58px minmax(86px,auto);gap:8px;align-items:center;font-size:.68rem}
+.percentile-sex-row>span{font-weight:700;color:var(--muted)}
+.percentile-sex-track{height:12px;border-radius:999px;background:#e9e9e2;overflow:hidden}
+.percentile-sex-track i{display:block;height:100%;border-radius:999px;background:var(--sea)}
+.percentile-sex-row[data-series=female] .percentile-sex-track i{background:var(--female)}
+.percentile-sex-row[data-series=male] .percentile-sex-track i{background:var(--male)}
+.percentile-sex-row>strong{font-variant-numeric:tabular-nums}
+.percentile-sex-row>small{font-size:.62rem;color:var(--muted);white-space:nowrap}
+.percentile-total-row{display:flex;justify-content:space-between;gap:12px;padding:8px 10px;border-radius:10px;background:#f5f6f1;font-size:.72rem}
+.gender-segment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.gender-segment-grid>div{min-width:0;padding:14px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.gender-segment-grid h4{margin:0 0 8px}
+.scatter-interactive .series-controls{justify-content:flex-end}
+#compare-dialog{width:min(1120px,calc(100vw - 32px));max-width:1120px;max-height:92vh;padding:0;border:0;border-radius:24px;background:var(--bg);box-shadow:0 28px 90px #0b293660;overflow:hidden}
+#compare-dialog::backdrop,#profile::backdrop,#duel::backdrop{background:#0b29368c;backdrop-filter:blur(3px)}
+#compare-dialog .dialog-toolbar{position:sticky;top:0;z-index:5;padding:18px 22px;border-bottom:1px solid var(--line);background:#fffdf9f2;backdrop-filter:blur(12px)}
+#compare-dialog .dialog-toolbar h2{margin:2px 0 0;font-size:1.45rem}
+#compare-dialog-body{max-height:calc(92vh - 78px);overflow:auto;padding:22px}
+#compare-dialog-body .compare-picker{margin-top:0}
+#compare-dialog-body>.primary{display:flex;margin:8px auto 22px}
+.compare-picker{grid-template-columns:minmax(0,.8fr) minmax(280px,1.2fr)}
+.compare-picker .comparison-list{grid-column:1/-1}
+#duel{width:min(1180px,calc(100vw - 28px));max-width:1180px}
+.flow-section>.card+.card{margin-top:20px}
+
+@media(max-width:900px){
+ .hero{min-height:330px;padding:30px 32px}
+ .hero-tools{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hero-tools>a{grid-column:1/-1}
+ .gender-segment-grid{grid-template-columns:1fr}
+ .percentile-sex-row{grid-template-columns:68px minmax(70px,1fr) 54px}
+ .percentile-sex-row>small{grid-column:2/4;white-space:normal}
+}
+@media(max-width:700px){
+ .hero{min-height:0;padding:22px 18px 20px;align-items:center;background-position:61% center}
+ .hero h1{font-size:clamp(2.75rem,13vw,4rem);margin-bottom:8px}
+ .hero-lead{font-size:.92rem;line-height:1.42}
+ .hero #global-search{margin:14px 0 10px}
+ .hero-tools{grid-template-columns:1fr;gap:6px}
+ .hero-tools>a{grid-column:auto}
+ .hero-tools>*{min-height:52px}
+ .hero-proof{display:none}
+ .family-cards{margin-top:12px}
+ .context{padding:18px}
+ .context{align-items:flex-start}
+ .percentile-level{grid-template-columns:60px 1fr}
+ .percentile-sex-row{grid-template-columns:58px minmax(45px,1fr) 48px}
+ .percentile-sex-row>small{grid-column:1/-1;padding-left:58px}
+ .age-bars{height:132px;overflow-x:auto}
+ .age-bar{min-width:38px}
+ #compare-dialog{width:calc(100vw - 12px);max-height:96vh;border-radius:16px}
+ #compare-dialog-body{max-height:calc(96vh - 72px);padding:12px}
+ #compare-dialog .dialog-toolbar{padding:13px 14px}
+ #compare-dialog .dialog-toolbar h2{font-size:1.15rem}
+ .compare-picker{grid-template-columns:1fr}
+ .compare-picker .comparison-list{grid-column:auto}
+}
