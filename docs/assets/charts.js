@@ -29,6 +29,19 @@ export function sexHistogram(rows,step){
  const legend=split?'<div class="legend" aria-label="Diagramförklaring"><span><i class="total"></i>Totalt</span><span><i class="female"></i>Kvinnor</span><span><i class="male"></i>Män</span></div>':'';
  return legend+svg(s,split?'Fördelning av måltider totalt, kvinnor och män':'Fördelning av måltider');
 }
+
+export function finishPlaceScatter(rows){
+ const points=rows.filter(r=>finite(r.finish_seconds)&&r.finish_seconds>0&&finite(r.overall_place)&&r.overall_place>0);
+ if(points.length<2)return empty('För få fullföljare med publicerad totalplacering.');
+ const min=Math.min(...points.map(r=>Number(r.finish_seconds))),max=Math.max(...points.map(r=>Number(r.finish_seconds))),maxPlace=Math.max(...points.map(r=>Number(r.overall_place))),left=70,right=700,top=28,bottom=235;
+ const x=v=>left+(Number(v)-min)/(max-min||1)*(right-left),y=v=>top+(Number(v)-1)/(Math.max(1,maxPlace-1))*(bottom-top);
+ let s='';
+ for(let i=0;i<=4;i++){const value=min+(max-min)*i/4,xx=left+(right-left)*i/4;s+='<line class="axis" x1="'+xx+'" x2="'+xx+'" y1="'+top+'" y2="'+bottom+'"/><text x="'+xx+'" y="264" text-anchor="middle">'+time(value).slice(0,-3)+'</text>';}
+ for(let i=0;i<=4;i++){const place=Math.max(1,Math.round(1+(maxPlace-1)*i/4)),yy=y(place);s+='<line class="axis" x1="'+left+'" x2="'+right+'" y1="'+yy+'" y2="'+yy+'"/><text x="58" y="'+(yy+4)+'" text-anchor="end">'+place+'</text>';}
+ for(const r of points){const cls=r.sex==='F'?'point-female':r.sex==='M'?'point-male':'point-total',label=esc((r.name||'Resultat')+' · '+time(r.finish_seconds)+' · plats '+r.overall_place);s+='<circle tabindex="0" role="button" data-result="'+esc(r.source_result_id)+'" class="scatter-point '+cls+'" cx="'+x(r.finish_seconds).toFixed(2)+'" cy="'+y(r.overall_place).toFixed(2)+'" r="4.2" aria-label="Öppna '+label+'"><title>'+label+'</title></circle>';}
+ const sexes=new Set(points.map(r=>r.sex).filter(s=>s==='F'||s==='M')),legend=sexes.size===2?'<div class="legend" aria-label="Diagramförklaring"><span><i class="female"></i>Kvinnor</span><span><i class="male"></i>Män</span><span><i class="total"></i>Okänt kön</span></div>':'';
+ return legend+svg(s,'Sluttid mot totalplacering');
+}
 export function bands(stats,unit){
  const format=v=>unit==='time'?time(v):pace(v,unit);
  const values=stats.flatMap(s=>[s.q10,s.q25,s.median,s.q75,s.q90]).filter(finite);if(!values.length)return empty('För få kompletta passager för segmentmedian. Minst fem krävs.');
