@@ -124,22 +124,46 @@ export function dynamics(a,rows,state){
  return html+'</div>';
 }
 
+function sexView(state,key){
+ state.sexViews??={};state.sexViews[key]??={F:true,M:true};return state.sexViews[key];
+}
+function sexViewControls(state,key,rows){
+ if(!rows.some(r=>r.sex==='F')||!rows.some(r=>r.sex==='M'))return '';
+ const active=sexView(state,key);return '<div class="chart-toggles" data-sex-toggles="'+esc(key)+'"><button type="button" data-sex-view="'+esc(key)+'" data-sex="F" aria-pressed="'+active.F+'" style="--toggle-color:#b51d60"><i></i>Kvinnor</button><button type="button" data-sex-view="'+esc(key)+'" data-sex="M" aria-pressed="'+active.M+'" style="--toggle-color:#2563eb"><i></i>Män</button></div>';
+}
 function dnfFunnel(a,rows,state){
  if(!a.race.capabilities.segment_analysis)return empty('Den här upplagan saknar publicerade mellantider för DNF-förlopp.');
- const dnf=rows.filter(r=>r.status==='DNF');if(!dnf.length)return empty('Inga DNF i aktuellt urval.');
- const groups=a.boundary.filter(cp=>cp.key!=='finish').map(cp=>({name:cp.name,count:dnf.filter(r=>a.passages(r).at(-1)?.checkpoint===cp.key).length})).filter(x=>x.count);
- const max=Math.max(1,...groups.map(x=>x.count));return '<div class="dnf-funnel">'+groups.map(x=>'<article><span>'+esc(x.name)+'</span><div><i style="width:'+(100*x.count/max).toFixed(1)+'%"></i></div><strong>'+x.count+'</strong></article>').join('')+'</div><p class="chart-caption">DNF grupperas efter senast observerade analyskontroll. Exakt brytplats infereras inte.</p>';
+ const palette=['#1677a8','#8fbe63','#d9a441','#b51d60','#7651a0','#497b35'];
+ if(a.race.participant.entity==='team'){
+  const classes=groups(rows,'class_name').filter(g=>g.total>=3).slice(0,6),names=[...new Set(classes.flatMap(g=>a.boundary.filter(cp=>cp.key!=='finish').map(cp=>({name:cp.name,count:g.rows.filter(r=>r.status==='DNF'&&a.passages(r).at(-1)?.checkpoint===cp.key).length})).filter(x=>x.count).map(x=>x.name)))];if(!names.length)return empty('Inga DNF i aktuellt urval.');
+  const max=Math.max(1,...classes.flatMap(g=>names.map(name=>{const cp=a.boundary.find(x=>x.name===name);return g.rows.filter(r=>r.status==='DNF'&&a.passages(r).at(-1)?.checkpoint===cp?.key).length;})));
+  return '<div class="gender-funnel">'+names.map(name=>'<div class="gender-funnel-group"><span>'+esc(name)+'</span>'+classes.map((g,i)=>{const cp=a.boundary.find(x=>x.name===name),count=g.rows.filter(r=>r.status==='DNF'&&a.passages(r).at(-1)?.checkpoint===cp?.key).length;return '<div class="gender-funnel-row" style="--sex-color:'+palette[i]+'"><span>'+esc(g.name)+'</span><i style="--sex-color:'+palette[i]+';width:'+(100*count/max).toFixed(1)+'%"></i><strong>'+count+'</strong></div>';}).join('')+'</div>').join('')+'</div><p class="chart-caption">DNF grupperas efter senast observerade analyskontroll. Exakt brytplats infereras inte.</p>';
+ }
+ if(rows.some(r=>r.sex==='F')&&rows.some(r=>r.sex==='M')){
+  const active=sexView(state,'dnf'),sexes=[['F','Kvinnor','#b51d60'],['M','Män','#2563eb']].filter(([id])=>active[id]),by=Object.fromEntries(sexes.map(([id])=>[id,a.boundary.filter(cp=>cp.key!=='finish').map(cp=>({name:cp.name,count:rows.filter(r=>r.sex===id&&r.status==='DNF'&&a.passages(r).at(-1)?.checkpoint===cp.key).length})).filter(x=>x.count)])),names=[...new Set(sexes.flatMap(([id])=>by[id].map(x=>x.name)))];if(!names.length)return empty('Inga DNF i aktuellt urval.');
+  const max=Math.max(1,...sexes.flatMap(([id])=>by[id].map(x=>x.count)));return '<div class="gender-funnel">'+names.map(name=>'<div class="gender-funnel-group"><span>'+esc(name)+'</span>'+sexes.map(([id,label,color])=>{const count=by[id].find(x=>x.name===name)?.count||0;return '<div class="gender-funnel-row" data-dnf-sex="'+id+'" style="--sex-color:'+color+'"><span>'+label+'</span><i style="--sex-color:'+color+';width:'+(100*count/max).toFixed(1)+'%"></i><strong>'+count+'</strong></div>';}).join('')+'</div>').join('')+'</div><p class="chart-caption">DNF grupperas efter senast observerade analyskontroll. Exakt brytplats infereras inte.</p>';
+ }
+ const dnf=rows.filter(r=>r.status==='DNF');if(!dnf.length)return empty('Inga DNF i aktuellt urval.');const entries=a.boundary.filter(cp=>cp.key!=='finish').map(cp=>({name:cp.name,count:dnf.filter(r=>a.passages(r).at(-1)?.checkpoint===cp.key).length})).filter(x=>x.count),max=Math.max(1,...entries.map(x=>x.count));return '<div class="dnf-funnel">'+entries.map(x=>'<article><span>'+esc(x.name)+'</span><div><i style="width:'+(100*x.count/max).toFixed(1)+'%"></i></div><strong>'+x.count+'</strong></article>').join('')+'</div>';
 }
 function segmentCharacter(a,rows,state){
  if(!a.race.capabilities.segment_analysis)return empty('Delsträckor saknas.');
- const stats=a.segmentStats(rows),valid=stats.filter(s=>finite(s.median));
- return valid.length?horizontalBars(valid.map(s=>({label:s.from.name+' → '+s.to.name,value:s.median})),{valueFormat:v=>pace(v,state.unit),maxRows:20}):empty('För få kompletta segment för stabil medianfart.');
+ const palette=['#1677a8','#8fbe63','#d9a441','#b51d60','#7651a0','#497b35'],labels=a.boundary.slice(1).map(cp=>cp.name);
+ if(a.race.participant.entity==='team'){
+  const classes=groups(rows,'class_name').filter(g=>g.total>=3).slice(0,6),stats=classes.map(g=>a.segmentStats(g.rows));
+  return labels.map((name,index)=>'<article><span>'+esc(name)+'</span>'+classes.map((g,i)=>{const item=stats[i][index];return '<div class="segment-sex-row" style="--sex-color:'+palette[i]+'"><span>'+esc(g.name)+'</span><i></i><strong>'+pace(item?.median,state.unit)+'</strong><small>'+(item?.complete||0)+' verkliga segment</small></div>';}).join('')+'</article>').join('');
+ }
+ if(rows.some(r=>r.sex==='F')&&rows.some(r=>r.sex==='M')){
+  const active=sexView(state,'segments'),sexes=[['F','Kvinnor','#b51d60'],['M','Män','#2563eb']].filter(([id])=>active[id]),stats=Object.fromEntries(sexes.map(([id])=>[id,a.segmentStats(rows.filter(r=>r.sex===id))]));
+  return labels.map((name,index)=>'<article><span>'+esc(name)+'</span>'+sexes.map(([id,label,color])=>{const item=stats[id][index];return '<div class="segment-sex-row" data-segment-sex="'+id+'" style="--sex-color:'+color+'"><span>'+label+'</span><i></i><strong>'+pace(item?.median,state.unit)+'</strong><small>'+(item?.complete||0)+' verkliga segment</small></div>';}).join('')+'</article>').join('');
+ }
+ const stats=a.segmentStats(rows),valid=stats.filter(s=>finite(s.median));return valid.length?horizontalBars(valid.map(s=>({label:s.from.name+' → '+s.to.name,value:s.median})),{valueFormat:v=>pace(v,state.unit),maxRows:20}):empty('För få kompletta segment för stabil medianfart.');
 }
 function advancementRanking(a,rows){
  if(!a.race.capabilities.segment_analysis)return empty('Placeringsförändringar saknas.');
  const candidates=rows.filter(finished).map(r=>{const gains=a.boundary.slice(1).map((_,i)=>a.segment(r,i)?.gain).filter(finite),total=gains.reduce((sum,v)=>sum+v,0);return gains.length?{r,total}:null;}).filter(Boolean).filter(x=>x.total>0).sort((x,y)=>y.total-x.total).slice(0,10);
  return candidates.length?'<div class="ranking">'+candidates.map((x,i)=>'<button type="button" class="ranking-row" data-result="'+esc(x.r.source_result_id)+'"><b>'+(i+1)+'</b><span><strong>'+esc(x.r.name)+'</strong><small>#'+esc(x.r.bib)+' · '+esc(x.r.class_name||'')+'</small></span><em>+'+Math.round(x.total)+'</em></button>').join('')+'</div>':empty('Ingen källstödd positiv nettoförändring i urvalet.');
 }
+
 export function statistics(a,rows,state){
  return '<div class="analysis-grid gotaleden-statistics">'+
  '<section class="card wide finish-place-scatter"><div class="card-heading"><div><p class="eyebrow">PLACERINGSMOTOR</p><h3>Tid mot placering</h3></div>'+info('placement-method','Varje punkt är ett fullföljt resultat med publicerad totalplacering. Klick eller tangentbord öppnar individuell analys. Kön färgkodas endast från källstödda uppgifter.')+'</div>'+finishPlaceScatter(rows.filter(finished))+'</section>'+
