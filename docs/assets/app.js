@@ -7,7 +7,7 @@ import * as views from './views.js';
 import {plan} from './race-plan.js';
 import {pace,table,tr} from './charts.js';
 const $=s=>document.querySelector(s),loader=new DataLoader(),labels={overview:'Översikt',statistics:'Statistik',gender:'Genusperspektiv','age-analysis':'Klass & ålder',segments:'Delsträckor',history:'Historik',clubs:'Klubb & ort',method:'Metod',results:'Resultat',compare:'Jämför'};
-let boot,a,state,store,favorites=[],generation=0,renderVersion=0,mapView=null,profileMap=null,duelMap=null,profileTrigger=null,compareTrigger=null,clubSuggestionIndex=-1,lookupSuggestionIndex=-1,compareSuggestionIndex=-1,duelSuggestionIndex=-1,sectionObserver=null;
+let boot,a,state,store,favorites=[],generation=0,renderVersion=0,mapView=null,profileMap=null,duelMap=null,profileTrigger=null,compareTrigger=null,clubSuggestionIndex=-1,lookupSuggestionIndex=-1,compareSuggestionIndex=-1,duelSuggestionIndex=-1,clubArenaSuggestionIndex=-1,sectionObserver=null;
 function safeStorage(){try{return localStorage;}catch{return null;}}
 function status(text){$('#load-status').textContent=text;}
 function syncURL(replace=false){history[replace?'replaceState':'pushState'](null,'',stateURL(location.href,state));}
@@ -155,6 +155,18 @@ function openCompareDialog(){
  const dialog=$('#compare-dialog');if(!dialog||!a)return;compareTrigger=document.activeElement;renderCompareDialog();if(!dialog.open)dialog.showModal();$('#compare-search')?.focus();
 }
 
+function clubArenaValues(){const seen=new Map();for(const r of a.records){const value=String(r.club||'').trim(),key=value.toLocaleLowerCase('sv');if(value&&!seen.has(key))seen.set(key,value);}return [...seen.values()].sort((x,y)=>x.localeCompare(y,'sv'));}
+function renderClubArenaSuggestions(q){
+ const root=$('#club-arena-suggestions'),input=$('#club-arena-search');if(!root||!input)return;q=q.trim();clubArenaSuggestionIndex=-1;if(!q){root.hidden=true;root.innerHTML='';input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');return;}
+ const selectedKeys=new Set((state.clubNames||[]).map(v=>v.toLocaleLowerCase('sv'))),needle=q.toLocaleLowerCase('sv'),matches=clubArenaValues().filter(v=>v.toLocaleLowerCase('sv').includes(needle)&&!selectedKeys.has(v.toLocaleLowerCase('sv'))).slice(0,8);root.hidden=false;input.setAttribute('aria-expanded','true');root.innerHTML=(state.clubNames||[]).length>=4?'<p class="picker-empty">Max fyra klubbar eller orter kan jämföras. Ta bort ett val först.</p>':matches.length?matches.map((v,i)=>'<button id="club-arena-option-'+i+'" type="button" role="option" aria-selected="false" data-club-arena-add="'+esc(v)+'"><span><strong>'+esc(v)+'</strong><small>Publicerad klubb / ort i vald upplaga</small></span><b>Välj</b></button>').join(''):'<p class="picker-empty">Ingen klubb eller ort matchar.</p>';
+}
+function moveClubArenaSuggestion(direction){const input=$('#club-arena-search'),items=[...document.querySelectorAll('#club-arena-suggestions [data-club-arena-add]')];if(!items.length)return;clubArenaSuggestionIndex=(clubArenaSuggestionIndex+direction+items.length)%items.length;items.forEach((item,i)=>item.setAttribute('aria-selected',i===clubArenaSuggestionIndex));input.setAttribute('aria-activedescendant',items[clubArenaSuggestionIndex].id);items[clubArenaSuggestionIndex].scrollIntoView({block:'nearest'});}
+function refreshAgeSection(){
+ const root=$('#age-analysis');if(!root)return;const team=a.race.participant.entity==='team';root.innerHTML=flowHeading(team?'OFFICIELLA KLASSER':'KLASS & ÅLDER',team?'Klassanalys':'Ålderslabbet',team?'Jämför deltagande, målgång, fart och pacing mellan källans publicerade lagklasser.':'Analytiska åldersgrupper – inte officiella tävlingsklasser. Grupper med för litet underlag döljs.')+views.ageAnalysis(a,selected(),state);
+}
+function refreshClubSection(){
+ const root=$('#clubs');if(!root)return;root.innerHTML=flowHeading('KLUBB- OCH ORTSARENAN','Gemenskap i siffror','Sök en klubb eller välj upp till fyra för att jämföra deltagare, målgång och fart i det valda loppet.')+views.clubs(a,selected(),state);
+}
 function clubValues(){const seen=new Map();for(const r of a.records){const value=String(r.club||'').trim(),key=value.toLocaleLowerCase('sv');if(value&&!seen.has(key))seen.set(key,value);}return [...seen.values()].sort((x,y)=>x.localeCompare(y,'sv'));}
 function renderClubSuggestions(q){
  const root=$('#club-suggestions'),input=$('#club-filter');if(!root||!input)return;q=q.trim();clubSuggestionIndex=-1;if(!q){root.hidden=true;root.innerHTML='';input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');return;}
