@@ -45,6 +45,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Rebuild derived engine readiness
+        run: python tools/build_engine_readiness_report.py
+      - name: Verify committed readiness artifacts are current
+        run: git diff --exit-code -- reports/engine-readiness.json reports/engine-readiness.md
       - name: Validate foundation contracts and cross-file consistency
         run: python tools/validate_foundation.py
       - name: Audit repository hygiene
