@@ -527,3 +527,47 @@ div.chart{box-sizing:border-box;min-width:0!important;width:100%;max-width:100%;
  .pace-shift-rows article{grid-template-columns:1fr}
  .replay-map-controls{gap:4px}.replay-map-controls button{flex:1 1 auto}
 }
+
+
+/* Review round 2 — denser analysis, explanatory modals and richer course interaction */
+#filters{align-items:end}
+#filters #reset-filters{align-self:end;height:44px;min-height:44px;margin:0}
+.goal-auto-note{align-self:center;padding:7px 10px;border-radius:999px;background:#eef5ed;color:var(--muted);font-size:.72rem;font-weight:700}
+.info-dialog{width:min(620px,calc(100vw - 32px));max-height:min(78vh,720px);padding:0;border-radius:18px;background:#fffdf9}
+.info-dialog::backdrop{background:#172c3b99;backdrop-filter:blur(2px)}
+.info-dialog-head{position:sticky;top:0;z-index:2;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:22px 24px 16px;border-bottom:1px solid var(--line);background:#fffdf9f5}
+.info-dialog-head .eyebrow{margin:0 0 5px}.info-dialog-head h2{margin:0;font-size:1.55rem}.info-dialog-head button{flex:0 0 auto}
+.info-dialog-body{padding:22px 24px 28px}.info-dialog-body h3{margin:18px 0 6px;color:var(--sea-dark);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase}.info-dialog-body h3:first-child{margin-top:0}.info-dialog-body p{margin:0;line-height:1.62}
+.info-dialog-source{margin-top:22px!important;padding:14px 15px;border-radius:12px;background:#eef5f2;color:var(--muted);font-size:.82rem}
+.flow-section{padding-bottom:34px}.section-intro,.flow-heading.section-intro{padding-top:46px;padding-bottom:12px}.flow-heading{margin-bottom:18px}
+.long-analysis .card{margin-bottom:16px}.feature-grid{gap:16px}.compact-analysis-card{min-height:0}
+.finish-place-scatter{position:relative}.finish-place-scatter>.card-heading{min-height:42px;padding-left:158px;align-items:flex-start}
+.finish-place-scatter .scatter-interactive>.series-controls{position:absolute;top:24px;left:24px;z-index:3;margin:0;max-width:130px}
+.finish-place-scatter .placement-scatter-svg{max-height:225px}
+.field-spread-sex-chart>.legend{margin-bottom:4px}.field-spread-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:6px 0 0}
+.field-spread-summary article{padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#fafbf8}
+.field-spread-summary article>div{display:flex;align-items:center;gap:7px;margin-bottom:7px}.field-spread-summary article>div i{width:9px;height:9px;border-radius:50%;background:var(--flow-color)}
+.field-spread-summary article>span{display:grid;grid-template-columns:minmax(90px,1fr) auto;gap:2px 10px;padding:5px 0;border-top:1px solid #e8e9e2;font-size:.72rem}.field-spread-summary article>span:first-of-type{border-top:0}
+.field-spread-summary em{font-style:normal;font-weight:700;color:var(--ink)}.field-spread-summary small{grid-column:1/-1;font-size:.64rem}
+.segment-sex-rankings{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.segment-sex-ranking{min-width:0;padding:14px;border:1px solid var(--line);border-radius:16px;background:#fcfcf9}
+.segment-sex-ranking-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}.segment-sex-ranking-head .eyebrow{margin:0}.segment-sex-ranking-head h4{margin:1px 0 0;font-size:1.03rem}
+.segment-sex-ranking-head .sex-symbol{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#eaf2f6;color:var(--sea-dark);font-size:1.2rem;font-weight:800}.segment-sex-ranking.women .sex-symbol{background:#faeaf0;color:var(--female)}
+.segment-sex-ranking-list{display:grid;gap:7px}.segment-sex-rank{display:grid;grid-template-columns:34px minmax(0,1fr) auto;align-items:center;gap:10px;width:100%;padding:9px 11px;text-align:left;background:#fff}
+.segment-sex-rank>b{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--sea-dark);color:#fff}.segment-sex-rank span strong,.segment-sex-rank span small{display:block}.segment-sex-rank span small{font-size:.65rem}.segment-sex-rank em{font-style:normal;font-weight:800;color:var(--sea-dark);font-size:.75rem}
+.segment-sex-rank.medal-1>b{background:#d4a52f;color:#3b2c00;box-shadow:0 0 0 3px #f4e5a5}.segment-sex-rank.medal-2>b{background:#b8bec5;color:#26313a;box-shadow:0 0 0 3px #e8eaec}.segment-sex-rank.medal-3>b{background:#b97a45;color:#fff;box-shadow:0 0 0 3px #ead0b9}
+.elevation-km-grid{stroke:#24374610;stroke-width:.65}.elevation-km-grid.major{stroke:#24374632;stroke-width:1.15}.elevation-km-label{font-size:7.2px!important;fill:#66747b!important}.overview-elevation-cursor{stroke:#d9a441;stroke-width:2;stroke-dasharray:4 4;pointer-events:none}
+.overview-elevation-layout{position:relative;min-height:290px}.overview-elevation-chart{min-width:0}.overview-elevation-minimap{position:absolute;right:24px;top:18px;width:245px;height:155px;z-index:5;overflow:hidden;border:1px solid #cfd7cf;border-radius:14px;background:#eef3ea;box-shadow:0 8px 25px #24374618}
+.overview-elevation-minimap .leaflet-control-attribution{font-size:7px}.overview-minimap-readout{position:absolute;right:7px;bottom:7px;z-index:1000;padding:3px 7px;border-radius:999px;background:#fffdf9dd;color:var(--sea-dark);font-size:.68rem;font-weight:800;pointer-events:none}
+.course-map .head-to-head-course-map{cursor:pointer}.course-elevation svg,.head-to-head-course-elevation svg{cursor:pointer}
+.course-difficulty-head>.heading-tools{max-width:330px;justify-content:flex-end}
+.profile-passage-journey .panel-head{align-items:flex-start}.profile-passage-journey .table-scroll{margin-top:8px}
+.bengtemolla-pacing article{position:relative;overflow:hidden}.bengtemolla-pacing article::before{content:"";position:absolute;z-index:0;left:50%;top:51%;width:300px;height:220px;transform:translate(-50%,-50%);opacity:.07;background:center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 220'%3E%3Cg fill='none' stroke='%23806645' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M82 92h112v86H82zM67 92l70-51 75 51M113 178v-48h35v48M164 116h20v23h-20z'/%3E%3Ccircle cx='60' cy='151' r='38'/%3E%3Cpath d='M60 113v76M22 151h76M34 125l52 52M34 177l52-52M18 194h205'/%3E%3Cpath d='M195 82h25v96h-25M205 82V48'/%3E%3C/g%3E%3C/svg%3E")}
+.bengtemolla-pacing article>*{position:relative;z-index:1}
+.bengtemolla-pacing .pacing-checkpoint-label{font-weight:900;fill:#76540b!important}
+@media(max-width:800px){
+ .finish-place-scatter>.card-heading{padding-left:0}.finish-place-scatter .scatter-interactive>.series-controls{position:static;max-width:none;margin-bottom:8px}
+ .segment-sex-rankings,.field-spread-summary{grid-template-columns:1fr}
+ .overview-elevation-minimap{position:relative;right:auto;top:auto;width:100%;height:180px;margin:8px 0 12px}
+ .section-intro,.flow-heading.section-intro{padding-top:34px}
+}
