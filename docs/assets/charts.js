@@ -39,16 +39,16 @@ export function sexHistogram(rows,step){
  return split?'<div class="interactive-chart finish-interactive">'+legend+svg(s,'Fördelning av måltider totalt, kvinnor och män')+'</div>':svg(s,'Fördelning av måltider');
 }
 
-export function finishPlaceScatter(rows){
+export function finishPlaceScatter(rows,{showControls=true,height=245}={}){
  const points=rows.filter(r=>finite(r.finish_seconds)&&r.finish_seconds>0&&finite(r.overall_place)&&r.overall_place>0);
  if(points.length<2)return empty('För få fullföljare med publicerad totalplacering.');
- const min=Math.min(...points.map(r=>Number(r.finish_seconds))),max=Math.max(...points.map(r=>Number(r.finish_seconds))),maxPlace=Math.max(...points.map(r=>Number(r.overall_place))),left=70,right=700,top=28,bottom=235;
+ const min=Math.min(...points.map(r=>Number(r.finish_seconds))),max=Math.max(...points.map(r=>Number(r.finish_seconds))),maxPlace=Math.max(...points.map(r=>Number(r.overall_place))),left=70,right=700,top=24,bottom=Math.max(165,height-45);
  const x=v=>left+(Number(v)-min)/(max-min||1)*(right-left),y=v=>top+(Number(v)-1)/(Math.max(1,maxPlace-1))*(bottom-top);let s='';
- for(let i=0;i<=4;i++){const value=min+(max-min)*i/4,xx=left+(right-left)*i/4;s+='<line class="axis" x1="'+xx+'" x2="'+xx+'" y1="'+top+'" y2="'+bottom+'"/><text x="'+xx+'" y="264" text-anchor="middle">'+time(value).slice(0,-3)+'</text>';}
+ for(let i=0;i<=4;i++){const value=min+(max-min)*i/4,xx=left+(right-left)*i/4;s+='<line class="axis" x1="'+xx+'" x2="'+xx+'" y1="'+top+'" y2="'+bottom+'"/><text x="'+xx+'" y="'+(height-14)+'" text-anchor="middle">'+time(value).slice(0,-3)+'</text>';}
  for(let i=0;i<=4;i++){const place=Math.max(1,Math.round(1+(maxPlace-1)*i/4)),yy=y(place);s+='<line class="axis" x1="'+left+'" x2="'+right+'" y1="'+yy+'" y2="'+yy+'"/><text x="58" y="'+(yy+4)+'" text-anchor="end">'+place+'</text>';}
  for(const r of points){const key=r.sex==='F'?'female':r.sex==='M'?'male':'unknown',cls=r.sex==='F'?'point-female':r.sex==='M'?'point-male':'point-total',label=esc((r.name||'Resultat')+' · '+time(r.finish_seconds)+' · plats '+r.overall_place);s+='<circle tabindex="0" role="button" data-result="'+esc(r.source_result_id)+'" data-series="'+key+'" class="scatter-point '+cls+'" cx="'+x(r.finish_seconds).toFixed(2)+'" cy="'+y(r.overall_place).toFixed(2)+'" r="4.2" aria-label="Öppna '+label+'"><title>'+label+'</title></circle>';}
  const hasF=points.some(r=>r.sex==='F'),hasM=points.some(r=>r.sex==='M'),hasUnknown=points.some(r=>r.sex!=='F'&&r.sex!=='M'),controls=[hasF?'<label><input type="checkbox" data-series-toggle="female" checked> <i class="female"></i>Kvinnor</label>':'',hasM?'<label><input type="checkbox" data-series-toggle="male" checked> <i class="male"></i>Män</label>':'',hasUnknown?'<label><input type="checkbox" data-series-toggle="unknown" checked> <i class="total"></i>Okänt kön</label>':''].filter(Boolean).join('');
- return '<div class="interactive-chart scatter-interactive zoomable-scatter">'+(controls?'<div class="series-controls" aria-label="Visa placeringsserier">'+controls+'</div>':'')+'<button type="button" class="chart-reset" data-scatter-reset hidden>Återställ zoom</button><div class="chart-scroll"><svg class="chart placement-scatter-svg" viewBox="0 0 740 280" data-data-left="'+left+'" data-data-top="'+top+'" data-data-right="'+right+'" data-data-bottom="'+bottom+'" role="img" aria-label="Sluttid mot totalplacering">'+s+'</svg></div></div>';
+ return '<div class="interactive-chart scatter-interactive zoomable-scatter">'+(showControls&&controls?'<div class="series-controls" aria-label="Visa placeringsserier">'+controls+'</div>':'')+'<button type="button" class="chart-reset" data-scatter-reset hidden>Återställ zoom</button><div class="chart-scroll"><svg class="chart placement-scatter-svg" viewBox="0 0 740 '+height+'" data-data-left="'+left+'" data-data-top="'+top+'" data-data-right="'+right+'" data-data-bottom="'+bottom+'" role="img" aria-label="Sluttid mot totalplacering">'+s+'</svg></div></div>';
 }
 
 export function bands(stats,unit){
@@ -59,10 +59,10 @@ export function bands(stats,unit){
  stats.forEach((d,i)=>{const xx=x(i);if(finite(d.q10))s+='<line class="outer" x1="'+xx+'" x2="'+xx+'" y1="'+y(d.q10)+'" y2="'+y(d.q90)+'"/>';if(finite(d.q25))s+='<rect class="band" x="'+(xx-25)+'" width="50" y="'+y(d.q75)+'" height="'+(y(d.q25)-y(d.q75))+'"/>';if(finite(d.median))s+='<circle class="dot" cx="'+xx+'" cy="'+y(d.median)+'" r="6"/>';s+='<text x="'+xx+'" y="263" text-anchor="middle">'+(i+1)+'</text><rect class="hit" x="'+(xx-45)+'" y="25" width="90" height="220" data-segment="'+i+'" tabindex="0" role="button" aria-label="Delsträcka '+(i+1)+', n='+d.n+', median '+esc(format(d.median))+'"><title>'+esc(d.to.name)+' · n='+d.n+' · '+esc(format(d.median))+'</title></rect>';});
  return svg(s,'Median och spridning per delsträcka');
 }
-export function elevation(profile,anchors,selected=null,{interactive=false,currentDistance=null}={}){
+export function elevation(profile,anchors,selected=null,{interactive=false,currentDistance=null,detailedAxis=false}={}){
  const valid=(profile||[]).filter(p=>finite(p?.[0])&&finite(p?.[1])).map(p=>[Number(p[0]),Number(p[1])]);
  if(!valid.length)return empty('GPX-filen saknar höjdvärden för ruttpunkterna. Ingen höjdprofil har skapats.');
- const maxD=valid.at(-1)[0],lo=Math.min(...valid.map(p=>p[1])),hi=Math.max(...valid.map(p=>p[1])),x=d=>55+Math.max(0,Math.min(maxD,Number(d)||0))/Math.max(.001,maxD)*640,y=h=>200-(Number(h)-lo)/(hi-lo||1)*155;
+ const maxD=valid.at(-1)[0],lo=Math.min(...valid.map(p=>p[1])),hi=Math.max(...valid.map(p=>p[1])),plotBottom=detailedAxis?190:200,chartHeight=detailedAxis?290:250,x=d=>55+Math.max(0,Math.min(maxD,Number(d)||0))/Math.max(.001,maxD)*640,y=h=>plotBottom-(Number(h)-lo)/(hi-lo||1)*155;
  const heightAt=d=>{d=Math.max(0,Math.min(maxD,Number(d)||0));let loI=0,hiI=valid.length-1;while(loI<hiI){const mid=(loI+hiI)>>1;if(valid[mid][0]<d)loI=mid+1;else hiI=mid;}const q=valid[loI],p=valid[Math.max(0,loI-1)],span=q[0]-p[0],f=span>0?(d-p[0])/span:0;return p[1]+(q[1]-p[1])*Math.max(0,Math.min(1,f));};
  const gradeAt=d=>{const window=.16,a=Math.max(0,d-window),b=Math.min(maxD,d+window),ha=heightAt(a),hb=heightAt(b);return b>a?(hb-ha)/((b-a)*1000)*100:0;};
  const gradeColor=g=>g<=-6?'#247a42':g<=-2?'#55a45a':g<1?'#c9ad3d':g<4?'#df8b32':g<8?'#d95835':'#b83b33';
@@ -71,11 +71,12 @@ export function elevation(profile,anchors,selected=null,{interactive=false,curre
  for(let i=0;i<=4;i++){const v=lo+(hi-lo)*i/4;s+='<text x="48" y="'+(y(v)+4)+'" text-anchor="end">'+Math.round(v)+' m</text>';}
  s+='</g>';
  if(selected&&finite(selected[0])&&finite(selected[1])){const a=Math.min(Number(selected[0]),Number(selected[1])),b=Math.max(Number(selected[0]),Number(selected[1]));s+='<rect class="elevation-selection" x="'+x(a)+'" y="26" width="'+Math.max(1,x(b)-x(a))+'" height="180" rx="6"/>';}
- Object.entries(anchors||{}).filter(([,d])=>finite(d)).forEach(([key,d])=>{const dd=Number(d);s+='<line class="axis elevation-anchor" x1="'+x(dd)+'" x2="'+x(dd)+'" y1="30" y2="205"/><text class="elevation-anchor-label" x="'+x(dd)+'" y="230" text-anchor="'+(Math.abs(dd)<.01?'start':Math.abs(dd-maxD)<.05?'end':'middle')+'">'+dd.toFixed(1)+' km</text>';});
+ if(detailedAxis){for(let km=0;km<=Math.floor(maxD);km++){const xx=x(km),major=km%5===0;s+='<line class="elevation-km-grid '+(major?'major':'')+'" x1="'+xx+'" x2="'+xx+'" y1="28" y2="'+(plotBottom+5)+'"/>';s+='<text class="elevation-km-label" x="'+xx+'" y="'+(plotBottom+28)+'" text-anchor="end" transform="rotate(-90 '+xx+' '+(plotBottom+28)+')">'+km+' km</text>';}}
+ else Object.entries(anchors||{}).filter(([,d])=>finite(d)).forEach(([key,d])=>{const dd=Number(d);s+='<line class="axis elevation-anchor" x1="'+x(dd)+'" x2="'+x(dd)+'" y1="30" y2="205"/><text class="elevation-anchor-label" x="'+x(dd)+'" y="230" text-anchor="'+(Math.abs(dd)<.01?'start':Math.abs(dd-maxD)<.05?'end':'middle')+'">'+dd.toFixed(1)+' km</text>';});
  for(let i=1;i<sampled.length;i++){const a=sampled[i-1],b=sampled[i],mid=(a[0]+b[0])/2,g=gradeAt(mid),color=gradeColor(g);s+='<line class="elevation-grade-segment" x1="'+x(a[0]).toFixed(1)+'" y1="'+y(a[1]).toFixed(1)+'" x2="'+x(b[0]).toFixed(1)+'" y2="'+y(b[1]).toFixed(1)+'" stroke="'+color+'"><title>'+mid.toFixed(1)+' km · '+Math.round(heightAt(mid))+' m · '+(g>=0?'+':'')+g.toFixed(1)+' %</title></line>';}
  if(interactive){const current=finite(currentDistance)?Math.max(0,Math.min(maxD,Number(currentDistance))):0,cx=x(current),cy=y(heightAt(current));s+='<line class="elevation-current-line" data-elevation-current-line x1="'+cx+'" x2="'+cx+'" y1="28" y2="205"/><circle class="elevation-current-dot" data-elevation-current-dot cx="'+cx+'" cy="'+cy+'" r="5"/><rect class="elevation-hit" data-elevation-hit x="55" y="25" width="640" height="182" fill="transparent" tabindex="0" role="slider" aria-label="Flytta Replay längs höjdprofilen" aria-valuemin="0" aria-valuemax="'+maxD.toFixed(1)+'" aria-valuenow="'+current.toFixed(1)+'"/>';}
  const scrubber=interactive?'<label class="elevation-replay-control"><span>Dra för att flytta Replay</span><input data-elevation-range type="range" min="0" max="'+maxD.toFixed(3)+'" step="0.05" value="'+(finite(currentDistance)?Math.max(0,Math.min(maxD,Number(currentDistance))).toFixed(3):'0')+'" aria-label="Flytta Replay längs höjdprofilen"></label>':'';
- return '<div class="elevation-grade-legend" aria-hidden="true"><span><i class="downhill"></i>Utför</span><span><i class="flat"></i>Plant</span><span><i class="uphill"></i>Uppför</span></div>'+svg(s,'Höjdprofil längs aktuell rutt',250)+scrubber;
+ return '<div class="elevation-grade-legend" aria-hidden="true"><span><i class="downhill"></i>Utför</span><span><i class="flat"></i>Plant</span><span><i class="uphill"></i>Uppför</span></div>'+svg(s,'Höjdprofil längs aktuell rutt',chartHeight)+scrubber;
 }
 
 export function twoSegmentPacing(values,labels,{checkpoint='Mellankontroll',format=value=>String(Math.round(value)),referenceValue=100}={}){
@@ -91,9 +92,9 @@ export function twoSegmentPacing(values,labels,{checkpoint='Mellankontroll',form
 
 export const palette=['#1677A8','#8FBE63','#D9A441','#E7A6B7','#596761'];
 
-export function lines(series,labels,{format=value=>String(Math.round(value)),zero=false,height=300,referenceValue=null}={}){
+export function lines(series,labels,{format=value=>String(Math.round(value)),zero=false,height=300,referenceValue=null,leftPad=68}={}){
  const values=series.flatMap(item=>(item.values||[]).filter(finite).map(Number));if(!values.length)return empty('Underlag saknas.');
- const reference=finite(referenceValue)?Number(referenceValue):null,domain=reference===null?values:[...values,reference],width=740,pad={l:68,r:18,t:22,b:64},minimum=zero?0:Math.min(...domain)*.96,maximum=Math.max(...domain)*1.04,x=i=>pad.l+(width-pad.l-pad.r)*(labels.length<=1?0:i/(labels.length-1)),y=v=>height-pad.b-(Number(v)-minimum)/(maximum-minimum||1)*(height-pad.t-pad.b);
+ const reference=finite(referenceValue)?Number(referenceValue):null,domain=reference===null?values:[...values,reference],width=740,pad={l:leftPad,r:18,t:22,b:64},minimum=zero?0:Math.min(...domain)*.96,maximum=Math.max(...domain)*1.04,x=i=>pad.l+(width-pad.l-pad.r)*(labels.length<=1?0:i/(labels.length-1)),y=v=>height-pad.b-(Number(v)-minimum)/(maximum-minimum||1)*(height-pad.t-pad.b);
  let body='';for(let i=0;i<5;i++){const value=minimum+(maximum-minimum)*(4-i)/4,yy=y(value);body+='<line class="axis" x1="'+pad.l+'" x2="'+(width-pad.r)+'" y1="'+yy+'" y2="'+yy+'"/><text x="'+(pad.l-8)+'" y="'+(yy+4)+'" text-anchor="end">'+esc(format(value))+'</text>';}
  if(reference!==null){const yy=y(reference);body+='<line class="reference-line" x1="'+pad.l+'" x2="'+(width-pad.r)+'" y1="'+yy+'" y2="'+yy+'"/>';}
  labels.forEach((label,i)=>{const xx=x(i);body+='<text x="'+xx+'" y="'+(height-20)+'" text-anchor="middle" transform="rotate(-18 '+xx+' '+(height-20)+')">'+esc(label)+'</text>';});
