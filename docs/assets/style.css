@@ -429,7 +429,7 @@ div.chart{box-sizing:border-box;min-width:0!important;width:100%;max-width:100%;
 
 /* Compact, square race chooser with an equally tall edition control. */
 .race-selection{align-items:stretch}
-.race-selection .family-cards{align-items:stretch;margin-bottom:0}
+.race-selection .family-cards{align-items:stretch;margin-top:0;margin-bottom:0}
 .race-selection .family-card{aspect-ratio:1/1;min-height:0;padding:82px 13px 12px}
 .race-selection .family-card[aria-pressed=true]{padding:81px 12px 11px}
 .race-selection .family-card:after{height:70px}
