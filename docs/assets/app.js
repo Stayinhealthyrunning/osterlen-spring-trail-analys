@@ -62,10 +62,10 @@ function observeFlowSections(){
  document.querySelectorAll('.flow-section').forEach(el=>sectionObserver.observe(el));
 }
 async function loadOverviewElevation(token){
- const root=$('#overview-elevation'),badge=$('#overview-elevation-source');if(!root)return;
- if(!a.course?.assets?.route){root.innerHTML=empty('Lokalt användbar rutt saknas för den här upplagan. Ingen annan upplagas höjdprofil lånas.');if(badge)badge.textContent='Rutt saknas';return;}
- try{const [route,module]=await Promise.all([loader.route(a.race),import('./map-engine.js')]);if(token!==renderVersion||!root.isConnected)return;root.innerHTML='<div class="overview-elevation-layout"><div class="overview-elevation-minimap" data-overview-elevation-map aria-label="Interaktiv bankarta"></div><div class="overview-elevation-chart">'+elevation(route.elevation,route.anchors,null,{detailedAxis:true})+'</div></div><p class="chart-caption">Varje kilometer visas på x-axeln. Svaga linjer markerar var femte kilometer. För pekaren över profilen för att se motsvarande plats på kartan.</p>';await module.mountElevationOverview(root,{route});if(badge)badge.textContent=route.provenance_label||'Ruttbaserad höjd';}
- catch(e){if(token===renderVersion&&root.isConnected){root.innerHTML=empty(e.message);if(badge)badge.textContent='Höjdprofil saknas';}}
+ const root=$('#overview-elevation'),badge=$('#overview-elevation-source'),mapRoot=$('[data-overview-elevation-map]');if(!root)return;
+ if(!a.course?.assets?.route){const message='Lokalt användbar rutt saknas för den här upplagan. Ingen annan upplagas bana lånas.';root.innerHTML=empty(message);if(mapRoot){mapRoot.classList.add('route-unavailable');mapRoot.innerHTML=empty(message);}if(badge)badge.textContent='Rutt saknas';return;}
+ try{const [route,module]=await Promise.all([loader.route(a.race),import('./map-engine.js')]);if(token!==renderVersion||!root.isConnected)return;const hasElevation=(route.elevation||[]).some(p=>finite(p?.[1]));root.innerHTML='<div class="overview-elevation-chart">'+elevation(route.elevation,route.anchors,null,{detailedAxis:true})+'</div><p class="chart-caption">'+(hasElevation?'Varje kilometer visas på x-axeln. För pekaren över profilen för att se motsvarande plats på kartan.':'Rutten har publicerbar geometri men saknar användbara höjdvärden. Kartan visas utan fabricerad höjdprofil.')+'</p>';await module.mountElevationOverview(root,{route});if(badge)badge.textContent=route.provenance_label||'Ruttbaserad bana';}
+ catch(e){if(token===renderVersion&&root.isConnected){root.innerHTML=empty(e.message);if(mapRoot){mapRoot.classList.add('route-unavailable');mapRoot.innerHTML=empty(e.message);}if(badge)badge.textContent='Bana saknas';}}
 }
 async function renderAnalysisFlow(v,rows,token){
  const available=availableFlowSections(),parts=[];
