@@ -58,7 +58,7 @@ const server=http.createServer((req,res)=>{
       for(const label of ['Löpare','Karta & Kartduell','Måltempo','Översikt','Statistik','Genusperspektiv','Klass & ålder','Delsträckor','Historik','Klubb & ort','Resultat','Dela'])assert.ok(navText.includes(label),label);assert.equal(navText.includes('Metod'),false);
       await page.reload();await ready();assert.ok((await page.evaluate(()=>scrollY))<=2);
       const heroPosition=await page.locator('.hero').evaluate(el=>getComputedStyle(el).backgroundPosition);assert.ok(heroPosition.includes('38%'),'hero crop should reveal the runner head');
-      const familyBox=await page.locator('.family-card').first().boundingBox(),yearBox=await page.locator('.race-year-select').boundingBox();assert.ok(familyBox&&Math.abs(familyBox.width-familyBox.height)<8,'race card should be approximately square');assert.ok(yearBox&&Math.abs(yearBox.height-familyBox.height)<8,'year selector should match race-card height');
+      const familyBox=await page.locator('.family-card').first().boundingBox(),yearBox=await page.locator('.race-year-select').boundingBox();assert.ok(familyBox&&Math.abs(familyBox.width-familyBox.height)<8,'race card should be approximately square');assert.ok(yearBox&&Math.abs(yearBox.height-familyBox.height)<8,'year selector should match race-card height');assert.ok(Math.abs(yearBox.width-familyBox.width)<8,'year selector should match race-card width');
       await shot('parity-desktop-top');
     });
 
