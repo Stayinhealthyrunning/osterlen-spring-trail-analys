@@ -1,0 +1,930 @@
+{
+  "schema_version": 2,
+  "method": "Normal public Trace de Trail route-only GPX download control; pi=0; no subscriber-only feature requested.",
+  "results": [
+    {
+      "family": "ultra60",
+      "year": 2018,
+      "trace_id": 43970,
+      "source_page": "https://tracedetrail.fr/fr/trace/43970",
+      "platform_candidates": [
+        "tracedetrail",
+        "fr",
+        "en",
+        "web",
+        "trace"
+      ],
+      "error": "No candidate public download POST returned a valid GPX",
+      "attempts": [
+        {
+          "platform": "tracedetrail",
+          "endpoint": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "fr",
+          "endpoint": "https://tracedetrail.fr/download/getFile/fr",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/fr",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "en",
+          "endpoint": "https://tracedetrail.fr/download/getFile/en",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/en",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "web",
+          "endpoint": "https://tracedetrail.fr/download/getFile/web",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/web",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "trace",
+          "endpoint": "https://tracedetrail.fr/download/getFile/trace",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/trace",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        }
+      ]
+    },
+    {
+      "family": "ultra60",
+      "year": 2019,
+      "trace_id": 69381,
+      "source_page": "https://tracedetrail.fr/fr/trace/69381",
+      "platform_candidates": [
+        "tracedetrail",
+        "fr",
+        "en",
+        "web",
+        "trace"
+      ],
+      "error": "No candidate public download POST returned a valid GPX",
+      "attempts": [
+        {
+          "platform": "tracedetrail",
+          "endpoint": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "fr",
+          "endpoint": "https://tracedetrail.fr/download/getFile/fr",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/fr",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "en",
+          "endpoint": "https://tracedetrail.fr/download/getFile/en",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/en",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "web",
+          "endpoint": "https://tracedetrail.fr/download/getFile/web",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/web",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "trace",
+          "endpoint": "https://tracedetrail.fr/download/getFile/trace",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/trace",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        }
+      ]
+    },
+    {
+      "family": "ultra60",
+      "year": 2022,
+      "trace_id": 172147,
+      "source_page": "https://tracedetrail.fr/fr/trace/172147",
+      "platform_candidates": [
+        "tracedetrail",
+        "fr",
+        "en",
+        "web",
+        "trace"
+      ],
+      "error": "No candidate public download POST returned a valid GPX",
+      "attempts": [
+        {
+          "platform": "tracedetrail",
+          "endpoint": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "fr",
+          "endpoint": "https://tracedetrail.fr/download/getFile/fr",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/fr",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "en",
+          "endpoint": "https://tracedetrail.fr/download/getFile/en",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/en",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "web",
+          "endpoint": "https://tracedetrail.fr/download/getFile/web",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/web",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "trace",
+          "endpoint": "https://tracedetrail.fr/download/getFile/trace",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/trace",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        }
+      ]
+    },
+    {
+      "family": "ultra60",
+      "year": 2023,
+      "trace_id": 203147,
+      "source_page": "https://tracedetrail.fr/fr/trace/203147",
+      "platform_candidates": [
+        "tracedetrail",
+        "fr",
+        "en",
+        "web",
+        "trace"
+      ],
+      "error": "No candidate public download POST returned a valid GPX",
+      "attempts": [
+        {
+          "platform": "tracedetrail",
+          "endpoint": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "fr",
+          "endpoint": "https://tracedetrail.fr/download/getFile/fr",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/fr",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "en",
+          "endpoint": "https://tracedetrail.fr/download/getFile/en",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/en",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "web",
+          "endpoint": "https://tracedetrail.fr/download/getFile/web",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/web",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "trace",
+          "endpoint": "https://tracedetrail.fr/download/getFile/trace",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/trace",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        }
+      ]
+    },
+    {
+      "family": "ultra60",
+      "year": 2024,
+      "trace_id": 251126,
+      "source_page": "https://tracedetrail.fr/fr/trace/251126",
+      "platform_candidates": [
+        "tracedetrail",
+        "fr",
+        "en",
+        "web",
+        "trace"
+      ],
+      "error": "No candidate public download POST returned a valid GPX",
+      "attempts": [
+        {
+          "platform": "tracedetrail",
+          "endpoint": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "fr",
+          "endpoint": "https://tracedetrail.fr/download/getFile/fr",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/fr",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "en",
+          "endpoint": "https://tracedetrail.fr/download/getFile/en",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/en",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "web",
+          "endpoint": "https://tracedetrail.fr/download/getFile/web",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/web",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "trace",
+          "endpoint": "https://tracedetrail.fr/download/getFile/trace",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/trace",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        }
+      ]
+    },
+    {
+      "family": "ultra60",
+      "year": 2025,
+      "trace_id": 272846,
+      "source_page": "https://tracedetrail.fr/fr/trace/272846",
+      "platform_candidates": [
+        "tracedetrail",
+        "fr",
+        "en",
+        "web",
+        "trace"
+      ],
+      "error": "No candidate public download POST returned a valid GPX",
+      "attempts": [
+        {
+          "platform": "tracedetrail",
+          "endpoint": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "fr",
+          "endpoint": "https://tracedetrail.fr/download/getFile/fr",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/fr",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "en",
+          "endpoint": "https://tracedetrail.fr/download/getFile/en",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/en",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "web",
+          "endpoint": "https://tracedetrail.fr/download/getFile/web",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/web",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "trace",
+          "endpoint": "https://tracedetrail.fr/download/getFile/trace",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/trace",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        }
+      ]
+    },
+    {
+      "family": "ultra60",
+      "year": 2026,
+      "trace_id": 322315,
+      "source_page": "https://tracedetrail.fr/fr/trace/322315",
+      "platform_candidates": [
+        "tracedetrail",
+        "fr",
+        "en",
+        "web",
+        "trace"
+      ],
+      "error": "No candidate public download POST returned a valid GPX",
+      "attempts": [
+        {
+          "platform": "tracedetrail",
+          "endpoint": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "fr",
+          "endpoint": "https://tracedetrail.fr/download/getFile/fr",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/fr",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "en",
+          "endpoint": "https://tracedetrail.fr/download/getFile/en",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/en",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "web",
+          "endpoint": "https://tracedetrail.fr/download/getFile/web",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/web",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "trace",
+          "endpoint": "https://tracedetrail.fr/download/getFile/trace",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/trace",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        }
+      ]
+    },
+    {
+      "family": "trail22",
+      "year": 2018,
+      "trace_id": 7897,
+      "source_page": "https://tracedetrail.fr/fr/trace/7897",
+      "platform_candidates": [
+        "tracedetrail",
+        "fr",
+        "en",
+        "web",
+        "trace"
+      ],
+      "error": "No candidate public download POST returned a valid GPX",
+      "attempts": [
+        {
+          "platform": "tracedetrail",
+          "endpoint": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "fr",
+          "endpoint": "https://tracedetrail.fr/download/getFile/fr",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/fr",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "en",
+          "endpoint": "https://tracedetrail.fr/download/getFile/en",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/en",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "web",
+          "endpoint": "https://tracedetrail.fr/download/getFile/web",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/web",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "trace",
+          "endpoint": "https://tracedetrail.fr/download/getFile/trace",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/trace",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        }
+      ]
+    },
+    {
+      "family": "trail22",
+      "year": 2019,
+      "trace_id": 69864,
+      "source_page": "https://tracedetrail.fr/fr/trace/69864",
+      "platform_candidates": [
+        "tracedetrail",
+        "fr",
+        "en",
+        "web",
+        "trace"
+      ],
+      "error": "No candidate public download POST returned a valid GPX",
+      "attempts": [
+        {
+          "platform": "tracedetrail",
+          "endpoint": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "fr",
+          "endpoint": "https://tracedetrail.fr/download/getFile/fr",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/fr",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "en",
+          "endpoint": "https://tracedetrail.fr/download/getFile/en",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/en",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "web",
+          "endpoint": "https://tracedetrail.fr/download/getFile/web",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/web",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "trace",
+          "endpoint": "https://tracedetrail.fr/download/getFile/trace",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/trace",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        }
+      ]
+    },
+    {
+      "family": "trail22",
+      "year": 2022,
+      "trace_id": 165617,
+      "source_page": "https://tracedetrail.fr/fr/trace/165617",
+      "platform_candidates": [
+        "tracedetrail",
+        "fr",
+        "en",
+        "web",
+        "trace"
+      ],
+      "error": "No candidate public download POST returned a valid GPX",
+      "attempts": [
+        {
+          "platform": "tracedetrail",
+          "endpoint": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "fr",
+          "endpoint": "https://tracedetrail.fr/download/getFile/fr",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/fr",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "en",
+          "endpoint": "https://tracedetrail.fr/download/getFile/en",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/en",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "web",
+          "endpoint": "https://tracedetrail.fr/download/getFile/web",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/web",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "trace",
+          "endpoint": "https://tracedetrail.fr/download/getFile/trace",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/trace",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        }
+      ]
+    },
+    {
+      "family": "trail22",
+      "year": 2023,
+      "trace_id": 203146,
+      "source_page": "https://tracedetrail.fr/fr/trace/203146",
+      "platform_candidates": [
+        "tracedetrail",
+        "fr",
+        "en",
+        "web",
+        "trace"
+      ],
+      "error": "No candidate public download POST returned a valid GPX",
+      "attempts": [
+        {
+          "platform": "tracedetrail",
+          "endpoint": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "fr",
+          "endpoint": "https://tracedetrail.fr/download/getFile/fr",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/fr",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "en",
+          "endpoint": "https://tracedetrail.fr/download/getFile/en",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/en",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "web",
+          "endpoint": "https://tracedetrail.fr/download/getFile/web",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/web",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "trace",
+          "endpoint": "https://tracedetrail.fr/download/getFile/trace",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/trace",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        }
+      ]
+    },
+    {
+      "family": "trail22",
+      "year": 2024,
+      "trace_id": 237224,
+      "source_page": "https://tracedetrail.fr/fr/trace/237224",
+      "platform_candidates": [
+        "tracedetrail",
+        "fr",
+        "en",
+        "web",
+        "trace"
+      ],
+      "error": "No candidate public download POST returned a valid GPX",
+      "attempts": [
+        {
+          "platform": "tracedetrail",
+          "endpoint": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "fr",
+          "endpoint": "https://tracedetrail.fr/download/getFile/fr",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/fr",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "en",
+          "endpoint": "https://tracedetrail.fr/download/getFile/en",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/en",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "web",
+          "endpoint": "https://tracedetrail.fr/download/getFile/web",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/web",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "trace",
+          "endpoint": "https://tracedetrail.fr/download/getFile/trace",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/trace",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        }
+      ]
+    },
+    {
+      "family": "trail22",
+      "year": 2025,
+      "trace_id": 280053,
+      "source_page": "https://tracedetrail.fr/fr/trace/280053",
+      "platform_candidates": [
+        "tracedetrail",
+        "fr",
+        "en",
+        "web",
+        "trace"
+      ],
+      "error": "No candidate public download POST returned a valid GPX",
+      "attempts": [
+        {
+          "platform": "tracedetrail",
+          "endpoint": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "fr",
+          "endpoint": "https://tracedetrail.fr/download/getFile/fr",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/fr",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "en",
+          "endpoint": "https://tracedetrail.fr/download/getFile/en",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/en",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "web",
+          "endpoint": "https://tracedetrail.fr/download/getFile/web",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/web",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "trace",
+          "endpoint": "https://tracedetrail.fr/download/getFile/trace",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/trace",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        }
+      ]
+    },
+    {
+      "family": "trail22",
+      "year": 2026,
+      "trace_id": 322314,
+      "source_page": "https://tracedetrail.fr/fr/trace/322314",
+      "platform_candidates": [
+        "tracedetrail",
+        "fr",
+        "en",
+        "web",
+        "trace"
+      ],
+      "error": "No candidate public download POST returned a valid GPX",
+      "attempts": [
+        {
+          "platform": "tracedetrail",
+          "endpoint": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/tracedetrail",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "fr",
+          "endpoint": "https://tracedetrail.fr/download/getFile/fr",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/fr",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "en",
+          "endpoint": "https://tracedetrail.fr/download/getFile/en",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/en",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "web",
+          "endpoint": "https://tracedetrail.fr/download/getFile/web",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/web",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        },
+        {
+          "platform": "trace",
+          "endpoint": "https://tracedetrail.fr/download/getFile/trace",
+          "http_final_url": "https://tracedetrail.fr/download/getFile/trace",
+          "bytes": 104,
+          "content_type": "text/html; charset=UTF-8",
+          "content_disposition": null,
+          "valid_gpx": false,
+          "response_preview": "{\"success\":0,\"msg\":\"Connectez-vous avec votre compte utilisateur pour t\\u00e9l\\u00e9charger ce fichier\"}"
+        }
+      ]
+    }
+  ]
+}
