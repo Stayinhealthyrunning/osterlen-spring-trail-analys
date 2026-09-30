@@ -28,7 +28,7 @@
     "Never fabricate checkpoint passages, status, rank, route geometry, age, gender, relay structure or cross-year identity.",
     "Keep raw source identifiers and labels alongside semantic normalization.",
     "A race family is not a course version. Cross-year course comparison is gated by verified geometry evidence.",
-    "Trace de Trail public geometry diagnostics may establish comparability but are not automatically redistributed as route assets.",
+    "Trace de Trail public map geometry may be materialized as a derived local route reference only when source/year identity is verified. It must retain source URL/hash provenance and must never be labelled organizer-direct GPX.",
     "Duo inherits the same-year Ultra route/course version.",
     "Duo member source_sequence is source-backed; leg_no remains nullable until ordering is independently validated.",
     "Bengtemölla is the canonical named checkpoint for 2022/2023. The preceding 32 km observation remains a separate approach/prewarning candidate.",
@@ -292,9 +292,9 @@
     "source": "reports/engine-readiness.json",
     "frontend_rule": "Hide or explain unavailable features instead of rendering empty or fictional analyses.",
     "known_current_pattern": {
-      "ultra60": "Finish/result and split analysis are ready for every held year. Replay/map additionally require local route assets; currently 2024-2026 qualify.",
-      "duo60": "Team finish results and real team splits are parsed for every held Duo year. Published member rows are retained. Replay/map currently qualify for 2024-2026; leg assignment stays disabled.",
-      "trail22_trail14_trail5": "Finish/result analysis is ready. No intermediate split tables were found in the complete imported public result details, so replay/split features stay off unless stronger source evidence appears."
+      "ultra60": "Finish/result and split analysis are ready for every held year. Local map routes now exist for 2018, 2019, 2022-2026. Replay is enabled only where route anchors are sufficiently verified: 2022-2026; 2018/2019 remain map-only despite local route references.",
+      "duo60": "Team finish results and real team splits are parsed for every held Duo year. Duo inherits same-year Ultra route geometry. Map routes exist for 2019 and 2022-2026; replay remains disabled for 2019 because complete replay anchor mapping is not verified.",
+      "trail22_trail14_trail5": "Finish/result analysis is ready. Trail 21/22 has local derived public-map route references for 2019 and 2022-2026; Trail 13/14 has a provisional reconstructed 2026 reference; Trail 5 has the reconstructed 2026 reference. These families lack intermediate timing tables, so route maps/elevation may display while runner replay/split analysis stays off."
     }
   },
   "identity_policy": {
