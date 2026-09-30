@@ -128,10 +128,11 @@ def main():
 
         for cv,v in versions.items():
             assets={}
-            if v.get("primary_source_path") and v.get("route_asset_status") in {"archived_organizer_gpx","derived_reconstructed_reference"}:
+            if v.get("primary_source_path") and v.get("route_asset_status") in {"archived_organizer_gpx","derived_reconstructed_reference","derived_public_trace_geometry","derived_provisional_reference"}:
                 assets["route_source"]=v["primary_source_path"]
                 assets["route_asset_status"]=v.get("route_asset_status")
                 assets["official_gpx"]=v.get("route_asset_status")=="archived_organizer_gpx"
+                assets["route_provenance_label"]=v.get("route_provenance_label")
             payload["courses"][cv]={
                 "course_version":cv,
                 "route_family":v["route_family"],
