@@ -26,7 +26,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Fetch public route-only GPX files
-        run: python tools/fetch_tracedetrail_gpx.py --all
+        run: python tools/fetch_tracedetrail_gpx.py --all --best-effort
       - name: Commit GPX source archive and provenance manifest
         shell: bash
         run: |
