@@ -143,13 +143,24 @@ def main() -> int:
         elif duo.get("course_version_id") != ultra.get("course_version_id"):
             errors.append(f"{year}: Duo must inherit the same course_version_id as Ultra 60")
 
+    local_asset_statuses = {
+        "archived_organizer_gpx",
+        "derived_reconstructed_reference",
+        "derived_public_trace_geometry",
+        "derived_provisional_reference",
+    }
     for version_id, version in versions.items():
-        if version.get("route_asset_status") == "archived_organizer_gpx":
+        status = version.get("route_asset_status")
+        if status in local_asset_statuses:
             source_path = version.get("primary_source_path")
             if not source_path:
-                errors.append(f"{version_id}: archived organizer GPX lacks primary_source_path")
+                errors.append(f"{version_id}: local route status {status} lacks primary_source_path")
             elif not (ROOT / source_path).exists():
-                errors.append(f"{version_id}: referenced organizer GPX missing: {source_path}")
+                errors.append(f"{version_id}: referenced local route asset missing: {source_path}")
+            if status == "archived_organizer_gpx" and version.get("route_provenance_label"):
+                warnings.append(f"{version_id}: organizer GPX normally does not need a derived provenance label")
+            if status in {"derived_public_trace_geometry","derived_provisional_reference"} and not version.get("route_provenance_label"):
+                errors.append(f"{version_id}: derived route asset lacks explicit route_provenance_label")
 
     split_rows = split_inventory.get("inventory", [])
     split_keys = {(int(row["year"]), row["race_family"]) for row in split_rows}
