@@ -31,7 +31,7 @@ export function terrainMetrics(profile,range=null){
  const pts=valid.map(p=>[Number(p[0]),Number(p[1])]);
  return {ascent,descent,min:Math.min(...pts.map(p=>p[1])),max:Math.max(...pts.map(p=>p[1])),distance:pts.at(-1)[0]-pts[0][0],coverage};
 }
-export async function mountCourseContext(root,{route,adapter,segment=0,onSelectSegment=null}){
+export async function mountCourseContext(root,{route,adapter,segment=0,onSelectSegment=null,onPreviewSegment=null,onRestoreSegment=null}){
  let map=null,highlight=null,destroyed=false,segmentLayers=[],selected=Math.max(0,Number(segment)||0);
  const boundary=adapter.boundary||[],maxIndex=Math.max(0,boundary.length-2),selectedRange=index=>[route.anchors?.[boundary[index]?.key],route.anchors?.[boundary[index+1]?.key]];
  const clampSegment=index=>Math.max(0,Math.min(maxIndex,Number(index)||0)),segmentForDistance=distance=>{for(let i=0;i<=maxIndex;i++){const range=selectedRange(i);if(range.every(finite)&&Number(distance)>=Math.min(...range)-.001&&Number(distance)<=Math.max(...range)+.001)return i;}return clampSegment(selected);};
@@ -52,7 +52,7 @@ export async function mountCourseContext(root,{route,adapter,segment=0,onSelectS
   courseTiles=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap contributors'});let failed=false;
   courseTiles.on('tileerror',()=>{if(destroyed||failed)return;failed=true;try{courseTiles.remove();}catch{}if(status?.isConnected)status.textContent='OpenStreetMap kunde inte laddas. Rutten och höjdprofilen finns kvar.';});
   courseTiles.on('load',()=>{if(!destroyed&&!failed&&status?.isConnected)status.textContent='OpenStreetMap · klicka på ett banavsnitt för att välja det';});courseTiles.addTo(map);
-  segmentLayers=boundary.slice(1).map((_,i)=>{const pts=pointsFor(i);if(!pts.length)return null;const hit=L.polyline(pts,{color:'#1677a8',weight:16,opacity:.001,interactive:true,className:'course-map-segment-hit'}).addTo(map);hit.on('mouseover',()=>renderSegment(i,{fit:false,commit:false}));hit.on('mouseout',()=>renderSegment(selected,{fit:false,commit:false}));hit.on('click',e=>{L.DomEvent.stopPropagation(e);activate(i);});hit.bindTooltip(boundary[i].name+' → '+boundary[i+1].name,{sticky:true});return hit;}).filter(Boolean);
+  segmentLayers=boundary.slice(1).map((_,i)=>{const pts=pointsFor(i);if(!pts.length)return null;const hit=L.polyline(pts,{color:'#1677a8',weight:16,opacity:.001,interactive:true,className:'course-map-segment-hit'}).addTo(map);hit.on('mouseover',()=>{renderSegment(i,{fit:false,commit:false});onPreviewSegment?.(i);});hit.on('mouseout',()=>{renderSegment(selected,{fit:false,commit:false});onRestoreSegment?.(selected);});hit.on('click',e=>{L.DomEvent.stopPropagation(e);activate(i);});hit.bindTooltip(boundary[i].name+' → '+boundary[i+1].name,{sticky:true});return hit;}).filter(Boolean);
  }else fallback();
  selected=clampSegment(selected);renderSegment(selected,{fit:false,commit:true});
  return {selectSegment,destroy(){destroyed=true;try{segmentLayers.forEach(layer=>layer.remove?.());courseTiles?.off?.();courseTiles?.remove?.();highlight?.remove?.();if(map){map.stop?.();map.off?.();map.remove();map=null;}}catch{map=null;}}};
