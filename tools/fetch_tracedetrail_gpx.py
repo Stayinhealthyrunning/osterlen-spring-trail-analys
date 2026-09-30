@@ -146,6 +146,7 @@ def fetch_one(item, output_dir: Path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--all', action='store_true')
+    ap.add_argument('--best-effort', action='store_true', help='Archive all successful public downloads even if some listed traces fail.')
     ap.add_argument('--trace-id', type=int)
     ap.add_argument('--output-dir', default='data/source/tracedetrail/gpx')
     ap.add_argument('--manifest', default='data/source/tracedetrail/gpx-download-manifest.json')
@@ -184,7 +185,7 @@ def main():
     manifest.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     errors = sum(1 for x in results if x.get('error'))
     print(f'Completed: {len(results)-errors}/{len(results)} valid GPX downloads; errors={errors}')
-    raise SystemExit(1 if errors else 0)
+    raise SystemExit(0 if args.best_effort else (1 if errors else 0))
 
 if __name__ == '__main__':
     main()
