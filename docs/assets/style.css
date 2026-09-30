@@ -484,7 +484,7 @@ div.chart{box-sizing:border-box;min-width:0!important;width:100%;max-width:100%;
 .replay-person-icon,.replay-reference-map-icon{display:grid;place-items:center;width:28px;height:28px;border:2px solid #fff;border-radius:50%;background:var(--runner-color,#1677a8);color:#fff;box-shadow:0 2px 8px #102f3855;font-size:16px;font-weight:900;line-height:1}
 .replay-person-icon.female{background:#b51d60}.replay-person-icon.male{background:#2563eb}
 .replay-reference-map-icon{border:3px solid var(--reference-color);background:#fff;color:var(--reference-color);font-size:17px}
-.replay-reference-map-icon.female{color:#b51d60;border-color:#b51d60}.replay-reference-map-icon.male{color:#2563eb;border-color:#2563eb}
+.replay-reference-map-icon.female{color:#b51d60;border-color:#b51d60}.replay-reference-map-icon.male{color:#2563eb;border-color:#2563eb}.map-legend .map-legend-symbol{display:inline-grid;place-items:center;width:20px;height:20px;margin:0;border-radius:50%;background:var(--runner-color);color:#fff;font-style:normal;font-size:12px;font-weight:900}.map-legend .map-legend-symbol.female{background:#b51d60}.map-legend .map-legend-symbol.male{background:#2563eb}
 .replay-reference-symbol{display:inline-grid!important;place-items:center;width:20px!important;height:20px!important;border:2px solid var(--reference-color)!important;border-radius:50%;background:#fff!important;color:var(--reference-color);font-style:normal;font-size:12px;font-weight:900}
 .replay-reference-symbol.female{color:#b51d60}.replay-reference-symbol.male{color:#2563eb}
 
