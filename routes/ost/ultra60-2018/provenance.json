@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "course_version": "ultra60-2018",
-  "materialized_at": "2026-09-30T14:09:27.524532+00:00",
+  "materialized_at": "2026-09-30T14:38:08.909196+00:00",
   "geometry_status": "derived_from_public_trace_map_geometry",
   "not_an_organizer_gpx": true,
   "not_a_trace_gpx_export": true,

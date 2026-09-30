@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "course_version": "trail22-2019",
-  "materialized_at": "2026-09-30T14:09:34.329685+00:00",
+  "materialized_at": "2026-09-30T14:38:14.608826+00:00",
   "geometry_status": "derived_from_public_trace_map_geometry",
   "not_an_organizer_gpx": true,
   "not_a_trace_gpx_export": true,
