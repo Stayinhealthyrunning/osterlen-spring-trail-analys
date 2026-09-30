@@ -1,51 +1,31 @@
 {
-  "schema_version": 2,
-  "status": "georeferenced_organizer_raster_reference",
-  "distance_km": 14.249,
-  "participant_2023_reference_km": 13.67,
-  "hallamolla_at_km": 9.725,
-  "hallamolla_remaining_km": 4.524,
-  "participant_hallamolla_remaining_km": 4.5,
-  "hallamolla_control_m": 99.8,
-  "start_finish_gap_m": 35.7,
-  "selected_start_tail": 0,
-  "selected_cycle_direction": "reverse",
-  "tail_lengths_km": [
-    5.552,
-    1.596
-  ],
-  "cycle_length_km": 7.1,
-  "map_registration_median_px": 0.240141823887825,
-  "map_registration_p95_px": 1.5684036016464233,
-  "variants": [
-    {
-      "start_tail": 0,
-      "direction": "forward",
-      "distance_km": 14.257,
-      "hall_remaining_km": 5.773,
-      "hall_control_m": 99.8
-    },
-    {
-      "start_tail": 0,
-      "direction": "reverse",
-      "distance_km": 14.249,
-      "hall_remaining_km": 4.524,
-      "hall_control_m": 99.8
-    },
-    {
-      "start_tail": 1,
-      "direction": "forward",
-      "distance_km": 14.257,
-      "hall_remaining_km": 9.729,
-      "hall_control_m": 99.8
-    },
-    {
-      "start_tail": 1,
-      "direction": "reverse",
-      "distance_km": 14.249,
-      "hall_remaining_km": 8.48,
-      "hall_control_m": 99.8
-    }
-  ],
-  "topology_qa_pass": true
+  "schema_version": 3,
+  "status": "provisional_hallamolla_splice_reference_materialized",
+  "publication_status": "publishable_with_provisional_label",
+  "distance_km": 13.472,
+  "source_base_course_version": "trail22-2022-2024",
+  "source_trace_id": 165617,
+  "source_public_geometry_sha256": "4e6dd245a2aab78c96b79720208d0b1deae23a3e206ee3ce80eda3a2957596bf",
+  "splice": {
+    "first_hallamolla_passage_km": 8.687,
+    "second_hallamolla_passage_km": 16.956,
+    "removed_eastern_loop_km": 8.269,
+    "splice_point_separation_m": 0.18,
+    "hallamolla_to_finish_km": 4.785
+  },
+  "independent_evidence": {
+    "participant_2023_watch_distance_km": 13.67,
+    "participant_reported_hallamolla_remaining_km": 4.5,
+    "organizer_raster_corridor_support": true
+  },
+  "qa": {
+    "distance_plausible": true,
+    "splice_nearly_coincident": true,
+    "participant_distance_consistent": true,
+    "hallamolla_remaining_consistent": true,
+    "source_geometry_year_verified": true,
+    "publishable_as_authoritative_gpx": false,
+    "publishable_as_provisional_reconstruction": true
+  },
+  "note": "The superseded 14.249 km raster candidate remains recoverable in Git history; this QA file describes the active 13.472 km materialized working reference."
 }
