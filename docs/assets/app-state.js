@@ -1,4 +1,4 @@
-export const flowSections=['overview','statistics','gender','age-analysis','segments','history','clubs','results','method'];
+export const flowSections=['overview','statistics','gender','age-analysis','segments','clubs','history','results','method'];
 export const sections=[...flowSections,'compare'];
 export function urlState(url,catalog,defaultRace){
  const u=new URL(url),p=u.searchParams,key=p.get('race'),hash=decodeURIComponent(u.hash.slice(1)),requested=sections.includes(hash)?hash:p.get('section');
