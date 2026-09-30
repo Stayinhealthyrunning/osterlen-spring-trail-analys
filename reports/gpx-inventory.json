@@ -1,8 +1,27 @@
 {
-  "generated_at": "2026-09-10T09:16:22.981348+00:00",
-  "gpx_count": 2,
+  "generated_at": "2026-09-30T14:40:18.227433+00:00",
+  "gpx_count": 3,
   "error_count": 0,
   "files": [
+    {
+      "path": "data/source/gpx/skaneleden-sl4-e7-brosarp-verkasjon.gpx",
+      "bytes": 61023,
+      "sha256": "e00abdce3b66ebf5c22a6f2861b7b351555f78a24f240c177285cf5ccb8a470f",
+      "points": 524,
+      "computed_distance_km": 12.9065,
+      "start": {
+        "lat": 55.72555424909248,
+        "lon": 14.100883522343594
+      },
+      "finish": {
+        "lat": 55.71673313849309,
+        "lon": 13.981457446571333
+      },
+      "elevation_points": 524,
+      "raw_gpx_ascent_m": 0.0,
+      "raw_gpx_descent_m": 0.0,
+      "elevation_warning": "Raw GPX ascent/descent is diagnostic only; not harmonized elevation for public cross-year comparison."
+    },
     {
       "path": "data/source/gpx/ultra60/ost-ultra60-2024-organizer.gpx",
       "bytes": 295779,
