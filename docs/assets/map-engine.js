@@ -31,20 +31,56 @@ export function terrainMetrics(profile,range=null){
  const pts=valid.map(p=>[Number(p[0]),Number(p[1])]);
  return {ascent,descent,min:Math.min(...pts.map(p=>p[1])),max:Math.max(...pts.map(p=>p[1])),distance:pts.at(-1)[0]-pts[0][0],coverage};
 }
-export async function mountCourseContext(root,{route,adapter,segment=0}){
- let map=null,highlight=null,destroyed=false;
- const boundary=adapter.boundary||[],selectedRange=index=>[route.anchors?.[boundary[index]?.key],route.anchors?.[boundary[index+1]?.key]];
+export async function mountCourseContext(root,{route,adapter,segment=0,onSelectSegment=null}){
+ let map=null,highlight=null,destroyed=false,segmentLayers=[],selected=Math.max(0,Number(segment)||0);
+ const boundary=adapter.boundary||[],maxIndex=Math.max(0,boundary.length-2),selectedRange=index=>[route.anchors?.[boundary[index]?.key],route.anchors?.[boundary[index+1]?.key]];
+ const clampSegment=index=>Math.max(0,Math.min(maxIndex,Number(index)||0)),segmentForDistance=distance=>{for(let i=0;i<=maxIndex;i++){const range=selectedRange(i);if(range.every(finite)&&Number(distance)>=Math.min(...range)-.001&&Number(distance)<=Math.max(...range)+.001)return i;}return clampSegment(selected);};
  root.innerHTML='<div class="head-to-head-course-map"></div><div class="head-to-head-course-elevation"></div><p class="map-status">Laddar OpenStreetMap…</p>';
  const mapRoot=root.querySelector('.head-to-head-course-map'),elev=root.querySelector('.head-to-head-course-elevation'),status=root.querySelector('.map-status');
- function drawElevation(index){const range=selectedRange(index),valid=range.every(finite);elev.innerHTML=elevation(route.elevation,route.anchors,valid?range:null);}
+ function drawElevation(index){const range=selectedRange(index),valid=range.every(finite);elev.innerHTML=elevation(route.elevation,route.anchors,valid?range:null,{detailedAxis:false});bindElevation();}
  function fallback(){const lats=route.points.map(p=>p[0]),lons=route.points.map(p=>p[1]),minLat=Math.min(...lats),maxLat=Math.max(...lats),minLon=Math.min(...lons),maxLon=Math.max(...lons),cos=Math.cos((minLat+maxLat)/2*Math.PI/180),scale=Math.min(560/((maxLon-minLon)*cos||1),320/(maxLat-minLat||1)),project=p=>[320+(p[1]-(minLon+maxLon)/2)*cos*scale,190-(p[0]-(minLat+maxLat)/2)*scale],line=route.points.map((p,i)=>(i?'L':'M')+project(p).join(',')).join(' ');mapRoot.innerHTML='<svg class="route-fallback" viewBox="0 0 640 380" role="img" aria-label="Aktuell bana"><path d="'+line+'" fill="none" stroke="#1677a8" stroke-width="4"/></svg>';status.textContent='OpenStreetMap kunde inte laddas. Den lokala rutten visas utan kartbakgrund.';}
- const L=await leaflet();if(destroyed||!root.isConnected)return {destroy(){}};
- let courseTiles=null;if(L){map=L.map(mapRoot,{zoomControl:true,attributionControl:true,scrollWheelZoom:false,zoomAnimation:false,fadeAnimation:false,markerZoomAnimation:false});const full=L.polyline(route.points.map(p=>[p[0],p[1]]),{color:'#1677a8',weight:4}).addTo(map);map.fitBounds(full.getBounds(),{padding:[20,20],animate:false});courseTiles=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap contributors'});let failed=false;courseTiles.on('tileerror',()=>{if(destroyed||failed)return;failed=true;try{courseTiles.remove();}catch{}if(status?.isConnected)status.textContent='OpenStreetMap kunde inte laddas. Rutten och höjdprofilen finns kvar.';});courseTiles.on('load',()=>{if(!destroyed&&!failed&&status?.isConnected)status.textContent='OpenStreetMap · aktuell upplagas rutt';});courseTiles.addTo(map);}
- else fallback();
- function selectSegment(index,{fit=true}={}){segment=Math.max(0,Math.min(Math.max(0,boundary.length-2),Number(index)||0));drawElevation(segment);if(!map||!L)return;if(highlight)highlight.remove();const range=selectedRange(segment);if(!range.every(finite))return;const [from,to]=range,pts=[pointAtDistance(route.points,from),...route.points.filter(p=>p[3]>from&&p[3]<to).map(p=>[p[0],p[1]]),pointAtDistance(route.points,to)].filter(Boolean);highlight=L.polyline(pts,{color:'#8fbe63',weight:7,opacity:.8}).addTo(map);if(fit)map.fitBounds(highlight.getBounds(),{padding:[35,35]});}
- selectSegment(segment);
- return {selectSegment,destroy(){destroyed=true;try{courseTiles?.off?.();courseTiles?.remove?.();highlight?.remove?.();if(map){map.stop?.();map.off?.();map.remove();map=null;}}catch{map=null;}}};
+ function pointsFor(index){const range=selectedRange(index);if(!range.every(finite))return [];const [from,to]=range;return [pointAtDistance(route.points,from),...route.points.filter(p=>p[3]>from&&p[3]<to).map(p=>[p[0],p[1]]),pointAtDistance(route.points,to)].filter(Boolean);}
+ function renderSegment(index,{fit=false,commit=false}={}){index=clampSegment(index);if(commit)selected=index;drawElevation(index);if(!map||!globalThis.L)return;if(highlight)highlight.remove();const pts=pointsFor(index);if(!pts.length)return;highlight=globalThis.L.polyline(pts,{color:'#8fbe63',weight:7,opacity:.82,interactive:false}).addTo(map);if(fit)map.fitBounds(highlight.getBounds(),{padding:[35,35],animate:false});}
+ function selectSegment(index,{fit=true}={}){renderSegment(index,{fit,commit:true});}
+ function activate(index){selectSegment(index,{fit:false});onSelectSegment?.(clampSegment(index));}
+ function bindElevation(){const svg=elev.querySelector('svg');if(!svg||svg.dataset.courseBound)return;svg.dataset.courseBound='true';const locate=event=>{const rect=svg.getBoundingClientRect(),px=(event.clientX-rect.left)*740/(rect.width||1),distance=Math.max(0,Math.min(route.full_distance_km,(px-55)/640*route.full_distance_km));return segmentForDistance(distance);};svg.addEventListener('pointermove',event=>{if(event.pointerType==='mouse')renderSegment(locate(event),{fit:false,commit:false});});svg.addEventListener('pointerleave',()=>renderSegment(selected,{fit:false,commit:false}));svg.addEventListener('click',event=>activate(locate(event)));svg.setAttribute('tabindex','0');svg.setAttribute('aria-label','Interaktiv höjdprofil. Klicka på ett banavsnitt för att välja delsträckan.');}
+ const L=await leaflet();if(destroyed||!root.isConnected)return {selectSegment(){},destroy(){}};
+ let courseTiles=null;
+ if(L){
+  map=L.map(mapRoot,{zoomControl:true,attributionControl:true,scrollWheelZoom:false,zoomAnimation:false,fadeAnimation:false,markerZoomAnimation:false});
+  const full=L.polyline(route.points.map(p=>[p[0],p[1]]),{color:'#1677a8',weight:4,interactive:false}).addTo(map);map.fitBounds(full.getBounds(),{padding:[20,20],animate:false});
+  courseTiles=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap contributors'});let failed=false;
+  courseTiles.on('tileerror',()=>{if(destroyed||failed)return;failed=true;try{courseTiles.remove();}catch{}if(status?.isConnected)status.textContent='OpenStreetMap kunde inte laddas. Rutten och höjdprofilen finns kvar.';});
+  courseTiles.on('load',()=>{if(!destroyed&&!failed&&status?.isConnected)status.textContent='OpenStreetMap · klicka på ett banavsnitt för att välja det';});courseTiles.addTo(map);
+  segmentLayers=boundary.slice(1).map((_,i)=>{const pts=pointsFor(i);if(!pts.length)return null;const hit=L.polyline(pts,{color:'#1677a8',weight:16,opacity:.001,interactive:true}).addTo(map);hit.on('mouseover',()=>renderSegment(i,{fit:false,commit:false}));hit.on('mouseout',()=>renderSegment(selected,{fit:false,commit:false}));hit.on('click',e=>{L.DomEvent.stopPropagation(e);activate(i);});hit.bindTooltip(boundary[i].name+' → '+boundary[i+1].name,{sticky:true});return hit;}).filter(Boolean);
+ }else fallback();
+ selected=clampSegment(selected);renderSegment(selected,{fit:false,commit:true});
+ return {selectSegment,destroy(){destroyed=true;try{segmentLayers.forEach(layer=>layer.remove?.());courseTiles?.off?.();courseTiles?.remove?.();highlight?.remove?.();if(map){map.stop?.();map.off?.();map.remove();map=null;}}catch{map=null;}}};
 }
+
+export async function mountElevationOverview(root,{route}){
+ const mapRoot=root.querySelector('[data-overview-elevation-map]'),svg=root.querySelector('.overview-elevation-chart svg');if(!mapRoot||!svg)return {destroy(){}};
+ let destroyed=false,map=null,marker=null,tiles=null,fallbackMarker=null;
+ const maxD=Number(route.full_distance_km)||Number(route.points.at(-1)?.[3])||1;
+ function distanceFromEvent(event){const rect=svg.getBoundingClientRect(),px=(event.clientX-rect.left)*740/(rect.width||1);return Math.max(0,Math.min(maxD,(px-55)/640*maxD));}
+ function ensureCursor(){let line=svg.querySelector('.overview-elevation-cursor');if(!line){line=document.createElementNS('http://www.w3.org/2000/svg','line');line.classList.add('overview-elevation-cursor');line.setAttribute('y1','28');line.setAttribute('y2','195');svg.append(line);}return line;}
+ function update(distance){const p=pointAtDistance(route.points,distance);if(!p)return;const x=55+distance/maxD*640,line=ensureCursor();line.setAttribute('x1',x);line.setAttribute('x2',x);if(marker&&!destroyed)marker.setLatLng(p);if(fallbackMarker)fallbackMarker.setAttribute('transform','translate('+fallbackProject(p).join(' ')+')');const label=mapRoot.querySelector('.overview-minimap-readout');if(label)label.textContent=distance.toFixed(1).replace('.',',')+' km';}
+ let fallbackProject=()=>[0,0];
+ const L=await leaflet();
+ if(destroyed)return {destroy(){}};
+ if(L){
+  map=L.map(mapRoot,{zoomControl:false,attributionControl:true,scrollWheelZoom:false,dragging:true,doubleClickZoom:true,zoomAnimation:false,fadeAnimation:false,markerZoomAnimation:false});
+  const coords=route.points.map(p=>[p[0],p[1]]),line=L.polyline(coords,{color:'#1677a8',weight:3}).addTo(map);map.fitBounds(line.getBounds(),{padding:[14,14],animate:false});
+  tiles=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap'});tiles.on('tileerror',()=>{try{tiles.remove();}catch{}});tiles.addTo(map);
+  marker=L.circleMarker(coords[0],{radius:7,color:'#fff',weight:2,fillColor:'#d9a441',fillOpacity:1}).addTo(map);
+  const readout=document.createElement('span');readout.className='overview-minimap-readout';readout.textContent='0,0 km';mapRoot.append(readout);
+ }else{
+  const lats=route.points.map(p=>p[0]),lons=route.points.map(p=>p[1]),minLat=Math.min(...lats),maxLat=Math.max(...lats),minLon=Math.min(...lons),maxLon=Math.max(...lons),cos=Math.cos((minLat+maxLat)/2*Math.PI/180),scale=Math.min(220/((maxLon-minLon)*cos||1),120/(maxLat-minLat||1));fallbackProject=p=>[125+(p[1]-(minLon+maxLon)/2)*cos*scale,75-(p[0]-(minLat+maxLat)/2)*scale];const path=route.points.map((p,i)=>(i?'L':'M')+fallbackProject(p).join(',')).join(' ');mapRoot.innerHTML='<svg viewBox="0 0 250 150" aria-label="Banan"><path d="'+path+'" fill="none" stroke="#1677a8" stroke-width="3"/><g class="overview-fallback-marker"><circle r="6" fill="#d9a441" stroke="#fff" stroke-width="2"/></g></svg><span class="overview-minimap-readout">0,0 km</span>';fallbackMarker=mapRoot.querySelector('.overview-fallback-marker');
+ }
+ const move=event=>update(distanceFromEvent(event));svg.addEventListener('pointermove',move);svg.addEventListener('pointerdown',move);update(0);
+ return {destroy(){destroyed=true;try{svg.removeEventListener('pointermove',move);svg.removeEventListener('pointerdown',move);tiles?.remove?.();marker?.remove?.();if(map){map.off?.();map.remove();map=null;}}catch{map=null;}}};
+}
+
 export async function mountMap(root,{route,adapter,records=[],segment=0,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches,referenceSeries=[],insights=[],profile=false,musicSrc='assets/kustlinjens-steg.mp3',initialTime=0,onTimeChange=null}){
  let destroyed=false,map=null,timer=null,markers=[],referenceMarkers=new Map(),high=null,t=Math.max(0,Number(initialTime)||0),audio=null,tiles=null,replayStarted=false,followMode='off',lastCamera=0;
  const models=records.map((r,index)=>({r,label:r.name,color:['#1677a8','#b51d60','#497b35','#92691a','#7651a0'][index%5],anchors:adapter.anchors(r,route)})).filter(m=>m.anchors.length>=2);
