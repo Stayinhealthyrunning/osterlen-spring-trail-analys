@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T14:40:19.462004+00:00",
+  "generated_at": "2026-09-30T14:41:02.430956+00:00",
   "method": {
     "resample_step_m": 100.0,
     "comparison": "symmetric nearest-route-point distance"
