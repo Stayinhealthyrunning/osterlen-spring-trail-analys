@@ -36,7 +36,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add reports/gpx-inventory.json reports/gpx-inventory.md reports/gpx-comparison.json reports/gpx-comparison.md reports/route-landmark-projections.md data/derived/route-landmark-projections.json
+          git add reports/gpx-inventory.json reports/gpx-inventory.md reports/gpx-comparison.json reports/gpx-comparison.md reports/route-landmark-projections.md
           if git diff --cached --quiet; then
             echo 'No report changes.'
           else
