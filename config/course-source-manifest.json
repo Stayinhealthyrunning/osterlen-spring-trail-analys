@@ -4,7 +4,8 @@
     "organizer_direct": "May be downloaded into source archive when publicly provided by the organizer.",
     "third_party_reference": "Store URL and factual metadata only until redistribution/use rights are confirmed.",
     "no_fake_gpx": "A .gpx path is created only when actual GPX bytes have been obtained and validated.",
-    "course_version": "Remain unassigned until geometry comparison."
+    "course_version": "Remain unassigned until geometry comparison.",
+    "public_map_geometry": "Public map geometry embedded for browser rendering may be materialized as a derived local route reference when source/year identity is independently verified. Preserve source URL/date/hash and never label it organizer-direct GPX."
   },
   "sources": [
     {

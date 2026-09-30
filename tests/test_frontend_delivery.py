@@ -18,7 +18,11 @@ class FrontendDeliveryTests(unittest.TestCase):
   for p in self.out.rglob("*.json"):
    self.assertEqual(json.loads(p.read_text(encoding="utf-8")).get("payload_sha256"),self.boot["payload_sha256"],p)
  def test_routes_only_explicit_local_entitlements(self):
-  self.assertEqual(set(self.manifest["routes"]),{"ultra60-2024","ultra60-2025-2026","trail5-current-reference"})
+  self.assertEqual(set(self.manifest["routes"]),{
+   "ultra60-2018","ultra60-2019","ultra60-2022-2023","ultra60-2024","ultra60-2025-2026",
+   "trail22-2019","trail22-2022-2024","trail22-2025-2026",
+   "trail14-current-reference","trail5-current-reference"
+  })
   for key,meta in self.manifest["routes"].items():
    route=json.loads((self.out/meta["path"]).read_text(encoding="utf-8"))
    self.assertEqual(route["course_version"],key)

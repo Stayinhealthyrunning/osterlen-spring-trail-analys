@@ -54,9 +54,10 @@ def main():
    assignment=course_assign.get((int(race['year']),race['race_family']))
    course_version=assignment.get('course_version_id') if assignment is not None else race['course_version']
    local_route=bool(assignment.get('route_asset_available')) if assignment is not None else bool(race['route_asset_available'])
+   replay_route=bool(assignment.get('replay_route_ready',local_route)) if assignment is not None else local_route
    course=bool(course_version)
    split_ready=splits>0 and split_results>0
-   replay_ready=split_ready and local_route and semantic_checkpoints>=2
+   replay_ready=split_ready and replay_route and semantic_checkpoints>=2
 
    rows.append({
     'race_key':rk,'year':race['year'],'race_family':race['race_family'],'race_type':race['race_type'],'course_version':course_version,
@@ -87,7 +88,7 @@ def main():
   'schema_version':2,
   'source':'data/derived/ost-analysis-2018-2026.sqlite.gz',
   'course_assignment_source':'config/course-versions.json',
-  'rule':'Feature flags are derived from the curated archive plus authoritative course-version assignments in config/course-versions.json. Route-dependent features require a local usable route asset; relay leg assignment remains disabled until leg ordering is source-verified. Exact age and age-category coverage are reported separately.',
+  'rule':'Feature flags are derived from the curated archive plus authoritative course-version assignments in config/course-versions.json. Map availability requires a local usable route asset; replay additionally requires replay_route_ready plus observed split checkpoints. Relay leg assignment remains disabled until leg ordering is source-verified. Exact age and age-category coverage are reported separately.',
   'races':rows,
   'totals':{
    'races':len(rows),'results':sum(r['results'] for r in rows),'split_passages':sum(r['split_passages'] for r in rows),

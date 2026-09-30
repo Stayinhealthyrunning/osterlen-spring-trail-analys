@@ -29,7 +29,7 @@ class EngineV1ExportTests(unittest.TestCase):
         self.assertEqual(self.summary["results"],9871)
         self.assertEqual(self.summary["teams"],300)
         self.assertEqual(self.summary["team_members"],599)
-        self.assertEqual(self.summary["replay_ready"],6)
+        self.assertEqual(self.summary["replay_ready"],10)
 
     def test_sparse_finish_only_race_stays_sparse(self):
         race=self.data["races"]["ost-2026-trail22"]
@@ -38,12 +38,15 @@ class EngineV1ExportTests(unittest.TestCase):
         self.assertFalse(race["capabilities"]["head_to_head"])
         self.assertEqual({x["key"] for x in self.data["checkpoints"][race["race_key"]]},{"start","finish"})
 
-    def test_historical_ultra_keeps_splits_without_borrowing_route(self):
+    def test_historical_ultra_can_have_map_route_without_replay(self):
         race=self.data["races"]["ost-2018-ultra60"]
         self.assertTrue(race["capabilities"]["segment_analysis"])
         self.assertTrue(race["capabilities"]["head_to_head"])
         self.assertFalse(race["capabilities"]["replay"])
-        self.assertFalse(self.data["courses"][race["course_version"]]["assets"])
+        assets=self.data["courses"][race["course_version"]]["assets"]
+        self.assertEqual(assets["route_asset_status"],"derived_public_trace_geometry")
+        self.assertTrue(assets["route_source"])
+        self.assertFalse(assets["official_gpx"])
 
     def test_local_route_unlocks_replay_only_where_readiness_allows(self):
         race=self.data["races"]["ost-2025-ultra60"]
@@ -84,7 +87,10 @@ class EngineV1ExportTests(unittest.TestCase):
         self.assertEqual(course["assets"]["route_asset_status"],"derived_reconstructed_reference")
         self.assertFalse(course["assets"]["official_gpx"])
         self.assertTrue(course["assets"]["route_source"])
-        self.assertFalse(self.data["courses"]["trail14-current-reference"]["assets"])
+        trail14=self.data["courses"]["trail14-current-reference"]["assets"]
+        self.assertEqual(trail14["route_asset_status"],"derived_provisional_reference")
+        self.assertFalse(trail14["official_gpx"])
+        self.assertTrue(trail14["route_source"])
 
     def test_all_exported_results_and_splits_are_internally_consistent(self):
         valid_status={"FINISHED","DNF","DNS","DSQ","UNKNOWN"}

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "source": "data/derived/ost-analysis-2018-2026.sqlite.gz",
   "course_assignment_source": "config/course-versions.json",
-  "rule": "Feature flags are derived from the curated archive plus authoritative course-version assignments in config/course-versions.json. Route-dependent features require a local usable route asset; relay leg assignment remains disabled until leg ordering is source-verified. Exact age and age-category coverage are reported separately.",
+  "rule": "Feature flags are derived from the curated archive plus authoritative course-version assignments in config/course-versions.json. Map availability requires a local usable route asset; replay additionally requires replay_route_ready plus observed split checkpoints. Relay leg assignment remains disabled until leg ordering is source-verified. Exact age and age-category coverage are reported separately.",
   "races": [
     {
       "race_key": "ost-2018-trail14",
@@ -30,13 +30,13 @@
         "source_class": 372
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 0.0,
-        "age_exact": 0.0,
-        "age_category": 0.0,
-        "club": 100.0,
-        "country": 100.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 0,
+        "age_exact": 0,
+        "age_category": 0,
+        "club": 100,
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -78,13 +78,13 @@
         "source_class": 465
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 0.0,
-        "age_exact": 0.0,
-        "age_category": 0.0,
-        "club": 100.0,
-        "country": 100.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 0,
+        "age_exact": 0,
+        "age_category": 0,
+        "club": 100,
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -126,13 +126,13 @@
         "source_class": 126
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 0.0,
-        "age_exact": 0.0,
-        "age_category": 0.0,
-        "club": 100.0,
-        "country": 100.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 0,
+        "age_exact": 0,
+        "age_category": 0,
+        "club": 100,
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -154,7 +154,7 @@
       "race_family": "ultra60",
       "race_type": "individual",
       "course_version": "ultra60-2018",
-      "route_asset_available": false,
+      "route_asset_available": true,
       "results": 150,
       "finished": 125,
       "dnf": 15,
@@ -174,13 +174,13 @@
         "source_class": 150
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 0.0,
-        "age_exact": 0.0,
-        "age_category": 0.0,
-        "club": 100.0,
-        "country": 100.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 0,
+        "age_exact": 0,
+        "age_category": 0,
+        "club": 100,
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -202,7 +202,7 @@
       "race_family": "duo60",
       "race_type": "relay",
       "course_version": "ultra60-2019",
-      "route_asset_available": false,
+      "route_asset_available": true,
       "results": 64,
       "finished": 62,
       "dnf": 0,
@@ -222,13 +222,13 @@
         "source_class": 64
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 0.0,
-        "age_exact": 0.0,
-        "age_category": 0.0,
-        "club": 0.0,
-        "country": 0.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 0,
+        "age_exact": 0,
+        "age_category": 0,
+        "club": 0,
+        "country": 0,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -270,13 +270,13 @@
         "source_class": 434
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 0.0,
-        "age_exact": 0.0,
-        "age_category": 0.0,
+        "bib": 100,
+        "gender": 0,
+        "age_exact": 0,
+        "age_category": 0,
         "club": 99.8,
-        "country": 100.0,
-        "source_class": 100.0
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -298,7 +298,7 @@
       "race_family": "trail22",
       "race_type": "individual",
       "course_version": "trail22-2019",
-      "route_asset_available": false,
+      "route_asset_available": true,
       "results": 469,
       "finished": 466,
       "dnf": 3,
@@ -318,13 +318,13 @@
         "source_class": 469
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 0.0,
-        "age_exact": 0.0,
-        "age_category": 0.0,
-        "club": 100.0,
-        "country": 100.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 0,
+        "age_exact": 0,
+        "age_category": 0,
+        "club": 100,
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -366,13 +366,13 @@
         "source_class": 100
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 0.0,
-        "age_exact": 0.0,
-        "age_category": 0.0,
-        "club": 100.0,
-        "country": 100.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 0,
+        "age_exact": 0,
+        "age_category": 0,
+        "club": 100,
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -394,7 +394,7 @@
       "race_family": "ultra60",
       "race_type": "individual",
       "course_version": "ultra60-2019",
-      "route_asset_available": false,
+      "route_asset_available": true,
       "results": 278,
       "finished": 243,
       "dnf": 35,
@@ -414,13 +414,13 @@
         "source_class": 278
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 0.0,
-        "age_exact": 0.0,
-        "age_category": 0.0,
-        "club": 100.0,
-        "country": 100.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 0,
+        "age_exact": 0,
+        "age_category": 0,
+        "club": 100,
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -442,7 +442,7 @@
       "race_family": "duo60",
       "race_type": "relay",
       "course_version": "ultra60-2022-2023",
-      "route_asset_available": false,
+      "route_asset_available": true,
       "results": 43,
       "finished": 43,
       "dnf": 0,
@@ -462,22 +462,22 @@
         "source_class": 43
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 0.0,
-        "age_exact": 0.0,
-        "age_category": 0.0,
-        "club": 0.0,
-        "country": 0.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 0,
+        "age_exact": 0,
+        "age_category": 0,
+        "club": 0,
+        "country": 0,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
         "finish_statistics": true,
         "runner_or_team_profile": true,
         "split_analysis": true,
-        "runner_replay": false,
-        "map_duel": false,
-        "course_difficulty_vs_pacing": false,
+        "runner_replay": true,
+        "map_duel": true,
+        "course_difficulty_vs_pacing": true,
         "course_version_records": true,
         "cross_year_participation": true,
         "relay_member_display": true,
@@ -510,13 +510,13 @@
         "source_class": 249
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 100.0,
-        "age_exact": 0.0,
-        "age_category": 100.0,
-        "club": 100.0,
-        "country": 100.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 100,
+        "age_exact": 0,
+        "age_category": 100,
+        "club": 100,
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -538,7 +538,7 @@
       "race_family": "trail22",
       "race_type": "individual",
       "course_version": "trail22-2022-2024",
-      "route_asset_available": false,
+      "route_asset_available": true,
       "results": 432,
       "finished": 429,
       "dnf": 3,
@@ -558,13 +558,13 @@
         "source_class": 432
       },
       "field_coverage_pct": {
-        "bib": 100.0,
+        "bib": 100,
         "gender": 99.8,
-        "age_exact": 0.0,
+        "age_exact": 0,
         "age_category": 99.8,
-        "club": 100.0,
-        "country": 100.0,
-        "source_class": 100.0
+        "club": 100,
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -606,13 +606,13 @@
         "source_class": 85
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 100.0,
-        "age_exact": 0.0,
-        "age_category": 100.0,
-        "club": 100.0,
-        "country": 100.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 100,
+        "age_exact": 0,
+        "age_category": 100,
+        "club": 100,
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -634,7 +634,7 @@
       "race_family": "ultra60",
       "race_type": "individual",
       "course_version": "ultra60-2022-2023",
-      "route_asset_available": false,
+      "route_asset_available": true,
       "results": 318,
       "finished": 282,
       "dnf": 36,
@@ -654,22 +654,22 @@
         "source_class": 318
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 100.0,
-        "age_exact": 0.0,
-        "age_category": 100.0,
-        "club": 100.0,
-        "country": 100.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 100,
+        "age_exact": 0,
+        "age_category": 100,
+        "club": 100,
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
         "finish_statistics": true,
         "runner_or_team_profile": true,
         "split_analysis": true,
-        "runner_replay": false,
-        "map_duel": false,
-        "course_difficulty_vs_pacing": false,
+        "runner_replay": true,
+        "map_duel": true,
+        "course_difficulty_vs_pacing": true,
         "course_version_records": true,
         "cross_year_participation": true,
         "relay_member_display": false,
@@ -682,7 +682,7 @@
       "race_family": "duo60",
       "race_type": "relay",
       "course_version": "ultra60-2022-2023",
-      "route_asset_available": false,
+      "route_asset_available": true,
       "results": 48,
       "finished": 46,
       "dnf": 2,
@@ -702,22 +702,22 @@
         "source_class": 48
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 0.0,
-        "age_exact": 0.0,
-        "age_category": 0.0,
-        "club": 0.0,
-        "country": 0.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 0,
+        "age_exact": 0,
+        "age_category": 0,
+        "club": 0,
+        "country": 0,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
         "finish_statistics": true,
         "runner_or_team_profile": true,
         "split_analysis": true,
-        "runner_replay": false,
-        "map_duel": false,
-        "course_difficulty_vs_pacing": false,
+        "runner_replay": true,
+        "map_duel": true,
+        "course_difficulty_vs_pacing": true,
         "course_version_records": true,
         "cross_year_participation": true,
         "relay_member_display": true,
@@ -750,13 +750,13 @@
         "source_class": 306
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 0.0,
-        "age_exact": 0.0,
-        "age_category": 0.0,
+        "bib": 100,
+        "gender": 0,
+        "age_exact": 0,
+        "age_category": 0,
         "club": 99.3,
-        "country": 100.0,
-        "source_class": 100.0
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -778,7 +778,7 @@
       "race_family": "trail22",
       "race_type": "individual",
       "course_version": "trail22-2022-2024",
-      "route_asset_available": false,
+      "route_asset_available": true,
       "results": 484,
       "finished": 483,
       "dnf": 1,
@@ -798,13 +798,13 @@
         "source_class": 484
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 0.0,
-        "age_exact": 0.0,
-        "age_category": 0.0,
-        "club": 100.0,
-        "country": 100.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 0,
+        "age_exact": 0,
+        "age_category": 0,
+        "club": 100,
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -846,13 +846,13 @@
         "source_class": 185
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 0.0,
-        "age_exact": 0.0,
-        "age_category": 0.0,
-        "club": 100.0,
-        "country": 100.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 0,
+        "age_exact": 0,
+        "age_category": 0,
+        "club": 100,
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -874,7 +874,7 @@
       "race_family": "ultra60",
       "race_type": "individual",
       "course_version": "ultra60-2022-2023",
-      "route_asset_available": false,
+      "route_asset_available": true,
       "results": 330,
       "finished": 306,
       "dnf": 24,
@@ -894,22 +894,22 @@
         "source_class": 330
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 0.0,
-        "age_exact": 0.0,
-        "age_category": 0.0,
-        "club": 100.0,
-        "country": 100.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 0,
+        "age_exact": 0,
+        "age_category": 0,
+        "club": 100,
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
         "finish_statistics": true,
         "runner_or_team_profile": true,
         "split_analysis": true,
-        "runner_replay": false,
-        "map_duel": false,
-        "course_difficulty_vs_pacing": false,
+        "runner_replay": true,
+        "map_duel": true,
+        "course_difficulty_vs_pacing": true,
         "course_version_records": true,
         "cross_year_participation": true,
         "relay_member_display": false,
@@ -942,13 +942,13 @@
         "source_class": 46
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 0.0,
-        "age_exact": 0.0,
-        "age_category": 0.0,
-        "club": 0.0,
-        "country": 0.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 0,
+        "age_exact": 0,
+        "age_category": 0,
+        "club": 0,
+        "country": 0,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -990,13 +990,13 @@
         "source_class": 417
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 100.0,
-        "age_exact": 100.0,
-        "age_category": 100.0,
+        "bib": 100,
+        "gender": 100,
+        "age_exact": 100,
+        "age_category": 100,
         "club": 36.2,
-        "country": 100.0,
-        "source_class": 100.0
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -1018,7 +1018,7 @@
       "race_family": "trail22",
       "race_type": "individual",
       "course_version": "trail22-2022-2024",
-      "route_asset_available": false,
+      "route_asset_available": true,
       "results": 506,
       "finished": 501,
       "dnf": 5,
@@ -1038,13 +1038,13 @@
         "source_class": 506
       },
       "field_coverage_pct": {
-        "bib": 100.0,
+        "bib": 100,
         "gender": 99.6,
         "age_exact": 99.6,
-        "age_category": 100.0,
+        "age_category": 100,
         "club": 47.2,
-        "country": 100.0,
-        "source_class": 100.0
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -1086,13 +1086,13 @@
         "source_class": 223
       },
       "field_coverage_pct": {
-        "bib": 100.0,
+        "bib": 100,
         "gender": 99.1,
         "age_exact": 99.1,
         "age_category": 99.1,
-        "club": 22.0,
-        "country": 100.0,
-        "source_class": 100.0
+        "club": 22,
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -1134,13 +1134,13 @@
         "source_class": 420
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 100.0,
-        "age_exact": 100.0,
-        "age_category": 100.0,
+        "bib": 100,
+        "gender": 100,
+        "age_exact": 100,
+        "age_category": 100,
         "club": 67.1,
-        "country": 100.0,
-        "source_class": 100.0
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -1182,13 +1182,13 @@
         "source_class": 47
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 0.0,
-        "age_exact": 0.0,
-        "age_category": 0.0,
-        "club": 0.0,
-        "country": 0.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 0,
+        "age_exact": 0,
+        "age_category": 0,
+        "club": 0,
+        "country": 0,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -1230,13 +1230,13 @@
         "source_class": 403
       },
       "field_coverage_pct": {
-        "bib": 100.0,
+        "bib": 100,
         "gender": 99.3,
         "age_exact": 99.3,
         "age_category": 99.5,
-        "club": 31.0,
-        "country": 100.0,
-        "source_class": 100.0
+        "club": 31,
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -1258,7 +1258,7 @@
       "race_family": "trail22",
       "race_type": "individual",
       "course_version": "trail22-2025-2026",
-      "route_asset_available": false,
+      "route_asset_available": true,
       "results": 520,
       "finished": 518,
       "dnf": 2,
@@ -1278,13 +1278,13 @@
         "source_class": 520
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 100.0,
-        "age_exact": 100.0,
-        "age_category": 100.0,
+        "bib": 100,
+        "gender": 100,
+        "age_exact": 100,
+        "age_category": 100,
         "club": 51.7,
-        "country": 100.0,
-        "source_class": 100.0
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -1326,13 +1326,13 @@
         "source_class": 235
       },
       "field_coverage_pct": {
-        "bib": 100.0,
+        "bib": 100,
         "gender": 99.6,
         "age_exact": 99.6,
         "age_category": 99.6,
         "club": 28.1,
-        "country": 100.0,
-        "source_class": 100.0
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -1374,13 +1374,13 @@
         "source_class": 400
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 100.0,
-        "age_exact": 100.0,
-        "age_category": 100.0,
+        "bib": 100,
+        "gender": 100,
+        "age_exact": 100,
+        "age_category": 100,
         "club": 60.2,
-        "country": 100.0,
-        "source_class": 100.0
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -1422,13 +1422,13 @@
         "source_class": 52
       },
       "field_coverage_pct": {
-        "bib": 100.0,
-        "gender": 0.0,
-        "age_exact": 0.0,
-        "age_category": 0.0,
-        "club": 0.0,
-        "country": 0.0,
-        "source_class": 100.0
+        "bib": 100,
+        "gender": 0,
+        "age_exact": 0,
+        "age_category": 0,
+        "club": 0,
+        "country": 0,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -1450,7 +1450,7 @@
       "race_family": "trail14",
       "race_type": "individual",
       "course_version": "trail14-current-reference",
-      "route_asset_available": false,
+      "route_asset_available": true,
       "results": 456,
       "finished": 453,
       "dnf": 3,
@@ -1470,13 +1470,13 @@
         "source_class": 456
       },
       "field_coverage_pct": {
-        "bib": 100.0,
+        "bib": 100,
         "gender": 99.8,
         "age_exact": 99.8,
         "age_category": 99.8,
         "club": 29.2,
-        "country": 100.0,
-        "source_class": 100.0
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -1498,7 +1498,7 @@
       "race_family": "trail22",
       "race_type": "individual",
       "course_version": "trail22-2025-2026",
-      "route_asset_available": false,
+      "route_asset_available": true,
       "results": 504,
       "finished": 495,
       "dnf": 9,
@@ -1518,13 +1518,13 @@
         "source_class": 504
       },
       "field_coverage_pct": {
-        "bib": 100.0,
+        "bib": 100,
         "gender": 99.6,
         "age_exact": 99.6,
         "age_category": 99.6,
         "club": 41.5,
-        "country": 100.0,
-        "source_class": 100.0
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -1566,13 +1566,13 @@
         "source_class": 295
       },
       "field_coverage_pct": {
-        "bib": 100.0,
+        "bib": 100,
         "gender": 99.7,
         "age_exact": 99.7,
-        "age_category": 100.0,
+        "age_category": 100,
         "club": 32.2,
-        "country": 100.0,
-        "source_class": 100.0
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -1614,13 +1614,13 @@
         "source_class": 409
       },
       "field_coverage_pct": {
-        "bib": 100.0,
+        "bib": 100,
         "gender": 99.8,
         "age_exact": 99.8,
         "age_category": 99.8,
         "club": 56.5,
-        "country": 100.0,
-        "source_class": 100.0
+        "country": 100,
+        "source_class": 100
       },
       "features": {
         "results_database": true,
@@ -1642,7 +1642,7 @@
     "results": 9871,
     "split_passages": 6123,
     "races_with_split_analysis": 13,
-    "races_with_replay_ready_data": 6,
+    "races_with_replay_ready_data": 10,
     "races_with_course_version": 21,
     "results_with_bib": 9871,
     "results_with_gender": 5858,
