@@ -30,7 +30,8 @@ jobs:
       - name: Commit GPX source archive and provenance manifest
         shell: bash
         run: |
-          paths=(data/source/tracedetrail/gpx data/source/tracedetrail/gpx-download-manifest.json)
+          paths=(data/source/tracedetrail/gpx-download-manifest.json)
+          [[ -d data/source/tracedetrail/gpx ]] && paths+=(data/source/tracedetrail/gpx)
           if [[ -n "$(git status --porcelain -- "${paths[@]}")" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
