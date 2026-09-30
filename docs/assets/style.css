@@ -428,8 +428,9 @@ div.chart{box-sizing:border-box;min-width:0!important;width:100%;max-width:100%;
 .hero{background-position:center 38%}
 
 /* Compact, square race chooser with an equally tall edition control. */
-.race-selection{align-items:stretch}
-.race-selection .family-cards{align-items:stretch;margin-top:0;margin-bottom:0}
+.race-selection{grid-template-columns:repeat(6,minmax(0,1fr));align-items:stretch}
+.race-selection .family-cards{grid-column:span 5;align-items:stretch;margin-top:0;margin-bottom:0}
+.race-selection .race-year-select{grid-column:span 1}
 .race-selection .family-card{aspect-ratio:1/1;min-height:0;padding:82px 13px 12px}
 .race-selection .family-card[aria-pressed=true]{padding:81px 12px 11px}
 .race-selection .family-card:after{height:70px}
@@ -510,6 +511,8 @@ div.chart{box-sizing:border-box;min-width:0!important;width:100%;max-width:100%;
 
 /* Responsive review adjustments. */
 @media(max-width:900px){
+ .race-selection{grid-template-columns:1fr}
+ .race-selection .family-cards,.race-selection .race-year-select{grid-column:auto}
  .race-selection .family-card{aspect-ratio:auto;min-height:170px}
  .duel-story{grid-template-columns:1fr}
  .duel-story article:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-15px;transform:translateX(-50%)}
