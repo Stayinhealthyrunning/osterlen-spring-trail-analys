@@ -17,6 +17,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: python tools/build_engine_readiness_report.py
+      - run: git diff --exit-code -- reports/engine-readiness.json reports/engine-readiness.md
       - run: python tools/build_frontend.py
       - run: python tools/validate_foundation.py
       - run: python tools/validate_prebuild_readiness.py
