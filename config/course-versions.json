@@ -22,9 +22,11 @@
       ],
       "geometry_hash_prefix": "bb0a90f2178e",
       "derived_path_distance_km": 62.055,
-      "route_asset_status": "not_archived",
+      "route_asset_status": "derived_public_trace_geometry",
       "whole_course_comparison_group": null,
-      "notes": "Trace date matches 2018. The route is materially longer than 2019 and is kept as a separate historical course version."
+      "notes": "Trace date matches 2018. The route is materially longer than 2019 and is kept as a separate historical course version. Local route asset is a derived representation of the verified public Trace de Trail map geometry; it is not organizer-direct GPX bytes.",
+      "primary_source_path": "routes/ost/ultra60-2018/route.gpx",
+      "route_provenance_label": "Publik banreferens · Trace de Trail"
     },
     {
       "course_version_id": "ultra60-2019",
@@ -38,9 +40,11 @@
       ],
       "geometry_hash_prefix": "ba16b78ba883",
       "derived_path_distance_km": 58.612,
-      "route_asset_status": "not_archived",
+      "route_asset_status": "derived_public_trace_geometry",
       "whole_course_comparison_group": "ultra60-2019-2023-compatible",
-      "notes": "2019 and 2022 use separate geometry fingerprints but share 99.2% of the route within 50 m and 100% within 100 m, with only 0.265 km derived length difference. They remain separate versions but may be treated as compatible with explicit caveat."
+      "notes": "2019 and 2022 use separate geometry fingerprints but share 99.2% of the route within 50 m and 100% within 100 m, with only 0.265 km derived length difference. They remain separate versions but may be treated as compatible with explicit caveat. Local route asset is a derived representation of the verified public Trace de Trail map geometry; it is not organizer-direct GPX bytes.",
+      "primary_source_path": "routes/ost/ultra60-2019/route.gpx",
+      "route_provenance_label": "Publik banreferens · Trace de Trail"
     },
     {
       "course_version_id": "ultra60-2022-2023",
@@ -56,9 +60,11 @@
       ],
       "geometry_hash_prefix": "d65a4c4f6156",
       "derived_path_distance_km": 58.347,
-      "route_asset_status": "not_archived",
+      "route_asset_status": "derived_public_trace_geometry",
       "whole_course_comparison_group": "ultra60-2019-2023-compatible",
-      "notes": "2022 and 2023 public map geometry is byte-for-byte identical after decoding; 2019 is a separate but strongly compatible geometry."
+      "notes": "2022 and 2023 public map geometry is byte-for-byte identical after decoding; 2019 is a separate but strongly compatible geometry. Local route asset is a derived representation of the verified public Trace de Trail map geometry; it is not organizer-direct GPX bytes.",
+      "primary_source_path": "routes/ost/ultra60-2022-2023/route.gpx",
+      "route_provenance_label": "Publik banreferens · Trace de Trail"
     },
     {
       "course_version_id": "ultra60-2024",
@@ -107,9 +113,11 @@
       ],
       "geometry_hash_prefix": "ee8ab4532a44",
       "derived_path_distance_km": 21.726,
-      "route_asset_status": "not_archived",
+      "route_asset_status": "derived_public_trace_geometry",
       "whole_course_comparison_group": "trail22-2019-2026-compatible",
-      "notes": "Separate fingerprint from later years, but geometry is strongly compatible with 2022-2024."
+      "notes": "Separate fingerprint from later years, but geometry is strongly compatible with 2022-2024. Local route asset is a derived representation of the verified public Trace de Trail map geometry; it is not organizer-direct GPX bytes.",
+      "primary_source_path": "routes/ost/trail22-2019/route.gpx",
+      "route_provenance_label": "Publik banreferens · Trace de Trail"
     },
     {
       "course_version_id": "trail22-2022-2024",
@@ -127,9 +135,11 @@
       ],
       "geometry_hash_prefix": "4e6dd245a2aa",
       "derived_path_distance_km": 21.741,
-      "route_asset_status": "not_archived",
+      "route_asset_status": "derived_public_trace_geometry",
       "whole_course_comparison_group": "trail22-2019-2026-compatible",
-      "notes": "2022, 2023 and 2024 public map geometry is exactly identical."
+      "notes": "2022, 2023 and 2024 public map geometry is exactly identical. Local route asset is a derived representation of the verified public Trace de Trail map geometry; it is not organizer-direct GPX bytes.",
+      "primary_source_path": "routes/ost/trail22-2022-2024/route.gpx",
+      "route_provenance_label": "Publik banreferens · Trace de Trail"
     },
     {
       "course_version_id": "trail22-2025-2026",
@@ -145,9 +155,11 @@
       ],
       "geometry_hash_prefix": "f10e7f489055",
       "derived_path_distance_km": 21.71,
-      "route_asset_status": "not_archived",
+      "route_asset_status": "derived_public_trace_geometry",
       "whole_course_comparison_group": "trail22-2019-2026-compatible",
-      "notes": "2025 and 2026 public map geometry is exactly identical. Compared with 2024, 99.3% of both routes lie within 50 m and 100% within 100 m with 0.031 km length difference."
+      "notes": "2025 and 2026 public map geometry is exactly identical. Compared with 2024, 99.3% of both routes lie within 50 m and 100% within 100 m with 0.031 km length difference. Local route asset is a derived representation of the verified public Trace de Trail map geometry; it is not organizer-direct GPX bytes.",
+      "primary_source_path": "routes/ost/trail22-2025-2026/route.gpx",
+      "route_provenance_label": "Publik banreferens · Trace de Trail"
     },
     {
       "course_version_id": "trail14-current-reference",
@@ -157,9 +169,9 @@
       ],
       "status": "provisional_hallamolla_splice_reference",
       "derived_path_distance_km": 13.472,
-      "route_asset_status": "recipe_only_not_archived",
+      "route_asset_status": "derived_provisional_reference",
       "whole_course_comparison_group": null,
-      "notes": "Accepted working reference for analysis preparation until an authentic organizer/participant GPX is secured. Geometry is a recipe derived from verified Trail 21/22 public geometry and is not stored as a redistributable route asset. It supersedes the previous 14.249 km raster candidate as the preferred working hypothesis.",
+      "notes": "The accepted 13.472 km Hallamölla splice is now materialized as a clearly labelled provisional reconstructed route reference. It remains non-authoritative pending authentic organizer/participant GPX.",
       "reference_recipe": {
         "base_course_version": "trail22-2022-2024",
         "base_trace_id": 165617,
@@ -173,7 +185,9 @@
         "Visual comparison against the verified 2023 Jogg race activity indicates shared geometry with Trail 21/22 2022-2024 up to/from Hallamölla.",
         "The resulting 13.472 km candidate is close to the verified 2023 participant watch distance 13.67 km.",
         "Hallamölla-to-finish distance 4.784 km is consistent with the participant note of about 4.5 km remaining."
-      ]
+      ],
+      "primary_source_path": "routes/ost/trail14-current-reference/route.gpx",
+      "route_provenance_label": "Rekonstruerad bana · provisorisk"
     },
     {
       "course_version_id": "trail5-current-reference",
@@ -196,28 +210,32 @@
       "family": "ultra60",
       "course_version_id": "ultra60-2018",
       "status": "assigned_from_public_geometry",
-      "route_asset_available": false
+      "route_asset_available": true,
+      "replay_route_ready": false
     },
     {
       "year": 2019,
       "family": "ultra60",
       "course_version_id": "ultra60-2019",
       "status": "assigned_from_public_geometry",
-      "route_asset_available": false
+      "route_asset_available": true,
+      "replay_route_ready": false
     },
     {
       "year": 2022,
       "family": "ultra60",
       "course_version_id": "ultra60-2022-2023",
       "status": "assigned_from_public_geometry",
-      "route_asset_available": false
+      "route_asset_available": true,
+      "replay_route_ready": true
     },
     {
       "year": 2023,
       "family": "ultra60",
       "course_version_id": "ultra60-2022-2023",
       "status": "assigned_from_public_geometry",
-      "route_asset_available": false
+      "route_asset_available": true,
+      "replay_route_ready": true
     },
     {
       "year": 2024,
@@ -246,7 +264,8 @@
       "course_version_id": "ultra60-2019",
       "inherits_from": "ultra60",
       "status": "assigned_inherited",
-      "route_asset_available": false
+      "route_asset_available": true,
+      "replay_route_ready": false
     },
     {
       "year": 2022,
@@ -254,7 +273,8 @@
       "course_version_id": "ultra60-2022-2023",
       "inherits_from": "ultra60",
       "status": "assigned_inherited",
-      "route_asset_available": false
+      "route_asset_available": true,
+      "replay_route_ready": true
     },
     {
       "year": 2023,
@@ -262,7 +282,8 @@
       "course_version_id": "ultra60-2022-2023",
       "inherits_from": "ultra60",
       "status": "assigned_inherited",
-      "route_asset_available": false
+      "route_asset_available": true,
+      "replay_route_ready": true
     },
     {
       "year": 2024,
@@ -301,49 +322,49 @@
       "family": "trail22",
       "course_version_id": "trail22-2019",
       "status": "assigned_from_public_geometry",
-      "route_asset_available": false
+      "route_asset_available": true
     },
     {
       "year": 2022,
       "family": "trail22",
       "course_version_id": "trail22-2022-2024",
       "status": "assigned_from_public_geometry",
-      "route_asset_available": false
+      "route_asset_available": true
     },
     {
       "year": 2023,
       "family": "trail22",
       "course_version_id": "trail22-2022-2024",
       "status": "assigned_from_public_geometry",
-      "route_asset_available": false
+      "route_asset_available": true
     },
     {
       "year": 2024,
       "family": "trail22",
       "course_version_id": "trail22-2022-2024",
       "status": "assigned_from_public_geometry",
-      "route_asset_available": false
+      "route_asset_available": true
     },
     {
       "year": 2025,
       "family": "trail22",
       "course_version_id": "trail22-2025-2026",
       "status": "assigned_from_public_geometry",
-      "route_asset_available": false
+      "route_asset_available": true
     },
     {
       "year": 2026,
       "family": "trail22",
       "course_version_id": "trail22-2025-2026",
       "status": "assigned_from_public_geometry",
-      "route_asset_available": false
+      "route_asset_available": true
     },
     {
       "year": 2026,
       "family": "trail14",
       "course_version_id": "trail14-current-reference",
       "status": "assigned_provisional_reference_recipe",
-      "route_asset_available": false,
+      "route_asset_available": true,
       "warning": "Working reference only: 13.472 km Hallamölla splice recipe based on Trail 21/22 2022-2024. Not an organizer/participant GPX and no redistributable local route asset is archived."
     },
     {
@@ -361,8 +382,8 @@
   ],
   "unresolved": [
     "2018 trail22 needs a year-specific source or independent evidence before formal assignment because candidate Trace 7897 is dated 2016.",
-    "Historical course versions without a local/redistributable route asset can support comparability/record grouping but cannot enable frontend map/replay by themselves.",
-    "Trail 13/14 uses a 13.472 km provisional Hallamölla splice working reference derived from Trail 21/22 2022-2024; authentic organizer/participant GPX remains the target before public geometry is treated as authoritative.",
-    "Trail 5 has a 2026 reconstructed reference geometry, but historical short-course years remain unassigned until year-specific geometry supports exact course-version grouping."
+    "Trail 5 has a 2026 reconstructed reference geometry, but historical short-course years remain unassigned until year-specific geometry supports exact course-version grouping.",
+    "Public Trace de Trail route-page geometry is materialized only for source/year pairs already verified by date/hash. It is labelled as a public route reference, never organizer-direct GPX.",
+    "Trail 13/14 2026 is publishable only as a provisional reconstructed Hallamölla-splice reference; authentic organizer/participant GPX is still required to upgrade confidence."
   ]
 }
