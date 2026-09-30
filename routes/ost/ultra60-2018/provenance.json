@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "course_version": "ultra60-2018",
+  "materialized_at": "2026-09-30T14:09:27.524532+00:00",
+  "geometry_status": "derived_from_public_trace_map_geometry",
+  "not_an_organizer_gpx": true,
+  "not_a_trace_gpx_export": true,
+  "source_page": "https://tracedetrail.fr/fr/trace/43970",
+  "trace_id": 43970,
+  "source_date_compet": "14/04/2018",
+  "source_year_matches_manifest": true,
+  "public_geometry_sha256": "bb0a90f2178ef7e946e18d32fa7ae9ea145ea248c71da36efa77f76e35b65112",
+  "materialized_point_sha256": "ef088f123af12a359e2eee04fe52dc4919154db916e3597ba22c1b3a9ce1831d",
+  "point_count": 2872,
+  "distance_km": 62.055,
+  "method": "WGS84 points decoded from publicly embedded dataTrace.geometry; no login-protected endpoint used.",
+  "publication_label": "Publik banreferens · Trace de Trail",
+  "limitations": [
+    "Derived local representation of public map geometry, not organizer-direct GPX bytes.",
+    "Course identity is gated by source-date/hash evidence in config/course-versions.json."
+  ],
+  "corroborating_exact_trace_ids": []
+}

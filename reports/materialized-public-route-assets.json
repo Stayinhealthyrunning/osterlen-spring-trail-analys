@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-30T14:09:40.981208+00:00",
+  "policy": "Derived route references from publicly embedded map geometry; login-protected GPX export is not used.",
+  "routes": [
+    {
+      "course_version": "ultra60-2018",
+      "trace_id": 43970,
+      "distance_km": 62.055,
+      "point_count": 2872,
+      "publication_label": "Publik banreferens · Trace de Trail"
+    },
+    {
+      "course_version": "ultra60-2019",
+      "trace_id": 69381,
+      "distance_km": 58.612,
+      "point_count": 4033,
+      "publication_label": "Publik banreferens · Trace de Trail"
+    },
+    {
+      "course_version": "ultra60-2022-2023",
+      "trace_id": 172147,
+      "distance_km": 58.347,
+      "point_count": 3552,
+      "publication_label": "Publik banreferens · Trace de Trail"
+    },
+    {
+      "course_version": "trail22-2019",
+      "trace_id": 69864,
+      "distance_km": 21.726,
+      "point_count": 1345,
+      "publication_label": "Publik banreferens · Trace de Trail"
+    },
+    {
+      "course_version": "trail22-2022-2024",
+      "trace_id": 165617,
+      "distance_km": 21.741,
+      "point_count": 1395,
+      "publication_label": "Publik banreferens · Trace de Trail"
+    },
+    {
+      "course_version": "trail22-2025-2026",
+      "trace_id": 322314,
+      "distance_km": 21.71,
+      "point_count": 1395,
+      "publication_label": "Publik banreferens · Trace de Trail"
+    },
+    {
+      "course_version": "trail14-current-reference",
+      "trace_id": 165617,
+      "distance_km": 13.472,
+      "point_count": 858,
+      "publication_label": "Rekonstruerad bana · provisorisk"
+    }
+  ],
+  "excluded": [
+    {
+      "family": "trail22",
+      "year": 2018,
+      "trace_id": 7897,
+      "reason": "Trace dateCompet is 2016; provenance mismatch."
+    },
+    {
+      "family": "trail14",
+      "years": "2018-2025",
+      "reason": "No verified year-specific geometry."
+    },
+    {
+      "family": "trail5",
+      "years": "2018-2025",
+      "reason": "No verified year-specific geometry."
+    }
+  ]
+}

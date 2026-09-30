@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "course_version": "trail22-2025-2026",
+  "materialized_at": "2026-09-30T14:09:40.953114+00:00",
+  "geometry_status": "derived_from_public_trace_map_geometry",
+  "not_an_organizer_gpx": true,
+  "not_a_trace_gpx_export": true,
+  "source_page": "https://tracedetrail.fr/fr/trace/322314",
+  "trace_id": 322314,
+  "source_date_compet": "18/04/2026",
+  "source_year_matches_manifest": true,
+  "public_geometry_sha256": "f10e7f48905566e2a8defc166b3a4c41bce4c921069513c22de8086921604bcb",
+  "materialized_point_sha256": "9e8331a31ca8aefdf0218f7d7a877ad26683a429446a82b8bfd2d6617cd36f4c",
+  "point_count": 1395,
+  "distance_km": 21.71,
+  "method": "WGS84 points decoded from publicly embedded dataTrace.geometry; no login-protected endpoint used.",
+  "publication_label": "Publik banreferens · Trace de Trail",
+  "limitations": [
+    "Derived local representation of public map geometry, not organizer-direct GPX bytes.",
+    "Course identity is gated by source-date/hash evidence in config/course-versions.json."
+  ],
+  "corroborating_exact_trace_ids": [
+    280053
+  ]
+}
