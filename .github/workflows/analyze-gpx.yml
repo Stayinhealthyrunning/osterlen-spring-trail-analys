@@ -1,5 +1,7 @@
 name: Analyze archived GPX
 
+# Derived route references under routes/ost are validated by the frontend/foundation pipelines.
+
 on:
   workflow_dispatch:
   push:
