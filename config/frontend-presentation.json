@@ -53,6 +53,14 @@
         "source": "data/source/tracedetrail/waypoints.json · 272846/822859 and 322315/971298",
         "max_offset_m": 150
       }
+    },
+    "ultra60-2022-2023": {
+      "bengtemolla": {
+        "lat": 55.7282655,
+        "lon": 14.1198912,
+        "source": "data/source/tracedetrail/waypoints.json · traces 172147/521005 and 203147/626900",
+        "max_offset_m": 60
+      }
     }
   }
 }
