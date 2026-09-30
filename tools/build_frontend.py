@@ -48,7 +48,7 @@ def build(out):
         assets=course["assets"]
         if not assets.get("route_source"): continue
         route=route_asset(ROOT/assets["route_source"],key,sha,presentation["route_anchors"].get(key,{}))
-        route["provenance_label"]="Arrangörs-GPX" if assets["official_gpx"] else "Rekonstruerad bana"
+        route["provenance_label"]=assets.get("route_provenance_label") or ("Arrangörs-GPX" if assets["official_gpx"] else "Rekonstruerad bana")
         rel=f"courses/{key}/route.json"
         manifest["routes"][key]={**dump(out/rel,route),"path":rel}
         assets["route"]=rel
