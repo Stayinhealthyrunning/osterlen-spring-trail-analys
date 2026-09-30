@@ -473,7 +473,7 @@ div.chart{box-sizing:border-box;min-width:0!important;width:100%;max-width:100%;
 .elevation-anchor{stroke:#b9c1bb!important;stroke-width:1}.elevation-anchor-label{font-weight:700}
 .elevation-current-line{stroke:#07394e;stroke-width:2;stroke-dasharray:4 3;pointer-events:none}
 .elevation-current-dot{fill:#fff;stroke:#07394e;stroke-width:3;pointer-events:none}
-.elevation-hit{cursor:ew-resize;touch-action:none}
+.elevation-hit{cursor:ew-resize;touch-action:none;pointer-events:all}
 .runner-elevation-dock .elevation-grade-legend{margin-top:3px}
 
 /* Explicit Replay/duel map modes and Ultravasan-compatible symbols. */
