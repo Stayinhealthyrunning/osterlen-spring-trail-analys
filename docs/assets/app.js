@@ -14,10 +14,10 @@ function syncURL(replace=false){history[replace?'replaceState':'pushState'](null
 function closeMaps(){mapView?.destroy();mapView=null;profileMap?.destroy();profileMap=null;duelMap?.destroy();duelMap=null;headToHeadCourse?.destroy();headToHeadCourse=null;courseDifficultyMap?.destroy();courseDifficultyMap=null;}
 function saveFavorites(){store.write('favorites',favorites.slice(-40));}
 function isFavorite(r){return favorites.some(f=>f.race===a.race.race_key&&f.id===String(r.source_result_id));}
-async function loadRace(key,{restore=null,replace=false,scroll=true}={}){
- const token=++generation;closeMaps();$('#profile').close();if($('#compare-dialog')?.open)$('#compare-dialog').close();$('#duel').close();state=switched(state,key);if(restore)Object.assign(state,restore);
+async function loadRace(key,{restore=null,replace=false,scroll=true,preserveScroll=false}={}){
+ const preservedY=preserveScroll?window.scrollY:null,token=++generation;closeMaps();$('#profile').close();if($('#compare-dialog')?.open)$('#compare-dialog').close();$('#duel').close();state=switched(state,key);if(restore)Object.assign(state,restore);
  $('#view').setAttribute('aria-busy','true');$('#view').innerHTML=empty('Laddar vald upplaga…');status('Katalog klar → laddar valt lopp/år');$('#year').disabled=true;
- try{const doc=await loader.race(key);if(token!==generation)return;a=adapt(doc,boot);state.compare=state.compare.filter(id=>a.byId.has(id)).slice(0,a.race.capabilities.replay?5:2);state.section=normalizeSection(state.section);filters();controls();await render();syncURL(replace);status('Katalog → vald upplaga klar · '+a.records.length+' resultat · historik i analysflödet · rutt/replay efter behov');if(scroll&&isFlowSection(state.section))scrollToSection(state.section,{focus:state.section!=='overview',behavior:'auto'});if(state.profile)openProfile(state.profile,false);}
+ try{const doc=await loader.race(key);if(token!==generation)return;a=adapt(doc,boot);state.compare=state.compare.filter(id=>a.byId.has(id)).slice(0,a.race.capabilities.replay?5:2);state.section=normalizeSection(state.section);filters();controls();await render();syncURL(replace);status('Katalog → vald upplaga klar · '+a.records.length+' resultat · historik i analysflödet · rutt/replay efter behov');if(preserveScroll&&finite(preservedY)){window.scrollTo(0,preservedY);requestAnimationFrame(()=>window.scrollTo(0,preservedY));}else if(scroll&&isFlowSection(state.section))scrollToSection(state.section,{focus:state.section!=='overview',behavior:'auto'});if(state.profile)openProfile(state.profile,false);}
  catch(e){if(token===generation){$('#view').innerHTML=empty(e.message)+'<button id="retry">Försök igen</button>';$('#retry').onclick=()=>loadRace(key,{restore:state,replace:true});}}
  finally{if(token===generation){$('#view').setAttribute('aria-busy','false');$('#year').disabled=false;}}
 }
@@ -126,6 +126,21 @@ function renderGoalPace(){
  const root=$('#goal-pace-content'),panel=$('#goal-pace');if(!root||!panel)return;panel.hidden=!a.race.capabilities.goal_pace;if(panel.hidden){root.innerHTML='';return;}
  $('#goal-pace-race').textContent=boot.presentation[a.race.race_family].label+' · '+a.race.year;const target=boot.presentation[a.race.race_family].default_goal_seconds,h=Math.floor(target/3600),m=Math.floor(target%3600/60);
  root.innerHTML='<div class="goal-pace-controls"><div><label for="goal-hours">Timmar</label><input id="goal-hours" type="number" inputmode="numeric" min="0" max="48" value="'+h+'"></div><div><label for="goal-minutes">Minuter</label><input id="goal-minutes" type="number" inputmode="numeric" min="0" max="59" value="'+m+'"></div><button type="button" class="primary" id="goal-create">Skapa loppplan</button>'+info('plan-method','Måltiden fördelas på publicerade kompletta passager i vald upplaga när sådant underlag finns. Om sådan viktning saknas används endast explicit rapporterad segmentdistans. Summan stäms av mot vald måltid och är en planeringsreferens, inte en individuell prognos.')+'</div><p class="goal-pace-distance">Måltiden gäller <strong>'+esc(a.race.section||boot.presentation[a.race.race_family].label)+'</strong> · '+Number(a.race.nominal_distance_km).toFixed(1).replace('.',',')+' km nominell distans.</p><div id="plan-output" aria-live="polite"></div>';renderPlanOutput();
+}
+
+function renderProfilePlanOutput(){
+ const hours=$('#profile-goal-hours')?.value,minutes=$('#profile-goal-minutes')?.value,h=Number(hours),m=Number(minutes),root=$('#profile-plan-output');if(!root)return;
+ if(hours===''||minutes===''||!Number.isInteger(h)||!Number.isInteger(m)||h<0||h>48||m<0||m>59){root.innerHTML='<div class="goal-pace-error" role="alert">Ange hela, giltiga timmar och minuter.</div>';return;}
+ const target=h*3600+m*60;if(target<=0){root.innerHTML='<div class="goal-pace-error" role="alert">Ange en positiv måltid.</div>';return;}
+ const p=plan(a,target);if(!p){root.innerHTML='<div class="goal-pace-error" role="alert">Loppplanen kunde inte beräknas.</div>';return;}
+ const method=p.method==='observed'?'Bananpassad':p.method==='distance'?'Distansbaserad':'Jämnt snitt';
+ const rows=p.segments.length?p.segments.map(s=>tr([esc(s.name),finite(s.distanceKm)?Number(s.distanceKm).toFixed(1).replace('.',',')+' km':'–',time(s.seconds),time(s.cumulativeSeconds),pace(s.paceSecondsKm,state.unit)])):[];
+ root.innerHTML='<div class="profile-plan-summary"><span><small>Måltid</small><strong>'+time(target)+'</strong></span><span><small>Snittfart</small><strong>'+pace(p.pace,state.unit)+'</strong></span><span><small>Metod</small><strong>'+method+'</strong></span></div>'+(rows.length?table(['Delsträcka','Distans','Segmenttid','Passage','Tempo'],rows):'<p class="muted">Det här loppet saknar segmentunderlag för en detaljerad plan.</p>');
+}
+function toggleProfilePlan(id){
+ const root=document.querySelector('[data-profile-plan-panel]'),button=document.querySelector('[data-profile-plan="'+CSS.escape(String(id))+'"]'),r=a.byId.get(String(id));if(!root||!r)return;
+ const opening=root.hidden;if(opening&&!root.dataset.ready){const target=finished(r)?Number(r.finish_seconds):Number(boot.presentation[a.race.race_family].default_goal_seconds),h=Math.floor(target/3600),m=Math.floor(target%3600/60);root.innerHTML='<div class="profile-inline-tool-head"><div><p class="eyebrow">MÅLTEMPO I PROFILEN</p><h3>Planera utan att lämna Replay</h3><p>Utgå från en måltid och se en bananpassad plan direkt här.</p></div><button type="button" class="secondary" data-profile-plan-close>Stäng</button></div><div class="profile-plan-controls"><label>Timmar<input id="profile-goal-hours" type="number" min="0" max="48" value="'+h+'"></label><label>Minuter<input id="profile-goal-minutes" type="number" min="0" max="59" value="'+m+'"></label></div><div id="profile-plan-output" aria-live="polite"></div>';root.dataset.ready='true';renderProfilePlanOutput();}
+ root.hidden=!opening;if(button)button.setAttribute('aria-expanded',String(opening));
 }
 
 function resultMatches(r,q){return (r.name+' '+r.bib+' '+(r.club||'')).toLocaleLowerCase('sv').includes(q.toLocaleLowerCase('sv'));}
@@ -265,7 +280,7 @@ async function shareView(){
 async function navigate(section,update=true,{behavior='smooth',focus=true}={}){if(section==='compare'){openCompareDialog();return;}section=normalizeSection(section);const previous=state.section;state.section=section;if(isFlowSection(section)){if(!isFlowSection(previous)||!document.getElementById(section))await render();else updateNav();if(update)syncURL();scrollToSection(section,{focus,behavior});return;}await render();if(update)syncURL();$('#analysis').scrollIntoView({block:'start',behavior:motionBehavior(behavior)});}
 document.addEventListener('click',async e=>{
  const b=e.target.closest('button,a');if(!b||!state)return;
- if(b.dataset.family){const family=b.dataset.family,editions=Object.values(boot.race_catalog).filter(r=>r.race_family===family),race=editions.find(r=>r.year===a.race.year)||editions.sort((x,y)=>y.year-x.year)[0];await loadRace(race.race_key);$('#analysis').scrollIntoView();return;}
+ if(b.dataset.family){const family=b.dataset.family,editions=Object.values(boot.race_catalog).filter(r=>r.race_family===family),race=editions.find(r=>r.year===a.race.year)||editions.sort((x,y)=>y.year-x.year)[0];await loadRace(race.race_key,{scroll:false,preserveScroll:true});return;}
  if(b.dataset.clubSuggestion){chooseClub(b.dataset.clubSuggestion);return;}
  if(b.dataset.clubArenaAdd){state.clubNames=[...(state.clubNames||[]),b.dataset.clubArenaAdd].slice(0,4);refreshClubSection();return;}
  if(b.dataset.clubRemove){state.clubNames=(state.clubNames||[]).filter(name=>name!==b.dataset.clubRemove);refreshClubSection();return;}
@@ -276,7 +291,9 @@ document.addEventListener('click',async e=>{
  if(b.dataset.courseKpi!==undefined||b.dataset.courseRow!==undefined){const raw=b.dataset.courseKpi!==undefined?b.dataset.courseKpi:b.dataset.courseRow,index=Number(raw);if(Number.isInteger(index)&&index>=0){state.segment=index;refreshSegmentSection();}return;}
  if(b.dataset.profileJump){document.getElementById(b.dataset.profileJump)?.scrollIntoView({behavior:motionBehavior('smooth'),block:'start'});return;}
  if(b.dataset.profileShare!==undefined){syncURL(true);const feedback=document.querySelector('[data-profile-feedback]');try{await navigator.clipboard.writeText(location.href);if(feedback)feedback.textContent='Länk kopierad';}catch{prompt('Kopiera länken:',location.href);if(feedback)feedback.textContent='Länk klar att kopiera';}return;}
- if(b.dataset.profilePlan){const r=a.byId.get(String(b.dataset.profilePlan));if($('#profile')?.open)$('#profile').close();document.getElementById('goal-pace')?.scrollIntoView({behavior:motionBehavior('smooth'),block:'start'});if(r&&finished(r)){const h=Math.floor(r.finish_seconds/3600),m=Math.floor(r.finish_seconds%3600/60);if($('#goal-hours'))$('#goal-hours').value=h;if($('#goal-minutes'))$('#goal-minutes').value=m;renderPlanOutput();}return;}
+ if(b.dataset.profilePlan){toggleProfilePlan(b.dataset.profilePlan);return;}
+ if(b.dataset.profilePlanClose!==undefined){const panel=document.querySelector('[data-profile-plan-panel]');if(panel)panel.hidden=true;document.querySelector('[data-profile-plan]')?.setAttribute('aria-expanded','false');return;}
+ if(b.dataset.profileCompare){const id=String(b.dataset.profileCompare),exists=state.compare.includes(id),limit=compareLimit();if(exists)state.compare=state.compare.filter(x=>x!==id);else if(state.compare.length<limit)state.compare.push(id);else{status(limit===5?'Max fem resultat kan väljas till Kartduell':'Max två resultat kan väljas');return;}const selectedNow=state.compare.includes(id);b.textContent=selectedNow?'✓ Vald till jämförelse':'Välj till jämförelse';b.setAttribute('aria-pressed',String(selectedNow));const feedback=document.querySelector('[data-profile-feedback]');if(feedback)feedback.textContent=selectedNow?'Loppet är valt. Du kan fortsätta använda Replay.':'Loppet togs bort från jämförelsen.';renderTopTools();syncURL(true);return;}
  if(b.dataset.lookupResult){chooseLookup(b.dataset.lookupResult);return;}
  if(b.id==='focus-runner-search'){const input=$('#lookup');input?.focus();input?.scrollIntoView({block:'center',behavior:motionBehavior('smooth')});return;}
  if(b.id==='open-compare-dialog'){openCompareDialog();return;}
@@ -330,9 +347,10 @@ document.addEventListener('input',e=>{
  if(e.target.id==='table-search'){state.query=e.target.value;state.page=1;resultTable();}
  if(e.target.id==='compare-search')compareOptions(e.target.value);
  if(e.target.id==='goal-hours'||e.target.id==='goal-minutes')renderPlanOutput();
+ if(e.target.id==='profile-goal-hours'||e.target.id==='profile-goal-minutes')renderProfilePlanOutput();
 });
 document.addEventListener('click',e=>{if(!e.target.closest('#global-search'))lookupOptions('');if(!e.target.closest('#map-duel-panel'))duelOptions('');if(!e.target.closest('.club-arena'))renderClubArenaSuggestions('');if(!e.target.closest('.filter-autocomplete'))renderClubSuggestions('');if(!e.target.closest('.compare-search-wrap')){const root=$('#compare-options');if(root){root.hidden=true;$('#compare-search')?.setAttribute('aria-expanded','false');}}});
-$('#year').onchange=()=>{const r=Object.values(boot.race_catalog).find(r=>r.race_family===a.race.race_family&&r.year===+$('#year').value);if(r)loadRace(r.race_key);};
+$('#year').onchange=async()=>{const r=Object.values(boot.race_catalog).find(r=>r.race_family===a.race.race_family&&r.year===+$('#year').value);if(r)await loadRace(r.race_key,{scroll:false,preserveScroll:true});};
 $('#global-search').onsubmit=async e=>{e.preventDefault();if(!a)return;const q=$('#lookup').value.trim(),matches=a.records.filter(r=>resultMatches(r,q));if(lookupSuggestionIndex>=0){const item=document.querySelectorAll('#lookup-suggestions [data-lookup-result]')[lookupSuggestionIndex];if(item){chooseLookup(item.dataset.lookupResult);return;}}if(matches.length===1)chooseLookup(matches[0].source_result_id);else{lookupOptions('');state.query=q;state.globalQuery=q;state.page=1;await navigate('results');}};
 $('#profile').addEventListener('close',()=>{profileMap?.destroy();profileMap=null;if(state?.profile){state.profile=null;syncURL(true);}profileTrigger?.focus?.();});
 $('#compare-dialog').addEventListener('close',()=>{headToHeadCourse?.destroy();headToHeadCourse=null;const root=$('#compare-dialog-body');if(root)root.innerHTML='';compareTrigger?.focus?.();compareTrigger=null;});
