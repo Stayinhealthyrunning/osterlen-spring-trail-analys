@@ -2,7 +2,7 @@
   "event_id": 16880,
   "round_id": 97077,
   "list_url": "https://www.sportstiming.dk/event/16880/app/results?round=97077&page=1",
-  "list_html_bytes": 101728,
+  "list_html_bytes": 101898,
   "result_links_on_page": 50,
   "sample_result_ids": [
     "7793098",
@@ -12,7 +12,7 @@
   "details": [
     {
       "result_id": "7793098",
-      "html_bytes": 29138,
+      "html_bytes": 29308,
       "labels": [
         "Mellantid",
         "Total tid",
@@ -256,7 +256,7 @@
     },
     {
       "result_id": "7796216",
-      "html_bytes": 29123,
+      "html_bytes": 29293,
       "labels": [
         "Mellantid",
         "Total tid",
@@ -500,7 +500,7 @@
     },
     {
       "result_id": "7792471",
-      "html_bytes": 28911,
+      "html_bytes": 29081,
       "labels": [
         "Mellantid",
         "Total tid",

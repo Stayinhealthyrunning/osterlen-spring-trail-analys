@@ -12,7 +12,7 @@ Public `/app/points` and `/app/tracking` views inspected without bypassing acces
 
 ### tracking
 - HTTP: 200
-- HTML: 42514 bytes
+- HTML: 42742 bytes
 - Selects: 1
 - Relevant links: 10
 - Candidate text:
@@ -25,7 +25,7 @@ Public `/app/points` and `/app/tracking` views inspected without bypassing acces
 
 ### points
 - HTTP: 200
-- HTML: 183569 bytes
+- HTML: 183739 bytes
 - Selects: 2
 - Relevant links: 11
 - Candidate text:
@@ -33,7 +33,7 @@ Public `/app/points` and `/app/tracking` views inspected without bypassing acces
 
 ### tracking
 - HTTP: 200
-- HTML: 41282 bytes
+- HTML: 41510 bytes
 - Selects: 1
 - Relevant links: 11
 - Candidate text:
@@ -53,7 +53,7 @@ Public `/app/points` and `/app/tracking` views inspected without bypassing acces
 
 ### tracking
 - HTTP: 200
-- HTML: 244368 bytes
+- HTML: 244596 bytes
 - Selects: 1
 - Relevant links: 10
 - Candidate text:
@@ -78,7 +78,7 @@ Public `/app/points` and `/app/tracking` views inspected without bypassing acces
 
 ### tracking
 - HTTP: 200
-- HTML: 37999 bytes
+- HTML: 38227 bytes
 - Selects: 1
 - Relevant links: 10
 - Candidate text:
@@ -97,7 +97,7 @@ Public `/app/points` and `/app/tracking` views inspected without bypassing acces
 
 ### tracking
 - HTTP: 200
-- HTML: 148765 bytes
+- HTML: 148935 bytes
 - Selects: 2
 - Relevant links: 10
 - Candidate text:
@@ -122,7 +122,7 @@ Public `/app/points` and `/app/tracking` views inspected without bypassing acces
 
 ### tracking
 - HTTP: 200
-- HTML: 148765 bytes
+- HTML: 148935 bytes
 - Selects: 2
 - Relevant links: 10
 - Candidate text:
@@ -147,7 +147,7 @@ Public `/app/points` and `/app/tracking` views inspected without bypassing acces
 
 ### tracking
 - HTTP: 200
-- HTML: 148758 bytes
+- HTML: 148928 bytes
 - Selects: 2
 - Relevant links: 10
 - Candidate text:

@@ -4,7 +4,7 @@ Public `/app/results` views are reachable without the human-verification page. T
 
 ## 2018 (event 4950)
 
-- HTML sampled: 87402 bytes
+- HTML sampled: 87572 bytes
 - Forms: 0
 - Selects: 3
 - Relevant links: 58
@@ -35,7 +35,7 @@ Candidate endpoint strings:
 
 ## 2019 (event 5719)
 
-- HTML sampled: 89465 bytes
+- HTML sampled: 89635 bytes
 - Forms: 0
 - Selects: 3
 - Relevant links: 59
@@ -67,7 +67,7 @@ Candidate endpoint strings:
 
 ## 2022 (event 9587)
 
-- HTML sampled: 102708 bytes
+- HTML sampled: 102878 bytes
 - Forms: 0
 - Selects: 11
 - Relevant links: 57
@@ -106,7 +106,7 @@ Candidate endpoint strings:
 
 ## 2023 (event 11274)
 
-- HTML sampled: 97203 bytes
+- HTML sampled: 97373 bytes
 - Forms: 0
 - Selects: 12
 - Relevant links: 57
@@ -145,7 +145,7 @@ Candidate endpoint strings:
 
 ## 2024 (event 12349)
 
-- HTML sampled: 93729 bytes
+- HTML sampled: 93899 bytes
 - Forms: 0
 - Selects: 8
 - Relevant links: 57
@@ -180,7 +180,7 @@ Candidate endpoint strings:
 
 ## 2025 (event 15015)
 
-- HTML sampled: 94083 bytes
+- HTML sampled: 94253 bytes
 - Forms: 0
 - Selects: 8
 - Relevant links: 57
@@ -215,7 +215,7 @@ Candidate endpoint strings:
 
 ## 2026 (event 16880)
 
-- HTML sampled: 93121 bytes
+- HTML sampled: 93291 bytes
 - Forms: 0
 - Selects: 8
 - Relevant links: 57

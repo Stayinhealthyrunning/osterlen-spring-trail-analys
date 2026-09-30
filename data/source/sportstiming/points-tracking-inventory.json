@@ -19,7 +19,7 @@
           "kind": "tracking",
           "http_status": 200,
           "final_url": "https://www.sportstiming.dk/event/4950/app/tracking",
-          "html_bytes": 42514,
+          "html_bytes": 42742,
           "selects": [
             {
               "attrs": {
@@ -65,7 +65,7 @@
           "kind": "points",
           "http_status": 200,
           "final_url": "https://www.sportstiming.dk/event/5719/app/points",
-          "html_bytes": 183569,
+          "html_bytes": 183739,
           "selects": [
             {
               "attrs": {
@@ -127,7 +127,7 @@
           "kind": "tracking",
           "http_status": 200,
           "final_url": "https://www.sportstiming.dk/event/5719/app/tracking",
-          "html_bytes": 41282,
+          "html_bytes": 41510,
           "selects": [
             {
               "attrs": {
@@ -185,7 +185,7 @@
           "kind": "tracking",
           "http_status": 200,
           "final_url": "https://www.sportstiming.dk/event/9587/app/tracking",
-          "html_bytes": 244368,
+          "html_bytes": 244596,
           "selects": [
             {
               "attrs": {
@@ -251,7 +251,7 @@
           "kind": "tracking",
           "http_status": 200,
           "final_url": "https://www.sportstiming.dk/event/11274/app/tracking",
-          "html_bytes": 37999,
+          "html_bytes": 38227,
           "selects": [
             {
               "attrs": {
@@ -302,7 +302,7 @@
           "kind": "tracking",
           "http_status": 200,
           "final_url": "https://www.sportstiming.dk/event/12349/app/tracking",
-          "html_bytes": 148765,
+          "html_bytes": 148935,
           "selects": [
             {
               "attrs": {
@@ -405,7 +405,7 @@
           "kind": "tracking",
           "http_status": 200,
           "final_url": "https://www.sportstiming.se/event/15015/app/tracking",
-          "html_bytes": 148765,
+          "html_bytes": 148935,
           "selects": [
             {
               "attrs": {
@@ -508,7 +508,7 @@
           "kind": "tracking",
           "http_status": 200,
           "final_url": "https://www.sportstiming.dk/event/16880/app/tracking",
-          "html_bytes": 148758,
+          "html_bytes": 148928,
           "selects": [
             {
               "attrs": {
