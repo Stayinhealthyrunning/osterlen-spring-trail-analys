@@ -7,7 +7,8 @@ function presentationName(record,race){
 }
 export function adapt(doc,boot){
  const race=doc.race,records=race.records.map(r=>({...r,source_name:r.name,name:presentationName(r,race)})),byId=new Map(records.map(r=>[String(r.source_result_id),r]));
- const checkpoints=doc.checkpoints.slice().sort((a,b)=>a.sequence_no-b.sequence_no),boundary=checkpoints.filter(c=>c.analysis_boundary);
+ const displayCheckpoint=(cp)=>{if((race.race_family==='ultra60'||race.race_family==='duo60')&&(cp.semantic_key==='bengtemolla'||cp.key==='bengtemolla'))return {...cp,name:'Bengtemölla Kvarn'};return cp;};
+ const checkpoints=doc.checkpoints.slice().sort((a,b)=>a.sequence_no-b.sequence_no).map(displayCheckpoint),boundary=checkpoints.filter(c=>c.analysis_boundary);
  const splits=new Map();for(const s of doc.splits){const key=String(s.source_result_id);if(!splits.has(key))splits.set(key,[]);splits.get(key).push(s);}
  const passages=r=>(splits.get(String(r.source_result_id))||[]).slice().sort((a,b)=>checkpoints.findIndex(c=>c.key===a.checkpoint)-checkpoints.findIndex(c=>c.key===b.checkpoint));
  function observation(r,key){
