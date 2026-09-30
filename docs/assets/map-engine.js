@@ -59,16 +59,17 @@ export async function mountCourseContext(root,{route,adapter,segment=0,onSelectS
 }
 
 export async function mountElevationOverview(root,{route}){
- const mapRoot=root.querySelector('[data-overview-elevation-map]'),svg=root.querySelector('.overview-elevation-chart svg');if(!mapRoot||!svg)return {destroy(){}};
+ const mapRoot=root.closest('.elevation-card')?.querySelector('[data-overview-elevation-map]')||root.querySelector('[data-overview-elevation-map]'),svg=root.querySelector('.overview-elevation-chart svg');if(!mapRoot)return {destroy(){}};
  let destroyed=false,map=null,marker=null,tiles=null,fallbackMarker=null;
  const maxD=Number(route.full_distance_km)||Number(route.points.at(-1)?.[3])||1;
- function distanceFromEvent(event){const rect=svg.getBoundingClientRect(),px=(event.clientX-rect.left)*740/(rect.width||1);return Math.max(0,Math.min(maxD,(px-55)/640*maxD));}
- function ensureCursor(){let line=svg.querySelector('.overview-elevation-cursor');if(!line){line=document.createElementNS('http://www.w3.org/2000/svg','line');line.classList.add('overview-elevation-cursor');line.setAttribute('y1','28');line.setAttribute('y2','195');svg.append(line);}return line;}
+ function distanceFromEvent(event){if(!svg)return 0;const rect=svg.getBoundingClientRect(),px=(event.clientX-rect.left)*740/(rect.width||1);return Math.max(0,Math.min(maxD,(px-55)/640*maxD));}
+ function ensureCursor(){if(!svg)return null;let line=svg.querySelector('.overview-elevation-cursor');if(!line){line=document.createElementNS('http://www.w3.org/2000/svg','line');line.classList.add('overview-elevation-cursor');line.setAttribute('y1','28');line.setAttribute('y2','195');svg.append(line);}return line;}
  let manualView=false,lastFollow=0;
- function update(distance){const p=pointAtDistance(route.points,distance);if(!p)return;const x=55+distance/maxD*640,line=ensureCursor();line.setAttribute('x1',x);line.setAttribute('x2',x);if(marker&&!destroyed)marker.setLatLng(p);if(fallbackMarker)fallbackMarker.setAttribute('transform','translate('+fallbackProject(p).join(' ')+')');const label=mapRoot.querySelector('.overview-minimap-readout');if(label)label.textContent=distance.toFixed(1).replace('.',',')+' km';if(map&&!manualView&&performance.now()-lastFollow>160){lastFollow=performance.now();map.panTo(p,{animate:true,duration:.18,easeLinearity:.25});}}
+ function update(distance){const p=pointAtDistance(route.points,distance);if(!p)return;const x=55+distance/maxD*640,line=ensureCursor();if(line){line.setAttribute('x1',x);line.setAttribute('x2',x);}if(marker&&!destroyed)marker.setLatLng(p);if(fallbackMarker)fallbackMarker.setAttribute('transform','translate('+fallbackProject(p).join(' ')+')');const label=mapRoot.querySelector('.overview-minimap-readout');if(label)label.textContent=distance.toFixed(1).replace('.',',')+' km';if(map&&!manualView&&performance.now()-lastFollow>160){lastFollow=performance.now();map.panTo(p,{animate:true,duration:.18,easeLinearity:.25});}}
  let fallbackProject=()=>[0,0];
  const L=await leaflet();
  if(destroyed)return {destroy(){}};
+ mapRoot.innerHTML='';
  if(L){
   map=L.map(mapRoot,{zoomControl:true,attributionControl:true,scrollWheelZoom:true,dragging:true,doubleClickZoom:true,zoomAnimation:true,fadeAnimation:false,markerZoomAnimation:false});
   const coords=route.points.map(p=>[p[0],p[1]]),line=L.polyline(coords,{color:'#1677a8',weight:3}).addTo(map);map.fitBounds(line.getBounds(),{padding:[14,14],animate:false});
@@ -79,8 +80,8 @@ export async function mountElevationOverview(root,{route}){
  }else{
   const lats=route.points.map(p=>p[0]),lons=route.points.map(p=>p[1]),minLat=Math.min(...lats),maxLat=Math.max(...lats),minLon=Math.min(...lons),maxLon=Math.max(...lons),cos=Math.cos((minLat+maxLat)/2*Math.PI/180),scale=Math.min(220/((maxLon-minLon)*cos||1),120/(maxLat-minLat||1));fallbackProject=p=>[125+(p[1]-(minLon+maxLon)/2)*cos*scale,75-(p[0]-(minLat+maxLat)/2)*scale];const path=route.points.map((p,i)=>(i?'L':'M')+fallbackProject(p).join(',')).join(' ');mapRoot.innerHTML='<svg viewBox="0 0 250 150" aria-label="Banan"><path d="'+path+'" fill="none" stroke="#1677a8" stroke-width="3"/><g class="overview-fallback-marker"><circle r="6" fill="#d9a441" stroke="#fff" stroke-width="2"/></g></svg><span class="overview-minimap-readout">0,0 km</span><button type="button" class="overview-minimap-fit">Visa hela banan</button>';fallbackMarker=mapRoot.querySelector('.overview-fallback-marker');
  }
- const move=event=>update(distanceFromEvent(event));svg.addEventListener('pointermove',move);svg.addEventListener('pointerdown',move);update(0);
- return {destroy(){destroyed=true;try{svg.removeEventListener('pointermove',move);svg.removeEventListener('pointerdown',move);tiles?.remove?.();marker?.remove?.();if(map){map.off?.();map.remove();map=null;}}catch{map=null;}}};
+ const move=event=>update(distanceFromEvent(event));svg?.addEventListener('pointermove',move);svg?.addEventListener('pointerdown',move);update(0);
+ return {destroy(){destroyed=true;try{svg?.removeEventListener('pointermove',move);svg?.removeEventListener('pointerdown',move);tiles?.remove?.();marker?.remove?.();if(map){map.off?.();map.remove();map=null;}}catch{map=null;}}};
 }
 
 export async function mountMap(root,{route,adapter,records=[],segment=0,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches,referenceSeries=[],insights=[],profile=false,musicSrc='assets/kustlinjens-steg.mp3',initialTime=0,onTimeChange=null}){
