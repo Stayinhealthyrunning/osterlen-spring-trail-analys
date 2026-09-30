@@ -113,10 +113,10 @@ function duelOptions(query){
 function moveDuelSuggestion(direction){const input=$('#duel-search'),items=[...document.querySelectorAll('#duel-suggestions [data-duel-add]')];if(!items.length)return;duelSuggestionIndex=(duelSuggestionIndex+direction+items.length)%items.length;items.forEach((item,i)=>item.setAttribute('aria-selected',i===duelSuggestionIndex));input.setAttribute('aria-activedescendant',items[duelSuggestionIndex].id);items[duelSuggestionIndex].scrollIntoView({block:'nearest'});}
 function buildReplayReferences(record,route){
  const cps=a.checkpoints.filter(cp=>cp.replay_anchor&&finite(route.anchors?.[cp.key])).map(cp=>({cp,distance:Number(route.anchors[cp.key])}));
- const build=(id,label,color,rows)=>{const anchors=[];for(const {cp,distance} of cps){const values=rows.map(r=>a.observation(r,cp.key)?.elapsed_seconds).filter(finite);if(values.length<5)continue;const value=median(values);if(!finite(value)||(anchors.length&&value<=anchors.at(-1).time))continue;anchors.push({time:value,distance});}return anchors.length>=2?{id,label,color,anchors,count:rows.length}:null;};
- const finishers=a.records.filter(finished),out=[build('field','Hela fältet','#596761',finishers)];
- if(record.class_name)out.push(build('class','Min klass','#138a78',finishers.filter(r=>r.class_name===record.class_name)));
- if(record.sex==='F'||record.sex==='M')out.push(build('sex',record.sex==='F'?'Kvinnor':'Män',record.sex==='F'?'#b51d60':'#2563eb',finishers.filter(r=>r.sex===record.sex)));
+ const build=(id,label,color,rows,meta={})=>{const anchors=[];for(const {cp,distance} of cps){const values=rows.map(r=>a.observation(r,cp.key)?.elapsed_seconds).filter(finite);if(values.length<5)continue;const value=median(values);if(!finite(value)||(anchors.length&&value<=anchors.at(-1).time))continue;anchors.push({time:value,distance});}return anchors.length>=2?{id,label,color,anchors,count:rows.length,...meta}:null;};
+ const finishers=a.records.filter(finished),out=[build('field','Hela fältet','#596761',finishers,{icon:'○'})];
+ if(record.class_name)out.push(build('class','Min klass','#138a78',finishers.filter(r=>r.class_name===record.class_name),{icon:'◎'}));
+ if(record.sex==='F'||record.sex==='M')out.push(build('sex',record.sex==='F'?'Kvinnor':'Män',record.sex==='F'?'#b51d60':'#2563eb',finishers.filter(r=>r.sex===record.sex),{icon:record.sex==='F'?'♀':'♂',sex:record.sex}));
  return out.filter(Boolean);
 }
 function replayInsights(record){
