@@ -59,15 +59,32 @@ export function bands(stats,unit){
  stats.forEach((d,i)=>{const xx=x(i);if(finite(d.q10))s+='<line class="outer" x1="'+xx+'" x2="'+xx+'" y1="'+y(d.q10)+'" y2="'+y(d.q90)+'"/>';if(finite(d.q25))s+='<rect class="band" x="'+(xx-25)+'" width="50" y="'+y(d.q75)+'" height="'+(y(d.q25)-y(d.q75))+'"/>';if(finite(d.median))s+='<circle class="dot" cx="'+xx+'" cy="'+y(d.median)+'" r="6"/>';s+='<text x="'+xx+'" y="263" text-anchor="middle">'+(i+1)+'</text><rect class="hit" x="'+(xx-45)+'" y="25" width="90" height="220" data-segment="'+i+'" tabindex="0" role="button" aria-label="Delsträcka '+(i+1)+', n='+d.n+', median '+esc(format(d.median))+'"><title>'+esc(d.to.name)+' · n='+d.n+' · '+esc(format(d.median))+'</title></rect>';});
  return svg(s,'Median och spridning per delsträcka');
 }
-export function elevation(profile,anchors,selected=null){
- if(!profile?.some(p=>finite(p[1])))return empty('GPX-filen saknar höjdvärden för ruttpunkterna. Ingen höjdprofil har skapats.');
- const maxD=profile.at(-1)[0],lo=Math.min(...profile.map(p=>p[1]).filter(finite)),hi=Math.max(...profile.map(p=>p[1]).filter(finite)),x=d=>55+d/maxD*640,y=h=>200-(h-lo)/(hi-lo||1)*155;
- let path='',open=false;for(const p of profile){if(!finite(p[1])){open=false;continue;}path+=(open?'L':'M')+x(p[0])+','+y(p[1])+' ';open=true;}
- let s='<path class="line" d="'+path+'"/>';
+export function elevation(profile,anchors,selected=null,{interactive=false,currentDistance=null}={}){
+ const valid=(profile||[]).filter(p=>finite(p?.[0])&&finite(p?.[1])).map(p=>[Number(p[0]),Number(p[1])]);
+ if(!valid.length)return empty('GPX-filen saknar höjdvärden för ruttpunkterna. Ingen höjdprofil har skapats.');
+ const maxD=valid.at(-1)[0],lo=Math.min(...valid.map(p=>p[1])),hi=Math.max(...valid.map(p=>p[1])),x=d=>55+Math.max(0,Math.min(maxD,Number(d)||0))/Math.max(.001,maxD)*640,y=h=>200-(Number(h)-lo)/(hi-lo||1)*155;
+ const heightAt=d=>{d=Math.max(0,Math.min(maxD,Number(d)||0));let loI=0,hiI=valid.length-1;while(loI<hiI){const mid=(loI+hiI)>>1;if(valid[mid][0]<d)loI=mid+1;else hiI=mid;}const q=valid[loI],p=valid[Math.max(0,loI-1)],span=q[0]-p[0],f=span>0?(d-p[0])/span:0;return p[1]+(q[1]-p[1])*Math.max(0,Math.min(1,f));};
+ const gradeAt=d=>{const window=.16,a=Math.max(0,d-window),b=Math.min(maxD,d+window),ha=heightAt(a),hb=heightAt(b);return b>a?(hb-ha)/((b-a)*1000)*100:0;};
+ const gradeColor=g=>g<=-6?'#247a42':g<=-2?'#55a45a':g<1?'#c9ad3d':g<4?'#df8b32':g<8?'#d95835':'#b83b33';
+ const stride=Math.max(1,Math.ceil(valid.length/280)),sampled=valid.filter((_,i)=>i%stride===0);if(sampled.at(-1)!==valid.at(-1))sampled.push(valid.at(-1));
+ let s='<g class="elevation-grid">';
  for(let i=0;i<=4;i++){const v=lo+(hi-lo)*i/4;s+='<text x="48" y="'+(y(v)+4)+'" text-anchor="end">'+Math.round(v)+' m</text>';}
- Object.entries(anchors||{}).forEach(([key,d])=>{s+='<line class="axis" x1="'+x(d)+'" x2="'+x(d)+'" y1="30" y2="205"/><text x="'+x(d)+'" y="230" text-anchor="'+(d===0?'start':d===maxD?'end':'middle')+'">'+d.toFixed(1)+' km</text>';});
- if(selected&&finite(selected[0])&&finite(selected[1]))s+='<rect class="band" x="'+x(selected[0])+'" y="20" width="'+(x(selected[1])-x(selected[0]))+'" height="190"/>';
- return svg(s,'Höjdprofil längs aktuell rutt',250);
+ s+='</g>';
+ if(selected&&finite(selected[0])&&finite(selected[1])){const a=Math.min(Number(selected[0]),Number(selected[1])),b=Math.max(Number(selected[0]),Number(selected[1]));s+='<rect class="elevation-selection" x="'+x(a)+'" y="26" width="'+Math.max(1,x(b)-x(a))+'" height="180" rx="6"/>';}
+ Object.entries(anchors||{}).filter(([,d])=>finite(d)).forEach(([key,d])=>{const dd=Number(d);s+='<line class="axis elevation-anchor" x1="'+x(dd)+'" x2="'+x(dd)+'" y1="30" y2="205"/><text class="elevation-anchor-label" x="'+x(dd)+'" y="230" text-anchor="'+(Math.abs(dd)<.01?'start':Math.abs(dd-maxD)<.05?'end':'middle')+'">'+dd.toFixed(1)+' km</text>';});
+ for(let i=1;i<sampled.length;i++){const a=sampled[i-1],b=sampled[i],mid=(a[0]+b[0])/2,g=gradeAt(mid),color=gradeColor(g);s+='<line class="elevation-grade-segment" x1="'+x(a[0]).toFixed(1)+'" y1="'+y(a[1]).toFixed(1)+'" x2="'+x(b[0]).toFixed(1)+'" y2="'+y(b[1]).toFixed(1)+'" stroke="'+color+'"><title>'+mid.toFixed(1)+' km · '+Math.round(heightAt(mid))+' m · '+(g>=0?'+':'')+g.toFixed(1)+' %</title></line>';}
+ if(interactive){const current=finite(currentDistance)?Math.max(0,Math.min(maxD,Number(currentDistance))):0,cx=x(current),cy=y(heightAt(current));s+='<line class="elevation-current-line" data-elevation-current-line x1="'+cx+'" x2="'+cx+'" y1="28" y2="205"/><circle class="elevation-current-dot" data-elevation-current-dot cx="'+cx+'" cy="'+cy+'" r="5"/><rect class="elevation-hit" data-elevation-hit x="55" y="25" width="640" height="182" fill="transparent" tabindex="0" role="slider" aria-label="Flytta Replay längs höjdprofilen" aria-valuemin="0" aria-valuemax="'+maxD.toFixed(1)+'" aria-valuenow="'+current.toFixed(1)+'"/>';}
+ return '<div class="elevation-grade-legend" aria-hidden="true"><span><i class="downhill"></i>Utför</span><span><i class="flat"></i>Plant</span><span><i class="uphill"></i>Uppför</span></div>'+svg(s,'Höjdprofil längs aktuell rutt',250);
+}
+
+export function twoSegmentPacing(values,labels,{checkpoint='Mellankontroll',format=value=>String(Math.round(value)),referenceValue=100}={}){
+ const clean=(values||[]).map(v=>finite(v)?Number(v):null);if(clean.filter(finite).length<2)return lines([{id:'profile-index',name:'Prestationsindex',color:'#6f9f5e',values:clean}],labels||[],{format,referenceValue,height:210});
+ const width=740,height=205,pad={l:62,r:28,t:25,b:55},domain=[...clean.filter(finite),Number(referenceValue)],min=Math.min(...domain)-Math.max(3,(Math.max(...domain)-Math.min(...domain))*.2),max=Math.max(...domain)+Math.max(3,(Math.max(...domain)-Math.min(...domain))*.2),y=v=>pad.t+(max-Number(v))/(max-min||1)*(height-pad.t-pad.b),xs=[175,565],refY=y(referenceValue),mid=370;
+ let body='<line class="reference-line" x1="'+pad.l+'" x2="'+(width-pad.r)+'" y1="'+refY+'" y2="'+refY+'"/><text x="'+(pad.l-8)+'" y="'+(refY+4)+'" text-anchor="end">'+esc(format(referenceValue))+'</text>';
+ body+='<line class="pacing-checkpoint-line" x1="'+mid+'" x2="'+mid+'" y1="'+pad.t+'" y2="'+(height-pad.b+5)+'"/><text class="pacing-checkpoint-label" x="'+mid+'" y="'+(pad.t+10)+'" text-anchor="middle">Kontroll · '+esc(checkpoint)+'</text>';
+ body+='<path class="plot-line pacing-two-line" stroke="#6f9f5e" d="M'+xs[0]+','+y(clean[0]).toFixed(1)+' L'+xs[1]+','+y(clean[1]).toFixed(1)+'"/>';
+ clean.forEach((v,i)=>{const better=v>=referenceValue,color=better?'#5c9854':'#c76b3d',label=(labels?.[i]||'Segment '+(i+1));body+='<circle class="point pacing-two-point" fill="'+color+'" cx="'+xs[i]+'" cy="'+y(v).toFixed(1)+'" r="7"><title>'+esc(label)+': '+esc(format(v))+'</title></circle><text class="pacing-value" x="'+xs[i]+'" y="'+(y(v)-13).toFixed(1)+'" text-anchor="middle">'+esc(format(v))+'</text><text class="pacing-segment-label" x="'+xs[i]+'" y="'+(height-18)+'" text-anchor="middle">'+esc(label)+'</text>';});
+ return '<div class="two-segment-pacing-note"><span>Före kontroll</span><span>Efter kontroll</span></div>'+svg(body,'Prestationsindex före och efter '+checkpoint,height);
 }
 
 
