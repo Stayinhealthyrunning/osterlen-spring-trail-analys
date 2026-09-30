@@ -1,20 +1,38 @@
-# ÖST route coverage — review round 4
+# ÖST route coverage — publication state after route materialization
 
-This matrix records the local route assets that the frontend may publish. Verified public geometry without a redistributable local asset does not qualify as a frontend route.
+Updated 2026-09-30.
 
-| Race family | Editions | Local route | Type and provenance | Frontend result |
-| --- | --- | --- | --- | --- |
-| Ultra 60 | 2018, 2019, 2022, 2023 | No | Verified public geometry/course versions, but no approved local route asset | Explicit no-route explanation; no route is borrowed |
-| Ultra 60 | 2024 | Yes | Archived organizer GPX, `ultra60-2024` | Map and elevation profile |
-| Ultra 60 | 2025, 2026 | Yes | Archived organizer GPX, shared organizer source `ultra60-2025-2026` | Map and elevation profile |
-| Duo 60 | 2019, 2022, 2023 | No | Correct Ultra course version is assigned, but that version has no approved local asset | Explicit no-route explanation; no route is borrowed |
-| Duo 60 | 2024 | Yes | Same explicitly assigned organizer route as Ultra 60 2024 | Map and elevation profile |
-| Duo 60 | 2025, 2026 | Yes | Same explicitly assigned organizer route as Ultra 60 2025–2026 | Map and elevation profile |
-| Trail 22 / 21 | 2018 | No | No year-specific approved course version | Explicit no-route explanation |
-| Trail 22 / 21 | 2019, 2022–2026 | No | Verified public geometry and comparison groups; redistribution/local route asset is unavailable | Explicit no-route explanation; external geometry is not republished |
-| Trail 14 / 13 | 2018–2025 | No | No year-specific approved local route | Explicit no-route explanation |
-| Trail 14 / 13 | 2026 | No | Provisional 13.472 km Hallamölla splice working reference; no stored route geometry | Explicit no-route explanation; provisional recipe is not rendered as GPS |
-| Trail 5 | 2018–2025 | No | Historical short-course geometry remains unassigned | Explicit no-route explanation |
-| Trail 5 | 2026 | Yes | Validated reconstruction from organizer raster snapped to OSM; not an organizer GPX; no usable elevation values | Map labelled `Rekonstruerad bana`; no fabricated elevation profile |
+A local route asset can be one of three things:
 
-The round-4 frontend fix concerns Trail 5: the allowed route was present in the payload, but the overview map mount previously required an elevation SVG. Because the reconstructed route has no elevation samples, that guard hid its map. Map mounting is now independent of elevation availability.
+1. **Arrangörs-GPX** — organizer-hosted GPX bytes archived locally.
+2. **Publik banreferens · Trace de Trail** — derived local route from geometry embedded in the public Trace de Trail map page. This is not an authenticated GPX export and is not labelled organizer GPX.
+3. **Rekonstruerad bana** — a clearly labelled reconstruction supported by organizer material and independent controls.
+
+Trace de Trail's GPX export currently requires login. No access control is bypassed.
+
+| Family | Editions | Local route | Provenance | Frontend |
+|---|---|:---:|---|---|
+| Ultra 60 | 2018 | Yes | Public Trace geometry 43970, date 2018 verified | Map + elevation; Replay withheld |
+| Ultra 60 | 2019 | Yes | Public Trace geometry 69381, date 2019 verified | Map + elevation; Replay withheld |
+| Ultra 60 | 2022–2023 | Yes | Public Trace geometry 172147 / exact peer 203147 | Map + elevation + Replay |
+| Ultra 60 | 2024 | Yes | Archived organizer GPX | Map + elevation + Replay |
+| Ultra 60 | 2025–2026 | Yes | Archived organizer GPX | Map + elevation + Replay |
+| Duo 60 | 2019 | Yes | Inherits Ultra 2019 route | Map + elevation; Replay withheld |
+| Duo 60 | 2022–2023 | Yes | Inherits Ultra 2022–23 route | Map + elevation + Replay |
+| Duo 60 | 2024–2026 | Yes | Inherits same-year organizer Ultra route | Map + elevation + Replay |
+| Trail 22 / 21 | 2018 | **No** | Candidate Trace 7897 is dated 2016 | Explicit no-route explanation |
+| Trail 22 / 21 | 2019 | Yes | Public Trace geometry 69864, date verified | Map + elevation; no split Replay |
+| Trail 22 / 21 | 2022–2024 | Yes | Public Trace geometry 165617, exact peers 203146/237224 | Map + elevation; no split Replay |
+| Trail 22 / 21 | 2025–2026 | Yes | Public Trace geometry 322314, exact peer 280053 | Map + elevation; no split Replay |
+| Trail 14 / 13 | 2018–2025 | **No** | No verified year-specific geometry | Explicit no-route explanation |
+| Trail 14 / 13 | 2026 | Yes | 13.472 km provisional Hallamölla splice reference | Map + elevation, labelled provisional; no split Replay |
+| Trail 5 | 2018–2025 | **No** | Historical geometry unresolved | Explicit no-route explanation |
+| Trail 5 | 2026 | Yes | Organizer-raster/OSM reconstruction | Map, labelled reconstructed; elevation remains source-dependent |
+
+## Publication rules
+
+- Route geometry is never borrowed from another course version merely because the marketing distance is similar.
+- Exact Trace geometry matches can support one shared course version when already established in `config/course-versions.json`.
+- 2018 Trail 21/22 remains deliberately unassigned because the available Trace candidate has a 2016 competition date.
+- Trail 13/14 2026 remains a **working reconstructed reference**, not authoritative GPX.
+- Map availability and Replay availability are separate. A map does not enable Replay unless timing checkpoints and route-anchor mapping are also verified.
