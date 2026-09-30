@@ -76,8 +76,8 @@
     "course_version_id": "trail14-current-reference",
     "allow_candidate_gpx": false,
     "require_provenance_sidecar": true,
-    "geometry_status": "provisional_hallamolla_splice_reference",
-    "route_asset_available": false,
+    "geometry_status": "provisional_hallamolla_splice_reference_materialized",
+    "route_asset_available": true,
     "reference_recipe": {
       "base_course_version": "trail22-2022-2024",
       "operation": "remove_eastern_loop_between_two_nearly_identical_hallamolla_passages",
@@ -85,12 +85,14 @@
       "splice_point_separation_m": 0.18,
       "start_to_hallamolla_km": 8.687,
       "hallamolla_to_finish_km": 4.784,
-      "total_km": 13.472
+      "total_km": 13.472,
+      "materialized_total_km": 13.472
     },
     "provenance": "routes/ost/trail14-current-reference/provenance.json",
     "qa": "routes/ost/trail14-current-reference/qa.json",
-    "publication_label": "provisional working reference; not organizer/participant GPX",
+    "publication_label": "Rekonstruerad bana · provisorisk",
     "exact_year_identity_status": "working_reference_only; historical_identity_unresolved",
-    "blocker": "Authentic organizer/participant GPX required before treating route geometry as authoritative/local asset."
+    "blocker": "Authentic organizer/participant GPX is still required to upgrade this route from provisional reconstructed reference to authoritative geometry.",
+    "local_route_path": "routes/ost/trail14-current-reference/route.gpx"
   }
 }
