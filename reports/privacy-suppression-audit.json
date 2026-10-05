@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "display_name": "Anonym löpare",
+  "suppression_rule_count": 2,
+  "archives": [
+    {
+      "path": "data/archive/ost-results-2018-2026.sqlite.gz",
+      "status": "sanitized",
+      "sqlite_bytes": 178241536,
+      "matched_rows": 2,
+      "identity_fields": 8,
+      "json_values": 12
+    },
+    {
+      "path": "data/derived/ost-analysis-2018-2026.sqlite.gz",
+      "status": "sanitized",
+      "sqlite_bytes": 68222976,
+      "matched_rows": 4,
+      "identity_fields": 14,
+      "json_values": 10
+    }
+  ]
+}
