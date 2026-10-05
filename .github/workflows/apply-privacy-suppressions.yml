@@ -1,0 +1,53 @@
+name: Apply public identity suppressions
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'config/privacy-suppressions.json'
+      - 'tools/privacy.py'
+      - 'tools/sanitize_public_archives.py'
+      - 'tools/audit_public_privacy.py'
+      - '.github/workflows/apply-privacy-suppressions.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ost-public-identity-suppression
+  cancel-in-progress: false
+
+jobs:
+  sanitize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Sanitize public SQLite archives
+        run: python tools/sanitize_public_archives.py
+      - name: Rebuild browser data from sanitized analysis database
+        run: python tools/build_frontend.py --output-dir docs/data
+      - name: Audit distributed identity fields
+        run: python tools/audit_public_privacy.py --root docs/data
+      - name: Commit sanitized public artifacts
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f data/archive/ost-results-2018-2026.sqlite.gz
+          git add -f data/derived/ost-analysis-2018-2026.sqlite.gz
+          git add -f docs/data
+          git add reports/privacy-suppression-audit.json
+          if git diff --cached --quiet; then
+            echo 'Privacy-sanitized artifacts already current.'
+          else
+            git commit -m 'Apply public identity suppressions'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
