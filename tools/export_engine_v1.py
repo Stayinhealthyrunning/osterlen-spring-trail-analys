@@ -8,12 +8,14 @@ overlaid from config/course-versions.json.
 from __future__ import annotations
 import argparse, gzip, json, sqlite3, tempfile
 from pathlib import Path
+from privacy import load_rules, sanitize_identity, opaque_result_id
 
 ROOT=Path(__file__).resolve().parents[1]
 DB_GZ=ROOT/"data/derived/ost-analysis-2018-2026.sqlite.gz"
 READINESS=ROOT/"reports/engine-readiness.json"
 COURSES=ROOT/"config/course-versions.json"
 ADAPTER=ROOT/"config/engine-adapter.json"
+PRIVACY=ROOT/"config/privacy-suppressions.json"
 
 def load_json(path): return json.loads(path.read_text(encoding="utf-8"))
 
@@ -103,6 +105,7 @@ def main():
     args=ap.parse_args()
 
     adapter=load_json(ADAPTER)
+    privacy_rules=load_rules(PRIVACY)
     if adapter["target"]["engine_contract"]!="loppanalys-engine-1.0":
         raise SystemExit("engine adapter does not target Engine 1.0")
 
@@ -145,6 +148,7 @@ def main():
                 "assets":assets
             }
 
+        public_result_ids={}
         race_rows=con.execute("SELECT * FROM races ORDER BY year,race_family").fetchall()
         for rr in race_rows:
             r=dict(rr);rk=r["race_key"];rd=ready[rk]
@@ -152,9 +156,16 @@ def main():
             assignment=assignments.get((int(r["year"]),r["race_family"]))
             course_version=assignment.get("course_version_id") if assignment is not None else r["course_version"]
 
-            records=[record(x) for x in con.execute(
+            records=[]
+            for source_row in con.execute(
                 "SELECT * FROM results WHERE race_key=? ORDER BY COALESCE(overall_place,999999),name_as_published",(rk,)
-            )]
+            ):
+                public_record=record(source_row)
+                original_id=str(public_record["source_result_id"])
+                if sanitize_identity(public_record,privacy_rules):
+                    public_record["source_result_id"]=opaque_result_id(rk,original_id)
+                    public_result_ids[(rk,original_id)]=public_record["source_result_id"]
+                records.append(public_record)
             item={
                 "race_key":rk,"event_key":r["event_key"],"race_family":r["race_family"],"year":r["year"],"race_date":r["race_date"],
                 "course_version":course_version,"data_status":"available","section":r["source_race_name"] or r["race_family"],
@@ -169,8 +180,11 @@ def main():
 
         for s in con.execute("""SELECT r.race_key,r.source_result_id,r.bib,s.* FROM splits s JOIN results r USING(result_uid)
                               WHERE s.elapsed_seconds IS NOT NULL ORDER BY r.race_key,r.result_uid,s.sequence_no"""):
+            original_id=str(s["source_result_id"])
+            public_id=public_result_ids.get((s["race_key"],original_id),s["source_result_id"])
             payload["splits"].append({
-                "race_key":s["race_key"],"source_result_id":s["source_result_id"],"bib":s["bib"],
+                "race_key":s["race_key"],"source_result_id":public_id,
+                "bib":None if public_id!=s["source_result_id"] else s["bib"],
                 "checkpoint":s["checkpoint_semantic_key"] or s["checkpoint_key"],"source_point_name":s["checkpoint_source_label"],
                 "elapsed_seconds":s["elapsed_seconds"],"place_overall":s["place_overall"],"place_class":s["place_class"],"place_gender":s["place_gender"]
             })
@@ -185,6 +199,7 @@ def main():
                 "team_name":t["team_name"],"class_name":t["class_name"]
             })
             for m in members:
+                sanitize_identity(m,privacy_rules)
                 payload["team_members"].append({"race_key":t["race_key"],"team_source_result_id":t["source_result_id"],**m})
         con.close()
 
