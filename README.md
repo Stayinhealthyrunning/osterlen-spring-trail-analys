@@ -10,6 +10,8 @@ Repot innehåller inte bara förstudie/kataloger utan en komplett fryst Sportsti
 
 Frontendens generella adapter, state, analysmatematik, presentation och karta/replay använder det frysta Engine 1.0-kontraktet. ÖST-specifik data, capability-policy, copy och design ligger i eventlagret. Browsern laddar bootstrap, därefter vald RaceEdition och vid behov historik eller route/elevation; hela Engine-payloaden initialladdas inte.
 
+Direktjämförelsen följer Loppanalys Comparison 2.0 med exakt två personer eller lag, capability-styrd analys och inbäddad gemensam replay där upplagans egen evidens tillåter det. Kartduell är fortsatt den separata 2–5-vyn och jämförelse över olika RaceEditions är fortsatt avstängd.
+
 Primär Engine 1.0-input:
 
 `data/derived/ost-analysis-2018-2026.sqlite.gz`

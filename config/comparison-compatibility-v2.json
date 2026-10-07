@@ -5,7 +5,7 @@
     "repository": "Stayinhealthyrunning/ultravasan-analys",
     "path": "config/comparison-contract-v2.json"
   },
-  "status": "migration_planned",
+  "status": "compatible",
   "current_scope": {
     "direct_comparison": "same RaceEdition only",
     "map_duel": "2-5 participants/teams when replay capability exists"
@@ -21,13 +21,13 @@
     "segment_comparison": true,
     "edition_field_normalization": true,
     "shared_course_context": true,
-    "animated_two_result_comparison": false,
-    "elevation_seek": "map_duel_only",
-    "shareable_comparison_state": "partial",
+    "animated_two_result_comparison": true,
+    "elevation_seek": true,
+    "shareable_comparison_state": true,
     "cross_edition_comparison": false,
     "sparse_comparison_fallback": true,
     "team_entity": true,
-    "audio": "map_duel_only"
+    "audio": true
   },
   "target_capabilities": {
     "finish_comparison": true,
