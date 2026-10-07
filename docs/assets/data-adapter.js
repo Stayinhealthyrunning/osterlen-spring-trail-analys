@@ -36,6 +36,8 @@ export function adapt(doc,boot){
  function comparisonCapabilities(selected=[]){
   const rows=selected.filter(Boolean),exactTwo=rows.length===2,common=exactTwo?checkpoints.filter(cp=>cp.key!=='start').map(cp=>({cp,pair:rows.map(r=>observation(r,cp.key))})).filter(item=>item.pair.every(o=>o&&finite(o.elapsed_seconds))):[];
   const comparableSegments=exactTwo?boundary.slice(1).map((_,i)=>({i,pair:rows.map(r=>segment(r,i))})).filter(item=>item.pair.every(Boolean)):[],field=segmentStats(records);
+  const replayObservationCount=r=>checkpoints.filter(cp=>cp.replay_anchor).reduce((count,cp)=>count+(observation(r,cp.key)&&finite(observation(r,cp.key).elapsed_seconds)?1:0),0);
+  const replayReady=exactTwo&&rows.every(r=>replayObservationCount(r)>=2),hasLocalRoute=Boolean((boot.courses[race.course_version]||{}).assets?.route);
   return {
    exact_two:exactTwo,
    finish_comparison:exactTwo&&rows.every(finished),
@@ -43,14 +45,14 @@ export function adapt(doc,boot){
    placement_journey:common.some(item=>item.pair.every(o=>finite(o.place_overall))),
    segment_comparison:Boolean(race.capabilities.segment_analysis)&&comparableSegments.length>0,
    edition_field_normalization:Boolean(race.capabilities.segment_analysis)&&comparableSegments.some(item=>finite(field[item.i]?.median)&&field[item.i].n>=5&&item.pair.every(s=>finite(s.pace))),
-   shared_course_context:exactTwo&&Boolean((boot.courses[race.course_version]||{}).assets?.route),
-   animated_two_result_comparison:exactTwo&&Boolean(race.capabilities.replay)&&Boolean((boot.courses[race.course_version]||{}).assets?.route),
-   elevation_seek:exactTwo&&Boolean(race.capabilities.replay)&&Boolean((boot.courses[race.course_version]||{}).assets?.route),
+   shared_course_context:exactTwo&&hasLocalRoute,
+   animated_two_result_comparison:replayReady&&Boolean(race.capabilities.replay)&&hasLocalRoute,
+   elevation_seek:replayReady&&Boolean(race.capabilities.replay)&&hasLocalRoute,
    shareable_comparison_state:exactTwo,
    cross_edition_comparison:false,
    sparse_comparison_fallback:exactTwo&&common.filter(item=>item.cp.key!=='finish').length<=1,
    team_entity:race.participant.entity==='team',
-   audio:exactTwo&&Boolean(race.capabilities.replay)&&Boolean((boot.courses[race.course_version]||{}).assets?.route)
+   audio:replayReady&&Boolean(race.capabilities.replay)&&hasLocalRoute
   };
  }
  return {race,records,byId,checkpoints,boundary,passages,observation,segment,segmentStats,
