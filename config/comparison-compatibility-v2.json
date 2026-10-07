@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "contract": {
+    "id": "loppanalys-comparison-2.0",
+    "repository": "Stayinhealthyrunning/ultravasan-analys",
+    "path": "config/comparison-contract-v2.json"
+  },
+  "status": "migration_planned",
+  "current_scope": {
+    "direct_comparison": "same RaceEdition only",
+    "map_duel": "2-5 participants/teams when replay capability exists"
+  },
+  "participant_entities": [
+    "person",
+    "team"
+  ],
+  "current_capabilities": {
+    "finish_comparison": true,
+    "checkpoint_gap": true,
+    "placement_journey": true,
+    "segment_comparison": true,
+    "edition_field_normalization": true,
+    "shared_course_context": true,
+    "animated_two_result_comparison": false,
+    "elevation_seek": "map_duel_only",
+    "shareable_comparison_state": "partial",
+    "cross_edition_comparison": false,
+    "sparse_comparison_fallback": true,
+    "team_entity": true,
+    "audio": "map_duel_only"
+  },
+  "target_capabilities": {
+    "finish_comparison": true,
+    "checkpoint_gap": true,
+    "placement_journey": true,
+    "segment_comparison": true,
+    "edition_field_normalization": true,
+    "shared_course_context": true,
+    "animated_two_result_comparison": true,
+    "elevation_seek": true,
+    "shareable_comparison_state": true,
+    "cross_edition_comparison": false,
+    "sparse_comparison_fallback": true,
+    "team_entity": true,
+    "audio": true
+  },
+  "event_extensions": [
+    "Sparse comparison is first-class for editions with only one meaningful intermediate observation.",
+    "Duo/team semantics remain source-defined; source_sequence is not a relay-leg assignment.",
+    "Short-course editions without intermediate splits must not receive synthetic segment analytics.",
+    "Route/elevation availability is edition-specific and must remain capability gated."
+  ],
+  "must_preserve": [
+    "Frozen Sportstiming archive and curated database provenance.",
+    "No person matching across years unless identity evidence is explicitly verified.",
+    "No synthetic short-course checkpoints or passages.",
+    "Existing sparse START -> observed checkpoint -> FINISH storytelling.",
+    "Duo/team semantics and no inferred leg numbering.",
+    "Current CourseVersion/history comparability rules."
+  ],
+  "migration_priorities": [
+    "Keep current KPI/gap/placement/segment/field panels but align labels, section order and A/B semantics with the shared contract.",
+    "Embed a shared-clock two-result replay directly in Direct Comparison where replay capability and local route permit.",
+    "Synchronize segment/checkpoint selection with map, elevation and race clock.",
+    "Align playback durations, 120-second default, 30% neutral audio volume and follow-both camera.",
+    "Enable soundtrack in Direct Comparison.",
+    "Make direct-comparison share state explicit and restorable.",
+    "Keep sparse mode as the default presentation when full analytical journey is not evidence-supported."
+  ],
+  "acceptance_gates": [
+    "No change to 34 race-year instances, 9,871 results or frozen source provenance.",
+    "Sparse editions remain sparse; no fabricated analytical checkpoints appear.",
+    "Duo/team comparison never invents member-to-leg assignment.",
+    "Browser tests cover both full and sparse comparison paths.",
+    "Animated comparison is absent when local route/replay capability is false.",
+    "Map Duel remains 2-5 entities and preserves existing event-specific replay rules."
+  ]
+}
