@@ -1,4 +1,58 @@
-# ÖST → Loppanalys Comparison 2.0 migration plan
+# ÖST → Loppanalys Comparison 2.0
+
+## Implemented status
+
+ÖST is compatible with the Comparison 2.0 contract on branch
+`codex/comparison-2-ost`. Direct Comparison now embeds a two-entity replay
+where the selected RaceEdition and both source results support it. The replay
+uses a common clock, two route and elevation markers, 30/60/120/180-second
+playback, follow-both default camera, elevation/checkpoint/segment seeking,
+30% neutral audio default, and restorable URL state.
+
+The implementation remains local to ÖST's existing adapter, views and map
+engine. Kartduell still supports 2–5 entities. Direct Comparison still supports
+exactly two entities and remains same-RaceEdition only.
+
+Verified degradation cases:
+
+- 2018 Ultra 60 retains the richer analytical chart stack and static local
+  course context without acquiring replay capability.
+- 2025 Ultra 60 retains the real START → Bengtemölla Kvarn → MÅL sparse story
+  and adds the independently supported two-result replay.
+- 2025 Duo 60 compares published team results without deriving relay legs from
+  member order.
+- 2026 Trail 5 exposes finish comparison and share state without synthetic
+  passages, segments or replay.
+- 2018 Trail 22 keeps valid result comparison and share/restore while omitting
+  shared course geometry because that RaceEdition has no local route asset.
+
+`cross_edition_comparison` remains deliberately `false`.
+
+## Final verification
+
+The final release candidate passed the complete repository QA plan once after
+the targeted Comparison 2.0 tests were green:
+
+- foundation validation and prebuild readiness: passed;
+- source-model integrity: 0 errors, 5 existing course-version policy warnings;
+- Python regression: 25/25 passed;
+- frontend regression: 43/43 passed;
+- Playwright/browser regression: all scenarios passed with no console, page or
+  unexpected network errors;
+- responsive browser QA: 1440, 900, 768 and 390 px viewports passed without
+  document overflow;
+- generated source totals remained 34 RaceEditions, 9,871 results and 6,123
+  split passages, with 300 teams and 599 team members;
+- payload integrity SHA-256:
+  `4ca9c81c5dd848395d5e8b79c50578f360bb2c4f0b4fd91ef27b32d2416c3d85`;
+- critical initial transfer: 144,271 bytes gzip against a 524,288-byte budget;
+- bootstrap plus largest selected race: 32,524 bytes gzip against a
+  102,400-byte budget.
+
+The browser suite explicitly covers rich comparison, sparse comparison,
+Duo/team semantics, route-unavailable fallback, share/restore in a fresh page
+state, URL Back/Forward behavior, placement-axis direction, synchronized
+checkpoint seeking, two elevation markers, replay defaults and cleanup.
 
 ## Goal
 

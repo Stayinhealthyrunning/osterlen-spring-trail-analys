@@ -33,7 +33,28 @@ export function adapt(doc,boot){
     dnf:rows.filter(r=>r.status==='DNF'&&passages(r).at(-1)?.checkpoint===boundary[i].key).length,complete:complete.length};
   });
  }
+ function comparisonCapabilities(selected=[]){
+  const rows=selected.filter(Boolean),exactTwo=rows.length===2,common=exactTwo?checkpoints.filter(cp=>cp.key!=='start').map(cp=>({cp,pair:rows.map(r=>observation(r,cp.key))})).filter(item=>item.pair.every(o=>o&&finite(o.elapsed_seconds))):[];
+  const comparableSegments=exactTwo?boundary.slice(1).map((_,i)=>({i,pair:rows.map(r=>segment(r,i))})).filter(item=>item.pair.every(Boolean)):[],field=segmentStats(records);
+  return {
+   exact_two:exactTwo,
+   finish_comparison:exactTwo&&rows.every(finished),
+   checkpoint_gap:common.length>0,
+   placement_journey:common.some(item=>item.pair.every(o=>finite(o.place_overall))),
+   segment_comparison:Boolean(race.capabilities.segment_analysis)&&comparableSegments.length>0,
+   edition_field_normalization:Boolean(race.capabilities.segment_analysis)&&comparableSegments.some(item=>finite(field[item.i]?.median)&&field[item.i].n>=5&&item.pair.every(s=>finite(s.pace))),
+   shared_course_context:exactTwo&&Boolean((boot.courses[race.course_version]||{}).assets?.route),
+   animated_two_result_comparison:exactTwo&&Boolean(race.capabilities.replay)&&Boolean((boot.courses[race.course_version]||{}).assets?.route),
+   elevation_seek:exactTwo&&Boolean(race.capabilities.replay)&&Boolean((boot.courses[race.course_version]||{}).assets?.route),
+   shareable_comparison_state:exactTwo,
+   cross_edition_comparison:false,
+   sparse_comparison_fallback:exactTwo&&common.filter(item=>item.cp.key!=='finish').length<=1,
+   team_entity:race.participant.entity==='team',
+   audio:exactTwo&&Boolean(race.capabilities.replay)&&Boolean((boot.courses[race.course_version]||{}).assets?.route)
+  };
+ }
  return {race,records,byId,checkpoints,boundary,passages,observation,segment,segmentStats,
+  comparisonCapabilities,
   course:boot.courses[race.course_version]||null,
   members:r=>doc.team_members.filter(m=>String(m.team_source_result_id)===String(r.source_result_id)).sort((a,b)=>a.source_sequence-b.source_sequence),
   anchors(r,route){if(!race.capabilities.replay||race.course_version!==route.course_version)return [];let last=-1;return checkpoints.filter(c=>c.replay_anchor).map(c=>{const o=observation(r,c.key),distance=route.anchors[c.key];return o&&finite(distance)?{time:o.elapsed_seconds,distance}:null;}).filter(a=>{if(!a||a.time<=last)return false;last=a.time;return true;});}
