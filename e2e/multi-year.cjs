@@ -16,9 +16,10 @@ const server=http.createServer((req,res)=>{
   await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
   const port=server.address().port,browser=await chromium.launch({headless:true});
   const page=await browser.newPage({viewport:{width:900,height:900}});
-  const errors=[];page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
+  const errors=[];page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error'&&!m.text().includes('tile.openstreetmap.org'))errors.push(m.text())});page.on('requestfailed',req=>{const url=req.url();if(!url.includes('tile.openstreetmap.org')&&!url.endsWith('/assets/kustlinjens-steg.mp3'))errors.push('network: '+url)});
   try{
-    await page.goto(`http://127.0.0.1:${port}/`,{waitUntil:'networkidle'});
+    await page.goto(`http://127.0.0.1:${port}/`,{waitUntil:'domcontentloaded'});
+    await page.waitForFunction(()=>document.querySelector('#load-status')?.textContent.includes('upplaga klar'));
     await page.waitForSelector('#multi-year-year');
     if(await page.locator('#multi-year-year').inputValue()!=='all')throw Error('Multi-year selector did not default to all years');
 
