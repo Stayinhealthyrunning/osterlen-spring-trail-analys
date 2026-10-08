@@ -128,15 +128,15 @@ export function createMultiYearComparison({boot,loader}){
     selected=rows;restored=true;renderSelected();await openComparison();
   }
   root.addEventListener('click',event=>{const add=event.target.closest('[data-multi-year-add]'),remove=event.target.closest('[data-multi-year-remove]');if(add){const item=suggestionMap.get(add.dataset.multiYearAdd);if(item&&!selected.some(row=>row.token===item.token)&&selected.length<5){selected=[...selected,item];renderSelected();search.value='';hideSuggestions();search.focus();}return;}if(remove){selected=selected.filter(row=>row.token!==remove.dataset.multiYearRemove);renderSelected();return;}});
-  function updatePicker(){
+  function updatePicker(focus=false){
     const latest=editions()[0]?.year;
     const current=String(yearSelect.value)===String(latest)&&activeYear===Number(latest);
     root.hidden=current;
     const regular=document.getElementById('duel-current-picker');
     if(regular)regular.hidden=!current;
-    if(!current)search.focus();else document.getElementById('duel-search')?.focus();
+    if(focus){if(!current)search.focus();else document.getElementById('duel-search')?.focus();}
   }
-  yearSelect.addEventListener('change',()=>{search.value='';hideSuggestions();updatePicker();});
+  yearSelect.addEventListener('change',()=>{search.value='';hideSuggestions();updatePicker(true);});
   search.addEventListener('input',runSearch);search.addEventListener('focus',runSearch);search.addEventListener('keydown',event=>{if(event.key==='Escape')hideSuggestions();if(event.key==='Enter'){const first=suggestions.querySelector('[data-multi-year-add]');if(first){event.preventDefault();first.click();}}});
   button.addEventListener('click',openComparison);
   document.getElementById('close-multi-year-dialog')?.addEventListener('click',()=>dialog.close());
