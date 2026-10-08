@@ -78,9 +78,9 @@ export function createMultiYearComparison({boot,loader}){
     return cache.get(meta.race_key);
   }
   function renderSelected(){
-    chips.innerHTML=selected.length?selected.map((item,index)=>`<button type="button" data-multi-year-remove="${esc(item.token)}"><i>${index+1}</i><span>${esc(item.record.name)} · ${item.adapter.race.year}${item.record.bib?' · #'+esc(item.record.bib):''}</span><b>×</b></button>`).join(''):'<span class="selection-empty">Välj exakt två resultat – samma person kan väljas från olika år.</span>';
-    button.disabled=selected.length!==2;button.textContent=selected.length===2?'Jämför på kartan och mellan år':'Välj två resultat för kartjämförelse';
-    feedback.textContent=selected.length===2?(selected[0].adapter.race.year===selected[1].adapter.race.year?'Två resultat från samma upplaga valda.':'Olika år valda · de två bansträckningarna visas separat på kartan.'):'';
+    chips.innerHTML=selected.length?selected.map((item,index)=>`<button type="button" data-multi-year-remove="${esc(item.token)}"><i>${index+1}</i><span>${esc(item.record.name)} · ${item.adapter.race.year}${item.record.bib?' · #'+esc(item.record.bib):''}</span><b>×</b></button>`).join(''):'<span class="selection-empty">Välj 2–5 resultat – samma person kan väljas från flera år.</span>';
+    button.disabled=selected.length<2;button.textContent=selected.length>=2?'Jämför '+selected.length+' resultat på kartan':'Välj minst två resultat för kartjämförelse';
+    feedback.textContent=selected.length>=2?selected.map(x=>x.adapter.race.year).join(' · ')+' · årsbanorna visas separat på kartan.':'';
   }
   function hideSuggestions(){suggestions.hidden=true;suggestions.innerHTML='';search.setAttribute('aria-expanded','false');suggestionMap.clear();}
   async function runSearch(){
@@ -95,15 +95,15 @@ export function createMultiYearComparison({boot,loader}){
     suggestions.innerHTML=suggestionMap.size?[...suggestionMap.values()].map((item,index)=>`<button type="button" id="multi-year-option-${index}" role="option" data-multi-year-add="${esc(item.token)}"><span><strong>${esc(item.record.name)}</strong><small>${item.meta.year}${item.record.bib?' · #'+esc(item.record.bib):''}${item.record.club?' · '+esc(item.record.club):''}</small></span><b>${finite(item.record.finish_seconds)?time(item.record.finish_seconds):esc(item.record.status||'–')}</b></button>`).join(''):'<p class="picker-empty">Ingen deltagare hittades i valda år.</p>';
   }
   function shareUrl(){
-    const url=new URL(location.href);for(const key of ['xyFamily','xyA','xyB'])url.searchParams.delete(key);
-    if(selected.length===2){url.searchParams.set('xyFamily',family);url.searchParams.set('xyA',selected[0].token);url.searchParams.set('xyB',selected[1].token);}
+    const url=new URL(location.href);for(const key of ['xyFamily','xyA','xyB','xyResult'])url.searchParams.delete(key);
+    if(selected.length>=2){url.searchParams.set('xyFamily',family);for(const item of selected)url.searchParams.append('xyResult',item.token);}
     return url.href;
   }
   async function openComparison(){
-    if(selected.length!==2)return;
+    if(selected.length<2||selected.length>5)return;
     mapController?.destroy?.();mapController=null;
-    const model=buildComparisonModel(boot,selected[0],selected[1]);
-    body.innerHTML='<section class="multi-year-map-card" id="multi-year-map-root"><p class="muted">Laddar dokumenterade bansträckningar…</p></section>'+comparisonHtml(model);
+    const detail=selected.length===2?comparisonHtml(buildComparisonModel(boot,selected[0],selected[1])):'<section class="multi-year-section"><h3>Resultat från olika år</h3><div class="table-wrap"><table><thead><tr><th>År</th><th>Deltagare</th><th>Status</th><th>Sluttid</th><th>Plats</th><th>Snabbare än årets fält</th></tr></thead><tbody>'+selected.map(x=>'<tr><td>'+esc(x.adapter.race.year)+'</td><th>'+esc(x.record.name)+'</th><td>'+esc(x.record.status)+'</td><td>'+time(x.record.finish_seconds)+'</td><td>'+esc(x.record.overall_place??'–')+'</td><td>'+String(fieldPercentile(x.adapter,x.record)?.toFixed(1).replace('.',',')??'–')+' %</td></tr>').join('')+'</tbody></table></div><p class="muted">Kartjämförelsen visar varje upplagas bana. En gemensam placering eller tidsvinnare mellan olika banor beräknas inte.</p></section>';
+    body.innerHTML='<section class="multi-year-map-card" id="multi-year-map-root"><p class="muted">Laddar dokumenterade bansträckningar…</p></section>'+detail;
     if(!dialog.open)dialog.showModal();
     const token=selected.map(x=>x.token).join('|');
     const items=await Promise.all(selected.map(async x=>{
@@ -123,11 +123,11 @@ export function createMultiYearComparison({boot,loader}){
   }
   async function restore(){
     if(restored)return;const params=new URLSearchParams(location.search);if(params.get('xyFamily')!==family)return;
-    const tokens=[params.get('xyA'),params.get('xyB')].filter(Boolean);if(tokens.length!==2)return;const rows=[];
+    const tokens=params.getAll('xyResult').length?params.getAll('xyResult'):[params.get('xyA'),params.get('xyB')].filter(Boolean);if(tokens.length<2||tokens.length>5)return;const rows=[];
     for(const token of tokens){const parsed=splitToken(token),meta=editions().find(item=>item.race_key===parsed?.raceKey);if(!meta)return;const edition=await loadEdition(meta),record=edition.adapter.byId.get(parsed.id);if(!record)return;rows.push({...edition,record,token});}
     selected=rows;restored=true;renderSelected();await openComparison();
   }
-  root.addEventListener('click',event=>{const add=event.target.closest('[data-multi-year-add]'),remove=event.target.closest('[data-multi-year-remove]');if(add){const item=suggestionMap.get(add.dataset.multiYearAdd);if(item&&!selected.some(row=>row.token===item.token)){selected=selected.length<2?[...selected,item]:[selected[1],item];renderSelected();search.value='';hideSuggestions();search.focus();}return;}if(remove){selected=selected.filter(row=>row.token!==remove.dataset.multiYearRemove);renderSelected();return;}});
+  root.addEventListener('click',event=>{const add=event.target.closest('[data-multi-year-add]'),remove=event.target.closest('[data-multi-year-remove]');if(add){const item=suggestionMap.get(add.dataset.multiYearAdd);if(item&&!selected.some(row=>row.token===item.token)&&selected.length<5){selected=[...selected,item];renderSelected();search.value='';hideSuggestions();search.focus();}return;}if(remove){selected=selected.filter(row=>row.token!==remove.dataset.multiYearRemove);renderSelected();return;}});
   function updatePicker(){
     const latest=editions()[0]?.year;
     const current=String(yearSelect.value)===String(latest)&&activeYear===Number(latest);
