@@ -51,7 +51,7 @@ const server=http.createServer((req,res)=>{
     await page.waitForFunction(()=>document.querySelectorAll('#multi-year-route-svg path[stroke-width="3.8"]').length===2);
     const legends=(await page.locator('#multi-year-map-root .multi-year-route-option').allInnerTexts()).join(' | ');
     if(!legends.includes('2024')||!legends.includes('2022'))throw Error('Both year-specific routes must be distinguished');
-    await page.locator('#multi-year-map-root [data-map-range]').fill('3600');
+    await page.locator('#multi-year-map-root [data-map-range]').evaluate(node=>{node.value='3600';node.dispatchEvent(new Event('input',{bubbles:true}))});
     if(!await page.locator('#multi-year-map-root [data-map-marker]').count())throw Error('Source-backed positions missing');
     if(errors.length)throw Error('Browser errors: '+errors.join(' | '));
     console.log('PASS ÖST multi-year comparison');
