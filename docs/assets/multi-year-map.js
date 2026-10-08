@@ -68,7 +68,8 @@ function mount(root,rawItems,options={}){
  let currentRouteGeo=fullRoute(),fullZoom=fitGeo(currentRouteGeo,92),fullCenter=centerGeo(currentRouteGeo);
  let cameraMode='both',manualZoomDelta=0,clock=0,playing=false,raf=0,started=0,initialClock=0,seconds=120,terminated=false,activated=false;
  let renderZoom=Math.round(fullZoom),cameraZoom=fullZoom,cameraGeo=[...fullCenter];
- let origin=[0,0],scene=null,tileLayer=null,markerLayer=null,markerNodes=[],tileKey='',lastTileFrame=0;
+ let origin=[0,0],scene=null,tileLayer=null,markerLayer=null,markerNodes=[],tileKey='';
+ const tileCache=new Map();let neededTiles=new Set();
  const title='<div class="multi-year-map-head"><div><p class="eyebrow">KARTJÄMFÖRELSE MELLAN ÅR</p><h3>Banvarianter och beräknad position</h3><p>Olika färger visar varje upplagas egen dokumenterade rutt. Markörernas lägen beräknas mellan verkliga tidspassager, inte från deltagarens GPS.</p></div></div>';
  const legend=items.map(item=>'<label class="multi-year-route-option"><input type="checkbox" data-route-visible="'+item.index+'" '+(item.points.length>=2?'checked':'disabled')+'><i style="background:'+item.color+'"></i><span><strong>'+esc(item.year+' · '+item.name)+'</strong><small>'+esc(item.provenance||'Rutt saknas')+(item.points.length>=2?' · '+item.points.at(-1)[2].toFixed(1).replace('.',',')+' km':'')+'</small></span></label>').join('');
  const musicControls=options.musicSrc?'<button type="button" data-map-music aria-pressed="true" aria-label="Slå av eller på musik">♫ Musik</button><label>Volym <input data-map-volume type="range" min="0" max="1" step=".05" value=".3" aria-label="Musikvolym"></label><span data-map-audio-note role="status" class="muted small" hidden></span>':'';
@@ -125,24 +126,58 @@ function mount(root,rawItems,options={}){
   const desired=clamp(Math.min(fullZoom+4,fitting)+manualZoomDelta,7,17);
   return{center:centerGeo(geo),zoom:desired};
  }
+ // Keep the current map visible while additional pan/zoom tiles load.
+ // Reuse loaded images rather than tearing down the SVG on every boundary.
+ function trimTiles(){
+  if(terminated||[...neededTiles].some(key=>!tileCache.get(key)?.loaded))return;
+  for(const [key,entry] of tileCache)if(!neededTiles.has(key)){
+   entry.node.remove();tileCache.delete(key);
+  }
+ }
  function updateTileLayer(force=false){
   if(!tileLayer||terminated)return;
-  const scale=2**(cameraZoom-renderZoom),cx=cameraGeo[0]*2**renderZoom,cy=cameraGeo[1]*2**renderZoom;
-  const halfW=W/(2*scale),halfH=H/(2*scale),x0=Math.floor((cx-halfW)/256)-1,x1=Math.floor((cx+halfW)/256)+1,y0=Math.floor((cy-halfH)/256)-1,y1=Math.floor((cy+halfH)/256)+1;
-  const key=[renderZoom,x0,x1,y0,y1].join('/');
-  if(!force&&key===tileKey)return;tileKey=key;
-  const max=2**renderZoom,images=[];
+  const z=clamp(Math.round(cameraZoom),7,17);
+  const scale=2**(cameraZoom-z),cx=cameraGeo[0]*2**z,cy=cameraGeo[1]*2**z;
+  const halfW=W/(2*scale),halfH=H/(2*scale);
+  const x0=Math.floor((cx-halfW)/256)-1,x1=Math.floor((cx+halfW)/256)+1;
+  const y0=Math.floor((cy-halfH)/256)-1,y1=Math.floor((cy+halfH)/256)+1;
+  const key=[z,x0,x1,y0,y1].join('/');
+  if(!force&&key===tileKey)return;
+  tileKey=key;
+  const max=2**z,displaySize=256*2**(renderZoom-z),required=new Set();
   for(let x=x0;x<=x1;x++)for(let y=y0;y<=y1;y++){
    if(x<0||y<0||x>=max||y>=max)continue;
-   images.push('<image href="https://tile.openstreetmap.org/'+renderZoom+'/'+x+'/'+y+'.png" x="'+(x*256-origin[0]).toFixed(1)+'" y="'+(y*256-origin[1]).toFixed(1)+'" width="256.2" height="256.2"/>');
+   const id=z+'/'+x+'/'+y;
+   required.add(id);
+   if(tileCache.has(id))continue;
+   const node=document.createElementNS('http://www.w3.org/2000/svg','image');
+   node.setAttribute('data-map-tile',id);
+   node.setAttribute('x',(x*displaySize-origin[0]).toFixed(5));
+   node.setAttribute('y',(y*displaySize-origin[1]).toFixed(5));
+   node.setAttribute('width',(displaySize+0.2*2**(renderZoom-z)).toFixed(5));
+   node.setAttribute('height',(displaySize+0.2*2**(renderZoom-z)).toFixed(5));
+   node.setAttribute('pointer-events','none');
+   const entry={node,loaded:false};
+   tileCache.set(id,entry);
+   node.addEventListener('load',()=>{entry.loaded=true;trimTiles()},{once:true});
+   node.addEventListener('error',()=>{entry.failed=true;/* Retain prior imagery if this tile fails. */},{once:true});
+   tileLayer.appendChild(node);
+   node.setAttribute('href','https://tile.openstreetmap.org/'+id+'.png');
   }
-  tileLayer.innerHTML=images.join('');
+  neededTiles=required;
+  trimTiles();
  }
  function updateView(forceTiles=false){
   if(!scene||terminated)return;
   const pos=toWorld(cameraGeo),scale=2**(cameraZoom-renderZoom);
   scene.setAttribute('transform','translate('+(W/2).toFixed(1)+' '+(H/2).toFixed(1)+') scale('+scale.toFixed(6)+') translate('+(-pos[0]).toFixed(2)+' '+(-pos[1]).toFixed(2)+')');
   updateTileLayer(forceTiles);
+  updateMarkerScale();
+ }
+ function updateMarkerScale(){
+  const scale=(2**(renderZoom-cameraZoom)).toFixed(6);
+  for(const node of markerNodes)if(node&&node.dataset.worldX!==undefined)
+   node.setAttribute('transform','translate('+node.dataset.worldX+' '+node.dataset.worldY+') scale('+scale+')');
  }
  function updateMarkers(){
   for(const item of mapped){
@@ -152,15 +187,18 @@ function mount(root,rawItems,options={}){
    const d=atTime(item.anchors,clock),pos=d===null?null:interp(item.points,d);
    if(!pos){node.setAttribute('visibility','hidden');continue;}
    const xy=toWorld(merc(pos[0],pos[1]));
-   node.setAttribute('transform','translate('+xy[0].toFixed(1)+' '+xy[1].toFixed(1)+')');node.removeAttribute('visibility');
+   node.dataset.worldX=xy[0].toFixed(3);node.dataset.worldY=xy[1].toFixed(3);
+   node.removeAttribute('visibility');
+  }
+  updateMarkerScale();
   }
  }
  function renderGeometry(){
   if(terminated)return;
   origin=allGeo[0].map(v=>v*2**renderZoom);
-  const paths=mapped.filter(item=>item.visible).map(item=>{
-   const line=item.points.map((p,i)=>{const xy=toWorld(merc(p[0],p[1]));return(i?'L':'M')+xy[0].toFixed(1)+' '+xy[1].toFixed(1)}).join(' ');
-   return '<path d="'+line+'" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round" opacity=".85"/><path d="'+line+'" fill="none" stroke="'+item.color+'" stroke-width="3.8" stroke-linejoin="round" stroke-linecap="round"/>';
+  const paths=mapped.map(item=>{
+   const line=item.points.map((p,i)=>{const xy=toWorld(merc(p[0],p[1]));return(i?'L':'M')+xy[0].toFixed(3)+' '+xy[1].toFixed(3)}).join(' ');
+   return '<g data-map-path="'+item.index+'"'+(item.visible?'':' style="display:none"')+'><path d="'+line+'" fill="none" stroke="#fff" vector-effect="non-scaling-stroke" stroke-width="7" stroke-linejoin="round" opacity=".85"/><path d="'+line+'" fill="none" stroke="'+item.color+'" vector-effect="non-scaling-stroke" stroke-width="3.8" stroke-linejoin="round" stroke-linecap="round"/></g>';
   }).join('');
   const markers=mapped.map(item=>'<g data-map-marker="'+item.index+'"><circle r="9" fill="#fff" stroke="'+item.color+'" stroke-width="3"/><circle r="4" fill="'+item.color+'"/></g>').join('');
   svg.innerHTML='<rect width="'+W+'" height="'+H+'" fill="#edf1ec"/><g data-map-scene><g data-map-tiles></g><g data-map-paths>'+paths+'</g><g data-map-markers>'+markers+'</g></g>';
@@ -172,9 +210,9 @@ function mount(root,rawItems,options={}){
   const target=desiredCamera(),alpha=immediate||reduced?1:.15;
   cameraGeo=[cameraGeo[0]+(target.center[0]-cameraGeo[0])*alpha,cameraGeo[1]+(target.center[1]-cameraGeo[1])*alpha];
   cameraZoom+= (target.zoom-cameraZoom)*alpha;
-  const desiredRender=Math.round(cameraZoom);
-  if(Math.abs(desiredRender-renderZoom)>=1){renderZoom=clamp(desiredRender,7,17);renderGeometry();}
-  else updateView();
+  // Camera zoom transforms the persistent scene; tiles have their own zoom
+  // level and load incrementally. No SVG or route/marker reset is necessary.
+  updateView();
  }
  function updateClock(value,immediate=false){
   clock=clamp(Number(value)||0,0,maxClock);
@@ -211,13 +249,16 @@ function mount(root,rawItems,options={}){
  root.querySelectorAll('[data-route-visible]').forEach(input=>input.addEventListener('change',()=>{
   items[Number(input.dataset.routeVisible)].visible=input.checked;
   currentRouteGeo=fullRoute();fullZoom=fitGeo(currentRouteGeo,92);fullCenter=centerGeo(currentRouteGeo);
-  renderGeometry();refreshCamera(true);
+  const routeNode=svg.querySelector('[data-map-path="'+Number(input.dataset.routeVisible)+'"]');
+  if(routeNode)routeNode.style.display=input.checked?'':'none';
+  updateMarkers();refreshCamera(true);
  }));
  renderGeometry();
  return{destroy(){
   if(terminated)return;stop();terminated=true;
   if(audio){audio.pause();try{audio.currentTime=0}catch{}audio.removeAttribute('src');audio.load?.();}
-  if(svg)svg.innerHTML='';scene=null;tileLayer=null;markerLayer=null;markerNodes=[];
+  if(svg)svg.innerHTML='';tileCache.clear();neededTiles.clear();
+  scene=null;tileLayer=null;markerLayer=null;markerNodes=[];
  },getCamera:()=>cameraMode,getTime:()=>clock};
 }
 global.LoppMultiYearRouteMap={mount};
