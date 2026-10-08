@@ -130,7 +130,7 @@ export function createMultiYearComparison({boot,loader}){
   root.addEventListener('click',event=>{const add=event.target.closest('[data-multi-year-add]'),remove=event.target.closest('[data-multi-year-remove]');if(add){const item=suggestionMap.get(add.dataset.multiYearAdd);if(item&&!selected.some(row=>row.token===item.token)){selected=selected.length<2?[...selected,item]:[selected[1],item];renderSelected();search.value='';hideSuggestions();search.focus();}return;}if(remove){selected=selected.filter(row=>row.token!==remove.dataset.multiYearRemove);renderSelected();return;}});
   function updatePicker(){
     const latest=editions()[0]?.year;
-    const current=String(yearSelect.value)===String(latest);
+    const current=String(yearSelect.value)===String(latest)&&activeYear===Number(latest);
     root.hidden=current;
     const regular=document.getElementById('duel-current-picker');
     if(regular)regular.hidden=!current;
