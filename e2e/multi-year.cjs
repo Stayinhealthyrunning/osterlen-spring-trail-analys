@@ -56,6 +56,38 @@ const server=http.createServer((req,res)=>{
     if(!legends.includes('2024')||!legends.includes('2022'))throw Error('Both year-specific routes must be distinguished');
     await page.locator('#multi-year-map-root [data-map-range]').evaluate(node=>{node.value='3600';node.dispatchEvent(new Event('input',{bubbles:true}))});
     if(!await page.locator('#multi-year-map-root [data-map-marker]').count())throw Error('Source-backed positions missing');
+    // Frozen Comparison 2.0 replay standard: 120s, Follow both, full-course,
+    // adaptive smooth camera, music at 30% with toggle and pause lifecycle.
+    const camera=page.locator('#multi-year-map-root [data-map-camera]');
+    if(await camera.inputValue()!=='both')throw Error('Default replay camera must follow both runners');
+    if(await page.locator('#multi-year-map-root [data-map-duration]').inputValue()!=='120')throw Error('Default replay duration must be 120s');
+    if(!await page.locator('#multi-year-map-root [data-map-music]').count())throw Error('Race soundtrack controls missing');
+    if(await page.locator('#multi-year-map-root [data-map-volume]').inputValue()!=='0.3')throw Error('Initial soundtrack volume is not 30 percent');
+    const initialScene=await page.locator('#multi-year-route-svg [data-map-scene]').getAttribute('transform');
+    await camera.selectOption('both');
+    const followingScene=await page.locator('#multi-year-route-svg [data-map-scene]').getAttribute('transform');
+    if(initialScene===followingScene)throw Error('Follow-both does not update camera framing');
+    await page.locator('#multi-year-map-root [data-map-zoom="1"]').click();
+    const zoomedScene=await page.locator('#multi-year-route-svg [data-map-scene]').getAttribute('transform');
+    if(zoomedScene===followingScene)throw Error('Zoom-in failed to update map transformation');
+    await camera.selectOption('leader');
+    if(await camera.inputValue()!=='leader')throw Error('Follow-furthest mode unavailable');
+    await page.locator('#multi-year-map-root [data-map-fit]').click();
+    if(await camera.inputValue()!=='full')throw Error('Fit must choose whole-course mode');
+    await camera.selectOption('both');
+    const music=page.locator('#multi-year-map-root [data-map-music]');
+    const oldMute=await music.getAttribute('aria-pressed');
+    await music.click();
+    if(await music.getAttribute('aria-pressed')===oldMute)throw Error('Soundtrack mute toggle did not work');
+    await page.locator('#multi-year-map-root [data-map-volume]').evaluate(node=>{node.value='0.55';node.dispatchEvent(new Event('input',{bubbles:true}))});
+    if(await page.locator('#multi-year-map-root [data-map-volume]').inputValue()!=='0.55')throw Error('Soundtrack volume did not change');
+    await music.click();
+    await page.locator('#multi-year-map-root [data-map-play]').click();
+    await page.waitForFunction(()=>document.querySelector('#multi-year-map-root [data-map-play]')?.textContent==='Pausa');
+    await page.locator('#multi-year-map-root [data-map-play]').click();
+    if(await page.locator('#multi-year-map-root [data-map-play]').innerText()!=='Spela')throw Error('Pause did not stop replay');
+    await page.locator('#multi-year-map-root [data-map-reset]').click();
+    if(await page.locator('#multi-year-map-root [data-map-time]').innerText()!=='0:00:00')throw Error('Reset did not restore zero clock');
     // Regression: selecting Stefan in 2025 must persist when switching to 2026
     // to add Matilda, and must still be there after switching back to 2025.
     await page.locator('#close-multi-year-dialog').click();
