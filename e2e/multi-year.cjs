@@ -41,6 +41,9 @@ const server=http.createServer((req,res)=>{
 
     const chips=await page.locator('#multi-year-selected').innerText();
     if(!chips.includes('2024')||!chips.includes('2022'))throw Error('Selected years missing: '+chips);
+    const compactLabels=await page.locator('#multi-year-selected button span').allTextContents();
+    if(JSON.stringify(compactLabels)!==JSON.stringify(['Christian Malmström · 2024','Christian Malmström · 2022']))throw Error('Runner chips must show only name and year: '+JSON.stringify(compactLabels));
+    if(await page.locator('#multi-year-selected button i').count())throw Error('Runner chip ordinal numbers must not be visible');
     if(await page.locator('#open-multi-year-comparison').isDisabled())throw Error('Comparison button remained disabled');
     await page.locator('#open-multi-year-comparison').click();
     await page.waitForSelector('#multi-year-dialog[open]');
