@@ -78,9 +78,9 @@ export function createMultiYearComparison({boot,loader,getCurrentSelection=null}
     return cache.get(meta.race_key);
   }
   function renderSelected(){
-    chips.innerHTML=selected.length?selected.map((item,index)=>`<button type="button" data-multi-year-remove="${esc(item.token)}"><i>${index+1}</i><span>${esc(item.record.name)} · ${item.adapter.race.year}${item.record.bib?' · #'+esc(item.record.bib):''}</span><b>×</b></button>`).join(''):'<span class="selection-empty">Välj 2–5 resultat – samma person kan väljas från flera år.</span>';
+    chips.innerHTML=selected.length?selected.map(item=>`<button type="button" data-multi-year-remove="${esc(item.token)}" aria-label="Ta bort ${esc(item.record.name)} · ${item.adapter.race.year}"><span>${esc(item.record.name)} · ${item.adapter.race.year}</span><b aria-hidden="true">×</b></button>`).join(''):'<span class="selection-empty">Välj 2–5 resultat – samma person kan väljas från flera år.</span>';
     button.disabled=selected.length<2;button.textContent=selected.length>=2?'Jämför '+selected.length+' resultat på kartan':'Välj minst två resultat för kartjämförelse';
-    feedback.textContent=selected.length>=2?selected.map(x=>x.adapter.race.year).join(' · ')+' · årsbanorna visas separat på kartan.':'';
+    feedback.textContent=selected.length>=2?'De valda årens banor visas separat på kartan.':'';
   }
   function hideSuggestions(){suggestions.hidden=true;suggestions.innerHTML='';search.setAttribute('aria-expanded','false');suggestionMap.clear();}
   async function runSearch(){
