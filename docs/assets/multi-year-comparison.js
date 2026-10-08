@@ -122,8 +122,9 @@ export function createMultiYearComparison({boot,loader}){
   return {
     setContext(nextFamily,nextYear){
       const changed=family!==nextFamily;family=nextFamily;activeYear=Number(nextYear)||null;if(changed){selected=[];restored=false;}
+      const previous=changed?'all':yearSelect.value;
       yearSelect.innerHTML='<option value="all">Alla år</option>'+editions().map(item=>`<option value="${item.year}">${item.year}</option>`).join('');
-      yearSelect.value=String(activeYear&&editions().some(item=>item.year===activeYear)?activeYear:'all');renderSelected();if(changed)hideSuggestions();restore().catch(()=>{});
+      yearSelect.value=editions().some(item=>String(item.year)===String(previous))?String(previous):'all';renderSelected();if(changed)hideSuggestions();restore().catch(()=>{});
     }
   };
 }
