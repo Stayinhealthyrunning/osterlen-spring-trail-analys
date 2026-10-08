@@ -645,3 +645,96 @@ div.chart{box-sizing:border-box;min-width:0!important;width:100%;max-width:100%;
 .multi-year-map-range{width:100%;margin:12px 0}
 .multi-year-map-note{font-size:.72rem;color:var(--muted)}
 @media(max-width:650px){.multi-year-map-card{padding:10px}.multi-year-dialog{width:calc(100vw - 12px)}#multi-year-dialog-body{padding:10px}.multi-year-map-controls{align-items:stretch}}
+
+
+/* 2026-10-08: the multi-year map has seven controls; keep a deliberate,
+   aligned desktop row and reserve wrapping for genuinely narrow screens. */
+#multi-year-dialog{
+  box-sizing:border-box;
+  width:min(1400px,calc(100vw - 24px));
+  max-width:none;
+  max-height:min(95dvh,1080px);
+  padding:0;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+#multi-year-dialog .multi-year-dialog-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex:0 0 auto}
+#multi-year-dialog .multi-year-dialog-actions button{margin:0;white-space:nowrap}
+#multi-year-dialog .eyebrow{margin:0 0 6px;line-height:1.4}
+#multi-year-dialog h2{margin:0;line-height:1.18;font-size:clamp(1.45rem,2.1vw,2rem)}
+#multi-year-dialog-body{box-sizing:border-box;min-width:0;width:100%;padding:24px 28px 30px}
+#multi-year-dialog-body>*{min-width:0}
+#multi-year-map-root{box-sizing:border-box;min-width:0;width:100%}
+#multi-year-map-root .multi-year-map-controls{
+  display:grid;
+  grid-template-columns:max-content max-content minmax(118px,138px) minmax(168px,1fr) max-content minmax(145px,170px) max-content;
+  gap:10px 12px;
+  align-items:end;
+  width:100%;
+  min-width:0;
+}
+#multi-year-map-root .multi-year-map-controls>button{
+  align-self:end;min-height:44px;margin:0;white-space:nowrap;
+}
+#multi-year-map-root .multi-year-map-controls>label{
+  display:grid;
+  grid-template-rows:auto 44px;
+  gap:5px;
+  align-items:end;
+  margin:0;
+  min-width:0;
+  white-space:nowrap;
+  font-size:.76rem;
+  line-height:1.2;
+}
+#multi-year-map-root .multi-year-map-controls>label select{
+  display:block;
+  box-sizing:border-box;
+  min-width:0;
+  width:100%;
+  height:44px;
+  margin:0;
+}
+#multi-year-map-root .multi-year-map-controls>label [data-map-volume]{
+  width:100%;
+  min-width:0;
+  margin:0;
+  align-self:center;
+}
+#multi-year-map-root .multi-year-map-controls>[data-map-time]{
+  align-self:end;
+  display:block;
+  min-height:44px;
+  line-height:44px;
+  margin:0;
+  text-align:right;
+  white-space:nowrap;
+  font-variant-numeric:tabular-nums;
+  font-weight:800;
+}
+#multi-year-map-root .multi-year-map-controls>[data-map-audio-note]:not([hidden]){grid-column:1/-1}
+@media(max-width:1060px){
+ #multi-year-map-root .multi-year-map-controls{grid-template-columns:repeat(4,minmax(0,1fr))}
+ #multi-year-map-root .multi-year-map-controls>button{width:100%}
+ #multi-year-map-root .multi-year-map-controls>[data-map-time]{text-align:left}
+}
+@media(max-width:650px){
+ #multi-year-dialog{width:calc(100vw - 12px);max-height:97dvh;border-radius:15px}
+ #multi-year-dialog-body{padding:12px}
+ #multi-year-dialog .multi-year-dialog-actions{gap:6px}
+ #multi-year-dialog .multi-year-dialog-actions button{white-space:normal}
+ #multi-year-map-root .multi-year-map-controls{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 9px}
+ #multi-year-map-root .multi-year-map-controls>label{white-space:normal}
+ #multi-year-map-root .multi-year-map-controls>button{min-width:0}
+}
+
+#multi-year-dialog>.dialog-toolbar{
+  position:sticky;top:0;z-index:5;
+  box-sizing:border-box;width:100%;margin:0;
+  padding:21px 28px 18px;
+  display:flex;align-items:center;justify-content:space-between;gap:22px;
+}
+#multi-year-dialog>.dialog-toolbar>div:first-child{min-width:0}
+@media(max-width:650px){
+ #multi-year-dialog>.dialog-toolbar{padding:15px 18px 13px;gap:10px;align-items:flex-start;flex-wrap:wrap}
+}
