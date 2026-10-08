@@ -52,6 +52,28 @@ const server=http.createServer((req,res)=>{
     if(!body.includes('Passagegap är avstängt'))throw Error('Distinct course versions were not safely degraded');
     if(body.includes('A snabbare med')||body.includes('B snabbare med'))throw Error('Incompatible 2024/2022 courses were directly ranked');
     await page.waitForFunction(()=>document.querySelectorAll('#multi-year-route-svg path[stroke-width="3.8"]').length===2);
+    // Visual acceptance: the wide dialog keeps title safely inset and all seven
+    // replay controls baseline-aligned, without horizontal overflow at mobile widths.
+    for(const width of [1440,1140,900,390]){
+      await page.setViewportSize({width,height:900});
+      const layout=await page.evaluate(()=>{
+        const dialog=document.querySelector('#multi-year-dialog'),head=dialog.querySelector('.dialog-toolbar'),title=head.querySelector('h2'),root=document.querySelector('#multi-year-map-root'),controls=root.querySelector('.multi-year-map-controls');
+        const rect=el=>{const r=el.getBoundingClientRect();return{x:r.x,y:r.y,left:r.left,right:r.right,bottom:r.bottom,width:r.width}};
+        return{width:window.innerWidth,dialog:rect(dialog),title:rect(title),map:rect(root),controls:rect(controls),
+          play:rect(root.querySelector('[data-map-play]')),duration:rect(root.querySelector('[data-map-duration]')),
+          camera:rect(root.querySelector('[data-map-camera]')),music:rect(root.querySelector('[data-map-music]')),
+          volume:rect(root.querySelector('[data-map-volume]')),clock:rect(root.querySelector('[data-map-time]')),
+          scrollbar:dialog.scrollWidth-dialog.clientWidth,docScrollbar:document.documentElement.scrollWidth-window.innerWidth};
+      });
+      if(layout.title.left-layout.dialog.left<15)throw Error('Title clips modal left margin: '+JSON.stringify(layout));
+      if(layout.dialog.width>width+1||layout.scrollbar>2||layout.docScrollbar>2)throw Error('Horizontal overflow: '+JSON.stringify(layout));
+      if(width>=1140){
+        if(layout.dialog.width<width-70)throw Error('Historical dialog is too narrow: '+JSON.stringify(layout));
+        const bottoms=[layout.play.bottom,layout.duration.bottom,layout.camera.bottom,layout.music.bottom,layout.clock.bottom];
+        if(Math.max(...bottoms)-Math.min(...bottoms)>7)throw Error('Replay controls not baseline aligned: '+JSON.stringify(layout));
+      }
+    }
+    await page.setViewportSize({width:900,height:900});
     const legends=(await page.locator('#multi-year-map-root .multi-year-route-option').allInnerTexts()).join(' | ');
     if(!legends.includes('2024')||!legends.includes('2022'))throw Error('Both year-specific routes must be distinguished');
     await page.locator('#multi-year-map-root [data-map-range]').evaluate(node=>{node.value='3600';node.dispatchEvent(new Event('input',{bubbles:true}))});
