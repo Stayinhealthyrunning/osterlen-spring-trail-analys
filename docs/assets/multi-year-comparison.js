@@ -119,7 +119,7 @@ export function createMultiYearComparison({boot,loader,getCurrentSelection=null}
       }
     }));
     if(!dialog.open||selected.map(x=>x.token).join('|')!==token)return;
-    mapController=globalThis.LoppMultiYearRouteMap?.mount(body.querySelector('#multi-year-map-root'),items);
+    mapController=globalThis.LoppMultiYearRouteMap?.mount(body.querySelector('#multi-year-map-root'),items,{musicSrc:'assets/kustlinjens-steg.mp3',storagePrefix:'ost-replay-music'});
   }
   async function restore(){
     if(restored)return;const params=new URLSearchParams(location.search);if(params.get('xyFamily')!==family)return;
