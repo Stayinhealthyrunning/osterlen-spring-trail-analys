@@ -85,6 +85,11 @@ const server=http.createServer((req,res)=>{
     if(await page.locator('#multi-year-map-root [data-map-duration]').inputValue()!=='120')throw Error('Default replay duration must be 120s');
     if(!await page.locator('#multi-year-map-root [data-map-music]').count())throw Error('Race soundtrack controls missing');
     if(await page.locator('#multi-year-map-root [data-map-volume]').inputValue()!=='0.3')throw Error('Initial soundtrack volume is not 30 percent');
+    await page.evaluate(()=>{
+      window.__stableReplayScene=document.querySelector('#multi-year-route-svg [data-map-scene]');
+      window.__stableReplayTiles=document.querySelector('#multi-year-route-svg [data-map-tiles]');
+      window.__stableReplayMarkers=document.querySelector('#multi-year-route-svg [data-map-markers]');
+    });
     await camera.selectOption('full');
     const initialScene=await page.locator('#multi-year-route-svg [data-map-scene]').getAttribute('transform');
     await camera.selectOption('both');
