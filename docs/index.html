@@ -44,6 +44,21 @@
     </div>
   </section>
 
+  <section class="panel multi-year-picker-panel" id="multi-year-comparison">
+    <div><p class="eyebrow ink">JÄMFÖR ÖVER ÅR</p><h2>Jämför dig med dig själv mellan upplagor</h2><p>Välj två resultat från samma loppfamilj. Årsjämförelsen använder respektive upplagas verkliga resultat och visar bara passage- och segmentdata när banversionerna faktiskt är jämförbara.</p></div>
+    <div class="multi-year-picker-controls">
+      <label for="multi-year-year">År<select id="multi-year-year" aria-label="Välj år för jämförelsesökning"><option value="all">Alla år</option></select></label>
+      <div class="picker compare-inline-picker">
+        <label for="multi-year-search">Sök deltagare</label>
+        <input id="multi-year-search" type="search" autocomplete="off" placeholder="Namn eller startnummer" role="combobox" aria-autocomplete="list" aria-controls="multi-year-suggestions" aria-expanded="false">
+        <div id="multi-year-suggestions" class="suggestions" role="listbox" hidden></div>
+      </div>
+      <div class="selected-chips" id="multi-year-selected"></div>
+      <p id="multi-year-feedback" class="muted small" role="status" aria-live="polite"></p>
+      <button id="open-multi-year-comparison" type="button" disabled>Välj två resultat för årsjämförelse</button>
+    </div>
+  </section>
+
   <section class="scope panel" id="overview-context">
     <div><p class="eyebrow ink">LOPP- OCH FÄLTSTATISTIK</p><h2 id="race-heading">Laddar loppkatalog…</h2><p id="load-status" role="status" aria-live="polite">Laddar katalog…</p></div>
   </section>
@@ -59,5 +74,6 @@
 </main><footer><strong>ÖST Splits</strong><p>En del av Loppanalys · Oberoende analys av publicerade tävlingsresultat.</p><a href="https://www.osterlentrail.se/">Österlen Spring Trail</a> · <a href="#method" data-section="method">Källor & metod</a></footer>
 <dialog id="profile" aria-labelledby="profile-title"><div class="dialog-toolbar"><span class="eyebrow">INDIVIDUELL ANALYS</span><button id="close-profile" autofocus aria-label="Stäng profil">Stäng ×</button></div><div id="profile-body"></div></dialog>
 <dialog id="compare-dialog" aria-labelledby="compare-dialog-title"><div class="dialog-toolbar"><div><span class="eyebrow">JÄMFÖRELSEVERKTYG</span><h2 id="compare-dialog-title">Direktjämförelse & Kartduell</h2></div><button id="close-compare-dialog" aria-label="Stäng jämförelse">Stäng ×</button></div><div id="compare-dialog-body"></div></dialog>
+<dialog id="multi-year-dialog" class="multi-year-dialog" aria-labelledby="multi-year-dialog-title"><div class="dialog-toolbar"><div><span class="eyebrow">JÄMFÖRELSE ÖVER ÅR</span><h2 id="multi-year-dialog-title">Två lopp · olika upplagor</h2></div><div class="multi-year-dialog-actions"><button id="multi-year-share" class="secondary" type="button">↗ Dela jämförelse</button><button id="close-multi-year-dialog" type="button" aria-label="Stäng årsjämförelse">Stäng ×</button></div></div><div id="multi-year-dialog-body"></div></dialog>
 <dialog id="duel" class="duel-dialog" aria-labelledby="duel-dialog-race"><header class="duel-dialog-header"><div class="duel-dialog-heading"><span>KARTDUELL</span><strong id="duel-dialog-race">Valt lopp</strong><small id="duel-dialog-count">2 deltagare</small></div><div class="duel-dialog-clock" aria-label="Tävlingsklocka"><span>TÄVLINGSKLOCKA</span><strong id="duel-dialog-clock">0:00:00</strong><small>av <span id="duel-dialog-clock-max">0:00:00</span></small></div><div class="duel-dialog-actions"><button class="secondary" id="duel-dialog-share" type="button">↗ <span>Dela</span></button><button id="close-duel" class="duel-dialog-close" type="button" aria-label="Stäng Kartduell">×</button></div></header><div id="duel-body" class="duel-modal-stage"></div></dialog>
 <noscript>ÖST Splits behöver JavaScript för att läsa och analysera resultaten.</noscript></body></html>
