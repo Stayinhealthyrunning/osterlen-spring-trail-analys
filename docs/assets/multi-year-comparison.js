@@ -130,7 +130,7 @@ export function createMultiYearComparison({boot,loader}){
   root.addEventListener('click',event=>{const add=event.target.closest('[data-multi-year-add]'),remove=event.target.closest('[data-multi-year-remove]');if(add){const item=suggestionMap.get(add.dataset.multiYearAdd);if(item&&!selected.some(row=>row.token===item.token)&&selected.length<5){selected=[...selected,item];renderSelected();search.value='';hideSuggestions();search.focus();}return;}if(remove){selected=selected.filter(row=>row.token!==remove.dataset.multiYearRemove);renderSelected();return;}});
   function updatePicker(focus=false){
     const latest=editions()[0]?.year;
-    const current=String(yearSelect.value)===String(latest)&&activeYear===Number(latest);
+    const current=String(yearSelect.value)===String(activeYear);
     root.hidden=current;
     const regular=document.getElementById('duel-current-picker');
     if(regular)regular.hidden=!current;
@@ -146,9 +146,9 @@ export function createMultiYearComparison({boot,loader}){
   renderSelected();
   return {
     setContext(nextFamily,nextYear){
-      const changed=family!==nextFamily;family=nextFamily;activeYear=Number(nextYear)||null;if(changed){selected=[];restored=false;}
+      const changed=family!==nextFamily,previousActiveYear=activeYear;family=nextFamily;activeYear=Number(nextYear)||null;if(changed){selected=[];restored=false;}
       const latest=editions()[0]?.year;
-      const previous=changed?String(latest):yearSelect.value;
+      const previous=changed||!previousActiveYear||String(yearSelect.value)===String(previousActiveYear)?String(activeYear):yearSelect.value;
       yearSelect.innerHTML=editions().map(item=>`<option value="${item.year}">${item.year}</option>`).join('')+'<option value="all">Alla år</option>';
       const deepLink=new URLSearchParams(location.search).get('xyFamily')===family;
       yearSelect.value=deepLink?'all':editions().some(item=>String(item.year)===String(previous))?String(previous):String(latest);
