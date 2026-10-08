@@ -1,5 +1,5 @@
 import {adapt} from './data-adapter.js';
-import {finite,finished} from './analytics.js';
+import {finite,finished,comparable} from './analytics.js';
 import {esc,time} from './charts.js';
 
 const tokenFor=(raceKey,id)=>String(raceKey)+'::'+String(id);
@@ -9,11 +9,8 @@ const pct=value=>finite(value)?Number(value).toFixed(1).replace('.',',')+' %':'�
 const signed=value=>!finite(value)?'–':Number(value)===0?'0:00':(Number(value)>0?'+':'−')+time(Math.abs(Number(value)));
 
 export function wholeCourseComparable(boot,leftRace,rightRace){
-  if(!leftRace||!rightRace||leftRace.race_family!==rightRace.race_family)return false;
-  const a=boot?.courses?.[leftRace.course_version]||null,b=boot?.courses?.[rightRace.course_version]||null;
-  if(leftRace.course_version&&leftRace.course_version===rightRace.course_version&&a&&b)return true;
-  const ga=a?.whole_course_comparison_group,gb=b?.whole_course_comparison_group;
-  return Boolean(ga&&gb&&ga===gb);
+  if(!leftRace||!rightRace)return false;
+  return comparable(leftRace,rightRace,boot?.courses||{});
 }
 function fieldPercentile(adapter,record){
   if(!finished(record)||!finite(record.finish_seconds))return null;
