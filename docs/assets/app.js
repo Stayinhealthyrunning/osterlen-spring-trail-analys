@@ -5,7 +5,7 @@ import {filterRows,finite,finished,median} from './analytics.js';
 import {esc,time,empty,statusLabel,info,elevation} from './charts.js';
 import * as views from './views.js';
 import {plan} from './race-plan.js';
-import {createMultiYearComparison} from './multi-year-comparison.js?v=20261008-persist-1';
+import {createMultiYearComparison} from './multi-year-comparison.js?v=20261008-clean-chips-1';
 import {pace,table,tr} from './charts.js';
 const $=s=>document.querySelector(s),loader=new DataLoader(),labels={overview:'Översikt',statistics:'Statistik',gender:'Genusperspektiv','age-analysis':'Klass & ålder',segments:'Delsträckor',history:'Historik',clubs:'Klubb & ort',method:'Metod',results:'Resultat',compare:'Jämför'};
 let boot,a,state,store,favorites=[],generation=0,renderVersion=0,mapView=null,profileMap=null,duelMap=null,headToHeadCourse=null,courseDifficultyMap=null,multiYearComparison=null,profileTrigger=null,compareTrigger=null,comparisonUrlOwned=false,clubSuggestionIndex=-1,lookupSuggestionIndex=-1,compareSuggestionIndex=-1,duelSuggestionIndex=-1,clubArenaSuggestionIndex=-1,sectionObserver=null;
