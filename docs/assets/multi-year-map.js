@@ -49,20 +49,25 @@ function mount(root,rawItems,options={}){
  const maxClock=Math.max(0,...items.map(item=>item.anchors.at(-1)?.time||0));
  const all=mapped.flatMap(item=>item.points);
  const allGeo=all.map(p=>merc(p[0],p[1]));
+ const bounds=geo=>{
+  let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;
+  for(const [x,y] of geo){if(x<minX)minX=x;if(x>maxX)maxX=x;if(y<minY)minY=y;if(y>maxY)maxY=y;}
+  return{minX,maxX,minY,maxY};
+ };
  const fitGeo=(geo,padding=125)=>{
   if(!geo.length)return 10;
-  const xs=geo.map(p=>p[0]),ys=geo.map(p=>p[1]);
-  const dx=Math.max(.00001,Math.max(...xs)-Math.min(...xs)),dy=Math.max(.00001,Math.max(...ys)-Math.min(...ys));
+  const b=bounds(geo),dx=Math.max(.00001,b.maxX-b.minX),dy=Math.max(.00001,b.maxY-b.minY);
   return clamp(Math.log2(Math.min((W-padding*2)/dx,(H-padding*2)/dy)),7,16);
  };
- const routeGeo=()=>mapped.filter(item=>item.visible).flatMap(item=>item.points.map(p=>merc(p[0],p[1])));
+ const routeGeo=()=>mapped.filter(item=>item.visible).flatMap(item=>item.geoPoints);
  const centerGeo=geo=>{
-  const xs=geo.map(p=>p[0]),ys=geo.map(p=>p[1]);
-  return [(Math.min(...xs)+Math.max(...xs))/2,(Math.min(...ys)+Math.max(...ys))/2];
+  const b=bounds(geo);return[(b.minX+b.maxX)/2,(b.minY+b.maxY)/2];
  };
+ for(const item of mapped)item.geoPoints=item.points.map(p=>merc(p[0],p[1]));
  const fullRoute=()=>{const geo=routeGeo();return geo.length?geo:allGeo;};
- let fullZoom=fitGeo(fullRoute(),92),cameraMode='both',manualZoomDelta=0,clock=0,playing=false,raf=0,started=0,initialClock=0,seconds=120,terminated=false,activated=false;
- let renderZoom=Math.round(fullZoom),cameraZoom=fullZoom,cameraGeo=centerGeo(fullRoute()),lastFrame=0;
+ let currentRouteGeo=fullRoute(),fullZoom=fitGeo(currentRouteGeo,92),fullCenter=centerGeo(currentRouteGeo);
+ let cameraMode='both',manualZoomDelta=0,clock=0,playing=false,raf=0,started=0,initialClock=0,seconds=120,terminated=false,activated=false;
+ let renderZoom=Math.round(fullZoom),cameraZoom=fullZoom,cameraGeo=[...fullCenter];
  let origin=[0,0],scene=null,tileLayer=null,markerLayer=null,markerNodes=[],tileKey='',lastTileFrame=0;
  const title='<div class="multi-year-map-head"><div><p class="eyebrow">KARTJÄMFÖRELSE MELLAN ÅR</p><h3>Banvarianter och beräknad position</h3><p>Olika färger visar varje upplagas egen dokumenterade rutt. Markörernas lägen beräknas mellan verkliga tidspassager, inte från deltagarens GPS.</p></div></div>';
  const legend=items.map(item=>'<label class="multi-year-route-option"><input type="checkbox" data-route-visible="'+item.index+'" '+(item.points.length>=2?'checked':'disabled')+'><i style="background:'+item.color+'"></i><span><strong>'+esc(item.year+' · '+item.name)+'</strong><small>'+esc(item.provenance||'Rutt saknas')+(item.points.length>=2?' · '+item.points.at(-1)[2].toFixed(1).replace('.',',')+' km':'')+'</small></span></label>').join('');
@@ -109,11 +114,9 @@ function mount(root,rawItems,options={}){
   return seen;
  };
  function desiredCamera(){
-  const allRoutes=fullRoute(),full=centerGeo(allRoutes);
-  fullZoom=fitGeo(allRoutes,92);
   const tracking=selectedMarkers();
   const effectiveMode=activated?cameraMode:'full';
-  if(effectiveMode==='full'||!tracking.length)return{center:full,zoom:clamp(fullZoom+manualZoomDelta,7,17)};
+  if(effectiveMode==='full'||!tracking.length)return{center:fullCenter,zoom:clamp(fullZoom+manualZoomDelta,7,17)};
   const focused=effectiveMode==='leader'?[tracking.reduce((best,item)=>item.progress>best.progress?item:best,tracking[0])]:tracking;
   const geo=focused.map(x=>x.geo);
   const fitting=fitGeo(geo,110);
@@ -205,7 +208,11 @@ function mount(root,rawItems,options={}){
  range?.addEventListener('input',()=>{stop();activated=true;updateClock(range.value,true);});
  root.querySelectorAll('[data-map-zoom]').forEach(button=>button.addEventListener('click',()=>{activated=true;manualZoomDelta=clamp(manualZoomDelta+Number(button.dataset.mapZoom),-4,4);refreshCamera(true);}));
  root.querySelector('[data-map-fit]')?.addEventListener('click',()=>{cameraMode='full';activated=true;manualZoomDelta=0;const select=root.querySelector('[data-map-camera]');if(select)select.value='full';refreshCamera(true);});
- root.querySelectorAll('[data-route-visible]').forEach(input=>input.addEventListener('change',()=>{items[Number(input.dataset.routeVisible)].visible=input.checked;renderGeometry();refreshCamera(true);}));
+ root.querySelectorAll('[data-route-visible]').forEach(input=>input.addEventListener('change',()=>{
+  items[Number(input.dataset.routeVisible)].visible=input.checked;
+  currentRouteGeo=fullRoute();fullZoom=fitGeo(currentRouteGeo,92);fullCenter=centerGeo(currentRouteGeo);
+  renderGeometry();refreshCamera(true);
+ }));
  renderGeometry();
  return{destroy(){
   if(terminated)return;stop();terminated=true;
