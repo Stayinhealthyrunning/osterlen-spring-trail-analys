@@ -9,6 +9,7 @@ import {DataLoader} from '../docs/assets/data-loader.js';
 import {terrainMetrics,COMPARISON_CAMERA_CENTER_EASE} from '../docs/assets/map-engine.js';
 import {progression,progressionBySex,courseDifficulty,gender,clubs,statistics,compare} from '../docs/assets/views.js';
 import {plan} from '../docs/assets/race-plan.js';
+import {wholeCourseComparable,buildComparisonModel} from '../docs/assets/multi-year-comparison.js';
 const read=p=>JSON.parse(fs.readFileSync(new URL('../docs/data/'+p,import.meta.url),'utf8').replace(/^\uFEFF/,''));
 const boot=read('bootstrap.json'),history=read('history.json'),doc=k=>read('races/'+k+'.json'),adapter=k=>adapt(doc(k),boot);
 test('presentation provides family-specific goal defaults',()=>{assert.deepEqual(Object.fromEntries(Object.entries(boot.presentation).map(([family,p])=>[family,p.default_goal_seconds])),{ultra60:27000,trail22:9000,trail14:5400,trail5:2100,duo60:23400});});
@@ -78,3 +79,38 @@ test('gender section uses one shared scope while keeping the paired summary card
 test('statistics uses DNF label, independent DNF filtering and exact two-segment control names',()=>{const a=adapter('ost-2025-ultra60'),html=statistics(a,a.records,{unit:'pace',sexViews:{}});assert.match(html,/>DNF</);assert.doesNotMatch(html,/REPET DRAS/);assert.match(html,/Start till Bengtemölla Kvarn/);assert.match(html,/Bengtemölla Kvarn till mål/);assert.doesNotMatch(html,/data-sex-view="segments"/);});
 test('club arena names its analyses, explains sparse passage data and splits finishers by sex',()=>{const a=adapter('ost-2025-ultra60'),club=groups(a.records,'club').find(x=>x.total<5),state={unit:'pace',clubNames:club?[club.name]:[]},html=clubs(a,a.records,state);assert.match(html,/Pacing mellan valda grupper/);assert.match(html,/För få källstödda passager finns för att jämföra pacing mellan de valda klubbarna i denna upplaga\./);assert.match(html,/MÄN/);assert.match(html,/KVINNOR/);assert.match(html,/data-info="club-arena-help"/);assert.doesNotMatch(html,/Underlag saknas\./);});
 
+
+
+test('multi-year comparison honors explicit course comparability without borrowing geometry',()=>{
+  const a22=adapter('ost-2022-trail22'),b22=adapter('ost-2023-trail22');
+  const ra=a22.records.find(finished),rb=b22.records.find(finished);
+  const model=buildComparisonModel(boot,{adapter:a22,record:ra},{adapter:b22,record:rb});
+  assert.equal(model.sameCourse,true);
+  assert.equal(model.wholeComparable,true);
+  assert.ok(Number.isFinite(model.finishGap));
+  assert.ok(model.checkpoints.length>0);
+  assert.ok(model.segments.length>0);
+
+  const a60=adapter('ost-2019-ultra60'),b60=adapter('ost-2022-ultra60');
+  assert.equal(a60.race.course_version===b60.race.course_version,false);
+  assert.equal(wholeCourseComparable(boot,a60.race,b60.race),true);
+  const grouped=buildComparisonModel(boot,{adapter:a60,record:a60.records.find(finished)},{adapter:b60,record:b60.records.find(finished)});
+  assert.equal(grouped.sameCourse,false);
+  assert.equal(grouped.wholeComparable,true);
+  assert.ok(Number.isFinite(grouped.finishGap));
+  assert.equal(grouped.checkpoints.length,0);
+  assert.equal(grouped.segments.length,0);
+
+  const distinct=adapter('ost-2024-ultra60');
+  assert.equal(wholeCourseComparable(boot,a60.race,distinct.race),false);
+  const incompatible=buildComparisonModel(boot,{adapter:a60,record:a60.records.find(finished)},{adapter:distinct,record:distinct.records.find(finished)});
+  assert.equal(incompatible.wholeComparable,false);
+  assert.equal(incompatible.finishGap,null);
+});
+test('multi-year comparison UI exposes all-year search and explicit two-result workflow',()=>{
+  const markup=fs.readFileSync(new URL('../docs/index.html',import.meta.url),'utf8');
+  assert.match(markup,/id="multi-year-year"/);
+  assert.match(markup,/Alla år/);
+  assert.match(markup,/Jämför dig med dig själv mellan upplagor/);
+  assert.match(markup,/id="open-multi-year-comparison"/);
+});
