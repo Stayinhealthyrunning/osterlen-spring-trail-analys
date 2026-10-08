@@ -85,6 +85,11 @@ const server=http.createServer((req,res)=>{
     if(await page.locator('#multi-year-map-root [data-map-duration]').inputValue()!=='120')throw Error('Default replay duration must be 120s');
     if(!await page.locator('#multi-year-map-root [data-map-music]').count())throw Error('Race soundtrack controls missing');
     if(await page.locator('#multi-year-map-root [data-map-volume]').inputValue()!=='0.3')throw Error('Initial soundtrack volume is not 30 percent');
+    await page.evaluate(()=>{
+      window.__stableReplayScene=document.querySelector('#multi-year-route-svg [data-map-scene]');
+      window.__stableReplayTiles=document.querySelector('#multi-year-route-svg [data-map-tiles]');
+      window.__stableReplayMarkers=document.querySelector('#multi-year-route-svg [data-map-markers]');
+    });
     await camera.selectOption('full');
     const initialScene=await page.locator('#multi-year-route-svg [data-map-scene]').getAttribute('transform');
     await camera.selectOption('both');
@@ -93,6 +98,16 @@ const server=http.createServer((req,res)=>{
     await page.locator('#multi-year-map-root [data-map-zoom="1"]').click();
     const zoomedScene=await page.locator('#multi-year-route-svg [data-map-scene]').getAttribute('transform');
     if(zoomedScene===followingScene)throw Error('Zoom-in failed to update map transformation');
+    // Regression for intermittent map flashes: crossing several map zoom
+    // levels must not replace the SVG scene, tile group or runner marker group.
+    for(let n=0;n<3;n++)await page.locator('#multi-year-map-root [data-map-zoom="1"]').click();
+    const stability=await page.evaluate(()=>({
+      scene:window.__stableReplayScene===document.querySelector('#multi-year-route-svg [data-map-scene]'),
+      tiles:window.__stableReplayTiles===document.querySelector('#multi-year-route-svg [data-map-tiles]'),
+      markers:window.__stableReplayMarkers===document.querySelector('#multi-year-route-svg [data-map-markers]'),
+      tiledImages:document.querySelectorAll('#multi-year-route-svg [data-map-tile]').length
+    }));
+    if(!stability.scene||!stability.tiles||!stability.markers||!stability.tiledImages)throw Error('Map layers flashed/rebuilt across zoom: '+JSON.stringify(stability));
     await camera.selectOption('leader');
     if(await camera.inputValue()!=='leader')throw Error('Follow-furthest mode unavailable');
     await page.locator('#multi-year-map-root [data-map-fit]').click();
