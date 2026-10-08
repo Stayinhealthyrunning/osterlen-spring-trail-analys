@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#1677A8"><meta name="description" content="Utforska verkliga resultat, mellantider och banor från Österlen Spring Trail 2018–2026."><link rel="canonical" href="https://www.loppanalys.se/osterlen-spring-trail-analys/"><meta property="og:type" content="website"><meta property="og:locale" content="sv_SE"><meta property="og:site_name" content="Loppanalys.se"><meta property="og:title" content="ÖST Splits – Österlen Spring Trail Analys"><meta property="og:description" content="Utforska verkliga resultat, mellantider och banor från Österlen Spring Trail 2018–2026."><meta property="og:url" content="https://www.loppanalys.se/osterlen-spring-trail-analys/"><meta property="og:image" content="https://www.loppanalys.se/osterlen-spring-trail-analys/assets/ost-social-share-1200x630.webp?v=20261005-social2"><meta property="og:image:type" content="image/webp"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Löpare på kuststig vid havet på Österlen"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ÖST Splits – Österlen Spring Trail Analys"><meta name="twitter:description" content="Utforska verkliga resultat, mellantider och banor från Österlen Spring Trail 2018–2026."><meta name="twitter:image" content="https://www.loppanalys.se/osterlen-spring-trail-analys/assets/ost-social-share-1200x630.webp?v=20261005-social2"><meta name="twitter:image:alt" content="Löpare på kuststig vid havet på Österlen"><link rel="icon" href="data:,"><title>ÖST Splits – Österlen Spring Trail Analys</title><link rel="stylesheet" href="assets/style.css"><script type="module" src="assets/app.js"></script></head>
+<html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#1677A8"><meta name="description" content="Utforska verkliga resultat, mellantider och banor från Österlen Spring Trail 2018–2026."><link rel="canonical" href="https://www.loppanalys.se/osterlen-spring-trail-analys/"><meta property="og:type" content="website"><meta property="og:locale" content="sv_SE"><meta property="og:site_name" content="Loppanalys.se"><meta property="og:title" content="ÖST Splits – Österlen Spring Trail Analys"><meta property="og:description" content="Utforska verkliga resultat, mellantider och banor från Österlen Spring Trail 2018–2026."><meta property="og:url" content="https://www.loppanalys.se/osterlen-spring-trail-analys/"><meta property="og:image" content="https://www.loppanalys.se/osterlen-spring-trail-analys/assets/ost-social-share-1200x630.webp?v=20261005-social2"><meta property="og:image:type" content="image/webp"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Löpare på kuststig vid havet på Österlen"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ÖST Splits – Österlen Spring Trail Analys"><meta name="twitter:description" content="Utforska verkliga resultat, mellantider och banor från Österlen Spring Trail 2018–2026."><meta name="twitter:image" content="https://www.loppanalys.se/osterlen-spring-trail-analys/assets/ost-social-share-1200x630.webp?v=20261005-social2"><meta name="twitter:image:alt" content="Löpare på kuststig vid havet på Österlen"><link rel="icon" href="data:,"><title>ÖST Splits – Österlen Spring Trail Analys</title><link rel="stylesheet" href="assets/style.css"><script src="assets/multi-year-map.js?v=20261008-kart-1" defer></script><script type="module" src="assets/app.js"></script></head>
 <body><a class="skip" href="#main">Hoppa till analysen</a>
 <header><a class="brand" href="./" aria-label="ÖST Splits, startsida"><span class="brand-mark">ÖST</span><span>Splits<small>ÖSTERLEN SPRING TRAIL</small></span></a><nav aria-label="Huvudnavigation"><a href="#analysis">Utforska loppet</a><a href="#method" data-section="method">Så fungerar det</a></nav></header>
 <main id="main" tabindex="-1">
@@ -29,33 +29,35 @@
   </section>
 
   <section class="panel duel-picker-panel" id="map-duel-panel">
-    <div><p class="eyebrow ink">KARTA &amp; KARTDUELL</p><h2>Jämför loppet på kartan</h2><p id="duel-copy">Kartduell jämför två till fem deltagare på banan. För analys av en enda deltagare använder du deltagaranalysen och Replay.</p></div>
+    <div><p class="eyebrow ink">KARTA &amp; KARTDUELL</p><h2>Jämför lopp på kartan</h2><p id="duel-copy">Jämför 2–5 deltagare från en upplaga eller välj Alla år för att jämföra egna resultat och banvarianter mellan olika år.</p></div>
     <div>
-      <div class="picker compare-inline-picker">
-        <label for="duel-search">Välj deltagare</label>
-        <input id="duel-search" type="search" autocomplete="off" placeholder="Namn eller startnummer" role="combobox" aria-autocomplete="list" aria-controls="duel-suggestions" aria-expanded="false">
-        <div id="duel-suggestions" class="suggestions" role="listbox" hidden></div>
+      <label class="multi-year-top-year" for="multi-year-year">År
+        <select id="multi-year-year" aria-label="Välj år för kartjämförelsesökning"><option value="all">Alla år</option></select>
+      </label>
+      <div id="duel-current-picker">
+        <div class="picker compare-inline-picker">
+          <label for="duel-search">Välj deltagare</label>
+          <input id="duel-search" type="search" autocomplete="off" placeholder="Namn eller startnummer" role="combobox" aria-autocomplete="list" aria-controls="duel-suggestions" aria-expanded="false">
+          <div id="duel-suggestions" class="suggestions" role="listbox" hidden></div>
+        </div>
+        <div class="selected-chips" id="duel-selected"></div>
+        <div class="duel-launchers">
+          <button id="open-head-to-head" type="button" disabled>Välj två resultat</button>
+          <button id="open-map-duel" type="button" disabled>Välj minst två resultat</button>
+        </div>
       </div>
-      <div class="selected-chips" id="duel-selected"></div>
-      <div class="duel-launchers">
-        <button id="open-head-to-head" type="button" disabled>Välj två resultat</button>
-        <button id="open-map-duel" type="button" disabled>Välj minst två resultat</button>
+      <div id="multi-year-comparison" hidden>
+        <div class="multi-year-picker-controls">
+          <div class="picker compare-inline-picker">
+            <label for="multi-year-search">Sök löpare eller lag från valt år eller alla år</label>
+            <input id="multi-year-search" type="search" autocomplete="off" placeholder="Namn eller startnummer" role="combobox" aria-autocomplete="list" aria-controls="multi-year-suggestions" aria-expanded="false">
+            <div id="multi-year-suggestions" class="suggestions" role="listbox" hidden></div>
+          </div>
+          <div class="selected-chips" id="multi-year-selected"></div>
+          <p id="multi-year-feedback" class="muted small" role="status" aria-live="polite"></p>
+          <button id="open-multi-year-comparison" type="button" disabled>Välj två resultat för kartjämförelse</button>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <section class="panel multi-year-picker-panel" id="multi-year-comparison">
-    <div><p class="eyebrow ink">JÄMFÖR ÖVER ÅR</p><h2>Jämför dig med dig själv mellan upplagor</h2><p>Välj två resultat från samma loppfamilj. Årsjämförelsen använder respektive upplagas verkliga resultat och visar bara passage- och segmentdata när banversionerna faktiskt är jämförbara.</p></div>
-    <div class="multi-year-picker-controls">
-      <label for="multi-year-year">År<select id="multi-year-year" aria-label="Välj år för jämförelsesökning"><option value="all">Alla år</option></select></label>
-      <div class="picker compare-inline-picker">
-        <label for="multi-year-search">Sök deltagare</label>
-        <input id="multi-year-search" type="search" autocomplete="off" placeholder="Namn eller startnummer" role="combobox" aria-autocomplete="list" aria-controls="multi-year-suggestions" aria-expanded="false">
-        <div id="multi-year-suggestions" class="suggestions" role="listbox" hidden></div>
-      </div>
-      <div class="selected-chips" id="multi-year-selected"></div>
-      <p id="multi-year-feedback" class="muted small" role="status" aria-live="polite"></p>
-      <button id="open-multi-year-comparison" type="button" disabled>Välj två resultat för årsjämförelse</button>
     </div>
   </section>
 
