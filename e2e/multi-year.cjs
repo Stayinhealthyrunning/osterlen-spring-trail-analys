@@ -21,7 +21,11 @@ const server=http.createServer((req,res)=>{
     await page.goto(`http://127.0.0.1:${port}/`,{waitUntil:'domcontentloaded'});
     await page.waitForFunction(()=>document.querySelector('#load-status')?.textContent.includes('upplaga klar'));
     await page.waitForSelector('#multi-year-year');
-    if(await page.locator('#multi-year-year').inputValue()!=='all')throw Error('Multi-year selector did not default to all years');
+    if(await page.locator('#multi-year-year').inputValue()!=='2026')throw Error('Year selector should default to latest year');
+    if(await page.locator('#multi-year-comparison').isVisible())throw Error('Historical search must not create its own visible panel');
+    await page.locator('#multi-year-year').selectOption('all');
+    if(!await page.locator('#multi-year-comparison').isVisible())throw Error('All-years search did not become visible in the same panel');
+    if(await page.locator('#duel-current-picker').isVisible())throw Error('Current-edition picker did not hide');
 
     await page.locator('#multi-year-search').fill('Christian Malmström');
     await page.waitForFunction(()=>document.querySelectorAll('#multi-year-suggestions [data-multi-year-add]').length>=2);
@@ -44,6 +48,11 @@ const server=http.createServer((req,res)=>{
     if(!body.includes('Christian Malmström'))throw Error('Runner missing from comparison');
     if(!body.includes('Passagegap är avstängt'))throw Error('Distinct course versions were not safely degraded');
     if(body.includes('A snabbare med')||body.includes('B snabbare med'))throw Error('Incompatible 2024/2022 courses were directly ranked');
+    await page.waitForFunction(()=>document.querySelectorAll('#multi-year-route-svg path[stroke-width="3.8"]').length===2);
+    const legends=(await page.locator('#multi-year-map-root .multi-year-route-option').allInnerTexts()).join(' | ');
+    if(!legends.includes('2024')||!legends.includes('2022'))throw Error('Both year-specific routes must be distinguished');
+    await page.locator('#multi-year-map-root [data-map-range]').evaluate(node=>{node.value='3600';node.dispatchEvent(new Event('input',{bubbles:true}))});
+    if(!await page.locator('#multi-year-map-root [data-map-marker]').count())throw Error('Source-backed positions missing');
     if(errors.length)throw Error('Browser errors: '+errors.join(' | '));
     console.log('PASS ÖST multi-year comparison');
   }finally{await browser.close();await new Promise(resolve=>server.close(resolve))}

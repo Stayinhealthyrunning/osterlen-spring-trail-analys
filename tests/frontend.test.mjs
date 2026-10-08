@@ -111,6 +111,10 @@ test('multi-year comparison UI exposes all-year search and explicit two-result w
   const markup=fs.readFileSync(new URL('../docs/index.html',import.meta.url),'utf8');
   assert.match(markup,/id="multi-year-year"/);
   assert.match(markup,/Alla år/);
-  assert.match(markup,/Jämför dig med dig själv mellan upplagor/);
+  assert.match(markup,/Jämför lopp på kartan/);
+  assert.match(markup,/id="map-duel-panel"/);
+  assert.match(markup,/id="multi-year-comparison" hidden/);
+  assert.doesNotMatch(markup,/<section[^>]+id="multi-year-comparison"/);
+  assert.match(markup,/multi-year-map.js/);
   assert.match(markup,/id="open-multi-year-comparison"/);
 });

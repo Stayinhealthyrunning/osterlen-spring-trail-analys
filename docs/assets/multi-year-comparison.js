@@ -70,7 +70,7 @@ function comparisonHtml(model){
 export function createMultiYearComparison({boot,loader}){
   const root=document.getElementById('multi-year-comparison'),yearSelect=document.getElementById('multi-year-year'),search=document.getElementById('multi-year-search'),suggestions=document.getElementById('multi-year-suggestions'),chips=document.getElementById('multi-year-selected'),button=document.getElementById('open-multi-year-comparison'),feedback=document.getElementById('multi-year-feedback'),dialog=document.getElementById('multi-year-dialog'),body=document.getElementById('multi-year-dialog-body');
   if(!root||!yearSelect||!search||!suggestions||!chips||!button||!dialog||!body)return{setContext(){}};
-  let family=null,activeYear=null,selected=[],suggestionMap=new Map(),searchVersion=0,restored=false;
+  let family=null,activeYear=null,selected=[],suggestionMap=new Map(),searchVersion=0,restored=false,mapController=null;
   const cache=new Map();
   const editions=()=>Object.values(boot.race_catalog||{}).filter(item=>item.race_family===family).sort((a,b)=>b.year-a.year);
   async function loadEdition(meta){
@@ -78,9 +78,9 @@ export function createMultiYearComparison({boot,loader}){
     return cache.get(meta.race_key);
   }
   function renderSelected(){
-    chips.innerHTML=selected.length?selected.map((item,index)=>`<button type="button" data-multi-year-remove="${esc(item.token)}"><i>${index+1}</i><span>${esc(item.record.name)} · ${item.adapter.race.year}${item.record.bib?' · #'+esc(item.record.bib):''}</span><b>×</b></button>`).join(''):'<span class="selection-empty">Välj exakt två resultat – samma person kan väljas från olika år.</span>';
-    button.disabled=selected.length!==2;button.textContent=selected.length===2?'Jämför två år':'Välj två resultat för årsjämförelse';
-    feedback.textContent=selected.length===2?(selected[0].adapter.race.year===selected[1].adapter.race.year?'Samma upplaga vald. För Kartduell använder du panelen ovan.':'Olika år valda · Direktjämförelsen anpassas efter banornas jämförbarhet.'):'';
+    chips.innerHTML=selected.length?selected.map((item,index)=>`<button type="button" data-multi-year-remove="${esc(item.token)}"><i>${index+1}</i><span>${esc(item.record.name)} · ${item.adapter.race.year}${item.record.bib?' · #'+esc(item.record.bib):''}</span><b>×</b></button>`).join(''):'<span class="selection-empty">Välj 2–5 resultat – samma person kan väljas från flera år.</span>';
+    button.disabled=selected.length<2;button.textContent=selected.length>=2?'Jämför '+selected.length+' resultat på kartan':'Välj minst två resultat för kartjämförelse';
+    feedback.textContent=selected.length>=2?selected.map(x=>x.adapter.race.year).join(' · ')+' · årsbanorna visas separat på kartan.':'';
   }
   function hideSuggestions(){suggestions.hidden=true;suggestions.innerHTML='';search.setAttribute('aria-expanded','false');suggestionMap.clear();}
   async function runSearch(){
@@ -95,33 +95,64 @@ export function createMultiYearComparison({boot,loader}){
     suggestions.innerHTML=suggestionMap.size?[...suggestionMap.values()].map((item,index)=>`<button type="button" id="multi-year-option-${index}" role="option" data-multi-year-add="${esc(item.token)}"><span><strong>${esc(item.record.name)}</strong><small>${item.meta.year}${item.record.bib?' · #'+esc(item.record.bib):''}${item.record.club?' · '+esc(item.record.club):''}</small></span><b>${finite(item.record.finish_seconds)?time(item.record.finish_seconds):esc(item.record.status||'–')}</b></button>`).join(''):'<p class="picker-empty">Ingen deltagare hittades i valda år.</p>';
   }
   function shareUrl(){
-    const url=new URL(location.href);for(const key of ['xyFamily','xyA','xyB'])url.searchParams.delete(key);
-    if(selected.length===2){url.searchParams.set('xyFamily',family);url.searchParams.set('xyA',selected[0].token);url.searchParams.set('xyB',selected[1].token);}
+    const url=new URL(location.href);for(const key of ['xyFamily','xyA','xyB','xyResult'])url.searchParams.delete(key);
+    if(selected.length>=2){url.searchParams.set('xyFamily',family);for(const item of selected)url.searchParams.append('xyResult',item.token);}
     return url.href;
   }
   async function openComparison(){
-    if(selected.length!==2)return;const model=buildComparisonModel(boot,selected[0],selected[1]);body.innerHTML=comparisonHtml(model);dialog.showModal();
+    if(selected.length<2||selected.length>5)return;
+    mapController?.destroy?.();mapController=null;
+    const detail=selected.length===2?comparisonHtml(buildComparisonModel(boot,selected[0],selected[1])):'<section class="multi-year-section"><h3>Resultat från olika år</h3><div class="table-wrap"><table><thead><tr><th>År</th><th>Deltagare</th><th>Status</th><th>Sluttid</th><th>Plats</th><th>Snabbare än årets fält</th></tr></thead><tbody>'+selected.map(x=>'<tr><td>'+esc(x.adapter.race.year)+'</td><th>'+esc(x.record.name)+'</th><td>'+esc(x.record.status)+'</td><td>'+time(x.record.finish_seconds)+'</td><td>'+esc(x.record.overall_place??'–')+'</td><td>'+String(fieldPercentile(x.adapter,x.record)?.toFixed(1).replace('.',',')??'–')+' %</td></tr>').join('')+'</tbody></table></div><p class="muted">Kartjämförelsen visar varje upplagas bana. En gemensam placering eller tidsvinnare mellan olika banor beräknas inte.</p></section>';
+    body.innerHTML='<section class="multi-year-map-card" id="multi-year-map-root"><p class="muted">Laddar dokumenterade bansträckningar…</p></section>'+detail;
+    if(!dialog.open)dialog.showModal();
+    const token=selected.map(x=>x.token).join('|');
+    const items=await Promise.all(selected.map(async x=>{
+      try{
+        const route=await loader.route(x.adapter.race);
+        const anchors=x.adapter.anchors(x.record,route);
+        return {year:x.adapter.race.year,name:x.record.name,
+          provenance:route.provenance_label||x.adapter.course?.assets?.route_provenance_label||'Dokumenterad banreferens',
+          points:(route.points||[]).map(p=>[p[0],p[1],p[3]]),
+          anchors:anchors.map(a=>({time:a.time,distance:a.distance}))};
+      }catch{
+        return {year:x.adapter.race.year,name:x.record.name,provenance:'Ingen verifierad publik bana för upplagan',points:[],anchors:[]};
+      }
+    }));
+    if(!dialog.open||selected.map(x=>x.token).join('|')!==token)return;
+    mapController=globalThis.LoppMultiYearRouteMap?.mount(body.querySelector('#multi-year-map-root'),items);
   }
   async function restore(){
     if(restored)return;const params=new URLSearchParams(location.search);if(params.get('xyFamily')!==family)return;
-    const tokens=[params.get('xyA'),params.get('xyB')].filter(Boolean);if(tokens.length!==2)return;const rows=[];
+    const tokens=params.getAll('xyResult').length?params.getAll('xyResult'):[params.get('xyA'),params.get('xyB')].filter(Boolean);if(tokens.length<2||tokens.length>5)return;const rows=[];
     for(const token of tokens){const parsed=splitToken(token),meta=editions().find(item=>item.race_key===parsed?.raceKey);if(!meta)return;const edition=await loadEdition(meta),record=edition.adapter.byId.get(parsed.id);if(!record)return;rows.push({...edition,record,token});}
     selected=rows;restored=true;renderSelected();await openComparison();
   }
-  root.addEventListener('click',event=>{const add=event.target.closest('[data-multi-year-add]'),remove=event.target.closest('[data-multi-year-remove]');if(add){const item=suggestionMap.get(add.dataset.multiYearAdd);if(item&&!selected.some(row=>row.token===item.token)){selected=selected.length<2?[...selected,item]:[selected[1],item];renderSelected();search.value='';hideSuggestions();search.focus();}return;}if(remove){selected=selected.filter(row=>row.token!==remove.dataset.multiYearRemove);renderSelected();return;}});
-  yearSelect.addEventListener('change',()=>{search.value='';hideSuggestions();search.focus();});
+  root.addEventListener('click',event=>{const add=event.target.closest('[data-multi-year-add]'),remove=event.target.closest('[data-multi-year-remove]');if(add){const item=suggestionMap.get(add.dataset.multiYearAdd);if(item&&!selected.some(row=>row.token===item.token)&&selected.length<5){selected=[...selected,item];renderSelected();search.value='';hideSuggestions();search.focus();}return;}if(remove){selected=selected.filter(row=>row.token!==remove.dataset.multiYearRemove);renderSelected();return;}});
+  function updatePicker(focus=false){
+    const latest=editions()[0]?.year;
+    const current=String(yearSelect.value)===String(activeYear);
+    root.hidden=current;
+    const regular=document.getElementById('duel-current-picker');
+    if(regular)regular.hidden=!current;
+    if(focus){if(!current)search.focus();else document.getElementById('duel-search')?.focus();}
+  }
+  yearSelect.addEventListener('change',()=>{search.value='';hideSuggestions();updatePicker(true);});
   search.addEventListener('input',runSearch);search.addEventListener('focus',runSearch);search.addEventListener('keydown',event=>{if(event.key==='Escape')hideSuggestions();if(event.key==='Enter'){const first=suggestions.querySelector('[data-multi-year-add]');if(first){event.preventDefault();first.click();}}});
   button.addEventListener('click',openComparison);
   document.getElementById('close-multi-year-dialog')?.addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('close',()=>{mapController?.destroy?.();mapController=null;});
   document.getElementById('multi-year-share')?.addEventListener('click',async event=>{try{await navigator.clipboard.writeText(shareUrl());event.currentTarget.textContent='✓ Länk kopierad';setTimeout(()=>event.currentTarget.textContent='↗ Dela jämförelse',1600);}catch{prompt('Kopiera länken:',shareUrl());}});
   document.addEventListener('click',event=>{if(!event.target.closest('#multi-year-comparison'))hideSuggestions();});
   renderSelected();
   return {
     setContext(nextFamily,nextYear){
-      const changed=family!==nextFamily;family=nextFamily;activeYear=Number(nextYear)||null;if(changed){selected=[];restored=false;}
-      const previous=changed?'all':yearSelect.value;
-      yearSelect.innerHTML='<option value="all">Alla år</option>'+editions().map(item=>`<option value="${item.year}">${item.year}</option>`).join('');
-      yearSelect.value=editions().some(item=>String(item.year)===String(previous))?String(previous):'all';renderSelected();if(changed)hideSuggestions();restore().catch(()=>{});
+      const changed=family!==nextFamily,previousActiveYear=activeYear;family=nextFamily;activeYear=Number(nextYear)||null;if(changed){selected=[];restored=false;}
+      const latest=editions()[0]?.year;
+      const previous=changed||!previousActiveYear||String(yearSelect.value)===String(previousActiveYear)?String(activeYear):yearSelect.value;
+      yearSelect.innerHTML=editions().map(item=>`<option value="${item.year}">${item.year}</option>`).join('')+'<option value="all">Alla år</option>';
+      const deepLink=new URLSearchParams(location.search).get('xyFamily')===family;
+      yearSelect.value=deepLink?'all':editions().some(item=>String(item.year)===String(previous))?String(previous):String(latest);
+      renderSelected();if(changed)hideSuggestions();updatePicker();restore().catch(()=>{});
     }
   };
 }
