@@ -191,7 +191,6 @@ function mount(root,rawItems,options={}){
    node.removeAttribute('visibility');
   }
   updateMarkerScale();
-  }
  }
  function renderGeometry(){
   if(terminated)return;
