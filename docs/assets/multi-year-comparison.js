@@ -67,10 +67,10 @@ function comparisonHtml(model){
   return `<div class="multi-year-comparison"><div class="multi-year-people">${participantCard(model,0)}${participantCard(model,1)}</div><section class="multi-year-finish"><p class="eyebrow">SLUTRESULTAT</p>${finishCopy}</section>${checkpoints}${segments}<section class="multi-year-method"><strong>Jämförelse över år</strong><p>Resultat och fältpercentil kommer från respektive upplaga. Sluttid jämförs direkt endast när banversionerna är identiska eller uttryckligen grupperade som helbanekompatibla. Passage- och segmentdata kräver identisk CourseVersion.</p></section></div>`;
 }
 
-export function createMultiYearComparison({boot,loader}){
+export function createMultiYearComparison({boot,loader,getCurrentSelection=null}){
   const root=document.getElementById('multi-year-comparison'),yearSelect=document.getElementById('multi-year-year'),search=document.getElementById('multi-year-search'),suggestions=document.getElementById('multi-year-suggestions'),chips=document.getElementById('multi-year-selected'),button=document.getElementById('open-multi-year-comparison'),feedback=document.getElementById('multi-year-feedback'),dialog=document.getElementById('multi-year-dialog'),body=document.getElementById('multi-year-dialog-body');
   if(!root||!yearSelect||!search||!suggestions||!chips||!button||!dialog||!body)return{setContext(){}};
-  let family=null,activeYear=null,selected=[],suggestionMap=new Map(),searchVersion=0,restored=false,mapController=null;
+  let family=null,activeYear=null,selected=[],suggestionMap=new Map(),searchVersion=0,restored=false,mapController=null,crossYearSelectionActive=false;
   const cache=new Map();
   const editions=()=>Object.values(boot.race_catalog||{}).filter(item=>item.race_family===family).sort((a,b)=>b.year-a.year);
   async function loadEdition(meta){
@@ -128,15 +128,38 @@ export function createMultiYearComparison({boot,loader}){
     selected=rows;restored=true;renderSelected();await openComparison();
   }
   root.addEventListener('click',event=>{const add=event.target.closest('[data-multi-year-add]'),remove=event.target.closest('[data-multi-year-remove]');if(add){const item=suggestionMap.get(add.dataset.multiYearAdd);if(item&&!selected.some(row=>row.token===item.token)&&selected.length<5){selected=[...selected,item];renderSelected();search.value='';hideSuggestions();search.focus();}return;}if(remove){selected=selected.filter(row=>row.token!==remove.dataset.multiYearRemove);renderSelected();return;}});
+  function captureCurrentSelection(){
+    // The original same-edition Kartduell and the historical picker have
+    // different internal stores. Transfer, do not replace, on the first
+    // switch to another year so previously chosen results remain visible.
+    if(!root.hidden||typeof getCurrentSelection!=='function')return;
+    const context=getCurrentSelection();
+    const adapter=context?.adapter,ids=context?.ids||[];
+    if(!adapter||adapter.race?.race_family!==family||!Array.isArray(ids))return;
+    const meta=editions().find(item=>item.race_key===adapter.race.race_key);
+    if(!meta)return;
+    for(const id of ids){
+      if(selected.length>=5)break;
+      const record=adapter.byId.get(String(id));
+      if(!record)continue;
+      const token=tokenFor(meta.race_key,record.source_result_id);
+      if(!selected.some(item=>item.token===token))
+        selected.push({meta,adapter,record,token});
+    }
+    if(selected.length){crossYearSelectionActive=true;renderSelected();}
+  }
   function updatePicker(focus=false){
-    const latest=editions()[0]?.year;
-    const current=String(yearSelect.value)===String(activeYear);
+    const current=String(yearSelect.value)===String(activeYear)&&!crossYearSelectionActive;
     root.hidden=current;
     const regular=document.getElementById('duel-current-picker');
     if(regular)regular.hidden=!current;
     if(focus){if(!current)search.focus();else document.getElementById('duel-search')?.focus();}
   }
-  yearSelect.addEventListener('change',()=>{search.value='';hideSuggestions();updatePicker(true);});
+  yearSelect.addEventListener('change',()=>{
+    captureCurrentSelection();
+    crossYearSelectionActive=true;
+    search.value='';hideSuggestions();updatePicker(true);
+  });
   search.addEventListener('input',runSearch);search.addEventListener('focus',runSearch);search.addEventListener('keydown',event=>{if(event.key==='Escape')hideSuggestions();if(event.key==='Enter'){const first=suggestions.querySelector('[data-multi-year-add]');if(first){event.preventDefault();first.click();}}});
   button.addEventListener('click',openComparison);
   document.getElementById('close-multi-year-dialog')?.addEventListener('click',()=>dialog.close());
@@ -145,13 +168,15 @@ export function createMultiYearComparison({boot,loader}){
   document.addEventListener('click',event=>{if(!event.target.closest('#multi-year-comparison'))hideSuggestions();});
   renderSelected();
   return {
+    captureCurrentSelection,
     setContext(nextFamily,nextYear){
-      const changed=family!==nextFamily,previousActiveYear=activeYear;family=nextFamily;activeYear=Number(nextYear)||null;if(changed){selected=[];restored=false;}
+      const changed=family!==nextFamily,previousActiveYear=activeYear;family=nextFamily;activeYear=Number(nextYear)||null;if(changed){selected=[];restored=false;crossYearSelectionActive=false;}
       const latest=editions()[0]?.year;
       const previous=changed||!previousActiveYear||String(yearSelect.value)===String(previousActiveYear)?String(activeYear):yearSelect.value;
       yearSelect.innerHTML=editions().map(item=>`<option value="${item.year}">${item.year}</option>`).join('')+'<option value="all">Alla år</option>';
       const deepLink=new URLSearchParams(location.search).get('xyFamily')===family;
       yearSelect.value=deepLink?'all':editions().some(item=>String(item.year)===String(previous))?String(previous):String(latest);
+      if(deepLink)crossYearSelectionActive=true;
       renderSelected();if(changed)hideSuggestions();updatePicker();restore().catch(()=>{});
     }
   };

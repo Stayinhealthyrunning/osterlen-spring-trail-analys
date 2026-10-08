@@ -53,7 +53,45 @@ const server=http.createServer((req,res)=>{
     if(!legends.includes('2024')||!legends.includes('2022'))throw Error('Both year-specific routes must be distinguished');
     await page.locator('#multi-year-map-root [data-map-range]').evaluate(node=>{node.value='3600';node.dispatchEvent(new Event('input',{bubbles:true}))});
     if(!await page.locator('#multi-year-map-root [data-map-marker]').count())throw Error('Source-backed positions missing');
+    // Regression: selecting Stefan in 2025 must persist when switching to 2026
+    // to add Matilda, and must still be there after switching back to 2025.
+    await page.locator('#close-multi-year-dialog').click();
+    await page.reload({waitUntil:'domcontentloaded'});
+    await page.waitForFunction(()=>document.querySelector('#load-status')?.textContent.includes('upplaga klar'));
+    await page.locator('#multi-year-year').selectOption('2025');
+    await page.locator('#multi-year-search').fill('Stefan Bengtsson');
+    await page.waitForFunction(()=>document.querySelectorAll('#multi-year-suggestions [data-multi-year-add]').length>0);
+    await page.locator('#multi-year-suggestions [data-multi-year-add]').filter({hasText:'Stefan Bengtsson'}).first().click();
+    await page.locator('#multi-year-year').selectOption('2026');
+    if(!await page.locator('#multi-year-comparison').isVisible())throw Error('The historical selector must remain visible after switching back to the active year');
+    if(!(await page.locator('#multi-year-selected').innerText()).includes('Stefan Bengtsson'))throw Error('Stefan disappeared on 2026');
+    await page.locator('#multi-year-search').fill('Matilda Gend');
+    await page.waitForFunction(()=>document.querySelectorAll('#multi-year-suggestions [data-multi-year-add]').length>0);
+    await page.locator('#multi-year-suggestions [data-multi-year-add]').filter({hasText:'Matilda Gend'}).first().click();
+    await page.locator('#multi-year-year').selectOption('2025');
+    const persisted=await page.locator('#multi-year-selected').innerText();
+    if(!persisted.includes('Stefan Bengtsson')||!persisted.includes('Matilda Gend'))throw Error('Cross-year selection disappeared on return to 2025: '+persisted);
+    if(await page.locator('#open-multi-year-comparison').isDisabled())throw Error('Cross-year comparison disabled after year change');
+    await page.locator('#open-multi-year-comparison').click();
+    await page.waitForFunction(()=>document.querySelectorAll('#multi-year-route-svg path[stroke-width="3.8"]').length===2);
+    await page.locator('#close-multi-year-dialog').click();
+    console.log('PASS ÖST Stefan 2025 + Matilda 2026 persist across year changes');
+
+    // The original same-edition picker must not lose its already selected
+    // result when changing into the cross-edition search.
+    await page.reload({waitUntil:'domcontentloaded'});
+    await page.waitForFunction(()=>document.querySelector('#load-status')?.textContent.includes('upplaga klar'));
+    await page.locator('#duel-search').fill('Matilda Gend');
+    await page.locator('#duel-suggestions [data-duel-add]').first().click();
+    await page.locator('#multi-year-year').selectOption('2025');
+    const bridged=await page.locator('#multi-year-selected').innerText();
+    if(!bridged.includes('Matilda Gend')||!bridged.includes('2026'))throw Error('Original picker selection was not transferred into the shared history list: '+bridged);
+    await page.locator('#multi-year-search').fill('Stefan Bengtsson');
+    await page.waitForFunction(()=>document.querySelectorAll('#multi-year-suggestions [data-multi-year-add]').length>0);
+    await page.locator('#multi-year-suggestions [data-multi-year-add]').filter({hasText:'Stefan Bengtsson'}).first().click();
+    if(!(await page.locator('#multi-year-selected').innerText()).includes('Matilda Gend'))throw Error('Original selection vanished after adding an older result');
+
     if(errors.length)throw Error('Browser errors: '+errors.join(' | '));
-    console.log('PASS ÖST multi-year comparison');
+    console.log('PASS ÖST multi-year comparison and picker persistence');
   }finally{await browser.close();await new Promise(resolve=>server.close(resolve))}
 })().catch(error=>{console.error(error);process.exitCode=1});
