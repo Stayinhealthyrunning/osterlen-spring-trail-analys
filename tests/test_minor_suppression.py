@@ -20,7 +20,7 @@ class MinorSuppressionTests(unittest.TestCase):
         self.assertFalse(confirmed_minor({"age": 18}))
         self.assertFalse(confirmed_minor({"age": None}))
 
-    def test_references_and_direct_identity_are_suppressed(self):
+    def test_minor_result_and_linked_rows_are_removed(self):
         record = {
             "source_result_id": "source-123", "name": "Fiktiv Testperson",
             "bib": "201", "club": "Testklubb", "age": None,
@@ -31,16 +31,9 @@ class MinorSuppressionTests(unittest.TestCase):
         members = [{"source_member_result_id": "source-123",
                     "bib": "201", "name_as_published": "Fiktiv Testperson"}]
         self.assertEqual(redact_race_bundle("synthetic", race, splits, members), 1)
-        self.assertEqual(record["name"], "Anonym löpare")
-        self.assertIsNone(record["bib"])
-        self.assertIsNone(record["club"])
-        self.assertIsNone(record["person_key"])
-        masked_id = record["source_result_id"]
-        self.assertTrue(masked_id.startswith("anon-"))
-        self.assertEqual(splits[0]["source_result_id"], masked_id)
-        self.assertEqual(members[0]["source_member_result_id"], masked_id)
-        self.assertEqual(members[0]["name_as_published"], "Anonym löpare")
-        self.assertIsNone(members[0]["bib"])
+        self.assertEqual(race["records"], [])
+        self.assertEqual(splits, [])
+        self.assertEqual(members, [])
 
     def test_adult_record_is_unchanged(self):
         adult = {"source_result_id": "adult-1", "age": 18,

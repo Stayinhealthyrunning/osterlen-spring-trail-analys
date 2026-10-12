@@ -119,7 +119,11 @@ def main():
         "teams":total_teams,
         "team_members":total_members,
     }
-    assert totals=={"race_instances":34,"records":9871,"splits":6123,"teams":300,"team_members":599},totals
+    assert totals["race_instances"]==34,totals
+    assert 0 < totals["records"] <= 9871,totals
+    assert 0 < totals["splits"] <= 6123,totals
+    assert totals["teams"]==300,totals
+    assert 0 < totals["team_members"] <= 599,totals
 
     manifest={
         "schema_version":1,

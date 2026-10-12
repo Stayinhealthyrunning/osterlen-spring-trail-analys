@@ -29,46 +29,37 @@ def confirmed_minor(row):
     return False
 
 def redact_race_bundle(race_key, race, splits, team_members):
-    mappings = {}
+    removed_ids = set()
     count = 0
+    kept_records = []
     for row in race.get("records", []):
         if not confirmed_minor(row):
+            kept_records.append(row)
             continue
         original_id = row.get("source_result_id")
-        raw_key = f"{race_key}|{original_id}|{row.get('name') or ''}"
-        opaque = "anon-" + hashlib.sha256(raw_key.encode("utf-8")).hexdigest()[:24]
         if original_id is not None:
-            mappings[str(original_id)] = opaque
-            row["source_result_id"] = opaque
-        row["name"] = MASKED
-        for key in DIRECT_IDENTITY_FIELDS:
-            if key in row:
-                row[key] = None
+            removed_ids.add(str(original_id))
         count += 1
+    race["records"] = kept_records
 
-    def protect_refs(items, *, member_rows=False):
+    def references_removed(row):
+        return any(
+            str(row.get(key)) in removed_ids
+            for key in ("source_result_id", "result_id", "member_result_id", "source_member_result_id")
+            if row.get(key) is not None
+        )
+
+    def remove_refs(items, *, member_rows=False):
+        kept = []
         for row in items:
             if not isinstance(row, dict):
+                kept.append(row)
                 continue
-            matched = False
-            # A team_source_result_id identifies the team, not a member:
-            # never redact all members because a team's ID happens to match.
-            for key in ("source_result_id", "result_id", "member_result_id",
-                        "source_member_result_id"):
-                original = str(row.get(key))
-                if key in row and original in mappings:
-                    row[key] = mappings[original]
-                    matched = True
-            if matched and member_rows:
-                for key in ("name", "name_as_published", "member_name_as_published",
-                            "runner_name_as_published"):
-                    if key in row:
-                        row[key] = MASKED
-                for key in ("bib", "club", "person_key", "source_uid",
-                            "public_contestant_uid", "age", "birth_year"):
-                    if key in row:
-                        row[key] = None
+            if references_removed(row):
+                continue
+            kept.append(row)
+        items[:] = kept
 
-    protect_refs(splits)
-    protect_refs(team_members, member_rows=True)
+    remove_refs(splits)
+    remove_refs(team_members, member_rows=True)
     return count

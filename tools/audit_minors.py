@@ -15,7 +15,5 @@ for path in races:
         if confirmed_minor(row):
             raise SystemExit(f"Unprotected under-18 record: {path.name}")
         if row.get("name")=="Anonym löpare":
-            if row.get("bib") not in (None,"") or row.get("club") not in (None,""):
-                raise SystemExit(f"Direct identifiers remain: {path.name}")
-            count+=1
+            raise SystemExit(f"Pseudonymous individual row remains: {path.name}")
 print(json.dumps({"files":len(races),"masked_identity_rows":count,"status":"PASS"}))

@@ -8,7 +8,7 @@ overlaid from config/course-versions.json.
 from __future__ import annotations
 import argparse, gzip, json, sqlite3, tempfile
 from pathlib import Path
-from privacy import load_rules, sanitize_identity, opaque_result_id
+from privacy import load_rules, record_is_suppressed
 
 ROOT=Path(__file__).resolve().parents[1]
 DB_GZ=ROOT/"data/derived/ost-analysis-2018-2026.sqlite.gz"
@@ -148,7 +148,7 @@ def main():
                 "assets":assets
             }
 
-        public_result_ids={}
+        removed_result_ids=set()
         race_rows=con.execute("SELECT * FROM races ORDER BY year,race_family").fetchall()
         for rr in race_rows:
             r=dict(rr);rk=r["race_key"];rd=ready[rk]
@@ -162,9 +162,9 @@ def main():
             ):
                 public_record=record(source_row)
                 original_id=str(public_record["source_result_id"])
-                if sanitize_identity(public_record,privacy_rules):
-                    public_record["source_result_id"]=opaque_result_id(rk,original_id)
-                    public_result_ids[(rk,original_id)]=public_record["source_result_id"]
+                if record_is_suppressed(public_record,privacy_rules):
+                    removed_result_ids.add((rk,original_id))
+                    continue
                 records.append(public_record)
             item={
                 "race_key":rk,"event_key":r["event_key"],"race_family":r["race_family"],"year":r["year"],"race_date":r["race_date"],
@@ -181,10 +181,10 @@ def main():
         for s in con.execute("""SELECT r.race_key,r.source_result_id,r.bib,s.* FROM splits s JOIN results r USING(result_uid)
                               WHERE s.elapsed_seconds IS NOT NULL ORDER BY r.race_key,r.result_uid,s.sequence_no"""):
             original_id=str(s["source_result_id"])
-            public_id=public_result_ids.get((s["race_key"],original_id),s["source_result_id"])
+            if (s["race_key"],original_id) in removed_result_ids:
+                continue
             payload["splits"].append({
-                "race_key":s["race_key"],"source_result_id":public_id,
-                "bib":None if public_id!=s["source_result_id"] else s["bib"],
+                "race_key":s["race_key"],"source_result_id":s["source_result_id"],"bib":s["bib"],
                 "checkpoint":s["checkpoint_semantic_key"] or s["checkpoint_key"],"source_point_name":s["checkpoint_source_label"],
                 "elapsed_seconds":s["elapsed_seconds"],"place_overall":s["place_overall"],"place_class":s["place_class"],"place_gender":s["place_gender"]
             })
@@ -199,12 +199,13 @@ def main():
                 "team_name":t["team_name"],"class_name":t["class_name"]
             })
             for m in members:
-                sanitize_identity(m,privacy_rules)
+                if record_is_suppressed(m,privacy_rules):
+                    continue
                 payload["team_members"].append({"race_key":t["race_key"],"team_source_result_id":t["source_result_id"],**m})
         con.close()
 
     assert len(payload["races"])==34
-    assert sum(len(r["records"]) for r in payload["races"].values())==9871
+    assert sum(len(r["records"]) for r in payload["races"].values())==9871-len(removed_result_ids)
     assert 0<len(payload["splits"])<=6123
     for race in payload["races"].values():
         if race["capabilities"]["replay"]:
