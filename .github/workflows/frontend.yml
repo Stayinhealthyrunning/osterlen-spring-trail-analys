@@ -19,6 +19,7 @@ jobs:
           node-version: '22'
       - run: python tools/build_engine_readiness_report.py
       - run: python tools/build_frontend.py
+      - run: python tools/audit_minors.py docs/data
       - run: python tools/validate_foundation.py
       - run: python tools/validate_prebuild_readiness.py
       - run: python tools/validate_frontend_performance_budget.py
