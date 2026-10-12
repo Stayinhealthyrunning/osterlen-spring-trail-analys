@@ -162,7 +162,7 @@ def main():
             ):
                 public_record=record(source_row)
                 original_id=str(public_record["source_result_id"])
-                if record_is_suppressed(public_record,privacy_rules):
+                if record_is_suppressed(public_record,privacy_rules,scope=rk):
                     removed_result_ids.add((rk,original_id))
                     continue
                 records.append(public_record)
@@ -199,7 +199,7 @@ def main():
                 "team_name":t["team_name"],"class_name":t["class_name"]
             })
             for m in members:
-                if record_is_suppressed(m,privacy_rules):
+                if record_is_suppressed(m,privacy_rules,scope=t["race_key"]):
                     continue
                 payload["team_members"].append({"race_key":t["race_key"],"team_source_result_id":t["source_result_id"],**m})
         con.close()

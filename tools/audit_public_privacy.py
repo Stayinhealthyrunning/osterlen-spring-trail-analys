@@ -28,9 +28,10 @@ def strings(value: Any):
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument("--root",default=str(ROOT/"docs"/"data"));args=ap.parse_args()
-    base=Path(args.root);rules=load_rules(RULES);blocked=rules["_fingerprints"];display=normalize_name(rules["display_name"])
+    base=Path(args.root);rules=load_rules(RULES,require_private=True)
+    blocked={(entry.get("match") or {}).get("normalized_name_sha256") for entry in rules["_entries"]}
+    display=normalize_name(rules["display_name"])
     files=list(base.rglob("*.json")) if base.exists() else []
-    anonymous=0
     for path in files:
         doc=json.loads(path.read_text(encoding="utf-8"))
         for text in strings(doc):
@@ -39,12 +40,10 @@ def main():
                 raise SystemExit(f"Blocked identity fingerprint remains in {path}")
         for item in walk(doc):
             if normalize_name(item.get("name") or item.get("name_as_published"))==display:
-                anonymous+=1
-                if item.get("bib") not in (None,"") or item.get("club") not in (None,""):
-                    raise SystemExit(f"Direct identifier remains on anonymous record in {path}")
+                raise SystemExit(f"Pseudonymous individual row remains in {path}")
     if not files:
         raise SystemExit(f"No JSON files found under {base}")
-    print(json.dumps({"files":len(files),"anonymous_records":anonymous,"status":"PASS"}))
+    print(json.dumps({"files":len(files),"anonymous_records":0,"status":"PASS"}))
 
 if __name__=="__main__":
     main()
