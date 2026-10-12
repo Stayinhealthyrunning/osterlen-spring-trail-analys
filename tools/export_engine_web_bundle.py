@@ -16,6 +16,7 @@ import sys
 import tempfile
 from collections import defaultdict
 from pathlib import Path
+from minor_suppression import redact_race_bundle
 
 ROOT=Path(__file__).resolve().parents[1]
 ENGINE_EXPORTER=ROOT/"tools/export_engine_v1.py"
@@ -82,7 +83,9 @@ def main():
 
     race_entries={}
     total_records=total_splits=total_teams=total_members=0
+    minor_total=0
     for race_key,race in sorted(payload["races"].items()):
+        minor_total+=redact_race_bundle(race_key,race,splits.get(race_key,[]),members.get(race_key,[]))
         doc={
             "schema_version":1,
             "engine_contract":payload["engine_contract"],
@@ -138,6 +141,7 @@ def main():
         "payload_sha256":payload_sha,
         "races":len(race_entries),
         "totals":totals,
+        "minor_identities_masked":minor_total,
         "full_engine_raw_bytes":full_meta["raw_bytes"],
         "full_engine_gzip_bytes":full_meta["gzip_bytes"],
         "bootstrap_gzip_bytes":bootstrap_meta["gzip_bytes"],
