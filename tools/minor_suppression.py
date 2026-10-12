@@ -22,8 +22,8 @@ def confirmed_minor(row):
         return False
     for key in ("age_category", "class_name"):
         value = str(row.get(key) or "").strip()
-        # Only an explicit, bounded age interval; e.g. 0-11, (F) 16-17.
-        match = re.fullmatch(r"(?:\([A-Za-z]\)\s*)?(\d{1,2})\s*[-–]\s*(\d{1,2})(?:\s+(?:män|kvinnor))?", value, re.I)
+        # Only an explicit, bounded age interval; e.g. 0-11, (F) 16-17, F0-11 or M16-17.
+        match = re.fullmatch(r"(?:\([A-Za-z]\)\s*|[A-Za-z]\s*)?(\d{1,2})\s*[-–]\s*(\d{1,2})(?:\s+(?:män|kvinnor))?", value, re.I)
         if match and int(match.group(1)) <= int(match.group(2)) < 18:
             return True
     return False
