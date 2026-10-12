@@ -28,7 +28,7 @@ def main():
         summary=json.loads(run.stdout)
         manifest=json.loads((Path(td)/"manifest.json").read_text(encoding="utf-8"))
 
-        expected={"race_instances":34,"records":9871,"splits":6123,"teams":300,"team_members":599}
+        expected={"race_instances":34,"records":9649,"splits":6119,"teams":300,"team_members":599}
         if manifest.get("totals")!=expected:
             errors.append(f"delivery accounting changed: {manifest.get('totals')} != {expected}")
 

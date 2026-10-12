@@ -16,4 +16,4 @@ for path in races:
             raise SystemExit(f"Unprotected under-18 record: {path.name}")
         if row.get("name")=="Anonym löpare":
             raise SystemExit(f"Pseudonymous individual row remains: {path.name}")
-print(json.dumps({"files":len(races),"masked_identity_rows":count,"status":"PASS"}))
+print(json.dumps({"files":len(races),"public_minor_or_pseudonymous_rows":count,"status":"PASS"}))

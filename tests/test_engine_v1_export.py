@@ -26,7 +26,7 @@ class EngineV1ExportTests(unittest.TestCase):
     def test_totals_and_contract(self):
         self.assertEqual(self.summary["engine_contract"],"loppanalys-engine-1.0")
         self.assertEqual(self.summary["races"],34)
-        self.assertEqual(self.summary["results"],9871)
+        self.assertEqual(self.summary["results"],9869)
         self.assertEqual(self.summary["teams"],300)
         self.assertEqual(self.summary["team_members"],599)
         self.assertEqual(self.summary["replay_ready"],10)

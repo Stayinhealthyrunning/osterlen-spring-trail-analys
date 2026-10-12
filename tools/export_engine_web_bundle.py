@@ -145,7 +145,7 @@ def main():
         "payload_sha256":payload_sha,
         "races":len(race_entries),
         "totals":totals,
-        "minor_identities_masked":minor_total,
+        "minor_result_rows_withheld":minor_total,
         "full_engine_raw_bytes":full_meta["raw_bytes"],
         "full_engine_gzip_bytes":full_meta["gzip_bytes"],
         "bootstrap_gzip_bytes":bootstrap_meta["gzip_bytes"],
