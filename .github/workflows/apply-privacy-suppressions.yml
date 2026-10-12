@@ -8,6 +8,9 @@ on:
       - 'config/privacy-suppressions.json'
       - 'tools/privacy.py'
       - 'tools/audit_public_privacy.py'
+      - 'tools/audit_minors.py'
+      - 'tools/minor_suppression.py'
+      - 'tools/export_engine_web_bundle.py'
       - '.github/workflows/apply-privacy-suppressions.yml'
 
 permissions:
@@ -31,7 +34,9 @@ jobs:
       - name: Rebuild browser data with identity suppression
         run: python tools/build_frontend.py --output-dir docs/data
       - name: Audit distributed identity fields
-        run: python tools/audit_public_privacy.py --root docs/data
+        run: |
+          python tools/audit_public_privacy.py --root docs/data
+          python tools/audit_minors.py docs/data
       - name: Commit sanitized public artifacts
         shell: bash
         run: |
