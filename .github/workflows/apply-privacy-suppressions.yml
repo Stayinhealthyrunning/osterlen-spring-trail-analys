@@ -11,6 +11,7 @@ on:
     paths:
       - 'config/privacy-suppressions.json'
       - 'tools/privacy.py'
+      - 'tools/remove_protected_public_results.py'
       - 'tools/audit_public_privacy.py'
       - 'tools/audit_minors.py'
       - 'tools/minor_suppression.py'
