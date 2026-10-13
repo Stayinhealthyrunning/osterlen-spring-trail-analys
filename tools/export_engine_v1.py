@@ -105,7 +105,7 @@ def main():
     args=ap.parse_args()
 
     adapter=load_json(ADAPTER)
-    privacy_rules=load_rules(PRIVACY)
+    privacy_rules=load_rules(PRIVACY, require_private=True)
     if adapter["target"]["engine_contract"]!="loppanalys-engine-1.0":
         raise SystemExit("engine adapter does not target Engine 1.0")
 
