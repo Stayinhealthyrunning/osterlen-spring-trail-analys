@@ -105,7 +105,7 @@ def main():
     args=ap.parse_args()
 
     adapter=load_json(ADAPTER)
-    privacy_rules=load_rules(PRIVACY)
+    privacy_rules=load_rules(PRIVACY, require_private=True)
     if adapter["target"]["engine_contract"]!="loppanalys-engine-1.0":
         raise SystemExit("engine adapter does not target Engine 1.0")
 
@@ -162,7 +162,7 @@ def main():
             ):
                 public_record=record(source_row)
                 original_id=str(public_record["source_result_id"])
-                if record_is_suppressed(public_record,privacy_rules):
+                if record_is_suppressed(public_record,privacy_rules,scope=rk):
                     removed_result_ids.add((rk,original_id))
                     continue
                 records.append(public_record)
@@ -199,7 +199,7 @@ def main():
                 "team_name":t["team_name"],"class_name":t["class_name"]
             })
             for m in members:
-                if record_is_suppressed(m,privacy_rules):
+                if record_is_suppressed(m,privacy_rules,scope=t["race_key"]):
                     continue
                 payload["team_members"].append({"race_key":t["race_key"],"team_source_result_id":t["source_result_id"],**m})
         con.close()

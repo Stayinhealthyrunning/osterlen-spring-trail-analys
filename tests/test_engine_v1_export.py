@@ -1,4 +1,5 @@
 import json
+import os
 import subprocess
 import sys
 import tempfile
@@ -26,7 +27,12 @@ class EngineV1ExportTests(unittest.TestCase):
     def test_totals_and_contract(self):
         self.assertEqual(self.summary["engine_contract"],"loppanalys-engine-1.0")
         self.assertEqual(self.summary["races"],34)
-        self.assertEqual(self.summary["results"],9869)
+        # The 220 source-confirmed minors are always withheld. A production
+        # export with the private registry also removes two approved protected
+        # result rows; local tests deliberately work without that secret.
+        private_registry = os.environ.get("LOPPANALYS_PRIVACY_REGISTRY_B64") or os.environ.get("LOPPANALYS_PRIVACY_REGISTRY_PATH")
+        expected_results = 9649 if private_registry else 9651
+        self.assertEqual(self.summary["results"],expected_results)
         self.assertEqual(self.summary["teams"],300)
         self.assertEqual(self.summary["team_members"],599)
         self.assertEqual(self.summary["replay_ready"],10)
