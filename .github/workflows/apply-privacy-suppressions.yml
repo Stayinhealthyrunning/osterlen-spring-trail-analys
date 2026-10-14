@@ -33,6 +33,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Restore access-controlled source inputs
+        uses: ./.github/actions/restore-private-source
+        with:
+          app-id: ${{ secrets.LOPPANALYS_SOURCE_APP_ID }}
+          private-key: ${{ secrets.LOPPANALYS_SOURCE_APP_PRIVATE_KEY }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'

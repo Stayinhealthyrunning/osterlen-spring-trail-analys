@@ -5,6 +5,9 @@ Thumbs.db
 .env
 data/derived/
 data/work/
+.private-source/
+/data/archive/ost-results-2018-2026.sqlite.gz
+/data/derived/ost-analysis-2018-2026.sqlite.gz
 out/
 node_modules/
 .pytest_cache/
