@@ -1,6 +1,6 @@
 # Kuraterad ÖST-analysdatabas
 
-Skapad: 2026-10-05T14:14:46+00:00
+Skapad: 2026-10-14T07:15:32+00:00
 
 - Resultat: **9,871**
 - Deltagarposter: **9,571**
