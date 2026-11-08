@@ -7,6 +7,11 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+    inputs:
+      request_issue:
+        description: "Optional trusted chat-command issue for outcome report"
+        required: false
+        type: string
 permissions:
   contents: read
 jobs:
@@ -48,7 +53,7 @@ jobs:
           path: docs
 
   deploy:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     needs: frontend
     runs-on: ubuntu-latest
     permissions:
@@ -61,4 +66,29 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  report-update:
+    if: ${{ always() && github.event_name == 'workflow_dispatch' && inputs.request_issue != '' }}
+    needs: [frontend, deploy]
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Report actual rebuild and deployment outcome
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ inputs.request_issue }}
+          BUILD_RESULT: ${{ needs.frontend.result }}
+          DEPLOY_RESULT: ${{ needs.deploy.result }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$ISSUE_NUMBER" =~ ^[1-9][0-9]*$ ]] || exit 2
+          if [[ "$BUILD_RESULT" == "success" && "$DEPLOY_RESULT" == "success" ]]; then
+            message="Österlen: befintligt privat resultatarkiv har validerats och webbplatsen har byggts och publicerats. Detta flöde hämtar ännu inte nya Sportstiming-resultat."
+          else
+            message="Österlen: uppdateringen stoppades. Byggresultat: $BUILD_RESULT. Publiceringsresultat: $DEPLOY_RESULT. Befintlig sajt är oförändrad."
+          fi
+          gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --body \
+            "$message [Körningsrapport](https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)."
 

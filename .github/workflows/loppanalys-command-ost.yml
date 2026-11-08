@@ -1,0 +1,38 @@
+name: Loppanalys one-command update - Osterlen
+
+# A ChatGPT instruction can be routed to this exact public issue title:
+#   Loppanalys: uppdatera Österlen Spring Trail
+# The public issue must contain no participant data or private source references.
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: read
+  actions: write
+  issues: write
+
+concurrency:
+  group: loppanalys-ost-command
+  cancel-in-progress: false
+
+jobs:
+  queue-frontend:
+    if: >-
+      github.event.issue.user.login == 'Stayinhealthyrunning' &&
+      github.event.issue.title == 'Loppanalys: uppdatera Österlen Spring Trail'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Dispatch verified rebuild from private sources
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$ISSUE_NUMBER" =~ ^[1-9][0-9]*$ ]] || exit 2
+          gh workflow run frontend.yml --repo "$GITHUB_REPOSITORY" --ref main \
+            -f "request_issue=$ISSUE_NUMBER"
+          gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --body \
+            "Österlens privata källarkiv återställs och kontrolleras innan publiceringsbygget. [Följ Actions](https://github.com/$GITHUB_REPOSITORY/actions/workflows/frontend.yml). Obs: detta återbygger befintligt verifierat arkiv; import av nya Sportstiming-resultat kräver fortfarande separat skyddad källuppdatering."
