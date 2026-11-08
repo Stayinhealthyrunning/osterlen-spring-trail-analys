@@ -103,7 +103,7 @@ function renderTopTools(){
  const favRoot=$('#favorites-top'),current=favorites.filter(f=>f.race===a.race.race_key&&a.byId.has(f.id));
  if(favRoot)favRoot.innerHTML=current.length?'<div class="favorites-list">'+current.map(f=>'<button type="button" data-open-favorite="'+esc(f.race)+'" data-id="'+esc(f.id)+'"><strong>'+esc(f.name)+'</strong><small>'+a.race.year+' · öppna analys</small></button>').join('')+'</div>':'<p class="favorites-empty">Inga sparade '+(a.race.participant.entity==='team'?'lag':'löpare')+' i den här upplagan ännu.</p>';
  const picked=state.compare.map(id=>a.byId.get(id)).filter(Boolean),chips=$('#duel-selected');if(chips)chips.innerHTML=picked.map((r,i)=>'<button type="button" data-duel-remove="'+esc(r.source_result_id)+'"><i>'+(i+1)+'</i>'+esc(r.name)+' <span>×</span></button>').join('');
- const head=$('#open-head-to-head'),map=$('#open-map-duel'),entity=a.race.participant.entity==='team'?'lag':'deltagare';if(head){head.hidden=picked.length>2;head.disabled=picked.length!==2;head.textContent=picked.length===2?'Öppna Direktjämförelse':'Välj minst två '+entity;}if(map){map.hidden=!a.race.capabilities.replay||picked.length<2;map.disabled=picked.length<2||picked.length>5;map.textContent=picked.length>=2?'Öppna Kartduell':'Kartduell';}
+ const head=$('#open-head-to-head'),map=$('#open-map-duel'),entity=a.race.participant.entity==='team'?'lag':'deltagare';if(head){head.hidden=picked.length>2;head.disabled=picked.length!==2;head.textContent=picked.length===2?'Öppna Direktjämförelse':'Välj minst två '+entity;}if(map){map.hidden=!a.race.capabilities.replay||picked.length<2;map.disabled=picked.length<2||picked.length>5;map.textContent=picked.length>=2?'Öppna Kartduell':'Kartduell';}const share=$('#share-duel-selection');if(share){share.hidden=!a.race.capabilities.replay;share.disabled=picked.length<2||picked.length>5;}
 }
 function duelOptions(query){
  const root=$('#duel-suggestions'),input=$('#duel-search');if(!root||!input)return;const q=query.trim();duelSuggestionIndex=-1;
@@ -296,9 +296,21 @@ async function openMapDuel(initialTime=0){
  $('#duel-dialog-race').textContent=raceLabel+' · '+a.race.year;$('#duel-dialog-count').textContent=records.length+' '+entity;const share=$('#duel-dialog-share');if(share)share.innerHTML='↗ <span>Dela</span>';syncDuelClock(0,Math.max(...records.map(r=>Number(r.finish_seconds)||0),0));if(!dialog.open)dialog.showModal();
  await showMap($('#duel-body'),records,'duel',{initialTime,onTimeChange:syncDuelClock});if(duelMap)syncDuelClock(duelMap.getTime?.()||0,duelMap.getMaxTime?.()||0);
 }
+function duelShareUrl(clock=0){
+ const u=new URL(location.href);u.search='';u.hash='';
+ u.searchParams.set('race',state.raceKey);u.searchParams.set('compare',state.compare.slice(0,5).join(','));
+ u.searchParams.set('duel','1');u.searchParams.set('t',String(Math.max(0,Math.round(clock))));
+ return u.href;
+}
+async function shareDuelSelection(){
+ if(!a?.race?.capabilities?.replay||state.compare.length<2||state.compare.length>5||!state.compare.every(id=>a.byId.has(id)))return;
+ const url=duelShareUrl(),feedback=$('#share-duel-selection-status');
+ try{await navigator.clipboard.writeText(url);if(feedback)feedback.textContent='Länken är kopierad.'}
+ catch{if(feedback)feedback.textContent='Kopiera länken i dialogen.';window.prompt?.('Kopiera länken:',url)}
+}
 async function shareDuel(){
- if(!duelMap)return;const u=new URL(location.href);u.search='';u.hash='';u.searchParams.set('race',state.raceKey);u.searchParams.set('compare',state.compare.slice(0,5).join(','));u.searchParams.set('duel','1');u.searchParams.set('t',String(Math.max(0,Math.round(duelMap.getTime?.()||0))));const button=$('#duel-dialog-share');
- try{await navigator.clipboard.writeText(u.href);if(button){button.textContent='✓ Länk kopierad';setTimeout(()=>{if(button?.isConnected)button.innerHTML='↗ <span>Dela</span>';},1800);}}catch{prompt('Kopiera länken:',u.href);}
+ if(!duelMap)return;const u=duelShareUrl(duelMap.getTime?.()||0),button=$('#duel-dialog-share');
+ try{await navigator.clipboard.writeText(u);if(button){button.textContent='✓ Länk kopierad';setTimeout(()=>{if(button?.isConnected)button.innerHTML='↗ <span>Dela</span>';},1800);}}catch{prompt('Kopiera länken:',u);}
 }
 async function openProfile(id,update=true){
  const r=a.byId.get(String(id));if(!r)return;profileMap?.destroy();profileMap=null;profileTrigger=document.activeElement;state.profile=String(id);
@@ -357,6 +369,7 @@ document.addEventListener('click',async e=>{
  if(b.id==='close-profile')$('#profile').close();
  if(b.id==='close-compare-dialog')closeCompareDialog();
  if(b.id==='duel-dialog-share'){await shareDuel();return;}
+ if(b.id==='share-duel-selection'){await shareDuelSelection();return;}
   if(b.id==='close-duel')$('#duel').close();
 });
 document.addEventListener('click',e=>{const row=e.target.closest('[data-result]');if(row)openProfile(row.dataset.result);});
