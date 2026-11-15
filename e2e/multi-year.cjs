@@ -23,7 +23,8 @@ const server=http.createServer((req,res)=>{
     await page.waitForSelector('#multi-year-year');
     if(await page.locator('#multi-year-year').inputValue()!=='2026')throw Error('Year selector should default to latest year');
     if(await page.locator('#multi-year-comparison').isVisible())throw Error('Historical search must not create its own visible panel');
-    await page.locator('#multi-year-year').selectOption('all');
+    await page.locator('#runner-lookup [data-compare-all-years]').click();
+    if(await page.locator('#multi-year-year').inputValue()!=='all')throw Error('Runner comparison shortcut did not select Alla år');
     if(!await page.locator('#multi-year-comparison').isVisible())throw Error('All-years search did not become visible in the same panel');
     if(await page.locator('#duel-current-picker').isVisible())throw Error('Current-edition picker did not hide');
 
