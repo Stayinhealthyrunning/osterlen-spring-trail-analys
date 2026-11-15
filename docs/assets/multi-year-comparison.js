@@ -127,6 +127,19 @@ export function createMultiYearComparison({boot,loader,getCurrentSelection=null}
     for(const token of tokens){const parsed=splitToken(token),meta=editions().find(item=>item.race_key===parsed?.raceKey);if(!meta)return;const edition=await loadEdition(meta),record=edition.adapter.byId.get(parsed.id);if(!record)return;rows.push({...edition,record,token});}
     selected=rows;restored=true;renderSelected();await openComparison();
   }
+  // Route comparison shortcuts through the tested historical picker: do not
+  // alter same-edition comparison state or infer cross-year runner identity.
+  document.addEventListener('click',event=>{
+    if(!event.target.closest('[data-compare-all-years]'))return;
+    event.preventDefault();
+    const currentDialog=document.getElementById('compare-dialog');
+    if(currentDialog?.open)currentDialog.close();
+    const query=document.getElementById('lookup')?.value?.trim()||'';
+    yearSelect.value='all';
+    yearSelect.dispatchEvent(new Event('change',{bubbles:true}));
+    if(query){search.value=query;void runSearch();}
+    document.getElementById('map-duel-panel')?.scrollIntoView?.({behavior:'smooth',block:'start'});
+  });
   root.addEventListener('click',event=>{const add=event.target.closest('[data-multi-year-add]'),remove=event.target.closest('[data-multi-year-remove]');if(add){const item=suggestionMap.get(add.dataset.multiYearAdd);if(item&&!selected.some(row=>row.token===item.token)&&selected.length<5){selected=[...selected,item];renderSelected();search.value='';hideSuggestions();search.focus();}return;}if(remove){selected=selected.filter(row=>row.token!==remove.dataset.multiYearRemove);renderSelected();return;}});
   function captureCurrentSelection(){
     // The original same-edition Kartduell and the historical picker have
@@ -173,7 +186,7 @@ export function createMultiYearComparison({boot,loader,getCurrentSelection=null}
       const changed=family!==nextFamily,previousActiveYear=activeYear;family=nextFamily;activeYear=Number(nextYear)||null;if(changed){selected=[];restored=false;crossYearSelectionActive=false;}
       const latest=editions()[0]?.year;
       const previous=changed||!previousActiveYear||String(yearSelect.value)===String(previousActiveYear)?String(activeYear):yearSelect.value;
-      yearSelect.innerHTML=editions().map(item=>`<option value="${item.year}">${item.year}</option>`).join('')+'<option value="all">Alla år</option>';
+      yearSelect.innerHTML='<option value="all">Alla år</option>'+editions().map(item=>`<option value="${item.year}">${item.year}</option>`).join('');
       const deepLink=new URLSearchParams(location.search).get('xyFamily')===family;
       yearSelect.value=deepLink?'all':editions().some(item=>String(item.year)===String(previous))?String(previous):String(latest);
       if(deepLink)crossYearSelectionActive=true;
